@@ -1,0 +1,11 @@
+Plot the frontline:
+_r = 300;
+_aaf = [((mrkAAF-ciudades)-colinasAA)-controles, _r, 1] call ws_fnc_markersToGridArray;
+_fia = [mrkFIA-["FIA_HQ"], _r, -1] call ws_fnc_markersToGridArray;
+_sum1 = [_aaf, _fia] call ws_fnc_addGrid;
+_zc = [_sum1] call ws_fnc_filterZeroCrossing;
+[_sum1, 1] call ws_fnc_plotGrid;
+
+
+//Get the ws_grid from the server:
+ws_grid = [missionNamespace, "ws_grid", Nil] call BIS_fnc_getServerVariable;

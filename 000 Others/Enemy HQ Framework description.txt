@@ -1,0 +1,36 @@
+	Me and Jeroen have been discussing about this idea for a while.
+	Here's a more detailed description of what we are trying to achieve.
+
+	First, where does the need to do all this come from?
+1. We want smarter and more complicated enemy commander's AI to have more dynamic and responsive environment in the game.
+2. We want to have complete logistics of friendly and enemy bases, outposts, etc. You come to a base, kill half of the infantry - next time you come here there will be exactly half of the troops, unless they have brought more from somewhere.
+3. We want to have different convoys travelling over the map to resupply bases, outposts, etc.
+
+	To achieve these points we have developed(only in our minds yet!) a model which can help implement these features. It consists of three major components.
+	
+	Component 1. Units.
+	Units are the lowest type of AI and are mostly controled by the game it self. However there are some additions that we want to create, most of those are already made by genesis92x in the form of Vcom AI. Vcom is a nice addition but it is lagging some parts that we would like to see. First of all we are considering to make a custom behavior file for civilions, this way we hope to make them a little bit more usefull and immersive while keeping the fps higher then it would be with Vcom. We also want to improve the way they communcate with other squads. This should be done though the commander so he knows what is going on and where. The last thing is undercover, we think this is a importent part of the game and is lacking in the game right now.
+
+	Component 2. Location management.
+	Location is any place you can capture or destroy right now. A base, a factory, an outpost, an airport, a sea port, a roadblock, etc. - let's call all these things with one word: 'Locations'.
+	Each location has some troops and vehicles. You come to a place and see exactly this amount of troops and vehicles. I think we have some part of it now for friendly locations, but i'm not sure about enemy locations.
+	Also some locations can generate units. For example, an airport or a sea port can serve as the main source of heavy armour and troops on the island. Or a town can serve as a source of HR for rebels(like it's done now).
+	Every location can do one of the two things:
+	1. If it's under attack and it decides that it can't handle it on its own, it can request help from the commander.
+	2. If it's low on supplies, vehicles or infantry, it can request it from the commander.
+	3. It must respond to commander's commands. Commander's commands can be one of those:
+		a. Take X units of type A(APC, tank, etc), Y units of type B, etc, and move to Z to provide help. RTB after that.
+		b. Take X units of type A and move to Location(base, factory, etc) Z and stay there. In this case the location donates its supplies to another location. This initiates some convoy to spawn and travel to the destination.
+		
+	Component 3. Commander AI.
+	Commander AI is some program that analyses incoming requests from Locations and gives commands to other Locations. The best analogue to the Commander AI is an AI for some strategy game. It treats Locations as units it can manipulate by giving them commands. It has to choose the most suitable Location to respond to another Location's request. It also can give commands without any request when it wants to attack one of enemy's Locations or when it sees a lot of enemy activity in the area so it wants to relocate more military into the area.
+	
+	Once the component 2 is implemented and working without any problems, we can easily implement more complicated enemy behaviours. For example, consider these situations:
+	1. You have been fighting on one territory for a while and it's getting more and more military around it because the commander moves infantry and vehicles from the rear territory closer to the frontline. So you can do behind-the-frontline operations and see less resistance there than at the frontline.
+	2. You have captured a base. Enemies holding nearby factories and outposts mount up and leave to another base, there's no point for them to hold these Locations.
+	3. You can intercept convoys and leave some Locations without infantry or armour.
+	4. Roadblocks are not spawned at start. Instead, if you have been fighting in one area for a while, the enemy starts putting roadblocks in it.
+	
+	There's also room to enhance a rebel commander's experience. He would be able to do all the same things as the enemy commander program, such as requesting backups from any Locations. We could implement a half-commander program for rebels, such as it processess only supply requests, but backup requests have to be processes by a human.
+	
+	We've estimated that the development of this would take us about 0.5 - 1.0 years. Probably we aren't going to do it now, but let this description be here in case someone has any thoughts on this topic.

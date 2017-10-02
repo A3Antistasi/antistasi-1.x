@@ -1,0 +1,1 @@
+call compile preprocessFileLineNumbers (selectRandom ["Compositions\cmp_roadblock_enemy_big_city_0.sqf", "Compositions\cmp_roadblock_enemy_big_city_1.sqf"])

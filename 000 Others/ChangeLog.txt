@@ -1,0 +1,25 @@
+
+//CHANGELOG
+- Disabled Petros Autogarrison
+- Disabled Artillery emplacement
+
+- Added the new briefing.sqf
+- Added JGS (Jeroens Garage System)
+- Added ability for drivers to add items to there vehicle when using JAS
+- Added JAS button called "Default gears" it adds
+- Added option in start menu to disable punisment
+- Fixed JAS inventory according if ACE medical is basic or advanced
+- Fixed Air vehicles dont load garrison on locations they fly over(caused to most server load)
+- Fixed the "NATO Ammodrop" mission failing as soon as it starts
+- (probably) Fixed the "Intercept reiforcements" mission not working
+- (probably) Fixed theirish men buying system
+-Fixed double mission_menu on petros
+TODO
+- Save game overhaul
+- Add a canche of destroying aircraft if air vehicles fly by enemy territory, maybe adjusted on garrison unit array considering AA units/vehicles.
+
+
+
+Optional
+- Fix Autoloot or import the Warlord one
+- voices on petros and Irish
