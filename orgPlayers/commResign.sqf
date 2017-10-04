@@ -14,5 +14,5 @@ if (_player getVariable ["elegible",true]) then {
 } else {
 	hint localize "STR_HINTS_COMMANDER_ACC";
 	_player setVariable ["elegible",true,true];
-	if(isplayer slowhand) then {} else{[] remoteExec ["assignStavros",2];} //Stef 25/09 if commaander none it checks for commander again
+	if !(isplayer slowhand) then {[] remoteExec ["assignStavros",2];} //Stef 25/09 if commaander none it checks for commander again
 };
