@@ -521,10 +521,10 @@
 			</Key>
 
 			<!--' Stef 30-08 '-->
-			<Key ID="STR_UI_NATO_ATT_TEXT">
+			<Key ID="STR_UI_NATO_RED_TEXT">
 				<Original>Reduce Opfor support</Original>
 			</Key>
-			<Key ID="STR_UI_NATO_ATT_TT">
+			<Key ID="STR_UI_NATO_RED_TT">
 				<Original>Price: 100 Points -- Weaken the enemy supporting faction by 10 points</Original>
 			</Key>
 			<!--' Stef 30-08 '-->

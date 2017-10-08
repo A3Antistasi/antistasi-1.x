@@ -219,7 +219,7 @@ BTN_R1(-1,"NATO UAV", "Cost: 10 points", "closeDialog 0; [""NATOUAV""] execVM ""
 BTN_R2(-1,"Ammodrop", "Cost: 5 points", "closeDialog 0; [""NATOAmmo""] execVM ""NatoDialog.sqf"";");
 BTN_R3(-1,"CAS Support", "Cost: 10 points", "closeDialog 0; [""NATOCAS""] execVM ""NatoDialog.sqf"";");
 BTN_R4(-1,"Bomb Run", "Cost: 10 points", "closeDialog 0; createDialog ""carpet_bombing"";");
-BTN_R5(-1,"Weaken OPFOR", "Cost: 100 points", "closeDialog 0; [""NATOATT""] execVM ""NatoDialog.sqf"";");
+BTN_R5(-1,"Weaken OPFOR", "Cost: 100 points", "closeDialog 0; [""NATORED""] execVM ""NatoDialog.sqf"";");
 
 //BTN_M(BTN_Y_5, -1, "NATO QRF", "Cost: 10 points", "closeDialog 0; [""NATOQRF""] execVM ""NatoDialog.sqf"";");   removed to make it even left and right
 

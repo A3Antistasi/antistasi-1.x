@@ -21,14 +21,14 @@
 #define NATO_BOMB "closeDialog 0; createDialog 'carpet_bombing';"
 
 #define NATO_QRF "closeDialog 0; ['NATOQRF'] execVM 'NatoDialog.sqf';"
-#define NATO_ATT "closeDialog 0; ['NATOATT'] execVM 'NatoDialog.sqf';"  //Stef 30-08
+#define NATO_RED "closeDialog 0; ['NATORED'] execVM 'NatoDialog.sqf';"  //Stef 30-08
 
 #define NATO_TEXTS_L ["STR_UI_NATO_CA_TEXT", "STR_UI_NATO_ARM_TEXT", "STR_UI_NATO_ART_TEXT", "STR_UI_NATO_RB_TEXT", "STR_UI_NATO_QRF_TEXT"]
-#define NATO_TEXTS_R ["STR_UI_NATO_UAV_TEXT", "STR_UI_NATO_AMMO_TEXT", "STR_UI_NATO_CAS_TEXT", "STR_UI_NATO_BOMB_TEXT", "STR_UI_NATO_ATT_TEXT"]
+#define NATO_TEXTS_R ["STR_UI_NATO_UAV_TEXT", "STR_UI_NATO_AMMO_TEXT", "STR_UI_NATO_CAS_TEXT", "STR_UI_NATO_BOMB_TEXT", "STR_UI_NATO_RED_TEXT"]
 //#define NATO_TEXTS_M   moved to make it even
 
 #define NATO_TTS_L ["STR_UI_NATO_CA_TT", "STR_UI_NATO_ARM_TT", "STR_UI_NATO_ART_TT", "STR_UI_NATO_RB_TT", "STR_UI_NATO_QRF_TT"]
-#define NATO_TTS_R ["STR_UI_NATO_UAV_TT", "STR_UI_NATO_AMMO_TT", "STR_UI_NATO_CAS_TT", "STR_UI_NATO_BOMB_TT", "STR_UI_NATO_ATT_TT"]
+#define NATO_TTS_R ["STR_UI_NATO_UAV_TT", "STR_UI_NATO_AMMO_TT", "STR_UI_NATO_CAS_TT", "STR_UI_NATO_BOMB_TT", "STR_UI_NATO_RED_TT"]
 //#define NATO_TTS_M "STR_UI_NATO_QRF_TT" moved to make it even
 
 // SQUAD RECRUITMENT

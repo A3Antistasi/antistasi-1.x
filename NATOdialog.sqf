@@ -64,7 +64,7 @@ switch (_tipo) do {
 		_costeNATO = 10;
 		_textohint = "Click on the base or airport/carrier from which you want NATO to dispatch a QRF";
 	};
-	case "NATOATT": {           //Stef 30-08 adding a way to reduce CSATprestige by spending NATO
+	case "NATORED": {           //Stef 30-08 adding a way to reduce CSATprestige by spending NATO
 		_costeNATO = 100;
 		_textohint = "You informed about supporting enemy faction emplacement, its destruction will reduce their concern about the island";
 	};
@@ -77,7 +77,7 @@ if (_NATOSupp < _costeNATO) exitWith {hint format ["We lack of enough NATO Suppo
 if (_tipo == "NATOCAS") exitWith {[] remoteExec [_tipo,HCattack]};
 if (_tipo == "NATOUAV") exitWith {[] remoteExec [_tipo,HCattack]};
 
-if (_tipo == "NATOATT") exitWith {[-100,-10] remoteExec ["prestige",2];}; //Stef 30-08 added the support change, maybe add a sleep 5 minute to take effect to simulate jets moving to them.
+if (_tipo == "NATORED") exitWith {[-100,-10] remoteExec ["prestige",2];}; //Stef 30-08 added the support change, maybe add a sleep 5 minute to take effect to simulate jets moving to them.
 
 
 posicionTel = [];

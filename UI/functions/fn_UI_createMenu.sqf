@@ -119,7 +119,7 @@ call {
 		_index = NAV_BTNS find (ctrlIDC _idc);
 		_display displayCtrl (LINES select _index) ctrlShow true;
 		[ACT_BTNS_L6, [NATO_ATT, NATO_ARM, NATO_ART, NATO_RB, NATO_QRF], NATO_TEXTS_L, NATO_TTS_L] call _fnc_setup;           // Stef 30-08 i made even columns and added the NATO Attack button.
-		[ACT_BTNS_R6, [NATO_UAV, NATO_AMMO, NATO_CAS, NATO_BOMB, NATO_ATT], NATO_TEXTS_R, NATO_TTS_R] call _fnc_setup;
+		[ACT_BTNS_R6, [NATO_UAV, NATO_AMMO, NATO_CAS, NATO_BOMB, NATO_RED], NATO_TEXTS_R, NATO_TTS_R] call _fnc_setup;
 	};
 
 
