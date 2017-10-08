@@ -166,4 +166,4 @@ petros setIdentity "amiguete";
 petros setName "Petros";
 petros forceSpeed 0;
 petros setCombatMode "GREEN";
-//petros addAction [localize "str_act_missionRequest", {nul=CreateDialog "mission_menu";},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"]; mnarijnm 16/08: not needed, gives double mission_menu
+if (((side petros) == independent) OR ("respawn_guer" in allMapMarkers)) then {petros addAction [localize "str_act_missionRequest", {nul=CreateDialog "mission_menu";},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"];} //mnarijnm 16/08: not needed, gives double mission_menu
