@@ -61,7 +61,7 @@ _allAccessories = "
 		lockedWeapons pushBackUnique _name;
 		gear_allWeapons pushBackUnique _name;
 		_weapon = [_name] call BIS_fnc_itemType;
-		_weaponType = _weapon select 1;
+		_weaponType = _weapon select 1; if(_name == "rhs_weap_t5000") then{_weaponType="SniperRifle"}; //<--- category override added by IRLed
 		switch (_weaponType) do {
 			case "AssaultRifle": {gear_assaultRifles pushBack _name};
 			case "MachineGun": {gear_machineGuns pushBack _name};
