@@ -744,11 +744,11 @@
 			<Key ID="STR_UI_ADMIN_TGLFT_TT">
 				<Original>Fastravel to all friendly locations, roadblocks included</Original>
 			</Key>
-			<Key ID="STR_UI_ADMIN_TGLARS_TEXT">
-				<Original>Arsenal Access</Original>
+			<Key ID="STR_UI_ADMIN_GARBAGE_TEXT">
+				<Original>Garbage Clean</Original>
 			</Key>
-			<Key ID="STR_UI_ADMIN_TGLARS_TT">
-				<Original>No longer useful, with JAS all items are available to everyone</Original>
+			<Key ID="STR_UI_ADMIN_GARBAGE_TT">
+				<Original>Clear Garbage, might freeze a bit</Original>
 			</Key>
 			<Key ID="STR_UI_ADMIN_TGLWPN_TEXT">
 				<Original>Weapon Proficiency</Original>

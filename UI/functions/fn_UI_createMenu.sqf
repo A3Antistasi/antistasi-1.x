@@ -70,7 +70,7 @@ call {
 	// ADMIN
 	if (_menu isEqualTo "admin") exitWith {
 		[ACT_BTNS_L6, [ADMIN_ADDMEMBER, ADMIN_REMMEMBER, ADMIN_TGLWPN, ADMIN_TGLAXP, ADMIN_FORCE1ST], ADMIN_TEXTS_L, ADMIN_TTS_L] call _fnc_setup;
-		[ACT_BTNS_R6, [ADMIN_TGLFT, ADMIN_TGLARS, ADMIN_GEARRESET, ADMIN_TGLTM], ADMIN_TEXTS_R, ADMIN_TTS_R] call _fnc_setup;
+		[ACT_BTNS_R6, [ADMIN_TGLFT, ADMIN_GARBAGE, ADMIN_GEARRESET, ADMIN_TGLTM], ADMIN_TEXTS_R, ADMIN_TTS_R] call _fnc_setup;
 
 		if (server getVariable ['enableWpnProf',false]) then {_display displayCtrl (ACT_BTNS_L6 select 2) ctrlSetTextColor MENU_TEXT_COLOR_TRUE_ARRAY} else {_display displayCtrl (ACT_BTNS_L6 select 2) ctrlSetTextColor MENU_TEXT_COLOR_FALSE_ARRAY};
 		if (activeBE) then {_display displayCtrl (ACT_BTNS_L6 select 3) ctrlSetTextColor MENU_TEXT_COLOR_TRUE_ARRAY} else {_display displayCtrl (ACT_BTNS_L6 select 3) ctrlSetTextColor MENU_TEXT_COLOR_FALSE_ARRAY};
