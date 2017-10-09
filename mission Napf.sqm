@@ -197,7 +197,7 @@ class AddonsMetaData
 randomSeed=1830176;
 class ScenarioData
 {
-	author="Toshiroh/Ken";
+	author="Barbolani - ported by Toshiroh/Ken";
 	respawnDialog=0;
 	respawn=3;
 	respawnDelay=30;
@@ -274,7 +274,7 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="[SP/CO50] A3 - Antistasi Napf (Blue)";
+		briefingName="[SP/CO] Antistasi Napf Blufor 1.7.17 ";
 		overviewText="Build an FIA Army from scratch and defeat the AAF and CSAT forces in a whole map Dynamic Mission.";
 		resistanceWest=0;
 		resistanceEast=1;
