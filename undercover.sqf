@@ -141,6 +141,13 @@ while {_reason == ""} do {
 		_vehicle = vehicle _player;
 		_vehicleType = typeOf _vehicle;
 
+        //Vehicle has static gunner mount from JNL
+        _getInGunnerActionID =_vehicle getVariable ["jnl_getInGunnerActionID", nil];
+        if !(isnil "_getInGunnerActionID") then {
+            _reason = localize "STR_HINTS_UND_NOTCIV";
+            breakTo "main";
+        };
+
 		// Wrong vehicle
 		if !(_vehicleType in _civVehicles) then {
 			_reason = localize "STR_HINTS_UND_CMP_VEH_MIL";
