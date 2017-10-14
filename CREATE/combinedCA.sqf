@@ -37,7 +37,7 @@ _originName = ([_base, _airport] select (_base == "")) call AS_fnc_localizar;
 _task = ["AtaqueAAF",[side_blue,civilian],[format [localize "STR_TSK_CA_CREATE",A3_Str_INDEP,_originName],format ["%1 Attack",A3_Str_INDEP],_originMarker],getMarkerPos _originMarker,"CREATED",10,true,true,"Defend"] call BIS_fnc_setTask;
 
 misiones pushbackUnique "AtaqueAAF"; publicVariable "misiones";
-_attackDuration = time + 900;
+_attackDuration = time + 1800;
 
 if !(_forceAirport == "") then {
 	_involveCSAT = false;
