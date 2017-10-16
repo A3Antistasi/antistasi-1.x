@@ -5,7 +5,7 @@ _dam = _this select 2;
 _injurer = _this select 3;
 
 //faltará todos los checks de petros, y de castigo, en Slowhand init habrá que esperar a que no esté inconsciente, también los checks de owner
-
+//Check on Remote Control
 if (isPlayer _unit) then
 	{
 	_owner = player getVariable ["owner",player];
@@ -54,7 +54,7 @@ else
 
 if (_part == "") then
 	{
-	if (_dam > 0.95) then
+	if (_dam >= 1) then    //Stef 16/10 disable instadeath
 		{
 		if (!(_unit getVariable "inconsciente")) then
 			{
