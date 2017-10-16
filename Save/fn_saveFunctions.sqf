@@ -162,7 +162,7 @@ fn_saveProfile = {
 
 //ADD VARIABLES TO THIS ARRAY THAT NEED SPECIAL SCRIPTING TO LOAD
 specialVarLoads =
-["campaign_playerList","cuentaCA","miembros","antenas","posHQ","prestigeNATO","prestigeCSAT","APCAAFcurrent","tanksAAFcurrent","planesAAFcurrent","helisAAFcurrent","time","resourcesAAF","skillFIA","skillAAF","destroyedBuildings","flag_chopForest","BE_data","enableOldFT","enableMemAcc","hr","resourcesFIA","vehicles","weapons","magazines","items","backpacks","objectsHQ","addObjectsHQ","supportOPFOR","supportBLUFOR","garrison","mines","emplacements","campList","tasks","idleBases","unlockedWeapons","unlockedItems","unlockedMagazines","unlockedBackpacks"];
+["campaign_playerList","cuentaCA","membersPool","antenas","posHQ","prestigeNATO","prestigeCSAT","APCAAFcurrent","tanksAAFcurrent","planesAAFcurrent","helisAAFcurrent","time","resourcesAAF","skillFIA","skillAAF","destroyedBuildings","flag_chopForest","BE_data","enableOldFT","enableMemAcc","hr","resourcesFIA","vehicles","weapons","magazines","items","backpacks","objectsHQ","addObjectsHQ","supportOPFOR","supportBLUFOR","garrison","mines","emplacements","campList","tasks","idleBases","unlockedWeapons","unlockedItems","unlockedMagazines","unlockedBackpacks"];
 
 /*
 	Variables that are loaded, but do not require special procedures
@@ -175,6 +175,7 @@ fn_setData = {
 
 	if (_varName in specialVarLoads) then {
 		call {
+		    if(_varName == 'membersPool') exitWith {{membersPool pushBackUnique _x;} forEach _varValue;};
 			if(_varName == 'campaign_playerList') exitWith {server setVariable ["campaign_playerList",_varValue,true]};
 			if(_varName == 'cuentaCA') exitWith {cuentaCA = _varValue max 2700};
 			if(_varName == 'flag_chopForest') then {

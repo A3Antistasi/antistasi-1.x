@@ -6,7 +6,7 @@ petros allowdamage false;
 
 //preinit
 ["campaign_playerList"] call fn_loadData;
-["miembros"] call fn_loadData; publicVariable "miembros";
+["membersPool"] call fn_loadData; publicVariable "membersPool";
 flag_playerList = true;
 publicVariable "flag_playerList";
 

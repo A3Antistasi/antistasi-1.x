@@ -400,10 +400,10 @@ class members_menu
 		AS_BOX_D(BOX_H_4);
 		AS_FRAME_D(FRAME_H_4, "Enable Server Membership?");
 
-		BTN_L1(-1, "YES", "", "miembros = []; {miembros pushBack (getPlayerUID _x)} forEach playableUnits; publicVariable ""miembros""; hint ""Server Membership Enabled.\n\nAll the present players have been added to the Member's List.\n\nNon-members cannot use the HQ Ammobox and cannot be commanders, even with Switch Commander enabled.\n\nIf you load a session with this feature disabled, it will change to disabled.\n\nUse this option for Open Server Environments"";");
-		BTN_R1(-1, "NO", "", "miembros = []; publicVariable ""miembros""; hint ""Server Membership Disabled.\n\nAnyone can use the HQ Ammobox and become Commander (if Switch Commander is enabled).\n\nIf you load a session with this feature enabled, it will become enabled.\n\nUse this option for Private Server environments."";");
+		BTN_L1(-1, "YES", "", "membersPool = []; {membersPool pushBack (getPlayerUID _x)} forEach playableUnits; publicVariable ""membersPool""; hint ""Server Membership Enabled.\n\nAll the present players have been added to the Member's List.\n\nNon-members cannot use the HQ Ammobox and cannot be commanders, even with Switch Commander enabled.\n\nIf you load a session with this feature disabled, it will change to disabled.\n\nUse this option for Open Server Environments"";");
+		BTN_R1(-1, "NO", "", "membersPool = []; publicVariable ""membersPool""; hint ""Server Membership Disabled.\n\nAnyone can use the HQ Ammobox and become Commander (if Switch Commander is enabled).\n\nIf you load a session with this feature enabled, it will become enabled.\n\nUse this option for Private Server environments."";");
 
-		BTN_M(BTN_Y_2, -1, "Done", "", "if (!isNil ""miembros"") then {closedialog 0; [] execVM ""Dialogs\firstLoad.sqf"";} else {hint ""Select an option first""};");
+		BTN_M(BTN_Y_2, -1, "Done", "", "if (!isNil ""membersPool"") then {closedialog 0; [] execVM ""Dialogs\firstLoad.sqf"";} else {hint ""Select an option first""};");
 
 	};
 };
@@ -731,9 +731,9 @@ class misCiv_menu // 400
 	AS_FRAME_D(FRAME_H_4, "Available Missions");
 	BTN_BACK(A_CLOSE);
 
-	#define STR_CIV_ASS "closeDialog 0; if (((getPlayerUID player) in miembros) || (player == Slowhand)) then {[[""ASS""],""misReqCiv""] call BIS_fnc_MP} else {hint ""Stranger does not trust you.""};"
-	#define STR_CIV_CVY "closeDialog 0; if (((getPlayerUID player) in miembros) || (player == Slowhand)) then {[[""CONVOY""],""misReqCiv""] call BIS_fnc_MP} else {hint ""Stranger does not trust you.""};"
-	#define STR_CIV_CON "closeDialog 0; if (((getPlayerUID player) in miembros) || (player == Slowhand)) then {[[""CON""],""misReqCiv""] call BIS_fnc_MP} else {hint ""Stranger does not trust you.""};"
+	#define STR_CIV_ASS "closeDialog 0; if (((getPlayerUID player) in membersPool) || (player == Slowhand)) then {[[""ASS""],""misReqCiv""] call BIS_fnc_MP} else {hint ""Stranger does not trust you.""};"
+	#define STR_CIV_CVY "closeDialog 0; if (((getPlayerUID player) in membersPool) || (player == Slowhand)) then {[[""CONVOY""],""misReqCiv""] call BIS_fnc_MP} else {hint ""Stranger does not trust you.""};"
+	#define STR_CIV_CON "closeDialog 0; if (((getPlayerUID player) in membersPool) || (player == Slowhand)) then {[[""CON""],""misReqCiv""] call BIS_fnc_MP} else {hint ""Stranger does not trust you.""};"
 
 	BTN_L1(-1, "Assassination Mission", "", STR_CIV_ASS);
 	BTN_R1(-1, "Convoy Ambush", "", STR_CIV_CVY);
@@ -755,10 +755,10 @@ class misMil_menu // 410
 	AS_FRAME_D(FRAME_H_4, "Available Missions");
 	BTN_BACK(A_CLOSE);
 
-	#define STR_MIL_ASS "closeDialog 0; if (((getPlayerUID player) in miembros) || (player == Slowhand)) then {[[""AS""],""misReqMil""] call BIS_fnc_MP} else {hint ""Nomad does not trust you.""};"
-	#define STR_MIL_CVY "closeDialog 0; if (((getPlayerUID player) in miembros) || (player == Slowhand)) then {[[""CONVOY""],""misReqMil""] call BIS_fnc_MP} else {hint ""Nomad does not trust you.""};"
-	#define STR_MIL_CON "closeDialog 0; if (((getPlayerUID player) in miembros) || (player == Slowhand)) then {[[""CON""],""misReqMil""] call BIS_fnc_MP} else {hint ""Nomad does not trust you.""};"
-	#define STR_MIL_DES "closeDialog 0; if (((getPlayerUID player) in miembros) || (player == Slowhand)) then {[[""DES""],""misReqMil""] call BIS_fnc_MP} else {hint ""Nomad does not trust you.""};"
+	#define STR_MIL_ASS "closeDialog 0; if (((getPlayerUID player) in membersPool) || (player == Slowhand)) then {[[""AS""],""misReqMil""] call BIS_fnc_MP} else {hint ""Nomad does not trust you.""};"
+	#define STR_MIL_CVY "closeDialog 0; if (((getPlayerUID player) in membersPool) || (player == Slowhand)) then {[[""CONVOY""],""misReqMil""] call BIS_fnc_MP} else {hint ""Nomad does not trust you.""};"
+	#define STR_MIL_CON "closeDialog 0; if (((getPlayerUID player) in membersPool) || (player == Slowhand)) then {[[""CON""],""misReqMil""] call BIS_fnc_MP} else {hint ""Nomad does not trust you.""};"
+	#define STR_MIL_DES "closeDialog 0; if (((getPlayerUID player) in membersPool) || (player == Slowhand)) then {[[""DES""],""misReqMil""] call BIS_fnc_MP} else {hint ""Nomad does not trust you.""};"
 
 	BTN_L1(-1, "Assassination Mission", "", STR_MIL_ASS);
 	BTN_L2(-1, "Convoy Ambush", "", STR_MIL_CVY);

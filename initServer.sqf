@@ -10,6 +10,7 @@ call compile preprocessFileLineNumbers "initZones.sqf";
 diag_log "Antistasi MP Server. Zones init finished";
 initZones = true; publicVariable "initZones";
  call compile preprocessFileLineNumbers "initPetros.sqf";
+ diag_log "Antistasi MP Server. Petros init finished";
 
 //Sparker's WarStatistics and roadblock spawning script. Remove these lines if you don't need it:
 //(from here)//
@@ -18,6 +19,7 @@ call compile preprocessFileLineNumbers "WarStatistics\initFunctions.sqf";
 call compile preprocessFileLineNumbers "WarStatistics\initVariablesServer.sqf";
 //call compile preprocessFileLineNumbers "WarStatistics\initRoadblocks2.sqf";
 ws_grid = call ws_fnc_newGridArray;
+diag_log "Antistasi MP Server. WarStatistics init finished";
 //(up to here)//
 
 ["Initialize"] call BIS_fnc_dynamicGroups; //Exec on Server

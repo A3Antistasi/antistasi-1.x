@@ -59,22 +59,17 @@ if(isServer) then {
     AS_session_server = _campaignID; publicVariable "AS_session_server";
 
     switchCom = false; publicVariable "switchCom";
-    miembros = []; publicVariable "miembros";
+    membersPool = []; publicVariable "membersPool";
 
     waitUntil {!isNil "serverID"};
-    //enableRestart = [true, false] select (("AS_enableCampaignReset" call BIS_fnc_getParamValue) == 0);
-    //publicVariable "enableRestart";
+    //Loading members list anyway
+    //Loading membersPool from ext file
+    [] call compile preprocessFileLineNumbers "orgPlayers\mList.sqf";
+    //loading membersPool from profileNameSpace
+    ["membersPool"] call fn_loadData;
+
     if (serverName in servidoresOficiales) then {
         //[] execVM "orgPlayers\mList.sqf";
-        [] call compile preprocessFileLineNumbers "orgPlayers\mList.sqf"; //Need to use this here, otherwise we get an empty miembros list by the time it is being checked further in this file. This would make some non-member a commander WITHOUT loading the campaign. Sparker.
-        ["miembros"] call fn_loadData;
-
-        //Output the member list
-        diag_log "init.sqf: member list:";
-        {
-            diag_log format ["init.sqf: %1", _x];
-        } forEach miembros;
-
         {
             if (([_x] call isMember) AND (isNull Slowhand)) then {
                 Slowhand = _x;
