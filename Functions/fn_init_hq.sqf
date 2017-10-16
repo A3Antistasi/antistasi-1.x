@@ -66,7 +66,7 @@ mapa addAction [localize "str_act_mapInfo",
 	"",
 	"(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"
 ];
-mapa addAction [localize "str_act_tfar",
+/*mapa addAction [localize "str_act_tfar",
 	{
 		nul=CreateDialog "tfar_menu";
 	},
@@ -77,7 +77,7 @@ mapa addAction [localize "str_act_tfar",
 	"",
 	"(isClass (configFile >> ""CfgPatches"" >> ""task_force_radio""))",
 	5
-];
+];*/
 mapa addAction [localize "str_act_moveAsset",
 	"moveObject.sqf",
 	nil,
