@@ -7,7 +7,7 @@ _display displayRemoveEventHandler ["KeyDown", A3AS_menu_escEH];
 
 if (_restart) exitWith {
 	switchCom = false; publicVariable 'switchCom';
-	{miembros pushBack (getPlayerUID _x)} forEach playableUnits; publicVariable 'miembros';
+	{membersPool pushBack (getPlayerUID _x)} forEach playableUnits; publicVariable 'membersPool';
 	closedialog 100;
 
 	if ((isNil 'statsLoaded') && (isNil 'placementDone')) then {
@@ -20,8 +20,8 @@ call {
 		switchCom = true; publicVariable 'switchCom';
 	};
 	if !(ctrlChecked (_display displayCtrl 2501)) then {
-		{miembros pushBack (getPlayerUID _x)} forEach playableUnits;
-		publicVariable 'miembros';
+		{membersPool pushBack (getPlayerUID _x)} forEach playableUnits;
+		publicVariable 'membersPool';
 	};
 	if !(ctrlChecked (_display displayCtrl 2502)) exitWith {
 		//disableUserInput true;

@@ -120,8 +120,8 @@ if (_isJip) then {
 	[true] execVM "reinitY.sqf";
 	if !([player] call isMember) then {
 		if (serverCommandAvailable "#logout") then {
-			miembros pushBack (getPlayerUID player);
-			publicVariable "miembros";
+			membersPool pushBack (getPlayerUID player);
+			publicVariable "membersPool";
 			hint localize "STR_HINTS_INIT_ADMIN_MEMBER"
 		} else {
 			hint format [localize "STR_HINTS_INIT_GUEST_WELCOME", name player];
@@ -130,7 +130,7 @@ if (_isJip) then {
 		hint format [localize "STR_HINTS_INIT_MEMBER_RETURN", name player];
 
 		if (serverName in servidoresOficiales) then {
-			if ((count playableUnits == maxPlayers) AND (({[_x] call isMember} count playableUnits) < count miembros)) then {
+			if ((count playableUnits == maxPlayers) AND (({[_x] call isMember} count playableUnits) < count membersPool)) then {
 				{
 					if !([_x] call isMember) exitWith {
 						["serverFull",false,1,false,false] remoteExec ["BIS_fnc_endMission",_x];
@@ -203,7 +203,7 @@ if (_isJip) then {
 				//};
 				diag_log "Antistasi MP Client. Client finished";
 		    } else {
-		    	miembros = [];
+		    	membersPool = [];
 		    	[] execVM "Dialogs\firstLoad.sqf";
 		    };
 		};

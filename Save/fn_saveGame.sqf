@@ -10,7 +10,7 @@ flag_savingServer = true;
 //game
 ["cuentaCA", cuentaCA] call fn_saveData;
 ["smallCAmrk", smallCAmrk] call fn_saveData;
-["miembros", miembros] call fn_saveData;
+["membersPool", membersPool] call fn_saveData;
 ["antenas", antenasmuertas] call fn_saveData;
 ["mrkAAF", mrkAAF - controles] call fn_saveData;
 ["mrkFIA", mrkFIA - puestosFIA - controles] call fn_saveData;

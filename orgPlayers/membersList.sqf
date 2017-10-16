@@ -1,6 +1,6 @@
 private ["_text","_counter","_player"];
 
-if (count miembros == 0) exitWith {hint localize "STR_HINTS_GEN_MEM_DIS"};
+if (count membersPool == 0) exitWith {hint localize "STR_HINTS_GEN_MEM_DIS"};
 
 _text = "Ingame Members\n\n";
 _counter = 0;
@@ -8,7 +8,7 @@ _counter = 0;
 	_player = _x getVariable ["owner",objNull];
 	if (!isNull _player) then {
 		_uid = getPlayerUID _player;
-		if (_uid in miembros) then {_text = format ["%1%2\n",_text,name _player]} else {_counter = _counter + 1};
+		if (_uid in membersPool) then {_text = format ["%1%2\n",_text,name _player]} else {_counter = _counter + 1};
 	};
 } forEach playableUnits;
 
