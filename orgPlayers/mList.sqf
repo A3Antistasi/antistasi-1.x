@@ -1,7 +1,9 @@
 if !(isServer) exitWith {};
-
+//This is the path to external storage folder(folder should be in the root of arma3 folder).
+externalConfigFolder = "\A3Antistasi";
 private ["_mList"];
 
+//TODO remove this after external loading is tested
 _mList = [
 	"76561197960604947",  	//Fenris
 	"76561197961960492",  	//ForeingInvestor
@@ -57,7 +59,19 @@ _mList = [
 	"76561198057119793"		// Duke
 ];
 
+diag_log format ["isFilePatchingEnabled: %1", isFilePatchingEnabled];
+if(isFilePatchingEnabled) then {
+    _memberList = loadFile (externalConfigFolder + "\memberlist.txt");
+    if ( _memberList != "" ) then
+	{
+	    //Members list is in form of CRLF separated playerIds
+	    _mList = _memberList splitString toString [13,10];
+	    diag_log format ["DEBUG: External content from %1",externalConfigFolder + "\memberlist.txt"];
+	    {diag_log format ["DEBUG: members list> %1", _x];} forEach _mList;
+	};
+};
+
 {
-	miembros pushBackUnique _x;
+	membersPool pushBackUnique _x;
 } forEach _mList;
-publicVariable "miembros";
+publicVariable "membersPool";

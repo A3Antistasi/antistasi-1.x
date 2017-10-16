@@ -223,7 +223,7 @@ publicVariable "unlockedItems";
 publicVariable "unlockedOptics";
 publicVariable "unlockedBackpacks";
 publicVariable "unlockedMagazines";
-publicVariable "miembros";
+publicVariable "membersPool";
 publicVariable "vehInGarage";
 publicVariable "reportedVehs";
 publicVariable "activeACE";
