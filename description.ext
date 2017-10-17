@@ -330,6 +330,12 @@ class Params {
             typeName = "BOOL";
             force = 1;
     };
+    class AS_param_onlyPermanentMembers {
+        title = "Only permanent members are eligible for commandership at start";
+            values[] = {0,1};
+            texts[] = {"Off","On"};
+            default = 1;
+    };
     #include "aceSettings.hpp"
 };
 

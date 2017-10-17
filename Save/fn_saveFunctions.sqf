@@ -175,7 +175,9 @@ fn_setData = {
 
 	if (_varName in specialVarLoads) then {
 		call {
-		    if(_varName == 'membersPool') exitWith {{membersPool pushBackUnique _x;} forEach _varValue;};
+		    if(_varName == 'membersPool' AND (['AS_param_onlyPermanentMembers',1] call BIS_fnc_getParamValue) == 0) exitWith {
+		        {membersPool pushBackUnique _x;} forEach _varValue;
+		    };
 			if(_varName == 'campaign_playerList') exitWith {server setVariable ["campaign_playerList",_varValue,true]};
 			if(_varName == 'cuentaCA') exitWith {cuentaCA = _varValue max 2700};
 			if(_varName == 'flag_chopForest') then {
