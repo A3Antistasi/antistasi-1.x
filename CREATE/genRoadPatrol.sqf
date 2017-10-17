@@ -4,7 +4,7 @@ _allVehicles = [];
 _allGroups = [];
 _allSoldiers = [];
 
-_vehicleArray = vehPatrol + vehPatrolBoat;
+_vehicleArray = vehPatrol + (if ("rhs_weap_akms" in gear_allWeapons) then {} else {vehPatrolBoat}); //Stef 17/10 Remove speedboats when RHS is active
 
 while {true} do {
 	_vehicleType = selectRandom _vehicleArray;

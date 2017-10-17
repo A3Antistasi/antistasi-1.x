@@ -77,6 +77,7 @@ _allVehicles pushBack _crate;
 sleep 0.5;
 
 if (_marker in puertos) then {
+	if !("rhs_weap_akms" in gear_allWeapons) then {    //17/10 Stef removing speedboats from RHS
 	_position = [_markerPos,_size,_size*3,25,2,0,0] call BIS_Fnc_findSafePos;
 	_vehicleData = [_position, 0, (selectRandom vehPatrolBoat), side_green] call bis_fnc_spawnvehicle;
 	_vehicle = _vehicleData select 0;
@@ -103,7 +104,7 @@ if (_marker in puertos) then {
 	} forEach _vehCrew;
 	_allGroups pushBack _groupVehicle;
 	_allVehicles pushBack _vehicle;
-	sleep 1;
+	sleep 1;} else {};
 } else {
 	_buildings = nearestObjects [_markerPos,["Land_TTowerBig_1_F","Land_TTowerBig_2_F","Land_Communication_F"], _size];
 	if (count _buildings > 0) then {
