@@ -20,8 +20,6 @@ BTN_L3(-1, "Move HQ to another Zone", "", "closeDialog 0; [] spawn moveHQ;");
 BTN_R1(-1, "Ingame Member's List", "", "if (isMultiplayer) then {[] execVM ""OrgPlayers\membersList.sqf""} else {hint ""This function is MP only""};");
 BTN_R2(109, "Train FIA", "", STR_HQ_FIA);
 BTN_R3(-1, "Rebuild Assets", "Cost: 5.000 €", "closeDialog 0; [] execVM ""rebuildAssets.sqf"";");
-
-BTN_M(BTN_Y_4, -1, "Garage Access", "", "closeDialog 0; [false] spawn garage;");
 	};
 };
 
@@ -674,32 +672,6 @@ class camp_dialog // 350
 	};
 };
 
-class com_menu // 360
-{
-	idd=-1;
-	movingenable=false;
-
-	class controls
-	{
-
-	AS_BOX_D(BOX_H_6);
-	AS_FRAME_D(FRAME_H_6, "Commander Menu");
-	BTN_BACK(A_CLOSE);
-
-	#define STR_COM_RES "closeDialog 0; [""restrictions""] remoteExecCall [""fnc_BE_broadcast"", 2];"
-	#define STR_COM_PRO "closeDialog 0; [""progress""] remoteExecCall [""fnc_BE_broadcast"", 2];"
-	#define STR_COM_FIA "closeDialog 0; if (player == Slowhand) then {[""status""] remoteExecCall [""AS_fnc_infoScreen"", 2]};"
-
-	BTN_L1(-1, "Current Restrictions", "Display current AXP restrictions", STR_COM_RES);
-	BTN_L2(-1, "Current Progress", "Display current AXP progress", STR_COM_PRO);
-
-	BTN_R1(-1, "Additional Options", "Toggle AXP system, easy mode, old fast-travel system, etc", "closeDialog 0; createDialog ""com_options"";");
-	BTN_R2(-1, "Maintenance", "Resync the arsenal, run gear checks, update FIA progress, etc", "closeDialog 0; createDialog ""maintenance_menu"";");
-
-	BTN_M(BTN_Y_3, -1, "FIA Status", "Display FIA details", STR_COM_FIA);
-	};
-};
-
 class boost_menu // 390
 {
 	idd=-1;
@@ -961,19 +933,14 @@ BTN_BACK(A_CLOSE);
 
 #define STR_GO_GAR "closeDialog 0; [[], ""garbageCleaner.sqf""] remoteExec [""execVM"", 2];"
 #define STR_GO_PSS "closeDialog 0; [] remoteExec [""AS_fnc_saveGame"",2];"
-#define STR_GO_RSA "closeDialog 0; if (player == Slowhand) then {[true] remoteExec [""AS_fnc_MAINT_arsenal"", 2];};"
 
 BTN_L1(-1, "Civ Config", "", "closeDialog 0; createDialog ""civ_config"";");
-BTN_L2(-1, "Commander Menu", "", "closeDialog 0; createDialog ""com_menu"";");
-BTN_L3(-1, "Music ON/OFF", "", "closedialog 0; if (musicON) then {musicON = false; hint ""Music turned OFF"";} else {musicON = true; execVM ""musica.sqf""; hint ""Music turned ON""};");
-BTN_L4(-1, "FPS Limiter", "", "closeDialog 0; createDialog ""fps_limiter"";");
+BTN_L2(-1, "Spawn Dist. Config", "", "closeDialog 0; createDialog ""spawn_config"";");
+BTN_L3(-1, "FPS Limiter", "", "closeDialog 0; createDialog ""fps_limiter"";");
 
 BTN_R1(-1, "Garbage Clean", "", STR_GO_GAR);
 BTN_R2(-1, "Persistent Save", "", STR_GO_PSS);
-BTN_R3(-1, "Reinit UI \ Radio", "", "closeDialog 0; [] execVM ""reinitY.sqf"";statistics= [] execVM ""statistics.sqf"";");
-BTN_R4(-1, "Spawn Dist. Config", "", "closeDialog 0; createDialog ""spawn_config"";");
-
-BTN_M(BTN_Y_5, -1, "Hard Gear Reset", "General maintenance. Use this only to remove weapons/ammo from mods that you no longer use. Maintenance accessible through the regular commander's menu should suffice for anything else.", STR_GO_RSA);
+BTN_R3(-1, "Music ON/OFF", "", "closedialog 0; if (musicON) then {musicON = false; hint ""Music turned OFF"";} else {musicON = true; execVM ""musica.sqf""; hint ""Music turned ON""};");
 	};
 };
 
@@ -989,8 +956,6 @@ class game_options_player
 		BTN_BACK(A_CLOSE);
 
 		BTN_L1(-1, "Music ON/OFF", "", "closedialog 0; if (musicON) then {musicON = false; hint ""Music turned OFF"";} else {musicON = true; execVM ""musica.sqf""; hint ""Music turned ON""};");
-
-		BTN_R1(-1, "Reinit UI \ Radio", "", "closeDialog 0; [] execVM ""reinitY.sqf"";statistics= [] execVM ""statistics.sqf"";");
 	};
 };
 
