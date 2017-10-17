@@ -21,7 +21,7 @@ misiones pushBack _tsk; publicVariable "misiones";
 _tipoVeh = bluHeliArmed;
 
 if (_prestigio > 70) then{
-	_tipoVeh = bluCASFW;
+	_tipoVeh = bluHeliGunship; //17/10 Stef - Removed fixed wings, too difficult to assing where to fly.
 }else{
 	if (_prestigio > 30) then{
 		_tipoVeh = bluHeliGunship;
