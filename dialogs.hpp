@@ -956,6 +956,7 @@ class game_options_player
 		BTN_BACK(A_CLOSE);
 
 		BTN_L1(-1, "Music ON/OFF", "", "closedialog 0; if (musicON) then {musicON = false; hint ""Music turned OFF"";} else {musicON = true; execVM ""musica.sqf""; hint ""Music turned ON""};");
+		BTN_R1(-1, "Ingame Member's List", "", "if (isMultiplayer) then {[] execVM ""OrgPlayers\membersList.sqf""} else {hint ""This function is MP only""};");
 	};
 };
 
