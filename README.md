@@ -38,8 +38,8 @@ b4) place it into \Arma3\Missions or \MPmission depending on your intentions.
 
 # Change faction or island (portings are not fully supported)
 
-\AntistasiOfficial.Altis find the mission.sqm, remove it and rename the mission you want as "mission.sqm"
+\Change faction or island\ rename the mission you want to "mission.sqm" copy and paste into AntistasiOfficial.Altis
 
-In case you change world, after that, rename the folder to .worldname.
+In case you change world also rename the folder to .worldname.
 
-Example: delete mission.sqm, rename "Antistasi NapfG.sqm" to "mission.sqm", rename folder to AntistasiOfficial.Napf
+Example: rename "Antistasi NapfG.sqm" to "mission.sqm", copy paste into \AntistasiOfficial.Altis, rename that folder to AntistasiOfficial.Napf
