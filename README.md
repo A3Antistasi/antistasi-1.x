@@ -20,21 +20,11 @@ Official guide: https://docs.google.com/document/d/1_XamnTWgVgy0jDinYSDhAWG_vKDa
 
 Download here https://github.com/A3Antistasi/antistasiofficial/archive/master.zip
 
-Unzip the folder
-
-Open the unzipped folder
-
-Open antistasi-officialmaster look for mission.sqm files, rename to mission.sqm the world/version you wanna play
-
-Rename the folder antistasi-officialmaster to Antistasi.Altis (or desired world name according to which world you renamed)
-
-*Don't forget the .Altis or .Napf at the end of the foldername or it won't be recognised. 
-
-
+Unzip the folder and open it
 
 Now you've several options:
 
-a) drag your Antistasi.Altis folder where you save/load editor mission and play it form EDEN Editor
+a) drag your AntistasiOfficial.Altis folder where you save/load editor mission and play it form EDEN Editor
 
 b1) download PBOManager from http://www.armaholic.com/page.php?id=16369
 
@@ -45,3 +35,11 @@ b3) right click on Antistasi.Altis folder then PBO manager then Pack into .pbo
 b4) place it into \Arma3\Missions or \MPmission depending on your intentions.
 
 *To play it on dedicated server you've to make the .pbo and upload it to \Arma3\MPmissions
+
+# Change faction or island (portings are not fully supported)
+
+\AntistasiOfficial.Altis find the mission.sqm, remove it and rename the mission you want as "mission.sqm"
+
+In case you change world, after that, rename the folder to .worldname.
+
+Example: delete mission.sqm, rename "Antistasi NapfG.sqm" to "mission.sqm", rename folder to AntistasiOfficial.Napf
