@@ -59,7 +59,7 @@ else
 	} forEach ([300,0,_camion,"BLUFORSpawn"] call distanceUnits);
 	while {(_counter < _cuenta) and (alive _camion) and (dateToNumber date < _fechalimnum)} do
 		{
-		while {(_counter < _cuenta) and (_camion distance _posicion < 40) && (speed _camion < 1) and (alive _camion) and !({_x getVariable ["inconsciente",false]} count ([40,0,_camion,"BLUFORSpawn"] call distanceUnits) == count ([40,0,_camion,"BLUFORSpawn"] call distanceUnits)) and ({(side _x == side_green) and (_x distance _camion < 50)} count allUnits == 0) and (dateToNumber date < _fechalimnum)} do
+		while {(_counter < _cuenta) and (_camion distance _posicion < 40) && (speed _camion < 1) and (alive _camion) and !(isNull attachedTo _camion) and !({_x getVariable ["inconsciente",false]} count ([40,0,_camion,"BLUFORSpawn"] call distanceUnits) == count ([40,0,_camion,"BLUFORSpawn"] call distanceUnits)) and ({(side _x == side_green) and (_x distance _camion < 50)} count allUnits == 0) and (dateToNumber date < _fechalimnum)} do
 			{
 			if !(_active) then {
 				{

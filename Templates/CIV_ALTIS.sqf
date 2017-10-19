@@ -51,4 +51,4 @@ CIV_journalists = [
 	"C_journalist_F"
 ];
 
-AS_misVehicleBox = "C_Van_01_box_F";
+AS_misVehicleBox = "Box_East_AmmoVeh_F"; //test 18/10
