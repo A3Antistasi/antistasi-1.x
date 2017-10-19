@@ -16,7 +16,7 @@ _pop = _pop + _numCiv;
 } forEach ciudades;
 _popFIA = round _popFIA;
 _popAAF = round _popAAF;
-hint format ["Altis\n\nTotal pop: %1\nFIA Support: %2\nAAF SUpport: %3 \n\nDestroyed Cities: %4\n\nClick on the zone",_pop, _popFIA, _popAAF, {_x in destroyedCities} count ciudades];
+hint format ["Altis\n\nTotal pop: %1\nFIA Support: %2\nAAF SUpport: %3 \n\nDestroyed Cities: %4\n\nClick on the zone",_pop, _popFIA, _popAAF, {_x in destroyedCities} count ciudades];  //Stef need to change Altis to "worldname", don't know syntax
 
 openMap true;
 
