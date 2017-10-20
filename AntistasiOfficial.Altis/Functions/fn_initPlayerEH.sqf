@@ -86,7 +86,7 @@ player addEventHandler ["GetInMan", {
 	private ["_owner"];
 
 	if (isMultiplayer) then {
-		_owner = _vehicle getVariable ["duenyo",getPlayerUID player];
+		_owner = _vehicle getVariable ["vehOwner",getPlayerUID player];
 		if (_owner != (getPlayerUID player)) then {
 			if ({getPlayerUID _x == _owner} count (units group player) == 0) then {
 				hint localize "STR_HINTS_EH_VEH_GROUP";

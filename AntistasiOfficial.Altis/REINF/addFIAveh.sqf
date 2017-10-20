@@ -40,7 +40,7 @@ else
 	if (player != Slowhand) then
 		{
 		[-1* _coste] call resourcesPlayer;
-		_veh setVariable ["duenyo",getPlayerUID player,true];
+		_veh setVariable ["vehOwner",getPlayerUID player,true];
 		}
 	else
 		{
@@ -51,7 +51,7 @@ else
 		else
 			{
 			[-1* _coste] call resourcesPlayer;
-			_veh setVariable ["duenyo",getPlayerUID player,true];
+			_veh setVariable ["vehOwner",getPlayerUID player,true];
 			};
 		};
 	};

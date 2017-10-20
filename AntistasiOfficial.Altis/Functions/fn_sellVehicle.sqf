@@ -5,7 +5,7 @@ if (isNull _veh) exitWith {hint "You are not looking at any vehicle"};
 if (_veh distance getMarkerPos guer_respawn > 50) exitWith {hint "Vehicle must be within 50m of the flag"};
 if ({isPlayer _x} count crew _veh > 0) exitWith {hint "In order to sell, vehicle must be empty."};
 
-_owner = _veh getVariable "duenyo";
+_owner = _veh getVariable "vehOwner";
 _exit = false;
 
 if !(isNil "_owner") then {
