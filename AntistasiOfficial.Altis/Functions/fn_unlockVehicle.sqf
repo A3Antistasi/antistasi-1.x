@@ -1,4 +1,4 @@
-params ["_isCom"];
+params ["_isCommander"];
 private ["_veh", "_owner", "_exit"];
 
 _veh = cursortarget;
@@ -16,20 +16,9 @@ if !(isMultiplayer) exitWith {
 	};
 };
 
-_owner = _veh getVariable "duenyo";
-_exit = false;
-
-if (!_isCom) then {
-	_owner = _veh getVariable "duenyo";
-	if (!isNil "_owner") then {
-		if (_owner isEqualType "") then {
-			if (getPlayerUID player != _owner) then {_exit = true};
-		};
-	};
-};
-
-if (_exit) exitWith {hint "You are not owner of this vehicle and you cannot unlock it"};
-if ((_isCom) and (isNil "_owner")) exitWith {_veh setVariable ["duenyo",getPlayerUID player,true]; hint "Vehicle locked";};
-
-_veh setVariable ["duenyo",nil,true];
-hint "Vehicle unlocked.";
+_owner = _veh getVariable ["vehOwner", nil];
+//Noones vehicle can be locked
+if (isNil "_owner") exitWith {_veh setVariable ["vehOwner",getPlayerUID player,true]; hint "Vehicle locked";};
+//Commander and owner can unlock a vehicle
+if ((_isCommander) or ((getPlayerUID player) isEqualTo _owner)) exitWith {_veh setVariable ["vehOwner",nil,true]; hint "Vehicle unlocked";};
+hint "You are not owner of this vehicle and you cannot unlock it";
