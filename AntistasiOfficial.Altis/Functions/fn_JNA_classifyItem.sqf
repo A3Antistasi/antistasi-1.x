@@ -17,7 +17,15 @@ params ["_item"];
 
 _data = _x call bis_fnc_itemtype;
 
+_isParent={
+    params [["_checked", ""], ["_parent", ""]];
+    (format["configName(_x) isEqualTo '%1'", _checked] configClasses (configfile >> "CfgWeapons")) params ["_checkedConfig"];
+    if(isnil "_checkedConfig")exitWith{false};
+    _parent in ([_checkedConfig , true] call BIS_fnc_returnParents);
+};
+
 call {
+    if([_item, "CBA_MiscItem"] call _isParent) exitWith {_category = "misc";};
 	if ((_data select 0) isEqualTo "Weapon") exitWith {
 		if ((_data select 1) in ["AssaultRifle","MachineGun","Shotgun","Rifle","SubmachineGun","SniperRifle"]) exitWith {
 			_category = "primary";
