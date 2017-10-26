@@ -13,6 +13,8 @@ if (_vehicle isKindOf "Car") then {
 	_vehicle addEventHandler ["HandleDamage",{if (((_this select 1) find "wheel" != -1) and (_this select 4=="") and (!isPlayer driver (_this select 0))) then {0;} else {(_this select 2);};}];
 };
 
+if(_vehicle iskindof "thing") then {_vehicle call jn_fnc_logistics_addAction};
+
 _vehicleType = typeOf _vehicle;
 
 call {

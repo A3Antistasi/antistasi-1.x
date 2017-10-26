@@ -13,7 +13,7 @@ _nombredest = [_marcador] call AS_fnc_localizar;
 
 _tsk = ["LOG",[side_blue,civilian],[format [_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_marcador],_posicion,"CREATED",5,true,true,"Heal"] call BIS_fnc_setTask;
 misiones pushBack _tsk; publicVariable "misiones";
-_pos = (getMarkerPos guer_respawn) findEmptyPosition [1,50,AS_misVehicleBox];
+_pos = (getMarkerPos guer_respawn) findEmptyPosition [1,50,AS_misSupplyBox];
 
 _camion = AS_misVehicleBox createVehicle _pos;
 [_camion] spawn VEHinit;
