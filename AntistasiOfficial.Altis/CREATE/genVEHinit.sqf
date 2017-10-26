@@ -1,6 +1,8 @@
 params ["_vehicle"];
 private ["_vehicleType"];
 
+_vehicle setfuel 0.15;
+_vehicle setfuelcargo 0.1;
 
 if ((_vehicle isKindOf "FlagCarrier") OR (_vehicle isKindOf "Building")) exitWith {};
 if (_vehicle isKindOf "ReammoBox_F") exitWith {[_vehicle] call cajaAAF};

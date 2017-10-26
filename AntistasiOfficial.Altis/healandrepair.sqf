@@ -18,7 +18,7 @@ _posHQ = getMarkerPos guer_respawn;
 	if (_x distance _posHQ < 100) then {
 		 reportedVehs = reportedVehs - [_x];
 		_x setDamage 0;
-		_x setFuel 0.8;
+		//_x setFuel 0.01;  no refuel anymore
 		[_x,1] remoteExec ["setVehicleAmmo",_x];
 	};
 } forEach vehicles;
