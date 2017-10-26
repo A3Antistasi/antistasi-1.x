@@ -18,12 +18,11 @@ _veh addEventHandler ["killed",{if ((side (_this select 0) == side_green) or (si
 
 [_veh] spawn vehicleRemover;
 
-//This removes NATO vehicles requested by commander, so I commented it out. Sparker.
-/*
+
+//Stef 26/10 reenabled or people were wondering why empty NATO vehicle were unaccessible. Infact is intended
 if ((count crew _veh) > 0) then
 	{
 	[_veh] spawn VEHdespawner
 	};
-*/
 
 
