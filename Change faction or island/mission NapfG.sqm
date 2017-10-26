@@ -275,7 +275,7 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="[SP/CO] Antistasi Napf Greenfor 1.7.17C ";
+		briefingName="[SP/CO] Antistasi Napf Greenfor 1.7.17E ";
 		overviewText="Build an FIA Army from scratch and defeat the AAF and CSAT forces in a whole map Dynamic Mission.";
 		resistanceWest=0;
 		resistanceEast=1;
