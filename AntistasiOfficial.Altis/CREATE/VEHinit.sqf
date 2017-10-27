@@ -74,6 +74,7 @@ call {
 					hint "Only Humans can pilot an air vehicle";
 				};
 			};
+		_vehicle setfuel 0.3;
 		}];
 
 		if (_vehicleType in heli_unarmed) then {

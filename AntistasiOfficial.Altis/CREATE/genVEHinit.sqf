@@ -47,6 +47,7 @@ call {
 					hint format ["AI is not capable of flying %1 vehicles.", A3_Str_INDEP];
 				};
 			};
+		_vehicle setfuel 0.55;
 		}];
 
 		if (_vehicleType in heli_unarmed) then {
