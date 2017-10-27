@@ -10,19 +10,25 @@ jnl_vehicleHardpoints = [
     	[1,		[-0.04,-1.7,-0.72],		[1,2,3,4]]		//cargo node
     ]],
 
-    //Boxer truck
+    //Civi and FIA green truck
     ["\A3\soft_f_gamma\van_01\Van_01_transport_F.p3d", [
     	[0,		[0,-1.60422,-0.63],			[2,3,4,5,6,7,8,9]],
     	[1,		[0,-1.06937,-0.63],			[2,3,4,5]],
     	[1,		[0,-2.61185,-0.63],			[6,7,8,9]]
     ]],
 
-    //Zamak
+    //AAF Zamak open
     ["\A3\soft_f_beta\Truck_02\Truck_02_transport_F", [
     	[0,		[-0.000671387,-1.31882,-0.81],	[2,3,4,5,6,7,8,9,10,11,12,13]],
     	[1,		[0,0,-0.81],					[2,3,4,5,6,7,8]],
 		[1,		[0,-2.1,-0.81],					[9,10,11,12,13]]
     ]],
+
+	//AAF Zamak closed STEF 27/10
+	["\A3\soft_f_beta\Truck_02\Truck_02_covered_F.p3d", [
+	    [1,		[0,0,-0.81],					[2,3,4,5,6,7,8]],
+		[1,		[0,-2.1,-0.81],					[9,10,11,12,13]]
+	]],
 
     //RHS Gaz-66 truck
     ["\rhsafrf\addons\rhs_gaz66\rhs_gaz66.p3d", [
