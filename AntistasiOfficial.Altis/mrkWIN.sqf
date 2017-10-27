@@ -48,7 +48,7 @@ _bandera setFlagTexture guer_flag_texture;
 sleep 5;
 [[_bandera,"unit"],"AS_fnc_addActionMP"] call BIS_fnc_MP;
 [[_bandera,"vehicle"],"AS_fnc_addActionMP"] call BIS_fnc_MP;
-[[_bandera,"garage"],"AS_fnc_addActionMP"] call BIS_fnc_MP;
+// [[_bandera,"garage"],"AS_fnc_addActionMP"] call BIS_fnc_MP; Stef 27/10 disabled old garage
 
 _antenna = [antenas,_posicion] call BIS_fnc_nearestPosition;
 if (getPos _antenna distance _posicion < 100) then {
