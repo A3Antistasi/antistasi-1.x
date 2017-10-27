@@ -163,7 +163,7 @@ if !(count _position == 0) then {
 
 _strength = 1 max (round (_size/50));
 _currentStrength = 0;
-if (_isFrontline) then {_strength = _strength * 2};
+if (_isFrontline) then {_strength = _strength * 1}; //Stef 27/10 disabled the frontline unit increase untill AI caps is better handled
 
 if (_marker in puestosAA) then {
 	_groupType = [infAA, side_green] call AS_fnc_pickGroup;
@@ -174,12 +174,12 @@ if (_marker in puestosAA) then {
 };
 
 while {(spawner getVariable _marker) AND (_currentStrength < _strength)} do {
-	if ((diag_fps > minimoFPS) OR (_currentStrength == 0)) then {
+	if ((_currentStrength == 0)) then {   //Stef removed FPS check, useless for MP, maybe add some extra checks if singleplayer
 		_groupType = [infSquad, side_green] call AS_fnc_pickGroup;
 		_group = [_markerPos, side_green, _groupType] call BIS_Fnc_spawnGroup;
 		if (activeAFRF) then {_group = [_group, _markerPos] call AS_fnc_expandGroup};
 		sleep 1;
-		_patrolParams = [leader _group, _marker, "SAFE","SPAWNED","NOVEH2","NOFOLLOW"];
+		_patrolParams = [leader _group, _marker, "SAFE","SPAWNED","NOVEH2"]; //Stef removed "NOFOLLOW"
 		if (_currentStrength == 0) then {_patrolParams pushBack "FORTIFY"; _patrolParams pushBack "RANDOMUP"};
 		_patrolParams execVM "scripts\UPSMON.sqf";
 		_allGroups pushBack _group;
