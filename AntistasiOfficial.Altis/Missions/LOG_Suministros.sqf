@@ -15,7 +15,7 @@ _tsk = ["LOG",[side_blue,civilian],[format [_tskDesc,_nombredest,numberToDate [2
 misiones pushBack _tsk; publicVariable "misiones";
 _pos = (getMarkerPos guer_respawn) findEmptyPosition [1,50,AS_misSupplyBox];
 
-_camion = AS_misVehicleBox createVehicle _pos;
+_camion = AS_misSupplyBox createVehicle _pos;
 [_camion] spawn VEHinit;
 {_x reveal _camion} forEach (allPlayers - hcArray);
 _camion setVariable ["destino",_nombredest,true];
