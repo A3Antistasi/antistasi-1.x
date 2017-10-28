@@ -1,4 +1,5 @@
 /*
+!!!! DEPRECATED !!!!
  	Description:
 		Get the JNA category of an item
 
@@ -11,6 +12,7 @@
  	Example:
 		_cat = ["arifle_TRG21_F"] call AS_fnc_JNA_classifyItem;
 */
+#define DEPRECATED
 
 params ["_item"];
 [[],""] params ["_data","_category"];

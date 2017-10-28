@@ -58,13 +58,19 @@ _weaponTypeCategory = _weaponType select 0;
 private ["_weaponTypeSpecific"];
 _weaponTypeSpecific = _weaponType select 1;
 
-
 INITTYPES
 
 {
 	if (_weaponTypeSpecific in _x) exitwith {_return = _foreachindex;};
 } foreach _types;
 
+private _isParent={
+    params [["_checked", ""], ["_parent", ""]];
+    (format["configName(_x) isEqualTo '%1'", _checked] configClasses (configfile >> "CfgWeapons")) params ["_checkedConfig"];
+    if(isnil "_checkedConfig")exitWith{false};
+    _parent in ([_checkedConfig , true] call BIS_fnc_returnParents);
+};
+if([_item, "CBA_MiscItem"] call _isParent) then {_return = IDC_RSCDISPLAYARSENAL_TAB_CARGOMISC;};
 
 if(_return == -1)then{
 	private _data = (missionnamespace getvariable "bis_fnc_arsenal_data");
