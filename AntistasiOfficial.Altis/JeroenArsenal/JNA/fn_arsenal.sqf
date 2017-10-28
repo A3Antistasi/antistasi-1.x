@@ -98,8 +98,8 @@
 		_types set [IDC_RSCDISPLAYARSENAL_TAB_ITEMBIPOD,["AccessoryBipod"]];\
 		_types set [IDC_RSCDISPLAYARSENAL_TAB_CARGOMAG,[]];\
 		_types set [IDC_RSCDISPLAYARSENAL_TAB_CARGOMAGALL,[]];\
-		_types set [IDC_RSCDISPLAYARSENAL_TAB_CARGOTHROW,[/*"Grenade","SmokeShell"*/]];\
-		_types set [IDC_RSCDISPLAYARSENAL_TAB_CARGOPUT,[/*"Mine","MineBounding","MineDirectional"*/]];\
+		_types set [IDC_RSCDISPLAYARSENAL_TAB_CARGOTHROW,[]];\
+		_types set [IDC_RSCDISPLAYARSENAL_TAB_CARGOPUT,[]];\
 		_types set [IDC_RSCDISPLAYARSENAL_TAB_CARGOMISC,["FirstAidKit","Medikit","MineDetector","Toolkit"]];
 
 #define STATS_WEAPONS\
@@ -114,12 +114,8 @@
 
 disableserialization;
 
-
 _mode = [_this,0,"Open",[displaynull,""]] call bis_fnc_param;
 _this = [_this,1,[]] call bis_fnc_param;
-if!(_mode in ["draw3D","ListCurSel"])then{diag_log ("jna call "+_mode);};
-
-
 
 switch _mode do {
 
@@ -153,48 +149,12 @@ switch _mode do {
 						if (_weaponTypeSpecific in _x) exitwith {_weaponTypeID = _foreachindex;};
 					} foreach _types;
 					if (_weaponTypeID >= 0) then {
-						private ["_items"];
-						_items = _data select _weaponTypeID;
+						private _items = _data select _weaponTypeID;
 						_items set [count _items,configname _class];
 					};
 				};
 			};
 		} foreach _configArray;
-
-		if false then{
-			//--- Faces
-			{
-				private ["_index"];
-				_index = _foreachindex;
-				{
-					if (getnumber (_x >> "disabled") == 0 && gettext (_x >> "head") != "" && configname _x != "Default") then {
-						private ["_items"];
-						_items = _data select IDC_RSCDISPLAYARSENAL_TAB_FACE;
-						_items set [count _items,[_x,_index]];
-					};
-				} foreach ("isclass _x" configclasses _x);
-			} foreach ("isclass _x" configclasses (configfile >> "cfgfaces"));
-
-			//--- Voices
-			{
-				_scope = if (isnumber (_x >> "scopeArsenal")) then {getnumber (_x >> "scopeArsenal")} else {getnumber (_x >> "scope")};
-				if (_scope == 2 && gettext (_x >> "protocol") != "RadioProtocolBase") then {
-					private ["_items"];
-					_items = _data select IDC_RSCDISPLAYARSENAL_TAB_VOICE;
-					_items set [count _items,configname _x];
-				};
-			} foreach ("isclass _x" configclasses (configfile >> "cfgvoice"));
-
-			//--- Insignia
-			{
-				private ["_items"];
-				_scope = if (isnumber (_x >> "scope")) then {getnumber (_x >> "scope")} else {2};
-				if (_scope == 2) then {
-					_items = _data select IDC_RSCDISPLAYARSENAL_TAB_INSIGNIA;
-					_items set [count _items,configname _x];
-				};
-			} foreach ("isclass _x" configclasses (configfile >> "cfgunitinsignia"));
-		};
 
 		//--- Magazines - Put and Throw
 		_magazinesThrowPut = [];
