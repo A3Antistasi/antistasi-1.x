@@ -1,3 +1,4 @@
+// Civilian and military contact mission chat.
 params ["_unit"];
 
 if !(alive _unit) exitWith {};

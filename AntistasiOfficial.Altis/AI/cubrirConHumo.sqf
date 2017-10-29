@@ -1,3 +1,4 @@
+// Works when vanilla medical system is running.
 private ["_unit","_muzzle","_enemy"];
 
 _unit = _this select 0;

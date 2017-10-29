@@ -1,3 +1,4 @@
+// Select group, Y menu, dismount. Could be improved.
 private ["_grupo","_modo"];
 
 _grupo = _this select 0;

@@ -1,3 +1,4 @@
+// Ask a surrender to join FIA
 _unit = _this select 0;
 _jugador = _this select 1;
 
