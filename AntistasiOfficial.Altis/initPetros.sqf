@@ -1,8 +1,8 @@
 removeHeadgear petros;
 removeGoggles petros;
 petros setSkill 1;
-petros setVariable ["inconsciente",false,true];
-petros setVariable ["respawning",false];
+petros setVariable ["ASunconscious",false,true];
+petros setVariable ["ASrespawning",false];
 petros allowDamage true;
 
 //[] remoteExec ["petrosAnimation", 2];
@@ -19,9 +19,9 @@ petros addEventHandler ["HandleDamage", {
     if ((isNull _injurer) OR (_injurer == petros)) then {_dam = 0};
     if (_part == "") then {
         if (_dam > 0.95) then {
-            if !(petros getVariable "inconsciente") then {
+            if !(petros getVariable "ASunconscious") then {
                 _dam = 0.9;
-                [petros] spawn inconsciente;
+                [petros] spawn medUnconscious;
             } else {
                 petros removeAllEventHandlers "HandleDamage";
             };

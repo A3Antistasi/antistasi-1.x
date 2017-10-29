@@ -175,7 +175,7 @@ else {
 
 	while {(_counter < _cuenta) and (alive _sTruck) and (dateToNumber date < _fechalimnum)} do {
 
-		while {(_counter < _cuenta) and (_sTruck distance _posCrash < 40) and (alive _sTruck) and !({_x getVariable ["inconsciente",false]} count ([80,0,_sTruck,"BLUFORSpawn"] call distanceUnits) == count ([80,0,_sTruck,"BLUFORSpawn"] call distanceUnits)) and ({(side _x == side_green) and (_x distance _sTruck < 50)} count allUnits == 0) and (dateToNumber date < _fechalimnum)} do {
+		while {(_counter < _cuenta) and (_sTruck distance _posCrash < 40) and (alive _sTruck) and !({_x getVariable ["ASunconscious",false]} count ([80,0,_sTruck,"BLUFORSpawn"] call distanceUnits) == count ([80,0,_sTruck,"BLUFORSpawn"] call distanceUnits)) and ({(side _x == side_green) and (_x distance _sTruck < 50)} count allUnits == 0) and (dateToNumber date < _fechalimnum)} do {
 
 			if !(_active) then {
 				{if (isPlayer _x) then {[(_cuenta - _counter),false] remoteExec ["pBarMP",_x]}} forEach ([80,0,_sTruck,"BLUFORSpawn"] call distanceUnits);
@@ -217,7 +217,7 @@ else {
 		_sTruck setFuel 0;
 		_counter = 0;
 		_cuenta = 10;
-		while {(_counter < _cuenta) and (alive _sTruck) and !({_x getVariable ["inconsciente",false]} count ([80,0,_sTruck,"BLUFORSpawn"] call distanceUnits) == count ([80,0,_sTruck,"BLUFORSpawn"] call distanceUnits)) and (dateToNumber date < _fechalimnum)} do {
+		while {(_counter < _cuenta) and (alive _sTruck) and !({_x getVariable ["ASunconscious",false]} count ([80,0,_sTruck,"BLUFORSpawn"] call distanceUnits) == count ([80,0,_sTruck,"BLUFORSpawn"] call distanceUnits)) and (dateToNumber date < _fechalimnum)} do {
 
 			if !(_active) then {
 				{if (isPlayer _x) then {[(_cuenta - _counter),false] remoteExec ["pBarMP",_x]}} forEach ([80,0,_sTruck,"BLUFORSpawn"] call distanceUnits);
