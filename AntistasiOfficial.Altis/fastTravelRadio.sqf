@@ -95,13 +95,13 @@ if (count _posicionTel > 0) then
 			}
 		else
 			{
-			if (!isNil {_unit getVariable "inconsciente"}) then
+			if (!isNil {_unit getVariable "ASunconscious"}) then
 				{
-				if (!(_unit getVariable "inconsciente")) then
+				if (!(_unit getVariable "ASunconscious")) then
 					{
 					_posicion = _posicion findEmptyPosition [1,50,typeOf _unit];
 					_unit setPosATL _posicion;
-					if (isPlayer leader _unit) then {_unit setVariable ["rearming",false]};
+					if (isPlayer leader _unit) then {_unit setVariable ["ASrearming",false]};
 					_unit doWatch objNull;
 					_unit doFollow leader _unit;
 					};

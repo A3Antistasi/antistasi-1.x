@@ -1,13 +1,13 @@
 private ["_unit"];
 _unit = _this select 0;
 if (!local _unit) exitWith {};
-if (_unit getVariable "respawning") exitWith {};
-if (not( _unit getVariable "inconsciente")) exitWith {};
+if (_unit getVariable "ASrespawning") exitWith {};
+if (not( _unit getVariable "ASunconscious")) exitWith {};
 if (_unit != _unit getVariable ["owner",_unit]) exitWith {};
 if (!isPlayer _unit) exitWith {};
-_unit setVariable ["respawning",true];
+_unit setVariable ["ASrespawning",true];
 //_unit enableSimulation true;
-["Respawning",0,0,3,0,0,4] spawn bis_fnc_dynamicText;
+["ASrespawning",0,0,3,0,0,4] spawn bis_fnc_dynamicText;
 //titleText ["", "BLACK IN", 0];
 if (isMultiplayer) exitWith
 	{/*
@@ -25,16 +25,16 @@ if (isMultiplayer) exitWith
 	*/
 	(findDisplay 46) displayRemoveEventHandler ["KeyDown", respawnMenu];
 	[_unit,false] remoteExec ["setCaptive"];
-	_unit setVariable ["inconsciente",false,true];
-	_unit setVariable ["respawning",false];
+	_unit setVariable ["ASunconscious",false,true];
+	_unit setVariable ["ASrespawning",false];
 	//if (captive _unit) then {[_unit,false] remoteExec ["setCaptive"]};
 	_unit setDamage 1;
 	};
 private ["_posicion","_tam","_roads","_road","_pos"];
 _posicion = getMarkerPos guer_respawn;
-if (_unit getVariable "inconsciente") then {_unit setVariable ["inconsciente",false,true]};
-_unit setVariable ["ayudado",nil];
-_unit setVariable ["ayudando",nil];
+if (_unit getVariable "ASunconscious") then {_unit setVariable ["ASunconscious",false,true]};
+_unit setVariable ["ASmedHelped",nil];
+_unit setVariable ["ASmedHelping",nil];
 _unit setDamage 0;
 _unit setVariable ["compromised",0];
 if (activeACE) then {
@@ -69,10 +69,10 @@ if (_x != vehicle _x) then
 	}
 else
 	{
-	if ((!(_x getVariable "inconsciente")) and (alive _x)) then
+	if ((!(_x getVariable "ASunconscious")) and (alive _x)) then
 		{
 		_x setPosATL _posicion;
-		_x setVariable ["rearming",false];
+		_x setVariable ["ASrearming",false];
 		_x doWatch objNull;
 		_x doFollow leader _x;
 		}
@@ -98,4 +98,4 @@ _unit setCaptive false;
 _unit setUnconscious false;
 _unit playMoveNow "AmovPpneMstpSnonWnonDnon_healed";
 sleep 4;
-_unit setVariable ["respawning",false];
+_unit setVariable ["ASrespawning",false];

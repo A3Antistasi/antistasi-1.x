@@ -246,7 +246,7 @@ while {(server getVariable "BCactive") && (alive propTruck) && ({(side _x isEqua
 	// alive, deployed, timer below maximum, blufor alive, no opfor/greenfor, conscious players within 250m
 	while {(server getVariable "BCactive") &&
 	(alive propTruck) &&
-	!({_x getVariable ["inconsciente",false]} count ([300,0, propTruck,"BLUFORSpawn"] call distanceUnits) == count ([300,0, propTruck,"BLUFORSpawn"] call distanceUnits)) &&
+	!({_x getVariable ["ASunconscious",false]} count ([300,0, propTruck,"BLUFORSpawn"] call distanceUnits) == count ([300,0, propTruck,"BLUFORSpawn"] call distanceUnits)) &&
 	({((side _x == side_green) || (side _x == side_red)) && (_x distance propTruck < 50)} count allUnits == 0)} do {
 
 		// activate the timer

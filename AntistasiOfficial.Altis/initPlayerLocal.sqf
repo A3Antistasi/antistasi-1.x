@@ -71,7 +71,7 @@ player setVariable ["owner",player,true];
 player setVariable ["punish",0,true];
 player setVariable ["dinero",100,true];
 player setVariable ["BLUFORSpawn",true,true];
-player setVariable ["rango",rank player,true];
+player setVariable ["ASrank",rank player,true];
 player setVariable ["score", [0,25] select (player == Slowhand),true];
 player setvariable ["compromised",0];
 
@@ -92,7 +92,7 @@ if (!activeACE) then {
 	if (!activeACEMedical) then {
 		[player] execVM "Revive\initRevive.sqf";
 	} else {
-		player setVariable ["inconsciente",false,true];
+		player setVariable ["ASunconscious",false,true];
 	};
 
 	[] execVM "playerMarkers.sqf";
@@ -218,8 +218,8 @@ statistics = [] execVM "statistics.sqf";
 // Add respawn in SP if ACE is active
 if !(isMultiplayer) then {
 	if (activeACEMedical) then {
-		player setVariable ["inconsciente",false,true];
-		player setVariable ["respawning",false];
+		player setVariable ["ASunconscious",false,true];
+		player setVariable ["ASrespawning",false];
 		player addEventHandler ["HandleDamage", {
 			if (player getVariable ["ACE_isUnconscious", false]) then {
 				0 = [player] spawn ACErespawn;

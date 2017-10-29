@@ -4,10 +4,10 @@ _camion = _this select 1;
 
 if ((!alive _unit) or (isPlayer _unit) or (player != leader group player) or (captive _unit)) exitWith {};
 if (lifestate _unit == "INCAPACITATED") exitWith {};
-_ayudando = _unit getVariable "ayudando";
-if (!(isNil "_ayudando")) exitWith {_unit groupChat "I cannot rearm right now. I'm healing a comrade"};
-_rearming = _unit getVariable "rearming";
-if (_rearming) exitWith {_unit groupChat "I am currently rearming. Cancelling."; _unit setVariable ["rearming",false]};
+_medHelping = _unit getVariable "ASmedHelping";
+if (!(isNil "_medHelping")) exitWith {_unit groupChat "I cannot rearm right now. I'm healing a comrade"};
+_rearming = _unit getVariable "ASrearming";
+if (_rearming) exitWith {_unit groupChat "I am currently rearming. Cancelling."; _unit setVariable ["ASrearming",false]};
 if (_unit == gunner _camion) exitWith {_unit groupChat "I cannot rearm right now. I'm manning this gun"};
 if (!canMove _camion) exitWith {_unit groupChat "It is useless to load my vehicle, as it needs repairs"};
 
@@ -45,7 +45,7 @@ if (_unit distance _objeto < _distancia) then
 
 if (isNull _target) exitWith {_unit groupChat "There is nothing to loot"};
 _target setVariable ["busy",true];
-_unit setVariable ["rearming",true];
+_unit setVariable ["ASrearming",true];
 _unit groupChat "Starting looting";
 
 _Pweapon = primaryWeapon _unit;
@@ -59,7 +59,7 @@ if (_Sweapon != "") then {_unit action ["DropWeapon",_camion,_Sweapon]};
 
 _continuar = true;
 
-while {_continuar and (alive _unit) and (!(lifestate _unit == "INCAPACITATED")) and (_unit getVariable "rearming") and (alive _camion) and (_bigTimeout > time)} do
+while {_continuar and (alive _unit) and (!(lifestate _unit == "INCAPACITATED")) and (_unit getVariable "ASrearming") and (alive _camion) and (_bigTimeout > time)} do
 	{
 	if (isNull _target) exitWith {_continuar = false};
 	_target setVariable ["busy",true];
@@ -88,7 +88,7 @@ while {_continuar and (alive _unit) and (!(lifestate _unit == "INCAPACITATED")) 
 			_distancia = _muerto distance _unit;
 			};
 		} forEach _muertos;
-		if ((_hayCaja) and (_unit getVariable "rearming")) then
+		if ((_hayCaja) and (_unit getVariable "ASrearming")) then
 			{
 			_unit stop false;
 			_target setVariable ["busy",true];
@@ -150,4 +150,4 @@ if (!_continuar) then
 if (primaryWeapon _unit == "") then {_unit action ["TakeWeapon",_camion,_Pweapon]; sleep 3};
 if ((secondaryWeapon _unit == "") and (_Sweapon != "")) then {_unit action ["TakeWeapon",_camion,_Sweapon]};
 _unit doFollow player;
-_unit setVariable ["rearming",false];
+_unit setVariable ["ASrearming",false];

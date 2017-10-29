@@ -1,5 +1,7 @@
+#include "script_component.hpp"
 if (!isServer) exitWith {};
 if (flag_savingServer) exitWith {"Server data save is still in progress..." remoteExecCall ["hint",Slowhand]};
+LOG("START fn_saveGame");
 flag_savingServer = true;
 
 //players;
@@ -304,4 +306,5 @@ _data = [];
 flag_savingServer = false;
 
 [petros,"save",[localize "STR_HINTS_SAVE_COM_1",localize "STR_HINTS_SAVE_COM_2",localize "STR_HINTS_SAVE_COM_3",localize "STR_HINTS_SAVE_COM_4"]] remoteExec ["commsMP",Slowhand];
-diag_log "Maintenance: game successfully saved.";
+INFO("Maintenance: game successfully saved.");
+LOG("END fn_saveGame");

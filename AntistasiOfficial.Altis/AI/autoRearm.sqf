@@ -3,13 +3,13 @@ private ["_unit","_Pweapon","_Sweapon","_cuenta","_magazines","_hayCaja","_dista
 _unit = _this select 0;
 
 if ((!alive _unit) or (isPlayer _unit) or (vehicle _unit != _unit) or (player != leader group player) or (captive _unit)) exitWith {};
-if (_unit getVariable "inconsciente") exitWith {};
-_ayudando = _unit getVariable "ayudando";
-if (!(isNil "_ayudando")) exitWith {_unit groupChat "I cannot rearm right now. I'm healing a comrade"};
-_rearming = _unit getVariable "rearming";
+if (_unit getVariable "ASunconscious") exitWith {};
+_medHelping = _unit getVariable "ASmedHelping";
+if (!(isNil "_medHelping")) exitWith {_unit groupChat "I cannot rearm right now. I'm healing a comrade"};
+_rearming = _unit getVariable "ASrearming";
 if (_rearming) exitWith {_unit groupChat "I am currently rearming"};
 
-_unit setVariable ["rearming",true];
+_unit setVariable ["ASrearming",true];
 
 _Pweapon = primaryWeapon _unit;
 _Sweapon = secondaryWeapon _unit;
@@ -67,7 +67,7 @@ if (_Pweapon != "") then
 				};
 			} forEach _objetos;
 			};
-		if ((_hayCaja) and (_unit getVariable "rearming")) then
+		if ((_hayCaja) and (_unit getVariable "ASrearming")) then
 			{
 			_unit stop false;
 			if ((!alive _target) or (not(_target isKindOf "ReammoBox_F"))) then {_target setVariable ["busy",true]};
@@ -135,12 +135,12 @@ if (_Pweapon != "") then
 			};
 		} forEach _muertos;
 		};
-	if ((_hayCaja) and (_unit getVariable "rearming")) then
+	if ((_hayCaja) and (_unit getVariable "ASrearming")) then
 		{
 		_unit stop false;
 		if ((!alive _target) or (not(_target isKindOf "ReammoBox_F"))) then {_target setVariable ["busy",true]};
 		_unit doMove (getPosATL _target);
-		_unit groupChat "Rearming";
+		_unit groupChat "ASrearming";
 		_timeOut = time + 60;
 		waitUntil {sleep 1; (!alive _unit) or (isNull _target) or (_unit distance _target < 3) or (_timeOut < time) or (unitReady _unit)};
 		if ((unitReady _unit) and (alive _unit) and (_unit distance _target > 3) and (_target isKindOf "ReammoBox_F") and (!isNull _target)) then {_unit setPos position _target};
@@ -196,7 +196,7 @@ if ((_Sweapon == "") and (loadAbs _unit < 340)) then
 			};
 		} forEach _objetos;
 		};
-	if ((_hayCaja) and (_unit getVariable "rearming")) then
+	if ((_hayCaja) and (_unit getVariable "ASrearming")) then
 		{
 		_unit stop false;
 		if ((!alive _target) or (not(_target isKindOf "ReammoBox_F"))) then {_target setVariable ["busy",true]};
@@ -265,12 +265,12 @@ if (_Sweapon != "") then
 			};
 		} forEach _muertos;
 		};
-	if ((_hayCaja) and (_unit getVariable "rearming")) then
+	if ((_hayCaja) and (_unit getVariable "ASrearming")) then
 		{
 		_unit stop false;
 		if (!alive _target) then {_target setVariable ["busy",true]};
 		_unit doMove (position _target);
-		_unit groupChat "Rearming";
+		_unit groupChat "ASrearming";
 		_timeOut = time + 60;
 		waitUntil {sleep 1; (!alive _unit) or (isNull _target) or (_unit distance _target < 3) or (_timeOut < time) or (unitReady _unit)};
 		if ((unitReady _unit) and (alive _unit) and (_unit distance _target > 3) and (_target isKindOf "ReammoBox_F") and (!isNull _target)) then {_unit setPos position _target};
@@ -326,7 +326,7 @@ if (not("ItemRadio" in assignedItems _unit)) then
 		_distancia = _muerto distance _unit;
 		};
 	} forEach _muertos;
-	if ((_hayCaja) and (_unit getVariable "rearming")) then
+	if ((_hayCaja) and (_unit getVariable "ASrearming")) then
 		{
 		_unit stop false;
 		_target setVariable ["busy",true];
@@ -365,7 +365,7 @@ if (hmd _unit == "") then
 		};
 	} forEach _muertos;
 
-	if ((_hayCaja) and (_unit getVariable "rearming")) then
+	if ((_hayCaja) and (_unit getVariable "ASrearming")) then
 		{
 		_hayCaja = false;
 		_distancia = 50;
@@ -419,7 +419,7 @@ if (not(headgear _unit in genHelmets)) then
 		_distancia = _muerto distance _unit;
 		};
 	} forEach _muertos;
-	if ((_hayCaja) and (_unit getVariable "rearming")) then
+	if ((_hayCaja) and (_unit getVariable "ASrearming")) then
 		{
 		_unit stop false;
 		_target setVariable ["busy",true];
@@ -444,4 +444,4 @@ if (not(headgear _unit in genHelmets)) then
 	};
 
 if (!_necesita) then {_unit groupChat "No need to rearm"} else {_unit groupChat "Rearming Done"};
-_unit setVariable ["rearming",false];
+_unit setVariable ["ASrearming",false];

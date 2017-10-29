@@ -305,7 +305,7 @@ if (player == leader _unit) then {
 		_unit setIdentity _idUnit;
 		if (captive player) then {[_unit] spawn undercoverAI};
 	};
-	_unit setVariable ["rearming",false];
+	_unit setVariable ["ASrearming",false];
 	if !("ItemRadio" in unlockedItems) then {
 		while {alive _unit} do {
 			sleep 10;

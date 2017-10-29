@@ -20,8 +20,7 @@ if (count _array == 0) exitWith {diag_log "Error in JNA_setupGear: empty input a
 
 {
 	_className = _x;
-	_category = [_className] call AS_fnc_JNA_classifyItem;
-	_index = missionNamespace getVariable [format ["jna_index_%1",_category],-1];
+	_index = [_className] call jn_fnc_arsenal_itemType;
 
 	_added = false;
 	{

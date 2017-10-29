@@ -25,7 +25,7 @@ while {true} do {
 	_rankData = [_player] call AS_fnc_getRank;
 	_multiplier = _rankData select 0;
 	_nextRank = _rankData select 1;
-	_currentRank = _player getVariable ["rango","PRIVATE"];
+	_currentRank = _player getVariable ["ASrank","PRIVATE"];
 	_promoted = false;
 
 	if (_currentRank == "COLONEL") exitWith {};
@@ -33,7 +33,7 @@ while {true} do {
 	if (_score >= 50*_multiplier) then {
 		_promoted = true;
 		[_player,_nextRank] remoteExec ["ranksMP"];
-		_player setVariable ["rango",_nextRank,true];
+		_player setVariable ["ASrank",_nextRank,true];
 		_text = format ["%3%1: %2.\n",name _player,_nextRank];
 		[-1*(50*_multiplier),_player] call playerScoreAdd;
 		_multiplier = _multiplier + 1;

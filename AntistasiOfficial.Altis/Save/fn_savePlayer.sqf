@@ -1,11 +1,10 @@
+#include "script_component.hpp"
 params[
 	["_player",objNull,[objNull]],
 	["_uid","",[""]],
 	["_checkDistance",false,[true]]
 ];
-
-//PLAYER_SAVE_TYPES =  ["loadout","score","rank","funds"];
-
+LOG_1("START Saving player:%1", getPlayerUID _player);
 
 if(!isServer)exitWith{};
 
@@ -31,3 +30,4 @@ private _loadout = if(_checkDistance && ((getPos _player) distance (getPos fuego
 	getUnitLoadout _player;
 };
 ["loadout",_loadout, _uid] call fn_savePlayerData;
+LOG_1("END Saving player:%1", getPlayerUID _player);

@@ -6,7 +6,7 @@
 	//by jeroen 12-8-2017
 	//added optinal saving type with iniDBi2
 */
-
+#include "script_component.hpp"
 if(!isserver)exitWith{};
 
 usingIniDb = !isnil "OO_INIDBI";
@@ -45,56 +45,56 @@ fn_savePlayerData = {
 		"_varValue",
 		["_uid","",[""]]
 	];
-
-	diag_log format ["fn_savePlayerData: variable: %1, value: %2, UID: %3", _varName, _varValue, _uid];
+    TRACE_3("START fn_savePlayerData", _varName, _varValue, _uid);
 
 	if ((isNil "_varValue") OR (_varName == "") OR (_uid == ""))exitWith {
-		["Error in fn_savePlayerData -- name: %1; value: %2; _player: %3", _varName,_varValue,_uid] call BIS_fnc_error;
+		ERROR_3("Error in fn_savePlayerData -- name: %1; value: %2; _player: %3", _varName,_varValue,_uid);
 	};
 
 	if (_varValue isEqualTo "") exitWith {};
 
 	if(usingIniDb)then{
-		//["write", [_uid, _varName, _varValue]] call playerDB;
 		[playerDB, _uid, _varname, _varValue] call fn_saveDataINIDBI;
+		LOG("saved to INIDB");
 	}else{
 		profileNameSpace setVariable [format ["%1_%2_P_%3_%4",worldName,static_playerSide,_uid,_varName],_varValue];
+		LOG("saved to profileNameSpace");
 	};
+    TRACE_3("END fn_savePlayerData", _varName, _varValue, _uid);
 };
 
 fn_loadPlayerData = {
 	params [ ["_varName","",[""]],  ["_player",objNull,[objNull]] ];
+    TRACE_2("START fn_loadPlayerData", _varName, _player);
 
 	if ((_varName == "") OR (isnull _player))exitWith {
-		["Error in fn_savePlayerData -- varname: %1; _player: %2;", _varName, name _player] call BIS_fnc_error;
+		ERROR_2("fn_loadPlayerData -- name: %1; _player: %2", _varName, _player);
 	};
 
-	_uid = getPlayerUID _player;
-
-	_varValue = if(usingIniDb)then{
-		diag_log format ["fn_loadPlayerData: loading player data with inidbi2: variable: %1, player: %2, uid: %3", _varName, _player, _uid];
-		//["read", [_uid, _varName, objNull]] call playerDB;
+	private _uid = getPlayerUID _player;
+	private _varValue = if(usingIniDb)then{
+        TRACE_3("fn_loadPlayerData: loading player data with inidbi2", _varName, _player, _uid);
 		[playerDB, _uid, _varname, objNull] call fn_loadDataINIDBI;
 	}else{
-		removeAllWeapons _player; // Stef removevanillaequip
+		removeAllWeapons _player; // Stef removevanillaequip //TODO BUT WHY TO remove
 		removeBackpack _player;
 		removeVest _player;
 		_player addWeapon "Binocular";
 		_player removeweapon "ItemGPS";
-
+        TRACE_3("fn_loadPlayerData: loading player data with profileNameSpace", _varName, _player, _uid);
 		profileNameSpace getVariable [(format ["%1_%2_P_%3_%4",worldName,static_playerSide,_uid,_varName]),objNull];
 	};
 
-	diag_log format ["fn_loadPlayerData: loaded variable value: %1", _varValue];
-
+    TRACE_3("fn_loadPlayerData: value loaded", _varName, _varValue, _uid);
 	//Replaced the isNull check with isNil check because the isNull check gives errors. Sparker.
-	if(_varValue isEqualTo objNull)exitwith{diag_log format ["fn_loadPlayerData: ERROR: could not load variable %1", _varValue];};
-
+	if(_varValue isEqualTo objNull)exitwith{ERROR_2("fn_loadPlayerData: could not load variable %1 for player %2", _varName,_uid);};
 	[_varName,_varValue,_player] call fn_setPlayerData;
+    TRACE_2("END fn_loadPlayerData", _varName, _player);
 };
 
 fn_setPlayerData = {
 	params ["_varName","_varValue","_player"];
+    TRACE_3("START fn_setPlayerData", _varName,_varValue,_player);
 	call {
 		if(_varName == 'loadout') exitWith {
 			_player setUnitLoadout _varValue;
@@ -103,10 +103,11 @@ fn_setPlayerData = {
 		if(_varName isEqualTo 'score') exitWith {_player setVariable ["score",_varValue,true];};
 		if(_varName isEqualTo 'rank') exitWith {
 			_player setUnitRank _varValue;
-			_player setVariable ["rango",_varValue,true];
+			_player setVariable ["ASrank",_varValue,true];
 			[_player, _varValue] remoteExec ["ranksMP"]
 		};
 	};
+    TRACE_3("END fn_setPlayerData", _varName,_varValue,_player);
 };
 
 // server
