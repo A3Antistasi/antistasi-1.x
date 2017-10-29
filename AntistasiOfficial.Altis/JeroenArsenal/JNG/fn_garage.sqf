@@ -1,11 +1,11 @@
+#include "script_component.hpp"
 #include "defineCommon.inc"
-
 
 disableserialization;
 
 _mode = [_this,0,"Open",[displaynull,""]] call bis_fnc_param;
 _this = [_this,1,[]] call bis_fnc_param;
-if!(_mode in ["draw3D","addVehicle"])then{diag_log ("jng call "+_mode);};
+if!(_mode in ["draw3D","addVehicle"])then{TRACE_1("JNG",_mode);};
 
 switch _mode do {
 
@@ -340,6 +340,7 @@ switch _mode do {
 
 	///////////////////////////////////////////////////////////////////////////////////////////
 	case "CreateListsLeft":{
+	    TRACE_1("CreateListsLeft", _this);
 		_display =  _this select 0;
 
 		//loop all vehicle types
@@ -366,6 +367,7 @@ switch _mode do {
 
 	/////////////////////////////////////////////////////////////////////////////////////////// GLOBAL
 	case "addVehicle":{
+	    TRACE_1("addVehicle", _this);
 		_data =  _this select 0;
 		_index = _this select 1;
 
@@ -389,6 +391,7 @@ switch _mode do {
 
 	/////////////////////////////////////////////////////////////////////////////////////////// GLOBAL
 	case "updateVehicle":{
+        TRACE_1("updateVehicle", _this);
 		_dataNew =  _this select 0;
 		_index = _this select 1;
 		_display =  uiNamespace getVariable ["arsanalDisplay","No display"];
@@ -413,6 +416,7 @@ switch _mode do {
 
 	///////////////////////////////////////////////////////////////////////////////////////////
 	case "UpdateItemColor":{
+        TRACE_1("UpdateItemColor", _this);
 		params["_display","_index","_l"];
 		private _ctrlList = _display displayCtrl (IDC_RSCDISPLAYARSENAL_LIST + _index);
 		private _dataStr = _ctrlList lbdata _l;
@@ -423,8 +427,10 @@ switch _mode do {
 		diag_log ["_locked",_locked];
 
 		if(!isMultiplayer)exitWith{};
-		if(_beingChanged isEqualTo "" || _beingChanged isEqualTo (name player))then{
 
+		private _isActive = {_beingChanged isEqualTo (name _x)} count (allPlayers - entities "HeadlessClient_F") > 0;
+
+		if( !_isActive || _beingChanged isEqualTo (name player))then{
 			if(_locked isEqualTo (getPlayerUID player))then{
 				_ctrlList lbSetTooltip [_l,"Selected"];
 				_ctrlList lbSetColor [_l,[0,1,0,1]];//green
@@ -449,12 +455,8 @@ switch _mode do {
 
 	/////////////////////////////////////////////////////////////////////////////////////////// GLOBAL
 	case "updateVehicleSingleData":{
-		_nameUpdate = _this select 0;
-		_index = _this select 1;
-
-		_beingChangedUpdate = _this select 2;
-		_lockedUpdate = _this select 3;
-		_lockedNameUpdate = _this select 4;
+        TRACE_1("updateVehicleSingleData", _this);
+		params ["_nameUpdate", "_index", "_beingChangedUpdate", "_lockedUpdate", "_lockedNameUpdate"];
 		_display =  uiNamespace getVariable ["arsanalDisplay","No display"];
 
 		if (typeName _display == "STRING") exitWith {};
@@ -1185,6 +1187,7 @@ switch _mode do {
 
 	///////////////////////////////////////////////////////////////////////////////////////////
 	case "Preview":{
+	    TRACE_1("Preview", _this);
 		if!(isnil "jna_preview_This")exitWith{};//inpatient person spamming the button
 		_display = _this select 0;
 		_data = _this select 1;
@@ -1192,7 +1195,10 @@ switch _mode do {
 
 		SPLIT_SAVE
 		if (_name isEqualTo (_center getVariable "jng_name"))exitWith{};//player is already changing this
-		if (!(_beingChanged isEqualTo "") && !(_beingChanged isEqualTo (name player))) exitWith{//someone else is changing this
+
+		private _isActive = {_beingChanged isEqualTo (name _x)} count (allPlayers - entities "HeadlessClient_F") > 0;
+
+		if (_isActive && !(_beingChanged isEqualTo (name player))) exitWith{//someone else is changing this
 			["SelectCurrentCenter",[_display,JNG_CENTER]] call jn_fnc_garage;
 		};
 		//save it global so we can use it later

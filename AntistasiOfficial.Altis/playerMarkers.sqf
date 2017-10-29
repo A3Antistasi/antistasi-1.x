@@ -30,7 +30,7 @@ while {true} do
 				//_mrk setMarkerAlphaLocal 1; // <<-- normal mode
 				_mrk setMarkerPosLocal position _player;
 				_mrk setMarkerDirLocal getDir _player;
-				if ((_player getVariable ["inconsciente",false]) || (_player getVariable ["ACE_isUnconscious",false])) then{
+				if ((_player getVariable ["ASunconscious",false]) || (_player getVariable ["ACE_isUnconscious",false])) then{
 					_mrk setMarkerTypeLocal "mil_join";
 					if (server getVariable ["hardMode", false]) then {_mrk setMarkerAlphaLocal 1};
 					//_mrk setMarkerAlphaLocal 1; // <<-- hard mode

@@ -1,7 +1,7 @@
 params ["_unit"];
 private ["_rank", "_abbreviation", "_idRank","_nextRank","_result"];
 
-_rank = _unit getVariable ["rango","PRIVATE"];
+_rank = _unit getVariable ["ASrank","PRIVATE"];
 _abbreviation = "CPL";
 switch (_rank) do {
 	case "PRIVATE": {_idRank= 1; _nextRank = "CORPORAL"; _abbreviation = "CPL"};

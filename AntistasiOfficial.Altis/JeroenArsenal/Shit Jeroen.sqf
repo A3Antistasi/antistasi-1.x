@@ -322,7 +322,7 @@ swithcAction = {player addAction["switch player",
 	}foreach (allunits select {side _x isEqualTo resistance && {!(_x in allplayers)}  } );
 	_old = player;
 	selectPlayer _closedAI;
-	if((_old getVariable ["inconsciente",false]) || (_old getVariable ["ACE_isUnconscious",false]))then{
+	if((_old getVariable ["ASunconscious",false]) || (_old getVariable ["ACE_isUnconscious",false]))then{
 		_old setDamage 1;
 	};
 	if!(player getVariable ["swithcAction",false])then{

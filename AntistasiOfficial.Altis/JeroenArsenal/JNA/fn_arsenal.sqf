@@ -9,8 +9,7 @@
     ["customInit", "arsanalDisplay"] call jn_fnc_arsenal;
     	overwrites all functions in the arsenal with JNA ones.
 */
-
-
+#include "script_component.hpp"
 #include "\A3\ui_f\hpp\defineDIKCodes.inc"
 #include "\A3\Ui_f\hpp\defineResinclDesign.inc"
 
@@ -116,6 +115,7 @@ disableserialization;
 
 _mode = [_this,0,"Open",[displaynull,""]] call bis_fnc_param;
 _this = [_this,1,[]] call bis_fnc_param;
+if!(_mode in ["draw3D","ListCurSel"])then{TRACE_1("jna call ",_mode);};
 
 switch _mode do {
 
@@ -123,7 +123,7 @@ switch _mode do {
 	case "Preload": {
 		private ["_data"];
 
-		INITTYPES
+		INITTYPES;
 		_data = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]];
 
 		_configArray = (
@@ -312,8 +312,6 @@ switch _mode do {
 			_sort = _sortValues param [_idc,0];
 			_ctrlSort = _display displayctrl (IDC_RSCDISPLAYARSENAL_SORT + _idc);
 			_ctrlSort ctrlRemoveAllEventHandlers "lbselchanged";
-			_ctrlSort ctrladdeventhandler ["lbselchanged",format ["['lbSort',[_this,%1]] call jn_fnc_arsenal;",_idc]];
-			_ctrlSort lbadd "Sort by amount";
 
 			_ctrlSort lbsetcursel _sort;
 			_sortValues set [_idc,_sort];
@@ -371,7 +369,7 @@ switch _mode do {
 							if ( isClass (configFile >> "CFGweapons" >> _itemname)) then {
 								_item set [0,(_itemname call bis_fnc_baseWeapon)];
 							};
-						;}
+						}
 					};
 				}foreach _x;
 			}foreach [_uniformitems,_vestitems,_backpackitems]; //loop items in backpack
@@ -655,7 +653,7 @@ switch _mode do {
 					{
 						["UpdateItemAdd",[_index,_x,0]] call jn_fnc_arsenal;
 					} forEach _itemsUnique;
-				}
+				};
 			};
 		};
 
@@ -812,12 +810,12 @@ switch _mode do {
 			case IDC_RSCDISPLAYARSENAL_TAB_RADIO:{
 				_return1 = "";
 				{
-					if(_index == _x call jn_fnc_arsenal_itemType)exitwith{_return1 = _x};
+					if(_index == _x call jn_fnc_arsenal_itemType)exitwith{_return1 = _x;};
 				}foreach assignedItems player;
 
 				//TFAR FIX
 				_radioName = getText(configfile >> "CfgWeapons" >> _return1 >> "tf_parent");
-				if!(_radioName isEqualTo "")then{_return1 = _radioName};
+				if!(_radioName isEqualTo "")then{_return1 = _radioName;};
 
 				_return1;
 			};
@@ -827,7 +825,7 @@ switch _mode do {
 			case IDC_RSCDISPLAYARSENAL_TAB_WATCH:{
 				_return1 = "";
 				{
-					if(_index == _x call jn_fnc_arsenal_itemType)exitwith{_return1 = _x};
+					if(_index == _x call jn_fnc_arsenal_itemType)exitwith{_return1 = _x;};
 				}foreach assignedItems player;
 				_return1;
 			};
@@ -1039,7 +1037,7 @@ switch _mode do {
 						_amount = -1;
 					}else{
 						_amount = _amountCurrent - _amount;
-						if(_amount<0)then{_amount = 0};
+						if(_amount<0)then{_amount = 0;};
 					}
 				};
 

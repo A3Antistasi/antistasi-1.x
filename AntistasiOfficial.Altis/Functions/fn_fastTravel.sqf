@@ -71,8 +71,8 @@ _transportUnit = {
 		_unit allowDamage false;
 	};
 	_ftPos = _ftPos findEmptyPosition [1, 50, typeOf _unit];
-	if !(isNil {_unit getVariable "inconsciente"}) then {
-		if !(_unit getVariable "inconsciente") then {
+	if !(isNil {_unit getVariable "ASunconscious"}) then {
+		if !(_unit getVariable "ASunconscious") then {
 			_ftPos = _ftPos findEmptyPosition [1, 50, typeOf _unit];
 			_unit setPosATL _ftPos;
 		};
@@ -234,10 +234,10 @@ if (count _targetPosition > 0) then {
 							[_position, vehicle _unit] call _transportUnit;
 						};
 					} else {
-						if (!isNil {_unit getVariable "inconsciente"}) then {
-							if (!(_unit getVariable "inconsciente")) then {
+						if (!isNil {_unit getVariable "ASunconscious"}) then {
+							if (!(_unit getVariable "ASunconscious")) then {
 								[_position, _unit] call _transportUnit;
-								if (isPlayer leader _unit) then {_unit setVariable ["rearming",false]};
+								if (isPlayer leader _unit) then {_unit setVariable ["ASrearming",false]};
 								_unit doWatch objNull;
 								_unit doFollow leader _unit;
 							};

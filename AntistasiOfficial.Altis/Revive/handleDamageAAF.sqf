@@ -9,7 +9,7 @@ _proj = _this select 4;
 
 
 if (_part == "") then {
-	if (_dam > 0.6) then {[_unit,_unit] spawn cubrirConHumo};
+	if (_dam > 0.6) then {[_unit,_unit] spawn coverWithSmoke};
 }
 
 else {

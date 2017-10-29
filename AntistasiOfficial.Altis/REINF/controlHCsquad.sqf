@@ -7,7 +7,7 @@ _grupos = _this select 0;
 _grupo = _grupos select 0;
 _unit = leader _grupo;
 
-if (_unit getVariable ["inconsciente",false]) exitWith {hint "You cannot control an unconscious unit"};
+if (_unit getVariable ["ASunconscious",false]) exitWith {hint "You cannot control an unconscious unit"};
 if (!alive _unit) exitWith {hint "You cannot control a dead unit"};
 if ((not(typeOf _unit in guer_soldierArray)) and (typeOf _unit != guer_POW)) exitWith {hint "You cannot control a unit which does not belong to FIA"};
 

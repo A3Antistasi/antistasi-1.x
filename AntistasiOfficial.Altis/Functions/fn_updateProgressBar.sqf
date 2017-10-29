@@ -11,7 +11,7 @@ _colourDef = "#C1C0BB";
 if (_type == "Rank") then {
 	private ["_current", "_rankData", "_multiplier", "_needed", "_nextRank"];
 
-	if (player getVariable ["rango","PRIVATE"] == "COLONEL") exitWith {player setVariable ["Rank_PBar", "COLONEL", true]};
+	if (player getVariable ["ASrank","PRIVATE"] == "COLONEL") exitWith {player setVariable ["Rank_PBar", "COLONEL", true]};
 	_current = player getVariable ["score",0];
 	_rankData = [player] call AS_fnc_getRank;
 	_multiplier = _rankData select 0;
@@ -19,7 +19,7 @@ if (_type == "Rank") then {
 	_nextRank = _rankData select 2;
 
 	_value = (_current / _needed) max 0;
-	_p = [_colour, _colourDef, player getVariable ["rango","PRIVATE"], _nextRank, _type];
+	_p = [_colour, _colourDef, player getVariable ["ASrank","PRIVATE"], _nextRank, _type];
 	_varName = "Rank_PBar";
 };
 

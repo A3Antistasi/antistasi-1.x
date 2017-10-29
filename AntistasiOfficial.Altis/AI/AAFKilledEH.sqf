@@ -58,7 +58,7 @@ if ((side _killer == side_blue) || (captive _killer)) then {
 								};
 							};
 						};
-					[_x,_x] spawn cubrirConHumo;
+					[_x,_x] spawn coverWithSmoke;
 					};
 				};
 			} else {
