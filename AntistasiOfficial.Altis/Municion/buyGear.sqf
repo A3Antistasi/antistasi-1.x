@@ -17,6 +17,7 @@ _weapons = lockedWeapons;
 _accessories = gear_allAccessories;
 _standardWeapons = vanillaWeapons;
 _standardAccessories = vanillaAccessories;
+expCrate call jn_fnc_logistics_addAction;
 
 if (activeACE) then {
 	_standardWeapons = vanillaWeapons + aceWeapons;
@@ -35,8 +36,8 @@ if !(count (lockedWeapons - _standardWeapons) == 0) then {
 //		_weapons = _weapons - rhsWeaponsAFRF - rhsWeaponsUSAF - rhsWeaponsAFRF_extra;
 //		_accessories = _accessories - rhsAccessoriesAFRF - rhsAccessoriesUSAF;
 //	};
-//}; " 
-// fireman 16/08 This ruin the rhs/extra mod _weapons 
+//}; "
+// fireman 16/08 This ruin the rhs/extra mod _weapons
 // Untill no negative results this is a fix for the irish men
 
 _noGear = false;
