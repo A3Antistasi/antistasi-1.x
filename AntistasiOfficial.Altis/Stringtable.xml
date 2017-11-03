@@ -385,22 +385,16 @@
 
 		<Container name="Vehicle Management">
 			<Key ID="STR_UI_VEHMGMT_PGAR_TEXT">
-				<Original>Personal Garage</Original>
+				<Original>Garage</Original>
 			</Key>
 			<Key ID="STR_UI_VEHMGMT_PGAR_TT">
-				<Original>Store the vehicle you are looking at in your personal garage.</Original>
+				<Original>Garage the vehicle you are looking at.</Original>
 			</Key>
 			<Key ID="STR_UI_VEHMGMT_UNL_TEXT">
 				<Original>(Un)lock Vehicle</Original>
 			</Key>
 			<Key ID="STR_UI_VEHMGMT_UNL_TT">
 				<Original>Lock or unlock the vehicle.</Original>
-			</Key>
-			<Key ID="STR_UI_VEHMGMT_FGAR_TEXT">
-				<Original>FIA Garage</Original>
-			</Key>
-			<Key ID="STR_UI_VEHMGMT_FGAR_TT">
-				<Original>Store the vehicle you are looking at in the FIA garage.</Original>
 			</Key>
 			<Key ID="STR_UI_VEHMGMT_SELL_TEXT">
 				<Original>Sell Vehicle</Original>

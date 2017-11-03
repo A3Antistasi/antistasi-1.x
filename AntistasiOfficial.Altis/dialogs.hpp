@@ -960,56 +960,6 @@ class game_options_player
 	};
 };
 
-class radio_comm_commander
-{
-	idd=-1;
-	movingenable=false;
-
-	class controls
-	{
-
-AS_BOX_D(BOX_H_10);
-AS_FRAME_D(FRAME_H_10, "Battle Options");
-BTN_BACK(A_CLOSE);
-
-BTN_L1(-1, "Fast Travel", "", "closeDialog 0; if (server getVariable ""enableFTold"") then {createDialog ""fasttravel_dialog""} else {[] spawn AS_fnc_fastTravel};");
-BTN_L2(-1, "Disguise Yourself", "", "closeDialog 0; [] spawn undercover");
-BTN_L3(-1, "Vehicle Manager", "", "closeDialog 0; createDialog ""vehicle_manager"";");
-BTN_L4(-1, "AI Management", "", "if (player == leader group player) then {closeDialog 0; createDialog ""AI_management""} else {hint ""Only group leaders may access to this option""};");
-
-BTN_R1(-1, "NATO Options", "", "closeDialog 0; nul=CreateDialog ""NATO_Options"";");
-BTN_R2(-1, "Recruit Squad", "", "closeDialog 0; [] execVM ""Dialogs\squad_recruit.sqf"";");
-BTN_R3(-1, "Building Options", "", "closeDialog 0; nul=CreateDialog ""build_menu"";");
-BTN_R4(-1, "Player and Money", "", "closeDialog 0; if (isMultiPlayer) then {createDialog ""player_money""} else {hint ""MP Only Menu""};");
-
-BTN_M(BTN_Y_5, -1, "Resign Commander", "", "closedialog 0; if (isMultiplayer) then {execVM ""orgPlayers\commResign.sqf""} else {hint ""This feature is MP Only""};");
-
-	};
-};
-
-class radio_comm_player
-{
-	idd=-1;
-	movingenable=false;
-
-	class controls
-	{
-
-AS_BOX_D(BOX_H_6);
-AS_FRAME_D(FRAME_H_6, "Battle Options");
-BTN_BACK(A_CLOSE);
-
-BTN_L1(-1, "Fast Travel", "", "closeDialog 0; if (server getVariable ""enableFTold"") then {createDialog ""fasttravel_dialog""} else {[] spawn AS_fnc_fastTravel};");
-BTN_L2(-1, "Disguise Yourself", "", "closeDialog 0; [] spawn undercover");
-BTN_L3(-1, "Resign Commander", "", "closedialog 0; if (isMultiplayer) then {execVM ""orgPlayers\commResign.sqf""} else {hint ""This feature is MP Only""};");
-
-BTN_R1(-1, "AI Management", "", "if (player == leader group player) then {closeDialog 0; createDialog ""AI_management""} else {hint ""Only group leaders may access to this option""};");
-BTN_R2(-1, "Player and Money", "", "closeDialog 0; if (isMultiPlayer) then {createDialog ""player_money""} else {hint ""MP Only Menu""};");
-BTN_R3(-1, "Vehicle Manager", "", "closeDialog 0; createDialog ""vehicle_manager"";");
-
-	};
-};
-
 class HQ_reset_menu
 {
 	idd=-1;
