@@ -1,4 +1,9 @@
+//#define DEBUG_SYNCHRONOUS
+//#define DEBUG_MODE_FULL
+#include "script_component.hpp"
+LOG("START placementSelection");
 if (!isNil "placementDone") then {
+    LOG("petros is dead");
 	Slowhand allowDamage false;
 	(localize "STR_HINTS_HQPLACE_DEATH_TITLE") hintC localize "STR_HINTS_HQPLACE_DEATH";
 } else {
@@ -19,16 +24,26 @@ if (isNil "placementDone") then {
 while {true} do {
 	clickPosition = [];
 	onMapSingleClick "clickPosition = _pos;";
-
+    LOG("waiting for click");
 	waitUntil {sleep 1; (count clickPosition > 0) OR !visiblemap};
 	onMapSingleClick "";
+    LOG_1("Click is done: %1", clickPosition);
 	if !(visiblemap) exitWith {};
 	_position = clickPosition;
 	_nearestZone = [_markers,_position] call BIS_fnc_nearestPosition;
-	if (getMarkerPos _nearestZone distance _position < 1000) then {hint localize "STR_HINTS_HQPLACE_ZONES"};
-	if (surfaceIsWater _position) then {hint localize "STR_HINTS_HQPLACE_WATER"};
 
-	_enemiesNearby = false;
+	private _clickNearZone = getMarkerPos _nearestZone distance _position < 1000;
+	private _isWater = surfaceIsWater _position;
+	if (_clickNearZone) then {
+        LOG("click near zone");
+	    hint localize "STR_HINTS_HQPLACE_ZONES"
+	};
+	if (_isWater) then {
+        LOG("click on water");
+	    hint localize "STR_HINTS_HQPLACE_WATER"
+	};
+
+	private _enemiesNearby = false;
 	if (!isNil "placementDone") then {
 		{
 			if ((side _x == side_green) OR (side _x == side_red)) then {
@@ -37,7 +52,9 @@ while {true} do {
 		} forEach allUnits;
 	};
 	if (_enemiesNearby) then {hint localize "STR_HINTS_HQPLACE_ENEMIES"};
-	if ((getMarkerPos _nearestZone distance _position > 1000) AND (!surfaceIsWater _position) AND (!_enemiesNearby)) exitWith {};
+	if (!_clickNearZone AND !_isWater AND !_enemiesNearby) exitWith {
+	    LOG("Click position is good to deploy HQ");
+	};
 };
 
 if (visiblemap) then {
@@ -52,9 +69,11 @@ if (visiblemap) then {
 		publicVariable "mrkFIA";
 		petros setPos _position;
 	} else {
+        LOG("start resetting flag");
 		AS_flag_resetDone = false;
 		[_position] remoteExec ["AS_fnc_resetHQ",2];
 		waitUntil {AS_flag_resetDone};
+        LOG("end resetting flag");
 		AS_flag_resetDone = false;
 	};
 
@@ -110,7 +129,7 @@ if (visiblemap) then {
 		fuego hideObject false;
 		bandera hideObject false;
 	};
-
+    LOG("Unlock map");
 	openmap [false,false];
 };
 
@@ -122,3 +141,4 @@ if (isNil "placementDone") then {
 	placementDone = true;
 	publicVariable "placementDone";
 };
+LOG("END placementSelection");

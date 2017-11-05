@@ -12,7 +12,7 @@ if(!isserver)exitWith{};
 usingIniDb = !isnil "OO_INIDBI";
 
 if(usingIniDb)then{
-	diag_log "fn_saveFunctions.sqf: iniDBi2 detected!";
+	INFO("fn_saveFunctions.sqf: iniDBi2 detected!");
 
 	//Initialize INIDBI unctions
 	fn_saveDataINIDBI = compile preprocessfilelinenumbers "Save\fn_saveDataINIDBI.sqf";
@@ -31,7 +31,7 @@ if(usingIniDb)then{
 
 		databaseNameNr = databaseNameNr + 1;
 	};
-	diag_log format ["fn_saveFunctions.sqf: current save database number: %1", databaseNameNr];
+	INFO_1("fn_saveFunctions.sqf: current save database number: %1", databaseNameNr);
 	//Set these separators
 	["setSeparator", (toString [221,222])] call playerDB; //Don't try to join the game with these characters in your name, allright?
 	["setSeparator", (toString [221,222])] call loadDB;
@@ -113,8 +113,8 @@ fn_setPlayerData = {
 // server
 fn_saveData = {
 	params [["_varName","",[""]],"_varValue"];
-	if (_varName == "") exitWith {diag_log format ["Error in fn_saveData, no name --  name: %1; value: %2", _varname,_varValue]};
-	if (isNil "_varValue") exitWith {diag_log format ["Error in fn_saveData, no value --  name: %1; value: %2", _varname,_varValue]};
+	if (_varName == "") exitWith {ERROR_2("Error in fn_saveData, no name --  name: %1; value: %2", _varname,_varValue)};
+	if (isNil "_varValue") exitWith {ERROR_2("Error in fn_saveData, no value --  name: %1; value: %2", _varname,_varValue)};
 	if(usingIniDb)then{
 		//["write", ["Game", _varName, _varValue]] call saveDB;
 		[saveDB, "Game", _varname, _varValue] call fn_saveDataINIDBI;
@@ -125,7 +125,7 @@ fn_saveData = {
 
 fn_loadData = {
 	params [["_varname","",[""]]];
-	if (_varName == "") exitWith {diag_log format ["Error in fn_loadData, no name -- name: %1", _varname]};
+	if (_varName == "") exitWith {ERROR_1("Error in fn_loadData, no name -- name: %1", _varname)};
 
 	_varValue = if(usingIniDb)then{
 		//[saveDB, _varname,loadDB] call AS_FNC_loadDataINIDBI; //Not going to pre-compile it!
@@ -136,15 +136,14 @@ fn_loadData = {
 
 	if(_varValue isEqualTo objNull) exitwith
 	{
-		diag_log format ["fn_loadData: Error: variable %1 could not be loaded!", _varname];
+		ERROR_1("fn_loadData: Error: variable %1 could not be loaded!", _varname);
 	};
-	diag_log format ["fn_loadData: Success: variable %1: %2", _varname, _varValue];
+	LOG_2("fn_loadData: Success: variable %1: %2", _varname, _varValue);
 	[_varName,_varValue] call fn_setData;
 };
 
 fn_saveProfile = {
-	diag_log "saveProfileNamespace";
-
+	LOG("fn_saveProfile");
 	if(usingIniDb)then{
 		while{true}do{
 			databaseNameNr = databaseNameNr + 1;//increase savename number by 1
@@ -158,7 +157,6 @@ fn_saveProfile = {
 	}else{
 		saveProfileNamespace
 	};
-
 };
 
 //ADD VARIABLES TO THIS ARRAY THAT NEED SPECIAL SCRIPTING TO LOAD
