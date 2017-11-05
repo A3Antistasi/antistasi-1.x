@@ -1,10 +1,12 @@
+#include "script_component.hpp"
 private ["_allVehicles","_allGroups","_allSoldiers","_base","_spawnData","_spawnPosition","_direction","_vehicleArray","_vehicleType","_arrayBases","_arrayTargets","_distance","_vehicleData","_vehicle","_groupVehicle","_beach","_group","_target","_targetPosition","_wp_v_1","_object","_knowledge"];
 
 _allVehicles = [];
 _allGroups = [];
 _allSoldiers = [];
 
-_vehicleArray = vehPatrol + (if ("rhs_weap_akms" in gear_allWeapons) then {} else {vehPatrolBoat}); //Stef 17/10 Remove speedboats when RHS is active
+//Stef 17/10 Remove speedboats when RHS is active
+_vehicleArray = vehPatrol + (if (activeAFRF) then {[]} else {vehPatrolBoat});
 
 while {true} do {
 	_vehicleType = selectRandom _vehicleArray;

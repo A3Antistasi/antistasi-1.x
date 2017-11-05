@@ -77,34 +77,35 @@ _allVehicles pushBack _crate;
 sleep 0.5;
 
 if (_marker in puertos) then {
-	if !("rhs_weap_akms" in gear_allWeapons) then {    //17/10 Stef removing speedboats from RHS
-	_position = [_markerPos,_size,_size*3,25,2,0,0] call BIS_Fnc_findSafePos;
-	_vehicleData = [_position, 0, (selectRandom vehPatrolBoat), side_green] call bis_fnc_spawnvehicle;
-	_vehicle = _vehicleData select 0;
-	_vehCrew = _vehicleData select 1;
-	_groupVehicle = _vehicleData select 2;
+	if !(activeAFRF) then {    //17/10 Stef removing speedboats from RHS
+        _position = [_markerPos,_size,_size*3,25,2,0,0] call BIS_Fnc_findSafePos;
+        _vehicleData = [_position, 0, (selectRandom vehPatrolBoat), side_green] call bis_fnc_spawnvehicle;
+        _vehicle = _vehicleData select 0;
+        _vehCrew = _vehicleData select 1;
+        _groupVehicle = _vehicleData select 2;
 
-	_beach = [_vehicle,0,200,0,0,90,1] call BIS_Fnc_findSafePos;
-	_vehicle setdir ((_vehicle getRelDir _beach) + 180);
+        _beach = [_vehicle,0,200,0,0,90,1] call BIS_Fnc_findSafePos;
+        _vehicle setdir ((_vehicle getRelDir _beach) + 180);
 
-	_PP1 = [_position, 100, 200, 25, 2, 45, 0] call BIS_fnc_findSafePos;
-	_pWP1 = _groupVehicle addWaypoint [_PP1, 5];
-	_pWP1 setWaypointType "MOVE";
-	_pWP1 setWaypointBehaviour "AWARE";
-	_pWP1 setWaypointSpeed "LIMITED";
+        _PP1 = [_position, 100, 200, 25, 2, 45, 0] call BIS_fnc_findSafePos;
+        _pWP1 = _groupVehicle addWaypoint [_PP1, 5];
+        _pWP1 setWaypointType "MOVE";
+        _pWP1 setWaypointBehaviour "AWARE";
+        _pWP1 setWaypointSpeed "LIMITED";
 
-	_pWP1 = _groupVehicle addWaypoint [_PP1, 5];
-	_pWP1 setWaypointType "CYCLE";
-	_pWP1 setWaypointBehaviour "AWARE";
-	_pWP1 setWaypointSpeed "LIMITED";
+        _pWP1 = _groupVehicle addWaypoint [_PP1, 5];
+        _pWP1 setWaypointType "CYCLE";
+        _pWP1 setWaypointBehaviour "AWARE";
+        _pWP1 setWaypointSpeed "LIMITED";
 
-	{
-		[_x] spawn genInitBASES;
-		_allSoldiers pushBack _x;
-	} forEach _vehCrew;
-	_allGroups pushBack _groupVehicle;
-	_allVehicles pushBack _vehicle;
-	sleep 1;} else {};
+        {
+            [_x] spawn genInitBASES;
+            _allSoldiers pushBack _x;
+        } forEach _vehCrew;
+        _allGroups pushBack _groupVehicle;
+        _allVehicles pushBack _vehicle;
+        sleep 1;
+     };
 } else {
 	_buildings = nearestObjects [_markerPos,["Land_TTowerBig_1_F","Land_TTowerBig_2_F","Land_Communication_F"], _size];
 	if (count _buildings > 0) then {
