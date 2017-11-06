@@ -35,7 +35,7 @@ _loadActionID = _object addAction [
 
 		if(isNull _nearestVehicle) then
 		{
-			hint 'There are no vehicles nearby!';
+			hint 'Bring vehicle closer';
 		}
 		else
 		{
