@@ -154,7 +154,7 @@ if (_isJip) then {
 				if (_nearestMarker in mrkAAF) then {
 					_x addAction [localize "STR_ACT_TAKEFLAG", {[[_this select 0, _this select 1],"mrkWIN"] call BIS_fnc_MP;},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"];
 				} else {
-					_x addAction [localize "STR_ACT_RECRUITUNIT", {nul=[] execVM "Dialogs\unit_recruit.sqf";;},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"];
+					_x addAction [localize "STR_ACT_RECRUITUNIT", {nul=[] execVM "Dialogs\unit_recruit.sqf";},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"];
 					_x addAction [localize "STR_ACT_BUYVEHICLE", {createDialog "vehicle_option";},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"];
 					_x addAction [localize "STR_ACT_PERSGARAGE", {[true] spawn garage},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"];
 				};
@@ -183,8 +183,8 @@ if (_isJip) then {
 	if ((player == Slowhand) AND (isNil "placementDone") AND (isMultiplayer)) then {
 		[] execVM "UI\startMenu.sqf";
 	} else {
-		[player]remoteExec ["AS_fnc_loadPlayer",2];
-		//[true] execVM "Dialogs\firstLoad.sqf";
+	    //Called from unscheduled environment to load data at once
+		[player] remoteExecCall ["AS_fnc_loadPlayer",2];
 	};
 
 	diag_log "Antistasi MP Client. JIP client finished";
