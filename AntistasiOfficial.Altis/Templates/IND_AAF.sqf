@@ -76,6 +76,7 @@ vehLead = 			["I_MRAP_03_hmg_F","I_MRAP_03_gmg_F"]; // lead vehicle for convoys,
 standardMRAP = 		["I_MRAP_03_F"]; // default transport MRAP/car
 vehTruckBox = 		["I_Truck_02_box_F"]; // repair truck or at least a prop
 vehPatrolBoat = 	["I_Boat_Armed_01_minigun_F"];
+vehDef= 			["I_APC_Wheeled_03_cannon_F"];
 
 /*
 Not in use with AAF
@@ -111,6 +112,14 @@ infTeam = 			["HAF_InfTeam_AA","HAF_InfTeam_AT","HAF_InfTeam","HAF_InfTeam","HAF
 infSquad = 			["HAF_InfSquad","HAF_InfSquad_Weapons"];
 infAA =				["HAF_InfTeam_AA"];
 infAT =				["HAF_InfTeam_AT"];
+
+infPatrol2 = 		["BUS_InfSentry","BUS_InfSentry","BUS_InfSentry","BUS_SniperTeam"];
+infGarrisonSmall2 = ["BUS_InfSentry"];
+infTeamATAA2 =		["BUS_InfTeam_AA","BUS_InfTeam_AT"];
+infTeam2 = 			["BUS_InfTeam_AA","BUS_InfTeam_AT","BUS_InfTeam","BUS_InfTeam","BUS_InfTeam"];
+infSquad2 = 		["BUS_InfSquad","BUS_InfSquad_Weapons"];
+infAA2 =			["BUS_InfTeam_AA"];
+infAT2 =			["BUS_InfTeam_AT"];
 
 // Statics to be used
 statMG = 			"I_HMG_01_high_F";

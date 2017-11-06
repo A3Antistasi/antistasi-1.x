@@ -8,11 +8,11 @@ if !(worldName == "Altis") exitWith {};
 call compile preprocessFileLineNumbers "roadsDB.sqf";
 
 power = ["power","power_1","power_2","power_3","power_5","power_6","power_8","power_9","power_10"];
-bases = ["base","base_1","base_2","base_3","base_5","base_6","base_7","base_8","base_9","base_10","base_11","base_12","base_13"];
+bases = ["base","base_1","base_2","base_3","base_5","base_6","base_7","base_8","base_9","base_10","base_11","base_12","base_13","base_14","base_15"];
 aeropuertos = ["airport","airport_1","airport_2","airport_3","airport_4","airport_5"];
 recursos = ["resource","resource_1","resource_2","resource_3","resource_4","resource_5","resource_6","resource_7"];
 fabricas = ["factory","factory_1","factory_2","factory_3","factory_4","factory_5"];
-puestos = ["puesto","puesto_1","puesto_2","puesto_3","puesto_4","puesto_5","puesto_6","puesto_8","puesto_9","puesto_10","puesto_11","puesto_12","puesto_13","puesto_14","puesto_15","puesto_16","puesto_17","puesto_18","puesto_19","puesto_20","puesto_21","puesto_22","puesto_23","puesto_24","puesto_25","puesto_26","puesto_27","puesto_28","puesto_29","puesto_30","puesto_31","puesto_32","puesto_33"];
+puestos = ["puesto","puesto_1","puesto_2","puesto_3","puesto_4","puesto_5","puesto_6","puesto_8","puesto_9","puesto_10","puesto_11","puesto_12","puesto_13","puesto_14","puesto_15","puesto_16","puesto_17","puesto_18","puesto_19","puesto_20","puesto_21","puesto_22","puesto_23","puesto_24","puesto_25","puesto_26","puesto_27","puesto_28","puesto_29","puesto_30","puesto_31","puesto_32","puesto_33","puesto_34","puesto_35","puesto_36","puesto_37"];
 puestosAA = ["puesto_1","puesto_2","puesto_6","puesto_17","puesto_23","puesto_27","puesto_28","puesto_30","puesto_31","puesto_32","puesto_33","puesto_13","puesto_29","puesto_15","puesto_16"];
 puertos = ["puerto","puerto_1","puerto_2","puerto_3","puerto_4"];
 controles = [];

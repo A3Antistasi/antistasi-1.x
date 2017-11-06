@@ -46,7 +46,7 @@ sol_SUP_AMG = 	"B_support_AMG_F"; // Assistant HMG gunner
 sol_SUP_AMTR = 	"B_support_AMort_F"; // Assistant mortar gunner
 sol_SUP_GMG = 	"B_support_GMG_F"; // GMG gunner
 sol_SUP_MG = 	"B_support_MG_F"; // HMG gunner
-sol_SUP_MTR = 	"B_support_Mort_F"; // mortar gunner
+sol_SUP_MTR = 	"B_G_Soldier_unarmed_F"; // mortar gunner
 
 // Standard roles for static gunner, crew, and unarmed helicopter pilot
 infGunner =	sol_SUP_MG;
@@ -65,7 +65,7 @@ infList_pilots = 	[sol_HPIL, sol_HPIL2, sol_PIL];
 
 // Vehicles
 vehTrucks = 		["B_Truck_01_covered_F","B_Truck_01_transport_F"]; // trucks that spawn at outposts, etc
-vehPatrol =			["B_MRAP_01_F","B_MRAP_01_hmg_F","B_MRAP_01_gmg_F","B_Heli_Transport_01_F"]; // vehicles used for road patrols;
+vehPatrol =			["B_G_Offroad_01_armed_F","B_Heli_Light_01_F"]; // vehicles used for road patrols;
 vehAPC = 			["B_APC_Tracked_01_rcws_F"]; // APCs
 vehIFV = 			["B_APC_Wheeled_01_cannon_F"]; // IFVs
 vehTank = 			["B_MBT_01_cannon_F"]; // MBTs
@@ -102,14 +102,17 @@ indAirForce = 		["B_Heli_Transport_03_F","B_Heli_Transport_01_F"]; // starting/c
 // Config paths for pre-defined groups -- required if group names are used
 cfgInf = 				(configfile >> "CfgGroups" >> "West" >> "BLU_F" >> "Infantry");
 
+
 // Standard group arrays, used for spawning groups -- can use full config paths, config group names, arrays of individual soldiers
 infPatrol = 		["BUS_InfSentry","BUS_InfSentry","BUS_InfSentry","BUS_SniperTeam"];
 infGarrisonSmall = 	["BUS_InfSentry"];
 infTeamATAA =		["BUS_InfTeam_AA","BUS_InfTeam_AT"];
 infTeam = 			["BUS_InfTeam_AA","BUS_InfTeam_AT","BUS_InfTeam","BUS_InfTeam","BUS_InfTeam"];
 infSquad = 			["BUS_InfSquad","BUS_InfSquad_Weapons"];
-infAA =				["BUS_InfTeam_AA"];
+infAA =				["B_G_Story_Guerilla_01_F","B_G_Story_Guerilla_01_F","B_G_Story_Guerilla_01_F"];
 infAT =				["BUS_InfTeam_AT"];
+
+
 
 // Statics to be used
 statMG = 			"B_HMG_01_high_F";
