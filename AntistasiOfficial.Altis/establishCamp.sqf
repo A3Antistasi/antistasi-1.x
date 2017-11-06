@@ -50,24 +50,29 @@ _pos = position _road findEmptyPosition [1,30,guer_veh_truck];
 
 _vehicle=[_pos, 0,guer_veh_truck, side_blue] call bis_fnc_spawnvehicle;
 _camion = _vehicle select 0;
-_grupo = _vehicle select 2;
+_camion deleteVehicleCrew driver _camion;
 
 _grupoTemp = [getMarkerPos guer_respawn, side_blue, ([guer_grp_sniper, "guer"] call AS_fnc_pickGroup)] call BIS_Fnc_spawnGroup;
-_grupoTemp setGroupId ["Watch"];
+_grupoTemp setGroupId ["Camp"];
 {
-	_x moveInCargo _camion;
-	[_x] joinSilent _grupo;
+	if (_forEachIndex == 0) then {
+		_x moveInDriver _camion;
+	} else {
+		_x moveInCargo _camion;
+	};
 } forEach units _grupoTemp;
 {[_x] call AS_fnc_initialiseFIAUnit;} forEach units _grupo;
 
 [_grupo] spawn dismountFIA;
 
 leader _grupo setBehaviour "SAFE";
+
+[_grupo, driver _camion] remoteExec ["selectLeader", groupOwner _grupo];
+
 Slowhand hcSetGroup [_grupo];
 _grupo setVariable ["isHCgroup", true, true];
 
-driver _camion action ["engineOn", vehicle driver _camion];
-_grupo selectLeader (driver _camion);
+driver _camion action ["engineOn", _camion];
 
 _crate = "Box_FIA_Support_F" createVehicle _pos;
 _crate attachTo [_camion,[0.0,-1.2,0.5]];
