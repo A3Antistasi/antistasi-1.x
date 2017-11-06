@@ -119,7 +119,7 @@ if (worldname == "Tanoa") then {
 	guer_gear_BP_Medic = "";
 	guer_gear_BP_Engineer = "";
 } else {
-	guer_veh_truck = "rhs_gaz66o_msv";
+	guer_veh_truck = "I_G_Van_01_transport_F";
 	guer_veh_offroad = "rhs_uaz_open_MSV_01";
 	guer_veh_technical_AT = "rhsgref_ins_g_uaz_spg9";
 
