@@ -10,14 +10,6 @@ petros allowdamage false;
 flag_playerList = true;
 publicVariable "flag_playerList";
 
-
-//player
-{
-	[_x] call AS_fnc_loadPlayer;
-} forEach (allPlayers - entities "HeadlessClient_F");
-
-
-
 //game
 ["enableMemAcc"] call fn_loadData;
 ["enableOldFT"] call fn_loadData;
