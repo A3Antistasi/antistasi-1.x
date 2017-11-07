@@ -1,9 +1,8 @@
-#include "script_component.hpp"
 #include "defines.hpp"
 #include "dialogs.hpp"
 
 author="Barbolani";
-OnLoadName = QUOTE(Antistasi - modified ANTISTASI_VERSION);
+OnLoadName = "Antistasi - modified 1.7.17G";
 OnLoadMission = "Be a Resistance Leader - Be a Hero";
 //loadScreen = "pic.paa";
 

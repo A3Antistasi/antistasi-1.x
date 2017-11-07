@@ -1,4 +1,3 @@
-#include "script_component.hpp"
 private ["_allVehicles","_vehicle"];
 diag_log "InitVar.sqf: start";
 //Antistasi var settings
@@ -7,7 +6,7 @@ diag_log "InitVar.sqf: start";
 //You do not have enough balls to make any modification and after making a Bug report because something is wrong. You don't wanna be there. Believe me.
 //Not commented lines cannot be changed.
 //Don't touch them.
-antistasiVersion = format["v %1 -- modded", QUOTE(ANTISTASI_VERSION)];
+antistasiVersion = "v 1.7.17G -- modded";
 
 servidoresOficiales = ["Antistasi Official: Main","Antistasi Official: Hardcore", "Antistasi Official: USA"];//this is for author's fine tune the official servers. If I get you including your server in this variable, I will create a special variable for your server. Understand?
 
