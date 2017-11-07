@@ -7,19 +7,19 @@ class HQ_menu
 	class controls
 	{
 
-AS_BOX_D(BOX_H_8);
-AS_FRAME_D(FRAME_H_8, "FIA HQ Options - Commander Only");
-BTN_BACK(A_CLOSE);
+	AS_BOX_D(BOX_H_8);
+	AS_FRAME_D(FRAME_H_8, "FIA HQ Options - Commander Only");
+	BTN_BACK(A_CLOSE);
 
-#define STR_HQ_FIA "if (activeBE) then {[] remoteExec [""fnc_BE_buyUpgrade"", 2]} else {closeDialog 0; [] call FIAskillAdd;}"
+	#define STR_HQ_FIA "if (activeBE) then {[] remoteExec [""fnc_BE_buyUpgrade"", 2]} else {closeDialog 0; [] call FIAskillAdd;}"
 
-BTN_L1(-1, "Grab 100 € from Pool", "", "if (isMultiPlayer) then {nul=call stavrosSteal} else {hint ""This function is MP only""};");
-BTN_L2(-1, "Manage Garrisons", "", "closeDialog 0; nul=CreateDialog ""garrison_menu"";");
-BTN_L3(-1, "Move HQ to another Zone", "", "closeDialog 0; [] spawn moveHQ;");
+	BTN_L1(-1, "Grab 100 € from Pool", "", "if (isMultiPlayer) then {nul=call stavrosSteal} else {hint ""This function is MP only""};");
+	BTN_L2(-1, "Manage Garrisons", "", "closeDialog 0; nul=CreateDialog ""garrison_menu"";");
+	BTN_L3(-1, "Move HQ to another Zone", "", "closeDialog 0; [] spawn moveHQ;");
 
-BTN_R1(-1, "Ingame Member's List", "", "if (isMultiplayer) then {[] execVM ""OrgPlayers\membersList.sqf""} else {hint ""This function is MP only""};");
-BTN_R2(109, "Train FIA", "", STR_HQ_FIA);
-BTN_R3(-1, "Rebuild Assets", "Cost: 5.000 €", "closeDialog 0; [] execVM ""rebuildAssets.sqf"";");
+	BTN_R1(-1, "Ingame Member's List", "", "if (isMultiplayer) then {[] execVM ""OrgPlayers\membersList.sqf""} else {hint ""This function is MP only""};");
+	BTN_R2(109, "Train FIA", "", STR_HQ_FIA);
+	BTN_R3(-1, "Rebuild Assets", "Cost: 5.000 €", "closeDialog 0; [] execVM ""rebuildAssets.sqf"";");
 	};
 };
 
@@ -31,23 +31,23 @@ class unit_recruit
 	class controls
 	{
 
-AS_BOX_D(BOX_H_10);
-AS_FRAME_D(FRAME_H_10, "Recruitment Options");
-BTN_BACK(A_CLOSE);
+	AS_BOX_D(BOX_H_10);
+	AS_FRAME_D(FRAME_H_10, "Recruitment Options");
+	BTN_BACK(A_CLOSE);
 
-BTN_L1(104, "Recruit Militiaman", "", "[guer_sol_RFL] spawn reinfPlayer");
-BTN_L2(105, "Recruit Autorifleman", "", "[guer_sol_AR] spawn reinfPlayer");
-BTN_L3(106, "Recruit Medic", "", "[guer_sol_MED] spawn reinfPlayer");
-BTN_L4(110, "Recruit Marksman", "", "[guer_sol_MRK] spawn reinfPlayer");
+	BTN_L1(104, "Recruit Militiaman", "", "[guer_sol_RFL] spawn reinfPlayer");
+	BTN_L2(105, "Recruit Autorifleman", "", "[guer_sol_AR] spawn reinfPlayer");
+	BTN_L3(106, "Recruit Medic", "", "[guer_sol_MED] spawn reinfPlayer");
+	BTN_L4(110, "Recruit Marksman", "", "[guer_sol_MRK] spawn reinfPlayer");
 
-BTN_R1(107, "Recruit Engineer", "", "[guer_sol_ENG] spawn reinfPlayer");
-BTN_R2(109, "Recruit Grenadier", "", "[guer_sol_GL] spawn reinfPlayer");
-BTN_R3(108, "Recruit Bomb Specialist", "", "[guer_sol_EXP] spawn reinfPlayer");
-BTN_R4(111, "Recruit AT", "", "[guer_sol_LAT] spawn reinfPlayer");
+	BTN_R1(107, "Recruit Engineer", "", "[guer_sol_ENG] spawn reinfPlayer");
+	BTN_R2(109, "Recruit Grenadier", "", "[guer_sol_GL] spawn reinfPlayer");
+	BTN_R3(108, "Recruit Bomb Specialist", "", "[guer_sol_EXP] spawn reinfPlayer");
+	BTN_R4(111, "Recruit AT", "", "[guer_sol_LAT] spawn reinfPlayer");
 
-BTN_M(BTN_Y_5, 112, "Recruit AA", "", "[""Soldier_AA""] spawn reinfPlayer");
+	BTN_M(BTN_Y_5, 112, "Recruit AA", "", "[""Soldier_AA""] spawn reinfPlayer");
 
-	};
+		};
 };
 
 class squad_recruit
@@ -58,21 +58,21 @@ class squad_recruit
 	class controls
 	{
 
-AS_BOX_D(BOX_H_10);
-AS_FRAME_D(FRAME_H_10, "Squad Recruitment Options");
-BTN_BACK("closeDialog 0; createDialog ""radio_comm_commander"";");
+	AS_BOX_D(BOX_H_10);
+	AS_FRAME_D(FRAME_H_10, "Squad Recruitment Options");
+	BTN_BACK("closeDialog 0; createDialog ""radio_comm_commander"";");
 
-BTN_L1(104, "Recruit Inf. Squad", "", "closeDialog 0; [guer_grp_squad] spawn addFIAsquadHC");
-BTN_L2(105, "Recruit Inf. Team", "", "closeDialog 0; [guer_grp_team] spawn addFIAsquadHC");
-BTN_L3(106, "Recruit AT Squad", "", "closeDialog 0; [guer_grp_AT] spawn addFIAsquadHC");
-BTN_L4(110, "Recruit AA Truck", "", "closeDialog 0; [guer_stat_AA] spawn addFIAsquadHC");
+	BTN_L1(104, "Recruit Inf. Squad", "", "closeDialog 0; [guer_grp_squad] spawn addFIAsquadHC");
+	BTN_L2(105, "Recruit Inf. Team", "", "closeDialog 0; [guer_grp_team] spawn addFIAsquadHC");
+	BTN_L3(106, "Recruit AT Squad", "", "closeDialog 0; [guer_grp_AT] spawn addFIAsquadHC");
+	BTN_L4(110, "Recruit AA Truck", "", "closeDialog 0; [guer_stat_AA] spawn addFIAsquadHC");
 
-BTN_R1(107, "Recruit Sniper Team", "", "closeDialog 0; [guer_grp_sniper] spawn addFIAsquadHC");
-BTN_R2(109, "Recruit AT Truck", "", "closeDialog 0; [guer_stat_AT] spawn addFIAsquadHC");
-BTN_R3(108, "Recruit Sentry", "", "closeDialog 0; [guer_grp_sentry] spawn addFIAsquadHC");
-BTN_R4(111, "Recruit Mortar Team", "", "closeDialog 0; [guer_stat_mortar] spawn addFIAsquadHC");
+	BTN_R1(107, "Recruit Sniper Team", "", "closeDialog 0; [guer_grp_sniper] spawn addFIAsquadHC");
+	BTN_R2(109, "Recruit AT Truck", "", "closeDialog 0; [guer_stat_AT] spawn addFIAsquadHC");
+	BTN_R3(108, "Recruit Sentry", "", "closeDialog 0; [guer_grp_sentry] spawn addFIAsquadHC");
+	BTN_R4(111, "Recruit Mortar Team", "", "closeDialog 0; [guer_stat_mortar] spawn addFIAsquadHC");
 
-BTN_M(BTN_Y_5, 112, "Recruit Engineers", "", "closeDialog 0; [""delete""] spawn mineDialog;");
+	BTN_M(BTN_Y_5, 112, "Recruit Engineers", "", "closeDialog 0; [""delete""] spawn mineDialog;");
 
 	};
 };
@@ -85,21 +85,21 @@ class buy_vehicle
 	class controls
 	{
 
-AS_BOX_D(BOX_H_10);
-AS_FRAME_D(FRAME_H_10, "Purchase Military Vehicle");
-BTN_BACK("closeDialog 0; createDialog ""vehicle_option"";");
+	AS_BOX_D(BOX_H_10);
+	AS_FRAME_D(FRAME_H_10, "Purchase Military Vehicle");
+	BTN_BACK("closeDialog 0; createDialog ""vehicle_option"";");
 
-BTN_L1(104, "Buy Quadbike", "", "closedialog 0; [vfs select 3] call addFIAveh");
-BTN_L2(105, "Buy Offroad/UAZ", "", "closedialog 0; [vfs select 4] call addFIAveh");
-BTN_L3(106, "Buy Truck", "", "closedialog 0; [vfs select 5] call addFIAveh");
-BTN_L4(110, "Buy Static AT", "", "closedialog 0; [vfs select 9] call addFIAveh");
+	BTN_L1(104, "Buy Quadbike", "", "closedialog 0; [vfs select 3] call addFIAveh");
+	BTN_L2(105, "Buy Offroad/UAZ", "", "closedialog 0; [vfs select 4] call addFIAveh");
+	BTN_L3(106, "Buy Truck", "", "closedialog 0; [vfs select 5] call addFIAveh");
+	BTN_L4(110, "Buy Static AT", "", "closedialog 0; [vfs select 9] call addFIAveh");
 
-BTN_R1(107, "Buy Armed Offroad", "", "closedialog 0; [vfs select 6] call addFIAveh");
-BTN_R2(109, "Buy Mortar", "", "closedialog 0; [vfs select 8] call addFIAveh");
-BTN_R3(108, "Buy MG", "", "closedialog 0; [vfs select 7] call addFIAveh");
-BTN_R4(111, "Buy Static AA", "", "closedialog 0; [vfs select 10] call addFIAveh");
+	BTN_R1(107, "Buy Armed Offroad", "", "closedialog 0; [vfs select 6] call addFIAveh");
+	BTN_R2(109, "Buy Mortar", "", "closedialog 0; [vfs select 8] call addFIAveh");
+	BTN_R3(108, "Buy MG", "", "closedialog 0; [vfs select 7] call addFIAveh");
+	BTN_R4(111, "Buy Static AA", "", "closedialog 0; [vfs select 10] call addFIAveh");
 
-BTN_M(BTN_Y_5, 112, "Buy APC", "", "if (activeAFRF) then {if (player == Slowhand) then {closeDialog 0; [vfs select 11] call addFIAveh;} else {hint ""Only Player Commander has access to this function""};}else {hint ""RHS exclusive for now""};");
+	BTN_M(BTN_Y_5, 112, "Buy APC", "", "if (activeAFRF) then {if (player == Slowhand) then {closeDialog 0; [vfs select 11] call addFIAveh;} else {hint ""Only Player Commander has access to this function""};}else {hint ""RHS exclusive for now""};");
 
 	};
 };
@@ -131,13 +131,13 @@ class init_menu
 	class controls
 	{
 
-AS_BOX_D(BOX_H_4);
-AS_FRAME_D(FRAME_H_4, "Enable Switch Commander?");
+	AS_BOX_D(BOX_H_4);
+	AS_FRAME_D(FRAME_H_4, "Enable Switch Commander?");
 
-BTN_L1(-1,"YES", "", "switchCom = true; publicVariable ""switchCom""; hint ""Switch Commander Enabled\n\nGame will auto assign Commander position to the highest ranked player"";");
-BTN_R1(-1,"NO", "", "switchCom = false; publicVariable ""switchCom""; hint ""Switch Commander Disabled\n\nGame will only assign Commander position upon Commander disconnection"";");
+	BTN_L1(-1,"YES", "", "switchCom = true; publicVariable ""switchCom""; hint ""Switch Commander Enabled\n\nGame will auto assign Commander position to the highest ranked player"";");
+	BTN_R1(-1,"NO", "", "switchCom = false; publicVariable ""switchCom""; hint ""Switch Commander Disabled\n\nGame will only assign Commander position upon Commander disconnection"";");
 
-BTN_M(BTN_Y_2, -1, "Done", "", "if (!isNil ""switchCom"") then {closedialog 0; [] execVM ""Dialogs\membersMenu.sqf"";} else {hint ""Select an option first""};");
+	BTN_M(BTN_Y_2, -1, "Done", "", "if (!isNil ""switchCom"") then {closedialog 0; [] execVM ""Dialogs\membersMenu.sqf"";} else {hint ""Select an option first""};");
 	};
 };
 
@@ -149,17 +149,17 @@ class build_menu
 	class controls
 	{
 
-AS_BOX_D(BOX_H_6);
-AS_FRAME_D(FRAME_H_6, "Building Options");
-BTN_BACK("closeDialog 0; if (player == Slowhand) then {createDialog ""radio_comm_commander""} else {createDialog ""radio_comm_player""};");
+	AS_BOX_D(BOX_H_6);
+	AS_FRAME_D(FRAME_H_6, "Building Options");
+	BTN_BACK("closeDialog 0; if (player == Slowhand) then {createDialog ""radio_comm_commander""} else {createDialog ""radio_comm_player""};");
 
-BTN_L1(-1,"O.Post - Roadblock", "", "closeDialog 0; [""create""] spawn puestoDialog");
-BTN_L2(-1,"Build Minefield", "", "closeDialog 0; createDialog ""minebuild_menu"";");
+	BTN_L1(-1,"O.Post - Roadblock", "", "closeDialog 0; [""create""] spawn puestoDialog");
+	BTN_L2(-1,"Build Minefield", "", "closeDialog 0; createDialog ""minebuild_menu"";");
 
-BTN_R1(-1,"O.Post-Roadblock Delete", "", "closeDialog 0; [""delete""] spawn puestoDialog");
-BTN_R2(-1,"Manage Camps", "Establish/Abandon Camps", "closeDialog 0; createDialog ""camp_dialog"";");
+	BTN_R1(-1,"O.Post-Roadblock Delete", "", "closeDialog 0; [""delete""] spawn puestoDialog");
+	BTN_R2(-1,"Manage Camps", "Establish/Abandon Camps", "closeDialog 0; createDialog ""camp_dialog"";");
 
-BTN_M(BTN_Y_3, -1, "HQ Fortifications", "", "closeDialog 0; createDialog ""HQ_fort_dialog"";");
+	BTN_M(BTN_Y_3, -1, "HQ Fortifications", "", "closeDialog 0; createDialog ""HQ_fort_dialog"";");
 	};
 };
 
@@ -171,27 +171,27 @@ class mission_menu
 	class controls
 	{
 
-AS_BOX_D(BOX_H_8);
-AS_FRAME_D(FRAME_H_8, "Available Missions");
-BTN_BACK(A_CLOSE);
+	AS_BOX_D(BOX_H_8);
+	AS_FRAME_D(FRAME_H_8, "Available Missions");
+	BTN_BACK(A_CLOSE);
 
-#define STR_MIS_MIL "closeDialog 0; if ((player == Slowhand) or (not(isPlayer Slowhand))) then {[[""FND_M""],""missionrequest""] call BIS_fnc_MP} else {hint ""Only Player Commander has access to this function""};"
-#define STR_MIS_CIV "closeDialog 0; if ((player == Slowhand) or (not(isPlayer Slowhand))) then {[[""FND_C""],""missionrequest""] call BIS_fnc_MP} else {hint ""Only Player Commander has access to this function""};"
-#define STR_MIS_EXP "closeDialog 0; if ((player == Slowhand) or (not(isPlayer Slowhand))) then {[[""FND_E""],""missionrequest""] call BIS_fnc_MP} else {hint ""Only Player Commander has access to this function""};"
-#define STR_MIS_LOG	"closeDialog 0; if ((player == Slowhand) or (not(isPlayer Slowhand))) then {[[""LOG""],""missionrequest""] call BIS_fnc_MP} else {hint ""Only Player Commander has access to this function""};"
-#define STR_MIS_DES	"closeDialog 0; if ((player == Slowhand) or (not(isPlayer Slowhand))) then {[[""DES""],""missionrequest""] call BIS_fnc_MP} else {hint ""Only Player Commander has access to this function""};"
-#define STR_MIS_RES "closeDialog 0; if ((player == Slowhand) or (not(isPlayer Slowhand))) then {[[""RES""],""missionrequest""] call BIS_fnc_MP} else {hint ""Only Player Commander has access to this function""};"
-#define STR_MIS_PRO "closeDialog 0; if ((player == Slowhand) or (not(isPlayer Slowhand))) then {[[""PR"",false,true],""missionrequest""] call BIS_fnc_MP} else {hint ""Only Player Commander has access to this function""};"
+	#define STR_MIS_MIL "closeDialog 0; if ((player == Slowhand) or (not(isPlayer Slowhand))) then {[[""FND_M""],""missionrequest""] call BIS_fnc_MP} else {hint ""Only Player Commander has access to this function""};"
+	#define STR_MIS_CIV "closeDialog 0; if ((player == Slowhand) or (not(isPlayer Slowhand))) then {[[""FND_C""],""missionrequest""] call BIS_fnc_MP} else {hint ""Only Player Commander has access to this function""};"
+	#define STR_MIS_EXP "closeDialog 0; if ((player == Slowhand) or (not(isPlayer Slowhand))) then {[[""FND_E""],""missionrequest""] call BIS_fnc_MP} else {hint ""Only Player Commander has access to this function""};"
+	#define STR_MIS_LOG	"closeDialog 0; if ((player == Slowhand) or (not(isPlayer Slowhand))) then {[[""LOG""],""missionrequest""] call BIS_fnc_MP} else {hint ""Only Player Commander has access to this function""};"
+	#define STR_MIS_DES	"closeDialog 0; if ((player == Slowhand) or (not(isPlayer Slowhand))) then {[[""DES""],""missionrequest""] call BIS_fnc_MP} else {hint ""Only Player Commander has access to this function""};"
+	#define STR_MIS_RES "closeDialog 0; if ((player == Slowhand) or (not(isPlayer Slowhand))) then {[[""RES""],""missionrequest""] call BIS_fnc_MP} else {hint ""Only Player Commander has access to this function""};"
+	#define STR_MIS_PRO "closeDialog 0; if ((player == Slowhand) or (not(isPlayer Slowhand))) then {[[""PR"",false,true],""missionrequest""] call BIS_fnc_MP} else {hint ""Only Player Commander has access to this function""};"
 
-BTN_L1(-1,"Military Contact", "", STR_MIS_MIL);
-BTN_L2(-1,"Civilian Contact", "", STR_MIS_CIV);
-BTN_L3(-1,"Sketchy Irishman", "", STR_MIS_EXP);
+	BTN_L1(-1,"Military Contact", "", STR_MIS_MIL);
+	BTN_L2(-1,"Civilian Contact", "", STR_MIS_CIV);
+	BTN_L3(-1,"Sketchy Irishman", "", STR_MIS_EXP);
 
-BTN_R1(-1,"Logistics Mission", "", STR_MIS_LOG);
-BTN_R2(-1,"Destroy Mission", "", STR_MIS_DES);
-BTN_R3(-1,"Rescue Mission", "", STR_MIS_RES);
+	BTN_R1(-1,"Logistics Mission", "", STR_MIS_LOG);
+	BTN_R2(-1,"Destroy Mission", "", STR_MIS_DES);
+	BTN_R3(-1,"Rescue Mission", "", STR_MIS_RES);
 
-BTN_M(BTN_Y_4, -1, "Propaganda", "", STR_MIS_PRO);
+	BTN_M(BTN_Y_4, -1, "Propaganda", "", STR_MIS_PRO);
 	};
 };
 
@@ -203,23 +203,23 @@ class NATO_Options
 	class controls
 	{
 
-AS_BOX_D(BOX_H_10);
-AS_FRAME_D(FRAME_H_10, "Ask NATO for");
-BTN_BACK("closeDialog 0; createDialog ""radio_comm_commander"";");
+	AS_BOX_D(BOX_H_10);
+	AS_FRAME_D(FRAME_H_10, "Ask NATO for");
+	BTN_BACK("closeDialog 0; createDialog ""radio_comm_commander"";");
 
-BTN_L1(-1,"Attack Mission", "Cost: 20 points", "closeDialog 0; [""NATOCA""] execVM ""NatoDialog.sqf"";");
-BTN_L2(-1,"Armored Column", "Cost: 20 points", "closeDialog 0; [""NATOArmor""] execVM ""NatoDialog.sqf"";");
-BTN_L3(-1,"Artillery", "Cost: 10 points", "closeDialog 0; [""NATOArty""] execVM ""NatoDialog.sqf"";");
-BTN_L4(-1,"Roadblock", "Cost: 10 points", "closeDialog 0; [""NATORoadblock""] execVM ""NatoDialog.sqf"";");
-BTN_L5(-1, "NATO QRF", "Cost: 10 points", "closeDialog 0; [""NATOQRF""] execVM ""NatoDialog.sqf"";");  //Stef 30-08
+	BTN_L1(-1,"Attack Mission", "Cost: 20 points", "closeDialog 0; [""NATOCA""] execVM ""NatoDialog.sqf"";");
+	BTN_L2(-1,"Armored Column", "Cost: 20 points", "closeDialog 0; [""NATOArmor""] execVM ""NatoDialog.sqf"";");
+	BTN_L3(-1,"Artillery", "Cost: 10 points", "closeDialog 0; [""NATOArty""] execVM ""NatoDialog.sqf"";");
+	BTN_L4(-1,"Roadblock", "Cost: 10 points", "closeDialog 0; [""NATORoadblock""] execVM ""NatoDialog.sqf"";");
+	BTN_L5(-1, "NATO QRF", "Cost: 10 points", "closeDialog 0; [""NATOQRF""] execVM ""NatoDialog.sqf"";");  //Stef 30-08
 
-BTN_R1(-1,"NATO UAV", "Cost: 10 points", "closeDialog 0; [""NATOUAV""] execVM ""NatoDialog.sqf"";");
-BTN_R2(-1,"Ammodrop", "Cost: 5 points", "closeDialog 0; [""NATOAmmo""] execVM ""NatoDialog.sqf"";");
-BTN_R3(-1,"CAS Support", "Cost: 10 points", "closeDialog 0; [""NATOCAS""] execVM ""NatoDialog.sqf"";");
-BTN_R4(-1,"Bomb Run", "Cost: 10 points", "closeDialog 0; createDialog ""carpet_bombing"";");
-BTN_R5(-1,"Weaken OPFOR", "Cost: 100 points", "closeDialog 0; [""NATORED""] execVM ""NatoDialog.sqf"";");
+	BTN_R1(-1,"NATO UAV", "Cost: 10 points", "closeDialog 0; [""NATOUAV""] execVM ""NatoDialog.sqf"";");
+	BTN_R2(-1,"Ammodrop", "Cost: 5 points", "closeDialog 0; [""NATOAmmo""] execVM ""NatoDialog.sqf"";");
+	BTN_R3(-1,"CAS Support", "Cost: 10 points", "closeDialog 0; [""NATOCAS""] execVM ""NatoDialog.sqf"";");
+	BTN_R4(-1,"Bomb Run", "Cost: 10 points", "closeDialog 0; createDialog ""carpet_bombing"";");
+	BTN_R5(-1,"Weaken OPFOR", "Cost: 100 points", "closeDialog 0; [""NATORED""] execVM ""NatoDialog.sqf"";");
 
-//BTN_M(BTN_Y_5, -1, "NATO QRF", "Cost: 10 points", "closeDialog 0; [""NATOQRF""] execVM ""NatoDialog.sqf"";");   removed to make it even left and right
+	//BTN_M(BTN_Y_5, -1, "NATO QRF", "Cost: 10 points", "closeDialog 0; [""NATOQRF""] execVM ""NatoDialog.sqf"";");   removed to make it even left and right
 
 
 
@@ -234,12 +234,12 @@ class garrison_menu
 	class controls
 	{
 
-AS_BOX_D(BOX_H_2);
-AS_FRAME_D(FRAME_H_2, "Garrison Menu");
-BTN_BACK("closeDialog 0; createDialog ""HQ_menu"";");
+	AS_BOX_D(BOX_H_2);
+	AS_FRAME_D(FRAME_H_2, "Garrison Menu");
+	BTN_BACK("closeDialog 0; createDialog ""HQ_menu"";");
 
-BTN_L1(-1,"Recruit Garrison", "", "closeDialog 0; [""add""] spawn garrisonDialog");
-BTN_R1(-1,"Remove Garrison", "", "closeDialog 0; [""rem""] spawn garrisonDialog");
+	BTN_L1(-1,"Recruit Garrison", "", "closeDialog 0; [""add""] spawn garrisonDialog");
+	BTN_R1(-1,"Remove Garrison", "", "closeDialog 0; [""rem""] spawn garrisonDialog");
 
 	};
 };
@@ -252,19 +252,19 @@ class garrison_recruit
 	class controls
 	{
 
-AS_BOX_D(BOX_H_8);
-AS_FRAME_D(FRAME_H_8, "Garrison Recruitment Options");
-BTN_BACK("closeDialog 0; createDialog ""garrison_menu"";");
+	AS_BOX_D(BOX_H_8);
+	AS_FRAME_D(FRAME_H_8, "Garrison Recruitment Options");
+	BTN_BACK("closeDialog 0; createDialog ""garrison_menu"";");
 
-BTN_L1(104, "Recruit Militiaman", "", "[guer_sol_RFL] call garrisonAdd");
-BTN_L2(105, "Recruit Autorifleman", "", "[guer_sol_AR] call garrisonAdd");
-BTN_L3(106, "Recruit Medic", "", "[guer_sol_MED] call garrisonAdd");
-BTN_L4(110, "Recruit Marksman", "", "[guer_sol_MRK] call garrisonAdd");
+	BTN_L1(104, "Recruit Militiaman", "", "[guer_sol_RFL] call garrisonAdd");
+	BTN_L2(105, "Recruit Autorifleman", "", "[guer_sol_AR] call garrisonAdd");
+	BTN_L3(106, "Recruit Medic", "", "[guer_sol_MED] call garrisonAdd");
+	BTN_L4(110, "Recruit Marksman", "", "[guer_sol_MRK] call garrisonAdd");
 
-BTN_R1(107, "Recruit Squad Leader", "", "[guer_sol_SL] call garrisonAdd");
-BTN_R2(109, "Recruit Grenadier", "", "[guer_sol_GL] call garrisonAdd");
-BTN_R3(108, "Recruit Mortar", "", "[guer_sol_UN] call garrisonAdd");
-BTN_R4(111, "Recruit AT", "", "[guer_sol_LAT] call garrisonAdd");
+	BTN_R1(107, "Recruit Squad Leader", "", "[guer_sol_SL] call garrisonAdd");
+	BTN_R2(109, "Recruit Grenadier", "", "[guer_sol_GL] call garrisonAdd");
+	BTN_R3(108, "Recruit Mortar", "", "[guer_sol_UN] call garrisonAdd");
+	BTN_R4(111, "Recruit AT", "", "[guer_sol_LAT] call garrisonAdd");
 
 	};
 };
@@ -277,15 +277,15 @@ class fps_limiter
 	class controls
 	{
 
-AS_BOX_D(BOX_H_2);
-AS_FRAME_D(FRAME_H_2, "FPS Limiter");
-BTN_BACK("closeDialog 0; createDialog ""game_options_commander"";");
+	AS_BOX_D(BOX_H_2);
+	AS_FRAME_D(FRAME_H_2, "FPS Limiter");
+	BTN_BACK("closeDialog 0; createDialog ""game_options_commander"";");
 
-#define STR_FPS_PLUS "[[1],""AS_fnc_fpsChange""] call BIS_fnc_MP;"
-#define STR_FPS_MINUS "[[-1],""AS_fnc_fpsChange""] call BIS_fnc_MP;"
+	#define STR_FPS_PLUS "[[1],""AS_fnc_fpsChange""] call BIS_fnc_MP;"
+	#define STR_FPS_MINUS "[[-1],""AS_fnc_fpsChange""] call BIS_fnc_MP;"
 
-BTN_L1(-1, "+1 FPS Limit", "", STR_FPS_PLUS);
-BTN_R1(-1, "-1 FPS Limit", "", STR_FPS_MINUS);
+	BTN_L1(-1, "+1 FPS Limit", "", STR_FPS_PLUS);
+	BTN_R1(-1, "-1 FPS Limit", "", STR_FPS_MINUS);
 
 	};
 };
@@ -297,15 +297,15 @@ class spawn_config
 	class controls
 	{
 
-AS_BOX_D(BOX_H_2);
-AS_FRAME_D(FRAME_H_2, "Spawn Distance Config");
-BTN_BACK("closeDialog 0; createDialog ""game_options_commander"";");
+	AS_BOX_D(BOX_H_2);
+	AS_FRAME_D(FRAME_H_2, "Spawn Distance Config");
+	BTN_BACK("closeDialog 0; createDialog ""game_options_commander"";");
 
-#define STR_DIST_PLUS "if (distanciaSPWN < 2500) then {distanciaSPWN = (distanciaSPWN + 100) min 2500; publicVariable ""distanciaSPWN""; hint format [""Spawn Distance Set to %1 meters. Be careful, this may affect game performance"",distanciaSPWN];};"
-#define STR_DIST_MINUS "if (distanciaSPWN > 1000) then {distanciaSPWN = (distanciaSPWN - 100) max 100; publicVariable ""distanciaSPWN""; hint format [""Spawn Distance Set to %1 meters. Be careful, this may affect game performance"",distanciaSPWN];};"
+	#define STR_DIST_PLUS "if (distanciaSPWN < 2500) then {distanciaSPWN = (distanciaSPWN + 100) min 2500; publicVariable ""distanciaSPWN""; hint format [""Spawn Distance Set to %1 meters. Be careful, this may affect game performance"",distanciaSPWN];};"
+	#define STR_DIST_MINUS "if (distanciaSPWN > 1000) then {distanciaSPWN = (distanciaSPWN - 100) max 100; publicVariable ""distanciaSPWN""; hint format [""Spawn Distance Set to %1 meters. Be careful, this may affect game performance"",distanciaSPWN];};"
 
-BTN_L1(-1, "+100 Spawn Dist.", "", STR_DIST_PLUS);
-BTN_R1(-1, "-100 Spawn Dist.", "", STR_DIST_MINUS);
+	BTN_L1(-1, "+100 Spawn Dist.", "", STR_DIST_PLUS);
+	BTN_R1(-1, "-100 Spawn Dist.", "", STR_DIST_MINUS);
 
 	};
 };
@@ -317,15 +317,15 @@ class civ_config
 	class controls
 	{
 
-AS_BOX_D(BOX_H_2);
-AS_FRAME_D(FRAME_H_2, "Civ Presence Config");
-BTN_BACK("closeDialog 0; createDialog ""game_options_commander"";");
+	AS_BOX_D(BOX_H_2);
+	AS_FRAME_D(FRAME_H_2, "Civ Presence Config");
+	BTN_BACK("closeDialog 0; createDialog ""game_options_commander"";");
 
-#define STR_CIV_PLUS "if (civPerc < 1) then {civPerc = (civPerc + 0.01) min 1; publicVariable ""civPerc""; hint format [""Civilian Percentage Set to %1 percent"",civPerc * 100];};"
-#define STR_CIV_MINUS "if (civPerc > 0) then {civPerc = (civPerc - 0.01) max 0; publicVariable ""civPerc""; hint format [""Civilian Percentage Set to %1 percent"",civPerc * 100];};"
+	#define STR_CIV_PLUS "if (civPerc < 1) then {civPerc = (civPerc + 0.01) min 1; publicVariable ""civPerc""; hint format [""Civilian Percentage Set to %1 percent"",civPerc * 100];};"
+	#define STR_CIV_MINUS "if (civPerc > 0) then {civPerc = (civPerc - 0.01) max 0; publicVariable ""civPerc""; hint format [""Civilian Percentage Set to %1 percent"",civPerc * 100];};"
 
-BTN_L1(-1, "+1% Civ Spawn.", "", STR_CIV_PLUS);
-BTN_R1(-1, "-1% Civ Spawn.", "", STR_CIV_MINUS);
+	BTN_L1(-1, "+1% Civ Spawn.", "", STR_CIV_PLUS);
+	BTN_R1(-1, "-1% Civ Spawn.", "", STR_CIV_MINUS);
 
 	};
 };
@@ -338,15 +338,15 @@ class squad_manager
 	class controls
 	{
 
-AS_BOX_D(BOX_H_4);
-AS_FRAME_D(FRAME_H_4, "HC Squad Options");
-BTN_BACK("closeDialog 0; createDialog ""radio_comm_commander"";");
+	AS_BOX_D(BOX_H_4);
+	AS_FRAME_D(FRAME_H_4, "HC Squad Options");
+	BTN_BACK("closeDialog 0; createDialog ""radio_comm_commander"";");
 
-BTN_L1(-1, "Squad Add Vehicle", "", "closeDialog 0; [] execVM ""REINF\addSquadVeh.sqf"";");
-BTN_L2(-1, "Squad Vehicle Stats", "", "[""stats""] execVM ""REINF\vehStats.sqf"";");
+	BTN_L1(-1, "Squad Add Vehicle", "", "closeDialog 0; [] execVM ""REINF\addSquadVeh.sqf"";");
+	BTN_L2(-1, "Squad Vehicle Stats", "", "[""stats""] execVM ""REINF\vehStats.sqf"";");
 
-BTN_R1(-1, "Mount / Dismount", "", "[""mount""] execVM ""REINF\vehStats.sqf""");
-BTN_R2(-1, "Static Autotarget", "", "closeDialog 0; [] execVM ""AI\staticAutoT.sqf"";");
+	BTN_R1(-1, "Mount / Dismount", "", "[""mount""] execVM ""REINF\vehStats.sqf""");
+	BTN_R2(-1, "Static Autotarget", "", "closeDialog 0; [] execVM ""AI\staticAutoT.sqf"";");
 
 	};
 };
@@ -358,12 +358,12 @@ class veh_query
 	class controls
 	{
 
-AS_BOX_D(BOX_H_2);
-AS_FRAME_D(FRAME_H_2, "Add Vehicle to Squad?");
-BTN_BACK("closeDialog 0; vehQuery = nil; [] execVM ""Dialogs\squad_recruit.sqf"";");
+	AS_BOX_D(BOX_H_2);
+	AS_FRAME_D(FRAME_H_2, "Add Vehicle to Squad?");
+	BTN_BACK("closeDialog 0; vehQuery = nil; [] execVM ""Dialogs\squad_recruit.sqf"";");
 
-BTN_L1(104, "YES", "", "closeDialog 0; vehQuery = true");
-BTN_R1(105, "NO", "", "closeDialog 0; vehQuery = nil");
+	BTN_L1(104, "YES", "", "closeDialog 0; vehQuery = true");
+	BTN_R1(105, "NO", "", "closeDialog 0; vehQuery = nil");
 
 	};
 };
@@ -375,15 +375,15 @@ class player_money
 	class controls
 	{
 
-AS_BOX_D(BOX_H_4);
-AS_FRAME_D(FRAME_H_4, "Player and Money Interaction");
-BTN_BACK("closeDialog 0; if (player == Slowhand) then {createDialog ""radio_comm_commander""} else {createDialog ""radio_comm_player""};");
+	AS_BOX_D(BOX_H_4);
+	AS_FRAME_D(FRAME_H_4, "Player and Money Interaction");
+	BTN_BACK("closeDialog 0; if (player == Slowhand) then {createDialog ""radio_comm_commander""} else {createDialog ""radio_comm_player""};");
 
-BTN_L1(-1, "Add Server Member", "", "if (isMultiplayer) then {closeDialog 0; [""add""] call memberAdd;} else {hint ""This function is MP only""};");
-BTN_L2(-1, "Remove Server Member", "", "if (isMultiplayer) then {closeDialog 0; [""remove""] call memberAdd;} else {hint ""This function is MP only""};");
+	BTN_L1(-1, "Add Server Member", "", "if (isMultiplayer) then {closeDialog 0; [""add""] call memberAdd;} else {hint ""This function is MP only""};");
+	BTN_L2(-1, "Remove Server Member", "", "if (isMultiplayer) then {closeDialog 0; [""remove""] call memberAdd;} else {hint ""This function is MP only""};");
 
-BTN_R1(-1, "Donate 100 € to player", "", "[true] call donateMoney;");
-BTN_R2(-1, "Donate 100 € to FIA", "", "[] call donateMoney;");
+	BTN_R1(-1, "Donate 100 € to player", "", "[true] call donateMoney;");
+	BTN_R2(-1, "Donate 100 € to FIA", "", "[] call donateMoney;");
 
 	};
 };
@@ -395,13 +395,13 @@ class members_menu
 	class controls
 	{
 
-		AS_BOX_D(BOX_H_4);
-		AS_FRAME_D(FRAME_H_4, "Enable Server Membership?");
+	AS_BOX_D(BOX_H_4);
+	AS_FRAME_D(FRAME_H_4, "Enable Server Membership?");
 
-		BTN_L1(-1, "YES", "", "membersPool = []; {membersPool pushBack (getPlayerUID _x)} forEach playableUnits; publicVariable ""membersPool""; hint ""Server Membership Enabled.\n\nAll the present players have been added to the Member's List.\n\nNon-members cannot use the HQ Ammobox and cannot be commanders, even with Switch Commander enabled.\n\nIf you load a session with this feature disabled, it will change to disabled.\n\nUse this option for Open Server Environments"";");
-		BTN_R1(-1, "NO", "", "membersPool = []; publicVariable ""membersPool""; hint ""Server Membership Disabled.\n\nAnyone can use the HQ Ammobox and become Commander (if Switch Commander is enabled).\n\nIf you load a session with this feature enabled, it will become enabled.\n\nUse this option for Private Server environments."";");
+	BTN_L1(-1, "YES", "", "membersPool = []; {membersPool pushBack (getPlayerUID _x)} forEach playableUnits; publicVariable ""membersPool""; hint ""Server Membership Enabled.\n\nAll the present players have been added to the Member's List.\n\nNon-members cannot use the HQ Ammobox and cannot be commanders, even with Switch Commander enabled.\n\nIf you load a session with this feature disabled, it will change to disabled.\n\nUse this option for Open Server Environments"";");
+	BTN_R1(-1, "NO", "", "membersPool = []; publicVariable ""membersPool""; hint ""Server Membership Disabled.\n\nAnyone can use the HQ Ammobox and become Commander (if Switch Commander is enabled).\n\nIf you load a session with this feature enabled, it will become enabled.\n\nUse this option for Private Server environments."";");
 
-		BTN_M(BTN_Y_2, -1, "Done", "", "if (!isNil ""membersPool"") then {closedialog 0; [] execVM ""Dialogs\firstLoad.sqf"";} else {hint ""Select an option first""};");
+	BTN_M(BTN_Y_2, -1, "Done", "", "if (!isNil ""membersPool"") then {closedialog 0; [] execVM ""Dialogs\firstLoad.sqf"";} else {hint ""Select an option first""};");
 
 	};
 };
@@ -413,14 +413,14 @@ class vehicle_manager
 	class controls
 	{
 
-AS_BOX_D(BOX_H_4);
-AS_FRAME_D(FRAME_H_4, "Vehicle Manager");
-BTN_BACK("closeDialog 0; if (player == Slowhand) then {createDialog ""radio_comm_commander""} else {createDialog ""radio_comm_player""};");
+	AS_BOX_D(BOX_H_4);
+	AS_FRAME_D(FRAME_H_4, "Vehicle Manager");
+	BTN_BACK("closeDialog 0; if (player == Slowhand) then {createDialog ""radio_comm_commander""} else {createDialog ""radio_comm_player""};");
 
-BTN_L1(-1, "Garage\Sell Vehicle", "", "closeDialog 0; createDialog ""garage_sell"";");
-BTN_R1(-1, "Vehicles and Squads", "", "closeDialog 0; if (player == Slowhand) then {createDialog ""squad_manager""} else {hint ""Only Player Commander has access to this function""};");
+	BTN_L1(-1, "Garage\Sell Vehicle", "", "closeDialog 0; createDialog ""garage_sell"";");
+	BTN_R1(-1, "Vehicles and Squads", "", "closeDialog 0; if (player == Slowhand) then {createDialog ""squad_manager""} else {hint ""Only Player Commander has access to this function""};");
 
-BTN_M(BTN_Y_2, -1, "Unlock Vehicle", "", "closeDialog 0; if !(isMultiplayer) then {hint ""It's unlocked already.""} else {if (player != Slowhand) then {[false] call AS_fnc_unlockVehicle} else {[true] call AS_fnc_unlockVehicle};};");
+	BTN_M(BTN_Y_2, -1, "Unlock Vehicle", "", "closeDialog 0; if !(isMultiplayer) then {hint ""It's unlocked already.""} else {if (player != Slowhand) then {[false] call AS_fnc_unlockVehicle} else {[true] call AS_fnc_unlockVehicle};};");
 
 	};
 };
@@ -433,12 +433,12 @@ class garage_sell
 	class controls
 	{
 
-AS_BOX_D(BOX_H_2);
-AS_FRAME_D(FRAME_H_2, "Sell or Garage Vehicle");
-BTN_BACK("closeDialog 0; createDialog ""vehicle_manager"";");
+	AS_BOX_D(BOX_H_2);
+	AS_FRAME_D(FRAME_H_2, "Sell or Garage Vehicle");
+	BTN_BACK("closeDialog 0; createDialog ""vehicle_manager"";");
 
-BTN_L1(-1, "Garage Vehicle", "", "closeDialog 0; if (player != Slowhand) then {[false] call AS_fnc_garageVehicle} else {if (isMultiplayer) then {createDialog ""garage_check""} else {[true] call AS_fnc_garageVehicle}};");
-BTN_R1(-1, "Sell Vehicle", "", "closeDialog 0; if (player == Slowhand) then {[] call AS_fnc_sellVehicle} else {hint ""Only the Commander can sell vehicles""};");
+	BTN_L1(-1, "Garage Vehicle", "", "closeDialog 0; if (player != Slowhand) then {[false] call AS_fnc_garageVehicle} else {if (isMultiplayer) then {createDialog ""garage_check""} else {[true] call AS_fnc_garageVehicle}};");
+	BTN_R1(-1, "Sell Vehicle", "", "closeDialog 0; if (player == Slowhand) then {[] call AS_fnc_sellVehicle} else {hint ""Only the Commander can sell vehicles""};");
 
 	};
 };
@@ -450,12 +450,12 @@ class garage_check
 	class controls
 	{
 
-AS_BOX_D(BOX_H_2);
-AS_FRAME_D(FRAME_H_2, "Personal or FIA Garage?");
-BTN_BACK("closeDialog 0; createDialog ""garage_sell"";");
+	AS_BOX_D(BOX_H_2);
+	AS_FRAME_D(FRAME_H_2, "Personal or FIA Garage?");
+	BTN_BACK("closeDialog 0; createDialog ""garage_sell"";");
 
-BTN_L1(-1, "Personal Garage", "", "closeDialog 0; [false] call AS_fnc_garageVehicle;");
-BTN_R1(-1, "FIA Garage", "", "closeDialog 0; [true] call AS_fnc_garageVehicle;");
+	BTN_L1(-1, "Personal Garage", "", "closeDialog 0; [false] call AS_fnc_garageVehicle;");
+	BTN_R1(-1, "FIA Garage", "", "closeDialog 0; [true] call AS_fnc_garageVehicle;");
 
 	};
 };
@@ -467,12 +467,12 @@ class vehicle_option
 	class controls
 	{
 
-AS_BOX_D(BOX_H_2);
-AS_FRAME_D(FRAME_H_2, "Buy Vehicle");
-BTN_BACK(A_CLOSE);
+	AS_BOX_D(BOX_H_2);
+	AS_FRAME_D(FRAME_H_2, "Buy Vehicle");
+	BTN_BACK(A_CLOSE);
 
-BTN_L1(-1, "Civilian Vehicle", "", "closeDialog 0; nul=[] execVM ""Dialogs\buy_vehicle_civ.sqf"";");
-BTN_R1(-1, "Military Vehicle", "", "closeDialog 0; nul=[] execVM ""Dialogs\buy_vehicle.sqf"";");
+	BTN_L1(-1, "Civilian Vehicle", "", "closeDialog 0; nul=[] execVM ""Dialogs\buy_vehicle_civ.sqf"";");
+	BTN_R1(-1, "Military Vehicle", "", "closeDialog 0; nul=[] execVM ""Dialogs\buy_vehicle.sqf"";");
 
 	};
 };
@@ -484,14 +484,14 @@ class civ_vehicle
 	class controls
 	{
 
-AS_BOX_D(BOX_H_4);
-AS_FRAME_D(FRAME_H_4, "Buy Civilian Vehicle");
-BTN_BACK("closeDialog 0; createDialog ""vehicle_option"";");
+	AS_BOX_D(BOX_H_4);
+	AS_FRAME_D(FRAME_H_4, "Buy Civilian Vehicle");
+	BTN_BACK("closeDialog 0; createDialog ""vehicle_option"";");
 
-BTN_L1(104, "Offroad", "", "closeDialog 0; [vfs select 0] call addFIAveh;");
-BTN_R1(105, "Truck", "", "closeDialog 0; [vfs select 1] call addFIAveh;");
+	BTN_L1(104, "Offroad", "", "closeDialog 0; [vfs select 0] call addFIAveh;");
+	BTN_R1(105, "Truck", "", "closeDialog 0; [vfs select 1] call addFIAveh;");
 
-BTN_M(BTN_Y_2, 106, "Helicopter", "", "closeDialog 0; [vfs select 2] call addFIAveh;");
+	BTN_M(BTN_Y_2, 106, "Helicopter", "", "closeDialog 0; [vfs select 2] call addFIAveh;");
 
 	};
 };
@@ -503,14 +503,14 @@ class carpet_bombing
 	class controls
 	{
 
-AS_BOX_D(BOX_H_4);
-AS_FRAME_D(FRAME_H_4, "Carpet Bombing Strike");
-BTN_BACK("closeDialog 0; createDialog ""NATO_Options"";");
+	AS_BOX_D(BOX_H_4);
+	AS_FRAME_D(FRAME_H_4, "Carpet Bombing Strike");
+	BTN_BACK("closeDialog 0; createDialog ""NATO_Options"";");
 
-BTN_L1(-1, "HE Bombs", "Cost: 10 points", "closeDialog 0; [""HE""] execVM ""REINF\NATObomb.sqf"";");
-BTN_R1(-1, "Carpet Bombing", "Cost: 10 points", "closeDialog 0; [""CARPET""] execVM ""REINF\NATObomb.sqf"";");
+	BTN_L1(-1, "HE Bombs", "Cost: 10 points", "closeDialog 0; [""HE""] execVM ""REINF\NATObomb.sqf"";");
+	BTN_R1(-1, "Carpet Bombing", "Cost: 10 points", "closeDialog 0; [""CARPET""] execVM ""REINF\NATObomb.sqf"";");
 
-BTN_M(BTN_Y_2, -1, "NAPALM Bomb", "Cost: 10 points", "closeDialog 0; [""NAPALM""] execVM ""REINF\NATObomb.sqf"";");
+	BTN_M(BTN_Y_2, -1, "NAPALM Bomb", "Cost: 10 points", "closeDialog 0; [""NAPALM""] execVM ""REINF\NATObomb.sqf"";");
 
 	};
 };
@@ -523,15 +523,15 @@ class AI_management
 	class controls
 	{
 
-AS_BOX_D(BOX_H_4);
-AS_FRAME_D(FRAME_H_4, "AI Management");
-BTN_BACK("closeDialog 0; if (player == Slowhand) then {createDialog ""radio_comm_commander""} else {createDialog ""radio_comm_player""};");
+	AS_BOX_D(BOX_H_4);
+	AS_FRAME_D(FRAME_H_4, "AI Management");
+	BTN_BACK("closeDialog 0; if (player == Slowhand) then {createDialog ""radio_comm_commander""} else {createDialog ""radio_comm_player""};");
 
-BTN_L1(-1, "Temp. AI Control", "", "closeDialog 0; if ((count groupselectedUnits player > 0) and (count hcSelected player > 0)) exitWith {hint ""You must select from HC or Squad Bars, not both""}; if (count groupselectedUnits player == 1) then {[groupselectedUnits player] execVM ""REINF\controlunit.sqf""}; if (count hcSelected player == 1) then {[hcSelected player] execVM ""REINF\controlHCsquad.sqf"";};");
-BTN_L2(-1, "Auto Heal", "", "if (autoHeal) then {autoHeal = false; hint ""Auto Healing disabled"";} else {autoHeal = true; hint ""Auto Heal enabled""; [] execVM ""AI\autoHealFnc.sqf""}");
+	BTN_L1(-1, "Temp. AI Control", "", "closeDialog 0; if ((count groupselectedUnits player > 0) and (count hcSelected player > 0)) exitWith {hint ""You must select from HC or Squad Bars, not both""}; if (count groupselectedUnits player == 1) then {[groupselectedUnits player] execVM ""REINF\controlunit.sqf""}; if (count hcSelected player == 1) then {[hcSelected player] execVM ""REINF\controlHCsquad.sqf"";};");
+	BTN_L2(-1, "Auto Heal", "", "if (autoHeal) then {autoHeal = false; hint ""Auto Healing disabled"";} else {autoHeal = true; hint ""Auto Heal enabled""; [] execVM ""AI\autoHealFnc.sqf""}");
 
-BTN_R1(-1, "Auto Rearm", "", "closeDialog 0; if (count groupselectedUnits player == 0) then {(units group player) execVM ""AI\rearmCall.sqf""} else {(groupselectedUnits player) execVM ""AI\rearmCall.sqf""};");
-BTN_R2(-1, "Dismiss Units/Squads", "", "closeDialog 0; if (count groupselectedUnits player > 0) then {[groupselectedUnits player] execVM ""REINF\dismissPlayerGroup.sqf""} else {if (count (hcSelected player) > 0) then {[hcSelected player] execVM ""REINF\dismissSquad.sqf""}}; if ((count groupselectedUnits player == 0) and (count hcSelected player == 0)) then {hint ""No units or squads selected""}");
+	BTN_R1(-1, "Auto Rearm", "", "closeDialog 0; if (count groupselectedUnits player == 0) then {(units group player) execVM ""AI\rearmCall.sqf""} else {(groupselectedUnits player) execVM ""AI\rearmCall.sqf""};");
+	BTN_R2(-1, "Dismiss Units/Squads", "", "closeDialog 0; if (count groupselectedUnits player > 0) then {[groupselectedUnits player] execVM ""REINF\dismissPlayerGroup.sqf""} else {if (count (hcSelected player) > 0) then {[hcSelected player] execVM ""REINF\dismissSquad.sqf""}}; if ((count groupselectedUnits player == 0) and (count hcSelected player == 0)) then {hint ""No units or squads selected""}");
 
 	};
 };
@@ -544,19 +544,19 @@ class rounds_number
 	class controls
 	{
 
-AS_BOX_D(BOX_H_8);
-AS_FRAME_D(FRAME_H_8, "Select No. Rounds to be fired");
-BTN_BACK(A_CLOSE);
+	AS_BOX_D(BOX_H_8);
+	AS_FRAME_D(FRAME_H_8, "Select No. Rounds to be fired");
+	BTN_BACK(A_CLOSE);
 
-BTN_L1(-1, "1", "", "closeDialog 0; rondas = 1;");
-BTN_L2(-1, "2", "", "closeDialog 0; rondas = 2;");
-BTN_L3(-1, "3", "", "closeDialog 0; rondas = 3;");
-BTN_L4(-1, "4", "", "closeDialog 0; rondas = 4;");
+	BTN_L1(-1, "1", "", "closeDialog 0; rondas = 1;");
+	BTN_L2(-1, "2", "", "closeDialog 0; rondas = 2;");
+	BTN_L3(-1, "3", "", "closeDialog 0; rondas = 3;");
+	BTN_L4(-1, "4", "", "closeDialog 0; rondas = 4;");
 
-BTN_R1(-1, "5", "", "closeDialog 0; rondas = 5;");
-BTN_R2(-1, "6", "", "closeDialog 0; rondas = 6;");
-BTN_R3(-1, "7", "", "closeDialog 0; rondas = 7;");
-BTN_R4(-1, "8", "", "closeDialog 0; rondas = 8;");
+	BTN_R1(-1, "5", "", "closeDialog 0; rondas = 5;");
+	BTN_R2(-1, "6", "", "closeDialog 0; rondas = 6;");
+	BTN_R3(-1, "7", "", "closeDialog 0; rondas = 7;");
+	BTN_R4(-1, "8", "", "closeDialog 0; rondas = 8;");
 
 	};
 };
@@ -569,12 +569,12 @@ class strike_type
 	class controls
 	{
 
-AS_BOX_D(BOX_H_2);
-AS_FRAME_D(FRAME_H_2, "Select type of strike");
-BTN_BACK(A_CLOSE);
+	AS_BOX_D(BOX_H_2);
+	AS_FRAME_D(FRAME_H_2, "Select type of strike");
+	BTN_BACK(A_CLOSE);
 
-BTN_L1(-1, "Single Point Strike", "", "closeDialog 0; tipoArty = ""NORMAL"";");
-BTN_R1(-1, "Barrage Strike", "", "closeDialog 0; tipoArty = ""BARRAGE"";");
+	BTN_L1(-1, "Single Point Strike", "", "closeDialog 0; tipoArty = ""NORMAL"";");
+	BTN_R1(-1, "Barrage Strike", "", "closeDialog 0; tipoArty = ""BARRAGE"";");
 
 	};
 };
@@ -587,14 +587,14 @@ class mbt_type
 	class controls
 	{
 
-AS_BOX_D(BOX_H_4);
-AS_FRAME_D(FRAME_H_4, "Select type ammo for the strike");
-BTN_BACK(A_CLOSE);
+	AS_BOX_D(BOX_H_4);
+	AS_FRAME_D(FRAME_H_4, "Select type ammo for the strike");
+	BTN_BACK(A_CLOSE);
 
-BTN_L1(-1, "HE", "", "closeDialog 0; tipoMuni = bluArtyAmmoHE;");
-BTN_R1(-1, "Laser Guided", "", "closeDialog 0; tipoMuni = bluArtyAmmoLaser;");
+	BTN_L1(-1, "HE", "", "closeDialog 0; tipoMuni = bluArtyAmmoHE;");
+	BTN_R1(-1, "Laser Guided", "", "closeDialog 0; tipoMuni = bluArtyAmmoLaser;");
 
-BTN_M(BTN_Y_2, -1, "Smoke", "", "closeDialog 0; tipoMuni = bluArtyAmmoSmoke;");
+	BTN_M(BTN_Y_2, -1, "Smoke", "", "closeDialog 0; tipoMuni = bluArtyAmmoSmoke;");
 
 	};
 };
@@ -606,12 +606,12 @@ class mortar_type
 	class controls
 	{
 
-AS_BOX_D(BOX_H_2);
-AS_FRAME_D(FRAME_H_2, "Select Mortar Ammo");
-BTN_BACK(A_CLOSE);
+	AS_BOX_D(BOX_H_2);
+	AS_FRAME_D(FRAME_H_2, "Select Mortar Ammo");
+	BTN_BACK(A_CLOSE);
 
-BTN_L1(-1, "HE", "", "closeDialog 0; if (activeAFRF) then {tipoMuni = ""rhs_mag_3vo18_10""} else {tipoMuni = ""8Rnd_82mm_Mo_shells""};");
-BTN_R1(-1, "Smoke", "", "closeDialog 0; if (activeAFRF) then {tipoMuni = ""rhs_mag_3vs25m_10""} else {tipoMuni = ""8Rnd_82mm_Mo_Smoke_white""};");
+	BTN_L1(-1, "HE", "", "closeDialog 0; if (activeAFRF) then {tipoMuni = ""rhs_mag_3vo18_10""} else {tipoMuni = ""8Rnd_82mm_Mo_shells""};");
+	BTN_R1(-1, "Smoke", "", "closeDialog 0; if (activeAFRF) then {tipoMuni = ""rhs_mag_3vs25m_10""} else {tipoMuni = ""8Rnd_82mm_Mo_Smoke_white""};");
 
 	};
 };
@@ -624,12 +624,12 @@ class minebuild_menu
 	class controls
 	{
 
-AS_BOX_D(BOX_H_2);
-AS_FRAME_D(FRAME_H_2, "Build Minefield");
-BTN_BACK("closeDialog 0; createDialog ""build_menu"";");
+	AS_BOX_D(BOX_H_2);
+	AS_FRAME_D(FRAME_H_2, "Build Minefield");
+	BTN_BACK("closeDialog 0; createDialog ""build_menu"";");
 
-BTN_L1(-1, "APERS Mines", "", "closeDialog 0; [""APERSMine""] spawn mineDialog");
-BTN_R1(-1, "AT Mines", "", "closeDialog 0; [""ATMine""] spawn mineDialog");
+	BTN_L1(-1, "APERS Mines", "", "closeDialog 0; [""APERSMine""] spawn mineDialog");
+	BTN_R1(-1, "AT Mines", "", "closeDialog 0; [""ATMine""] spawn mineDialog");
 
 	};
 };
@@ -927,20 +927,20 @@ class game_options_commander
 	class controls
 	{
 
-AS_BOX_D(BOX_H_10);
-AS_FRAME_D(FRAME_H_10, "Game Options");
-BTN_BACK(A_CLOSE);
+	AS_BOX_D(BOX_H_10);
+	AS_FRAME_D(FRAME_H_10, "Game Options");
+	BTN_BACK(A_CLOSE);
 
-#define STR_GO_GAR "closeDialog 0; [[], ""garbageCleaner.sqf""] remoteExec [""execVM"", 2];"
-#define STR_GO_PSS "closeDialog 0; [] remoteExec [""AS_fnc_saveGame"",2];"
+	#define STR_GO_GAR "closeDialog 0; [[], ""garbageCleaner.sqf""] remoteExec [""execVM"", 2];"
+	#define STR_GO_PSS "closeDialog 0; [] remoteExec [""AS_fnc_saveGame"",2];"
 
-BTN_L1(-1, "Civ Config", "", "closeDialog 0; createDialog ""civ_config"";");
-BTN_L2(-1, "Spawn Dist. Config", "", "closeDialog 0; createDialog ""spawn_config"";");
-BTN_L3(-1, "FPS Limiter", "", "closeDialog 0; createDialog ""fps_limiter"";");
+	BTN_L1(-1, "Civ Config", "", "closeDialog 0; createDialog ""civ_config"";");
+	BTN_L2(-1, "Spawn Dist. Config", "", "closeDialog 0; createDialog ""spawn_config"";");
+	BTN_L3(-1, "FPS Limiter", "", "closeDialog 0; createDialog ""fps_limiter"";");
 
-BTN_R1(-1, "Garbage Clean", "", STR_GO_GAR);
-BTN_R2(-1, "Persistent Save", "", STR_GO_PSS);
-BTN_R3(-1, "Music ON/OFF", "", "closedialog 0; if (musicON) then {musicON = false; hint ""Music turned OFF"";} else {musicON = true; execVM ""musica.sqf""; hint ""Music turned ON""};");
+	BTN_R1(-1, "Garbage Clean", "", STR_GO_GAR);
+	BTN_R2(-1, "Persistent Save", "", STR_GO_PSS);
+	BTN_R3(-1, "Music ON/OFF", "", "closedialog 0; if (musicON) then {musicON = false; hint ""Music turned OFF"";} else {musicON = true; execVM ""musica.sqf""; hint ""Music turned ON""};");
 	};
 };
 
@@ -951,12 +951,12 @@ class game_options_player
 
 	class controls
 	{
-		AS_BOX_D(BOX_H_4);
-		AS_FRAME_D(FRAME_H_4, "Game Options");
-		BTN_BACK(A_CLOSE);
+	AS_BOX_D(BOX_H_4);
+	AS_FRAME_D(FRAME_H_4, "Game Options");
+	BTN_BACK(A_CLOSE);
 
-		BTN_L1(-1, "Music ON/OFF", "", "closedialog 0; if (musicON) then {musicON = false; hint ""Music turned OFF"";} else {musicON = true; execVM ""musica.sqf""; hint ""Music turned ON""};");
-		BTN_R1(-1, "Ingame Member's List", "", "if (isMultiplayer) then {[] execVM ""OrgPlayers\membersList.sqf""} else {hint ""This function is MP only""};");
+	BTN_L1(-1, "Music ON/OFF", "", "closedialog 0; if (musicON) then {musicON = false; hint ""Music turned OFF"";} else {musicON = true; execVM ""musica.sqf""; hint ""Music turned ON""};");
+	BTN_R1(-1, "Ingame Member's List", "", "if (isMultiplayer) then {[] execVM ""OrgPlayers\membersList.sqf""} else {hint ""This function is MP only""};");
 	};
 };
 
@@ -968,12 +968,12 @@ class HQ_reset_menu
 	class controls
 	{
 
-AS_BOX_D(BOX_H_2);
-AS_FRAME_D(FRAME_H_2, "Do you want to reset HQ?");
-BTN_BACK(A_CLOSE);
+	AS_BOX_D(BOX_H_2);
+	AS_FRAME_D(FRAME_H_2, "Do you want to reset HQ?");
+	BTN_BACK(A_CLOSE);
 
-BTN_L1(-1, "Yes", "", "closeDialog 0; [true] spawn buildHQ");
-BTN_R1(-1, "No", "", A_CLOSE);
+	BTN_L1(-1, "Yes", "", "closeDialog 0; [true] spawn buildHQ");
+	BTN_R1(-1, "No", "", A_CLOSE);
 
 	};
 };
@@ -1109,97 +1109,97 @@ class ROLECHANGE {
 	movingenable=false;
     class controls {
 
-//////////////////////STEF ROLECHANGE DIALOG /////////////////////////
-class ROLECHANGE_BOX: BOX
-{
-	idc = 101;
-	text = ""; //--- ToDo: Localize;
-	x = 0.244979 * safezoneW + safezoneX;
-	y = 0.223941 * safezoneH + safezoneY;
-	w = 0.445038 * safezoneW;
-	h = 0.492103 * safezoneH;
-};
-class HQ_frame: RscFrame
-{
-	idc = 102;
-	text = "Role Change"; //--- ToDo: Localize;
-	x = 0.254979 * safezoneW + safezoneX;
-	y = 0.233941 * safezoneH + safezoneY;
-	w = 0.425038 * safezoneW;
-	h = 0.462103 * safezoneH;
-};
-class HQ_button_back: RscButton
-{
-	idc = 103;
-	text = "Back"; //--- ToDo: Localize;
-	x = 0.61 * safezoneW + safezoneX;
-	y = 0.251941 * safezoneH + safezoneY;
-	w = 0.06 * safezoneW;//0.175015
-	h = 0.05 * safezoneH;
-	action = "closeDialog 0";
-};
-class ROLECHANGE_SOLDIER: RscButton
-{
-	idc = 104;
-	text = "Officer"; //--- ToDo: Localize;
-	x = 0.272481 * safezoneW + safezoneX;
-	y = 0.317959 * safezoneH + safezoneY;
-	w = 0.175015 * safezoneW;
-	h = 0.0560125 * safezoneH;
-	action = "[""officer""] call as_fnc_changerolestef; closeDialog 0;";
-};
+	//////////////////////STEF ROLECHANGE DIALOG /////////////////////////
+	class ROLECHANGE_BOX: BOX
+	{
+		idc = 101;
+		text = ""; //--- ToDo: Localize;
+		x = 0.244979 * safezoneW + safezoneX;
+		y = 0.223941 * safezoneH + safezoneY;
+		w = 0.445038 * safezoneW;
+		h = 0.492103 * safezoneH;
+	};
+	class HQ_frame: RscFrame
+	{
+		idc = 102;
+		text = "Role Change"; //--- ToDo: Localize;
+		x = 0.254979 * safezoneW + safezoneX;
+		y = 0.233941 * safezoneH + safezoneY;
+		w = 0.425038 * safezoneW;
+		h = 0.462103 * safezoneH;
+	};
+	class HQ_button_back: RscButton
+	{
+		idc = 103;
+		text = "Back"; //--- ToDo: Localize;
+		x = 0.61 * safezoneW + safezoneX;
+		y = 0.251941 * safezoneH + safezoneY;
+		w = 0.06 * safezoneW;//0.175015
+		h = 0.05 * safezoneH;
+		action = "closeDialog 0";
+	};
+	class ROLECHANGE_SOLDIER: RscButton
+	{
+		idc = 104;
+		text = "Officer"; //--- ToDo: Localize;
+		x = 0.272481 * safezoneW + safezoneX;
+		y = 0.317959 * safezoneH + safezoneY;
+		w = 0.175015 * safezoneW;
+		h = 0.0560125 * safezoneH;
+		action = "[""officer""] call as_fnc_changerolestef; closeDialog 0;";
+	};
 
-class ROLECHANGE_AUTORIFLEMAN: RscButton
-{
-	idc = 105;
-	text = "Autorifleman"; //--- ToDo: Localize;
-	x = 0.272481 * safezoneW + safezoneX;
-	y = 0.415981 * safezoneH + safezoneY;
-	w = 0.175015 * safezoneW;
-	h = 0.0560125 * safezoneH;
-	action = "[""autorifleman""] call as_fnc_changerolestef; closeDialog 0;";
-};
-class ROLECHANGE_MEDIC: RscButton
-{
-	idc = 126;
-	text = "Medic"; //--- ToDo: Localize;
-	x = 0.272481 * safezoneW + safezoneX;
-	y = 0.514003 * safezoneH + safezoneY;
-	w = 0.175015 * safezoneW;
-	h = 0.0560125 * safezoneH;
-	action = "[""medic""] call as_fnc_changerolestef; closeDialog 0;";
-};
-class ROLECHANGE_ENGINEER: RscButton
-{
-	idc = 107;
-	text = "Engineer"; //--- ToDo: Localize;
-	x = 0.482498 * safezoneW + safezoneX;
-	y = 0.317959 * safezoneH + safezoneY;
-	w = 0.175015 * safezoneW;
-	h = 0.0560125 * safezoneH;
-	action = "[""engineer""] call as_fnc_changerolestef; closeDialog 0;";
-};
-class ROLECHANGE_AMMOBEARER: RscButton
-{
-	idc = 108;
-	text = "Ammobearer"; //--- ToDo: Localize;
-	x = 0.482498 * safezoneW + safezoneX;
-	y = 0.514003 * safezoneH + safezoneY;
-	w = 0.175015 * safezoneW;
-	h = 0.0560125 * safezoneH;
-	action = "[""ammobearer""] call as_fnc_changerolestef; closeDialog 0;";
-};
-class ROLECHANGE_MARKSMAN: RscButton
-{
-	idc = 109;
-	text = "Marksman"; //--- ToDo: Localize;
-	x = 0.482498 * safezoneW + safezoneX;
-	y = 0.415981 * safezoneH + safezoneY;
-	w = 0.175015 * safezoneW;
-	h = 0.0560125 * safezoneH;
-	action = "[""marksman""] call as_fnc_changerolestef; closeDialog 0;";
-};
-/////////////////////STEF ROLECHANGE DIALOG /////////////
+	class ROLECHANGE_AUTORIFLEMAN: RscButton
+	{
+		idc = 105;
+		text = "Autorifleman"; //--- ToDo: Localize;
+		x = 0.272481 * safezoneW + safezoneX;
+		y = 0.415981 * safezoneH + safezoneY;
+		w = 0.175015 * safezoneW;
+		h = 0.0560125 * safezoneH;
+		action = "[""autorifleman""] call as_fnc_changerolestef; closeDialog 0;";
+	};
+	class ROLECHANGE_MEDIC: RscButton
+	{
+		idc = 126;
+		text = "Medic"; //--- ToDo: Localize;
+		x = 0.272481 * safezoneW + safezoneX;
+		y = 0.514003 * safezoneH + safezoneY;
+		w = 0.175015 * safezoneW;
+		h = 0.0560125 * safezoneH;
+		action = "[""medic""] call as_fnc_changerolestef; closeDialog 0;";
+	};
+	class ROLECHANGE_ENGINEER: RscButton
+	{
+		idc = 107;
+		text = "Engineer"; //--- ToDo: Localize;
+		x = 0.482498 * safezoneW + safezoneX;
+		y = 0.317959 * safezoneH + safezoneY;
+		w = 0.175015 * safezoneW;
+		h = 0.0560125 * safezoneH;
+		action = "[""engineer""] call as_fnc_changerolestef; closeDialog 0;";
+	};
+	class ROLECHANGE_AMMOBEARER: RscButton
+	{
+		idc = 108;
+		text = "Ammobearer"; //--- ToDo: Localize;
+		x = 0.482498 * safezoneW + safezoneX;
+		y = 0.514003 * safezoneH + safezoneY;
+		w = 0.175015 * safezoneW;
+		h = 0.0560125 * safezoneH;
+		action = "[""ammobearer""] call as_fnc_changerolestef; closeDialog 0;";
+	};
+	class ROLECHANGE_MARKSMAN: RscButton
+	{
+		idc = 109;
+		text = "Marksman"; //--- ToDo: Localize;
+		x = 0.482498 * safezoneW + safezoneX;
+		y = 0.415981 * safezoneH + safezoneY;
+		w = 0.175015 * safezoneW;
+		h = 0.0560125 * safezoneH;
+		action = "[""marksman""] call as_fnc_changerolestef; closeDialog 0;";
+	};
+	/////////////////////STEF ROLECHANGE DIALOG /////////////
 }};
 
 #include "UI\menu.hpp"
