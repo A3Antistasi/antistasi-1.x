@@ -15,7 +15,7 @@ _posHQ = getMarkerPos guer_respawn;
 
 
 {
-	if (_x distance _posHQ < 100) then {
+	if (_x distance _posHQ < 100 AND {alive _x}) then {
 		 reportedVehs = reportedVehs - [_x];
 		_x setDamage 0;
 		//_x setFuel 0.01;  no refuel anymore
