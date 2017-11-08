@@ -18,6 +18,10 @@ Official guide: https://docs.google.com/document/d/1_XamnTWgVgy0jDinYSDhAWG_vKDa
 
 # Get mission ready to play
 
+!! CBA Mod is always required http://steamcommunity.com/sharedfiles/filedetails/?id=450814997. You can remove that dependency in the SQM if you want.
+
+---
+
 Download here https://github.com/A3Antistasi/antistasiofficial/archive/master.zip
 
 Unzip the folder and open it
@@ -26,13 +30,13 @@ Now you've several options:
 
 a) drag your AntistasiOfficial.Altis folder where you save/load editor mission and play it form EDEN Editor
 
-b1) download PBOManager from http://www.armaholic.com/page.php?id=16369
+----
 
-b2) install it
+b1) download PBOManager from http://www.armaholic.com/page.php?id=16369  and install it.
 
-b3) right click on Antistasi.Altis folder then PBO manager then Pack into .pbo 
+b2) right click on Antistasi.Altis folder then PBO manager then Pack into .pbo 
 
-b4) place it into \Arma3\Missions or \MPmission depending on your intentions.
+b3) place it into \Arma3\Missions or \MPmission depending on your intentions.
 
 *To play it on dedicated server you've to make the .pbo and upload it to \Arma3\MPmissions
 
