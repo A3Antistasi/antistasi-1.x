@@ -75,10 +75,12 @@ _transportUnit = {
 		if !(_unit getVariable "ASunconscious") then {
 			_ftPos = _ftPos findEmptyPosition [1, 50, typeOf _unit];
 			_unit setPosATL _ftPos;
+			sleep 0.1; // findEmptyPosition needs time or it returns a non-empty position :( by Golias
 		};
 	} else {
 		_ftPos = _ftPos findEmptyPosition [1, 50, typeOf _unit];
 		_unit setPosATL _ftPos;
+		sleep 0.1; // findEmptyPosition needs time or it returns a non-empty position :( by Golias
 	};
 };
 
