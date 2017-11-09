@@ -58,125 +58,120 @@ bluFlag = 	"Flag_NATO_F";
 bluCfgInf = (configfile >> "CfgGroups" >> "West" >> "rhs_faction_usmc_wd" >> "rhs_group_nato_usmc_wd_infantry");
 
 
-bluRifle = 	[
-	"rhs_weap_m16a4_carryhandle",
-	"rhs_weap_m4a1_carryhandle",
-	"rhs_weap_m4a1_grip"
-];
+//bluEquipment
+	bluSmallWpn = 	[					// select reference
+		"rhsusf_weap_MP7A2",      		// 0 SMG
+		"rhs_weap_M590_5RD"     		// 1 SecondarySMG or Shotgun short
+	];
 
-bluGL = [
-	"rhs_weap_m16a4_carryhandle_M203",
-	"rhs_weap_m4a1_carryhandle_m203S",
-	"rhs_weap_m4a1_m203s"
-];
+	bluSmallAmmo = [					// select reference
+		"rhsusf_mag_40Rnd_46x30_FMJ",  	// 0 SMG ammo
+		"rhsusf_5Rnd_Slug"				// 1 SecondarySMG ammo
+	];
 
-bluSNPR = 	[
-	"rhs_weap_m107_leu",
-	"rhs_weap_m40_wd_usmc",
-	"rhs_weap_sr25"
-];
+	bluRifle = 	[ 						// select random
+		"rhs_weap_hk416d10_m320",
+		"rhs_weap_m4_m320",
+		"rhs_weap_mk18_m320"
+	];
 
-bluLMG = 	[
-	"rhs_weap_m240G",
-	"rhs_weap_m249_pip_L_para",
-	"rhs_weap_m249_pip_S_vfg"
-];
+	bluRifleAmmo = [					// select random (this might require a tweak if blurifle have rifle with different ammo, try to keep the same)
+		"rhs_mag_30Rnd_556x45_M855_Stanag",
+		"rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red"
+	];
 
-bluSmallWpn = 	[
-	"rhs_weap_M590_5RD",
-	"rhsusf_weap_m1911a1"
-];
+	blugl = blurifle;
 
-bluRifleAmmo = [
-	"rhs_mag_30Rnd_556x45_Mk318_Stanag",
-	"rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red"
-];
+	blu40mm = [							// theese should be selected all, i don't know how to
+		"rhs_mag_m662_red",
+		"rhs_mag_m661_green",
+		"rhs_mag_m713_Red",
+		"rhs_mag_m715_Green"
+	];
 
-bluSNPRAmmo = [
-	"rhsusf_mag_10Rnd_STD_50BMG_M33",
-	"rhsusf_mag_10Rnd_STD_50BMG_mk211",
-	"rhsusf_10Rnd_762x51_m118_special_Mag",
-	"rhsusf_20Rnd_762x51_m118_special_Mag",
-	"20Rnd_762x51_Mag"
-];
+	bluSNPR = 	[
+		"rhs_weap_m24sws",		//7.62mm
+		"rhs_weap_XM2010"		//big gun, only for higher tier
+	];
 
-bluLMGAmmo = [
-	"rhsusf_50Rnd_762x51",
-	"rhsusf_100Rnd_762x51_m62_tracer",
-	"rhs_200rnd_556x45_M_SAW"
-];
+	bluSNPRAmmo = [
+		"rhsusf_5Rnd_762x51_m118_special_Mag",
+		"rhsusf_5Rnd_300winmag_xm2010"
+	];
 
-bluSmallAmmo = [
-	"rhsusf_5Rnd_00Buck",
-	"rhsusf_5Rnd_FRAG",
-	"rhsusf_mag_7x45acp_MHP"
-];
+	bluLMG = 	[
+		"rhs_weap_m249_pip_S_vfg"
+	];
 
-bluAmmo = [
-	"rhsusf_mag_10Rnd_STD_50BMG_M33",
-	"rhsusf_mag_10Rnd_STD_50BMG_mk211",
-	"rhs_mag_30Rnd_556x45_Mk318_Ball",
-	"rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",
-	"rhsusf_20Rnd_762x51_m118_special_Mag",
-	"rhsusf_10Rnd_762x51_m118_special_Mag",
-	"rhs_200rnd_556x45_M_SAW",
-	"rhsusf_5Rnd_00Buck",
-	"rhs_mag_smaw_SR",
-	"20Rnd_762x51_Mag",
-	"rhsusf_100Rnd_762x51_m61_ap",
-	"rhsusf_100Rnd_762x51_m62_tracer",
-	"rhsusf_mag_7x45acp_MHP"
-];
+	bluLMGAmmo = [
+		"rhsusf_100Rnd_556x45_soft_pouch"
+	];
 
-blu40mm = [
-	"rhs_mag_M433_HEDP",
-	"1Rnd_HE_Grenade_shell",
-	"SmokeShell",
-	"SmokeShellGreen",
-	"rhs_mag_m576"
-];
+	bluAmmo = [			// I’ve to understand why there is also this list
+		"rhsusf_mag_10Rnd_STD_50BMG_M33",
+		"rhsusf_mag_10Rnd_STD_50BMG_mk211",
+		"rhs_mag_30Rnd_556x45_Mk318_Ball",
+		"rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",
+		"rhsusf_20Rnd_762x51_m118_special_Mag",
+		"rhsusf_10Rnd_762x51_m118_special_Mag",
+		"rhs_200rnd_556x45_M_SAW",
+		"rhsusf_5Rnd_00Buck",
+		"rhs_mag_smaw_SR",
+		"20Rnd_762x51_Mag",
+		"rhsusf_100Rnd_762x51_m61_ap",
+		"rhsusf_100Rnd_762x51_m62_tracer",
+		"rhsusf_mag_7x45acp_MHP"
+	];
 
-bluGrenade = [
-	"HandGrenade",
-	"MiniGrenade"
-];
+	bluGrenade = [
+		"HandGrenade",		//
+		"MiniGrenade"
+	];
 
-bluAT = [
-	"rhs_weap_smaw_optic",
-	"rhs_weap_M136_hedp"
-];
+	bluAT = [
+		"rhs_weap_M136_hedp",	//Tier 1 Standard, single use
+		"rhs_weap_smaw_optic",	//Tier 2
+		"rhs_weap_fgm148"		//Tier 3
 
-bluAA = [
-	"rhs_weap_fim92"
-];
+	];
 
-bluVest = [
-	"rhsusf_spc_rifleman",
-	"rhsusf_spc_crewman"
-];
+	bluATMissile = [
+		""							//Tier 1
+		"rhs_mag_smaw_HEAA"			//Only high tier
+		"rhs_fgm148_magazine_AT"	//Locking
+	];
 
-bluScopes = [
-	"rhsusf_acc_LEUPOLDMK4",
-	"rhsusf_acc_ACOG3_USMC",
-	"rhsusf_acc_compm4"
-];
+	bluAA = [
+		"rhs_weap_fim92"		//Higher tier
+	];
 
-bluAttachments = [
-	"rhsusf_acc_harris_bipod",
-	"rhsusf_acc_sr25S",
-	"rhsusf_acc_anpeq15A",
-	"rhsusf_acc_nt4_black"
-];
+	bluAAMissile = [
+		"rhs_fim92_mag"		//Higher tier
+	];
 
-bluATMissile = [
-	"rhs_mag_smaw_HEAA"
-];
+	bluVest = [				//Need to check stats
+		"rhsusf_spc_rifleman",
+		"rhsusf_spc_crewman"
+	];
 
-bluAAMissile = [
-	"rhs_fim92_mag"
-];
+	bluScopes = [					// Preferibly only PIP compatible = more realisitc
+		"rhsusf_acc_SpecterDR_3d",	//Rifle scope
+		"rhsusf_acc_ACOG_MDO",		//LMG scope
+		"rhsusf_acc_LEUPOLDMK4_2_d"	//Snipe scope
+	];
 
-bluItems = bluVest + bluScopes + bluAttachments;
+	bluAttachments = [
+		"rhsusf_acc_anpeq15_light", //anpeq with laser + flashlight
+		"rhsusf_acc_nt4_black"		//Higer tier only
+	];
+
+	bluHelmet = [
+	"rhsusf_opscore_bk_pelt"					// Tier 1
+	"rhsusf_ach_bare_des_headset"				// Tier 2
+	"rhsusf_mich_bare_norotos_semi_headset"		// Tier 3
+	];
+
+bluItems = bluVest + bluScopes + bluAttachments + bluHelmet;
 
 genGL = genGL + bluGL;
 genATLaunchers = genATLaunchers + bluAT;
