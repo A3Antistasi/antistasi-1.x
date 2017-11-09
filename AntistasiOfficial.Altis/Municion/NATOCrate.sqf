@@ -5,7 +5,7 @@ private ["_crate","_NATOSupp","_weapons", "_lmgs", "_lmgAmmo", "_smAmmo", "_int"
 _crate = _this select 0;
 _NATOSupp = _this select 1;
 
-_weapons = bluRifle + bluSNPR + bluLMG + bluSmallWpn;
+/*_weapons = bluRifle + bluSNPR + bluLMG + bluSmallWpn;
 _lmgs = [bluLMG select 1];
 _lmgs pushBack (bluLMG select 2);
 
@@ -13,7 +13,7 @@ _lmgAmmo = [bluLMGAmmo select 0];
 _lmgAmmo pushBack (bluLMGAmmo select 1);
 
 _smAmmo = [bluSmallAmmo select 0];
-_smAmmo pushBack (bluSmallAmmo select 1);
+_smAmmo pushBack (bluSmallAmmo select 1);*/
 
 clearMagazineCargoGlobal _crate;
 clearWeaponCargoGlobal _crate;
@@ -21,45 +21,44 @@ clearItemCargoGlobal _crate;
 clearBackpackCargoGlobal _crate;
 
 //add jnl load action
-_crate call jn_fnc_logistics_addAction;
+	_crate call jn_fnc_logistics_addAction;
 
 //Standard Equipment (good for 5 people)
-	//										Weapon						
-	_crate addWeaponCargoGlobal 		[bluSmallWpn 	select 0,	5	];	
+	//										Weapon
+	_crate addWeaponCargoGlobal 		[bluSmallWpn 	select 0,	5	];
 	_crate addMagazineCargoGlobal 		[bluSmallAmmo 	select 0,	25	];
 	_crate addWeaponCargoGlobal 		[bluSmallWpn 	select 1,	5	];
 	_crate addMagazineCargoGlobal 		[bluSmallAmmo 	select 1,	25	];
 	_crate addItemCargoGlobal			["SmokeShellRed"		,	25	];
 	_crate addItemCargoGlobal			["SmokeShellGreen"		,	25	];
-	_crate addItemCargoGlobal				
 	_crate addItemCargoGlobal			[bluAttachments select 0,	5	];	//flashlight
 
 	//										Medical
-	if !(activeACEMedical) then( 
+	if !(activeACEMedical) then{
 		_crate addItemCargoGlobal		["FirstAidKit"			,	25	];
-		)
-		else( 
-		_crate addItemCargoGlobal		["ACE_epinephrine"		,	10	];		
+		}
+		else{
+		_crate addItemCargoGlobal		["ACE_epinephrine"		,	10	];
 		_crate addItemCargoGlobal		["ACE_morphine"			,	25	];
 		_crate addItemCargoGlobal		["ACE_fieldDressing"	,	25	];
 		_crate addItemCargoGlobal		["ACE_bloodIV"			,	40	];
-		)
+		};
 	// 										AT
 	_crate addWeaponCargoGlobal			[bluAT 			select 0,	5	];
 
 // Additional equipment depending on ArmyLevel
 	if (BE_currentStage == 3) then {
-		
-		
+
+
 	}
 	else {
 	if (BE_currentStage == 2) then {
-		
+
 	}
 	else {
 		if (BE_currentStage == 1) then {
-			
-			
+
+
 		};
 	};
 };
