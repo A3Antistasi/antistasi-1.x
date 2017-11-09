@@ -1,1 +1,0 @@
-private _no = nearestTerrainObjects [getPos player, ["BUILDING", "HOUSE", "FENCE", "WALL", "FUELSTATION"], 1000, false, true];
