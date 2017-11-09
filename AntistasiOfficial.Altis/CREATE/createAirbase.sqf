@@ -15,6 +15,23 @@ _patrolMarker = [_marker] call AS_fnc_createPatrolMarker;
 _busy = if (dateToNumber date > server getVariable _marker) then {false} else {true};
 
 _groupGunners = createGroup side_green;
+_buildings = nearestObjects [_markerPos, listMilBld, _size*1.5];
+for "_i" from 0 to (count _buildings) - 1 do {
+    _building = _buildings select _i;
+    _buildingType = typeOf _building;
+ 
+    call {
+        if  (_buildingType == "Land_HelipadCivil_F") exitWith {
+            _vehicle = createVehicle [selectRandom vehDef, position _building, [],0, "CAN_COLLIDE"];
+            _vehicle setDir (getDir _building);
+            _unit = ([_markerPos, 0, infCrew, _groupGunners] call bis_fnc_spawnvehicle) select 0;
+            _unit moveInGunner _vehicle;
+            _allVehicles pushBack _vehicle;
+            sleep 1;
+        };
+    };
+};
+
 if ((spawner getVariable _marker) AND (_isFrontline)) then {
 	_roads = _markerPos nearRoads _size;
 	if (count _roads != 0) then {
