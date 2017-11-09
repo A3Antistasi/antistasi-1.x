@@ -29,6 +29,7 @@ clearBackpackCargoGlobal _crate;
 	_crate addMagazineCargoGlobal 		[bluSmallAmmo 	select 0,	25	];
 	_crate addWeaponCargoGlobal 		[bluSmallWpn 	select 1,	5	];
 	_crate addMagazineCargoGlobal 		[bluSmallAmmo 	select 1,	25	];
+	_crate addWeaponCargoGlobal 		[bluAT		 	select 0,	5	];
 	_crate addItemCargoGlobal			["SmokeShellRed"		,	25	];
 	_crate addItemCargoGlobal			["SmokeShellGreen"		,	25	];
 	_crate addItemCargoGlobal			[bluAttachments select 0,	5	];	//flashlight
@@ -48,17 +49,39 @@ clearBackpackCargoGlobal _crate;
 
 // Additional equipment depending on ArmyLevel
 	if (BE_currentStage == 3) then {
-
-
+			_crate addItemCargoGlobal 			[bluHelmet		select 2,	5	];
+			_crate addWeaponCargoGlobal 		[bluSNPR 		select 1,	5	];
+			_crate addMagazineCargoGlobal 		[bluSNPRAmmo 	select 1,	50	];
+			_crate addWeaponCargoGlobal 		[bluAA 			select 0,	5	];
+			_crate addMagazineCargoGlobal 		[bluAAMissile 	select 0,	10	]; 
+			_crate addWeaponCargoGlobal 		[bluAT		 	select 2,	2	]; //AT Guided
+			_crate addMagazineCargoGlobal 		[bluATMissile 	select 2,	4	];
+			_crate addWeaponCargoGlobal 		[bluAT		 	select 1,	5	]; //AT Non guided + rockets
+			_crate addMagazineCargoGlobal 		[bluATMissile 	select 1,	10	];
 	}
 	else {
 	if (BE_currentStage == 2) then {
-
-	}
+			_crate addItemCargoGlobal 			[bluHelmet		select 1,	5	];
+			_crate addWeaponCargoGlobal 		[bluSNPR 		select 0,	5	];
+			_crate addMagazineCargoGlobal 		[bluSNPRAmmo 	select 0,	50	];
+			_crate addWeaponCargoGlobal 		[bluAA 			select 0,	3	];
+			_crate addMagazineCargoGlobal 		[bluAAMissile 	select 0,	6	]; 
+			_crate addWeaponCargoGlobal 		[bluAT		 	select 2,	1	]; //AT Guided
+			_crate addMagazineCargoGlobal 		[bluATMissile 	select 2,	2	];
+			_crate addWeaponCargoGlobal 		[bluAT		 	select 1,	2	]; //AT Non guided + rockets
+			_crate addMagazineCargoGlobal 		[bluATMissile 	select 1,	6	];
+	}		
 	else {
 		if (BE_currentStage == 1) then {
-
-
+			_crate addItemCargoGlobal 			[bluHelmet		select 0,	5	];
+			_crate addWeaponCargoGlobal 		[bluSNPR 		select 0,	2	];
+			_crate addMagazineCargoGlobal 		[bluSNPRAmmo 	select 0,	25	]; 
+			_crate addWeaponCargoGlobal 		[bluAA 			select 0,	1	];
+			_crate addMagazineCargoGlobal 		[bluAAMissile 	select 0,	2	];
+			_crate addWeaponCargoGlobal 		[bluAT		 	select 2,	1	];
+			_crate addMagazineCargoGlobal 		[bluATMissile 	select 2,	2	];
+			_crate addWeaponCargoGlobal 		[bluAT		 	select 1,	2	];
+			_crate addMagazineCargoGlobal 		[bluATMissile 	select 1,	2	];
 		};
 	};
 };
