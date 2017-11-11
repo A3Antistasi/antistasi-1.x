@@ -113,14 +113,6 @@ infSquad = 			["HAF_InfSquad","HAF_InfSquad_Weapons"];
 infAA =				["HAF_InfTeam_AA"];
 infAT =				["HAF_InfTeam_AT"];
 
-infPatrol2 = 		["BUS_InfSentry","BUS_InfSentry","BUS_InfSentry","BUS_SniperTeam"];
-infGarrisonSmall2 = ["BUS_InfSentry"];
-infTeamATAA2 =		["BUS_InfTeam_AA","BUS_InfTeam_AT"];
-infTeam2 = 			["BUS_InfTeam_AA","BUS_InfTeam_AT","BUS_InfTeam","BUS_InfTeam","BUS_InfTeam"];
-infSquad2 = 		["BUS_InfSquad","BUS_InfSquad_Weapons"];
-infAA2 =			["BUS_InfTeam_AA"];
-infAT2 =			["BUS_InfTeam_AT"];
-
 // Statics to be used
 statMG = 			"I_HMG_01_high_F";
 statAT = 			"I_static_AT_F";
