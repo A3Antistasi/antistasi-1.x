@@ -187,16 +187,6 @@ publicVariable "mrkFIA";
 ["vehicles"] call fn_loadData; publicVariable "staticsToSave";
 
 sleep 2;
-if (isMultiplayer) then {
-	{
-		_player = _x;
-		_player setPos (fuego getPos [8,random 360]);
-		_player setdir (_player getdir petros);
-	} forEach playableUnits;
-} else {
-	player setPos (fuego getPos [8,random 360]);
-	player setdir (player getdir petros);
-};
 
 if !(activeJNA) then {
 	[] call AS_fnc_updateArsenal;

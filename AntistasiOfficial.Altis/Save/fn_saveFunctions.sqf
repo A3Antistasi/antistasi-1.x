@@ -6,6 +6,8 @@
 	//by jeroen 12-8-2017
 	//added optinal saving type with iniDBi2
 */
+#define DEBUG_SYNCHRONOUS
+#define DEBUG_MODE_FULL
 #include "script_component.hpp"
 if(!isserver)exitWith{};
 
@@ -76,15 +78,9 @@ fn_loadPlayerData = {
         TRACE_3("fn_loadPlayerData: loading player data with inidbi2", _varName, _player, _uid);
 		[playerDB, _uid, _varname, objNull] call fn_loadDataINIDBI;
 	}else{
-		removeAllWeapons _player; // Stef removevanillaequip //TODO BUT WHY TO remove
-		removeBackpack _player;
-		removeVest _player;
-		_player addWeapon "Binocular";
-		_player removeweapon "ItemGPS";
         TRACE_3("fn_loadPlayerData: loading player data with profileNameSpace", _varName, _player, _uid);
 		profileNameSpace getVariable [(format ["%1_%2_P_%3_%4",worldName,static_playerSide,_uid,_varName]),objNull];
 	};
-
     TRACE_3("fn_loadPlayerData: value loaded", _varName, _varValue, _uid);
 	//Replaced the isNull check with isNil check because the isNull check gives errors. Sparker.
 	if(_varValue isEqualTo objNull)exitwith{ERROR_2("fn_loadPlayerData: could not load variable %1 for player %2", _varName,_uid);};

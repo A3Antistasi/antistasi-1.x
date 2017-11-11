@@ -1,3 +1,7 @@
+#define DEBUG_SYNCHRONOUS
+#define DEBUG_MODE_FULL
+#include "script_component.hpp"
+
 params ["_unit","_isJIP"];
 private ["_colorWest", "_colorEast","_introShot","_title","_nearestMarker"];
 
@@ -115,8 +119,6 @@ if (_isJip) then {
 	waitUntil {scriptdone _introshot};
 	[] execVM "modBlacklist.sqf";
 	player setUnitRank "PRIVATE";
-	waitUntil {!isNil "posHQ"};
-	player setPos (server getVariable ["posHQ", getMarkerPos guer_respawn]);
 	[true] execVM "reinitY.sqf";
 	if !([player] call isMember) then {
 		if (serverCommandAvailable "#logout") then {
@@ -183,9 +185,6 @@ if (_isJip) then {
 	if ((player == Slowhand) AND (isNil "placementDone") AND (isMultiplayer)) then {
 		[] execVM "UI\startMenu.sqf";
 	};
-    //Called from unscheduled environment to load data at once
-    [player] remoteExecCall ["AS_fnc_loadPlayer",2];
-
 	diag_log "Antistasi MP Client. JIP client finished";
 } else {
 	if (isNil "placementDone") then {
@@ -210,6 +209,17 @@ if (_isJip) then {
 };
 
 waitUntil {scriptDone _title};
+
+//Waiting for all game data loaded
+waitUntil {sleep 1; !isNil "placementDone";};
+INFO("Game is ready to initialize player");
+//Teleport to the camp
+player setPos (fuego getPos [8,random 360]);
+player setdir (player getdir petros);
+INFO("Player is moved to the camp");
+//Called from unscheduled environment to load data at once
+[player] remoteExecCall ["AS_fnc_loadPlayer",2];
+INFO("Player info loaded");
 
 statistics = [] execVM "statistics.sqf";
 
