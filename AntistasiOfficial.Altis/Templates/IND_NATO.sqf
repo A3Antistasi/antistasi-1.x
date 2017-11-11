@@ -75,6 +75,7 @@ vehLead = 			["B_MRAP_01_hmg_F","B_MRAP_01_gmg_F"]; // lead vehicle for convoys,
 standardMRAP = 		["B_MRAP_01_F"]; // default transport MRAP/car
 vehTruckBox = 		["B_Truck_01_box_F"]; // repair truck or at least a prop
 vehPatrolBoat = 	["I_Boat_Armed_01_minigun_F"];
+vehDef = 		[""]; // !!! Missing add one when possible
 
 /*
 Not in use with AAF
