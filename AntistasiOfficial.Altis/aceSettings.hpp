@@ -46,7 +46,7 @@
         texts[] = {"Off","On"};
         default = 1;
         typeName = "BOOL";
-        force = 0;
+        force = 1;
     };
 
     class ace_map_defaultChannel {
