@@ -18,7 +18,7 @@ Official guide: https://docs.google.com/document/d/1_XamnTWgVgy0jDinYSDhAWG_vKDa
 
 # Get mission ready to play
 
-!! CBA Mod is always required http://steamcommunity.com/sharedfiles/filedetails/?id=450814997. You can remove that dependency in the SQM if you want.
+!! CBA Mod is always required http://steamcommunity.com/sharedfiles/filedetails/?id=450814997. You can remove that dependency in the SQM if you want. This is how to remove it https://github.com/A3Antistasi/antistasiofficial/issues/5
 
 ---
 
