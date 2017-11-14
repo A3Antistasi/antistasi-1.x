@@ -17,12 +17,12 @@ _posHQ = getMarkerPos guer_respawn;
 {
 	if (_x distance _posHQ < 100 AND {alive _x}) then {
 		 reportedVehs = reportedVehs - [_x];
-		_x setDamage 0;
+		//_x setDamage 0;
 		//_x setFuel 0.01;  no refuel anymore
-		[_x,1] remoteExec ["setVehicleAmmo",_x];
+		//[_x,1] remoteExec ["setVehicleAmmo",_x];
 	};
 } forEach vehicles;
 
 publicVariable "reportedVehs";
 
-hint "All nearby units and vehicles have been healed or repaired. Near vehicles have been rearmed at full load, plates have been switched.";
+hint "All nearby units have been healed and nearby vehicles have been removed from the reported list.

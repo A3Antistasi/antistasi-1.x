@@ -29,7 +29,7 @@
 				<Original>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\attack_ca.paa' /&gt; Mission Request</Original>
 			</Key>
 			<Key ID="STR_ACT_HEALREPAIR">
-				<Original>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\RscTitles\MPProgress\respawn_ca.paa' /&gt; Heal, Repair and Rearm</Original>
+				<Original>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\RscTitles\MPProgress\respawn_ca.paa' /&gt; Heal all nearby units</Original>
 			</Key>
 			<Key ID="STR_ACT_USEMED">
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\heal_ca.paa' /&gt; Use Medical Supplies</Original>
