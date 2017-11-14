@@ -122,9 +122,9 @@
 	];
 
 	bluATMissile = [
-		""							//Tier 1
-		"rhs_mag_smaw_HEAA"			//Only high tier
-		"rhs_fgm148_magazine_AT"	//Locking
+		//"",							//Tier 1
+		"rhs_mag_smaw_HEAA",			//Only high tier
+		"rhs_fgm148_magazine_AT"		//Locking
 	];
 
 	bluAA = [
@@ -156,8 +156,8 @@
 	];
 
 	bluHelmet = [
-	"rhsusf_opscore_bk_pelt"					// Tier 1
-	"rhsusf_ach_bare_des_headset"				// Tier 2
+	"rhsusf_opscore_bk_pelt",					// Tier 1
+	"rhsusf_ach_bare_des_headset",				// Tier 2
 	"rhsusf_mich_bare_norotos_semi_headset"		// Tier 3
 	];
 
