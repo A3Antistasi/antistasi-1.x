@@ -1,182 +1,166 @@
-bluHeliTrans = 		["RHS_MELB_MH6M","RHS_UH60M","RHS_CH_47F_light"];
-bluHeliTS = 		["RHS_MELB_MH6M"];
-bluHeliDis = 		["RHS_UH60M"];
-bluHeliRope = 		["RHS_CH_47F_light"];
-bluHeliArmed = 		["RHS_MELB_AH6M_H","RHS_MELB_AH6M_M"];
-bluHeliGunship = 	["RHS_AH64D_AA","RHS_AH64D_GS","RHS_AH64D"];
-bluCASFW = 			["RHS_A10"];
+//Blu USAF vehicles
+	bluHeliTrans = 		["RHS_MELB_MH6M","RHS_UH60M","RHS_CH_47F_light"];
+	bluHeliTS = 		["RHS_MELB_MH6M"];
+	bluHeliDis = 		["RHS_UH60M"];
+	bluHeliRope = 		["RHS_CH_47F_light"];
+	bluHeliArmed = 		["RHS_MELB_AH6M_H","RHS_MELB_AH6M_M"];
+	bluHeliGunship = 	["RHS_AH64D_AA","RHS_AH64D_GS","RHS_AH64D"];
+	bluCASFW = 			["RHS_A10"];
 
-bluAS = 			["rhsusf_f22"];
-bluC130 = 			["RHS_C130J"];
+	bluAS = 			["rhsusf_f22"];
+	bluC130 = 			["RHS_C130J"];
 
-bluUAV = 			["B_UAV_02_F"];
+	bluUAV = 			["B_UAV_02_F"];
 
-planesNATO = bluHeliTrans + bluHeliArmed + bluHeliGunship + bluCASFW;
-planesNATOTrans = bluHeliTrans;
-
-
-bluMBT = 		["rhsusf_m1a2sep1wd_usarmy","rhsusf_m1a2sep1tuskiwd_usarmy"];
-bluAPC = 		["RHS_M2A3_wd","RHS_M2A3_BUSKI_wd"];
-bluIFV = 		["rhsusf_m113_usarmy_M240","rhsusf_m113_usarmy_supply"];
-bluIFVAA = 		["RHS_M6_wd"];
-bluArty = 		["RHS_M119_W"]; bluArtyAmmoHE = "RHS_mag_m1_he_12"; bluArtyAmmoLaser = nil; bluArtyAmmoSmoke = "rhs_mag_m60a2_smoke_4";
-bluMLRS = 		["B_MBT_01_mlrs_F"];
-bluMRAP = 		["rhsusf_m1025_W","rhsusf_m998_w_4dr_halftop","rhsusf_m998_w_4dr_fulltop"];
-bluMRAPHMG = 	["rhsusf_m1025_W_m2","rhsusf_rg33_m2_W"];
-bluTruckTP = 	["rhsusf_M1083A1P2_B_M2_wd_fmtv_usarmy"];
-bluTruckMed = 	["rhsusf_M1083A1P2_B_M2_d_Medical_fmtv_usarmy"];
-bluTruckFuel = 	["rhsusf_M978A4_BKIT_usarmy_wd"];
-
-vehNATO = bluMBT + bluAPC + bluIFV + bluIFVAA + bluArty + bluMLRS + bluMRAP + bluMRAPHMG + bluTruckTP + bluTruckMed + bluTruckFuel;
+	planesNATO = bluHeliTrans + bluHeliArmed + bluHeliGunship + bluCASFW;
+	planesNATOTrans = bluHeliTrans;
 
 
-bluStatAA = 	["RHS_Stinger_AA_pod_WD"];
-bluStatAT = 	["RHS_TOW_TriPod_WD"];
-bluStatHMG = 	["RHS_M2StaticMG_WD"];
-bluStatMortar = ["RHS_M252_WD"];
+	bluMBT = 		["rhsusf_m1a2sep1wd_usarmy","rhsusf_m1a2sep1tuskiwd_usarmy"];
+	bluAPC = 		["RHS_M2A3_wd","RHS_M2A3_BUSKI_wd"];
+	bluIFV = 		["rhsusf_m113_usarmy_M240","rhsusf_m113_usarmy_supply"];
+	bluIFVAA = 		["RHS_M6_wd"];
+	bluArty = 		["RHS_M119_W"]; bluArtyAmmoHE = "RHS_mag_m1_he_12"; bluArtyAmmoLaser = nil; bluArtyAmmoSmoke = "rhs_mag_m60a2_smoke_4";
+	bluMLRS = 		["B_MBT_01_mlrs_F"];
+	bluMRAP = 		["rhsusf_m1025_W","rhsusf_m998_w_4dr_halftop","rhsusf_m998_w_4dr_fulltop"];
+	bluMRAPHMG = 	["rhsusf_m1025_W_m2","rhsusf_rg33_m2_W"];
+	bluTruckTP = 	["rhsusf_M1083A1P2_B_M2_wd_fmtv_usarmy"];
+	bluTruckMed = 	["rhsusf_M1083A1P2_B_M2_d_Medical_fmtv_usarmy"];
+	bluTruckFuel = 	["rhsusf_M978A4_BKIT_usarmy_wd"];
+
+	vehNATO = bluMBT + bluAPC + bluIFV + bluIFVAA + bluArty + bluMLRS + bluMRAP + bluMRAPHMG + bluTruckTP + bluTruckMed + bluTruckFuel;
 
 
-bluPilot = 	"rhsusf_army_ocp_helipilot";
-bluCrew = 	"rhsusf_usmc_marpat_wd_combatcrewman";
-bluGunner = "rhsusf_usmc_marpat_wd_rifleman_light";
+	bluStatAA = 	["RHS_Stinger_AA_pod_WD"];
+	bluStatAT = 	["RHS_TOW_TriPod_WD"];
+	bluStatHMG = 	["RHS_M2StaticMG_WD"];
+	bluStatMortar = ["RHS_M252_WD"];
 
-bluMRAPHMGgroup = 	["rhsusf_usmc_fr_marpat_wd_riflemanat","rhsusf_usmc_fr_marpat_wd_rifleman","rhsusf_usmc_fr_marpat_wd_autorifleman_m249"];
-bluMRAPgroup = 		["rhsusf_usmc_fr_marpat_wd_teamleader","rhsusf_usmc_fr_marpat_wd_marksman","rhsusf_usmc_fr_marpat_wd_autorifleman"];
+//Blu USAF units
+	bluCfgInf = (configfile >> "CfgGroups" >> "West" >> "rhs_faction_usmc_wd" >> "rhs_group_nato_usmc_wd_infantry");
 
+	bluPilot = 	"rhsusf_army_ocp_helipilot";
+	bluCrew = 	"rhsusf_usmc_marpat_wd_combatcrewman";
+	bluGunner = "rhsusf_usmc_marpat_wd_rifleman_light";
 
-bluAirCav = 	["rhsusf_usmc_marpat_wd_teamleader","rhsusf_usmc_marpat_wd_marksman","rhsusf_usmc_marpat_wd_autorifleman","rhsusf_usmc_marpat_wd_riflemanat","rhsusf_usmc_marpat_wd_rifleman","rhsusf_usmc_marpat_wd_autorifleman_m249"];
-
-bluSquad = 			["rhs_group_nato_usmc_wd_infantry_squad"]; // 12
-bluSquadWeapons = 	["rhs_group_nato_usmc_wd_infantry_weaponsquad"]; // 7
-bluTeam = 			["rhs_group_nato_usmc_wd_infantry_team"]; // 4
-bluATTeam = 		["rhs_group_nato_usmc_wd_infantry_team_heavy_AT"]; // 4
-
-bluIR = 	"rhsusf_acc_anpeq15";
-
-bluFlag = 	"Flag_NATO_F";
-
-bluCfgInf = (configfile >> "CfgGroups" >> "West" >> "rhs_faction_usmc_wd" >> "rhs_group_nato_usmc_wd_infantry");
+	bluMRAPHMGgroup = 	["rhsusf_usmc_fr_marpat_wd_riflemanat","rhsusf_usmc_fr_marpat_wd_rifleman","rhsusf_usmc_fr_marpat_wd_autorifleman_m249"];
+	bluMRAPgroup = 		["rhsusf_usmc_fr_marpat_wd_teamleader","rhsusf_usmc_fr_marpat_wd_marksman","rhsusf_usmc_fr_marpat_wd_autorifleman"];
 
 
-bluRifle = 	[
-	"rhs_weap_m16a4_carryhandle",
-	"rhs_weap_m4a1_carryhandle",
-	"rhs_weap_m4a1_grip"
-];
+	bluAirCav = 	["rhsusf_usmc_marpat_wd_teamleader","rhsusf_usmc_marpat_wd_marksman","rhsusf_usmc_marpat_wd_autorifleman","rhsusf_usmc_marpat_wd_riflemanat","rhsusf_usmc_marpat_wd_rifleman","rhsusf_usmc_marpat_wd_autorifleman_m249"];
 
-bluGL = [
-	"rhs_weap_m16a4_carryhandle_M203",
-	"rhs_weap_m4a1_carryhandle_m203S",
-	"rhs_weap_m4a1_m203s"
-];
+	bluSquad = 			["rhs_group_nato_usmc_wd_infantry_squad"]; // 12
+	bluSquadWeapons = 	["rhs_group_nato_usmc_wd_infantry_weaponsquad"]; // 7
+	bluTeam = 			["rhs_group_nato_usmc_wd_infantry_team"]; // 4
+	bluATTeam = 		["rhs_group_nato_usmc_wd_infantry_team_heavy_AT"]; // 4
 
-bluSNPR = 	[
-	"rhs_weap_m107_leu",
-	"rhs_weap_m40_wd_usmc",
-	"rhs_weap_sr25"
-];
+	bluIR = 	"rhsusf_acc_anpeq15";
 
-bluLMG = 	[
-	"rhs_weap_m240G",
-	"rhs_weap_m249_pip_L_para",
-	"rhs_weap_m249_pip_S_vfg"
-];
+	bluFlag = 	"Flag_NATO_F";
 
-bluSmallWpn = 	[
-	"rhs_weap_M590_5RD",
-	"rhsusf_weap_m1911a1"
-];
+//bluEquipment
+	bluSmallWpn = 	[					// select reference
+		"rhsusf_weap_MP7A2",      		// 0 SMG
+		"rhs_weap_M590_5RD"     		// 1 SecondarySMG or Shotgun short
+	];
 
-bluRifleAmmo = [
-	"rhs_mag_30Rnd_556x45_Mk318_Stanag",
-	"rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red"
-];
+	bluSmallAmmo = [					// select reference
+		"rhsusf_mag_40Rnd_46x30_FMJ",  	// 0 SMG ammo
+		"rhsusf_5Rnd_Slug"				// 1 SecondarySMG ammo
+	];
 
-bluSNPRAmmo = [
-	"rhsusf_mag_10Rnd_STD_50BMG_M33",
-	"rhsusf_mag_10Rnd_STD_50BMG_mk211",
-	"rhsusf_10Rnd_762x51_m118_special_Mag",
-	"rhsusf_20Rnd_762x51_m118_special_Mag",
-	"20Rnd_762x51_Mag"
-];
+	bluRifle = 	[ 						// select random
+		"rhs_weap_hk416d10_m320",
+		"rhs_weap_m4_m320",
+		"rhs_weap_mk18_m320"
+	];
 
-bluLMGAmmo = [
-	"rhsusf_50Rnd_762x51",
-	"rhsusf_100Rnd_762x51_m62_tracer",
-	"rhs_200rnd_556x45_M_SAW"
-];
+	bluRifleAmmo = [					// select random (this might require a tweak if blurifle have rifle with different ammo, try to keep the same)
+		"rhs_mag_30Rnd_556x45_M855_Stanag",
+		"rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red"
+	];
 
-bluSmallAmmo = [
-	"rhsusf_5Rnd_00Buck",
-	"rhsusf_5Rnd_FRAG",
-	"rhsusf_mag_7x45acp_MHP"
-];
+	bluGL = bluRifle;
 
-bluAmmo = [
-	"rhsusf_mag_10Rnd_STD_50BMG_M33",
-	"rhsusf_mag_10Rnd_STD_50BMG_mk211",
-	"rhs_mag_30Rnd_556x45_Mk318_Ball",
-	"rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",
-	"rhsusf_20Rnd_762x51_m118_special_Mag",
-	"rhsusf_10Rnd_762x51_m118_special_Mag",
-	"rhs_200rnd_556x45_M_SAW",
-	"rhsusf_5Rnd_00Buck",
-	"rhs_mag_smaw_SR",
-	"20Rnd_762x51_Mag",
-	"rhsusf_100Rnd_762x51_m61_ap",
-	"rhsusf_100Rnd_762x51_m62_tracer",
-	"rhsusf_mag_7x45acp_MHP"
-];
+	bluGLsmoke = [							// how can i additemcargoglobal [item,5] for each of them?
+		"rhs_mag_m662_red",
+		"rhs_mag_m661_green",
+		"rhs_mag_m713_Red",
+		"rhs_mag_m715_Green"
+	];
 
-blu40mm = [
-	"rhs_mag_M433_HEDP",
-	"1Rnd_HE_Grenade_shell",
-	"SmokeShell",
-	"SmokeShellGreen",
-	"rhs_mag_m576"
-];
+	bluSNPR = 	[
+		"rhs_weap_m24sws",		//Tier 1
+		"rhs_weap_XM2010"		//Tier 2
+	];
 
-bluGrenade = [
-	"HandGrenade",
-	"MiniGrenade"
-];
+	bluSNPRAmmo = [
+		"rhsusf_5Rnd_762x51_m118_special_Mag",	//Tier1
+		"rhsusf_5Rnd_300winmag_xm2010"			//Tier2
+	];
 
-bluAT = [
-	"rhs_weap_smaw_optic",
-	"rhs_weap_M136_hedp"
-];
+	bluLMG = 	[
+		"rhs_weap_m249_pip_S_vfg",	//Tier1
+		"rhs_weap_m249_pip_S_vfg"	//Tier2
+	];
 
-bluAA = [
-	"rhs_weap_fim92"
-];
+	bluLMGAmmo = [
+		"rhsusf_100Rnd_556x45_soft_pouch",	//Tier1
+		"rhsusf_100Rnd_556x45_soft_pouch"	//Tier 2
+	];
 
-bluVest = [
-	"rhsusf_spc_rifleman",
-	"rhsusf_spc_crewman"
-];
+	bluGrenade = [
 
-bluScopes = [
-	"rhsusf_acc_LEUPOLDMK4",
-	"rhsusf_acc_ACOG3_USMC",
-	"rhsusf_acc_compm4"
-];
+		//missing
+	];
 
-bluAttachments = [
-	"rhsusf_acc_harris_bipod",
-	"rhsusf_acc_sr25S",
-	"rhsusf_acc_anpeq15A",
-	"rhsusf_acc_nt4_black"
-];
+	bluAT = [
+		"rhs_weap_M136_hedp",	//Tier 1 Standard, single use
+		"rhs_weap_smaw_optic",	//Tier 2
+		"rhs_weap_fgm148"		//Tier 3
 
-bluATMissile = [
-	"rhs_mag_smaw_HEAA"
-];
+	];
 
-bluAAMissile = [
-	"rhs_fim92_mag"
-];
+	bluATMissile = [
+		""							//Tier 1
+		"rhs_mag_smaw_HEAA"			//Only high tier
+		"rhs_fgm148_magazine_AT"	//Locking
+	];
 
-bluItems = bluVest + bluScopes + bluAttachments;
+	bluAA = [
+		"rhs_weap_fim92"		//Higher tier
+	];
+
+	bluAAMissile = [
+		"rhs_fim92_mag"		//Higher tier
+	];
+
+	bluVest = [				//Need to check stats
+		"rhsusf_spc_rifleman",
+		"rhsusf_spc_crewman"
+	];
+
+	bluScopes = [					// Preferibly only PIP compatible = more realisitc
+		"rhsusf_acc_SpecterDR_3d",	//Rifle scope
+		"rhsusf_acc_ACOG_MDO",		//LMG scope
+		"rhsusf_acc_LEUPOLDMK4_2_d"	//Snipe scope
+	];
+
+	bluAttachments = [
+		"rhsusf_acc_anpeq15_light", //anpeq with laser + flashlight
+		"rhsusf_acc_nt4_black"		//Higer tier only
+	];
+
+	bluSuppressor = [
+	"" //missing
+	];
+
+	bluHelmet = [
+	"rhsusf_opscore_bk_pelt"					// Tier 1
+	"rhsusf_ach_bare_des_headset"				// Tier 2
+	"rhsusf_mich_bare_norotos_semi_headset"		// Tier 3
+	];
+
 
 genGL = genGL + bluGL;
 genATLaunchers = genATLaunchers + bluAT;
