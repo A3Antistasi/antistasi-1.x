@@ -29,6 +29,8 @@ clearBackpackCargoGlobal _crate;
 				{_crate additemcargoGlobal 		[_x							,	20	];}	//Shells: Smoke and Flares Green and Red
 							foreach bluGLsmoke
 						};
+			_crate addWeaponCargoGlobal 		[selectrandom bluGL			,	1	];
+			_crate addMagazineCargoGlobal 		[selectrandom bluRifleAmmo	,	5	];
 
 			//										Medical
 			if !(activeACEMedical) then{
@@ -48,9 +50,9 @@ clearBackpackCargoGlobal _crate;
 
 			//										From Tier 1
 			if(BE_currentStage > 0) then {
-						_crate addWeaponCargoGlobal 		[selectrandom bluGL			,	5	];
-						_crate addMagazineCargoGlobal 		[selectrandom bluRifleAmmo	,	40	];
-						_crate addItemCargoGlobal			[bluScopes			select 0,	5	];
+						_crate addWeaponCargoGlobal 		[selectrandom bluGL			,	4	];
+						_crate addMagazineCargoGlobal 		[selectrandom bluRifleAmmo	,	35	];
+						_crate addItemCargoGlobal			[bluScopes			select 0,	4	];
 						//_crate addItemCargoGlobal			[bluSuppressor		select 0,	5	];  still missing in templates
 
 // Additional equipment depending on ArmyLevel
@@ -68,7 +70,6 @@ clearBackpackCargoGlobal _crate;
 			_crate addWeaponCargoGlobal 		[bluLMG		 		select 0,	5	]; // LMG
 			_crate addItemCargoGlobal			[bluScopes			select 1,	5	];
 			_crate addMagazineCargoGlobal 		[bluLMGAmmo 		select 0,	40	];
-			_crate addMagazineCargoGlobal 		[blu40mm 			select 0,	40	];
 			_crate addMagazineCargoGlobal 		[selectrandom bluRifleAmmo	,	50	]; // Extra ammo bonus
 	}
 	else {
