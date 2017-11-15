@@ -273,7 +273,7 @@
 			</Key>
 			<Key ID="STR_UI_SM_MEM_TT">
 				<Original>Only players on the members list are eligible to become Commander, can access the arsenal inventory and have their rank saved.</Original>
-			    <Russian>Только игроки из списка участников имеют право стать командиром, могут получить доступ к инвентарю арсенала и сохранить свой ранг</Russian>
+			    <Russian>Только игроки из списка участников имеют право стать командиром, доступ к инвентарю арсенала и возможность сохранить свой ранг</Russian>
 			</Key>
 
 			<Key ID="STR_UI_SM_LOAD_0">
