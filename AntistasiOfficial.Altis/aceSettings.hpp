@@ -30,7 +30,7 @@
     };
 
     class ace_map_BFT_HideAiGroups {
-        title = "#STR_ACE_HIDE_AI_GROUPS_ON_MAP";
+        title = "$STR_ACE_HIDE_AI_GROUPS_ON_MAP";
         ACE_setting = 1;
         values[] = {0,1};
         texts[] = {"Off","On"};
@@ -60,7 +60,7 @@
     };
 
     class ace_medical_increaseTrainingInLocations {
-        title = "%STR_ACE_LOCATIONS_BOOST_MEDICAL_TRAINING";
+        title = "$STR_ACE_LOCATIONS_BOOST_MEDICAL_TRAINING";
         ACE_setting = 1;
         values[] = {0,1};
         texts[] = {"Off","On"};
@@ -80,7 +80,7 @@
     };
 
     class ace_medical_maxReviveTime {
-        title = "%STR_ACE_MAN_RT";
+        title = "$STR_ACE_MAN_RT";
         ACE_setting = 1;
         values[] = {0,150,300};
         texts[] = {"0","150","300"};
@@ -210,7 +210,7 @@
     };
 
     class ace_advanced_ballistics_disabledInFullAutoMode {
-        title = "%STR_ACE_DISABLE_AD_BIFA";
+        title = "$STR_ACE_DISABLE_AD_BIFA";
         ACE_setting = 1;
         values[] = {0,1};
         texts[] = {"Off","On"};
