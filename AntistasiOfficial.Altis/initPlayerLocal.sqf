@@ -6,10 +6,9 @@ params ["_unit","_isJIP"];
 private ["_colorWest", "_colorEast","_introShot","_title","_nearestMarker"];
 
 waitUntil {!isNull player};
-waitUntil {player == player};
 
+[] execVM "briefing.sqf";
 if (isMultiplayer) then {
-	[] execVM "briefing.sqf";
 	if (!isServer) then {
 		call compile preprocessFileLineNumbers "initVar.sqf";
 		if (!hasInterface) then {
@@ -67,8 +66,12 @@ if (isMultiplayer) then {
 };
 
 disableUserInput false;
-player addWeaponGlobal "itemmap";
-player addWeaponGlobal "itemgps";
+//Give default civilian gear
+player setUnitLoadout (getUnitLoadout (configFile >> "CfgVehicles" >> "C_man_polo_1_F"));
+player forceAddUniform (selectRandom civUniforms);
+player addWeapon "ItemRadio";
+player addWeapon "ItemGPS";
+player addWeapon "Binocular";
 
 // In order: controller, TK counter, funds, spawn-trigger, rank, score, known by hostile AI
 player setVariable ["owner",player,true];

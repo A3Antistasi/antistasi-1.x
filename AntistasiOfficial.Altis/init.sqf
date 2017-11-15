@@ -5,7 +5,6 @@ enableSaving [ false, false ];
 call AS_fnc_init_hq;
 
 if (!isMultiPlayer) then {
-    [] execVM "briefing.sqf";
     {if ((_x != comandante) and (_x != Petros) and (_x != server) and (_x!=garrison) and (_x != carreteras)) then {_grupete = group _x; deleteVehicle _x; deleteGroup _grupete}} forEach allUnits;
     [] execVM "musica.sqf";
     diag_log "Starting Antistasi SP";
