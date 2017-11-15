@@ -1878,5 +1878,111 @@
 			    <Russian>Ваше снаряжение вызывает подозрение, вы больше не инкогнито.\n</Russian>
 			</Key>
 		</Container>
+	
+	    <Container>
+		    <Key ID="STR_ACE_MEDICAL_LEVEL">
+		        <Original>ACE: Medical Level</Original>
+		        <Russian>ACE: Уровень Медецины</Russian>
+			</Key>
+			<Key ID="STR_ACE_ENABLE_TEAM_MANAGEMENT">
+			    <Original>ACE: Enable Team Management</Original>
+				<Russian>ACE: Включить управление командой</Russian>
+			</Key>
+			<Key ID="STR_ACE_LAUNCHERS">
+			    <Original>ACE: Launchers</Original>
+				<Russian>ACE: Launchers</Russian> <!-- Не знаю как правильно перевести -->
+			</Key>
+			<Key ID="STR_ACE_HIDE_AI_GROUPS_ON_MAP">
+			    <Original>ACE: Hide AI groups on map?</Original>
+				<Russian>ACE: Скрыть группы ИИ на карте?</Russian>
+			</Key>
+			<Key ID="STR_ACE_SHOW_PLAYER_NAMES_MAP">
+			    <Original>ACE: Show player names map?</Original>
+				<Russian>ACE: Показывать Имена Игроков на карте?</Russian>
+			</Key>
+			<Key ID="STR_ACE_MAP_DEFAULT_CHANNEL">
+			    <Original>ACE: Map default channel</Original>
+				<Russian>ACE: Каннал Карты по умалчанию</Russian>
+			</Key>
+			<Key ID="STR_ACE_LOCATIONS_BOOST_MEDICAL_TRAINING">
+			    <Original>ACE: Locations boost medical training?</Original>
+				<Russian>ACE: Места обучения Медиков?</Russian>
+			</Key>
+			<Key ID="STR_ACE_MEDICAL_E_REV">
+			    <Original>ACE: Medical, enable revive?</Original>
+				<Russian>ACE: Медецина,позволяет оживить ?</Russian>
+			</Key>
+			<Key ID="STR_ACE_MAN_RT">
+			    <Original>ACE: Max revive time?</Original>
+				<Russian>ACE: Макс. Время Оживления?</Russian>
+			</Key>
+			<Key ID="STR_ACE_MEDICAL_CLEAN_ULD">
+			    <Original>ACE: Medical, clean up litter delay?</Original>
+				<Russian>ACE: Медицина, задержка уборки мусора?</Russian>
+			</Key>
+			<Key ID="STR_ACE_FULL_HEAL_OEIRTM">
+			    <Original>ACE: Full heal on epi injection restricted to medic?</Original>
+				<Russian>ACE: Полное исцеление на инъекцию эпи, ограниченное медиком?</Russian> <!-- Не знаю как правильно перевести -->
+			</Key>
+			<Key ID="STR_ACE_MDAGR_MF">
+			    <Original>ACE: MicroDAGR map fill</Original>
+				<Russian>ACE: MicroDAGR заполнение карты</Russian> <!-- что такое MicroDAGR -->
+			</Key>
+			<Key ID="STR_ACE_HOW_MDCAER">
+			    <Original>ACE: How much damage can an engineer repair?</Original>
+				<Russian>ACE: Сколько ущерба может восстановить инженер?</Russian>
+			</Key>
+			<Key ID="STR_ACE_FULL_RL">
+			    <Original>ACE: Full repair locations?</Original>
+				<Russian>ACE: Места Полной починки?</Russian>
+			</Key>
+			<Key ID="STR_ACE_WHO_CPEAFR">
+			    <Original>ACE: Who can perform a full repair?</Original>
+				<Russian>ACE: Кто может выполнить полный ремонт?</Russian>
+			</Key>
+			<Key ID="STR_ACE_ADVANCED_FATIQUE">
+			    <Original>ACE: Advanced Fatigue</Original>
+				<Russian>ACE: Усовершенствованная усталость</Russian>
+			</Key>
+			<Key ID="STR_ACE_ADVANCED_FATIQUE_PF">
+			    <Original>ACE: Advanced Fatigue performance factor</Original>
+				<Russian>ACE: Усовершенствованный коэффициент производительности усталости</Russian>
+			</Key>
+			<Key ID="STR_ACE_ADVANCED_FATIQUE_RF">
+			    <Original>ACE: Advanced Fatigue recovery factor</Original>
+				<Russian>ACE: Усовершенствованный коэффициент восстановления усталости</Russian>
+			</Key>
+			<Key ID="STR_ACE_ADVANCED_FATIQUE_TGF">
+			    <Original>ACE: Advanced Fatigue terrain gradient factor</Original>
+				<Russian>ACE: Усовершенствованный Коэффициент усталостни от Наклона местности</Russian>
+			</Key>
+			<Key ID="STR_ACE_EXP_EOD">
+			    <Original>ACE: Explosives explode on defusal?</Original>
+				<Russian>ACE: Взрывчатка взрывается при разминирование?</Russian>
+			</Key>
+			<Key ID="STR_ACE_AD_BAL">
+			    <Original>ACE: Advanced ballistics?</Original>
+				<Russian>ACE: Усовершенствованная баллистика?</Russian>
+			</Key>
+			<Key ID="STR_ACE_DISABLE_AD_BIFA">
+			    <Original>ACE: Disable Advanced Ballistics in full auto?</Original>
+				<Russian>ACE: Отключить предварительную баллистику в полном авто?</Russian>
+			</Key>
+			<Key ID="STR_ACE_AD_BSR">
+			    <Original>ACE: Advanced ballistics simulation radius</Original>
+				<Russian>ACE: Радиус моделирования баллистики</Russian>
+			</Key>
+			<Key ID="STR_ACE_ML">
+			    <Original>ACE: Map Illumination</Original>
+				<Russian>ACE: Освещение карты</Russian>
+			</Key>
+			<Key ID="STR_ACE_WHEEL_RRT">
+			    <Original>ACE: Wheel repair requires toolkit</Original>
+				<Russian>ACE: Ремонт колес требует набора инструментов</Russian>
+			</Key>
+
+		
+		</Container>
+	
 	</Package>
 </Project>
