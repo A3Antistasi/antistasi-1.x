@@ -80,7 +80,7 @@
 	];
 
 	bluGL = [
-		blurifle select 1
+		"arifle_MX_GL_Black_F"
 	];
 
 	bluGLsmoke = [							// theese should be selected all, i don't know how to

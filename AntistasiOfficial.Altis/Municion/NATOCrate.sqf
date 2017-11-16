@@ -26,9 +26,9 @@ clearBackpackCargoGlobal _crate;
 			_crate addItemCargoGlobal			["SmokeShellRed"			,	25	];
 			_crate addItemCargoGlobal			["SmokeShellGreen"			,	25	];
 			_crate addItemCargoGlobal			[bluAttachments 	select 0,	5	];	//flashlight
-				{_crate additemcargoGlobal 		[_x							,	20	];}	//Shells: Smoke and Flares Green and Red
-							foreach bluGLsmoke
-						};
+				{_crate addItemCargoGlobal 		[_x							,	20	];}//Shells: Smoke and Flares Green and Red
+							foreach bluGLsmoke;
+
 			_crate addWeaponCargoGlobal 		[selectrandom bluGL			,	1	];
 			_crate addMagazineCargoGlobal 		[selectrandom bluRifleAmmo	,	5	];
 

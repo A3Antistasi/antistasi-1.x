@@ -80,7 +80,11 @@
 		"rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red"
 	];
 
-	bluGL = bluRifle;
+	bluGL = [
+		"rhs_weap_hk416d10_m320",
+		"rhs_weap_m4_m320",
+		"rhs_weap_mk18_m320"
+	];
 
 	bluGLsmoke = [							// how can i additemcargoglobal [item,5] for each of them?
 		"rhs_mag_m662_red",
