@@ -708,6 +708,12 @@
 		</Container>
 
 		<Container name="Admin">
+			<Key ID="STR_UI_ADMIN_TGLPN_TEXT">
+				<Original>Map names</Original>
+			</Key>
+			<Key ID="STR_UI_ADMIN_TGLPN_TT">
+				<Original>Toggle player names displayed on map</Original>
+			</Key>
 			<Key ID="STR_UI_ADMIN_ADDMEM_TEXT">
 				<Original>Add Server Member</Original>
 			</Key>
