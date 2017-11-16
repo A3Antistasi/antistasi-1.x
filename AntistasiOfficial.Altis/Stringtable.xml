@@ -1983,6 +1983,959 @@
 
 		
 		</Container>
+		
+		<Container name="Dialogs">
+		    <Key ID="STR_D_FIA_HQOCO">
+		        <Original>FIA HQ Options - Commander Only</Original>
+				<Russian>FIA Параметры штаба - только командующий</Russian>
+		    </Key>
+			<Key ID="STR_D_GRAB_FP">
+		        <Original>Grab 100 € from Pool</Original>
+				<Russian>Взять 100€ из Банка</Russian>
+		    </Key>
+			<Key ID="STR_D_MANGE_GAR">
+		        <Original>Manage Garrisons</Original>
+				<Russian>Управление гарнизоном</Russian>
+		    </Key>
+			<Key ID="STR_D_MOVE_HQ_TAZ">
+		        <Original>Move HQ to another Zone</Original>
+				<Russian>Перемещение Базы в другую зону</Russian>
+		    </Key>
+			<Key ID="STR_D_INGAME_ML">
+		        <Original>Ingame Member's List</Original>
+				<Russian>Список участников</Russian>
+		    </Key>
+			<Key ID="STR_D_TRAIN_FIA">
+		        <Original>Train FIA</Original>
+				<Russian>Обучить FIA</Russian>
+		    </Key>
+			<Key ID="STR_D_BEBUILD_ASSE">
+		        <Original>Rebuild Assets</Original>
+				<Russian>Восстановить активы</Russian>
+		    </Key>
+			<Key ID="STR_D_RECRU_OPT">
+		        <Original>Recruitment Options</Original>
+				<Russian>Настройки Рекрутирования</Russian>
+		    </Key>
+			<Key ID="STR_D_RECRU_MIL">
+		        <Original>Recruit Militiaman</Original>
+				<Russian>Рекрутирование Ополченца</Russian>
+		    </Key>
+			<Key ID="STR_D_RECRU_AURI">
+		        <Original>Recruit Autorifleman</Original>
+				<Russian>Рекрутирование Стрелка</Russian>
+		    </Key>
+			<Key ID="STR_D_RECRU_MEDIC">
+		        <Original>Recruit Medic</Original>
+				<Russian>Рекрутирование Медика</Russian>
+		    </Key>
+			<Key ID="STR_D_RECRU_MARSKMAN">
+		        <Original>Recruit Marksman</Original>
+				<Russian>Рекрутирование Меткого Стрелка</Russian>
+		    </Key>
+			<Key ID="STR_D_RECRU_ENGI">
+		        <Original>Recruit Engineer</Original>
+				<Russian>Рекрутирование Инженера</Russian>
+		    </Key>
+			<Key ID="STR_D_RECRU_GREN">
+		        <Original>Recruit Grenadier</Original>
+				<Russian>Рекрутирование Гренадёра</Russian>
+		    </Key>
+			<Key ID="STR_D_RECRU_BOOM_S">
+		        <Original>Recruit Bomb Specialist</Original>
+				<Russian>Рекрутирование Подрывника</Russian>
+		    </Key>
+			<Key ID="STR_D_RECRU_AT">
+		        <Original>Recruit AT</Original>
+				<Russian>Рекрутирование ПТ</Russian>
+		    </Key>
+			<Key ID="STR_D_RECRU_AA">
+		        <Original>Recruit AA</Original>
+				<Russian>Рекрутироване ПВО</Russian>
+		    </Key>
+			<Key ID="STR_D_SQ_RECR_OP">
+		        <Original>Squad Recruitment Options</Original>
+				<Russian>Отряд Рекрутов Опций</Russian> <!-- Редакт. -->
+		    </Key>
+			<Key ID="STR_D_RECRU_INF_SQ">
+		        <Original>Recruit Inf. Squad</Original>
+				<Russian>Рекрут Пех.Отряд</Russian>
+		    </Key>
+			<Key ID="STR_D_RECRU_INF_TE">
+		        <Original>Recruit Inf. Team</Original>
+				<Russian>Рекрут Пех.Команду</Russian>
+		    </Key>
+			<Key ID="STR_D_RECRU_AT_SQ">
+		        <Original>Recruit AT Squad</Original>
+				<Russian>Рекрут Пт.Отряд</Russian>
+		    </Key>
+			<Key ID="STR_D_RECRU_AA_TR">
+		        <Original>"Recruit AA Truck</Original>
+				<Russian>Рекрут ПВО Грузовик</Russian>
+		    </Key>
+			<Key ID="STR_D_RECRU_SNI_TEAM">
+		        <Original>Recruit Sniper Team</Original>
+				<Russian>Рекрут Команду Снайперов</Russian>
+		    </Key>
+			<Key ID="STR_D_RECRU_AT_TR">
+		        <Original>Recruit AT Truck</Original>
+				<Russian>Рекрут ПТ Грузовик</Russian>
+		    </Key>
+			<Key ID="STR_D_RECRU_SEN">
+		        <Original>Recruit Sentry</Original>
+				<Russian>Рекрут Часовых</Russian>
+		    </Key>
+			<Key ID="STR_D_RECRU_MOR_TEAM">
+		        <Original>Recruit Mortar Team</Original>
+				<Russian>Рекрут Миномётный Отряд</Russian>
+		    </Key>
+			<Key ID="STR_D_RECRU_ENGIN">
+		        <Original>Recruit Engineers</Original>
+				<Russian>Рекрут Инженеров</Russian>
+		    </Key>
+			<Key ID="STR_D_PUR_MIV">
+		        <Original>Purchase Military Vehicle</Original>
+				<Russian>Покупка военной техники</Russian>
+		    </Key>
+			<Key ID="STR_D_BUY_QUA">
+		        <Original>Buy Quadbike</Original>
+				<Russian>Купить квадроцикл</Russian>
+		    </Key>
+			<Key ID="STR_D_BUY_OR_UAZ">
+		        <Original>Buy Offroad/UAZ</Original>
+				<Russian>Купить Внедорожник/Уаз</Russian>
+		    </Key>
+			<Key ID="STR_D_BUY_TRU">
+		        <Original>Buy Truck</Original>
+				<Russian>Купить Грузовик</Russian>
+		    </Key>
+			<Key ID="STR_D_BUY_TRUC">
+		        <Original>Buy Truck</Original>
+				<Russian>Купить Статический ПТ</Russian>
+		    </Key>
+			<Key ID="STR_D_BUY_ARM_OR">
+		        <Original>Buy Armed Offroad</Original>
+				<Russian>Купить Бронь. Внедорожник</Russian>
+		    </Key>
+			<Key ID="STR_D_BUY_MOR">
+		        <Original>Buy Mortar</Original>
+				<Russian>Купить Миномёт</Russian>
+		    </Key>
+			<Key ID="STR_D_BUY_MG">
+		        <Original>Buy MG</Original>
+				<Russian>Купить Пулемет</Russian>
+		    </Key>
+			<Key ID="STR_D_BUY_ST_AA">
+		        <Original>Buy Static AA</Original>
+				<Russian>Купить Статическое ПВО</Russian>
+		    </Key>
+			<Key ID="STR_D_BUY_APC">
+		        <Original>Buy APC</Original>
+				<Russian>Купить БТР</Russian>
+		    </Key>
+			<Key ID="STR_D_LOAD_PS">
+		        <Original>Load previous session?</Original>
+				<Russian>Загрузить Предыдущую Сессию?</Russian>
+		    </Key>
+			<Key ID="STR_D_ENA_SW_CM">
+		        <Original>Enable Switch Commander?</Original>
+				<Russian>Включить Переключение Командира?</Russian>
+		    </Key>
+			<Key ID="STR_D_BUI_OP">
+		        <Original>Building Options</Original>
+				<Russian>Настройки Строительства</Russian>
+		    </Key>
+			<Key ID="STR_D_OPS_RB">
+		        <Original>O.Post - Roadblock</Original>
+				<Russian>С.Пост - КПП</Russian>
+		    </Key>
+			<Key ID="STR_D_BUI_MF">
+		        <Original>Build Minefield</Original>
+				<Russian>Построить Минное Поле</Russian>
+		    </Key>
+			<Key ID="STR_D_OPS_RB_DEL">
+		        <Original>O.Post-Roadblock Delete</Original>
+				<Russian>С.Пост-КПП Удалить</Russian>
+		    </Key>
+			<Key ID="STR_D_MANA_CAMP">
+		        <Original>Manage Camps", "Establish/Abandon Camps</Original>
+				<Russian>Управление Лагерем</Russian>
+		    </Key>
+			<Key ID="STR_D_HQ_FORT">
+		        <Original>HQ Fortifications</Original>
+				<Russian>укрепления Базы</Russian>
+		    </Key>
+			<Key ID="STR_D_AV_MIS">
+		        <Original>Available Missions</Original>
+				<Russian>Доступные миссии</Russian>
+		    </Key>
+			<Key ID="STR_D_MI_CON">
+		        <Original>Military Contact</Original> <!-- Редакт. -->
+				<Russian>Военная Связь</Russian>
+		    </Key>
+			<Key ID="STR_D_CI_CON">
+		        <Original>Civilian Contact</Original>
+				<Russian>Гражданская Связь</Russian> <!-- Редакт. -->
+		    </Key>
+			<Key ID="STR_D_SKE_IRI">
+		        <Original>Sketchy Irishman</Original>
+				<Russian>Эскизы ирландца</Russian> <!-- Редакт. -->
+		    </Key>
+			<Key ID="STR_D_LOG_MI">
+		        <Original>Logistics Mission</Original>
+				<Russian>Миссии Снабжения</Russian>
+		    </Key>
+			<Key ID="STR_D_DES_MI">
+		        <Original>Destroy Mission</Original>
+				<Russian>Миссии Разрушения</Russian>
+		    </Key>
+			<Key ID="STR_D_RES_MI">
+		        <Original>Rescue Mission</Original>
+				<Russian>Миссии Спасения</Russian>
+		    </Key>
+			<Key ID="STR_D_PROPA">
+		        <Original>Propaganda</Original>
+				<Russian>Пропоганда</Russian>
+		    </Key>
+			<Key ID="STR_D_ASK_NI">
+		        <Original>Ask NATO for</Original>
+				<Russian>Запросить у НАТО</Russian>
+		    </Key>
+			<Key ID="STR_D_ATT_MI">
+		        <Original>Attack Mission</Original>
+				<Russian>Миссия Атаки</Russian>
+		    </Key>
+			<Key ID="STR_D_ARM_CO">
+		        <Original>Armored Column</Original>
+				<Russian>Бронированная Колонна</Russian>
+		    </Key>
+			<Key ID="STR_D_ARTI">
+		        <Original>Artillery</Original>
+				<Russian>Артиллерия</Russian>
+		    </Key>
+			<Key ID="STR_D_ROADB">
+		        <Original>Roadblock</Original>
+				<Russian>КПП</Russian>
+		    </Key>
+			<Key ID="STR_D_NATO_QRF">
+		        <Original>NATO QRF</Original>
+				<Russian>NATO ОБР</Russian> <!-- Редакт. -->
+		    </Key>
+			<Key ID="STR_D_NATO_UAV">
+		        <Original>NATO UAV</Original>
+				<Russian>NATO БПЛА</Russian>
+		    </Key>
+			<Key ID="STR_D_AMMD">
+		        <Original>Ammodrop</Original>
+				<Russian>Сброс Припасов</Russian>
+		    </Key>
+			<Key ID="STR_D_CAS_SU">
+		        <Original>CAS Support</Original>
+				<Russian>CAS Поддержка</Russian> <!-- Редакт. -->
+		    </Key>
+			<Key ID="STR_D_BOMBR">
+		        <Original>Bomb Run</Original>
+				<Russian>Бомбардировка</Russian>
+		    </Key>
+			<Key ID="STR_D_WE_OPFOR">
+		        <Original>Weaken OPFOR</Original>
+				<Russian>Ослабить OPFOR</Russian>
+		    </Key>
+			<Key ID="STR_D_GAR_MENU">
+		        <Original>Garrison Menu</Original>
+				<Russian>Меню Гарнизона</Russian>
+		    </Key>
+			<Key ID="STR_D_RECR_GAR">
+		        <Original>Recruit Garrison</Original>
+				<Russian>Нанять Гарнизон</Russian>
+		    </Key>
+			<Key ID="STR_D_REMO_GAR">
+		        <Original>Remove Garrison</Original>
+				<Russian>Удалить Гарнизон</Russian>
+		    </Key>
+			<Key ID="STR_D_GAR_REC_OP">
+		        <Original>Garrison Recruitment Options</Original>
+				<Russian>Опций Найма Гарнизона</Russian>
+		    </Key>
+			<Key ID="STR_D_REC_MILI">
+		        <Original>Recruit Militiaman</Original>
+				<Russian>Нанять Ополченца</Russian>
+		    </Key>
+			<Key ID="STR_D_REC_AUTORIL">
+		        <Original>Recruit Autorifleman</Original>
+				<Russian>Нанять Стрелка</Russian>
+		    </Key>
+			<Key ID="STR_D_REC_MED">
+		        <Original>Recruit Medic</Original>
+				<Russian>Нанять Медика</Russian>
+		    </Key>
+			<Key ID="STR_D_REC_MARKMAN">
+		        <Original>Recruit Marksman</Original>
+				<Russian>Нанять Меткого Стрелка</Russian>
+		    </Key>
+			<Key ID="STR_D_REC_SQLEAD">
+		        <Original>Recruit Squad Leader</Original>
+				<Russian>Нанять Лидера Отряда</Russian>
+		    </Key>
+			<Key ID="STR_D_REC_GRENA">
+		        <Original>Recruit Grenadier</Original>
+				<Russian>Нанять Гренадёра</Russian>
+		    </Key>
+			<Key ID="STR_D_REC_MORTAR">
+		        <Original>Recruit Mortar</Original>
+				<Russian>Нанять Миномёт</Russian>
+		    </Key>
+			<Key ID="STR_D_REC_AT">
+		        <Original>Recruit AT</Original>
+				<Russian>Нанять ПТ</Russian>
+		    </Key>
+			<Key ID="STR_D_YES">
+		        <Original>YES</Original>
+				<Russian>Да</Russian>
+		    </Key>
+			<Key ID="STR_D_NO">
+		        <Original>No</Original>
+				<Russian>Нет</Russian>
+		    </Key>
+			<Key ID="STR_D_DONE">
+		        <Original>Done</Original>
+				<Russian>Готово</Russian>
+		    </Key>
+			<Key ID="STR_D_FPSLI">
+		        <Original>FPS Limiter</Original>
+				<Russian>FPS Ограничитель</Russian>
+		    </Key>
+			<Key ID="STR_D_FPSLI1P">
+		        <Original>+1 FPS Limit</Original>
+				<Russian>+1 FPS Лимит</Russian>
+		    </Key>
+			<Key ID="STR_D_FPSLI1M">
+		        <Original>-1 FPS Limit</Original>
+				<Russian>-1 FPS Лимит</Russian>
+		    </Key>
+			<Key ID="STR_D_SPAWND">
+		        <Original>Spawn Distance Config</Original>
+				<Russian>Настройки Дистанций Спавна</Russian>
+		    </Key>
+			<Key ID="STR_D_SPAWND100P">
+		        <Original>+100 Spawn Dist.</Original>
+				<Russian>+100 Дист. Спавна</Russian>
+		    </Key>
+			<Key ID="STR_D_SPAWND100M">
+		        <Original>-100 Spawn Dist.</Original>
+				<Russian>-100 Дист. Спавна</Russian>
+		    </Key>
+			<Key ID="STR_D_CIV_PERCON">
+		        <Original>Civ Presence Config</Original>
+				<Russian>Наличие Гражд. Настройки</Russian>
+		    </Key>
+			<Key ID="STR_D_CIV1PS">
+		        <Original>+1% Civ Spawn.</Original>
+				<Russian>+1% Гражд. Спавн</Russian>
+		    </Key>
+			<Key ID="STR_D_CIV1MS">
+		        <Original>-1% Civ Spawn.</Original>
+				<Russian>-1% Гражд. Спавн</Russian>
+		    </Key>
+			<Key ID="STR_D_HQ_SQ_OP">
+		        <Original>HC Squad Options</Original>
+				<Russian>HC Настройки Отряда</Russian> <!-- Редакт. -->
+		    </Key>
+			<Key ID="STR_D_SQ_ADDV">
+		        <Original>Squad Add Vehicle</Original>
+				<Russian>Добавть В отряд Технику</Russian>
+		    </Key>
+			<Key ID="STR_D_SQ_VS">
+		        <Original>Squad Vehicle Stats</Original>
+				<Russian>Отряд Стат. Техники</Russian>   <!-- Редакт. -->
+		    </Key>
+			<Key ID="STR_D_MO_DISMO">
+		        <Original>Mount / Dismount</Original>
+				<Russian>Установить / Разобрать</Russian>
+		    </Key>
+			<Key ID="STR_D_ST_AUT_TAR">
+		        <Original>Static Autotarget</Original>
+				<Russian>Статичное Автонаведение</Russian> <!-- Редакт. -->
+		    </Key>
+			<Key ID="STR_D_ADD_VSSQ">
+		        <Original>Add Vehicle to Squad?</Original>
+				<Russian>Добавить транспорт в отряд?</Russian>
+		    </Key>
+			<Key ID="STR_D_PNMI">
+		        <Original>Player and Money Interaction</Original>
+				<Russian>Игрок и деньги Взаимодействие</Russian> 
+		    </Key>
+			<Key ID="STR_D_ADD_SM">
+		        <Original>Add Server Member</Original>
+				<Russian>Добавить Участника Сервера</Russian>
+		    </Key>
+			<Key ID="STR_D_REM_SM">
+		        <Original>Remove Server Member</Original>
+				<Russian>Удалить Участника Сервера</Russian>
+		    </Key>
+			<Key ID="STR_D_DONP">
+		        <Original>Donate 100 € to player</Original>
+				<Russian>Подарить 100 € Игроку</Russian>
+		    </Key>
+			<Key ID="STR_D_DONFI">
+		        <Original>Donate 100 € to FIA</Original>
+				<Russian>Жертвовать 100 €  FIA</Russian>
+		    </Key>
+			<Key ID="STR_D_EN_SM">
+		        <Original>Enable Server Membership?</Original>
+				<Russian>Включить Членство на сервере?</Russian>
+		    </Key>
+			<Key ID="STR_D_VHIL_MG">
+		        <Original>Vehicle Manager</Original>
+				<Russian>Менеджер Техники</Russian>
+		    </Key>
+			<Key ID="STR_D_GAR_SEll_VEH">
+		        <Original>Garage\Sell Vehicle</Original>
+				<Russian>Гараж\Продать Технику</Russian>
+		    </Key>
+			<Key ID="STR_D_VEH_AND_SQ">
+		        <Original>Vehicles and Squads</Original>
+				<Russian>Техника И Отряды</Russian>
+		    </Key>
+			<Key ID="STR_D_UN_VEH">
+		        <Original>Unlock Vehicle</Original>
+				<Russian>Открыть Технику</Russian>
+		    </Key>
+			<Key ID="STR_D_SELL_GAR_VEH">
+		        <Original>Sell or Garage Vehicle</Original>
+				<Russian>Продажа или В Гараж Технику</Russian>
+		    </Key>
+			<Key ID="STR_D_GAR_VEH">
+		        <Original>Garage Vehicle</Original>
+				<Russian>Технику В гараж</Russian>
+		    </Key>
+			<Key ID="STR_D_SELL_VEH">
+		        <Original>Sell Vehicle</Original>
+				<Russian>Продать Технику</Russian>
+		    </Key>
+			<Key ID="STR_D_PER_FIAG">
+		        <Original>Personal or FIA Garage?</Original>
+				<Russian>Личный или FIA Гараж?</Russian>
+		    </Key>
+			<Key ID="STR_D_PERG">
+		        <Original>Personal Garage</Original>
+				<Russian>Личный Гараж</Russian>
+		    </Key>
+			<Key ID="STR_D_FIAG">
+		        <Original>FIA Garage</Original>
+				<Russian>FIA Гараж</Russian>
+		    </Key>
+			<Key ID="STR_D_BUY_VH">
+		        <Original>Buy Vehicle</Original>
+				<Russian>Купить Технику</Russian>
+		    </Key>
+			<Key ID="STR_D_CIV_VH">
+		        <Original>Civilian Vehicle</Original>
+				<Russian>Гражданская Техника</Russian>
+		    </Key>
+			<Key ID="STR_D_MIL_VH">
+		        <Original>Military Vehicle</Original>
+				<Russian>Военная Техника</Russian>
+		    </Key>
+			<Key ID="STR_D_BUY_CIV_VH">
+		        <Original>Buy Civilian Vehicle</Original>
+				<Russian>Купить Гражд. Технику</Russian>
+		    </Key>
+			<Key ID="STR_D_OFFR">
+		        <Original>Offroad</Original>
+				<Russian>Внедорожник</Russian>
+		    </Key>
+			<Key ID="STR_D_TRUCK">
+		        <Original>Truck</Original>
+				<Russian>Грузовик</Russian>
+		    </Key>
+			<Key ID="STR_D_HELI">
+		        <Original>Helicopter</Original>
+				<Russian>Вертолёт</Russian>
+		    </Key>
+			<Key ID="STR_D_CA_BOOM_STR">
+		        <Original>Carpet Bombing Strike</Original>
+				<Russian>Покрытие Бомб. Удара</Russian>  <!-- Редакт. -->
+		    </Key>
+			<Key ID="STR_D_HE_BOMB">
+		        <Original>HE Bombs</Original>
+				<Russian>HE Бомбы</Russian> <!-- Редакт. -->
+		    </Key>
+			<Key ID="STR_D_CA_BOOM">
+		        <Original>Carpet Bombing</Original>
+				<Russian>Покрытие Бомбардировки</Russian>  <!-- Редакт. -->
+		    </Key>
+			<Key ID="STR_D_NAPALM_BOOM">
+		        <Original>NAPALM Bomb</Original>
+				<Russian>НАПАЛМ</Russian>
+		    </Key>
+			<Key ID="STR_D_AI_MENEG">
+		        <Original>AI Management</Original>
+				<Russian>Управление ИИ</Russian>
+		    </Key>
+			<Key ID="STR_D_TE_AI_CON">
+		        <Original>Temp. AI Control</Original>
+				<Russian>Врем. ИИ Контроль</Russian>
+		    </Key>
+			<Key ID="STR_D_AUTO_HEAL">
+		        <Original>Auto Heal</Original>
+				<Russian>Авто Лечение</Russian>
+		    </Key>
+			<Key ID="STR_D_AUTO_REARM">
+		        <Original>Auto Rearm</Original>
+				<Russian>Авто Перевооружение</Russian>
+		    </Key>
+			<Key ID="STR_D_DIS_UNISQ">
+		        <Original>Dismiss Units/Squads</Original>
+				<Russian>Уволить Юнитов/Отряды</Russian> <!-- Редакт. -->
+		    </Key>
+			<Key ID="STR_D_SN_RTBF">
+		        <Original>Select No. Rounds to be fired</Original>
+				<Russian>Выбирите нет.Чтобы Отменить Увольнение</Russian>
+		    </Key>
+			<Key ID="STR_D_STOS">
+		        <Original>Select type of strike</Original>
+				<Russian>Выберите тип удара</Russian>
+		    </Key>
+			<Key ID="STR_D_SINPS">
+		        <Original>Single Point Strike</Original>
+				<Russian>Одиночный Удар по Точке</Russian>
+		    </Key>
+			<Key ID="STR_D_BARRS">
+		        <Original>Barrage Strike</Original>
+				<Russian>Заградительный огонь</Russian>
+		    </Key>
+			<Key ID="STR_D_STAFTS">
+		        <Original>Select type ammo for the strike</Original>
+				<Russian>Выберите тип боеприпасов для удара</Russian>
+		    </Key>
+			<Key ID="STR_D_HE">
+		        <Original>HE</Original>
+				<Russian>HE</Russian> <!-- Редакт. -->
+		    </Key>
+			<Key ID="STR_D_LAS_GUI">
+		        <Original>Laser Guided</Original>
+				<Russian>Лазерное Наведение</Russian>
+		    </Key>
+			<Key ID="STR_D_SMOKE">
+		        <Original>Smoke</Original>
+				<Russian>Дым</Russian>
+		    </Key>
+			<Key ID="STR_D_SEMA">
+		        <Original>Select Mortar Ammo</Original>
+				<Russian>Выберите миномётные боеп</Russian> <!-- Редакт. -->
+		    </Key>
+			<Key ID="STR_D_BUI_MINF">
+		        <Original>Build Minefield</Original>
+				<Russian>Построить Минное Поле</Russian> <!-- Редакт. -->
+		    </Key>
+			<Key ID="STR_D_APERS_MIN">
+		        <Original>APERS Mines</Original>
+				<Russian>ПП Мины</Russian>
+		    </Key>
+			<Key ID="STR_D_AT_MIN">
+		        <Original>AT Mines</Original>
+				<Russian>ПТ Мины</Russian>
+		    </Key>
+			<Key ID="STR_D_FAST_TR">
+		        <Original>Fast Travel</Original>
+				<Russian>Быстрое путешествие</Russian>
+		    </Key>
+			<Key ID="STR_D_FAST_TRO">
+		        <Original>Fast Travel (old)</Original>
+				<Russian>Быстрое путешествие (Старое)</Russian>
+		    </Key>
+			<Key ID="STR_D_FAST_TRN">
+		        <Original>Fast Travel (new)</Original>
+				<Russian>Быстрое путешествие (Новое)</Russian>
+		    </Key>
+			<Key ID="STR_D_TAFIACZ">
+		        <Original>Цели: все зоны контролируемые FIA</Original>
+				<Russian></Russian>
+		    </Key>
+			<Key ID="STR_D_OFIACNHQ">
+		        <Original>Only FIA camps and HQ</Original>
+				<Russian>Только лагеря FIA и База</Russian>
+		    </Key>
+			<Key ID="STR_D_CAMP_MG">
+		        <Original>Camp Management</Original>
+				<Russian>Управление Лагерем</Russian>
+		    </Key>
+			<Key ID="STR_D_EST_CAMP">
+		        <Original>Establish Camp</Original>
+				<Russian>Создание Лагеря</Russian>
+		    </Key>
+			<Key ID="STR_D_DEL_CAMP">
+		        <Original>Delete Camp</Original>
+				<Russian>Удаление Лагеря</Russian>
+		    </Key>
+			<Key ID="STR_D_REN_CAMP">
+		        <Original>Rename Camp</Original>
+				<Russian>Переименовать Лагерь</Russian>
+		    </Key>
+			<Key ID="STR_D_ITSTHFY">
+		        <Original>Is the start too hard for you?</Original>
+				<Russian>Является ли начало слишком трудным для вас?</Russian>
+		    </Key>
+			<Key ID="STR_D_YGSRNBGWBU">
+		        <Original>You'll get some resources, and basic gear will be unlocked</Original>
+				<Russian>Вы получите некоторые ресурсы, и основное снаряжение будет разблокировано</Russian> <!-- Редакт. -->
+		    </Key>
+			<Key ID="STR_D_PSISNPCII">
+		        <Original>Pea shooters, iron sights and plain clothes it is</Original>
+				<Russian>Дешевое оружие, железные прицелы и обычная одежда</Russian> <!-- Редакт. -->
+		    </Key>
+			<Key ID="STR_D_ASSMI">
+		        <Original>Assassination Mission</Original>
+				<Russian>Миссия Убийсва</Russian>
+		    </Key>
+			<Key ID="STR_D_CONAM">
+		        <Original>Convoy Ambush</Original>
+				<Russian>Засада На Конвой</Russian>
+		    </Key>
+			<Key ID="STR_D_CONQMIS">
+		        <Original>Conquest Missions</Original>
+				<Russian>Миссия Захвата</Russian>
+		    </Key>
+			<Key ID="STR_D_BUY_ORD">
+		        <Original>Buy Ordnance</Original>
+				<Russian>Купить Артиллерию</Russian>
+		    </Key>
+			<Key ID="STR_D_SOME_CHAR">
+		        <Original>Some Charges</Original>
+				<Russian>Несколько Бомб</Russian>    <!-- Редакт. от сюда -->
+		    </Key>
+			<Key ID="STR_D_SP3EOSBE">
+		        <Original>Spend 300 Euros on a small bag of explosives.</Original>
+				<Russian>Потратить 300 евро на небольшой мешок взрывчатки.</Russian>
+		    </Key>
+			<Key ID="STR_D_MANY_CHAR">
+		        <Original>Many Charges</Original>
+				<Russian>Много Бомб</Russian>
+		    </Key>
+			<Key ID="STR_D_SP8EOLBE">
+		        <Original>Spend 800 Euros on a large bag of explosives.</Original>
+				<Russian>Потратить 800 евро на большой мешок взрывчатки.</Russian>
+		    </Key>
+			<Key ID="STR_D_SOME_WEA">
+		        <Original>Some Weapons</Original>
+				<Russian>Некоторые виды оружия</Russian>
+		    </Key>
+			<Key ID="STR_D_SP10EOSCW">
+		        <Original>Spend 1000 Euros on a small cache of weapons.</Original>
+				<Russian>Потратить 1000 евро на небольшой тайник оружия.</Russian>
+		    </Key>
+			<Key ID="STR_D_MANY_WEA">
+		        <Original>Many Weapons</Original>
+				<Russian>Много оружия</Russian>
+		    </Key>
+			<Key ID="STR_D_SP25EOLCW">
+		        <Original>Spend 2500 Euros on a large cache of weapons.</Original>
+				<Russian>Потратить 2500 евро на большой тайник оружия.</Russian>
+		    </Key>
+			<Key ID="STR_D_SOME_MIN">
+		        <Original>Some Mines</Original>
+				<Russian>Несколько мин</Russian>
+		    </Key>
+			<Key ID="STR_D_SP3EOSBM">
+		        <Original>Spend 300 Euros on a small bag of mines.</Original>
+				<Russian>Потратить 300 евро на небольшой мешок Мин.</Russian>
+		    </Key>
+			<Key ID="STR_D_MANY_MIN">
+		        <Original>Many Mines</Original>
+				<Russian>Много Мин</Russian>
+		    </Key>
+			<Key ID="STR_D_SP8EOLBM">
+		        <Original>Spend 800 Euros on a large bag of mines.</Original>
+				<Russian>Потратить 800 евро на большой мешок мин.</Russian>
+		    </Key>
+			<Key ID="STR_D_SOME_ACC">
+		        <Original>Some Accessories</Original>
+				<Russian>Несколько Аксессуаров</Russian>
+		    </Key>
+			<Key ID="STR_D_SP5EOSCWA">
+		        <Original>Spend 500 Euros on a small cache of weapon accessories.</Original>
+				<Russian>Потратить 500 евро на небольшой тайник аксессуаров оружия.</Russian>
+		    </Key>
+			<Key ID="STR_D_MANY_ACC">
+		        <Original>Many Accessories</Original>
+				<Russian>Много Аксессуаров</Russian>
+		    </Key>
+			<Key ID="STR_D_SP50EOLCWA">
+		        <Original>Spend 5000 Euros on a large cache of weapon accessories.</Original>
+				<Russian>Потратить 5000 евро на большой тайник аксессуаров оружия.</Russian>
+		    </Key>
+			<Key ID="STR_D_SOME_AMMO">
+		        <Original>Some Ammo</Original>
+				<Russian>Не много Боеприпасов</Russian>  <!-- Редакт. до сюда -->
+		    </Key>
+			<Key ID="STR_D_CNA">
+		        <Original>Currently not available</Original>
+				<Russian>В данный момент недоступно</Russian>
+		    </Key>
+			<Key ID="STR_D_WEAP_OP">
+		        <Original>Weapon Options</Original>
+				<Russian>Настройки Оружия</Russian>
+		    </Key>
+			<Key ID="STR_D_ASRILF">
+		        <Original>Assault Rifles</Original>
+				<Russian>Штурмовые винтовки</Russian>
+		    </Key>
+			<Key ID="STR_D_MACHGUN">
+		        <Original>Machineguns</Original>
+				<Russian>Пулеметы</Russian>
+		    </Key>
+			<Key ID="STR_D_LAUN">
+		        <Original>Launchers</Original>
+				<Russian>Пусковые Установки</Russian>
+		    </Key>
+			<Key ID="STR_D_PIST">
+		        <Original>Pistols</Original>
+				<Russian>Пистолеты</Russian>
+		    </Key>
+			<Key ID="STR_D_SNIPRILF">
+		        <Original>Sniper Rifles</Original>
+				<Russian>Снайперские винтовки</Russian>
+		    </Key>
+			<Key ID="STR_D_RAND">
+		        <Original>Random</Original>
+				<Russian>Случайное</Russian>
+		    </Key>
+			<Key ID="STR_D_CAMO_NET">
+		        <Original>Camo Net</Original>
+				<Russian>Маскировочная Сетка</Russian>
+		    </Key>
+			<Key ID="STR_D_LANT">
+		        <Original>Lantern</Original>
+				<Russian>Фонари</Russian>
+		    </Key>
+			<Key ID="STR_D_SAN_BAG">
+		        <Original>Sandbag</Original>
+				<Russian>Мешок с Песком</Russian>
+		    </Key>
+			<Key ID="STR_D_VEH_SP">
+		        <Original>Vehicle Spawn Pad</Original>
+				<Russian>Место Спавна Техники</Russian>
+		    </Key>
+			<Key ID="STR_D_CDVSP_DATP">
+		        <Original>Create/Delete the vehicle spawn pad. Deploy at intended position.</Original>
+				<Russian>Создать/Удалить Место Спавна техники. Развертывание в заданной Позиций.</Russian>
+		    </Key>
+			<Key ID="STR_D_DELA">
+		        <Original>Delete All</Original>
+				<Russian>Удалить Всё</Russian>
+		    </Key>
+			<Key ID="STR_D_GAME_OP">
+		        <Original>Game Options</Original>
+				<Russian>Настройки Игры</Russian>
+		    </Key>
+			<Key ID="STR_D_CIVCON">
+		        <Original>Civ Config</Original>
+				<Russian>Гражд. Настройка</Russian>
+		    </Key>
+			<Key ID="STR_D_SDC">
+		        <Original>Spawn Dist. Config</Original>
+				<Russian>Спавн Настройка Дист</Russian>
+		    </Key>
+			<Key ID="STR_D_FPSL">
+		        <Original>FPS Limiter</Original>
+				<Russian>FPS Ограничитель</Russian>
+		    </Key>
+			<Key ID="STR_D_GARB_CLEA">
+		        <Original>Garbage Clean</Original>
+				<Russian>Удаление Мусора</Russian>
+		    </Key>
+			<Key ID="STR_D_PERSAVE">
+		        <Original>Persistent Save</Original>
+				<Russian>Сохранение Прогресса</Russian> <!-- Редакт. -->
+		    </Key>
+			<Key ID="STR_D_MUS_ON_OFF">
+		        <Original>Music ON/OFF</Original>
+				<Russian>Музыка ВКЛ/ВЫКЛ</Russian>
+		    </Key>
+			<Key ID="STR_D_GAME_OP">
+		        <Original>Ingame Member's List</Original>
+				<Russian>Список участников</Russian>
+		    </Key>
+			<Key ID="STR_D_MUS_ON_OFF">
+		        <Original>Do you want to reset HQ?</Original>
+				<Russian>Вы хотите сбросить БАЗУ</Russian>
+		    </Key>
+			<Key ID="STR_D_INGAME_ML">
+		        <Original>Maintenance Menu</Original>
+				<Russian>Меню обслуживания</Russian> <!-- Редакт. -->
+		    </Key>
+			<Key ID="STR_D_DELC_DV_OGIMF">
+		        <Original>Delete corpses, destroyed vehicles, on ground items, might freeze</Original>
+				<Russian>Удалите трупы, уничтоженные транспортные средства, наземные предметы, может зависнуть</Russian>
+		    </Key>
+			<Key ID="STR_D_TOGPA">
+		        <Original>Toggle Petros' animations</Original>
+				<Russian>Переключить Анимацию Петроса</Russian>
+		    </Key>
+			<Key ID="STR_D_TTIAOP">
+		        <Original>Turn the idle animation of Petros on/off.</Original>
+				<Russian>Включите Простую анимацию Петроса вкл / выкл.</Russian>
+		    </Key>
+			<Key ID="STR_D_TOG_ARM_XPS">
+		        <Original>Toggle Army XP System</Original>
+				<Russian>Переключение Системы Arma XP</Russian>
+		    </Key>
+			<Key ID="STR_D_TTEAXPS">
+		        <Original>Turn the extended Army XP system on/off, including all restrictions.</Original>
+				<Russian>Включите расширенную систему Army XP вкл / выкл, включая все ограничени.</Russian>
+		    </Key>
+			<Key ID="STR_D_RESHQ">
+		        <Original>Reset HQ</Original>
+				<Russian>Сброс Базы</Russian>
+		    </Key>
+			<Key ID="STR_D_IYMTLOOYHAI">
+		        <Original>If you managed to lose one of your HQ items, this will reset all of them near Petros.</Original>
+				<Russian>Если вам удалось потерять один из ваших пунктов HQ, это сбросит все из них рядом с Петроса.</Russian>
+		    </Key>
+			<Key ID="STR_D_RESPP">
+		        <Original>Reset Petros' position</Original>
+				<Russian>Сброс Позиции Петроса</Russian>
+		    </Key>
+			<Key ID="STR_D_TPAMHNTTCAHQ">
+		        <Original>Terminate Petros' animation, move him next to the campfire at HQ.</Original>
+				<Russian>Прекратить анимацию Петроса И Переместить его рядом с костром на Базе.</Russian>
+		    </Key>
+			<Key ID="STR_D_MSHQI">
+		        <Original>Move statics/HQ items</Original>
+				<Russian>Переместить статичных/HQ Предметов</Russian> <!-- Редакт. -->
+		    </Key>
+			<Key ID="STR_D_RYBTMSNHQA">
+		        <Original>Reset your ability to move statics and HQ assets.</Original>
+				<Russian>Сбросить способность двигаться статику и активов Штаба.</Russian>
+		    </Key>
+			<Key ID="STR_D_OPMENU">
+		        <Original>Options Menu</Original>
+				<Russian>Меню опций</Russian>
+		    </Key>
+			<Key ID="STR_D_FTOOF">
+		        <Original>FT On/Off</Original>
+				<Russian>Быстр.Перем. ВКЛ/ВЫКЛ</Russian> <!-- Редакт. -->
+		    </Key>
+			<Key ID="STR_D_TTOFTSOOF">
+		        <Original>Toggle the old Fast Travel system on/off</Original>
+				<Russian>Переключите старую систему быстрого перемещения вкл / выкл</Russian>
+		    </Key>
+			<Key ID="STR_D_TII">
+		        <Original>Toggle Increased Income</Original>
+				<Russian>Переключение увеличения доходов</Russian>
+		    </Key>
+			<Key ID="STR_D_ARSAOOF">
+		        <Original>Arsenal Access On/Off</Original>
+				<Russian>Арсенал Доступ Вкл / Выкл</Russian>  <!-- Редакт. -->
+		    </Key>
+			<Key ID="STR_D_SMAEFGRUATA">
+		        <Original>Simplified: members are exempt from gear-removal upon accessing the arsenal.</Original>
+				<Russian>Упрощенные: члены освобождаются от шестеренные удаления от доступа к арсенал.</Russian>
+		    </Key>
+			<Key ID="STR_D_TAXPS">
+		        <Original>Toggle Army XP System</Original>
+				<Russian>Переключение Системы Arma XP</Russian>
+		    </Key>
+			<Key ID="STR_D_TTEAXPSOOF">
+		        <Original>Turn the extended Army XP system on/off, including all restrictions.</Original>
+				<Russian>Включите расширенную систему Army XP вкл / выкл, включая все ограничения.</Russian>
+		    </Key>
+			<Key ID="STR_D_WEAP_PROF">
+		        <Original>Weapon Proficiencies</Original>
+				<Russian>Боевые навыки</Russian> <!-- Редакт. -->
+		    </Key>
+			<Key ID="STR_D_TTEWPSOOF">
+		        <Original>Turn the extended weapon proficiencies system on/off (MP exclusive)</Original>
+				<Russian>Включите расширенную систему оружия и боевых навыков Вкл / ВЫКЛ (МП исключение)</Russian>
+		    </Key>
+			<Key ID="STR_D_TFAR_MENU">
+		        <Original>TFAR Menu</Original>
+				<Russian>TFAR Меню</Russian> <!-- Редакт. -->
+		    </Key>
+			<Key ID="STR_D_SAVE_RS">
+		        <Original>Save Radio Settings</Original>
+				<Russian>Сохранить Настройки Радио</Russian>
+		    </Key>
+			<Key ID="STR_D_STFARRS">
+		        <Original>Save TFAR radio settings.</Original>
+				<Russian>Сохранить TFAR НАстройки Радио</Russian> <!-- Редакт. -->
+		    </Key>
+			<Key ID="STR_D_LOAD_RS">
+		        <Original>Load Radio Settings</Original>
+				<Russian>Загрузить Настройки Радио</Russian>
+		    </Key>
+			<Key ID="STR_D_LPSTFARRS">
+		        <Original>Load previously saved TFAR radio settings.</Original>
+				<Russian>Загрузить Ранее Сохраненные TFAR Настройки Радио.</Russian>  <!-- Редакт. -->
+		    </Key>
+			<Key ID="STR_D_ROLE_CHANGE">
+		        <Original>Role Change</Original>
+				<Russian>Смена Роли</Russian>
+		    </Key>
+			<Key ID="STR_D_BACK">
+		        <Original>Back</Original>
+				<Russian>Назад</Russian>
+		    </Key>
+			<Key ID="STR_D_OFFICER">
+		        <Original>Officer</Original>
+				<Russian>Офицер</Russian>
+		    </Key>
+			<Key ID="STR_D_AUTORIFLEMAN">
+		        <Original>Autorifleman</Original>
+				<Russian>Стрелок</Russian>
+		    </Key>
+			<Key ID="STR_D_MEDIC">
+		        <Original>Medic</Original>
+				<Russian>Медик</Russian>
+		    </Key>
+			<Key ID="STR_D_ENGINEER">
+		        <Original>Engineer</Original>
+				<Russian>Инженер</Russian>
+		    </Key>
+			<Key ID="STR_D_AMMOBEARER">
+		        <Original>Ammobearer</Original>
+				<Russian>Пулемётчик</Russian> <!-- Редакт. -->
+		    </Key>
+			<Key ID="STR_D_MARKSMAN">
+		        <Original>Marksman</Original>
+				<Russian>Снайпер</Russian>
+		    </Key>
+			<Key ID="STR_D_COST20">
+		        <Original>Cost: 20 points</Original>
+				<Russian>Стоимость: 20 Очков</Russian>
+		    </Key>
+			<Key ID="STR_D_COST10">
+		        <Original>Cost: 10 points</Original>
+				<Russian>Стоимость: 10 Очков</Russian>
+		    </Key>
+			<Key ID="STR_D_COST5">
+		        <Original>Cost: 5 points</Original>
+				<Russian>Стоимость: 5 Очков</Russian>
+		    </Key>
+			<Key ID="STR_D_COST100">
+		        <Original>Cost: 100 points</Original>
+				<Russian>Стоимость: 100 Очков</Russian>
+		    </Key>
+			<Key ID="">
+		        <Original></Original>
+				<Russian></Russian>
+		    </Key>
+			<Key ID="">
+		        <Original></Original>
+				<Russian></Russian>
+		    </Key>
+			<Key ID="">
+		        <Original></Original>
+				<Russian></Russian>
+		    </Key>
+			
+			
+			<Key ID="">
+		        <Original> </Original>
+				<Russian> </Russian>
+		    </Key>
+		</Container>
 	
 	</Package>
 </Project>
