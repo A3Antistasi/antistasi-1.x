@@ -155,9 +155,7 @@
 		"rhsusf_acc_nt4_black"		//Higer tier only
 	];
 
-	bluSuppressor = [
-	"" //missing
-	];
+
 
 	bluHelmet = [
 	"rhsusf_opscore_bk_pelt",					// Tier 1
