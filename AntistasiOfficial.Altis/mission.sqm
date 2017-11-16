@@ -8,7 +8,7 @@ class EditorData
 	toggles=2;
 	class ItemIDProvider
 	{
-		nextID=886;
+		nextID=887;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=356;
+		nextID=364;
 	};
 	class Camera
 	{
-		pos[]={3634.2834,24.372772,10377.297};
-		dir[]={-0.25723156,-0.12833987,-0.95781171};
-		up[]={-0.033294149,0.99172395,-0.12396952};
-		aside[]={-0.96579885,-4.5353954e-007,0.25937784};
+		pos[]={3637.2073,26.639614,10378.357};
+		dir[]={-0.37561938,-0.19259754,-0.90654719};
+		up[]={-0.073725313,0.98127532,-0.17793444};
+		aside[]={-0.92384475,-2.4952169e-007,0.38278738};
 	};
 };
 binarizationWanted=0;
@@ -38,7 +38,9 @@ addons[]=
 	"A3_Modules_F",
 	"A3_Characters_F",
 	"A3_Modules_F_Hc",
-	"A3_Weapons_F"
+	"A3_Structures_F_Mil_Cargo",
+	"A3_Structures_F_Mil_Helipads",
+	"A3_Structures_F_Mil_Fortification"
 };
 class AddonsMetaData
 {
@@ -1319,19 +1321,6 @@ class Mission
 						description="Default Commander";
 						isPlayer=1;
 						isPlayable=1;
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="U_C_Poor_1";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-							gps="ItemGPS";
-						};
 					};
 					id=284;
 					type="B_G_officer_F";
@@ -1739,22 +1728,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_C_Poloshirt_salmon";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=370;
 					type="B_G_officer_F";
@@ -1829,22 +1802,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_C_Poor_1";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=382;
 					type="B_G_Soldier_TL_F";
@@ -1917,22 +1874,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_Marshal";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=394;
 					type="B_G_medic_F";
@@ -2005,22 +1946,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_C_WorkerCoveralls";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=406;
 					type="B_G_engineer_F";
@@ -2093,22 +2018,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_C_Poloshirt_burgundy";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=418;
 					type="B_G_Soldier_AR_F";
@@ -2183,22 +2092,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_C_Poloshirt_blue";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=430;
 					type="B_G_Soldier_A_F";
@@ -2271,22 +2164,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_C_Poloshirt_redwhite";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=442;
 					type="B_G_Soldier_LAT_F";
@@ -2359,22 +2236,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_C_Poloshirt_stripped";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=450;
 					type="B_G_Soldier_M_F";
@@ -2542,22 +2403,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_C_Poloshirt_salmon";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=840;
 					type="B_G_officer_F";
@@ -2630,22 +2475,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_C_Poor_1";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=842;
 					type="B_G_Soldier_TL_F";
@@ -2718,22 +2547,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_Marshal";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=844;
 					type="B_G_medic_F";
@@ -2806,22 +2619,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_C_WorkerCoveralls";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=846;
 					type="B_G_engineer_F";
@@ -2894,22 +2691,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_C_Poloshirt_burgundy";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=848;
 					type="B_G_Soldier_AR_F";
@@ -2984,22 +2765,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_C_Poloshirt_blue";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=850;
 					type="B_G_Soldier_A_F";
@@ -3072,22 +2837,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_C_Poloshirt_redwhite";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=852;
 					type="B_G_Soldier_LAT_F";
@@ -3162,22 +2911,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_C_Poloshirt_stripped";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=854;
 					type="B_G_Soldier_M_F";
@@ -3252,22 +2985,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_C_Poloshirt_salmon";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=856;
 					type="B_G_officer_F";
@@ -3342,22 +3059,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_C_Poor_1";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=858;
 					type="B_G_Soldier_TL_F";
@@ -3432,22 +3133,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_Marshal";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=860;
 					type="B_G_medic_F";
@@ -3522,22 +3207,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_C_WorkerCoveralls";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=862;
 					type="B_G_engineer_F";
@@ -3610,22 +3279,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_C_Poloshirt_burgundy";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=864;
 					type="B_G_Soldier_AR_F";
@@ -3700,22 +3353,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_C_Poloshirt_blue";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=866;
 					type="B_G_Soldier_A_F";
@@ -3788,22 +3425,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_C_Poloshirt_redwhite";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=868;
 					type="B_G_Soldier_LAT_F";
@@ -3876,22 +3497,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_C_Poloshirt_stripped";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=870;
 					type="B_G_Soldier_M_F";
@@ -3964,22 +3569,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_C_Poloshirt_salmon";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=872;
 					type="B_G_officer_F";
@@ -4052,22 +3641,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_C_Poor_1";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=874;
 					type="B_G_Soldier_TL_F";
@@ -4140,22 +3713,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_Marshal";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=876;
 					type="B_G_medic_F";
@@ -4230,22 +3787,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_C_WorkerCoveralls";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=878;
 					type="B_G_engineer_F";
@@ -4318,22 +3859,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_C_Poloshirt_burgundy";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=880;
 					type="B_G_Soldier_AR_F";
@@ -4406,22 +3931,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_C_Poloshirt_blue";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=882;
 					type="B_G_Soldier_A_F";
@@ -4494,22 +4003,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_C_Poloshirt_redwhite";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=884;
 					type="B_G_Soldier_LAT_F";
@@ -4582,22 +4075,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_C_Poloshirt_stripped";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=886;
 					type="B_G_Soldier_M_F";
@@ -4672,22 +4149,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_C_Poloshirt_salmon";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=888;
 					type="B_G_officer_F";
@@ -4760,22 +4221,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_C_Poor_1";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=890;
 					type="B_G_Soldier_TL_F";
@@ -4850,22 +4295,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_Marshal";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=892;
 					type="B_G_medic_F";
@@ -4940,22 +4369,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_C_WorkerCoveralls";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=894;
 					type="B_G_engineer_F";
@@ -5030,22 +4443,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_C_Poloshirt_burgundy";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=896;
 					type="B_G_Soldier_AR_F";
@@ -5118,22 +4515,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_C_Poloshirt_blue";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=898;
 					type="B_G_Soldier_A_F";
@@ -5206,22 +4587,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_C_Poloshirt_stripped";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=902;
 					type="B_G_Soldier_M_F";
@@ -5294,22 +4659,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_C_Poloshirt_salmon";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=904;
 					type="B_G_officer_F";
@@ -5384,22 +4733,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_C_Poor_1";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=906;
 					type="B_G_Soldier_TL_F";
@@ -5474,22 +4807,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_Marshal";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=908;
 					type="B_G_medic_F";
@@ -5562,22 +4879,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_C_WorkerCoveralls";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=910;
 					type="B_G_engineer_F";
@@ -5652,22 +4953,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_C_Poloshirt_burgundy";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=912;
 					type="B_G_Soldier_AR_F";
@@ -5740,22 +5025,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_C_Poloshirt_blue";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=914;
 					type="B_G_Soldier_A_F";
@@ -5828,22 +5097,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_C_Poloshirt_stripped";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=918;
 					type="B_G_Soldier_M_F";
@@ -5918,22 +5171,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_C_Poloshirt_redwhite";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=920;
 					type="B_G_Soldier_LAT_F";
@@ -6006,22 +5243,6 @@ class Mission
 					class Attributes
 					{
 						isPlayable=1;
-						class Inventory
-						{
-							class binocular
-							{
-								name="Binocular";
-							};
-							class uniform
-							{
-								typeName="U_C_Poloshirt_redwhite";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
 					};
 					id=922;
 					type="B_G_Soldier_LAT_F";
@@ -6831,64 +6052,6 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={14753,17.879999,16450};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				disableSimulation=1;
-			};
-			id=985;
-			type="Land_HelipadCivil_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="allowDamage";
-					expression="_this allowdamage _value;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="hideObject";
-					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=1;
-						};
-					};
-				};
-				nAttributes=2;
-			};
-		};
-		class Item208
-		{
-			dataType="Object";
-			class PositionInfo
-			{
 				position[]={14266.486,20.381611,16195.337};
 				angles[]={0,3.6476266,0};
 			};
@@ -6944,7 +6107,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item209
+		class Item208
 		{
 			dataType="Object";
 			class PositionInfo
@@ -7004,7 +6167,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item210
+		class Item209
 		{
 			dataType="Object";
 			class PositionInfo
@@ -7063,7 +6226,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item211
+		class Item210
 		{
 			dataType="Object";
 			class PositionInfo
@@ -7123,7 +6286,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item212
+		class Item211
 		{
 			dataType="Object";
 			class PositionInfo
@@ -7183,7 +6346,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item213
+		class Item212
 		{
 			dataType="Object";
 			class PositionInfo
@@ -7243,7 +6406,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item214
+		class Item213
 		{
 			dataType="Object";
 			class PositionInfo
@@ -7303,7 +6466,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item215
+		class Item214
 		{
 			dataType="Object";
 			class PositionInfo
@@ -7363,7 +6526,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item216
+		class Item215
 		{
 			dataType="Object";
 			class PositionInfo
@@ -7422,7 +6585,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item217
+		class Item216
 		{
 			dataType="Object";
 			class PositionInfo
@@ -7482,7 +6645,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item218
+		class Item217
 		{
 			dataType="Object";
 			class PositionInfo
@@ -7541,7 +6704,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item219
+		class Item218
 		{
 			dataType="Object";
 			class PositionInfo
@@ -7600,7 +6763,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item220
+		class Item219
 		{
 			dataType="Object";
 			class PositionInfo
@@ -7615,6 +6778,65 @@ class Mission
 				disableSimulation=1;
 			};
 			id=1063;
+			type="Land_HelipadCivil_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="hideObject";
+					expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item220
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={15149.569,17.838913,17338.232};
+				angles[]={0,2.3745463,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=886;
 			type="Land_HelipadCivil_F";
 			class CustomAttributes
 			{
