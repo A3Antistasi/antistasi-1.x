@@ -113,11 +113,6 @@
 		"rhsusf_100Rnd_556x45_soft_pouch"	//Tier 2
 	];
 
-	bluGrenade = [
-
-		//missing
-	];
-
 	bluAT = [
 		"rhs_weap_M136_hedp",	//Tier 1 Standard, single use
 		"rhs_weap_smaw_optic",	//Tier 2
