@@ -42,6 +42,15 @@ for "_i" from 0 to (count _buildings) - 1 do {
 			_allVehicles pushBack _vehicle;
 			sleep 1;
 		};
+//Stef defensive vehicle with gunner on.
+		if 	(_buildingType == "Land_HelipadCivil_F") exitWith {
+			_vehicle = createVehicle [selectRandom vehDef, position _building, [],0, "CAN_COLLIDE"];
+			_vehicle setDir (getDir _building);
+			_unit = ([_markerPos, 0, infCrew, _groupGunners] call bis_fnc_spawnvehicle) select 0;
+			_unit moveInGunner _vehicle;
+			_allVehicles pushBack _vehicle;
+			sleep 1;
+		};
 
 		if ((_buildingType == "Land_HelipadSquare_F") AND (!_isFrontline)) exitWith {
 			_vehicle = createVehicle [selectRandom heli_unarmed, position _building, [],0, "CAN_COLLIDE"];
@@ -105,7 +114,7 @@ if ((spawner getVariable _marker) AND (_isFrontline)) then {
 _allGroups pushBack _groupGunners;
 
 if (!_busy) then {
-	_spawnpool = vehAPC + vehPatrol + enemyMotorpool - [heli_default];
+	_spawnpool = vehPatrol + enemyMotorpool - [heli_default]; //Stef removed APC from here added fixed position with gunner inside.
 	_vehicleCount = 1 max (round (_size/30));
 	_spawnPos = _markerPos;
 	_currentCount = 0;
