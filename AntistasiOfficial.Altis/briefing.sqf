@@ -72,7 +72,7 @@ player createDiaryRecord ["bt",[localize "STR_BR_BT7MI",localize "STR_BR_BT_MI"]
 //Antistasi Features
 _index =player createDiarySubject ["af",localize "STR_BR_AF0"];
 
-player createDiaryRecord ["af",[localize "STR_BR_AF1CS","STR_BR_AF_CS"]];
+player createDiaryRecord ["af",[localize "STR_BR_AF1CS",localize "STR_BR_AF_CS"]];
 
 player createDiaryRecord ["af",[localize "STR_BR_AF2AIME",localize "STR_BR_AF_AIME"]];
 

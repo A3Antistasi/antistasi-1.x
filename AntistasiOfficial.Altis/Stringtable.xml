@@ -3384,7 +3384,7 @@ In Multiplayer you select your class upon login and you can change it by logging
 		    </Key>
 			<Key ID="STR_BR_AF2AIME">
 		        <Original>AI Management / Enhancements</Original>
-				<Russian>Управление ИИ / усовершенствования</Russian>  <!-- Редакт. -->
+				<Russian>Управление ИИ / Апгрейд</Russian>  <!-- Редакт. -->
 		    </Key>
 			<Key ID="STR_BR_AF_AIME">
 		        <Original>Commander and server members can recruit AI at the Flag or add garrison to conquered objectives. Those guys starts with civilian clothes and their weapons correspond to a random choice between their class weapons present into the Arsenal, at this modding stage they don’t substract the weapon from it nor they require a threshold amount like it was with original Arsenal system. <br/><br/>
@@ -3518,13 +3518,13 @@ Note: ‘being spotted’ doesn’t require line of sight, it’s a radius aroun
 		    </Key>
 			<Key ID="STR_BR_CM0">
 		        <Original>Commander Options</Original>
-				<Russian>Параметры командира</Russian>
+				<Russian>Параметры Ком.</Russian>
 		    </Key>
-			<Key ID="STR_BR_CM_MHQ">
+			<Key ID="STR_BR_CM1MHQ">
 		        <Original>Moving HQ</Original>
 				<Russian>Передвижение Штаба</Russian>
 		    </Key>
-			<Key ID="STR_BR_CM1MHQ">
+			<Key ID="STR_BR_CM_MHQ">
 		        <Original>HQ can be moved by the Commander who has to: <br/>
 - Interact with the physical Flag, choose 'HQ options' and click 'Move HQ', <br/>
 - Petros joins the Commander’s squad, and moves him to the new location, on foot or as a vehicle passenger. <br/>
@@ -3536,7 +3536,7 @@ The game allows you to move your HQ to wherever, even inside an enemy base with 
 		    </Key>
 			<Key ID="STR_BR_CM2FFS">
 		        <Original>Friendly Faction Support</Original>
-				<Russian>Поддержка дружественных фракций</Russian>
+				<Russian>Поддержка Друж. фракций</Russian>
 		    </Key>
 			<Key ID="STR_BR_CM_FFS">
 		        <Original>The Commander can call in various forms of support from the Friendly Faction by choosing one of the options through Y menu (Commander tab). Unit or vehicle types and strength of the intervention will depend on your current support value. Each type cost support points and are explained below.<br><br>
