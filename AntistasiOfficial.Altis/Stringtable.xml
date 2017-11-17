@@ -1885,7 +1885,7 @@
 			</Key>
 		</Container>
 	
-	    <Container>
+	    <Container name="ACESETTINGS">
 		    <Key ID="STR_ACE_MEDICAL_LEVEL">
 		        <Original>ACE: Medical Level</Original>
 		        <Russian>ACE: Уровень Медецины</Russian>
@@ -3031,13 +3031,29 @@
 		        <Original>Members now get to keep their gear.</Original>
 				<Russian>Станьте Участником,что-бы получить своё снаряжение</Russian>  <!-- Редакт. -->
 		    </Key>
-			
-			
-			<Key ID="">
-		        <Original> </Original>
-				<Russian> </Russian>
+		</Container>
+	    
+		<Container name="description">
+	        <Key ID="STR_DE_ATSAFC">
+		        <Original>Ability to start a fresh campaign</Original>
+				<Russian>Возможность начать новую кампанию</Russian>
+		    </Key>
+			<Key ID="STR_DE_USABJN">
+		        <Original>Use customized arsenal by Jeroen Not</Original>
+				<Russian>Используйте настроенный арсенал От Jeroen Not</Russian>
+		    </Key>
+			<Key ID="STR_DE_PPFT">
+		        <Original>Punish people for teamkilling</Original>
+				<Russian>Наказать Игроков За убийство Своих</Russian>
+		    </Key>
+			<Key ID="STR_DE_OPMAEFCAS">
+		        <Original>Only permanent members are eligible for commandership at start</Original>
+				<Russian>Только постоянные Участники имеют право на СписокУчастинков при старте</Russian>
+		    </Key>
+	        <Key ID="">
+		        <Original></Original>
+				<Russian></Russian>
 		    </Key>
 		</Container>
-	
 	</Package>
 </Project>
