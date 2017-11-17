@@ -289,7 +289,7 @@
 			</Key>
 			<Key ID="STR_UI_SM_LOAD_1">
 				<Original>Restarting Campaign</Original>
-			    <Russian>Новая  Компания</Russian>
+			    <Russian>Новая Кампания</Russian>
 			</Key>
 			<Key ID="STR_UI_SM_LOAD_TT">
 				<Original>Continue your previous campaign or start a fresh one.</Original>
