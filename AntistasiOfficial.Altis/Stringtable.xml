@@ -777,7 +777,7 @@
 			</Key>
 			<Key ID="STR_UI_SM_AUTOT_TT">
 				<Original>Static gun attatched to vehicles can benefit by rotating for a better target acquisition</Original>
-			    <Russian>Статиционарное орудие, прикрепленное к транспортному средству, поворачивается - для лучшего захвата цели</Russian>
+			    <Russian>Стационарное орудие, прикрепленное к транспортному средству, поворачивается - для лучшего захвата цели</Russian>
 			</Key>
 		</Container>
 
@@ -1121,20 +1121,20 @@
 
 			<Key ID="STR_TSK_CVY_SUPPLY">
 				<Original>%1 Supply Convoy</Original>
-			    <Russian>%1 Конвой Поддержки</Russian>
+			    <Russian>%1 Конвой с Медикаментами</Russian>
 			</Key>
 			<Key ID="STR_TSKDESC_CVY_SUPPLY">
 				<Original>A truck with medical supplies is about to depart from %1 to %4 at %2:%3. Steal the truck and bring it to %4 . Let the people there know of the FIA's 'benevolence' .</Original>
-			    <Russian>Грузовой Транспорт с медикаментами собирается отойти от %1 В %4 в %2:%3. Кража грузовика и довести его до %4 .Пусть люди там знают о FIA "доброжелательности"</Russian>
+			    <Russian>Грузовик с медикаментами собирается в %2:%3 выехать из %1 в %4. Захватите грузовик и привезите его в %4 . Пусть люди в %4 узнают, что  FIA не оставит их в беде</Russian>
 			</Key>
 
 			<Key ID="STR_TSK_CVY_HVT">
 				<Original>%1 HVT Convoy</Original>
-			    <Russian>%1 HVT Конвой</Russian> <!-- Что такое HVT? -->
+			    <Russian>%1 Конвой с Генералом</Russian>
 			</Key>
 			<Key ID="STR_TSKDESC_CVY_HVT">
 				<Original>From what we know, a high-value target will travel from %1 to %4. His departure is scheduled for %2:%3. Seize the opportunity and take him out! We believe he will use a decoy to obscure his exact vehicle.</Original>
-			    <Russian>Из того, что мы знаем, цель высокого значения будет путешествовать %1 в %4. Его отъезд запланирован на %2:%3. Не упустите возможность и взять его! Мы считаем, что он будет использовать приманку, чтобы скрыть его точный Транспорт.</Russian>
+			    <Russian>Из того, что мы знаем, генерал будет двигаться из %1 в %4. Его отъезд запланирован на %2:%3. Не упустите возможность уничтожить такую важную шишку! Мы считаем, что он будет использовать приманку, чтобы скрыть свой настоящий транспорт.</Russian>
 			</Key>
 
 			<Key ID="STR_TSK_DEFCAMP">
@@ -1143,43 +1143,43 @@
 			</Key>
 			<Key ID="STR_TSKDESC_DEFCAMP">
 				<Original>A QRF has just been spotted taking off from %2. Their initial heading suggests that %1 is their target. We have no choice, assume defensive positions</Original>
-			    <Russian>QRF только что был замечен взлет из %2.Их первоначальный заголовок предполагает, что %1 является их целью. У нас нет выбора, Займите Оборонительные позиции</Russian>
+			    <Russian>Только что был замечен взлет десантного вертолёта из %2. Мы предполагаем, что их целью является %1. У нас нет выбора, займите оборонительные позиции.</Russian>
 			</Key>
 
 			<Key ID="STR_TSK_DESANTENNA">
 				<Original>Destroy Radio Tower</Original>
-			    <Russian>Уничтожить Радио Вышку</Russian>
+			    <Russian>Уничтожить Радиовышку</Russian>
 			</Key>
 			<Key ID="STR_TSKDESC_DESANTENNA">
 				<Original> An opportunity to strike a Radio Tower in %1 presents its self. If we manage this it will interrupt %4 Comms Nework in the AO. We can destroy the antenna or capture the outpost but must complete it before %2:%3.</Original>
-			    <Russian>Возможность ударить по радиовышке %1 представляет свою сущность. Если нам удастся это Ослабит %4 Коммуникационную сеть в АО. Мы можем уничтожить антенну или захватить заставу, но должны завершить это до %2:%3.</Russian>
+			    <Russian>Предоставилась возможность ударить по радиовышке в %1. Если нам это удастся, это нарушит сеть связи %4 на оккупированной территории. Мы можем уничтожить антенну или захватить аванпост, но должны завершить это до %2:%3.</Russian>
 			</Key>
 
 			<Key ID="STR_TSK_DESHELI">
 				<Original>Destroy Air</Original>
-			    <Russian>Уничтожить Воздух</Russian>
+			    <Russian>Уничтожить ЛА</Russian>
 			</Key>
 			<Key ID="STR_TSKDESC_DESHELI">
 				<Original>We have downed air vehicle. This is a great chance to destroy it before it is recovered by a recovery team from %1 reaches the crash site </Original>
-			    <Russian>Мы сбили летательный аппарат. Это отличный шанс, чтобы уничтожить его, прежде чем он восстановится командой восстановления от %1 достиганите места катастрофы</Russian>
+			    <Russian>Мы сбили летательный аппарат. Это отличный шанс уничтожить его, прежде чем ремонтно-спасательная группа из %1 достигнет места катастрофы и он будет починен.</Russian>
 			</Key>
 
 			<Key ID="STR_TSK_DESVEHICLE">
 				<Original>Steal or Destroy Armor</Original>
-			    <Russian>Украсть или уничтожить броню</Russian>
+			    <Russian>Захватить или Уничтожить Броню</Russian><!-- Редакт. нужно подумать, длинно -->
 			</Key>
 			<Key ID="STR_TSKDESC_DESVEHICLE">
 				<Original>We know an %4 is stationed in %1. This is a good chance to steal or destroy it before it causes more damage. Do it before %2:%3.</Original>
-			    <Russian>Мы знаем, что %4 дислоцируется в %1. Это хороший шанс, чтобы украсть или уничтожить его, прежде чем он вызывет больше повреждений. Сделайте это до того %2:%3.</Russian>
+			    <Russian>Мы знаем, что %4 дислоцируется в %1. Это хороший шанс, чтобы захватить или уничтожить его, прежде чем он нанесёт нам значительный урон. Сделайте это до %2:%3.</Russian>
 			</Key>
 
 			<Key ID="STR_TSK_FNDCIV">
 				<Original>Contact the Corrupt Politician</Original>
-			    <Russian>Контакт коррумпированной Политик</Russian>
+			    <Russian>Встреча с Корумпированным Политиком</Russian>
 			</Key>
 			<Key ID="STR_TSKDESC_FNDCIV">
 				<Original>A local politician who is sympathetic to our cause is willing to meet us near %1 until %2:%3. As it happens, he has a couple of jobs he's offering to undermine %4 control in this AO. He has stated that he is willing to speak to us only on the condition that none of our agents are overt within that town. In other words, put on your sunday-best and meet him disguised. </Original>
-			    <Russian>Местный политик, который с пониманием относится к нашему делу готов встретиться с нами рядом с %1 до %2:%3.Как это часто бывает, у него есть несколько рабочих мест, он предлагает, чтобы мы подорвали %4 Контроль в этом АО. Он заявил, что он готов говорить с нами только при условии, что ни один из наших агентов не являются оверт в этом городе. Другими словами, поставить на свой воскресный лучший и встретиться с ним замаскирован.</Russian>
+			    <Russian>Местный политик, который с пониманием относится к нашему делу, готов встретиться с нами рядом с %1 до %2:%3. Как это часто бывает, у него есть несколько заданий, которые подорвут контроль %4 в этом регионе. Он заявил, что он готов говорить с нами только при условии, что ни один из наших агентов не будет обнаружен противником в районе места встречи. Другими словами, оденьте свой лучший воскресный костюм и избегайте обнаружения.</Russian>
 			</Key>
 
 			<Key ID="STR_TSK_FNDEXP">
