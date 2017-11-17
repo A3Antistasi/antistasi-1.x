@@ -86,7 +86,7 @@
 		"rhs_weap_mk18_m320"
 	];
 
-	bluGLsmoke = [							// how can i additemcargoglobal [item,5] for each of them?
+	bluGLsmoke = [
 		"rhs_mag_m662_red",
 		"rhs_mag_m661_green",
 		"rhs_mag_m713_Red",
