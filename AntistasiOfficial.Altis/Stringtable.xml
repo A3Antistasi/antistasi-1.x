@@ -2923,17 +2923,113 @@
 		        <Original>Cost: 100 points</Original>
 				<Russian>Стоимость: 100 Очков</Russian>
 		    </Key>
-			<Key ID="">
-		        <Original></Original>
-				<Russian></Russian>
+			<Key ID="STR_DH_TFIMPO">
+		        <Original>This function is MP only</Original>
+				<Russian>Эта функция только для МП</Russian>
 		    </Key>
-			<Key ID="">
-		        <Original></Original>
-				<Russian></Russian>
+			<Key ID="STR_DH_OPCHATTF">
+		        <Original>Only Player Commander has access to this function</Original>
+				<Russian>Доступ к этой функции имеет только Командир</Russian>
 		    </Key>
-			<Key ID="">
-		        <Original></Original>
-				<Russian></Russian>
+			<Key ID="STR_DH_RHSEFN">
+		        <Original>RHS exclusive for now</Original>
+				<Russian>Эксклюзивно Для RHS</Russian>
+		    </Key>
+			<Key ID="STR_DH_SCEGWASCPTTHRP">
+		        <Original>Switch Commander Enabled\n\nGame will auto assign Commander position to the highest ranked player</Original>
+				<Russian>Включен переключатель Командира\n\nИгра Автоматически назначит Командиром Самого Выскопоставленного игрока</Russian>
+		    </Key>
+			<Key ID="STR_DH_SCDGWOACPUCD">
+		        <Original>Switch Commander Disabled\n\nGame will only assign Commander position upon Commander disconnection</Original>
+				<Russian>Переключатель Командира Выключен\n\nИгра назначит нового Командира только после отключения нынешнего Командира</Russian>
+		    </Key>
+			<Key ID="STR_DH_SAOF">
+		        <Original>Select an option first</Original>
+				<Russian>Сначала выберите вариант</Russian> <!-- Редакт. -->
+		    </Key>
+			<Key ID="STR_D_EAC">
+		        <Original>Establish/Abandon Camps</Original>
+				<Russian>Установить/Покинуть Лагерь</Russian> <!-- Редакт. -->
+		    </Key>
+			<Key ID="STR_DH_SDSTMBCTMAGP">
+		        <Original>Spawn Distance Set to %1 meters. Be careful, this may affect game performance</Original>
+				<Russian>Расстояние от спауна %1 метров. Будьте осторожны, это может повлиять на производительность игры</Russian>
+		    </Key>
+			<Key ID="STR_DH_CPSTP">
+		        <Original>Civilian Percentage Set to %1 percent</Original>
+				<Russian>Процент Гражданских установлен на %1 Процентов</Russian>
+		    </Key>
+			<Key ID="STR_DH_SMEATPP">
+		        <Original>Server Membership Enabled.\n\nAll the present players have been added to the Member's List.\n\nNon-members cannot use the HQ Ammobox and cannot be commanders, even with Switch Commander enabled.\n\nIf you load a session with this feature disabled, it will change to disabled.\n\nUse this option for Open Server Environments</Original>
+				<Russian>Список Участников Включён.\n\nВсе нынешние игроки были добавлены в список участников.\n\nНе Участники не могут использовать Арсенал и не могут стать Командиром\n\nЕсли вы загрузите сессию с отключенной функцией, она будет отключена.\n\nИспользуйте этот параметр для отрытого сервера</Russian>
+		    </Key>
+			<Key ID="STR_DH_EMDACUT">
+		        <Original>Server Membership Disabled.\n\nAnyone can use the HQ Ammobox and become Commander (if Switch Commander is enabled).\n\nIf you load a session with this feature enabled, it will become enabled.\n\nUse this option for Private Server environments.</Original>
+				<Russian>Список Участинков Выключён\n\nЛюбой может использовать Арсенал и стать Командиром(если включен переключатель командира).\n\nЕсли вы загрузите сеанс с включенной функцией, она станет включенной.\n\nИспользуйте этот параметр для закрытых серверов</Russian>
+		    </Key>
+			<Key ID="STR_DH_IUA">
+		        <Original>It's unlocked already.</Original>
+				<Russian>Он уже разблокирован.</Russian>
+		    </Key>
+			<Key ID="STR_DH_OTCCSV">
+		        <Original>Only the Commander can sell vehicles</Original>
+				<Russian>Только Командир может продавать Транспорт</Russian>
+		    </Key>
+			<Key ID="STR_DH_YMSFHCOSBNB">
+		        <Original>You must select from HC or Squad Bars, not both</Original>
+				<Russian>Вы должны выбрать из HC или Squad Bars, а не оба</Russian> <!-- Редакт. -->
+		    </Key>
+			<Key ID="STR_DH_AHD">
+		        <Original>Auto Healing disabled</Original>
+				<Russian>Автоматическое исцеление ОТКЛ.</Russian>
+		    </Key>
+			<Key ID="STR_DH_AHE">
+		        <Original>Auto Heal enabled</Original>
+				<Russian>Автоматическое исцеление ВКЛ.</Russian>
+		    </Key>
+			<Key ID="STR_DH_NUOSS">
+		        <Original>No units or squads selected</Original>
+				<Russian>Единицы или отряды не выбраны</Russian>
+		    </Key>
+			<Key ID="STR_DH_SDNTY">
+		        <Original>Stranger does not trust you.</Original>
+				<Russian>Незнакомец не доверяет тебе</Russian>
+		    </Key>
+			<Key ID="STR_DH_NDNTY">
+		        <Original>Nomad does not trust you.</Original>
+				<Russian>Nomad не доверяет вам</Russian>
+		    </Key>
+			<Key ID="STR_DH_MTOF">
+		        <Original>Music turned OFF</Original>
+				<Russian>Музыка Выкл.</Russian>
+		    </Key>
+			<Key ID="STR_DH_MTO">
+		        <Original>Music turned ON</Original>
+				<Russian>Музыка Вкл.</Russian>
+		    </Key>
+			<Key ID="STR_DH_FTLTCNHQ">
+		        <Original>Fast Travel limited to camps and HQ</Original>
+				<Russian>Быстрое путешествие ограничено лагерями и Базой</Russian>
+		    </Key>
+			<Key ID="STR_DH_EFTSE">
+		        <Original>Extended Fast Travel system enabled</Original>
+				<Russian>Расширенная система Быстрого перемещения включена</Russian>
+		    </Key>
+			<Key ID="STR_DH_EMD">
+		        <Original>Easy Mode disabled</Original>
+				<Russian>Легкий режим отключен</Russian>
+		    </Key>
+			<Key ID="STR_DH_FIAIPI">
+		        <Original>FIA income permanently increased.</Original>
+				<Russian>оход FIA постоянно увеличивался.</Russian> <!-- Редакт. -->
+		    </Key>
+			<Key ID="STR_DH_AASTD">
+		        <Original>Arsenal access set to default.</Original>
+				<Russian>Доступ к арсеналу установлен по умолчанию.</Russian>
+		    </Key>
+			<Key ID="STR_DH_MNGTKTG">
+		        <Original>Members now get to keep their gear.</Original>
+				<Russian>Станьте Участником,что-бы получить своё снаряжение</Russian>  <!-- Редакт. -->
 		    </Key>
 			
 			

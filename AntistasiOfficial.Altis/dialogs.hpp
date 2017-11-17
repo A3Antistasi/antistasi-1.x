@@ -13,11 +13,11 @@ class HQ_menu
 
 	#define STR_HQ_FIA "if (activeBE) then {[] remoteExec [""fnc_BE_buyUpgrade"", 2]} else {closeDialog 0; [] call FIAskillAdd;}"
 
-	BTN_L1(-1, "$STR_D_GRAB_FP", "", "if (isMultiPlayer) then {nul=call stavrosSteal} else {hint ""This function is MP only""};");
+	BTN_L1(-1, "$STR_D_GRAB_FP", "", "if (isMultiPlayer) then {nul=call stavrosSteal} else {hint localize ""STR_DH_TFIMPO""};");
 	BTN_L2(-1, "$STR_D_MANGE_GAR", "", "closeDialog 0; nul=CreateDialog ""garrison_menu"";");
 	BTN_L3(-1, "$STR_D_MOVE_HQ_TAZ", "", "closeDialog 0; [] spawn moveHQ;");
 
-	BTN_R1(-1, "$STR_D_INGAME_ML", "", "if (isMultiplayer) then {[] execVM ""OrgPlayers\membersList.sqf""} else {hint ""This function is MP only""};");
+	BTN_R1(-1, "$STR_D_INGAME_ML", "", "if (isMultiplayer) then {[] execVM ""OrgPlayers\membersList.sqf""} else {hint localize ""STR_DH_TFIMPO""};");
 	BTN_R2(109, "$STR_D_TRAIN_FIA", "", STR_HQ_FIA);
 	BTN_R3(-1, "$STR_D_BEBUILD_ASSE", "Cost: 5.000 €", "closeDialog 0; [] execVM ""rebuildAssets.sqf"";");
 	};
@@ -99,7 +99,7 @@ class buy_vehicle
 	BTN_R3(108, "$STR_D_BUY_MG", "", "closedialog 0; [vfs select 7] call addFIAveh");
 	BTN_R4(111, "$STR_D_BUY_ST_AA", "", "closedialog 0; [vfs select 10] call addFIAveh");
 
-	BTN_M(BTN_Y_5, 112, "$STR_D_BUY_APC", "", "if (activeAFRF) then {if (player == Slowhand) then {closeDialog 0; [vfs select 11] call addFIAveh;} else {hint ""Only Player Commander has access to this function""};}else {hint ""RHS exclusive for now""};");
+	BTN_M(BTN_Y_5, 112, "$STR_D_BUY_APC", "", "if (activeAFRF) then {if (player == Slowhand) then {closeDialog 0; [vfs select 11] call addFIAveh;} else {hint localize ""STR_DH_OPCHATTF""};}else {hint localize ""STR_DH_RHSEFN""};");
 
 	};
 };
@@ -134,10 +134,10 @@ class init_menu
 	AS_BOX_D(BOX_H_4);
 	AS_FRAME_D(FRAME_H_4, "$STR_D_ENA_SW_CM");
 
-	BTN_L1(-1,"$STR_D_YES", "", "switchCom = true; publicVariable ""switchCom""; hint ""Switch Commander Enabled\n\nGame will auto assign Commander position to the highest ranked player"";");
-	BTN_R1(-1,"$STR_D_NO", "", "switchCom = false; publicVariable ""switchCom""; hint ""Switch Commander Disabled\n\nGame will only assign Commander position upon Commander disconnection"";");
+	BTN_L1(-1,"$STR_D_YES", "", "switchCom = true; publicVariable ""switchCom""; hint localize ""STR_DH_SCEGWASCPTTHRP"";");
+	BTN_R1(-1,"$STR_D_NO", "", "switchCom = false; publicVariable ""switchCom""; hint localize ""STR_DH_SCDGWOACPUCD"";");
 
-	BTN_M(BTN_Y_2, -1, "$STR_D_DONE", "", "if (!isNil ""switchCom"") then {closedialog 0; [] execVM ""Dialogs\membersMenu.sqf"";} else {hint ""Select an option first""};");
+	BTN_M(BTN_Y_2, -1, "$STR_D_DONE", "", "if (!isNil ""switchCom"") then {closedialog 0; [] execVM ""Dialogs\membersMenu.sqf"";} else {hint localize ""STR_DH_SAOF""};");
 	};
 };
 
@@ -157,7 +157,7 @@ class build_menu
 	BTN_L2(-1,"$STR_D_BUI_MF", "", "closeDialog 0; createDialog ""minebuild_menu"";");
 
 	BTN_R1(-1,"$STR_D_OPS_RB_DEL", "", "closeDialog 0; [""delete""] spawn puestoDialog");
-	BTN_R2(-1,"$STR_D_MANA_CAMP", "Establish/Abandon Camps", "closeDialog 0; createDialog ""camp_dialog"";"); /*Establish/Abandon Camps Стоит ли переводить? Редакт. */
+	BTN_R2(-1,"$STR_D_MANA_CAMP", "$STR_D_EAC", "closeDialog 0; createDialog ""camp_dialog"";"); 
 
 	BTN_M(BTN_Y_3, -1, "$STR_D_HQ_FORT", "", "closeDialog 0; createDialog ""HQ_fort_dialog"";");
 	};
@@ -175,13 +175,13 @@ class mission_menu
 	AS_FRAME_D(FRAME_H_8, "$STR_D_AV_MIS");
 	BTN_BACK(A_CLOSE);
 
-	#define STR_MIS_MIL "closeDialog 0; if ((player == Slowhand) or (not(isPlayer Slowhand))) then {[[""FND_M""],""missionrequest""] call BIS_fnc_MP} else {hint ""Only Player Commander has access to this function""};"
-	#define STR_MIS_CIV "closeDialog 0; if ((player == Slowhand) or (not(isPlayer Slowhand))) then {[[""FND_C""],""missionrequest""] call BIS_fnc_MP} else {hint ""Only Player Commander has access to this function""};"
-	#define STR_MIS_EXP "closeDialog 0; if ((player == Slowhand) or (not(isPlayer Slowhand))) then {[[""FND_E""],""missionrequest""] call BIS_fnc_MP} else {hint ""Only Player Commander has access to this function""};"
-	#define STR_MIS_LOG	"closeDialog 0; if ((player == Slowhand) or (not(isPlayer Slowhand))) then {[[""LOG""],""missionrequest""] call BIS_fnc_MP} else {hint ""Only Player Commander has access to this function""};"
-	#define STR_MIS_DES	"closeDialog 0; if ((player == Slowhand) or (not(isPlayer Slowhand))) then {[[""DES""],""missionrequest""] call BIS_fnc_MP} else {hint ""Only Player Commander has access to this function""};"
-	#define STR_MIS_RES "closeDialog 0; if ((player == Slowhand) or (not(isPlayer Slowhand))) then {[[""RES""],""missionrequest""] call BIS_fnc_MP} else {hint ""Only Player Commander has access to this function""};"
-	#define STR_MIS_PRO "closeDialog 0; if ((player == Slowhand) or (not(isPlayer Slowhand))) then {[[""PR"",false,true],""missionrequest""] call BIS_fnc_MP} else {hint ""Only Player Commander has access to this function""};"
+	#define STR_MIS_MIL "closeDialog 0; if ((player == Slowhand) or (not(isPlayer Slowhand))) then {[[""FND_M""],""missionrequest""] call BIS_fnc_MP} else {hint localize ""STR_DH_OPCHATTF""};" 
+	#define STR_MIS_CIV "closeDialog 0; if ((player == Slowhand) or (not(isPlayer Slowhand))) then {[[""FND_C""],""missionrequest""] call BIS_fnc_MP} else {hint localize ""STR_DH_OPCHATTF""};"
+	#define STR_MIS_EXP "closeDialog 0; if ((player == Slowhand) or (not(isPlayer Slowhand))) then {[[""FND_E""],""missionrequest""] call BIS_fnc_MP} else {hint localize ""STR_DH_OPCHATTF""};"
+	#define STR_MIS_LOG	"closeDialog 0; if ((player == Slowhand) or (not(isPlayer Slowhand))) then {[[""LOG""],""missionrequest""] call BIS_fnc_MP} else {hint localize ""STR_DH_OPCHATTF""};"
+	#define STR_MIS_DES	"closeDialog 0; if ((player == Slowhand) or (not(isPlayer Slowhand))) then {[[""DES""],""missionrequest""] call BIS_fnc_MP} else {hint localize ""STR_DH_OPCHATTF""};"
+	#define STR_MIS_RES "closeDialog 0; if ((player == Slowhand) or (not(isPlayer Slowhand))) then {[[""RES""],""missionrequest""] call BIS_fnc_MP} else {hint localize ""STR_DH_OPCHATTF""};"
+	#define STR_MIS_PRO "closeDialog 0; if ((player == Slowhand) or (not(isPlayer Slowhand))) then {[[""PR"",false,true],""missionrequest""] call BIS_fnc_MP} else {hint localize ""STR_DH_OPCHATTF""};"
 
 	BTN_L1(-1,"$STR_D_MI_CON", "", STR_MIS_MIL);
 	BTN_L2(-1,"$STR_D_CI_CON", "", STR_MIS_CIV);
@@ -301,8 +301,8 @@ class spawn_config
 	AS_FRAME_D(FRAME_H_2, "$STR_D_SPAWND");
 	BTN_BACK("closeDialog 0; createDialog ""game_options_commander"";");
 
-	#define STR_DIST_PLUS "if (distanciaSPWN < 2500) then {distanciaSPWN = (distanciaSPWN + 100) min 2500; publicVariable ""distanciaSPWN""; hint format [""Spawn Distance Set to %1 meters. Be careful, this may affect game performance"",distanciaSPWN];};"
-	#define STR_DIST_MINUS "if (distanciaSPWN > 1000) then {distanciaSPWN = (distanciaSPWN - 100) max 100; publicVariable ""distanciaSPWN""; hint format [""Spawn Distance Set to %1 meters. Be careful, this may affect game performance"",distanciaSPWN];};"
+	#define STR_DIST_PLUS "if (distanciaSPWN < 2500) then {distanciaSPWN = (distanciaSPWN + 100) min 2500; publicVariable ""distanciaSPWN""; hint format [localize ""STR_DH_SDSTMBCTMAGP"",distanciaSPWN];};"
+	#define STR_DIST_MINUS "if (distanciaSPWN > 1000) then {distanciaSPWN = (distanciaSPWN - 100) max 100; publicVariable ""distanciaSPWN""; hint format [localize ""STR_DH_SDSTMBCTMAGP"",distanciaSPWN];};"
 
 	BTN_L1(-1, "$STR_D_SPAWND100P", "", STR_DIST_PLUS);
 	BTN_R1(-1, "$STR_D_SPAWND100M", "", STR_DIST_MINUS);
@@ -321,8 +321,8 @@ class civ_config
 	AS_FRAME_D(FRAME_H_2, "$STR_D_CIV_PERCON");
 	BTN_BACK("closeDialog 0; createDialog ""game_options_commander"";");
 
-	#define STR_CIV_PLUS "if (civPerc < 1) then {civPerc = (civPerc + 0.01) min 1; publicVariable ""civPerc""; hint format [""Civilian Percentage Set to %1 percent"",civPerc * 100];};"
-	#define STR_CIV_MINUS "if (civPerc > 0) then {civPerc = (civPerc - 0.01) max 0; publicVariable ""civPerc""; hint format [""Civilian Percentage Set to %1 percent"",civPerc * 100];};"
+	#define STR_CIV_PLUS "if (civPerc < 1) then {civPerc = (civPerc + 0.01) min 1; publicVariable ""civPerc""; hint format [localize ""STR_DH_CPSTP"",civPerc * 100];};"
+	#define STR_CIV_MINUS "if (civPerc > 0) then {civPerc = (civPerc - 0.01) max 0; publicVariable ""civPerc""; hint format [localize ""STR_DH_CPSTP"",civPerc * 100];};"
 
 	BTN_L1(-1, "$STR_D_CIV1PS", "", STR_CIV_PLUS);
 	BTN_R1(-1, "$STR_D_CIV1MS", "", STR_CIV_MINUS);
@@ -379,8 +379,8 @@ class player_money
 	AS_FRAME_D(FRAME_H_4, "$STR_D_PNMI");
 	BTN_BACK("closeDialog 0; if (player == Slowhand) then {createDialog ""radio_comm_commander""} else {createDialog ""radio_comm_player""};");
 
-	BTN_L1(-1, "$STR_D_ADD_SM", "", "if (isMultiplayer) then {closeDialog 0; [""add""] call memberAdd;} else {hint ""This function is MP only""};");
-	BTN_L2(-1, "$STR_D_REM_SM", "", "if (isMultiplayer) then {closeDialog 0; [""remove""] call memberAdd;} else {hint ""This function is MP only""};");
+	BTN_L1(-1, "$STR_D_ADD_SM", "", "if (isMultiplayer) then {closeDialog 0; [""add""] call memberAdd;} else {hint localize ""STR_DH_TFIMPO""};");
+	BTN_L2(-1, "$STR_D_REM_SM", "", "if (isMultiplayer) then {closeDialog 0; [""remove""] call memberAdd;} else {hint localize ""STR_DH_TFIMPO""};");
 
 	BTN_R1(-1, "$STR_D_DONP", "", "[true] call donateMoney;");
 	BTN_R2(-1, "$STR_D_DONFI", "", "[] call donateMoney;");
@@ -398,10 +398,10 @@ class members_menu
 	AS_BOX_D(BOX_H_4);
 	AS_FRAME_D(FRAME_H_4, "$STR_D_EN_SM");
 
-	BTN_L1(-1, "$STR_D_YES", "", "membersPool = []; {membersPool pushBack (getPlayerUID _x)} forEach playableUnits; publicVariable ""membersPool""; hint ""Server Membership Enabled.\n\nAll the present players have been added to the Member's List.\n\nNon-members cannot use the HQ Ammobox and cannot be commanders, even with Switch Commander enabled.\n\nIf you load a session with this feature disabled, it will change to disabled.\n\nUse this option for Open Server Environments"";");
-	BTN_R1(-1, "$STR_D_NO", "", "membersPool = []; publicVariable ""membersPool""; hint ""Server Membership Disabled.\n\nAnyone can use the HQ Ammobox and become Commander (if Switch Commander is enabled).\n\nIf you load a session with this feature enabled, it will become enabled.\n\nUse this option for Private Server environments."";");
+	BTN_L1(-1, "$STR_D_YES", "", "membersPool = []; {membersPool pushBack (getPlayerUID _x)} forEach playableUnits; publicVariable ""membersPool""; hint localize ""STR_DH_SMEATPP"";");
+	BTN_R1(-1, "$STR_D_NO", "", "membersPool = []; publicVariable ""membersPool""; hint localize ""STR_DH_EMDACUT"";");
 
-	BTN_M(BTN_Y_2, -1, "$STR_D_DONE", "", "if (!isNil ""membersPool"") then {closedialog 0; [] execVM ""Dialogs\firstLoad.sqf"";} else {hint ""Select an option first""};");
+	BTN_M(BTN_Y_2, -1, "$STR_D_DONE", "", "if (!isNil ""membersPool"") then {closedialog 0; [] execVM ""Dialogs\firstLoad.sqf"";} else {hint localize ""STR_DH_SAOF""};");
 
 	};
 };
@@ -418,9 +418,9 @@ class vehicle_manager
 	BTN_BACK("closeDialog 0; if (player == Slowhand) then {createDialog ""radio_comm_commander""} else {createDialog ""radio_comm_player""};");
 
 	BTN_L1(-1, "$STR_D_GAR_SEll_VEH", "", "closeDialog 0; createDialog ""garage_sell"";");
-	BTN_R1(-1, "$STR_D_VEH_AND_SQ", "", "closeDialog 0; if (player == Slowhand) then {createDialog ""squad_manager""} else {hint ""Only Player Commander has access to this function""};");
+	BTN_R1(-1, "$STR_D_VEH_AND_SQ", "", "closeDialog 0; if (player == Slowhand) then {createDialog ""squad_manager""} else {hint localize ""STR_DH_OPCHATTF""};");
 
-	BTN_M(BTN_Y_2, -1, "$STR_D_UN_VEH", "", "closeDialog 0; if !(isMultiplayer) then {hint ""It's unlocked already.""} else {if (player != Slowhand) then {[false] call AS_fnc_unlockVehicle} else {[true] call AS_fnc_unlockVehicle};};");
+	BTN_M(BTN_Y_2, -1, "$STR_D_UN_VEH", "", "closeDialog 0; if !(isMultiplayer) then {hint localize ""STR_DH_IUA""} else {if (player != Slowhand) then {[false] call AS_fnc_unlockVehicle} else {[true] call AS_fnc_unlockVehicle};};");
 
 	};
 };
@@ -438,7 +438,7 @@ class garage_sell
 	BTN_BACK("closeDialog 0; createDialog ""vehicle_manager"";");
 
 	BTN_L1(-1, "$STR_D_GAR_VEH", "", "closeDialog 0; if (player != Slowhand) then {[false] call AS_fnc_garageVehicle} else {if (isMultiplayer) then {createDialog ""garage_check""} else {[true] call AS_fnc_garageVehicle}};");
-	BTN_R1(-1, "$STR_D_SELL_VEH", "", "closeDialog 0; if (player == Slowhand) then {[] call AS_fnc_sellVehicle} else {hint ""Only the Commander can sell vehicles""};");
+	BTN_R1(-1, "$STR_D_SELL_VEH", "", "closeDialog 0; if (player == Slowhand) then {[] call AS_fnc_sellVehicle} else {hint localize ""STR_DH_OTCCSV""};");
 
 	};
 };
@@ -527,11 +527,11 @@ class AI_management
 	AS_FRAME_D(FRAME_H_4, "$STR_D_AI_MENEG");
 	BTN_BACK("closeDialog 0; if (player == Slowhand) then {createDialog ""radio_comm_commander""} else {createDialog ""radio_comm_player""};");
 
-	BTN_L1(-1, "$STR_D_TE_AI_CON", "", "closeDialog 0; if ((count groupselectedUnits player > 0) and (count hcSelected player > 0)) exitWith {hint ""You must select from HC or Squad Bars, not both""}; if (count groupselectedUnits player == 1) then {[groupselectedUnits player] execVM ""REINF\controlunit.sqf""}; if (count hcSelected player == 1) then {[hcSelected player] execVM ""REINF\controlHCsquad.sqf"";};");
-	BTN_L2(-1, "$STR_D_AUTO_HEAL", "", "if (autoHeal) then {autoHeal = false; hint ""Auto Healing disabled"";} else {autoHeal = true; hint ""Auto Heal enabled""; [] execVM ""AI\autoHealFnc.sqf""}");
+	BTN_L1(-1, "$STR_D_TE_AI_CON", "", "closeDialog 0; if ((count groupselectedUnits player > 0) and (count hcSelected player > 0)) exitWith {hint localize ""STR_DH_YMSFHCOSBNB""}; if (count groupselectedUnits player == 1) then {[groupselectedUnits player] execVM ""REINF\controlunit.sqf""}; if (count hcSelected player == 1) then {[hcSelected player] execVM ""REINF\controlHCsquad.sqf"";};");
+	BTN_L2(-1, "$STR_D_AUTO_HEAL", "", "if (autoHeal) then {autoHeal = false; hint localize ""STR_DH_AHD"";} else {autoHeal = true; hint localize ""STR_DH_AHD""; [] execVM ""AI\autoHealFnc.sqf""}");
 
 	BTN_R1(-1, "$STR_D_AUTO_REARM", "", "closeDialog 0; if (count groupselectedUnits player == 0) then {(units group player) execVM ""AI\rearmCall.sqf""} else {(groupselectedUnits player) execVM ""AI\rearmCall.sqf""};");
-	BTN_R2(-1, "$STR_D_DIS_UNISQ", "closeDialog 0; if (count groupselectedUnits player > 0) then {[groupselectedUnits player] execVM ""REINF\dismissPlayerGroup.sqf""} else {if (count (hcSelected player) > 0) then {[hcSelected player] execVM ""REINF\dismissSquad.sqf""}}; if ((count groupselectedUnits player == 0) and (count hcSelected player == 0)) then {hint ""No units or squads selected""}");
+	BTN_R2(-1, "$STR_D_DIS_UNISQ", "closeDialog 0; if (count groupselectedUnits player > 0) then {[groupselectedUnits player] execVM ""REINF\dismissPlayerGroup.sqf""} else {if (count (hcSelected player) > 0) then {[hcSelected player] execVM ""REINF\dismissSquad.sqf""}}; if ((count groupselectedUnits player == 0) and (count hcSelected player == 0)) then {hint localize ""STR_DH_NUOSS""}");
 
 	};
 };
@@ -703,9 +703,9 @@ class misCiv_menu // 400
 	AS_FRAME_D(FRAME_H_4, "$STR_D_AV_MIS");
 	BTN_BACK(A_CLOSE);
 
-	#define STR_CIV_ASS "closeDialog 0; if (((getPlayerUID player) in membersPool) || (player == Slowhand)) then {[[""ASS""],""misReqCiv""] call BIS_fnc_MP} else {hint ""Stranger does not trust you.""};"
-	#define STR_CIV_CVY "closeDialog 0; if (((getPlayerUID player) in membersPool) || (player == Slowhand)) then {[[""CONVOY""],""misReqCiv""] call BIS_fnc_MP} else {hint ""Stranger does not trust you.""};"
-	#define STR_CIV_CON "closeDialog 0; if (((getPlayerUID player) in membersPool) || (player == Slowhand)) then {[[""CON""],""misReqCiv""] call BIS_fnc_MP} else {hint ""Stranger does not trust you.""};"
+	#define STR_CIV_ASS "closeDialog 0; if (((getPlayerUID player) in membersPool) || (player == Slowhand)) then {[[""ASS""],""misReqCiv""] call BIS_fnc_MP} else {hint localize ""STR_DH_SDNTY""};"
+	#define STR_CIV_CVY "closeDialog 0; if (((getPlayerUID player) in membersPool) || (player == Slowhand)) then {[[""CONVOY""],""misReqCiv""] call BIS_fnc_MP} else {hint localize ""STR_DH_SDNTY""};"
+	#define STR_CIV_CON "closeDialog 0; if (((getPlayerUID player) in membersPool) || (player == Slowhand)) then {[[""CON""],""misReqCiv""] call BIS_fnc_MP} else {hint localize ""STR_DH_SDNTY""};"
 
 	BTN_L1(-1, "$STR_D_ASSMI", "", STR_CIV_ASS);
 	BTN_R1(-1, "$STR_D_CONAM", "", STR_CIV_CVY);
@@ -727,10 +727,10 @@ class misMil_menu // 410
 	AS_FRAME_D(FRAME_H_4, "$STR_D_AV_MIS");
 	BTN_BACK(A_CLOSE);
 
-	#define STR_MIL_ASS "closeDialog 0; if (((getPlayerUID player) in membersPool) || (player == Slowhand)) then {[[""AS""],""misReqMil""] call BIS_fnc_MP} else {hint ""Nomad does not trust you.""};"
-	#define STR_MIL_CVY "closeDialog 0; if (((getPlayerUID player) in membersPool) || (player == Slowhand)) then {[[""CONVOY""],""misReqMil""] call BIS_fnc_MP} else {hint ""Nomad does not trust you.""};"
-	#define STR_MIL_CON "closeDialog 0; if (((getPlayerUID player) in membersPool) || (player == Slowhand)) then {[[""CON""],""misReqMil""] call BIS_fnc_MP} else {hint ""Nomad does not trust you.""};"
-	#define STR_MIL_DES "closeDialog 0; if (((getPlayerUID player) in membersPool) || (player == Slowhand)) then {[[""DES""],""misReqMil""] call BIS_fnc_MP} else {hint ""Nomad does not trust you.""};"
+	#define STR_MIL_ASS "closeDialog 0; if (((getPlayerUID player) in membersPool) || (player == Slowhand)) then {[[""AS""],""misReqMil""] call BIS_fnc_MP} else {hint ""STR_DH_NDNTY""};"
+	#define STR_MIL_CVY "closeDialog 0; if (((getPlayerUID player) in membersPool) || (player == Slowhand)) then {[[""CONVOY""],""misReqMil""] call BIS_fnc_MP} else {hint ""STR_DH_NDNTY""};"
+	#define STR_MIL_CON "closeDialog 0; if (((getPlayerUID player) in membersPool) || (player == Slowhand)) then {[[""CON""],""misReqMil""] call BIS_fnc_MP} else {hint ""STR_DH_NDNTY""};"
+	#define STR_MIL_DES "closeDialog 0; if (((getPlayerUID player) in membersPool) || (player == Slowhand)) then {[[""DES""],""misReqMil""] call BIS_fnc_MP} else {hint ""STR_DH_NDNTY""};"
 
 	BTN_L1(-1, "$STR_D_ASSMI", "", STR_MIL_ASS);
 	BTN_L2(-1, "$STR_D_CONAM", "", STR_MIL_CVY);
@@ -940,7 +940,7 @@ class game_options_commander
 
 	BTN_R1(-1, "$STR_D_GARB_CLEA", "", STR_GO_GAR);
 	BTN_R2(-1, "$STR_D_PERSAVE", "", STR_GO_PSS);
-	BTN_R3(-1, "$STR_D_MUS_ON_OFF", "", "closedialog 0; if (musicON) then {musicON = false; hint ""Music turned OFF"";} else {musicON = true; execVM ""musica.sqf""; hint ""Music turned ON""};");
+	BTN_R3(-1, "$STR_D_MUS_ON_OFF", "", "closedialog 0; if (musicON) then {musicON = false; hint localize ""STR_DH_MTOF"";} else {musicON = true; execVM ""musica.sqf""; hint localize ""STR_DH_MTO""};");
 	};
 };
 
@@ -955,8 +955,8 @@ class game_options_player
 	AS_FRAME_D(FRAME_H_4, "$STR_D_GAME_OP");
 	BTN_BACK(A_CLOSE);
 
-	BTN_L1(-1, "$STR_D_MUS_ON_OFF", "", "closedialog 0; if (musicON) then {musicON = false; hint ""Music turned OFF"";} else {musicON = true; execVM ""musica.sqf""; hint ""Music turned ON""};");
-	BTN_R1(-1, "$STR_D_INGAME_ML", "", "if (isMultiplayer) then {[] execVM ""OrgPlayers\membersList.sqf""} else {hint ""This function is MP only""};");
+	BTN_L1(-1, "$STR_D_MUS_ON_OFF", "", "closedialog 0; if (musicON) then {musicON = false; hint localize ""STR_DH_MTOF"";} else {musicON = true; execVM ""musica.sqf""; hint localize ""STR_DH_MTO""};");
+	BTN_R1(-1, "$STR_D_INGAME_ML", "", "if (isMultiplayer) then {[] execVM ""OrgPlayers\membersList.sqf""} else {hint localize ""STR_DH_TFIMPO""};");
 	};
 };
 
@@ -1019,9 +1019,9 @@ class com_options
 	AS_FRAME_D(FRAME_H_6, "$STR_D_OPMENU");
 	BTN_BACK("closeDialog 0; createDialog ""com_menu"";");
 
-	#define STR_COM_OPT_FT "if (server getVariable ""enableFTold"") then {server setVariable [""enableFTold"",false,true]; [[petros,""hint"",""Fast Travel limited to camps and HQ""],""commsMP""] call BIS_fnc_MP;} else {server setVariable [""enableFTold"",true,true]; [[petros,""hint"",""Extended Fast Travel system enabled""],""commsMP""] call BIS_fnc_MP;};"
-	#define STR_COM_OPT_INC "if (server getVariable ""easyMode"") then {server setVariable [""easyMode"",false,true]; [[petros,""hint"",""Easy Mode disabled.""],""commsMP""] call BIS_fnc_MP;} else {server setVariable [""easyMode"",true,true]; [[petros,""hint"",""FIA income permanently increased.""],""commsMP""] call BIS_fnc_MP;};"
-	#define STR_COM_OPT_ARS "if (server getVariable ""enableMemAcc"") then {server setVariable [""enableMemAcc"",false,true]; [[petros,""hint"",""Arsenal access set to default.""],""commsMP""] call BIS_fnc_MP;} else {server setVariable [""enableMemAcc"",true,true]; [[petros,""hint"",""Members now get to keep their gear.""],""commsMP""] call BIS_fnc_MP;};"
+	#define STR_COM_OPT_FT "if (server getVariable ""enableFTold"") then {server setVariable [""enableFTold"",false,true]; [[petros,""hint"",localize ""STR_DH_FTLTCNHQ""],""commsMP""] call BIS_fnc_MP;} else {server setVariable [""enableFTold"",true,true]; [[petros,""hint"",localize ""STR_DH_EFTSE""],""commsMP""] call BIS_fnc_MP;};"
+	#define STR_COM_OPT_INC "if (server getVariable ""easyMode"") then {server setVariable [""easyMode"",false,true]; [[petros,""hint"",localize ""STR_DH_EMD.""],""commsMP""] call BIS_fnc_MP;} else {server setVariable [""easyMode"",true,true]; [[petros,""hint"",localize ""STR_DH_FIAIPI""],""commsMP""] call BIS_fnc_MP;};"
+	#define STR_COM_OPT_ARS "if (server getVariable ""enableMemAcc"") then {server setVariable [""enableMemAcc"",false,true]; [[petros,""hint"",localize ""STR_DH_AASTD""],""commsMP""] call BIS_fnc_MP;} else {server setVariable [""enableMemAcc"",true,true]; [[petros,""hint"",localize ""STR_DH_MNGTKTG""],""commsMP""] call BIS_fnc_MP;};"
 	#define STR_COM_OPT_AXP "if (activeBE) then {activeBE = false} else {activeBE = true}; publicVariable ""activeBE""; hint format [""Current setting: %1"", [""off"", ""on""] select activeBE];"
 	#define STR_COM_OPT_WPP "if (server getVariable [""enableWpnProf"",false]) then {server setVariable [""enableWpnProf"",false,true]; [] remoteExec [""AS_fnc_resetSkills"", [0,-2] select isDedicated,true]} else {server setVariable [""enableWpnProf"",true,true]}; hint format [""Current setting: %1"", [""on"", ""off""] select (server getVariable [""enableWpnProf"",false])];"
 
