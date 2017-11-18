@@ -308,7 +308,7 @@ class Params {
     class AS_enableCampaignReset {
         title = "$STR_DE_ATSAFC";
             values[] = {0,1};
-            texts[] = {"Off","On"};
+            texts[] = {$STR_DE_OFF,$STR_DE_ON};
             default = 0;
             typeName = "BOOL";
             force = 1;
@@ -316,7 +316,7 @@ class Params {
     class AS_param_useJNA {
         title = "$STR_DE_USABJN";
             values[] = {0,1};
-            texts[] = {"Off","On"};
+            texts[] = {$STR_DE_OFF,$STR_DE_ON};
             default = 1;
             typeName = "BOOL";
             force = 1;
@@ -325,7 +325,7 @@ class Params {
 	class AS_param_tkPenalty {
         title = "$STR_DE_PPFT";
             values[] = {0,1};
-            texts[] = {"Off","On"};
+            texts[] = {$STR_DE_OFF,$STR_DE_ON};
             default = 0;
             typeName = "BOOL";
             force = 1;
@@ -333,7 +333,7 @@ class Params {
     class AS_param_onlyPermanentMembers {
         title = "$STR_DE_OPMAEFCAS";
             values[] = {0,1};
-            texts[] = {"Off","On"};
+            texts[] = {$STR_DE_OFF,$STR_DE_ON};
             default = 1;
     };
     #include "aceSettings.hpp"
