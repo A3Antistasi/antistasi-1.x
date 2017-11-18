@@ -385,7 +385,7 @@ class NAME##FRAME : AS_frame { \
 class AS_button_back: RscButton
 {
   idc = -1;
-  text = "Back";
+  text = $STR_UI_BACK;
   x = 0.61 * safezoneW + safezoneX;
   y = 0.251941 * safezoneH + safezoneY;
   w = 0.06 * safezoneW;
