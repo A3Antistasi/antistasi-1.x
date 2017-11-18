@@ -48,7 +48,7 @@
 			</Key>
 			<Key ID="STR_ACT_RECRUITUNIT">
 				<Original>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\MPTable\infantry_ca.paa' /&gt; Unit Recruitment</Original>
-			    <Russian>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\MPTable\infantry_ca.paa' /&gt; Вербовка Добровольцев</Russian>
+			    <Russian>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\MPTable\infantry_ca.paa' /&gt; Вербовка Солдат</Russian>
 			</Key>
 			<Key ID="STR_ACT_RETURNCONTROL">
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\MPTable\infantry_ca.paa' /&gt; Return Control to AI</Original>
@@ -56,7 +56,7 @@
 			</Key>
 			<Key ID="STR_ACT_BUYVEHICLE">
 				<Original>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\MPTable\soft_ca.paa' /&gt; Buy Vehicle</Original>
-			    <Russian>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\MPTable\soft_ca.paa' /&gt; Купить Транспорт</Russian>
+			    <Russian>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\MPTable\soft_ca.paa' /&gt; Купить Технику</Russian>
 			</Key>
 			<Key ID="STR_ACT_LOADAMMOBOX">
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\igui\cfg\VehicleToggles\VehicleCargoIconOn2_ca.paa' /&gt; Load Ammobox to Truck</Original>
@@ -377,7 +377,7 @@
 			</Key>
 			<Key ID="STR_UI_BM_NAV1_TT">
 				<Original>Select Camp or HQ when no enemies nearby</Original>
-			    <Russian>Выберите Лагерь или Базу когда поблизости не будет врагов</Russian>
+			    <Russian>Выберите Лагерь или Штаб когда рядом нет противника</Russian>
 			</Key>
 			<Key ID="STR_UI_BM_NAV2_TEXT">
 				<Original>Undercover</Original>
@@ -389,7 +389,7 @@
 			</Key>
 			<Key ID="STR_UI_BM_NAV3_TEXT">
 				<Original>Vehicle Mgmt</Original>
-			    <Russian>Транспорт</Russian>
+			    <Russian>Техника</Russian>
 			</Key>
 			<Key ID="STR_UI_BM_NAV3_TT">
 				<Original>Garage and Lock/Unlock vehicles</Original>
@@ -409,7 +409,7 @@
 			</Key>
 			<Key ID="STR_UI_BM_NAV5_TT">
 				<Original>Give money to FIA or to your mates</Original>
-			    <Russian>Дать Денег FIA или вашим товарищам</Russian>
+			    <Russian>Передать деньги в Фонд FIA или товарищу</Russian>
 			</Key>
 			<Key ID="STR_UI_BM_NAV6_TEXT">
 				<Original>Resign</Original>
@@ -427,7 +427,7 @@
 		<Container name="AI Management">
 			<Key ID="STR_UI_AIMGMT_TEMP_TEXT">
 				<Original>Temp AI Control</Original>
-			    <Russian>Временно управлять ИИ</Russian> 
+			    <Russian>Управлять ИИ</Russian> 
 			</Key>
 			<Key ID="STR_UI_AIMGMT_TEMP_TT">
 				<Original>Temporarily take control of selected AI.&lt;br/&gt;Disabled when ACE is active.</Original>
@@ -479,7 +479,7 @@
 			</Key>
 			<Key ID="STR_UI_AIMGMT_STG_TT">
 				<Original>Have currently selected units store their gear. Point at vehicle to use for storage.</Original>
-			    <Russian>Выбранные единицы сложат в транспорт свое снаряжение. Укажите на транспортное средство, чтобы использовать его как хранилище.</Russian>
+			    <Russian>Выбранные единицы сложат свое снаряжение в багажный отсек. Смотреть на транспортное средство.</Russian>
 			</Key>
 			<Key ID="STR_UI_AIMGMT_RST_TEXT">
 				<Original>Reset AI</Original>
@@ -487,47 +487,47 @@
 			</Key>
 			<Key ID="STR_UI_AIMGMT_RST_TT">
 				<Original>If AI gets stuck in an activity...</Original>
-			    <Russian>Если ИИ застревает в движение...</Russian>
+			    <Russian>Если ИИ застревает при движении...</Russian>
 			</Key>
 		</Container>
 		<Container name="Vehicle Management">
 			<Key ID="STR_UI_VEHMGMT_PGAR_TEXT">
 				<Original>Garage</Original>
-			    <Russian>В Гараж</Russian>
+			    <Russian>Поставить в Гараж</Russian>
 			</Key>
 			<Key ID="STR_UI_VEHMGMT_PGAR_TT">
 				<Original>Garage the vehicle you are looking at.</Original>
-			    <Russian>Перемещает транспорт на который вы сейчас смотрите в Гараж</Russian>
+			    <Russian>Ставит в Гараж технику на которую вы смотрите</Russian>
 			</Key>
 			<Key ID="STR_UI_VEHMGMT_UNL_TEXT">
 				<Original>(Un)lock Vehicle</Original>
-			    <Russian>(Раз)блокировать автомобиль</Russian>
+			    <Russian>(Раз)Блокировать</Russian>
 			</Key>
 			<Key ID="STR_UI_VEHMGMT_UNL_TT">
 				<Original>Lock or unlock the vehicle.</Original>
-			    <Russian>Заблокировать или разблокировать автомобиль.</Russian>
+			    <Russian>Заблокировать или разблокировать технику.</Russian>
 			</Key>
 			<Key ID="STR_UI_VEHMGMT_SELL_TEXT">
 				<Original>Sell Vehicle</Original>
-			    <Russian>Продать автомобиль</Russian>
+			    <Russian>Продать Технику</Russian>
 			</Key>
 			<Key ID="STR_UI_VEHMGMT_SELL_TT">
 				<Original>Sell the vehicle you are looking at.</Original>
-			    <Russian>Продать автомобиль, на который вы смотрите.</Russian>
+			    <Russian>Продать технику, на которую вы смотрите.</Russian>
 			</Key>
 		</Container>
 		<Container name="Money">
 			<Key ID="STR_UI_MONEY_PLY_TEXT">
-				<Original>Donate 100&#8364; to Player</Original>
-			    <Russian>Передать 100&#8364; Игроку</Russian>
+				<Original>Donate 100€ to Player</Original>
+			    <Russian>Передать 100€ Игроку</Russian>
 			</Key>
 			<Key ID="STR_UI_MONEY_PLY_TT">
-				<Original>Donate 100&#8364; to the player you're looking at.</Original>
-			    <Russian>Передать 100&#8364; игроку, на которого вы смотрите.</Russian>
+				<Original>Donate 100€ to the player you're looking at.</Original>
+			    <Russian>Передать 100€ игроку, на которого вы смотрите.</Russian>
 			</Key>
 			<Key ID="STR_UI_MONEY_FIA_TEXT">
-				<Original>Donate 100&#8364; to FIA</Original>
-			    <Russian>Передать 100&#8364; в FIA</Russian>
+				<Original>Donate 100€ to FIA</Original>
+			    <Russian>Передать 100€ в FIA</Russian>
 			</Key>
 			<Key ID="STR_UI_MONEY_FIA_TT">
 				<Original>Support the cause by donating some of your illegally acquired currency.</Original>
@@ -1235,7 +1235,7 @@
 			</Key>
 			<Key ID="STR_TSK_PRPAMPHLET">
 				<Original>Leaflet Drop</Original>
-			    <Russian>Сброс Листовок</Russian>
+			    <Russian>Расклеить Листовки</Russian>
 			</Key>
 			<Key ID="STR_TSKDESC_PRPAMPHLET">
 				<Original>Supporters of our cause have been working hard to bring the population of %1 over to our side. Help these brave volunteers by delivering these leaflets to safe drop locations. Pick up will take place at %2:%3, so you better have them in place by then. This might be easier if you manage to remain undetected for as long as possible.</Original>
@@ -1682,39 +1682,39 @@
 		<Container name="Fast_Travel">		
 			<Key ID="STR_HINTS_FT_SINGLEGROUP">
 				<Original>You can only fast-travel one group at a time.</Original>
-			    <Russian>Вы можете только быстро перемещать одну группу за раз.</Russian>
+			    <Russian>Вы можете перемещать только одну группу за раз.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_FT_TEMPAI">
 				<Original>You cannot fast-travel while you are controlling AI.</Original>
-			    <Russian>Вы не можете быстро путешествовать, пока вы контролируете ИИ.</Russian>
+			    <Russian>Вы не можете перемещаться, пока вы управляете ИИ.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_FT_ENEMIES">
 				<Original>This group cannot fast-travel with enemies nearby.</Original>
-			    <Russian>Эта группа не может быстро путешествовать с врагами поблизости.</Russian>
+			    <Russian>Эта группа не может перемещаться из-за противника рядом с ней.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_FT_ENEMIES_PERS">
 				<Original>You cannot fast-travel with enemies nearby.</Original>
-			    <Russian>Вы не можете быстро путешествовать с врагами поблизости.</Russian>
+			    <Russian>Вы не можете перемещаться когда поблизости противник.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_FT_DAMAGE">
 				<Original>You cannot fast-travel if one of your vehicles is damaged or doesn't have a driver.</Original>
-			    <Russian>Вы не можете быстро путешествовать, если один из ваших автомобилей поврежден или у него нет водителя.</Russian>
+			    <Russian>Вы не можете перемещаться, если один из ваших автомобилей поврежден или у него нет водителя.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_FT_MARKER">
 				<Original>You cannot fast-travel to an enemy-controlled zone.</Original>
-			    <Russian>Вы не можете быстро путешествовать в зону, контролируемую врагом.</Russian>
+			    <Russian>Вы не можете переместиться в зону, контролируемую противником.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_FT_ATTACK">
 				<Original>You cannot fast-travel to an area under attack or with enemies in the surrounding.</Original>
-			    <Russian>Вы не можете быстро отправиться в зону под атакой или с врагами в окружающем.</Russian>
+			    <Russian>Вы не можете переместиться в атакуемую зону или окружённую противником.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_FT_TARGET">
 				<Original>Click on the zone you want to travel to.</Original>
-			    <Russian>Нажмите на зону, в которую хотите.</Russian>
+			    <Russian>Кликните на Штаб или Лагерь, в который хотите переместиться.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_FT_TARGET_FAIL">
 				<Original>You must click near a camp or HQ.</Original>
-			    <Russian>Вы должны нажать возле лагеря или штаб-квартиры.</Russian>
+			    <Russian>Вы должны кликнуть на Лагерь или Штаб.</Russian>
 			</Key>		
 		</Container>
 		<Container name="Undercover">		
@@ -2032,7 +2032,7 @@
 		    </Key>
 			<Key ID="STR_D_RECRU_BOOM_S">
 		        <Original>Recruit Bomb Specialist</Original>
-				<Russian>Диверсант</Russian>
+				<Russian>Сапёр</Russian>
 		    </Key>
 			<Key ID="STR_D_RECRU_AT">
 		        <Original>Recruit AT</Original>
@@ -2088,39 +2088,39 @@
 		    </Key>
 			<Key ID="STR_D_BUY_QUA">
 		        <Original>Buy Quadbike</Original>
-				<Russian>Купить квадроцикл</Russian>
+				<Russian>Квадроцикл</Russian>
 		    </Key>
 			<Key ID="STR_D_BUY_OR_UAZ">
 		        <Original>Buy Offroad/UAZ</Original>
-				<Russian>Купить Внедорожник/Уаз</Russian>
+				<Russian>Внедорожник/Уаз</Russian>
 		    </Key>
 			<Key ID="STR_D_BUY_TRU">
 		        <Original>Buy Truck</Original>
-				<Russian>Купить Грузовик</Russian>
+				<Russian>Грузовик</Russian>
 		    </Key>
 			<Key ID="STR_D_BUY_TRUC">
-		        <Original>Buy Truck</Original>
-				<Russian>Купить Статический ПТ</Russian>
+		        <Original>Buy Static AT</Original>
+				<Russian>Статичный ПТУР</Russian>
 		    </Key>
 			<Key ID="STR_D_BUY_ARM_OR">
 		        <Original>Buy Armed Offroad</Original>
-				<Russian>Купить Бронь. Внедорожник</Russian>
+				<Russian>Внедорожник с Пулемётом</Russian>
 		    </Key>
 			<Key ID="STR_D_BUY_MOR">
 		        <Original>Buy Mortar</Original>
-				<Russian>Купить Миномёт</Russian>
+				<Russian>Миномёт</Russian>
 		    </Key>
 			<Key ID="STR_D_BUY_MG">
 		        <Original>Buy MG</Original>
-				<Russian>Купить Пулемет</Russian>
+				<Russian>Статичный Пулемет</Russian>
 		    </Key>
 			<Key ID="STR_D_BUY_ST_AA">
 		        <Original>Buy Static AA</Original>
-				<Russian>Купить Статическое ПВО</Russian>
+				<Russian>Статичная ЗУ</Russian>
 		    </Key>
 			<Key ID="STR_D_BUY_APC">
 		        <Original>Buy APC</Original>
-				<Russian>Купить БТР</Russian>
+				<Russian>БМД</Russian>
 		    </Key>
 			<Key ID="STR_D_LOAD_PS">
 		        <Original>Load previous session?</Original>
@@ -2232,7 +2232,7 @@
 		    </Key>
 			<Key ID="STR_D_GAR_MENU">
 		        <Original>Garrison Menu</Original>
-				<Russian>Гарнизоны</Russian>
+				<Russian>Управление Гарнизонами</Russian>
 		    </Key>
 			<Key ID="STR_D_RECR_GAR">
 		        <Original>Recruit Garrison</Original>
@@ -2316,15 +2316,15 @@
 		    </Key>
 			<Key ID="STR_D_CIV_PERCON">
 		        <Original>Civ Presence Config</Original>
-				<Russian>Наличие Гражд. Настройки</Russian>
+				<Russian>Настройки Количества Гражданских</Russian>
 		    </Key>
 			<Key ID="STR_D_CIV1PS">
 		        <Original>+1% Civ Spawn.</Original>
-				<Russian>+1% Гражд. Спавн</Russian>
+				<Russian>+1% Гражданских</Russian>
 		    </Key>
 			<Key ID="STR_D_CIV1MS">
 		        <Original>-1% Civ Spawn.</Original>
-				<Russian>-1% Гражд. Спавн</Russian>
+				<Russian>-1% Гражданских</Russian>
 		    </Key>
 			<Key ID="STR_D_HQ_SQ_OP">
 		        <Original>HC Squad Options</Original>
@@ -2416,7 +2416,7 @@
 		    </Key>
 			<Key ID="STR_D_BUY_VH">
 		        <Original>Buy Vehicle</Original>
-				<Russian>Купить Технику</Russian>
+				<Russian>Покупка Техники</Russian>
 		    </Key>
 			<Key ID="STR_D_CIV_VH">
 		        <Original>Civilian Vehicle</Original>
@@ -2428,7 +2428,7 @@
 		    </Key>
 			<Key ID="STR_D_BUY_CIV_VH">
 		        <Original>Buy Civilian Vehicle</Original>
-				<Russian>Купить Гражд. Технику</Russian>
+				<Russian>Покупка Гражданской Техники</Russian>
 		    </Key>
 			<Key ID="STR_D_OFFR">
 		        <Original>Offroad</Original>
