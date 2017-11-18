@@ -1,12 +1,14 @@
 <!-- Don't get too giddy at the sight of this. We are entirely too lazy to properly implement a stringtable. This is merely a courtesy for someone who requested it and will not be maintained by us. -->
 
 <?xml version="1.0" encoding="utf-8" ?>
-<Project name="A3:AS - Public Version">
-	<Package name="Object Actions">
-		<Container name="Actions">
+
+<Project name="Antistasi">
+
+	<Package name="Object_Actions">	
+		<Container name="Actions">		
 			<Key ID="STR_ACT_OFFERTOJOIN">
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\talk_ca.paa' /&gt; Offer to Join</Original>
-			    <Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\talk_ca.paa' /&gt;Предложить присоединиться</Russian> 
+			    <Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\talk_ca.paa' /&gt;Предложить Присоединиться</Russian> 
 			</Key>
 			<Key ID="STR_ACT_TALK">
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\talk_ca.paa' /&gt; Talk</Original>
@@ -22,7 +24,7 @@
 			</Key>
 			<Key ID="STR_ACT_LIBERATE">
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Liberate POW</Original>
-			    <Russian>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Освободить военопленного</Russian>
+			    <Russian>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Освободить Военопленного</Russian>
 			</Key>
 			<Key ID="STR_ACT_ORDERREFUGEE">
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Order refugee to follow</Original>
@@ -34,7 +36,7 @@
 			</Key>
 			<Key ID="STR_ACT_MISSIONREQUEST">
 				<Original>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\attack_ca.paa' /&gt; Mission Request</Original>
-			    <Russian>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\attack_ca.paa' /&gt; Взять Миссию</Russian>
+			    <Russian>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\attack_ca.paa' /&gt; Взять Задание</Russian>
 			</Key>
 			<Key ID="STR_ACT_HEALREPAIR">
 				<Original>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\RscTitles\MPProgress\respawn_ca.paa' /&gt; Heal, Repair and Rearm</Original>
@@ -46,11 +48,11 @@
 			</Key>
 			<Key ID="STR_ACT_RECRUITUNIT">
 				<Original>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\MPTable\infantry_ca.paa' /&gt; Unit Recruitment</Original>
-			    <Russian>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\MPTable\infantry_ca.paa' /&gt; Рекрутировать Юнита</Russian>
+			    <Russian>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\MPTable\infantry_ca.paa' /&gt; Вербовка Добровольцев</Russian>
 			</Key>
 			<Key ID="STR_ACT_RETURNCONTROL">
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\MPTable\infantry_ca.paa' /&gt; Return Control to AI</Original>
-			    <Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\MPTable\infantry_ca.paa' /&gt; Вернуть Контроль ИИ</Russian>
+			    <Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\MPTable\infantry_ca.paa' /&gt; Вернуть Управление ИИ</Russian>
 			</Key>
 			<Key ID="STR_ACT_BUYVEHICLE">
 				<Original>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\MPTable\soft_ca.paa' /&gt; Buy Vehicle</Original>
@@ -86,7 +88,7 @@
 			</Key>
 			<Key ID="STR_ACT_MOVEASSET">
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\VTOLVectoring_ca.paa' /&gt; Move this Asset</Original>
-			    <Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\VTOLVectoring_ca.paa' /&gt; Переместить объект</Russian>
+			    <Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\VTOLVectoring_ca.paa' /&gt; Переместить Объект</Russian>
 			</Key>
 			<Key ID="STR_ACT_CHANGEROLE">
 				<Original>&lt;img size='1.2' image='' /&gt; Change Class</Original>
@@ -98,7 +100,7 @@
 			</Key>
 			<Key ID="STR_ACT_DROPASSET">
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\VTOLVectoring_ca.paa' /&gt; Drop Here</Original>
-			    <Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\VTOLVectoring_ca.paa' /&gt; Поставить объект</Russian>
+			    <Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\VTOLVectoring_ca.paa' /&gt; Поставить Объект</Russian>
 			</Key>
 			<Key ID="STR_ACT_DEPLOYTOWROPES">
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\VehicleToggles\SlingLoadRopeIconOn_ca.paa' /&gt; Deploy Tow Ropes</Original>
@@ -110,7 +112,7 @@
 			</Key>
 			<Key ID="STR_ACT_ATTACHTOWROPES">
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\VehicleToggles\SlingLoadRopeIconOn2_ca.paa' /&gt; Attatch To Tow Ropes</Original>
-			    <Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\VehicleToggles\SlingLoadRopeIconOn2_ca.paa' /&gt; Прикрепить Буксировочный Трос</Russian>
+			    <Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\VehicleToggles\SlingLoadRopeIconOn2_ca.paa' /&gt; Прицепить к Буксировочному Тросу</Russian>
 			</Key>
 			<Key ID="STR_ACT_DROPTOWROPES">
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\take_ca.paa' /&gt; Drop Ropes</Original>
@@ -122,7 +124,7 @@
 			</Key>
 			<Key ID="STR_ACT_JAMCSAT">
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\call_ca.paa' /&gt; Jam CSAT</Original>
-			    <Russian>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\call_ca.paa' /&gt; Глушить CSAT</Russian>
+			    <Russian>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\call_ca.paa' /&gt; Глушить Противника</Russian>
 			</Key>
 			<Key ID="STR_ACT_JUNGLE">
 				<Original>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\SimpleTasks\types\use_ca.paa' /&gt; Clear Nearby Jungle</Original>
@@ -134,7 +136,7 @@
 			</Key>
 			<Key ID="STR_ACT_HQOPTIONS">
 				<Original>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\Ranks\colonel_gs.paa' /&gt; HQ Options</Original>
-			    <Russian>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\Ranks\colonel_gs.paa' /&gt; Настройка Штаба</Russian>
+			    <Russian>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\Ranks\colonel_gs.paa' /&gt;  Возможности Штаба</Russian>
 			</Key>
 			<Key ID="STR_ACT_GAMEOPTIONS">
 				<Original>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\SimpleTasks\types\use_ca.paa' /&gt; Game Options</Original>
@@ -167,11 +169,11 @@
 			<Key ID="STR_ACT_CAPTURE_HVT">
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Capture the HVT</Original>
 			    <Russian>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Убить генерала</Russian> 
-			</Key>
+			</Key>		
 		</Container>
 	</Package>
 
-	<Package name="Identifiers">
+	<Package name="Identifiers">	
 		<Container name="Faction Identifiers">
 			<Key ID="STR_GENIDENT_AAF">
 				<Original>AAF</Original>
@@ -243,6 +245,10 @@
 				<Original>Zones initialized.</Original>
 			    <Russian>Зоны инициализированы.</Russian>
 			</Key>
+			<Key ID="STR_INFO_INITSERVER">
+		        <Original>Server Init Completed</Original>
+				<Russian>Инициализация Сервера Завершена</Russian>
+		    </Key>
 		</Container>
 	</Package>
 
@@ -256,7 +262,6 @@
 				<Original>Detected Mods</Original>
 			    <Russian>Обнаруженные моды</Russian>
 			</Key>
-
 			<Key ID="STR_UI_SM_COM_0">
 				<Original>ComSwitch Disabled</Original>
 			    <Russian>ComSwitch Отключён</Russian>
@@ -269,7 +274,6 @@
 				<Original>Automatic Commander Switching&lt;br/&gt;In regular intervals, the highest ranking player will be assigned the role of Commander.</Original>
 			    <Russian>Автоматическое переключение Командира&lt;br/&gt;Через равные промежутки времени высокопоставленному игроку будет назначена роль командира.</Russian>
 			</Key>
-
 			<Key ID="STR_UI_SM_MEM_0">
 				<Original>Membership Enabled</Original>
 			    <Russian>Участники ВКЛ</Russian>
@@ -282,7 +286,6 @@
 				<Original>Only players on the members list are eligible to become Commander, can access the arsenal inventory and have their rank saved.</Original>
 			    <Russian>Только игроки из списка участников имеют право стать командиром, доступ к инвентарю арсенала и возможность сохранить свой ранг</Russian>
 			</Key>
-
 			<Key ID="STR_UI_SM_LOAD_0">
 				<Original>Continuing Campaign</Original>
 			    <Russian>Из сохранения</Russian>
@@ -295,7 +298,6 @@
 				<Original>Continue your previous campaign or start a fresh one.</Original>
 			    <Russian>Продолжайте свою предыдущую кампанию или запустите новую.</Russian>
 			</Key>
-
 			<Key ID="STR_UI_SM_EAS_0">
 				<Original>Regular Conditions</Original>
 			    <Russian>Обычный старт</Russian>
@@ -308,7 +310,6 @@
 				<Original>Easier conditions include more starting funds and additional gear available from the start.</Original>
 			    <Russian>Лёгкий старт включает больший стартовый капитал и дополнительное снаряжение после старта.</Russian>
 			</Key>
-
 			<Key ID="STR_UI_SM_TEXTF_DEF">
 				<Original>Please adjust the campaign settings.&lt;br/&gt;Press 'Start Mission' to continue.</Original>
 			    <Russian>Измените настройки кампании.&lt;br/&gt;Нажмите «Начать Миссию», чтобы продолжить.</Russian>
@@ -321,7 +322,6 @@
 				<Original>&lt;br/&gt;Save successfully loaded.</Original>
 			    <Russian>&lt;br/&gt;Сохранение успешно загружено.</Russian>
 			</Key>
-
 			<Key ID="STR_UI_SM_ACE_TT">
 				<Original>Funky ACE info here.&lt;br/&gt;More funky ACE info.&lt;br/&gt;Funky town.</Original>
 			    <Russian>Подробная Информация о ACE здесь.&lt;br/&gt;Больше подробной информации о ACE .&lt;br/&gt;Башня знаний.</Russian>
@@ -343,7 +343,6 @@
 			    <Russian>Подробная Информация о TFAR Здесь.&lt;br/&gt;Больше подробной информации о TFAR .&lt;br/&gt;Башня знаний.</Russian>
 			</Key>
 		</Container>
-
 		<Container name="Menu Buttons">
 			<Key ID="STR_UI_MENU_COM_TT">
 				<Original>Commander Menu</Original>
@@ -362,7 +361,6 @@
 			    <Russian>Назад</Russian>
 			</Key>
 		</Container>
-
 		<Container name="Battle Menu">
 			<Key ID="STR_UI_BM_FRAMEL_TEXT">
 				<Original>Battle Menu</Original>
@@ -426,7 +424,6 @@
 				<Original></Original>
 			</Key>
 		</Container>
-
 		<Container name="AI Management">
 			<Key ID="STR_UI_AIMGMT_TEMP_TEXT">
 				<Original>Temp AI Control</Original>
@@ -493,7 +490,6 @@
 			    <Russian>Если ИИ застревает в движение...</Russian>
 			</Key>
 		</Container>
-
 		<Container name="Vehicle Management">
 			<Key ID="STR_UI_VEHMGMT_PGAR_TEXT">
 				<Original>Garage</Original>
@@ -520,7 +516,6 @@
 			    <Russian>Продать автомобиль, на который вы смотрите.</Russian>
 			</Key>
 		</Container>
-
 		<Container name="Money">
 			<Key ID="STR_UI_MONEY_PLY_TEXT">
 				<Original>Donate 100&#8364; to Player</Original>
@@ -539,7 +534,6 @@
 			    <Russian>Поддержите общее дело, пожертвовав часть вашей валюты.</Russian>
 			</Key>
 		</Container>
-
 		<Container name="Commander Menu">
 			<Key ID="STR_UI_NAVCOM_NATO_TEXT">
 				<Original>%1</Original>  <!-- Что это??? -->
@@ -589,7 +583,6 @@
 			    <Russian>Дополнительные функции обслуживания.</Russian>
 			</Key>
 		</Container>
-
 		<Container name="NATO Menu">
 			<Key ID="STR_UI_NATO_CA_TEXT">
 				<Original>Air Assault</Original>
@@ -674,7 +667,6 @@
 			</Key>
 			<!--' Stef 30-08 '-->
 		</Container>
-
 		<Container name="Squad Recruitment Menu">
 			<Key ID="STR_UI_SR_INFSQU_TEXT">
 				<Original>Inf. Squad</Original>
@@ -749,7 +741,6 @@
 			    <Russian>HR=1 денег=500 - Ремонтный внедорожник, который позволяет провести ремонт техники в поле, инженер может также удалять минные поля</Russian>
 			</Key>
 		</Container>
-
 		<Container name="Squad Management Menu">
 			<Key ID="STR_UI_SM_ADDVEH_TEXT">
 				<Original>Add Vehicle</Original>
@@ -781,10 +772,9 @@
 			</Key>
 			<Key ID="STR_UI_SM_AUTOT_TT">
 				<Original>Static gun attatched to vehicles can benefit by rotating for a better target acquisition</Original>
-			    <Russian>Стационарное орудие, прикрепленное к транспортному средству, поворачивается - для лучшего захвата цели</Russian>
+			    <Russian>Статичное орудие, прикрепленное к транспортному средству, поворачивается - для лучшего захвата цели</Russian>
 			</Key>
 		</Container>
-
 		<Container name="Emplacement">
 			<Key ID="STR_UI_EMP_BLDRB_TEXT">
 				<Original>Create Roadblock/OP</Original>
@@ -851,7 +841,6 @@
 			    <Russian>Добавьте объекты, чтобы Штаб выглядел лучше, следите чтобы они не сталкивались с техникой</Russian>
 			</Key>
 		</Container>
-
 		<Container name="Info">
 			<Key ID="STR_UI_INFO_FIA_TEXT">
 				<Original>Status</Original>
@@ -878,7 +867,6 @@
 			    <Russian>Проверьте свой прогресс и увидите, чего не хватает для перехода на следующий уровень</Russian>
 			</Key>
 		</Container>
-
 		<Container name="Maintenance">
 			<Key ID="STR_GO_GAR_TEXT">
 				<Original>Garbage Clean</Original>
@@ -913,7 +901,6 @@
 			    <Russian>Если вам удалось потерять один из ваших объектов Штаба, это поместит их все рядом с Петросом</Russian>
 			</Key>
 		</Container>
-
 		<Container name="Admin">
 			<Key ID="STR_UI_ADMIN_ADDMEM_TEXT">
 				<Original>Add Server Member</Original>
@@ -988,7 +975,6 @@
 			    <Russian>Скрипт не оптимизирован для входящих на сервер, может подействовать не на всех.</Russian>
 			</Key>
 		</Container>
-
 		<Container name="Sell">
 			<Key ID="STR_UI_SELL_FRAME">
 				<Original>Sell Gear</Original>
@@ -1023,7 +1009,6 @@
 				<Original>Our Spies have reported that a CSAT officer is inspecting %1. Now is the time to Strike! Make sure he is eliminated by any means possible before %2:%3.</Original>
 			    <Russian>Наши шпионы сообщили, что вражеский офицер инспектирует %1. Настало время для нанесения удара возмездия! Устраните его, любыми возможными средствами, до %2:%3.</Russian>
 			</Key>
-
 			<Key ID="STR_TSK_ASSPECOP">
 				<Original>CSAT SpecOps</Original>
 			    <Russian>Спецназ</Russian>
@@ -1032,7 +1017,6 @@
 				<Original>Reports have come in that a CSAT SpecOps ground team is currently patrolling near %1. From what we know, these are tough soldiers who usually make use of airial un-manned drones. A well executed strike will gain us some of their high tech equipment. Do this before %2:%3.</Original>
 			    <Russian>Получено донесение, что спецподразделение врага в настоящее время патрулирует вблизи %1. Из того, что мы знаем, это жестокие солдаты, которые, как правило, используют беспилотники для наблюдения. Хорошо выполненная операция позволит нам достать некоторое их высокотехнологичное оборудование. Сделайте это до %2:%3.</Russian>
 			</Key>
-
 			<Key ID="STR_TSK_ASSTRAITOR">
 				<Original>Kill the Traitor</Original>
 			    <Russian>Убить Предателя</Russian>
@@ -1041,7 +1025,6 @@
 				<Original>Bad news, one of our very own is planning to defect. We have tracked his movements to the nearby town of %1. We are not taking any chancs. Kill him before he provides the enemy with intel of the location of our soldiers homes and FIA cash stockpiles. Do this before %2:%3. We don't where exactly this meeting will happen. You will recognise the building by the nearby MRAP and CSAT presence.</Original>
 			    <Russian>Плохие новости, один из наших планирует предать нас. Мы отследили его движение в соседний город %1. У нас нет второго шанса. Убейте его, прежде чем он передаст противнику разведданные, домашние адреса наших солдат и места складов боеприпасов FIA. Сделайте это до %2:%3. Мы не знаем где именно эта встреча будет. Вы узнаете где это место находится по присутствию MRAP и спецназа.</Russian>
 			</Key>
-
 			<Key ID="STR_TSK_ASSMAYOR">
  				<Original>Kidnap the Mayor</Original>
  			    <Russian>Похищение мэра</Russian>
@@ -1050,7 +1033,6 @@
  				<Original>The mayor of %1 is having a meeting with an enemy representetive, this is our chance to kidnap him and take him to our HQ for a much needed chat. The mayor must not die! Do this before %2:%3.</Original>
  			    <Russian>Мэр населённого пункта %1 встречается с представителем противника, это наш шанс похитить его и забрать в наш штаб для допроса. Мэр не должен умереть! Сделайте это до %2:%3.</Russian>
 			</Key>
-
 			<Key ID="STR_TSK_HQATTACK">
 				<Original>Defend Petros</Original>
 			    <Russian>Защитить Петроса</Russian>
@@ -1059,7 +1041,6 @@
 				<Original>CSAT knows the location of our HQ. We suspect that they have sent a SpecOps Air Squad in order to kill Petros. We have two choices - Either retreat and move HQ further than 1km away, or defend with all we have.</Original>
 			    <Russian>Противник узнал о местонахождении нашего Штаба. Мы думаем, что они уже послали отряд спецназа на вертолётах, чтобы убить Петроса. У нас есть два варианта - либо отступить и перенести Штаб далее, чем на 1 км от старой позиции, или обороняться всеми средствами.</Russian>
 			</Key>
-
 			<Key ID="STR_TSK_CONOPAA">
 				<Original>Clear the Outpost</Original>
 			    <Russian>Зачистить Аванпост</Russian>
@@ -1068,7 +1049,6 @@
 				<Original>A CSAT %1 is disturbing our operations in the area. This heavily defended outpost has Mortar and UAV, from what our spies tell us. We advise the destruction of the Drone before engaging and elimination the majority of ground troops. If there is an AA tank, this is also a priorty target. The operation must be completed before %2:%3.</Original>
 			    <Russian>Спецназ в %1 мешает нашей деятельности в этом районе. Из того что рассказали наши шпионы известно, что этот аванпост хорошо защищён, имеет Миномёт и БПЛА. Мы советуем уничтожить БПЛА перед атакой на наземные войска. Если есть техника ПВО, она также является приоритетной целью. Операция должна быть завершена до %2:%3.</Russian>
 			</Key>
-
 			<Key ID="STR_TSK_CONPOWER">
 				<Original>Take the Power Plant</Original>
 			    <Russian>Захватите Электростанцию</Russian>
@@ -1077,7 +1057,6 @@
 				<Original>A %1 has a monopoly over the power supply to nearby towns. Nato might not like this, but we have no choice- We need the Towns on our side and to achieve this we will need the Powerplant. Capture it before %2:%3.</Original>
 			    <Russian>%1 монопольно снабжает электроэнергией близлежащие города. Союзникам может не понравиться это, но у нас нет выбора. Нам нужны города на нашей стороне, и для достижения этой цели нам понадобится электростанция. Захватите её до %2:%3.</Russian>
 			</Key>
-
 			<Key ID="STR_TSK_CONOP">
 				<Original>Take the Outpost</Original>
 			    <Russian>Захватите Аванпост</Russian>
@@ -1086,7 +1065,6 @@
 				<Original>A %1 is disturbing our operations in the area. Go there and capture it before %2:%3.</Original>
 			    <Russian>%1 мешает нашей деятельности в этом районе. Идите туда и захватите его до %2:%3.</Russian>
 			</Key>
-
 			<Key ID="STR_TSK_CVY_AMMO">
 				<Original>%1 Ammo Convoy</Original>
 			    <Russian>%1 Конвой с Боеприпасами</Russian>
@@ -1095,7 +1073,6 @@
 				<Original>A convoy from %1 is about to depart at %2:%3. It will provide ammunition to %4. Try to intercept it. Steal or destroy that truck before it reaches it's destination. Be careful, the enemy may provide an armoured escort.</Original>
 			    <Russian>Конвой в %2:%3 отправляется  из %1. Это обеспечит боеприпасами %4. Попытайтесь его перехватить. Захватите или уничтожьте этот грузовик, прежде чем он достигнет места назначения. Будьте осторожны, конвой может сопровождать бронетехника.</Russian>
 			</Key>
-
 			<Key ID="STR_TSK_CVY_ARMOR">
 				<Original>%1 Armored Convoy</Original>
 			    <Russian>%1 Конвой Бронетехники</Russian>
@@ -1104,7 +1081,6 @@
 				<Original>A convoy from %1 is about to depart at %2:%3. It will reinforce %4 with armored vehicles. Try to intercept it. Steal or destroy the main Armoured Vehicle before it reaches it's destination.</Original>
 			    <Russian>Конвой бронетехники в %2:%3 отправляется из %1. Это укрепит %4 бронетехникой. Попытайтесь его перехватить. Захватите или уничтожьте главную бронетехнику, прежде чем конвой достигнет места назначения.</Russian>
 			</Key>
-
 			<Key ID="STR_TSK_CVY_PRIS">
 				<Original>%1 Prisoner Convoy</Original>
 			    <Russian>%1 Конвой с Заключёными</Russian>
@@ -1113,7 +1089,6 @@
 				<Original>A group of POW's is being transported from %1 to %4, departing at %2:%3. Sadly, it seems the enemy are planning their execution. We must intercept it and rescue them. Kill the driver or capture the truck to make them join you and bring them to HQ. </Original>
 			    <Russian>Группа военнопленных транспортируется из %1 в %4, выезжают в %2:%3. К сожалению, похоже что противник планирует их ликвидировать. Мы должны перехватить его и спасти их. Убейте водителя или захватите грузовик, чтобы военнопленные могли присоединиться к вам и приведите их в Штаб.</Russian>
 			</Key>
-
 			<Key ID="STR_TSK_CVY_MONEY">
 				<Original>%1 Money Convoy</Original>
 			    <Russian>%1 Конвой с Деньгами</Russian>
@@ -1122,7 +1097,6 @@
 				<Original>The enemy have been spotted moving large amounts of money from %1 to %4 departing at %2:%3. Steal that truck and bring it to HQ. There aren't many better opportunities to acquire the funds we will need to build up our army, don't screw up! </Original>
 			    <Russian>Мы узнали, что противник перемещает большую сумму денег из 1% в 4%, выезд машины в %2:%3. Украдите этот грузовик и привезите его в Штаб. Лучшего способа добыть деньги у нас нет, это необходимо для увеличения нашей армии, не облажайтесь!</Russian>
 			</Key>
-
 			<Key ID="STR_TSK_CVY_SUPPLY">
 				<Original>%1 Supply Convoy</Original>
 			    <Russian>%1 Конвой с Медикаментами</Russian>
@@ -1131,16 +1105,14 @@
 				<Original>A truck with medical supplies is about to depart from %1 to %4 at %2:%3. Steal the truck and bring it to %4 . Let the people there know of the FIA's 'benevolence' .</Original>
 			    <Russian>Грузовик с медикаментами собирается в %2:%3 выехать из %1 в %4. Захватите грузовик и привезите его в %4 . Пусть люди в %4 узнают, что  FIA не оставит их в беде</Russian>
 			</Key>
-
 			<Key ID="STR_TSK_CVY_HVT">
 				<Original>%1 HVT Convoy</Original>
-			    <Russian>%1 Конвой с Генералом</Russian>
+			    <Russian>Конвой %1 с Генералом</Russian>
 			</Key>
 			<Key ID="STR_TSKDESC_CVY_HVT">
 				<Original>From what we know, a high-value target will travel from %1 to %4. His departure is scheduled for %2:%3. Seize the opportunity and take him out! We believe he will use a decoy to obscure his exact vehicle.</Original>
 			    <Russian>Из того, что мы знаем, генерал будет двигаться из %1 в %4. Его отъезд запланирован на %2:%3. Не упустите возможность уничтожить такую важную шишку! Мы считаем, что он будет использовать приманку, чтобы скрыть свой настоящий транспорт.</Russian>
 			</Key>
-
 			<Key ID="STR_TSK_DEFCAMP">
 				<Original>Defend %1</Original>
 			    <Russian>Защитите %1</Russian>
@@ -1149,7 +1121,6 @@
 				<Original>A QRF has just been spotted taking off from %2. Their initial heading suggests that %1 is their target. We have no choice, assume defensive positions</Original>
 			    <Russian>Только что был замечен взлет десантного вертолёта из %2. Мы предполагаем, что их целью является %1. У нас нет выбора, займите оборонительные позиции.</Russian>
 			</Key>
-
 			<Key ID="STR_TSK_DESANTENNA">
 				<Original>Destroy Radio Tower</Original>
 			    <Russian>Уничтожить Радиовышку</Russian>
@@ -1158,7 +1129,6 @@
 				<Original> An opportunity to strike a Radio Tower in %1 presents its self. If we manage this it will interrupt %4 Comms Nework in the AO. We can destroy the antenna or capture the outpost but must complete it before %2:%3.</Original>
 			    <Russian>Предоставилась возможность ударить по радиовышке в %1. Если нам это удастся, это нарушит сеть связи %4 на оккупированной территории. Мы можем уничтожить антенну или захватить аванпост, но должны завершить это до %2:%3.</Russian>
 			</Key>
-
 			<Key ID="STR_TSK_DESHELI">
 				<Original>Destroy Air</Original>
 			    <Russian>Уничтожить ЛА</Russian>
@@ -1167,7 +1137,6 @@
 				<Original>We have downed air vehicle. This is a great chance to destroy it before it is recovered by a recovery team from %1 reaches the crash site </Original>
 			    <Russian>Мы сбили летательный аппарат. Это отличный шанс уничтожить его, прежде чем ремонтно-спасательная группа из %1 достигнет места катастрофы и он будет починен.</Russian>
 			</Key>
-
 			<Key ID="STR_TSK_DESVEHICLE">
 				<Original>Steal or Destroy Armor</Original>
 			    <Russian>Захватить или Уничтожить Броню</Russian><!-- Редакт. нужно подумать, длинно -->
@@ -1176,7 +1145,6 @@
 				<Original>We know an %4 is stationed in %1. This is a good chance to steal or destroy it before it causes more damage. Do it before %2:%3.</Original>
 			    <Russian>Мы знаем, что %4 дислоцируется в %1. Это хороший шанс, чтобы захватить или уничтожить его, прежде чем он нанесёт нам значительный урон. Сделайте это до %2:%3.</Russian>
 			</Key>
-
 			<Key ID="STR_TSK_FNDCIV">
 				<Original>Contact the Corrupt Politician</Original>
 			    <Russian>Встреча с Корумпированным Политиком</Russian>
@@ -1185,7 +1153,6 @@
 				<Original>A local politician who is sympathetic to our cause is willing to meet us near %1 until %2:%3. As it happens, he has a couple of jobs he's offering to undermine %4 control in this AO. He has stated that he is willing to speak to us only on the condition that none of our agents are overt within that town. In other words, put on your sunday-best and meet him disguised. </Original>
 			    <Russian>Местный политик, который с пониманием относится к нашему делу, готов встретиться с нами рядом с %1 до %2:%3. Как это часто бывает, у него есть несколько заданий, которые подорвут контроль %4 в этом регионе. Он заявил, что он готов говорить с нами только при условии, что ни один из наших агентов не будет обнаружен противником в районе места встречи. Другими словами, оденьте свой лучший воскресный костюм и избегайте обнаружения.</Russian>
 			</Key>
-
 			<Key ID="STR_TSK_FNDEXP">
 				<Original>Find the Crazy Irishman</Original>
 			    <Russian>Найти Сумасшедшего ирландца</Russian>
@@ -1194,14 +1161,13 @@
 				<Original>Black Market dealer Devin Connell has been spotted near %1. He's scheduled for a flight to Metavira or Arulco at %2:%3, so you better hurry up if you wish to acquire some of his fine products. From our recent meetings with him, he has agreed to meet with FIA overt soldiers only, apparently he doesnt like civilians all that much. </Original>
 			    <Russian>Дилер с черного рынка Девин Коннелл был замечен рядом с %1. Он запланировал рейс в Metavira или Arulco на %2:%3, так что вам лучше поторопиться, если вы хотите приобрести некоторые из его прекрасных продуктов. Из наших недавних встреч с ним, он согласился встретиться с FIA Открыто только, по-видимому, он не любит Когда мирных жителей много .</Russian>
 			</Key>
-
 			<Key ID="STR_TSK_FNDMIL">
 				<Original>Contact the Corrupt Officer</Original>
 			    <Russian>Контакт коррумпированного Офицера</Russian>
 			</Key>
 			<Key ID="STR_TSKDESC_FNDMIL">
 				<Original>A disgruntled %4 officer is trying to leave Altis. His departure is scheduled for %2:%3. If you manage to get to him in time, you might be able to convince him to stay and support our case. He was spotted near %1 and has stated that he is willing to speak to us only on the condition that none of our agents are overt within that town. In other words, put on your sunday-best and meet him disguised. </Original>
-			    <Russian>недовольный %4 Офицер пытается покинуть Altis. Его отъезд запланирован на %2:%3. Если вам удастся добраться до него вовремя, вы могли бы быть в состоянии убедить его остаться и поддержать наше дело. Он был замечен рядом %1 и заявил, что он готов говорить с нами только при условии, что ни один из наших агентов не являются не замаскированым в этом городе. Другими словами, поставить на свой лучший воскресный наряд и встретиться с ним, замаскированными.</Russian>
+			    <Russian>Офицер недовольный %4 пытается покинуть Altis. Его отъезд запланирован на %2:%3. Если вам удастся добраться до него вовремя, вы могли бы быть в состоянии убедить его остаться и поддержать наше дело. Он был замечен рядом с %1 и заявил, что он готов говорить с нами только при условии, что ни один из наших агентов не являются не замаскированым в этом городе. Другими словами, поставить на свой лучший воскресный наряд и встретиться с ним, замаскированными.</Russian>
 			</Key>
 			<Key ID="STR_TSK_LOGAMMO">
 				<Original>Steal or Destroy Ammotruck</Original>
@@ -1211,7 +1177,6 @@
 				<Original>We've spotted an enemy Ammotruck in an %1. This is a great opportunity to scavange some well-needed gear from the enemy. We have until  %2:%3.</Original>
 			    <Russian>Мы заметили Вражеский Грузовик с Боеприпасами в %1. Это отличная возможность собрать одну очень необходимую передачу от врага. мы должны до  %2:%3.</Russian>
 			</Key>
-
 			<Key ID="STR_TSK_LOGBANK">
 				<Original>Bank Robbery</Original>
 			    <Russian>Ограбление банка</Russian>
@@ -1220,7 +1185,6 @@
 				<Original>We know %4 is guarding a large amount of money in the bank of %1. Take this getaway vehicle and go there before %2:%3, hold the truck close to thw bank's main entrance for 2 minutes and the money will be transferred to the truck. Bring it back to HQ and the money will be ours.</Original>
 			    <Russian>Мы знаем %4 охраняет большое количество денег в банке %1. Возьмите этот Транспорт и бегите туда до того %2:%3,держите грузовик близко к главному входу банка в течение 2 минут, и деньги будут переведены на грузовик. Принесите его обратно в штаб-квартиру и деньги будут наши.</Russian>
 			</Key>
-
 			<Key ID="STR_TSK_LOGMEDICAL">
 				<Original>Supply Recovery</Original>
 			    <Russian>Восстановление поддержки</Russian>
@@ -1229,7 +1193,6 @@
 				<Original>We've had word from our informant that a sympathetic cell has sent supplies to %1. They ran into an %5 patrol and had to abandon the truck. Find and secure the vehicle, then deliver the supplies to the people in %1 before %2:%3. %5 command has probably dispatched a patrol from %4 to retrieve the goods, so you better hurry. </Original>
 			    <Russian>У нас есть информация, что Сочувствующая ячейка послал поставки %1. Они наткнулись на %5 патруль им пришлось отказаться от грузовика. Найти и захватите Транспорт, а затем доставите поставки к людям в %1 до %2:%3. %5 командир, вероятно, послал патруль из %4 чтобы получить товары, так что вам лучше поторопиться.</Russian>
 			</Key>
-
 			<Key ID="STR_TSK_LOGSUPPLY">
 				<Original>City Supplies</Original>
 			    <Russian>Городские Поставки</Russian>
@@ -1238,7 +1201,6 @@
 				<Original>%1 population is in need of supplies. As it happens, we have just what they need and it may improve our relationship with them. I reserved a transport truck with supplies near our HQ. Drive the transport truck to %1 city center. Hold it there for 2 minutes before %2:%3.</Original>
 			    <Russian>%1 население нуждается в поставках. Как можно чаще, у нас есть только то, что им нужно, и это может улучшить наши отношения с ними. Я зарезервировал транспортный грузовик с поставками вблизи нашей штаб-квартиры. Сопроводите транспортный грузовик до %1 центр города. Держите его там в течение 2 минут до %2:%3.</Russian>
 			</Key>
-
 			<Key ID="STR_TSK_NATOSUPPLY">
 				<Original>%1 Ammodrop</Original>
 			    <Russian>Сброс Боеприпасов НАТО</Russian>
@@ -1247,7 +1209,6 @@
 				<Original>Our Commander has asked %1 for a supply drop. Command the transport with your HC module and bring it to the designated position. Once it has landed you are free to use the equipment or bring it back to HQ. We dont think they will be able to supply us again for some time. </Original>
 			    <Russian>Наш командир попросил НАТО о Воздушной поставе. Команда с транспортом и модулем HC принести его в указанное положение. После того, как он приземлится вы можете использовать оборудование или вернуть его в штаб-квартиру. Мы не думаю, что они смогут совершить поставку снова в течение некоторого времени.</Russian>
 			</Key>
-
 			<Key ID="STR_TSK_PRBRAIN">
 				<Original>Establish Propaganda Station</Original>
 			    <Russian>Установить Станцию Пропаганды</Russian>
@@ -1272,7 +1233,6 @@
 				<Original>You managed to hold the position long enough to inspire the population.</Original>
 			    <Russian>Вам удалось удержать позицию достаточно долго, чтобы вдохновить население.</Russian>
 			</Key>
-
 			<Key ID="STR_TSK_PRPAMPHLET">
 				<Original>Leaflet Drop</Original>
 			    <Russian>Сброс Листовок</Russian>
@@ -1293,7 +1253,6 @@
 				<Original>Well done. Our volunteers in %1 are now spreading the word.</Original>
 			    <Russian>Отлично сработано. Наши волонтеры в %1 В настоящее время распространяют слово.</Russian>
 			</Key>
-
 			<Key ID="STR_TSK_REPANTENNA">
 				<Original>Tower Rebuild Disrupt</Original>
 			    <Russian>Разрушить Восстанавливаемую башню</Russian>
@@ -1302,7 +1261,6 @@
 				<Original>%4 is rebuilding a radio tower in %1. If we want to keep up the enemy comms breakdown, the work must be stopped. Destroy the repair truck parked nearby or capture the zone. Work will be finished at %2:%3.</Original>
 			    <Russian>%4 восстанавливает РадиоВышку в %1. Если мы хотим, чтобы не отставать от разрушения Комуникаций противника , работа должна быть прекращена. Уничтожите автомастерскую припаркованную поблизости или захватить зону. Работа будет закончена в %2:%3.</Russian>
 			</Key>
-
 			<Key ID="STR_TSK_RESPRISONERS">
 				<Original>POW Rescue</Original>
 			    <Russian>Спасите Военнопленных</Russian>
@@ -1311,7 +1269,6 @@
 				<Original>A group of POWs is awaiting execution at %1. We must rescue them before %2:%3 and bring them to HQ. It would be wise to avoid using anything explosive in your rescue attempt for fear of collateral damage. </Original>
 			    <Russian>Группа военнопленных ожидает казни в %1. Мы должны спасти их, прежде чем %2:%3 и привести их в штаб-квартиру. Было бы целесообразно, не использовать что-нибудь взрывчатое в вашей спасательной операций из-за страха сопутствующего ущерба</Russian>
 			</Key>
-
 			<Key ID="STR_TSK_RESREFUGEES">
 				<Original>Refugees Evac</Original>
 			    <Russian>Эвакуация Беженцев</Russian>
@@ -1320,7 +1277,6 @@
 				<Original>A group of FIA supportes are hidden in a house in %1. We have to get there and find them before %2 does and bring them back to base.</Original>
 			    <Russian>Группа сторонников FIA спрятаны в доме в %1. Мы должны добраться туда и найти их, прежде чем %2 действуйте и верните их обратно на базу.</Russian>
 			</Key>
-
 			<Key ID="STR_TSK_INTREINF">
 				<Original>Intercept Reinforcements</Original>
 			    <Russian>Перехват подкреплений</Russian>
@@ -1329,7 +1285,6 @@
 				<Original>In response to the casualties suffered by the garrison at the %2, %1 are preparing to send reinforcements from %3. They will be ready to roll out within minutes. Try to catch them on the move!</Original>
 			    <Russian>В ответ на потери, понесенные гарнизоном в %2, %1 готовятся к отправке подкреплений из %3. Они будут готовы к запуску в течение нескольких минут. Попытайтесь поймать их на ходу!</Russian>
 			</Key>
-
 			<Key ID="STR_TSK_DESSuppression">
 				<Original>Destroy the enemy taskforce.</Original>
 			    <Russian>Уничтожить целевую группу противника.</Russian>
@@ -1338,7 +1293,6 @@
 				<Original>We have received word that the enemy are supressing a community at their local church. If we wipe them out we will surely bring some support to our cause. Go to the location and kill the squad. </Original>
 			    <Russian>Мы получили слово, что враг подавляет сообщество в своей поместной церкви. Если мы уничтожим их, мы, безусловно, окажем некоторую поддержку нашему делу. Идите в место и убейте команду.</Russian>
 			</Key>
-
 			<Key ID="STR_TSK_DESfuel">
 				<Original> Destroy the enemy fuel truck.</Original>
 			    <Russian>Уничтожить вражескую автоцистерну.</Russian>
@@ -1347,7 +1301,6 @@
 				<Original>The enemy is buying fuel from the civilians to supply their war machine. The truck is leaving from %1 and will return there once it is full. We have a contact who will let us know when the truck is at the fuel station. Destroy the fuel truck to show the enemy and the population that we will not stand for collaboration.</Original>
 			    <Russian>враг покупает топливо у гражданских лиц для поставки своей военной машины. Грузовик уходит из %1 и вернется туда, как только он будет заполнен. У нас есть контакт, который сообщит нам, когда грузовик находится на АЗС. Уничтожьте топливный грузовик, чтобы показать врагу и населению, что мы не будем выступать за сотрудничество.</Russian>
 			</Key>
-
       		<Key ID="STR_TSK_ASFOREST">
 				<Original>Forest Patrol</Original>
 			    <Russian>Лесной патруль</Russian>
@@ -1356,7 +1309,6 @@
 				<Original>Reports have come in that a patrol is being dispatched from the %1 to this location. There will be a CSAT SpecOps ground team in the patrol training them in Forest warfare. We know they are patrolling within approximately 150 meters of this point. Go there and assassinate them. Do this before %2:%3. </Original>
 			    <Russian>Появились сообщения о том, что патруль отправляется из %1 в это место. В патрулировании будет проведена команда CSAT Спецназ, которая будет тренировать их в Лесной войне. Мы знаем, что они патрулируют примерно в 150 метрах от этого пункта. Иди туда и убивай их. Сделайте это раньше %2:%3.</Russian>
 			</Key>
-
 			<Key ID="STR_TSK_RADIO_DESTROYED">
 				<Original>Radio Tower Destroyed</Original>
 			    <Russian>Радио Башня Разрушена</Russian>
@@ -1377,7 +1329,6 @@
 				<Original>Camp %1 was destroyed by hostile forces.</Original>
 			    <Russian>Лагерь %1 был разрушен враждебными силами.</Russian>
 			</Key>
-
 			<Key ID="STR_TSK_CA_CREATE">
 				<Original>Significant activity is being reported at %2. %1 appear to be preparing a major assault. Get ready.</Original>
 			    <Russian>Значительная активность сообщается в %2. %1 похоже, готовят серьезное нападение. Приготовься.</Russian>
@@ -1390,12 +1341,10 @@
 				<Original>%1 is under attack!</Original>
 			    <Russian>%1 подвергается нападению!</Russian>
 			</Key>
-
 			<Key ID="STR_TSK_NATO_ARMOR">
 				<Original>Our Commander asked %5 for an armored column departing from %2 with destination %1. Provide whatever support you can. They are scheduled to leave the AO at %3:%4.</Original>
 			    <Russian>Наш Командир попросил %5 для бронированной колонны, отходящей от %2 с пунктом назначения %1. Предоставьте любую поддержку. Они планируют покинуть АО в %3:%4.</Russian>
 			</Key>
-
 			<Key ID="STR_TSK_BEMP_RESTR">
 				<Original>We can only deploy\delete one emplacement at a time.</Original>
 			    <Russian>Мы можем только развернуть \ удалить одну замену за раз.</Russian>
@@ -1470,79 +1419,77 @@
 	</Package>
 
 	<Package name="Hints">
-	
-		<Container name="HQ Placement">
-		
+		<Container name="MAP">			
+			<Key ID="STR_HINTS_MAP_TEXT_1">
+				<Original>Altis\n\nTotal pop: %1\nFIA Support: %2\nAAF SUpport: %3 \n\nDestroyed Cities: %4\n\nClick on the zone</Original>
+			    <Russian>Альтис\n\nВсего населения:  %1\nПоддерживают FIA:  %2\nПоддерживают противника:  %3 \n\nУничтоженных городов:  %4\n\nКликните по интересующей вас точке</Russian>
+			</Key>		
+		</Container>
+		<Container name="HQ_Placement">		
 			<Key ID="STR_HINTS_HQPLACE_START_TITLE">
 				<Original>Initial HQ Placement Selection</Original>
-			    <Russian>Первоначальный выбор места размещения Базы</Russian>
+			    <Russian>Выбор позиции Штаба\n</Russian>
 			</Key>
 			<Key ID="STR_HINTS_HQPLACE_START_1">
 				<Original>Click on a map position to select your starting location</Original>
-			    <Russian>Кликните по месту на карте, где будет развернут Штаб</Russian>
+			    <Russian>Кликните по месту на карте, где будет позиция Штаба</Russian>
 			</Key>
 			<Key ID="STR_HINTS_HQPLACE_START_2">
 				<Original>Close the map with M or ESC to start in the default position</Original>
-			    <Russian>Закройте карту с помощью M или ESC, чтобы начать настройку по умолчанию</Russian>
+			    <Russian>Закройте карту с помощью клавиш M или ESC, чтобы начать на позиции по умолчанию</Russian>
 			</Key>
 			<Key ID="STR_HINTS_HQPLACE_START_3">
 				<Original>Try not to select areas with nearby enemies\n\nGameplay and difficulty change with different starting locations.</Original>
-			    <Russian>Старайтесь не выбирать места, где близко находятся объекты противника\n\nВыбор места старта влияет на сложнось и процесс игры</Russian>
+			    <Russian>Старайтесь не выбирать позицию рядом с противником\n\nВыбор позиции на старте влияет на сложнось и процесс игры</Russian>
 			</Key>
 			<Key ID="STR_HINTS_HQPLACE_DEATH_TITLE">
 				<Original>Petros is Dead</Original>
-			    <Russian>Петрос мертв</Russian>
+			    <Russian>Петрос Мертв</Russian>
 			</Key>
 			<Key ID="STR_HINTS_HQPLACE_DEATH">
 				<Original>Petros has been killed. You lost part of your assets and need to select a new HQ position.</Original>
-			    <Russian>Петрос был убит. Вы потеряли часть своих активов и вам нужно выбрать новую позицию Базы.</Russian>
+			    <Russian>Петрос был убит. Вы потеряли часть своих военных запасов, придётся выбрать новую позицию для Штаба.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_HQPLACE_ZONES">
 				<Original>The selected position is too close to enemy zones, please select another.</Original>
-			    <Russian>Выбранная позиция слишком близко к вражеским зонам, выберите другую.</Russian>
+			    <Russian>Выбранная позиция находится слишком близко к зонам противника, выберите другую.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_HQPLACE_WATER">
 				<Original>You cannot place your HQ in the water. Please select another position.</Original>
-			    <Russian>Вы не можете разместить свой штаб в воде. Выберите другую позицию.</Russian>
+			    <Russian>Вы не можете разместить свой Штаб в воде. Выберите другую позицию.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_HQPLACE_ENEMIES">
 				<Original>There are enemies nearby, please select another position.</Original>
-			    <Russian>Рядом есть враги, выберите другую позицию.</Russian>
+			    <Russian>Рядом есть противник, выберите другую позицию.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_HQPLACE_MOVING">
 				<Original>Please wait while your assets are being moved to the selected location.</Original>
-			    <Russian>Подождите, пока ваши активы будут перемещены в выбранное место.</Russian>
-			</Key>
-		
+			    <Russian>Подождите, пока ваши военные запасы будут размещены на выбранной позиции.</Russian>
+			</Key>		
 		</Container>
-
-		<Container name="Persistent Save">
-		
+		<Container name="Persistent_Save">		
 			<Key ID="STR_HINTS_SAVE_COM_TITLE">
 				<Original>Progress Saved</Original>
-			    <Russian>Прогресс сохранен</Russian>
+			    <Russian>Прогресс сохранён</Russian>
 			</Key>
 			<Key ID="STR_HINTS_SAVE_COM_1">
 				<Original>You won't lose your stats in the event of a game update.</Original>
-			    <Russian>Вы не потеряете свою статистику в случае обновления игры.</Russian>
+			    <Russian>Вы не потеряете свой прогресс после обновления игры.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_SAVE_COM_2">
 				<Original>Vehicles outside of your garage will only be saved if they are within 50m of your HQ flag, with no AI inside.</Original>
-			    <Russian>Транспортные средства вне вашего гаража будут сохранены только в том случае, если они находятся в пределах 50 м от вашего флага Базы, без ИИ внутри.</Russian>
+			    <Russian>Транспортные средства вне вашего гаража будут сохранены только в том случае, если они находятся в пределах 50 м от флага Штаба, без ИИ внутри.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_SAVE_COM_3">
 				<Original>AI units and squads will not be saved, but you will be reimbursed.</Original>
-			    <Russian>Блоки ИИ и отряды не будут сохранены, но вы будете возмещены.</Russian>
+			    <Russian>Одиночные ИИ и группы ИИ не будут сохранены, но вы получите возмещение.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_SAVE_COM_4">
 				<Original>Static weapons need to be within 50m of a friendly flag, and they need to be assembled, otherwise they will not be saved.</Original>
-			    <Russian>Статическое оружие должно находиться в пределах 50 м от дружественного флага, и их необходимо собрать, иначе они не будут сохранены.</Russian>
-			</Key>
-		
+			    <Russian>Статичные установки должны находиться в пределах 50 м от дружественного флага, и должны быть в сборе, иначе они не будут сохранены.</Russian>
+			</Key>		
 		</Container>
-
-		<Container name="Commander">
-		
+		<Container name="Commander">		
 			<Key ID="STR_HINTS_COMMANDER_DIS">
 				<Original>Player Commander disconnected or retired. %1 is our new leader. Greet him!</Original>
 			    <Russian>Игрок Командир отключен или удален. %1 - наш новый лидер. Приветствуйте его!</Russian>
@@ -1562,12 +1509,9 @@
 			<Key ID="STR_HINTS_COMMANDER_ACC">
 				<Original>You are now eligible to command our forces.</Original>
 			    <Russian>Теперь вы имеете право командовать нашими силами.</Russian>
-			</Key>
-		
+			</Key>		
 		</Container>
-
-		<Container name="General">
-		
+		<Container name="General">		
 			<Key ID="STR_HINTS_GEN_DONATE_FAIL">
 				<Original>You have less than 100€ to donate.</Original>
 			    <Russian>У вас есть менее 100 евро для пожертвования.</Russian>
@@ -1659,19 +1603,16 @@
 			<Key ID="STR_HINTS_OPR_TEMP">
 				<Original>You died while remote-controlling AI.</Original>
 			    <Russian>Вы умерли в то время как дистанционное управление ИИ.</Russian>
-			</Key>
-		
+			</Key>		
 		</Container>
-
-		<Container name="Mission Selection">		<!-- Нужно редактировать перевод в этом разделе -->
-		
+		<Container name="Mission_Selection">		<!-- Нужно редактировать перевод в этом разделе -->		
 			<Key ID="STR_HINTS_MIS_TYPE_ACTIVE">
 				<Original>You already have an active mission of this type.</Original>
 			    <Russian>У вас уже есть активная миссия этого типа.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_MIS_GIVEN">
 				<Original>I have a mission for you.</Original>
-			    <Russian>У меня есть миссия для вас.</Russian>
+			    <Russian>У меня есть задание для вас.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_MIS_DES_NO_CHAT">
 				<Original>I have no destroy missions for you. Move our HQ closer to the enemy or finish some other missions in order to have better intel.</Original>
@@ -1736,12 +1677,9 @@
 			<Key ID="STR_HINTS_MIS_PR_NO_HINT">
 				<Original>PR missions require enemy cities within 4km of your HQ.</Original>
 			    <Russian>PR-миссии требуют, чтобы вражеские города находились в пределах 4 км от вашего штаба.</Russian>
-			</Key>
-		
+			</Key>		
 		</Container>
-
-		<Container name="Fast Travel">
-		
+		<Container name="Fast_Travel">		
 			<Key ID="STR_HINTS_FT_SINGLEGROUP">
 				<Original>You can only fast-travel one group at a time.</Original>
 			    <Russian>Вы можете только быстро перемещать одну группу за раз.</Russian>
@@ -1777,12 +1715,9 @@
 			<Key ID="STR_HINTS_FT_TARGET_FAIL">
 				<Original>You must click near a camp or HQ.</Original>
 			    <Russian>Вы должны нажать возле лагеря или штаб-квартиры.</Russian>
-			</Key>
-		
+			</Key>		
 		</Container>
-
-		<Container name="Undercover">
-		
+		<Container name="Undercover">		
 			<Key ID="STR_HINTS_UND_SINGLEGROUP">
 				<Original>You cannot disguise yourself while you are controlling AI.</Original>
 			    <Russian>Вы не можете замаскировать себя, пока вы контролируете ИИ.</Russian>
@@ -1882,12 +1817,9 @@
 			<Key ID="STR_HINTS_UND_CMP_GEAR">
 				<Original>Your gear is arousing suspicion, you are no longer incognito.\n</Original>
 			    <Russian>Ваше снаряжение вызывает подозрение, вы больше не инкогнито.\n</Russian>
-			</Key>
-		
+			</Key>		
 		</Container>
-	
 	    <Container name="AceSettings">
-		
 		    <Key ID="STR_ACE_MEDICAL_LEVEL">
 		        <Original>ACE: Medical Level</Original>
 		        <Russian>ACE: Сложность медицины</Russian>
@@ -1990,43 +1922,43 @@
 			</Key>
 			<Key ID="STR_ACE_TEXTS_BASIC">
 			    <Original>Basic</Original>
-				<Russian>Простая</Russian>
+				<Russian>простая</Russian>
 			</Key>
 			<Key ID="STR_ACE_TEXTS_ADVANCED">
 			    <Original>Advanced</Original>
-				<Russian>Продвинутая</Russian>
+				<Russian>продвинутая</Russian>
 			</Key>
 			<Key ID="STR_ACE_TEXTS_HALF">
 			    <Original>Half</Original>
-				<Russian>Половину</Russian>
+				<Russian>половину</Russian>
 			</Key>
 			<Key ID="STR_ACE_TEXTS_FULL">
 			    <Original>Full</Original>
-				<Russian>Весь</Russian>
+				<Russian>весь</Russian>
 			</Key>
 			<Key ID="STR_ACE_TEXTS_ANYW">
 			    <Original>Anywhere</Original>
-				<Russian>Везде</Russian>
+				<Russian>везде</Russian>
 			</Key>
 			<Key ID="STR_ACE_TEXTS_RF">
 			    <Original>Repair Facility</Original>
-				<Russian>Ремонтный пункт</Russian>
+				<Russian>ремонтный пункт</Russian>
 			</Key>
 			<Key ID="STR_ACE_TEXTS_ANYB">
 			    <Original>Anybody</Original>
-				<Russian>Любой</Russian>
+				<Russian>любой</Russian>
 			</Key>
 			<Key ID="STR_ACE_TEXTS_ENGS">
 			    <Original>Engineers</Original>
-				<Russian>Инженер</Russian>
+				<Russian>инженер</Russian>
 			</Key>
 			<Key ID="STR_ACE_TEXTS_NONE">
 			    <Original>None</Original>
-				<Russian>Ничего</Russian>
+				<Russian>ничего</Russian>
 			</Key>
 			<Key ID="STR_ACE_TEXTS_TOOL">
 			    <Original>Toolkit</Original>
-				<Russian>Набор инструментов</Russian>
+				<Russian>набор инструментов</Russian>
 			</Key>
 			<Key ID="STR_ACE_TEXTS_NO">
 			    <Original>0</Original>
@@ -2040,122 +1972,119 @@
 			    <Original>2</Original>
 				<Russian>игроки и боты</Russian>
 			</Key>
-					
 		</Container>
-		
 		<Container name="Dialogs">
-		
 		    <Key ID="STR_D_FIA_HQOCO">
 		        <Original>FIA HQ Options - Commander Only</Original>
-				<Russian>FIA Параметры штаба - только командующий</Russian>
+				<Russian>Возможности Штаба - Только для Командира</Russian>
 		    </Key>
 			<Key ID="STR_D_GRAB_FP">
 		        <Original>Grab 100 € from Pool</Original>
-				<Russian>Взять 100€ из Банка</Russian>
+				<Russian>Взять 100€ из Фонда</Russian>
 		    </Key>
 			<Key ID="STR_D_MANGE_GAR">
 		        <Original>Manage Garrisons</Original>
-				<Russian>Управление гарнизоном</Russian>
+				<Russian>Гарнизоны</Russian>
 		    </Key>
 			<Key ID="STR_D_MOVE_HQ_TAZ">
 		        <Original>Move HQ to another Zone</Original>
-				<Russian>Перемещение Базы в другую зону</Russian>
+				<Russian>Перенос Штаба</Russian>
 		    </Key>
 			<Key ID="STR_D_INGAME_ML">
 		        <Original>Ingame Member's List</Original>
-				<Russian>Список участников</Russian>
+				<Russian>Список Участников</Russian>
 		    </Key>
 			<Key ID="STR_D_TRAIN_FIA">
 		        <Original>Train FIA</Original>
-				<Russian>Обучить FIA</Russian>
+				<Russian>Тренировать FIA</Russian>
 		    </Key>
 			<Key ID="STR_D_BEBUILD_ASSE">
 		        <Original>Rebuild Assets</Original>
-				<Russian>Восстановить активы</Russian>
+				<Russian>Восстановить Статику</Russian>
 		    </Key>
 			<Key ID="STR_D_RECRU_OPT">
 		        <Original>Recruitment Options</Original>
-				<Russian>Настройки Рекрутирования</Russian>
+				<Russian>Доступны для Вербовки</Russian>
 		    </Key>
 			<Key ID="STR_D_RECRU_MIL">
 		        <Original>Recruit Militiaman</Original>
-				<Russian>Рекрутирование Ополченца</Russian>
+				<Russian>Ополченец</Russian>
 		    </Key>
 			<Key ID="STR_D_RECRU_AURI">
 		        <Original>Recruit Autorifleman</Original>
-				<Russian>Рекрутирование Стрелка</Russian>
+				<Russian>Пулемётчик</Russian>
 		    </Key>
 			<Key ID="STR_D_RECRU_MEDIC">
 		        <Original>Recruit Medic</Original>
-				<Russian>Рекрутирование Медика</Russian>
+				<Russian>Медик</Russian>
 		    </Key>
 			<Key ID="STR_D_RECRU_MARSKMAN">
 		        <Original>Recruit Marksman</Original>
-				<Russian>Рекрутирование Меткого Стрелка</Russian>
+				<Russian>Меткий Стрелок</Russian>
 		    </Key>
 			<Key ID="STR_D_RECRU_ENGI">
 		        <Original>Recruit Engineer</Original>
-				<Russian>Рекрутирование Инженера</Russian>
+				<Russian>Инженер</Russian>
 		    </Key>
 			<Key ID="STR_D_RECRU_GREN">
 		        <Original>Recruit Grenadier</Original>
-				<Russian>Рекрутирование Гренадёра</Russian>
+				<Russian>Стрелок с ГП</Russian>
 		    </Key>
 			<Key ID="STR_D_RECRU_BOOM_S">
 		        <Original>Recruit Bomb Specialist</Original>
-				<Russian>Рекрутирование Подрывника</Russian>
+				<Russian>Диверсант</Russian>
 		    </Key>
 			<Key ID="STR_D_RECRU_AT">
 		        <Original>Recruit AT</Original>
-				<Russian>Рекрутирование ПТ</Russian>
+				<Russian>Гранатомётчик</Russian>
 		    </Key>
 			<Key ID="STR_D_RECRU_AA">
 		        <Original>Recruit AA</Original>
-				<Russian>Рекрутироване ПВО</Russian>
+				<Russian>Стрелок с ПЗРК</Russian>
 		    </Key>
 			<Key ID="STR_D_SQ_RECR_OP">
 		        <Original>Squad Recruitment Options</Original>
-				<Russian>Отряд Рекрутов Опций</Russian> <!-- Редакт. -->
+				<Russian>Доступные Отряды для Вербовки</Russian> <!-- Редакт. -->
 		    </Key>
 			<Key ID="STR_D_RECRU_INF_SQ">
 		        <Original>Recruit Inf. Squad</Original>
-				<Russian>Рекрут Пех.Отряд</Russian>
+				<Russian>Пехотное Отделение</Russian>
 		    </Key>
 			<Key ID="STR_D_RECRU_INF_TE">
 		        <Original>Recruit Inf. Team</Original>
-				<Russian>Рекрут Пех.Команду</Russian>
+				<Russian>Пехотное Звено</Russian>
 		    </Key>
 			<Key ID="STR_D_RECRU_AT_SQ">
 		        <Original>Recruit AT Squad</Original>
-				<Russian>Рекрут Пт.Отряд</Russian>
+				<Russian>Гранатомётное Звено</Russian>
 		    </Key>
 			<Key ID="STR_D_RECRU_AA_TR">
 		        <Original>"Recruit AA Truck</Original>
-				<Russian>Рекрут ПВО Грузовик</Russian>
+				<Russian>Грузовик ПВО</Russian>
 		    </Key>
 			<Key ID="STR_D_RECRU_SNI_TEAM">
 		        <Original>Recruit Sniper Team</Original>
-				<Russian>Рекрут Команду Снайперов</Russian>
+				<Russian>Снайперский Расчёт</Russian>
 		    </Key>
 			<Key ID="STR_D_RECRU_AT_TR">
 		        <Original>Recruit AT Truck</Original>
-				<Russian>Рекрут ПТ Грузовик</Russian>
+				<Russian>Грузовик ПТ</Russian>
 		    </Key>
 			<Key ID="STR_D_RECRU_SEN">
 		        <Original>Recruit Sentry</Original>
-				<Russian>Рекрут Часовых</Russian>
+				<Russian>Патруль</Russian>
 		    </Key>
 			<Key ID="STR_D_RECRU_MOR_TEAM">
 		        <Original>Recruit Mortar Team</Original>
-				<Russian>Рекрут Миномётный Отряд</Russian>
+				<Russian>Миномётный Расчёт</Russian>
 		    </Key>
 			<Key ID="STR_D_RECRU_ENGIN">
 		        <Original>Recruit Engineers</Original>
-				<Russian>Рекрут Инженеров</Russian>
+				<Russian>Инженерный Расчёт</Russian>
 		    </Key>
 			<Key ID="STR_D_PUR_MIV">
 		        <Original>Purchase Military Vehicle</Original>
-				<Russian>Покупка военной техники</Russian>
+				<Russian>Покупка Военной Техники</Russian>
 		    </Key>
 			<Key ID="STR_D_BUY_QUA">
 		        <Original>Buy Quadbike</Original>
@@ -2227,15 +2156,15 @@
 		    </Key>
 			<Key ID="STR_D_AV_MIS">
 		        <Original>Available Missions</Original>
-				<Russian>Доступные миссии</Russian>
+				<Russian>Доступные Задания</Russian>
 		    </Key>
 			<Key ID="STR_D_MI_CON">
 		        <Original>Military Contact</Original> <!-- Редакт. -->
-				<Russian>Военная Связь</Russian>
+				<Russian>Военный Контакт</Russian>
 		    </Key>
 			<Key ID="STR_D_CI_CON">
 		        <Original>Civilian Contact</Original>
-				<Russian>Гражданская Связь</Russian> <!-- Редакт. -->
+				<Russian>Гражданский Контакт</Russian> <!-- Редакт. -->
 		    </Key>
 			<Key ID="STR_D_SKE_IRI">
 		        <Original>Sketchy Irishman</Original>
@@ -2243,19 +2172,19 @@
 		    </Key>
 			<Key ID="STR_D_LOG_MI">
 		        <Original>Logistics Mission</Original>
-				<Russian>Миссии Снабжения</Russian>
+				<Russian>Снабжение</Russian>
 		    </Key>
 			<Key ID="STR_D_DES_MI">
 		        <Original>Destroy Mission</Original>
-				<Russian>Миссии Разрушения</Russian>
+				<Russian>Уничтожение</Russian>
 		    </Key>
 			<Key ID="STR_D_RES_MI">
 		        <Original>Rescue Mission</Original>
-				<Russian>Миссии Спасения</Russian>
+				<Russian>Спасение</Russian>
 		    </Key>
 			<Key ID="STR_D_PROPA">
 		        <Original>Propaganda</Original>
-				<Russian>Пропоганда</Russian>
+				<Russian>Пропаганда</Russian>
 		    </Key>
 			<Key ID="STR_D_ASK_NI">
 		        <Original>Ask NATO for</Original>
@@ -2263,7 +2192,7 @@
 		    </Key>
 			<Key ID="STR_D_ATT_MI">
 		        <Original>Attack Mission</Original>
-				<Russian>Миссия Атаки</Russian>
+				<Russian>Атака</Russian>
 		    </Key>
 			<Key ID="STR_D_ARM_CO">
 		        <Original>Armored Column</Original>
@@ -2303,11 +2232,11 @@
 		    </Key>
 			<Key ID="STR_D_GAR_MENU">
 		        <Original>Garrison Menu</Original>
-				<Russian>Меню Гарнизона</Russian>
+				<Russian>Гарнизоны</Russian>
 		    </Key>
 			<Key ID="STR_D_RECR_GAR">
 		        <Original>Recruit Garrison</Original>
-				<Russian>Нанять Гарнизон</Russian>
+				<Russian>Вербовать в Гарнизон</Russian>
 		    </Key>
 			<Key ID="STR_D_REMO_GAR">
 		        <Original>Remove Garrison</Original>
@@ -2315,7 +2244,7 @@
 		    </Key>
 			<Key ID="STR_D_GAR_REC_OP">
 		        <Original>Garrison Recruitment Options</Original>
-				<Russian>Опций Найма Гарнизона</Russian>
+				<Russian>Управление Гарнизонами</Russian>
 		    </Key>
 			<Key ID="STR_D_REC_MILI">
 		        <Original>Recruit Militiaman</Original>
@@ -2363,27 +2292,27 @@
 		    </Key>
 			<Key ID="STR_D_FPSLI">
 		        <Original>FPS Limiter</Original>
-				<Russian>FPS Ограничитель</Russian>
+				<Russian>Ограничитель FPS</Russian>
 		    </Key>
 			<Key ID="STR_D_FPSLI1P">
 		        <Original>+1 FPS Limit</Original>
-				<Russian>+1 FPS Лимит</Russian>
+				<Russian>+1 FPS к лимиту</Russian>
 		    </Key>
 			<Key ID="STR_D_FPSLI1M">
 		        <Original>-1 FPS Limit</Original>
-				<Russian>-1 FPS Лимит</Russian>
+				<Russian>-1 FPS к лимиту</Russian>
 		    </Key>
 			<Key ID="STR_D_SPAWND">
 		        <Original>Spawn Distance Config</Original>
-				<Russian>Настройки Дистанций Спавна</Russian>
+				<Russian>Настройки Дистанции Симуляции</Russian>
 		    </Key>
 			<Key ID="STR_D_SPAWND100P">
 		        <Original>+100 Spawn Dist.</Original>
-				<Russian>+100 Дист. Спавна</Russian>
+				<Russian>+100 метров</Russian>
 		    </Key>
 			<Key ID="STR_D_SPAWND100M">
 		        <Original>-100 Spawn Dist.</Original>
-				<Russian>-100 Дист. Спавна</Russian>
+				<Russian>-100 метров</Russian>
 		    </Key>
 			<Key ID="STR_D_CIV_PERCON">
 		        <Original>Civ Presence Config</Original>
@@ -2795,7 +2724,7 @@
 		    </Key>
 			<Key ID="STR_D_SDC">
 		        <Original>Spawn Dist. Config</Original>
-				<Russian>Дистанция симуляции</Russian>
+				<Russian>Дистанция Симуляции</Russian>
 		    </Key>
 			<Key ID="STR_D_FPSL">
 		        <Original>FPS Limiter</Original>
@@ -3085,11 +3014,8 @@
 		        <Original>Members now get to keep their gear.</Original>
 				<Russian>Станьте Участником,что-бы получить своё снаряжение</Russian>  <!-- Редакт. -->
 		    </Key>
-		
 		</Container>
-	    
-		<Container name="Description">
-		
+		<Container name="Description">		
 	        <Key ID="STR_DE_ATSAFC">
 		        <Original>Ability to start a fresh campaign</Original>
 				<Russian>Возможность начать новую кампанию</Russian>
@@ -3113,12 +3039,9 @@
 			<Key ID="STR_DE_OFF">
 		        <Original>On</Original>
 				<Russian>ВЫКЛ</Russian>
-		    </Key>
-		
+		    </Key>		
 		</Container>
-	        
-        <Container name="Briefing">
-		
+		<Container name="Briefing">		
 		    <Key ID="STR_BR_6COMPMOD">
 		        <Original>6 Compatible mods</Original>
 				<Russian>6 Совместимые моды</Russian>
@@ -3683,7 +3606,7 @@ Note: Static Weapons can be garaged like other vehicles and, found under their r
 		    </Key>
 			<Key ID="STR_BRAF_FT">
 		        <Original>Fast Travel lets you skip journeys which might be considered a waste of time, it is a teleport with variable travel time (black screen) scaled to destination distance. &lt;br/&gt;
-On foot, you are teleported directly to the map marker location, along with any AI in your group.<br>
+On foot, you are teleported directly to the map marker location, along with any AI in your group.&lt;br/&gt;
 If you are the driver of a vehicle, the whole crew will travel with you. Vehicles will end up on the road closest to the map marker location. &lt;br/&gt;&lt;br/&gt;
 
 Conditions:&lt;br/&gt;
@@ -3732,7 +3655,7 @@ Member privileges:&lt;br/&gt;
 
 Conditions to satisfy to become undercover:&lt;br/&gt;
 - not being reported in the last 30 minutes. If reported, hitting the Heal, Repair and Rearm option at HQ will allow becoming undercover again immediately. Respawning also reenables it.&lt;br/&gt;
-- no enemies present within a 350 m radius.<br>
+- no enemies present within a 350 m radius.&lt;br/&gt;
 - wearing civilian clothes and no military gear equipped. A hint screen on the top right will list what items are preventing you from going undercover.&lt;br/&gt;&lt;br/&gt;
 
 If you meet the above conditions you can get Undercover by:
@@ -3781,7 +3704,7 @@ The game allows you to move your HQ to wherever, even inside an enemy base with 
 				<Russian>Поддержка Друж. фракций</Russian>
 		    </Key>
 			<Key ID="STR_BR_CM_FFS">
-		        <Original>The Commander can call in various forms of support from the Friendly Faction by choosing one of the options through Y menu (Commander tab). Unit or vehicle types and strength of the intervention will depend on your current support value. Each type cost support points and are explained below.<br><br>
+		        <Original>The Commander can call in various forms of support from the Friendly Faction by choosing one of the options through Y menu (Commander tab). Unit or vehicle types and strength of the intervention will depend on your current support value. Each type cost support points and are explained below.&lt;br/&gt;&lt;br/&gt;
 
 Support must physically travel to their target and they can get engaged before they arrive, this is important to remember especially for air forces, considering that each named hilltop has a spec-ops AA emplacement which can easily destroy them.&lt;br/&gt;&lt;br/&gt;
 
@@ -3880,9 +3803,8 @@ Camo net occludes Petros and the camp from enemy aircraft, but might collapse or
 			<Key ID="">
 		        <Original></Original>
 				<Russian></Russian>
-		    </Key>
-			
-			
+		    </Key>						
 		</Container>
 	</Package>
-</Project>
+
+	</Project>
