@@ -306,7 +306,7 @@ class CfgDebriefing
 
 class Params {
     class AS_enableCampaignReset {
-        title = "Ability to start a fresh campaign";
+        title = "$STR_DE_ATSAFC";
             values[] = {0,1};
             texts[] = {"Off","On"};
             default = 0;
@@ -314,7 +314,7 @@ class Params {
             force = 1;
     };
     class AS_param_useJNA {
-        title = "Use customized arsenal by Jeroen Not";
+        title = "$STR_DE_USABJN";
             values[] = {0,1};
             texts[] = {"Off","On"};
             default = 1;
@@ -323,7 +323,7 @@ class Params {
     };
 	//added by Fireman 12/08/2017
 	class AS_param_tkPenalty {
-        title = "Punish people for teamkilling";
+        title = "$STR_DE_PPFT";
             values[] = {0,1};
             texts[] = {"Off","On"};
             default = 0;
@@ -331,7 +331,7 @@ class Params {
             force = 1;
     };
     class AS_param_onlyPermanentMembers {
-        title = "Only permanent members are eligible for commandership at start";
+        title = "$STR_DE_OPMAEFCAS";
             values[] = {0,1};
             texts[] = {"Off","On"};
             default = 1;
