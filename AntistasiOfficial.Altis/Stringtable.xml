@@ -327,7 +327,7 @@
 		<Container name="Start Menu">
 			<Key ID="STR_UI_SM_SM">
 				<Original>Start Mission</Original>
-			    <Russian>Старт Миссии</Russian>
+			    <Russian>Начать</Russian>
 			</Key>
 			<Key ID="STR_UI_SM_FRAMEL_TEXT">
 				<Original>Game Settings</Original>
@@ -339,11 +339,11 @@
 			</Key>
 			<Key ID="STR_UI_SM_COM_0">
 				<Original>ComSwitch Disabled</Original>
-			    <Russian>Автовыбор ВЫКЛ</Russian>
+			    <Russian>Автовыборы ВЫКЛ</Russian>
 			</Key>
 			<Key ID="STR_UI_SM_COM_1">
 				<Original>ComSwitch Enabled</Original>
-			    <Russian>Автовыбор ВКЛ</Russian>
+			    <Russian>Автовыборы ВКЛ</Russian>
 			</Key>
 			<Key ID="STR_UI_SM_COM_TT">
 				<Original>Automatic Commander Switching&lt;br/&gt;In regular intervals, the highest ranking player will be assigned the role of Commander.</Original>
@@ -351,15 +351,15 @@
 			</Key>
 			<Key ID="STR_UI_SM_MEM_0">
 				<Original>Membership Enabled</Original>
-			    <Russian>Участники ВКЛ</Russian>
+			    <Russian>Список ВКЛ</Russian>
 			</Key>
 			<Key ID="STR_UI_SM_MEM_1">
 				<Original>Membership Disabled</Original>
-			    <Russian>Участники ВЫКЛ</Russian>
+			    <Russian>Список ВЫКЛ</Russian>
 			</Key>
 			<Key ID="STR_UI_SM_MEM_TT">
 				<Original>Only players on the members list are eligible to become Commander, can access the arsenal inventory and have their rank saved.</Original>
-			    <Russian>Только игроки из списка участников имеют право стать командиром, доступ к инвентарю арсенала и возможность сохранить свой ранг</Russian>
+			    <Russian>Только игроки из списка имеют право стать командиром, доступ к инвентарю арсенала и возможность сохранить свой ранг</Russian>
 			</Key>
 			<Key ID="STR_UI_SM_LOAD_0">
 				<Original>Continuing Campaign</Original>
@@ -387,7 +387,7 @@
 			</Key>
 			<Key ID="STR_UI_SM_TEXTF_DEF">
 				<Original>Please adjust the campaign settings.&lt;br/&gt;Press 'Start Mission' to continue.</Original>
-			    <Russian>Измените настройки кампании.&lt;br/&gt;Нажмите «Начать Миссию», чтобы продолжить.</Russian>
+			    <Russian>Измените настройки кампании.&lt;br/&gt;Нажмите «Начать», чтобы продолжить.</Russian>
 			</Key>
 			<Key ID="STR_UI_SM_TEXTF_LOADING">
 				<Original>&lt;br/&gt;Loading previous save...</Original>
@@ -961,7 +961,7 @@
 			</Key>
 			<Key ID="STR_UI_MAINT_MOV_TEXT">
 				<Original>Move Statics/HQ Items</Original>
-			    <Russian>Перенос объектов Штаба</Russian>
+			    <Russian>Сброс Переноса</Russian>
 			</Key>
 			<Key ID="STR_UI_MAINT_MOV_TT">
 				<Original>Reinitialize your ability to move statics and HQ assets.</Original>
@@ -986,15 +986,15 @@
 			</Key>
 			<Key ID="STR_UI_ADMIN_ADDMEM_TEXT">
 				<Original>Add Server Member</Original>
-			    <Russian>Добавить Участника</Russian>
+			    <Russian>Добавить в Список</Russian>
 			</Key>
 			<Key ID="STR_UI_ADMIN_ADDMEM_TT">
 				<Original>Look at a player, Members are eligible to be commander and can recruit AI</Original>
-			    <Russian>Посмотрите на игрока, Участники имеют право быть командиром и могут набирать ИИ</Russian>
+			    <Russian>Посмотрите на игрока, Игроки из списка имеют право быть командиром и могут набирать ИИ</Russian>
 			</Key>
 			<Key ID="STR_UI_ADMIN_REMMEM_TEXT">
 				<Original>Remove S. Member</Original>
-			    <Russian>Удалить Участника</Russian>
+			    <Russian>Удалить из Списка</Russian>
 			</Key>
 			<Key ID="STR_UI_ADMIN_REMMEM_TT">
 				<Original>Look at a player to remove him from the member list</Original>
@@ -1383,7 +1383,7 @@
 			</Key>
 			<Key ID="STR_TSK_RESPRISONERS">
 				<Original>POW Rescue</Original>
-			    <Russian>Спасите Военнопленных</Russian>
+			    <Russian>Спасти Военнопленных</Russian>
 			</Key>
 			<Key ID="STR_TSKDESC_RESPRISONERS">
 				<Original>A group of POWs is awaiting execution at %1. We must rescue them before %2:%3 and bring them to HQ. It would be wise to avoid using anything explosive in your rescue attempt for fear of collateral damage. </Original>
@@ -1549,7 +1549,7 @@
 		<Container name="HQ_Placement">		
 			<Key ID="STR_HINTS_HQPLACE_START_TITLE">
 				<Original>Initial HQ Placement Selection</Original>
-			    <Russian>Выбор позиции Штаба\n</Russian>
+			    <Russian>Выбор позиции Штаба</Russian>
 			</Key>
 			<Key ID="STR_HINTS_HQPLACE_START_1">
 				<Original>Click on a map position to select your starting location</Original>
@@ -1845,7 +1845,7 @@
 			</Key>
 			<Key ID="STR_HINTS_UND_DISGUISED">
 				<Original>You are incognito already.</Original>
-			    <Russian>Вы уже инкогнито.</Russian>
+			    <Russian>Вы уже под прикрытием.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_UND_NOTCIV">
 				<Original>You are not in a civilian vehicle.</Original>
@@ -1853,23 +1853,23 @@
 			</Key>
 			<Key ID="STR_HINTS_UND_REPORTED_CAR">
 				<Original>The vehicle you are in has been reported to the enemy. Switch to another vehicle or change its plates at HQ to become incognito.</Original>
-			    <Russian>Транспортное средство, в котором вы находитесь, было сообщено врагу. Переключитесь на другое транспортное средство или замените его пластины в HQ, чтобы стать инкогнито.</Russian>
+			    <Russian>Транспортное средство, в котором вы находитесь, было сообщено врагу. Переключитесь на другое транспортное средство или замените его пластины в HQ, чтобы под прикрытием.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_UND_REPORTED">
 				<Original>You have been reported in the last 30 minutes and cannot go incognito.</Original>
-			    <Russian>Вы были зарегистрированы за последние 30 минут и не можете войти в инкогнито.</Russian>
+			    <Russian>Вы были зарегистрированы за последние 30 минут и не можете войти в под прикрытием.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_UND_ENEMY_DIST">
 				<Original>You cannot become incognito with enemies less than %1m from you.</Original>
-			    <Russian>Вы не можете стать инкогнито с противниками менее %1 м от вас.</Russian>
+			    <Russian>Вы не можете стать под прикрытием с противниками менее %1 м от вас.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_UND_ENEMY_KNOW">
 				<Original>You cannot become incognito while enemies are still on the lookout for you nearby.</Original>
-			    <Russian>Вы не можете стать инкогнито, в то время как враги все еще ищут вас поблизости.</Russian>
+			    <Russian>Вы не можете стать под прикрытием, в то время как враги все еще ищут вас поблизости.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_UND_FAC_GRND">
 				<Original>You cannot become incognito near bases, outposts, or roadblocks.</Original>
-			    <Russian>Вы не можете стать инкогнито вблизи баз, опорных постов или блокпостов.</Russian>
+			    <Russian>Вы не можете стать под прикрытием вблизи баз, опорных постов или блокпостов.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_UND_GEAR">
 				<Original>You cannot disguise yourself while wearing suspicious-looking gear.\n</Original>
@@ -1937,7 +1937,7 @@
 			</Key>
 			<Key ID="STR_HINTS_UND_CMP_GEAR">
 				<Original>Your gear is arousing suspicion, you are no longer incognito.\n</Original>
-			    <Russian>Ваше снаряжение вызывает подозрение, вы больше не инкогнито.\n</Russian>
+			    <Russian>Ваше снаряжение вызывает подозрение, вы больше не под прикрытием.\n</Russian>
 			</Key>		
 		</Container>
 	    <Container name="AceSettings">
@@ -2477,11 +2477,11 @@
 		    </Key>
 			<Key ID="STR_D_ADD_SM">
 		        <Original>Add Server Member</Original>
-				<Russian>Добавить Участника Сервера</Russian>
+				<Russian>Добавить в Список</Russian>
 		    </Key>
 			<Key ID="STR_D_REM_SM">
 		        <Original>Remove Server Member</Original>
-				<Russian>Удалить Участника Сервера</Russian>
+				<Russian>Удалить из Списка</Russian>
 		    </Key>
 			<Key ID="STR_D_DONP">
 		        <Original>Donate 100 € to player</Original>
@@ -2821,11 +2821,11 @@
 		    </Key>
 			<Key ID="STR_D_SAN_BAG">
 		        <Original>Sandbag</Original>
-				<Russian>Мешок с Песком</Russian>
+				<Russian>Мешки с песком</Russian>
 		    </Key>
 			<Key ID="STR_D_VEH_SP">
 		        <Original>Vehicle Spawn Pad</Original>
-				<Russian>Место Спавна Техники</Russian>
+				<Russian>Площадка покупки</Russian>
 		    </Key>
 			<Key ID="STR_D_CDVSP_DATP">
 		        <Original>Create/Delete the vehicle spawn pad. Deploy at intended position.</Original>
