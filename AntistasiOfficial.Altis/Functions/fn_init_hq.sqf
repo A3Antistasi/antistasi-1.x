@@ -143,7 +143,7 @@ cajaVeh addAction [localize "str_act_buyVehicle",
 	"",
 	"(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"
 ];
-cajaVeh addAction ["Buy Boat", "REINF\buyBoat.sqf",nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"];
+cajaVeh addAction [localize "STR_ACT_BUYB", "REINF\buyBoat.sqf",nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"];
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //campFire

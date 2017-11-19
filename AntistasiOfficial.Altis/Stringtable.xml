@@ -170,6 +170,10 @@
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Capture the HVT</Original>
 			    <Russian>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Убить генерала</Russian> 
 			</Key>		
+			<Key ID="STR_ACT_BUYB">
+				<Original>Buy Boat</Original>
+			    <Russian>Купить лодку</Russian>
+			</Key>
 		</Container>
 	</Package>
 
@@ -235,7 +239,7 @@
 		<Container name="Info Texts">
 			<Key ID="STR_INFO_LOCALSUPPORT">
 				<Original>Local Support</Original>
-			    <Russian>>Поддержка населения</Russian>
+			    <Russian>Поддержка населения</Russian>
 			</Key>
 			<Key ID="STR_INFO_SKILLADJ">
 				<Original>&lt;t color='#f59900' size='.45' align='center'&gt;Warning! You lack the proficiency to effectively operate this weapon.&lt;/t&gt;</Original>
@@ -250,10 +254,81 @@
 				<Russian>Инициализация Сервера Завершена</Russian>
 		    </Key>
 		</Container>
+		<Container name="Map">
+			<Key ID="STR_GL_MAP_PP">
+				<Original>Power Plant</Original>
+			    <Russian>ЭС</Russian>
+			</Key>
+			<Key ID="STR_GL_MAP_AP">
+				<Original>%1 Airport</Original>
+			    <Russian>АБ %1</Russian>
+			</Key>
+			<Key ID="STR_GL_MAP_MB">
+				<Original>%1 Base</Original>
+			    <Russian>База %1</Russian>
+			</Key>
+			<Key ID="STR_GL_MAP_RS">
+				<Original>Resources</Original>
+			    <Russian>Ресурс</Russian>
+			</Key>
+			<Key ID="STR_GL_MAP_FAC">
+				<Original>Factory</Original>
+			    <Russian>Завод</Russian>
+			</Key>
+			<Key ID="STR_GL_MAP_AA">
+				<Original>%1 AA OP</Original>
+			    <Russian>ОП ПВО %1</Russian>
+			</Key>
+			<Key ID="STR_GL_MAP_OP">
+				<Original>%1 Outpost</Original>
+			    <Russian>ОП %1</Russian>
+			</Key>
+			<Key ID="STR_GL_MAP_SP">
+				<Original>Sea Port</Original>
+			    <Russian>Порт</Russian>
+			</Key>
+			<Key ID="STR_GL_MAP_CRR">
+				<Original>%1 Carrier</Original>
+			    <Russian>Авианосец %1</Russian>
+			</Key>
+			<Key ID="STR_GL_MAP_RT">
+				<Original>Radio Tower</Original>
+			    <Russian>Радиовышка</Russian>
+			</Key>
+			<Key ID="STR_GL_MAP_OP1">
+				<Original>%2 Outpost: %1</Original>
+			    <Russian>ОП %2: %1</Russian>
+			</Key>
+			<Key ID="STR_GL_MAP_MB1">
+				<Original>%2 Base: %1</Original>
+			    <Russian>База %2: %1</Russian>
+			</Key>
+			<Key ID="STR_GL_MAP_AP1">
+				<Original>%2 Airport: %1</Original>
+			    <Russian>АБ %2: %1</Russian>
+			</Key>
+			<Key ID="STR_GL_MAP_">
+				<Original></Original>
+			    <Russian></Russian>
+			</Key>
+			<Key ID="STR_GL_MAP_">
+				<Original></Original>
+			    <Russian></Russian>
+			</Key>
+			<Key ID="STR_GL_MAP_">
+				<Original></Original>
+			    <Russian></Russian>
+			</Key>
+			
+		</Container>
 	</Package>
 
 	<Package name="UI">
 		<Container name="Start Menu">
+			<Key ID="STR_UI_SM_SM">
+				<Original>Start Mission</Original>
+			    <Russian>Старт Миссии</Russian>
+			</Key>
 			<Key ID="STR_UI_SM_FRAMEL_TEXT">
 				<Original>Game Settings</Original>
 			    <Russian>Игровые Настройки</Russian>
@@ -264,15 +339,15 @@
 			</Key>
 			<Key ID="STR_UI_SM_COM_0">
 				<Original>ComSwitch Disabled</Original>
-			    <Russian>ComSwitch Отключён</Russian>
+			    <Russian>Автовыбор ВЫКЛ</Russian>
 			</Key>
 			<Key ID="STR_UI_SM_COM_1">
 				<Original>ComSwitch Enabled</Original>
-			    <Russian>ComSwitch Включен</Russian>
+			    <Russian>Автовыбор ВКЛ</Russian>
 			</Key>
 			<Key ID="STR_UI_SM_COM_TT">
 				<Original>Automatic Commander Switching&lt;br/&gt;In regular intervals, the highest ranking player will be assigned the role of Commander.</Original>
-			    <Russian>Автоматическое переключение Командира&lt;br/&gt;Через равные промежутки времени высокопоставленному игроку будет назначена роль командира.</Russian>
+			    <Russian>Автоматические выборы Командира&lt;br/&gt;Через равные промежутки времени более высокопоставленный игрок будет выбран командиром.</Russian>
 			</Key>
 			<Key ID="STR_UI_SM_MEM_0">
 				<Original>Membership Enabled</Original>
@@ -536,15 +611,15 @@
 		</Container>
 		<Container name="Commander Menu">
 			<Key ID="STR_UI_NAVCOM_NATO_TEXT">
-				<Original>%1</Original>  <!-- Что это??? -->
+				<Original>%1</Original>		
 			</Key>
 			<Key ID="STR_UI_NAVCOM_NATO_TT">
 				<Original>Call in %1 support.</Original>
-			    <Russian>Вызвать %1 поддержку.</Russian>
+			    <Russian>&lt;t font="PuristaMedium"&gt;Вызвать поддержку %1&lt;/t&gt;</Russian>
 			</Key>
 			<Key ID="STR_UI_NAVCOM_SQR_TEXT">
 				<Original>Recruit Squad</Original>
-			    <Russian>Нанять Отряд</Russian>
+			    <Russian>Выбор Отряда</Russian>
 			</Key>
 			<Key ID="STR_UI_NAVCOM_SQR_TT">
 				<Original>Recruit squads to support your effort, including fireteams and mounted units.</Original>
@@ -552,15 +627,15 @@
 			</Key>
 			<Key ID="STR_UI_NAVCOM_SQM_TEXT">
 				<Original>Squad Mgmt</Original>
-			    <Russian>Управление Отрядом</Russian>
+			    <Russian>Управление</Russian>
 			</Key>
 			<Key ID="STR_UI_NAVCOM_SQM_TT">
 				<Original>Supply squads with vehicles, check their current state.</Original>
-			    <Russian>Снабдить отряды транспортными средствоми,  проверить их текущее состояниеe.</Russian>
+			    <Russian>Снабдить отряды транспортными средствоми, проверить их текущее состояниеe.</Russian>
 			</Key>
 			<Key ID="STR_UI_NAVCOM_BUILD_TEXT">
 				<Original>Emplacements</Original>
-			    <Russian>Развёртывание</Russian>
+			    <Russian>Позиции</Russian>
 			</Key>
 			<Key ID="STR_UI_NAVCOM_BUILD_TT">
 				<Original>Setup or take down camps, roadblocks and watchposts.</Original>
@@ -590,7 +665,7 @@
 			</Key>
 			<Key ID="STR_UI_NATO_CA_TT">
 				<Original>Price: 20 Points -- Air cavalry will assault the target location.</Original>
-			    <Russian>Цена: 20 очков - Воздушная кавалерия атакует целевое местоположение.</Russian>
+			    <Russian>Цена: 20 очков - Воздушная атака выбранной позиции.</Russian>
 			</Key>
 			<Key ID="STR_UI_NATO_ARM_TEXT">
 				<Original>Armoured Assault</Original>
@@ -598,7 +673,7 @@
 			</Key>
 			<Key ID="STR_UI_NATO_ARM_TT">
 				<Original>Price: 20 Points -- Armoured cavalry will assault the target location.</Original>
-			    <Russian>Цена: 20 очков - Бронетанковая кавалерия будет атаковать целевое местоположение.</Russian>
+			    <Russian>Цена: 20 очков - Бронетанковый взвод будет атаковать выбранную позицию.</Russian>
 			</Key>
 			<Key ID="STR_UI_NATO_ART_TEXT">
 				<Original>Artillery</Original>
@@ -610,7 +685,7 @@
 			</Key>
 			<Key ID="STR_UI_NATO_RB_TEXT">
 				<Original>Roadblock</Original>
-			    <Russian>КПП</Russian>
+			    <Russian>Блокпост</Russian>
 			</Key>
 			<Key ID="STR_UI_NATO_RB_TT">
 				<Original>Price: 10 Points -- Mounted units will depart to the chosen location and setup a roadblock.</Original>
@@ -659,7 +734,7 @@
 			<!--' Stef 30-08 '-->
 			<Key ID="STR_UI_NATO_RED_TEXT">
 				<Original>Reduce Opfor support</Original>
-			    <Russian>Снизить поддержку противника</Russian>
+			    <Russian>Дипломатия</Russian>
 			</Key>
 			<Key ID="STR_UI_NATO_RED_TT">
 				<Original>Price: 100 Points -- Weaken the enemy supporting faction by 10 points</Original>
@@ -782,7 +857,7 @@
 			</Key>
 			<Key ID="STR_UI_EMP_BLDRB_TT">
 				<Original>Roadblock are effective against ground vehicle and some aircraft, if selecting outside roads build an Observation Post</Original>
-			    <Russian>Блокпост (БП) эффективен против наземного транспорта и малой авиации, если выбрано место вне дороги, устанавливается наблюдательный пост (НП)</Russian>
+			    <Russian>Блокпост (БП), если выбрано место вне дороги, то наблюдательный пост (НП)</Russian>
 			</Key>
 			<Key ID="STR_UI_EMP_DELRB_TEXT">
 				<Original>Remove Roadblock/OP</Original>
@@ -794,7 +869,7 @@
 			</Key>
 			<Key ID="STR_UI_EMP_MNAP_TEXT">
 				<Original>Deploy Minefield (AP)</Original>
-			    <Russian>Развернуть Минное Поле (ПП)</Russian>
+			    <Russian>Минное Поле (ПП)</Russian>
 			</Key>
 			<Key ID="STR_UI_EMP_MNAP_TT">
 				<Original>Dangerous, it require mines in the arsenal, not tested yet with RHS and JAS</Original>
@@ -802,7 +877,7 @@
 			</Key>
 			<Key ID="STR_UI_EMP_MNAT_TEXT">
 				<Original>Deploy Minefield (AT)</Original>
-			    <Russian>Развернуть Минное Поле (ПТ)</Russian>
+			    <Russian>Минное Поле (ПТ)</Russian>
 			</Key>
 			<Key ID="STR_UI_EMP_MNAT_TT">
 				<Original>Dangerous, it require mines in the arsenal, not tested yet with RHS and JAS</Original>
@@ -904,6 +979,7 @@
 		<Container name="Admin">
 			<Key ID="STR_UI_ADMIN_TGLPN_TEXT">
 				<Original>Map names</Original>
+				<Russian>Имена на карте</Russian>
 			</Key>
 			<Key ID="STR_UI_ADMIN_TGLPN_TT">
 				<Original>Toggle player names displayed on map</Original>
@@ -926,7 +1002,7 @@
 			</Key>
 			<Key ID="STR_UI_ADMIN_GEARRES_TEXT">
 				<Original>Gear Reset</Original>
-			    <Russian>Очистка Снаряжения</Russian>
+			    <Russian>Очистка Арсенала</Russian>
 			</Key>
 			<Key ID="STR_UI_ADMIN_GEARRES_TT">
 				<Original>No longer required/working, JAS is bulletproof.</Original>
@@ -958,7 +1034,7 @@
 			</Key>
 			<Key ID="STR_UI_ADMIN_TGLWPN_TEXT">
 				<Original>Weapon Proficiency</Original>
-			    <Russian>Уровень владения оружием</Russian>
+			    <Russian>Навык с оружием</Russian>
 			</Key>
 			<Key ID="STR_UI_ADMIN_TGLWPN_TT">
 				<Original>When enabled, weapons have increased sway if not belonging to your class</Original>
@@ -1028,6 +1104,18 @@
 		        <Original>HR: %1 | FIA Money: %2 € | %6 Support: %3 | %7 Support: %4 | %5</Original>
 				<Russian>HR: %1 | Деньги FIA: %2 € | Поддержка %6: %3 | Поддержка %7: %4 | %5</Russian>
 		    </Key>
+			<Key ID="STR_TOP_OVERT">
+		        <Original>Overt</Original>
+				<Russian>&lt;t color='#D8480A'&gt;Раскрыт&lt;/t&gt;</Russian>
+		    </Key>
+			<Key ID="STR_TOP_OVERT2">
+		        <Original>&lt;t color='#D8480A'&gt;Overt&lt;/t&gt;</Original>
+				<Russian>&lt;t color='#D8480A'&gt;Раскрыт&lt;/t&gt;</Russian>
+		    </Key>
+			<Key ID="STR_TOP_INCOGNITO">
+		        <Original>&lt;t color='#1DA81D'&gt;Incognito&lt;/t&gt;</Original>
+				<Russian>&lt;t color='#1DA81D'&gt;Под Прикрытием&lt;/t&gt;</Russian>
+		    </Key>
 		</Container>
 	</Package>
 
@@ -1075,11 +1163,11 @@
 			</Key>
 			<Key ID="STR_TSK_CONOPAA">
 				<Original>Clear the Outpost</Original>
-			    <Russian>Зачистить Аванпост</Russian>
+			    <Russian>Зачистить Опорный Пункт</Russian>
 			</Key>
 			<Key ID="STR_TSKDESC_CONOPAA">
 				<Original>A CSAT %1 is disturbing our operations in the area. This heavily defended outpost has Mortar and UAV, from what our spies tell us. We advise the destruction of the Drone before engaging and elimination the majority of ground troops. If there is an AA tank, this is also a priorty target. The operation must be completed before %2:%3.</Original>
-			    <Russian>Спецназ в %1 мешает нашей деятельности в этом районе. Из того что рассказали наши шпионы известно, что этот аванпост хорошо защищён, имеет Миномёт и БПЛА. Мы советуем уничтожить БПЛА перед атакой на наземные войска. Если есть техника ПВО, она также является приоритетной целью. Операция должна быть завершена до %2:%3.</Russian>
+			    <Russian>Спецназ в %1 мешает нашей деятельности в этом районе. Из того что рассказали наши шпионы известно, что этот опорный пункт хорошо защищён, имеет Миномёт и БПЛА. Мы советуем уничтожить БПЛА перед атакой на наземные войска. Если есть техника ПВО, она также является приоритетной целью. Операция должна быть завершена до %2:%3.</Russian>
 			</Key>
 			<Key ID="STR_TSK_CONPOWER">
 				<Original>Take the Power Plant</Original>
@@ -1091,7 +1179,7 @@
 			</Key>
 			<Key ID="STR_TSK_CONOP">
 				<Original>Take the Outpost</Original>
-			    <Russian>Захватите Аванпост</Russian>
+			    <Russian>Захватите Опорный Пункт</Russian>
 			</Key>
 			<Key ID="STR_TSKDESC_CONOP">
 				<Original>A %1 is disturbing our operations in the area. Go there and capture it before %2:%3.</Original>
@@ -1159,7 +1247,7 @@
 			</Key>
 			<Key ID="STR_TSKDESC_DESANTENNA">
 				<Original> An opportunity to strike a Radio Tower in %1 presents its self. If we manage this it will interrupt %4 Comms Nework in the AO. We can destroy the antenna or capture the outpost but must complete it before %2:%3.</Original>
-			    <Russian>Предоставилась возможность ударить по радиовышке в %1. Если нам это удастся, это нарушит сеть связи %4 на оккупированной территории. Мы можем уничтожить антенну или захватить аванпост, но должны завершить это до %2:%3.</Russian>
+			    <Russian>Предоставилась возможность ударить по Радиовышке в %1. Если нам это удастся, это нарушит сеть связи %4 на оккупированной территории. Мы можем уничтожить антенну или захватить опорный пункт, но должны завершить это до %2:%3.</Russian>
 			</Key>
 			<Key ID="STR_TSK_DESHELI">
 				<Original>Destroy Air</Original>
@@ -1416,21 +1504,22 @@
 		<Container name="Move Assets">
 			<Key ID="STR_INFO_MOVEASSETS_1">
 				<Original>Only the Commander may move assets.</Original>
-			    <Russian>Только Командующий может перемещать активы.</Russian>
+			    <Russian>Только Командир может перемещать военное имущество.</Russian>
 			</Key>
 			<Key ID="STR_INFO_MOVEASSETS_2">
 				<Original>You need to be on foot and not controlling AI to move assets.</Original>
-			    <Russian>Вам нужно идти пешком и не контролировать ИИ для перемещения активов.</Russian>
+			    <Russian>Для того чтобы перемещать военное имущество Вам нужно спешиться и перестать управлять ИИ</Russian>
 			</Key>
 			<Key ID="STR_INFO_MOVEASSETS_3">
 				<Original>This asset is too far from the zone.</Original>
-			    <Russian>Этот актив слишком далеко от зоны.</Russian>
+			    <Russian>Этот военное имущество слишком далеко от зоны.</Russian>
 			</Key>
 			<Key ID="STR_INFO_MOVEASSETS_4">
 				<Original>You cannot move assets farther than %1m from the zone.</Original>
-			    <Russian>Вы не можете перемещать активы дальше, чем %1m от зоны.</Russian>
+			    <Russian>Вы не можете перемещать военное имущество дальше, чем %1м от зоны.</Russian>
 			</Key>
 		</Container>
+		
 	</Package>
 
 	<Package name="Dialog">
@@ -1637,7 +1726,7 @@
 			    <Russian>Вы умерли в то время как дистанционное управление ИИ.</Russian>
 			</Key>		
 		</Container>
-		<Container name="Mission_Selection">		<!-- Нужно редактировать перевод в этом разделе -->		
+		<Container name="Mission_Selection">		<!-- Нужно редактировать перевод в этом разделе -->
 			<Key ID="STR_HINTS_MIS_TYPE_ACTIVE">
 				<Original>You already have an active mission of this type.</Original>
 			    <Russian>У вас уже есть активная миссия этого типа.</Russian>
@@ -1660,7 +1749,7 @@
 			</Key>
 			<Key ID="STR_HINTS_MIS_LOG_NO_HINT">
 				<Original>Logistics missions require enemy outposts, cities or banks within 4km of your HQ.</Original>
-			    <Russian>Логистические миссии требуют от форпостов противника, городов или банков в пределах 4 км от вашего штаба.</Russian>
+			    <Russian>Задания снабжения требуют наличия опорных постов противника, городов или банков в пределах 4 км от вашего штаба.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_MIS_RES_NO_CHAT">
 				<Original>I have no rescue missions for you. Move our HQ closer to the enemy or finish some other missions in order to have better intel.</Original>
@@ -1700,7 +1789,7 @@
 			</Key>
 			<Key ID="STR_HINTS_MIS_ASS_NO_HINT">
 				<Original>Assassination missions require enemy cities or outposts within 4km of your HQ.</Original>
-			    <Russian>Миссии по убийствам требуются вражеские города или форпосты в пределах 4 км от вашего штаба.</Russian>
+			    <Russian>Миссии по убийствам требуются вражеские города или опорные посты в пределах 4 км от вашего штаба.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_MIS_PR_NO_CHAT">
 				<Original>I have no PR missions for you. Move our HQ closer to the enemy or finish some other missions in order to have better intel.</Original>
@@ -1780,7 +1869,7 @@
 			</Key>
 			<Key ID="STR_HINTS_UND_FAC_GRND">
 				<Original>You cannot become incognito near bases, outposts, or roadblocks.</Original>
-			    <Russian>Вы не можете стать инкогнито вблизи баз, форпостов или блокпостов.</Russian>
+			    <Russian>Вы не можете стать инкогнито вблизи баз, опорных постов или блокпостов.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_UND_GEAR">
 				<Original>You cannot disguise yourself while wearing suspicious-looking gear.\n</Original>
@@ -2260,7 +2349,7 @@
 		    </Key>
 			<Key ID="STR_D_WE_OPFOR">
 		        <Original>Weaken OPFOR</Original>
-				<Russian>Ослабить OPFOR</Russian>
+				<Russian>Ослабить Противника</Russian>
 		    </Key>
 			<Key ID="STR_D_GAR_MENU">
 		        <Original>Garrison Menu</Original>
@@ -3831,11 +3920,7 @@ Camo net occludes Petros and the camp from enemy aircraft, but might collapse or
 			<Key ID="STR_BR_8CNT">
 		        <Original>8 Credits and Thanks</Original>
 				<Russian>8 Авторы И Благодарность</Russian>
-		    </Key>
-			<Key ID="">
-		        <Original></Original>
-				<Russian></Russian>
-		    </Key>						
+		    </Key>					
 		</Container>
 	</Package>
 
