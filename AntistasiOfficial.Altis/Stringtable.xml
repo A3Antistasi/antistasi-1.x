@@ -1003,6 +1003,32 @@
 			    <Russian>Рюкзаки</Russian>
 			</Key>
 		</Container>
+		<Container name="TOP">
+			<Key ID="STR_TOP_TEXT1">
+		        <Original>Commander: %3 | %2 | HR: %1 | Your Money: %4 € | %9 Support: %5 | %10 Support: %6 | %7 | %8</Original>
+				<Russian>Командир: %3 | %2 | HR: %1 | Ваши Деньги: %4 € | Поддержка %9: %5 | Поддержка %10: %6 | %7 | %8</Russian>
+		    </Key>
+			<Key ID="STR_TOP_TEXT2">
+		        <Original>Commander: %3 | %2 | HR: %1 | Your Money: %4 € | %8 Support: %5 | %9 Support: %6 | %7</Original>
+				<Russian>Командир: %3 | %2 | HR: %1 | Ваши Деньги: %4 € | Поддержка %8: %5 | Поддержка %9: %6 | %7</Russian>
+		    </Key>
+			<Key ID="STR_TOP_TEXT3">
+		        <Original>%5 | HR: %1 | Your Money: %6 € | FIA Money: %2 € | %9 Support: %3 | %10 Support: %4 | %7 | %8</Original>
+				<Russian>%5 | HR: %1 | Ваши Деньги: %6 € | Деньги FIA: %2 € | Поддержка %9: %3 | Поддержка %10: %4 | %7 | %8</Russian>
+		    </Key>
+			<Key ID="STR_TOP_TEXT4">
+		        <Original>%5 | HR: %1 | Your Money: %6 € | FIA Money: %2 € | %8 Support: %3 | %9 Support: %4 | %7</Original>
+				<Russian>%5 | HR: %1 | Ваши Деньги: %6 € | Деньги FIA: %2 € | Поддержка %8: %3 | Поддержка %9: %4 | %7</Russian>
+		    </Key>
+			<Key ID="STR_TOP_TEXT5">
+		        <Original>HR: %1 | FIA Money: %2 € | %7 Support: %3 | %8 Support: %4 | %5 | %6</Original>
+				<Russian>HR: %1 | Деньги FIA: %2 € | Поддержка %7: %3 | Поддержка %8: %4 | %5 | %6</Russian>
+		    </Key>
+			<Key ID="STR_TOP_TEXT6">
+		        <Original>HR: %1 | FIA Money: %2 € | %6 Support: %3 | %7 Support: %4 | %5</Original>
+				<Russian>HR: %1 | Деньги FIA: %2 € | Поддержка %6: %3 | Поддержка %7: %4 | %5</Russian>
+		    </Key>
+		</Container>
 	</Package>
 
 	<Package name="Tasks">
