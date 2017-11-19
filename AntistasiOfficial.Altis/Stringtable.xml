@@ -902,6 +902,12 @@
 			</Key>
 		</Container>
 		<Container name="Admin">
+			<Key ID="STR_UI_ADMIN_TGLPN_TEXT">
+				<Original>Map names</Original>
+			</Key>
+			<Key ID="STR_UI_ADMIN_TGLPN_TT">
+				<Original>Toggle player names displayed on map</Original>
+			</Key>
 			<Key ID="STR_UI_ADMIN_ADDMEM_TEXT">
 				<Original>Add Server Member</Original>
 			    <Russian>Добавить Участника</Russian>
@@ -1190,16 +1196,16 @@
 			    <Russian>Восстановление поддержки</Russian>
 			</Key>
 			<Key ID="STR_TSKDESC_LOGMEDICAL">
-				<Original>We've had word from our informant that a sympathetic cell has sent supplies to %1. They ran into an %5 patrol and had to abandon the truck. Find and secure the vehicle, then deliver the supplies to the people in %1 before %2:%3. %5 command has probably dispatched a patrol from %4 to retrieve the goods, so you better hurry. </Original>
-			    <Russian>У нас есть информация, что Сочувствующая ячейка послал поставки %1. Они наткнулись на %5 патруль им пришлось отказаться от грузовика. Найти и захватите Транспорт, а затем доставите поставки к людям в %1 до %2:%3. %5 командир, вероятно, послал патруль из %4 чтобы получить товары, так что вам лучше поторопиться.</Russian>
+				<Original>We've had word from our informant that a sympathetic cell has sent supplies to %1. They ran into an %5 patrol and the crate felt down from their truck while fleeing. Find and secure the goods, then deliver them to the people in %1 before %2:%3. %5 command has probably dispatched reinforcements from %4 to retrieve the goods, so you better hurry.</Original>
+			    <Russian>У нас было слово от нашего осведомителя, что симпатическая ячейка отправила материалы в% 1. Они столкнулись с патрулем в% 5, и ящик упал со своего грузовика, убегая. Найдите и закрепите товары, затем доставьте их людям в% 1 до% 2:% 3. Команда% 5, вероятно, отправила подкрепления из% 4 для извлечения товаров, поэтому вам лучше поторопиться.</Russian>
 			</Key>
 			<Key ID="STR_TSK_LOGSUPPLY">
 				<Original>City Supplies</Original>
 			    <Russian>Городские Поставки</Russian>
 			</Key>
 			<Key ID="STR_TSKDESC_LOGSUPPLY">
-				<Original>%1 population is in need of supplies. As it happens, we have just what they need and it may improve our relationship with them. I reserved a transport truck with supplies near our HQ. Drive the transport truck to %1 city center. Hold it there for 2 minutes before %2:%3.</Original>
-			    <Russian>%1 население нуждается в поставках. Как можно чаще, у нас есть только то, что им нужно, и это может улучшить наши отношения с ними. Я зарезервировал транспортный грузовик с поставками вблизи нашей штаб-квартиры. Сопроводите транспортный грузовик до %1 центр города. Держите его там в течение 2 минут до %2:%3.</Russian>
+				<Original>%1 population is in need of supplies. Load this box on a car and unload it where the marker indicate you. Keep the area secure for 2 minutes to let the population grab what they need. Do it before %2:%3.</Original>
+			    <Russian>% 1 население нуждается в поставках. Загрузите эту коробку на автомобиль и выгрузите ее, где указывает маркер. Храните область в безопасности в течение 2 минут, чтобы население захватило то, что им нужно. Сделайте это до% 2:% 3.</Russian>
 			</Key>
 			<Key ID="STR_TSK_NATOSUPPLY">
 				<Original>%1 Ammodrop</Original>

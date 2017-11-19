@@ -86,7 +86,7 @@ while {true} do
     #ifdef PROFILE_UPSMON
     call UPSMON_MAINLOOP_preCycle;
     #endif
-	_cycle = ((random 1) + 1);
+	_cycle = ((random 1) + 10);
 	{
 		#ifdef PROFILE_UPSMON
 		call UPSMON_MAINLOOP_preItem;

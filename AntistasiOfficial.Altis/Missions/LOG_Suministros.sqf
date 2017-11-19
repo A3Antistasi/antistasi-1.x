@@ -16,7 +16,7 @@ misiones pushBack _tsk; publicVariable "misiones";
 _pos = (getMarkerPos guer_respawn) findEmptyPosition [1,50,AS_misSupplyBox];
 
 _camion = AS_misSupplyBox createVehicle _pos;
-[_camion] spawn VEHinit;
+_camion call jn_fnc_logistics_addAction;
 {_x reveal _camion} forEach (allPlayers - hcArray);
 _camion setVariable ["destino",_nombredest,true];
 _camion addEventHandler ["GetIn",
@@ -43,7 +43,7 @@ else
 	_cuenta = 120;
 	_counter = 0;
 	_active = false;
-	[_posicion] remoteExec ["patrolCA",HCattack];
+	[_posicion] remoteExec ["patrolCA",HCattack];  //This make the base busy, a base shouldn't be busy because of this
 	{_amigo = _x;
 	if (captive _amigo) then
 		{
@@ -59,7 +59,7 @@ else
 	} forEach ([300,0,_camion,"BLUFORSpawn"] call distanceUnits);
 	while {(_counter < _cuenta) and (alive _camion) and (dateToNumber date < _fechalimnum)} do
 		{
-		while {(_counter < _cuenta) and (_camion distance _posicion < 40) && (speed _camion < 1) and (alive _camion) and !(isNull attachedTo _camion) and !({_x getVariable ["ASunconscious",false]} count ([40,0,_camion,"BLUFORSpawn"] call distanceUnits) == count ([40,0,_camion,"BLUFORSpawn"] call distanceUnits)) and ({(side _x == side_green) and (_x distance _camion < 50)} count allUnits == 0) and (dateToNumber date < _fechalimnum)} do
+		while {(_counter < _cuenta) and (_camion distance _posicion < 40) && (speed _camion < 1) and (alive _camion) and (isNull attachedTo _camion) and !({_x getVariable ["ASunconscious",false]} count ([40,0,_camion,"BLUFORSpawn"] call distanceUnits) == count ([40,0,_camion,"BLUFORSpawn"] call distanceUnits)) and ({(side _x == side_green) and (_x distance _camion < 50)} count allUnits == 0) and (dateToNumber date < _fechalimnum)} do
 			{
 			if !(_active) then {
 				{
@@ -108,11 +108,16 @@ else
 };
 {if (isPlayer _x) then {[_camion,false] remoteExec ["AS_fnc_lockVehicle",_x];}} forEach ([100,0,_camion,"BLUFORSpawn"] call distanceUnits);
 
+_ecpos = getpos _camion;
+deleteVehicle _camion;
+_empty = AS_misSupplyBoxEnd createVehicle _ecpos;
+
 //sleep (600 + random 1200);
 
 //[_tsk,true] call BIS_fnc_deleteTask;
-[1200,_tsk] spawn borrarTask;
-waitUntil {sleep 1; (not([distanciaSPWN,1,_camion,"BLUFORSpawn"] call distanceUnits)) or ((_camion distance (getMarkerPos guer_respawn) < 60) && (speed _camion < 1))};
+[600,_tsk] spawn borrarTask;
+waitUntil {sleep 1; (not([distanciaSPWN,1,_empty,"BLUFORSpawn"] call distanceUnits)) or ((_empty distance (getMarkerPos guer_respawn) < 60) && (speed _empty < 1))};
 [_camion,true] call vaciar;
-deleteVehicle _camion;
+
+deleteVehicle _empty;
 

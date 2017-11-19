@@ -75,6 +75,7 @@ vehLead = 			["B_MRAP_01_hmg_F","B_MRAP_01_gmg_F"]; // lead vehicle for convoys,
 standardMRAP = 		["B_MRAP_01_F"]; // default transport MRAP/car
 vehTruckBox = 		["B_Truck_01_box_F"]; // repair truck or at least a prop
 vehPatrolBoat = 	["I_Boat_Armed_01_minigun_F"];
+vehDef = 		["B_APC_Wheeled_01_cannon_F"];
 
 /*
 Not in use with AAF
@@ -102,14 +103,17 @@ indAirForce = 		["B_Heli_Transport_03_F","B_Heli_Transport_01_F"]; // starting/c
 // Config paths for pre-defined groups -- required if group names are used
 cfgInf = 				(configfile >> "CfgGroups" >> "West" >> "BLU_F" >> "Infantry");
 
+
 // Standard group arrays, used for spawning groups -- can use full config paths, config group names, arrays of individual soldiers
 infPatrol = 		["BUS_InfSentry","BUS_InfSentry","BUS_InfSentry","BUS_SniperTeam"];
 infGarrisonSmall = 	["BUS_InfSentry"];
 infTeamATAA =		["BUS_InfTeam_AA","BUS_InfTeam_AT"];
 infTeam = 			["BUS_InfTeam_AA","BUS_InfTeam_AT","BUS_InfTeam","BUS_InfTeam","BUS_InfTeam"];
 infSquad = 			["BUS_InfSquad","BUS_InfSquad_Weapons"];
-infAA =				["BUS_InfTeam_AA"];
+infAA =			["BUS_InfTeam_AA"];
 infAT =				["BUS_InfTeam_AT"];
+
+
 
 // Statics to be used
 statMG = 			"B_HMG_01_high_F";
