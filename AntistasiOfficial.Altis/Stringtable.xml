@@ -3381,7 +3381,7 @@ However, Antistasi really shines if you play with friends, so join Antistasi Off
 
 Игра в одиночку может быть затруднена, если вы не будете правильно разведывать и запоминать территорию. Попытайтесь набирать ИИ (1 или 2 могут выполнять работу, они недостаточно подготовлены, чтобы убивать врагов, однако они являются отличной группой диверсии или могут обеспечить прекрытие огнем, если они надежно расположены). ИИ попытается оживить вас, если вы сбиты, и враги не будут задействованы. &lt;br/&gt;&lt;br/&gt;
 
-Тем не менее, Antistasi действительно сияет, если вы играете с друзьями, поэтому присоединяйтесь к официальным серверам Antistasi и создавайте новые!</Russian>
+Тем не менее, Antistasi действительно раскрывает свой потенциал, если вы играете с друзьями, поэтому присоединяйтесь к официальным серверам Antistasi и создавайте новые!</Russian>
 		    </Key>
 			<Key ID="STR_BR_BT4JAS">
 		        <Original>Jeroen Arsenal System</Original>
@@ -3545,7 +3545,25 @@ Choosing your class is important just as balancing the roles among your group is
 In Singleplayer you can interact with the Arsenal Crate and Change Role anytime you want. Note that it won’t Persistent Save, so upon restart you will have to Change Role again.&lt;br/&gt;&lt;br/&gt;
 
 In Multiplayer you select your class upon login and you can change it by logging out and in again.</Original>
-				<Russian></Russian>
+				<Russian>Большинство игровых классов обладают особыми способностями и/или навыками оружия.&lt;br/&gt;
+Класс, который не обладает навыками для определенного типа оружия, все еще может использовать его, но с трудностями при использование, каждый может использовать ПТ оружие без малуса.&lt;br/&gt;  <!-- Редакт. -->
+
+Эффекты классов: &lt;br/&gt;
+- Офицер: Тихие шаги и сложнее заметить, меньше грузоподъемность. &lt;br/&gt;
+- Лидер Группы: стандартный &lt;br/&gt;
+- Солдат: Тихие шаги, меньшая грузоподъемность. &lt;br/&gt;
+- Медик: может использовать Аптечку, может Переливать кровь (ACE базовый), может использовать хирургический комплект (ACE продвинутый)&lt;br/&gt;
+- Инженер: может использовать инструментарий, с ACE можно отремонтировать (каждый может менять колеса, если у них есть инструментарий)&lt;br/&gt;  <!-- Редакт. -->
+- Стрелок: громкие шаги, большая грузоподъемность, обладает навыками для пулеметов &lt;br/&gt;
+- Снайпер: сложнее заметить, меньше грузоподъемность, обладает навыками для снайперских винтовок &lt;br/&gt;
+- Ammobearer: громкие шаги, более легко заметить, способен увеличить грузоподъемность &lt;br/&gt;
+- ПТ Стрелок: более легко заметить, большая грузоподъемность. &lt;br/&gt;&lt;br/&gt;  <!-- Редакт. -->
+
+Выбор вашего класса важен так же, как балансирование ролей среди вашей группы. &lt;br/&gt;&lt;br/&gt;
+
+В Одиночном режиме вы можете взаимодействовать с ящиком Арсенал и изменять роль в любое время. Обратите внимание, что это не будет сохранено в прогрессе, поэтому при перезагрузке вам придется снова изменить роль. &lt;br/&gt;&lt;br/&gt;
+
+В Мультиплеере вы выбираете свой класс при входе в систему, и вы можете изменить его, выйдя из системы и снова зайдя.</Russian>
 		    </Key>
 			<Key ID="STR_BR_AF2AIME">
 		        <Original>AI Management / Enhancements</Original>
@@ -3569,7 +3587,23 @@ The Y menu give options to tell selected friendly AI to:&lt;br/&gt;&lt;br/&gt;
 - Remote control: if not undercover and no enemies nearby, lets you control the AI to fix some pathfinding issues or simply manage their inventory. You will lose control after 60 seconds or if the AI takes damage. You can access the arsenal and equip them how you wish to.&lt;br/&gt;&lt;br/&gt;
 
 - Dismiss: send the unit back to HQ. Upon arrival their cost in money and HR is refunded.</Original>
-				<Russian></Russian>
+				<Russian>Командир и члены сервера могут набирать ИИ на флаге или добавлять гарнизон к завоеванным целям. Эти парни начинают с гражданской одежды, и их оружие соответствует случайному выбору между их классовым оружием, присутствующим в Арсенале, на этой стадии моддинга они не выберают оружие из него, и они не требуют пороговой суммы, как это было с оригинальной системой Арсенала. &lt;br/&gt;&lt;br/&gt; <!-- Редакт. -->
+
+Прогресс с уровнем опыта армии - это способ улучшить их как в боевых навыках, так и в одежде.&lt;br/&gt;&lt;br/&gt; <!-- Редакт. -->
+
+Командующий ИИ - это функция Стандартна, проверьте вики BIS, чтобы узнать больше об этом. Удерживать огонь, формировать линию или калонну и перегруппироваться очень важно, когда вы едете в грузовике под прикрытием с ИИ, едете как пассажиры, если не ведете огонь, они могут взорвать ваши подлые действия. &lt;br/&gt;&lt;br/&gt; <!-- Редакт. -->
+
+Без радиооборудования вы не сможете контролировать их, если вы пройдете 500 метров, в этом случае они временно исчезают из нижней панели и начинают двигаться к вашей позиции. &lt;br/&gt;&lt;br/&gt;
+
+Меню Y предоставляет опции для указания выбранного дружественного ИИ: &lt;br/&gt;&lt;br/&gt; <!-- Редакт. -->
+
+- Авто исцеление: установите это для каждого завербованного ИИ, чтобы они могли исцелять товарищей по команде и сами,автоматически. &lt;br/&gt;&lt;br/&gt;
+
+- Авто Перевооружение: отправьте ИИ, чтобы вытащить боеприпасы и оружие из вражеских тел или пополнить запас в соответствии с их классом.  &lt;br/&gt;&lt;br/&gt;
+
+- Пульт дистанционного управления: если не скрыто, и поблизости нет врагов, вы можете управлять ИИ, чтобы исправить некоторые проблемы с поиском пути или просто управлять их инвентарем. Вы потеряете контроль через 60 секунд или если ИИ нанесли урон. Вы можете получить доступ к арсеналу и экипировать их, как хотите. &lt;br/&gt;&lt;br/&gt;
+
+- Распустить: отправить Юнита обратно на базу. По прибытию возвращается их стоимость в деньгах и HR.</Russian>
 		    </Key>
 			<Key ID="STR_BR_AF3AXPNL">
 		        <Original>Army Xp and Level</Original>
@@ -3587,18 +3621,39 @@ Army Level:
 
 2) XP cap at 12, 50% Recruits wear guerrilla uniforms, Garage slots = 20 FIA and 10 Personal, can store also Helicopters, HR cap at 100, Camps 4, enhanced Roadblocks 6 , enhanced Watchposts 4, one-off NATO boost +20&lt;br/&gt;&lt;br/&gt;
 
-3) XP cap at 20h for both FIA and personal, all vehicles can be stored, HR cap at 150, Camps 5, enhanced Roadblocks 10, enhanced Watchposts 6, one-off NATO boost +30.&lt;br/&gt;&lt;br/&gt;
-"]];
+3) XP cap at 20h for both FIA and personal, all vehicles can be stored, HR cap at 150, Camps 5, enhanced Roadblocks 10, enhanced Watchposts 6, one-off NATO boost +30.</Original>
+				<Russian>Опыт армии влияет на умение FIA набирать войска, подкрепления и гарнизоны. Получите опыт, сражаясь, выполняя миссии и захватывая цели.&lt;br/&gt;
 
-player createDiaryRecord ["af",["Jeroen Arsenal Garage","
-Accessing the Garage opens a custom interface which lets you select the vehicle on the left side, and interact with the vehicle on the right.&lt;br/&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;br/&gt;
+
+Уровень Армии:
+0) Максимум опыта = 4, новобранцы носят гражданскую одежду, слоты для гаража = 10 FIA и 3 персональных, могут хранить только базовые транспортные средства и MRAP,Максимум HR=50, лагеря=2, обычные КПП=2, обычные сторожевые посты=2.&lt;br/&gt;&lt;br/&gt;
+
+1) Максимум опыта = 8, 25% новобранцев носят форму повстанцев, слоты для гаража = 15 FIA и 5 Персональных, могут хранить бронетранспортер,Максиум HR=75, лагерей=3, обычные КПП=4, обычные сторожевые посты=3, одноразовые повышения НАТО +10.&lt;br/&gt;&lt;br/&gt;
+
+2) Максимум опыта = 12, 50% новобранцев носят форму повстанцев, слоты для гаража = 20 FIA и 10 персональных, могут хранить также вертолеты, Максиум HR=100, лагеря=4, улучшенные КПП=6, улучшенные сторожевые посты=4, одноразовые повышения НАТО + 20&lt;br/&gt;&lt;br/&gt;
+
+3) Максимум опыта = 20 часов как для FIA, так и для личного использования, все транспортные средства могут быть сохранены, максиум HR=150, лагеря=5, улучшенные КПП=10, улучшенные сторожевые посты=6, одноразовые повышения НАТО +30. </Russian>
+		    </Key>
+			<Key ID="STR_BR_AF7JAG">
+		        <Original>Jeroen Arsenal Garage</Original>
+				<Russian>Jeroen Арсенал\Гараж</Russian>
+		    </Key>
+			<Key ID="STR_BR_AF_JAG">
+		        <Original>Accessing the Garage opens a custom interface which lets you select the vehicle on the left side, and interact with the vehicle on the right.&lt;br/&gt;&lt;br/&gt;
 
 Vehicles can be repaired piece by piece, glass included, through JAG and also reskinned. &lt;br/&gt;&lt;br/&gt;
 
 Stored vehicles are visible for everyone in the Garage. Green vehicles are yours, white ones are retrievable by everyone and red vehicles are locked. Only the owner of a vehicle can unlock a vehicle.&lt;br/&gt;&lt;br/&gt;
 
 Note: Static Weapons can be garaged like other vehicles and, found under their respective tab, can be attached to off-roads, trucks or other vehicles with a weapon hardpoint.</Original>
-				<Russian></Russian>
+				<Russian>Доступ к гаражу открывает пользовательский интерфейс, который позволяет выбрать автомобиль с левой стороны и взаимодействовать с автомобилем справа.&lt;br/&gt;&lt;br/&gt;
+
+Транспортные средства могут быть отремонтированы по частям, включая стекло, через JAG, а также Корпус. &lt;br/&gt;&lt;br/&gt;
+
+Сохраненные автомобили видны для всех в Гараже. Зеленые транспортные средства - ваши, белые - все, и красные транспортные средства заблокированы. Только владелец транспортного средства может разблокировать автомобиль.&lt;br/&gt;&lt;br/&gt;
+
+Примечание. Статическое оружие можно сохранять, как и другие транспортные средства, и, находясь под их соответствующей вкладкой, может быть прикреплено к внедорожникам, грузовикам или другим транспортным средствам с тяжелой точкой оружия.</Russian> <!-- Редакт. -->
 		    </Key>
 			<Key ID="STR_BR_AF4FT">
 		        <Original>Fast Travel</Original>
@@ -3619,16 +3674,41 @@ Warning:&lt;br/&gt;
 - Avoid Fast Travelling with air vehicles or boats, again, a high chance of exploding.
 - In multiplayer you won’t notice other players are Fast Travelling (if you’re all in a car, only the driver will have the black Fast Travelling screen).
 - Be sure you’re not doing it at same time AND to the same location when driving vehicles, as they -you guessed it- might explode.
-"]];
-player createDiaryRecord ["af",["Friendly and Enemy Support","
-Friendly Faction support is gained by helping civilians, capturing bases and eliminating enemy support units.&lt;br/&gt;
+</Original>
+				<Russian>Быстрое путешествие(Телепорт) позволяет пропустить поездки, которые могут считаться пустой тратой времени, это телепорт с переменным временем движения (черный экран), масштабируемым до места назначения. &lt;br/&gt; <!-- Редакт. -->
+Пешком вы телепортируетесь непосредственно в место расположения карты вместе с любым ИИ в своей группе.&lt;br/&gt;
+Если вы водитель транспортного средства, весь экипаж переместиться с вами. Транспортные средства окажутся на дороге, ближайшей к месту расположения на карте. &lt;br/&gt;&lt;br/&gt;
+
+условия:&lt;br/&gt;
+- Разрешенные пункты назначения - База или лагеря. &lt;br/&gt;
+- Никакие враги не должны находиться в пределах 350 м вокруг места отправления и назначения.&lt;br/&gt;&lt;br/&gt;
+
+Предупреждение: &lt;br/&gt;
+- Каждое быстрое путешествие в лагерь может быть перехвачено; враги отправят вертолет, и отряд пехоты будет быстро прибывать и атаковать лагерь. Путешествие в штаб-квартиру всегда безопасно.&lt;br/&gt;
+- Избегайте быстрого передвижения транспортных средств при буксировке других транспортных средств, последние имеют высокую вероятность взрыва или исчезновения.&lt;br/&gt;
+- Избегайте быстрого путешествия с помощью воздушных судн или лодок, опять же, с большой вероятностью взрыва.&lt;br/&gt;
+- В мультиплеере вы не заметите, что другие игроки - Телепортируються (если вы все в машине, только у водителя будет черный экран быстрого передвижения).&lt;br/&gt;
+- Убедитесь, что вы не делаете это в одно и то же время И в том же месте, когда ведете транспортные средства, поскольку они, как вы догадались, могут взорваться. </Russian>
+		    </Key>
+			<Key ID="STR_BR_AF8JNES">
+		        <Original>Friendly and Enemy Support</Original>
+				<Russian>Дружеская и вражеская поддержка</Russian>
+		    </Key>
+			<Key ID="STR_BR_AF_JNES">
+		        <Original>Friendly Faction support is gained by helping civilians, capturing bases and eliminating enemy support units.&lt;br/&gt;
 It is decreased when civilians are hurt (killed, or angry for loss of power) or prisoners are killed.&lt;br/&gt;
 The Commander can use Friendly Faction support for support actions (check relative section).&lt;br/&gt;&lt;br/&gt;
 
 Enemy support is accrued by conquering Bases, Airports and Hilltops.&lt;br/&gt;
 It can be reduced by asking friendly support faction to raid their military emplacements away from Altis.&lt;br/&gt;
 If Enemy support gets too high, the Enemy Faction starts bombarding towns. If they destroy 8 towns the campaign is lost.</Original>
-				<Russian></Russian>
+				<Russian>Поддержка дружественных фракций достигается за счет оказания помощи мирным жителям, захвата баз и ликвидации подразделений поддержки противника.&lt;br/&gt;
+Оно уменьшается, когда гражданские лица пострадали (убиты или злятся за потерю власти), или заключенные погибли.&lt;br/&gt;
+Командующий может использовать поддержку дружественных фракций для действий поддержки (проверьте относительный раздел).&lt;br/&gt;&lt;br/&gt;
+
+Поддержка противников начисляется путем завоевания баз, аэропортов и холмов.&lt;br/&gt;
+Его можно уменьшить, попросив дружественную поддержку, чтобы нанести урон их военным объектам от Altis.&lt;br/&gt;
+Если поддержка врага становится слишком высокой, вражеская фракция начинает бомбардировать города. Если они уничтожат 8 городов, кампания будет потеряна.</Russian>
 		    </Key>
 			<Key ID="STR_BR_AF5SM">
 		        <Original>Server Membership</Original>
@@ -3644,7 +3724,15 @@ if no members are online, the commander slot will be empty, so no economy per ti
 Member privileges:&lt;br/&gt;
 - Eligible to be Commander. &lt;br/&gt;
 - Recruit AI.&lt;br/&gt;</Original>
-				<Russian></Russian>
+				<Russian>В многопользовательском режиме Администратор сервера может давать членство игрокам с помощью меню Y когда смотрит прямо на игрока.&lt;br/&gt;&lt;br/&gt;
+
+Членство на сервере - лучший способ помешать случайным людям вмешиваться в кампанию Antistasi на открытом сервере, но позволяет людям по-прежнему наслаждаться Antistasi, некоторые опции заморожены;&lt;br/&gt;&lt;br/&gt; <!-- Редакт. -->
+
+Если ни один из участников не находится в режиме онлайн, слот командира будет пустым, так что начисления за отметку не будет, никакой контратаки врага и никакой случайной миссии не появятся.&lt;br/&gt;&lt;br/&gt;
+
+Права участников:&lt;br/&gt;
+- Право быть командиром. &lt;br/&gt;
+- Найм ИИ.&lt;br/&gt;</Russian>
 		    </Key>
 			<Key ID="STR_BR_AF6U">
 		        <Original>Undercover</Original>
@@ -3658,8 +3746,8 @@ Conditions to satisfy to become undercover:&lt;br/&gt;
 - no enemies present within a 350 m radius.&lt;br/&gt;
 - wearing civilian clothes and no military gear equipped. A hint screen on the top right will list what items are preventing you from going undercover.&lt;br/&gt;&lt;br/&gt;
 
-If you meet the above conditions you can get Undercover by:
-- enabling Undercover from Y menu.
+If you meet the above conditions you can get Undercover by:&lt;br/&gt;
+- enabling Undercover from Y menu.&lt;br/&gt;
 - getting into an unreported civilian vehicle. In this case, you can even have military gear equipped.&lt;br/&gt;&lt;br/&gt;
 
 You will always lose undercover when you are:&lt;br/&gt;
@@ -3679,7 +3767,34 @@ On foot, undercover is lost when:&lt;br/&gt;
 - equipping military gear or dropping your civilian clothes (you can’t be undercover when naked).&lt;br/&gt;&lt;br/&gt;
 
 Note: ‘being spotted’ doesn’t require line of sight, it’s a radius around enemy units.</Original>
-				<Russian></Russian>
+				<Russian>Когда "под прикрытием" включен, вы увидите слово «Incognito» зеленым на информационной панели, и враги будут игнорировать вас.&lt;br/&gt;&lt;br/&gt;
+
+Условия, необходимые для того, чтобы стать под прикрытием:&lt;br/&gt;
+- не светиться последние 30 минут. Если сообщается, использование в Лечить,Ченить и перевооружить на Базе,то это позволит снова стать Под прикрытием. Повторное вскрытие также повторяет его.&lt;br/&gt; <!-- Редакт. -->
+- нет врагов, находящихся в радиусе 350 м.&lt;br/&gt;
+- в гражданской одежде и без военной экипировки. Экран подсказки в верхнем правом списке отобразит, какие предметы не позволяют вам скрываться.&lt;br/&gt;&lt;br/&gt;
+
+Если вы соответствуете вышеуказанным условиям, вы можете стать под прикрытием:&lt;br/&gt;
+- включение режима Под прикрытием из Y.&lt;br/&gt;
+- попадание в незарегистрированный гражданский автомобиль. В этом случае вы даже можете оснастить военную экипировку.&lt;br/&gt;&lt;br/&gt;
+
+Вы всегда будете Проваливать под прикрытием, когда будете:&lt;br/&gt;
+- в пределах ~ 150 м от, Аванпоста, Базы или Аэропорта .&lt;br/&gt;
+- в пределах ~ 50 м от патруля с собакой.&lt;br/&gt;
+- заметили Вас или кого-то другого&lt;br/&gt;
+- Заметят взрывчатых вещества.&lt;br/&gt;
+- Заметят ремонтные машины.&lt;br/&gt;&lt;br/&gt; 
+
+В транспортном средстве под прикрытием утеряно, если вы:&lt;br/&gt;
+- Заметят вождение в ~ 25 м от дороги.&lt;br/&gt;
+- вражеского солдата за рулем.&lt;br/&gt;
+- если вы выгружаетесь без соответствия условиям оборудования.&lt;br/&gt;
+- если кто-то, кто не является под прикрытием, входит в ваш автомобиль с врагами вокруг.&lt;br/&gt;
+
+Пешком становитесь под прикрытием, когда:&lt;br/&gt;
+- оснащение военной техники или снятие вашей гражданской одежды (вы не можете быть тайным, когда голые).&lt;br/&gt;&lt;br/&gt;
+
+Примечание: «что-бы быть замеченным» не требует быть в прямой видимости, это радиус вокруг вражеских юнитов.</Russian>
 		    </Key>
 			<Key ID="STR_BR_CM0">
 		        <Original>Commander Options</Original>
@@ -3693,18 +3808,24 @@ Note: ‘being spotted’ doesn’t require line of sight, it’s a radius aroun
 		        <Original>HQ can be moved by the Commander who has to: &lt;br/&gt;
 - Interact with the physical Flag, choose 'HQ options' and click 'Move HQ', &lt;br/&gt;
 - Petros joins the Commander’s squad, and moves him to the new location, on foot or as a vehicle passenger. &lt;br/&gt;
-- Arsenal and Vehicle Crates have to be loaded on a truck, drive up to them and then interact with the crates to ‘Load Cargo in Vehicle’.
+- Arsenal and Vehicle Crates have to be loaded on a truck, drive up to them and then interact with the crates to ‘Load Cargo in Vehicle’. &lt;br/&gt;
 - Once on the desired place, talk to Petros and ‘Build HQ’. &lt;br/&gt;&lt;br/&gt;
 
 The game allows you to move your HQ to wherever, even inside an enemy base with enemies in the surrounding, it’s up to you to make the smart decision on where move it, see the website for hints on good HQ locations.</Original>
-				<Russian></Russian>
+				<Russian>База может перемещаться Командующим, который должен: &lt;br/&gt;
+- Взаимодействуйте с флагом, выберите «Возможности Штаба» и нажмите «Перенос Штаба», &lt;br/&gt;
+- Петрос присоединяется к команде командира и перемещает его в новое место, пешком или в качестве пассажира транспортного средства. &lt;br/&gt;
+- Арсенал и ящики для транспортных средств должны быть загружены на грузовик, подъехать к ним, а затем взаимодействовать с ящиками, чтобы «загрузить Ящик в автомобиль»..&lt;br/&gt;
+- Побывав в нужном месте, поговорите с Петросом и «Постройте Штаб». &lt;br/&gt;&lt;br/&gt;
+
+Игра позволяет вам перемещать свой штаб куда угодно, даже внутри вражеской базы с врагами в окружении, вам решать разумное решение о том, куда двигаться, см. Веб-сайт для подсказок о хороших местоположениях Баз.</Russian> <!-- Редакт. -->
 		    </Key>
 			<Key ID="STR_BR_CM2FFS">
 		        <Original>Friendly Faction Support</Original>
 				<Russian>Поддержка Друж. фракций</Russian>
 		    </Key>
 			<Key ID="STR_BR_CM_FFS">
-		        <Original>The Commander can call in various forms of support from the Friendly Faction by choosing one of the options through Y menu (Commander tab). Unit or vehicle types and strength of the intervention will depend on your current support value. Each type cost support points and are explained below.&lt;br/&gt;&lt;br/&gt;
+		        <Original>Командующий может вызвать различные формы поддержки из Дружественной фракции, выбрав один из вариантов через меню Y (вкладка Командира). Единицы или типы транспортных средств и сила вмешательства будут зависеть от вашего текущего значения поддержки. Каждый тип затрат очков поддержки объясняется ниже.&lt;br/&gt;&lt;br/&gt;
 
 Support must physically travel to their target and they can get engaged before they arrive, this is important to remember especially for air forces, considering that each named hilltop has a spec-ops AA emplacement which can easily destroy them.&lt;br/&gt;&lt;br/&gt;
 
@@ -3729,7 +3850,31 @@ You can’t board friendly support vehicles nor garage them.&lt;br/&gt;&lt;br/&g
 - Bomb Run: select entry and exit point, a plane will depart from Carrier or closest controlled Airport, No control from High Command, requires practice to be effective.&lt;br/&gt;&lt;br/&gt;
 
 - QRF (xx points): Quick Reaction Forces; Small transport helicopters depart from Carrier or closest controlled Airport deploying troops at designated location.</Original>
-				<Russian></Russian>
+				<!-- Редакт. от сюда --><Russian>Командующий может вызвать различные формы поддержки из Дружественной фракции, выбрав один из вариантов через меню Y (вкладка Командира). Единицы или типы транспортных средств и сила вмешательства будут зависеть от вашего текущего значения поддержки. Каждый тип затрат очков поддержки объясняется ниже.&lt;br/&gt;&lt;br/&gt;
+
+Поддержка должна физически перемещаться к своей цели, и они могут начать заниматься до того, как они прибудут, это важно помнить специально для военно-воздушных сил, учитывая, что каждый названный холм имеет специальную опцию ПВО, которая может легко их уничтожить.&lt;br/&gt;&lt;br/&gt; <!-- Редакт. -->
+
+Существует таймер 30 минут, после которого вы теряете контроль над ними, и они вернутся на базу. &lt;br/&gt;
+
+Вы не можете пользоваться дружественными транспортными средствами и гаражом.&lt;br/&gt;&lt;br/&gt;
+
+- Воздушноая Атака: отправьте смесь транспортных и штурмовых вертолетов, Нет контроля через меню Командира.&lt;br/&gt;&lt;br/&gt;
+
+- Бронированная Атака: выберите управляемую базу, выберите путевую точку, Без управления в команде «меню Командира».&lt;br/&gt;&lt;br/&gt;
+
+- Артиллерия: выберите управляемую базу, выберите устройство из панели Высшее Командира и нажмите Shift + Y.&lt;br/&gt;&lt;br/&gt;
+
+- КПП: выберите управляемую базу, выберите точку на дороге, Контролирейте через меню Командира, чтобы переместить их на место, чтобы создать эффективный КПП &lt;br/&gt;&lt;br/&gt;
+
+- БПЛА: отход от Перевозчика или ближайшего контролируемого аэропорта,Контролирейте через меню Командира, чтобы переместить его там, где вы желаете.&lt;br/&gt;&lt;br/&gt;
+
+-Поддержка: выберите приблизительное местоположение, в котором необходимо сбросить коробку поставки, «Контроль через меню Командира» и переместить его в указанное место, будет отмечен синим дымом.&lt;br/&gt;&lt;br/&gt;
+
+- CAS: Поддержка с воздуха; 3 воздушных Судна отправляются с авианосца или ближайшего контролируемого аэропорта, контролируйте их по команде «Командира», перемещая их туда, куда вы хотите.&lt;br/&gt;&lt;br/&gt;
+
+- Бомбардировка : выберите пункт Начала и Конца, самолет отправится с авианосца или ближайшего контролируемого аэропорта, без контроля от Командира, требует, чтобы практика была эффективной.&lt;br/&gt;&lt;br/&gt;
+
+- СБР (xx Очков): силы быстрого реагирования; Малые транспортные вертолеты отходят от авианосца или ближайшего контролируемого аэропорта, перевозящего войска в указанном месте.</Russian><!-- Редакт. до сюда -->
 		    </Key>
 			<Key ID="STR_BR_CM3R">
 		        <Original>Reinforcements</Original>
@@ -3744,7 +3889,14 @@ You can directly control the leader of each group by selecting the team in High 
 ** Mortar teams have some (un)deploy time when given a movement order. Once deployed you’ll notice a different icon on the map and only then are they ready to fire.&lt;br/&gt;
 Press Shift+Y after selecting the mortar team and click on the map to choose a location to order a mortar strike.&lt;br/&gt;
 Mortars have limited range and ammunition. They can be resupplied at HQ by the Heal, Repair and Rearm function.</Original>
-				<Russian></Russian>
+				<Russian>Командир может инвестировать HR в силы FIA, контролируемые через панель Командира. На этих солдат влияет уровень Опыта Армии. После того, как они завербованы, они продолжаются до тех пор, пока они не умрут, не увольняются или игра возобновляется (в этом случае они будут возвращены в зависимости от их состояния здоровья).&lt;br/&gt;&lt;br/&gt;
+
+Вы можете напрямую управлять лидером каждой группы, выбирая команду в режиме Командира и используя функцию Прямой контроль ИИ в меню Y.&lt;br/&gt;&lt;br/&gt;
+
+* Если загружен Мод RHS, этот грузовик недоступен, и ничего не появится.&lt;br/&gt;
+** Минометные команды имеют некоторое время на развертывания при задании движения. После развертывания вы увидите другой значок на карте, и только тогда они готовы к стрельбе.&lt;br/&gt; <!-- Редакт. -->
+Нажмите Shift + Y после выбора группы минометов и нажмите на карту, чтобы выбрать место для заказа минометного удара.&lt;br/&gt;
+Минометы имеют ограниченный диапазон и боеприпасы. Они могут быть загружены На базе функцией Лечить,Ченить И Перевооружить.</Russian>
 		    </Key>
 			<Key ID="STR_BR_CM4G">
 		        <Original>Garrison</Original>
@@ -3761,7 +3913,15 @@ Garrisoned mortar teams will engage anything over a long range, so be careful ab
 &lt;br/&gt;&lt;br/&gt;
 
 Note: Huge garrisons might lower game performance, please check relative section for more information.</Original>
-				<Russian></Russian>
+				<Russian>Командир может инвестировать HR в войска FIA, что гарнизон завоевал места или сам штаб. Эти солдаты подвергаются воздействию уровня опыта армии и не могут контролироваться напрямую. &lt;br/&gt;&lt;br/&gt; <!-- Редакт. -->
+
+В вашем штабе, взаимодействуйте с флагом, Управление Штабом, Найм Гарнизона. Выберите точку, которую вы хотите гарнизонировать, и добавьте единицы.&lt;br/&gt;&lt;br/&gt;
+
+Добавление пилотируемого статического оружия: соберите статическое оружие, наймите повстанца, и он будет управлять оружием. Информация гарнизон (просматриваемая на Карте что на Базе) отображает количество пилотируемых статических вооружений.&lt;br/&gt;&lt;br/&gt;
+ 
+Гарнизованные минометные команды будут участвовать в чем-либо на большом расстоянии, поэтому будьте осторожны, где вы их ставите, чтобы свести к минимуму дружественный огонь, жертвы среди гражданского населения и побочный ущерб. &lt;br/&gt;&lt;br/&gt; <!-- Редакт. -->
+
+Примечание. Огромные гарнизоны могут снизить производительность игры, пожалуйста, проверьте относительный раздел для получения дополнительной информации.</Russian>
 		    </Key>
 			<Key ID="STR_BR_CM5E">
 		        <Original>Emplacements</Original>
@@ -3780,7 +3940,18 @@ Note: Huge garrisons might lower game performance, please check relative section
 Lantern to illuminate the base a bit better than the Campfire.&lt;br/&gt;
 Spawn pad lets you set a default spawn location for vehicles.&lt;br/&gt;
 Camo net occludes Petros and the camp from enemy aircraft, but might collapse or cause mission vehicles to explode upon spawn if placed too close to campfire, so be really careful.</Original>
-				<Russian></Russian>
+				<Russian>В меню Y,командир может управлять:&lt;br/&gt;&lt;br/&gt;
+
+- КПП: размещенные на дорогах, будут защищать территорию с Пулемётом 0,50Калибра и РПГ: идеально подходят для остановки обычных патрулей противника и даже конвоев, когда они будут модернизированы до улучшенных КПП (уровень армии> 12).&lt;br/&gt;&lt;br/&gt;
+
+- Смотровые вышки: помещается в поле, 2 человека-сторожа будут наблюдать за участками, сообщающими о контактах через интерфейс Командира.&lt;br/&gt;&lt;br/&gt;
+
+- Лагеря: позволяют людям быстро путешествовать. Есть ящики с некоторым бесплатным оборудованием и способностью восстанавливать здоровье и топливо, но транспортные средства не могут быть отремонтированы здесь.&lt;br/&gt;&lt;br/&gt;
+
+- Укрепления Базы: рассмотрите эти косметические средства, поскольку База не должна быть укрепленной.&lt;br/&gt;
+Фонарь для подсветки базы немного лучше, чем у костра.&lt;br/&gt;
+Площядка для Спавна позволяет установить место появления по умолчанию для транспортных средств.&lt;br/&gt;
+Камо-сеть закрывает Петроса и лагерь от вражеских самолетов, но может рухнуть или заставить технику миссии взорваться на пороге, если его поставить слишком близко к походному костру, поэтому будьте очень осторожны.</Russian>
 		    </Key>
 			<Key ID="STR_BR_CM6M">
 		        <Original>Maintenance</Original>
@@ -3794,7 +3965,13 @@ Camo net occludes Petros and the camp from enemy aircraft, but might collapse or
 - Reset Static positions: static weapons around HQ can be moved like other assets for a limited time, if the timer expires, use this command to make them movable again.&lt;br/&gt;&lt;br/&gt;
 
 - Reset HQ: reset HQ location around Petros’ position. Note: if Petros was moved inside a building by ACE cable tie, collision bugs will occur.</Original>
-				<Russian></Russian>
+				<Russian>Некоторые неприятные ситуации могут быть исправлены командиром или администратором, доступ к ним из меню Y.&lt;br/&gt;&lt;br/&gt;
+
+- Сбросить позицию Петроса: исправить ошибку «слишком далеко от Базы» при попытке поместить активы вокруг Базы.&lt;br/&gt;&lt;br/&gt;
+
+- Сброс Статические позиции: статическое оружие вокруг Базы можно перемещать, как и другие активы, в течение ограниченного времени, если таймер истекает, используйте эту команду, чтобы сделать их подвижными снова.&lt;br/&gt;&lt;br/&gt; <!-- Редакт. -->
+
+- Сброс Базы: сброс местоположения Базы вокруг позиции Петроса. Примечание: если Петрос был перемещен внутри здания с помощью кабельной стяжки ACE, будут возникать ошибки столкновения.</Russian> <!-- Редакт. -->
 		    </Key>
 			<Key ID="STR_BR_8CNT">
 		        <Original>8 Credits and Thanks</Original>
