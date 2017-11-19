@@ -61,6 +61,8 @@ while {(spawner getVariable _marker) AND (_counter < _countCiv)} do {
 					_vehicle = _vehicleType createVehicle _spawnPos;
 					[_vehicle] spawn AS_fnc_protectVehicle;
 					_vehicle setDir _orientation;
+					_vehicle setfuelcargo 0.01;
+					_vehicle setfuel 0.05;
 					_allVehicles pushBack _vehicle;
 					[_vehicle] spawn civVEHinit;
 				};
