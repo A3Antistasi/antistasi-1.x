@@ -1682,8 +1682,8 @@ switch _mode do {
 		private _center = objnull;
 		if(_local)then{
 			_center = _type createVehiclelocal _pos;
-			//_center enablesimulation false;
-			//_center allowDamage false;
+			_center enablesimulation false; //Stef, testing to avoid explosions
+			_center allowDamage false;
 		}else{
 			_center = _type createVehicle _pos;
 		};
