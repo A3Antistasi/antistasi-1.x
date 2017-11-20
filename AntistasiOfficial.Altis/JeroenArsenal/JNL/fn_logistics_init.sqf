@@ -45,7 +45,7 @@ jnl_vehicleHardpoints = [
     ]],
 
     //RHS Ural closed with seats VV
-    ["\vsmafrf\addons\rhs_a2port_car\Ural\Ural.p3d";, [
+    ["\vsmafrf\addons\rhs_a2port_car\Ural\Ural.p3d", [
     	[1,		[0,-0.207184,-0.19277],	[]], //Cargo
     	[1,		[0,-1.78506,-0.19277],	[]]
     ]],
