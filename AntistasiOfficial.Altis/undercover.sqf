@@ -115,7 +115,7 @@ if (_reason != "") exitWith {
 	hint _reason;
 };
 
-["<t color='#1DA81D'>Incognito</t>",0,0,4,0,0,4] spawn bis_fnc_dynamicText;
+[localize "STR_TOP_INCOGNITO",0,0,4,0,0,4] spawn bis_fnc_dynamicText;
 player setCaptive true;
 _player = player getVariable ["owner",player];
 
@@ -236,7 +236,7 @@ while {_reason == ""} do {
 };
 
 if (captive _player) then {_player setCaptive false};
-["<t color='#D8480A'>Overt</t>",0,0,4,0,0,4] spawn bis_fnc_dynamicText;
+[localize "STR_TOP_OVERT2",0,0,4,0,0,4] spawn bis_fnc_dynamicText;
 
 if (_reason == localize "STR_HINTS_UND_CMP_GEAR") then {
 	_reason = [_reason] call _fnc_displayGear;

@@ -44,7 +44,7 @@ class Menu_TextField : RscStructuredText {
 
 class Menu_StartButton : RscButton {
   idc = -1;
-  text = "Start Mission";
+  text = $STR_UI_SM_SM;
   x = (UI_BASE_X + 0.19) * safezoneW + safezoneX;
   y = (UI_BASE_Y + 0.519) * safezoneH + safezoneY;
   w = 0.08 * safezoneW;
