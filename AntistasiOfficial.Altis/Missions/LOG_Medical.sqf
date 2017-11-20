@@ -63,7 +63,7 @@ _soldados = [];
 _grupos = [];
 
 _sboxempty = createVehicle [_tipoVeh, _poscrash, [], 0, "CAN_COLLIDE"];
-//[_sboxempty,"Mission Vehicle"] spawn inmuneConvoy;
+//[_sboxempty,"Supply Crate"] spawn inmuneConvoy;
 //reportedVehs pushBack _sboxempty; publicVariable "reportedVehs";
 //_sboxempty lockCargo true;
 //{_sboxempty lockCargo [_x, false];} forEach [0 ,1];
@@ -182,7 +182,7 @@ else {
 			if !(_active) then {
 				{if (isPlayer _x) then {[(_cuenta - _counter),false] remoteExec ["pBarMP",_x]}} forEach ([80,0,_sboxempty,"BLUFORSpawn"] call distanceUnits);
 				_active = true;
-				[[petros,"globalChat","Keep area clear while loading goods"],"commsMP"] call BIS_fnc_MP;
+				[[petros,"globalChat","Keep area clear while repacking"],"commsMP"] call BIS_fnc_MP;
 			};
 
 			_counter = _counter + 1;
@@ -199,7 +199,7 @@ else {
 			waitUntil {sleep 1; ((_sboxempty distance _posCrash < 40) and ([80,1,_sboxempty,"BLUFORSpawn"] call distanceUnits) and ({(side _x == side_green) and (_x distance _sboxempty < 50)} count allUnits == 0)) or (dateToNumber date > _fechalimnum)};
 		};
 		if ((alive _sboxempty) and !(_counter < _cuenta)) exitWith {
-			_formato = format ["Good to go. Deliver these supplies to %1 on the double.",_nombredest];
+			_formato = format ["Good to go. Deliver these supplies to %1.",_nombredest];
 			{if (isPlayer _x) then {[petros,"hint",_formato] remoteExec ["commsMP",_x]}} forEach ([80,0,_sboxempty,"BLUFORSpawn"] call distanceUnits);
 			deleteVehicle _crate1;
 			deleteVehicle _crate2;
@@ -213,6 +213,17 @@ else {
 			deleteVehicle _sboxempty;
 			s_box = AS_misSupplyBox createVehicle _pos1;
 			s_box call jn_fnc_logistics_addAction;
+			/*s_box addAction ["Delivery infos",
+				{
+					hint format ["Deliver this box to %1, unload it to start distributing to people",_nombredest];
+				},
+				nil,
+				0,
+				false,
+				true,
+				"",
+				"(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"
+			];*/  //Stef 20/11/2017 need help it says that _nombredest is wrong but it works at line 202...
 		};
 	};
 	_mrkTarget = createMarker [format ["REC%1", random 100], _posicion];
