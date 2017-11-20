@@ -1,8 +1,5 @@
 params ["_vehicle"];
 
-_vehicle setfuelcargo 0.01;
-_vehicle setfuel 0.05;
-
 _vehicle setSpeedMode "LIMITED";
 [_vehicle] spawn vehicleRemover;
 _vehicle addEventHandler ["Killed",{[_this select 0] spawn postmortem}];
