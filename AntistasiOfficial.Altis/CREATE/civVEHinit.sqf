@@ -1,6 +1,6 @@
 params ["_vehicle"];
 
-_vehicle setfuelcargo 0.1;
+_vehicle setfuelcargo 0.01;
 _vehicle setfuel 0.05;
 
 _vehicle setSpeedMode "LIMITED";
