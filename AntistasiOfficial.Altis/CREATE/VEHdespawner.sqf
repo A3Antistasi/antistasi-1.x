@@ -1,3 +1,4 @@
+scriptName "VEHdespawner";
 params ["_vehicle"];
 private ["_isListed","_vehiclePos","_city","_data","_unit"];
 
