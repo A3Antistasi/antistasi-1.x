@@ -103,7 +103,7 @@ if(count _roadCountry > 0) then
 //Choose the best position
 private _roadArrays = [_roadCityBig, _roadCountryBig, _roadCityMedium, _roadCountryMedium, _roadCitySmall, _roadCountrySmall]; //Cities and big roads go first
 private _i = 0;
-while {(count (_roadArrays select _i) == 0) && (_i < 6)} do
+while {((_roadArrays select _i) isEqualTo []) && (_i < 6)} do
 {
 	_i = _i + 1;
 };

@@ -26,7 +26,7 @@ for "_i" from 1 to 10 do {
 	};
 };
 
-if (count _allLocations == 0) exitWith {diag_log "CLC: no locations"};
+if (_allLocations isEqualTo []) exitWith {diag_log "CLC: no locations"};
 
 _locations = [];
 if (count _allLocations > _number) then {

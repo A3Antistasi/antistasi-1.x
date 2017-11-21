@@ -4,7 +4,7 @@ if(isNil "postmortem_array") then {
     [] spawn {
             scriptName "postmortem_cycle";
             while {true} do {
-                if (postmortem_array  isEqualTo []) then {
+                if (postmortem_array isEqualTo []) then {
                     sleep 60;
                 }else{
                     (postmortem_array deleteAt 0) params ["_what","_when"];

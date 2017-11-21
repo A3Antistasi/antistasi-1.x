@@ -8,9 +8,9 @@ Parameter(s):
 	<--- Group
 	<--- Does the group share enemy info
 	<--- Radius where Enemys is consider closed to the group
-	<--- Time 
+	<--- Time
 	<--- Last time group share infos
-	<--- 
+	<---
 Returns:
 	---> Enemies Array
 	---> Allies Array
@@ -22,34 +22,34 @@ Returns:
 	--->
 ****************************************************************/
 private ["_grp","_timeontarget","_npc","_target","_attackPos","_Enemies","_Units","_dist"];
-	
+
 _grp = _this select 0;
 _areamarker = _this select 1;
 
 _npc = leader _grp;
-	
+
 _target = objNull;
 _attackPos = [];
 _Enemies = [];
 
 //Resets distance to target
 _dist = 10000;
-	
-///       GET ENEMIES AND ALLIES UNITS NEAR THE LEADER 			////		
+
+///       GET ENEMIES AND ALLIES UNITS NEAR THE LEADER 			////
 _targets = _npc nearTargets 500;
-	
+
 _enemysides = [];
 If (_grp getvariable ["UPSMON_GrpHostility",0] > UPSMON_WEST_HM) then {_enemysides pushback WEST};
 If (_grp getvariable ["UPSMON_GrpHostility",0] > UPSMON_EAST_HM) then {_enemysides pushback EAST};
 If (_grp getvariable ["UPSMON_GrpHostility",0] > UPSMON_GUER_HM) then {_enemysides pushback Resistance};
-	
+
 {
 	_position = (_x select 0);
 	_cost = (_x select 3);
 	_unit = (_x select 4);
 	_side = (_x select 2);
 	_accuracy = (_x select 5);
-		
+
 	If (_side in _enemySides) then
 	{
 		If (alive _unit) then
@@ -68,11 +68,11 @@ If (_grp getvariable ["UPSMON_GrpHostility",0] > UPSMON_GUER_HM) then {_enemysid
 				};
 			};
 		};
-	};	
+	};
 } forEach _targets;
 
 
-///      ENEMIES FOUND, the first of the list is our enemy now :p 			////	
+///      ENEMIES FOUND, the first of the list is our enemy now :p 			////
 If (count _Enemies > 0) then
 {
 	//Get the most dangerous in the list of enies
@@ -88,7 +88,7 @@ If (count _Enemies > 0) then
 };
 
 //
-if (!isNull (_target)) then 
+if (!isNull (_target)) then
 {
 	If (alive _target) then
 	{
@@ -99,18 +99,18 @@ if (!isNull (_target)) then
 			_grp setvariable ["UPSMON_Grptarget",_target];
 		};
 	};
-};	
-		
-If (count _attackpos == 0) then
+};
+
+If (_attackpos isEqualTo []) then
 {
 	_attackpos = _grp getvariable ["UPSMON_Attackpos",[]];
 };
 
-If (count _attackpos > 0) then
+If !(_attackpos isEqualTo []) then
 {
 	_dist = ([getposATL _npc,_attackPos] call UPSMON_distancePosSqr);
 };
-		
+
 _result = [_target,_dist,_attackPos];
-		
+
 _result

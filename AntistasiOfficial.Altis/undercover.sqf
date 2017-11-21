@@ -173,7 +173,7 @@ while {_reason == ""} do {
 
 			// Offroad and spotted
 			if !(isOnRoad position _vehicle) then {
-				if (count (_vehicle nearRoads 50) == 0) then {
+				if ((_vehicle nearRoads 50) isEqualTo []) then {
 					if ({((side _x== side_red) or (side _x== side_green)) and ((_x knowsAbout player > 1.4) or (_x distance player < safeDistance_undercover))} count allUnits > 0) then {
 						_reason = localize "STR_HINTS_UND_CMP_ROAD";
 						breakTo "main";

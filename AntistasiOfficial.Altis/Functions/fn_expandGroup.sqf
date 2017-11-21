@@ -1,7 +1,7 @@
 params ["_group", "_position", ["_soldiers", []]];
 private ["_unit"];
 
-if (count _soldiers == 0) then {
+if (_soldiers isEqualTo []) then {
 	_unit = _group createUnit [sol_MK, _position, [],0, "NONE"];
 	_unit = _group createUnit [sol_MED, _position, [],0, "NONE"];
 	_unit = _group createUnit [sol_ENG, _position, [],0, "NONE"];

@@ -36,7 +36,7 @@ call {
 			};
 		};
 
-		if (count _options == 0) then {
+		if (_options isEqualTo []) then {
 			if (!_muted) then {
 				[petros,"globalChat",localize "STR_HINTS_MIS_DES_NO_CHAT"] remoteExec ["commsMP",[0,-2] select isDedicated];
 				[petros,"hint",localize "STR_HINTS_MIS_DES_NO_HINT"] remoteExec ["commsMP",[0,-2] select isDedicated];
@@ -83,7 +83,7 @@ call {
 			};
 		};
 
-		if (count _options == 0) then {
+		if (_options isEqualTo []) then {
 			if (!_muted) then {
 				[petros,"globalChat",localize "STR_HINTS_MIS_LOG_NO_CHAT"] remoteExec ["commsMP",[0,-2] select isDedicated];
 				[petros,"hint",localize "STR_HINTS_MIS_LOG_NO_HINT"] remoteExec ["commsMP",[0,-2] select isDedicated];
@@ -125,7 +125,7 @@ call {
 			};
 		};
 
-		if (count _options == 0) then {
+		if (_options isEqualTo []) then {
 			if (!_muted) then {
 				[petros,"globalChat",localize "STR_HINTS_MIS_RES_NO_CHAT"] remoteExec ["commsMP",[0,-2] select isDedicated];
 				[petros,"hint",localize "STR_HINTS_MIS_RES_NO_HINT"] remoteExec ["commsMP",[0,-2] select isDedicated];
@@ -154,7 +154,7 @@ call {
 			};
 		};
 
-		if (count _options == 0) then {
+		if (_options isEqualTo []) then {
 			if (!_muted) then {
 				[petros,"globalChat",localize "STR_HINTS_MIS_FND_NO_CHAT"] remoteExec ["commsMP",[0,-2] select isDedicated];
 				[petros,"hint",localize "STR_HINTS_MIS_FND_NO_HINT"] remoteExec ["commsMP",[0,-2] select isDedicated];
@@ -183,7 +183,7 @@ call {
 			};
 		};
 
-		if (count _options == 0) then {
+		if (_options isEqualTo []) then {
 			if (!_muted) then {
 				[petros,"globalChat",localize "STR_HINTS_MIS_FND_NO_CHAT"] remoteExec ["commsMP",[0,-2] select isDedicated];
 				[petros,"hint",localize "STR_HINTS_MIS_FND_NO_HINT"] remoteExec ["commsMP",[0,-2] select isDedicated];
@@ -212,7 +212,7 @@ call {
 			};
 		};
 
-		if (count _options == 0) then {
+		if (_options isEqualTo []) then {
 			if (!_muted) then {
 				[petros,"globalChat",localize "STR_HINTS_MIS_FNDE_NO_CHAT"] remoteExec ["commsMP",[0,-2] select isDedicated];
 				[petros,"hint",localize "STR_HINTS_MIS_FNDE_NO_HINT"] remoteExec ["commsMP",[0,-2] select isDedicated];
@@ -236,7 +236,7 @@ call {
 			};
 		};
 
-		if (count _options == 0) then {
+		if (_options isEqualTo []) then {
 			if (!_muted) then {
 				[petros,"globalChat",localize "STR_HINTS_MIS_CVY_NO_CHAT"] remoteExec ["commsMP",[0,-2] select isDedicated];
 				[petros,"hint",localize "STR_HINTS_MIS_CVY_NO_HINT"] remoteExec ["commsMP",[0,-2] select isDedicated];
@@ -260,7 +260,7 @@ call {
 			};
 		};
 
-		if (count _options == 0) then {
+		if (_options isEqualTo []) then {
 			if (!_muted) then {
 				[petros,"globalChat",localize "STR_HINTS_MIS_ASS_NO_CHAT"] remoteExec ["commsMP",[0,-2] select isDedicated];
 				[petros,"hint",localize "STR_HINTS_MIS_ASS_NO_HINT"] remoteExec ["commsMP",[0,-2] select isDedicated];
@@ -318,7 +318,7 @@ call {
 				};
 			};
 
-			if (count _options == 0) then {
+			if (_options isEqualTo []) then {
 				if (!_muted) then {
 					[petros,"globalChat",localize "STR_HINTS_MIS_PR_NO_CHAT"] remoteExec ["commsMP",[0,-2] select isDedicated];
 					[petros,"hint",localize "STR_HINTS_MIS_PR_NO_HINT"] remoteExec ["commsMP",[0,-2] select isDedicated];

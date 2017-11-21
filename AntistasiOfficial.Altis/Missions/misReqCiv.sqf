@@ -42,7 +42,7 @@ if (_tipo == "ASS") then {
 			if ((_pos distance _posbase < 4000) and (not(spawner getVariable _sitio))) then {_posibles = _posibles + [_sitio]};
 		};
 	};
-	if (count _posibles == 0) then {
+	if (_posibles isEqualTo []) then {
 		if (!_silencio) then {
 			["I have no assassination missions for you. Move our HQ closer to the enemy or finish some other assasination missions in order to have better intel.", "Assassination Missions require AAF cities, Observation Posts or bases closer than 4Km from your HQ."] call _fnc_info;
 		};
@@ -62,7 +62,7 @@ if (_tipo == "CON") then {
 			if ((_pos distance _posbase < 4000) and (_sitio in mrkAAF)) then {_posibles = _posibles + [_sitio]};
 		};
 	};
-	if (count _posibles == 0) then {
+	if (_posibles isEqualTo []) then {
 		if (!_silencio) then {
 			["I have no Conquest missions for you. Move our HQ closer to the enemy or finish some other conquest missions in order to have better intel.", "Conquest Missions require AAF power plants closer than 4Km from your HQ."] call _fnc_info;
 		};
@@ -87,7 +87,7 @@ if (_tipo == "CONVOY") then {
 			};
 		};
 	};
-	if (count _posibles == 0) then {
+	if ( _posibles isEqualTo []) then {
 		if (!_silencio) then {
 			["I have no Convoy missions for you. Move our HQ closer to the enemy or finish some other convoy missions in order to have better intel.", "Convoy Missions require AAF Airports, Bases or Cities closer than 4Km from your HQ, and they must have an idle friendly base in their surroundings."] call _fnc_info;
 		};

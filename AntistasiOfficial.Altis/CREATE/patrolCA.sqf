@@ -196,7 +196,7 @@ if !(_airport == "") then {
 			_spawnPosition = _originPosition findEmptyPosition [0,100,heli_transport];
 			sleep 1;
 		};
-		if (count _spawnPosition == 0) then {_spawnPosition = _originPosition};
+		if (_spawnPosition isEqualTo []) then {_spawnPosition = _originPosition};
 
 		_vehicleData = [_spawnPosition, [_spawnPosition, _markerPos] call BIS_fnc_dirTo,_vehicleType, side_green] call bis_fnc_spawnvehicle;
 		_vehicle = _vehicleData select 0;
@@ -275,7 +275,7 @@ if (_involveCSAT) then {
 			_spawnPosition = _originPosition findEmptyPosition [0,100,_vehicleType];
 			sleep 1;
 		};
-		if (count _spawnPosition == 0) then {_spawnPosition = _originPosition};
+		if (_spawnPosition isEqualTo []) then {_spawnPosition = _originPosition};
 
 		_vehicleData = [_originPosition, 0, _vehicleType, side_red] call bis_fnc_spawnvehicle;
 		_vehicle = _vehicleData select 0;
