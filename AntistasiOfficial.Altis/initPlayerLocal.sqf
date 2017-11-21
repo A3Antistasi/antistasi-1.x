@@ -127,12 +127,12 @@ if (_isJip) then {
 		if (serverCommandAvailable "#logout") then {
 			membersPool pushBack (getPlayerUID player);
 			publicVariable "membersPool";
-			hint localize "STR_HINTS_INIT_ADMIN_MEMBER"
+			hint localize "STR_HINTS_GEN_INIT_ADMIN_MEMBER"
 		} else {
-			hint format [localize "STR_HINTS_INIT_GUEST_WELCOME", name player];
+			hint format [localize "STR_HINTS_GEN_INIT_GUEST_WELCOME", name player];
 		};
 	} else {
-		hint format [localize "STR_HINTS_INIT_MEMBER_RETURN", name player];
+		hint format [localize "STR_HINTS_GEN_INIT_MEMBER_RETURN", name player];
 
 		if (serverName in servidoresOficiales) then {
 			if ((count playableUnits == maxPlayers) AND (({[_x] call isMember} count playableUnits) < count membersPool)) then {

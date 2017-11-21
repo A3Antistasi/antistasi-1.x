@@ -1,11 +1,11 @@
 if (!isServer and hasInterface) exitWith{};
 
-_tskTitle = localize "Str_tsk_PRBrain";
-_tskDesc = localize "Str_tskDesc_PRBrain";
-_tskDesc_fail = localize "Str_tskDesc_PRBrain_fail";
-_tskDesc_fail2 = localize "Str_tskDesc_PRBrain_fail2";
-_tskDesc_hold = localize "Str_tskDesc_PRBrain_hold";
-_tskDesc_success = localize "Str_tskDesc_PRBrain_success";
+_tskTitle = localize "STR_TSK_TD_PRBrain";
+_tskDesc = localize "STR_TSK_TD_DESC_PRBrain";
+_tskDesc_fail = localize "STR_TSK_TD_DESC_PRBrain_fail";
+_tskDesc_fail2 = localize "STR_TSK_TD_DESC_PRBrain_fail2";
+_tskDesc_hold = localize "STR_TSK_TD_DESC_PRBrain_hold";
+_tskDesc_success = localize "STR_TSK_TD_DESC_PRBrain_success";
 
 /*
 parameters

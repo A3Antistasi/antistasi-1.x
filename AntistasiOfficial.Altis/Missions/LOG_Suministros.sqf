@@ -1,7 +1,7 @@
 if (!isServer and hasInterface) exitWith {};
 
-_tskTitle = localize "Str_tsk_logSupply";
-_tskDesc = localize "Str_tskDesc_logSupply";
+_tskTitle = localize "STR_TSK_TD_logSupply";
+_tskDesc = localize "STR_TSK_TD_DESC_logSupply";
 
 _marcador = _this select 0;
 _posicion = getMarkerPos _marcador;

@@ -3,13 +3,13 @@ params ["_type"];
 
 private ["_position","_markerPos","_onRoad","_permission","_text","_groupType","_groupComp","_nearestZone"];
 
-if ("PuestosFIA" in misiones) exitWith {hint localize "STR_TSK_BEMP_RESTR"};
-if !([player] call hasRadio) exitWith {hint localize "STR_TSK_BEMP_RADIO"};
-if ((_type == "delete") AND (count puestosFIA < 1)) exitWith {hint localize "STR_TSK_BEMP_DEL_NR"};
+if ("PuestosFIA" in misiones) exitWith {hint localize "STR_TSK_TD_BEMP_RESTR"};
+if !([player] call hasRadio) exitWith {hint localize "STR_TSK_TD_BEMP_RADIO"};
+if ((_type == "delete") AND (count puestosFIA < 1)) exitWith {hint localize "STR_TSK_TD_BEMP_DEL_NR"};
 
 openMap true;
 posicionTel = [];
-hint localize (["STR_TSK_BEMP_BLD_INFO","STR_TSK_BEMP_DEL_INFO"] select (_type == "delete"));
+hint localize (["STR_TSK_TD_BEMP_BLD_INFO","STR_TSK_TD_BEMP_DEL_INFO"] select (_type == "delete"));
 
 onMapSingleClick "posicionTel = _pos;";
 
@@ -20,7 +20,7 @@ if (!visibleMap) exitWith {};
 
 _position = posicionTel;
 
-if ((_type == "delete") AND ({(alive _x) AND (!captive _x) AND ((side _x == side_green) OR (side _x == side_red)) AND (_x distance _position < safeDistance_fasttravel)} count allUnits > 0)) exitWith {hint localize "STR_TSK_BEMP_DEL_ENEMY"};
+if ((_type == "delete") AND ({(alive _x) AND (!captive _x) AND ((side _x == side_green) OR (side _x == side_red)) AND (_x distance _position < safeDistance_fasttravel)} count allUnits > 0)) exitWith {hint localize "STR_TSK_TD_BEMP_DEL_ENEMY"};
 
 _onRoad = isOnRoad _position;
 
@@ -59,13 +59,13 @@ if (_type != "delete") then {
 } else {
 	_nearestZone = [puestosFIA,_position] call BIS_fnc_nearestPosition;
 	_markerPos = getMarkerPos _nearestZone;
-	if (_position distance _markerPos > 10) exitWith {hint localize "STR_TSK_BEMP_DEL_NONE"};
+	if (_position distance _markerPos > 10) exitWith {hint localize "STR_TSK_TD_BEMP_DEL_NONE"};
 };
 
 _resourcesFIA = server getVariable ["resourcesFIA",0];
 _hrFIA = server getVariable ["hr",0];
 
-if (((_resourcesFIA < _cost) OR (_hrFIA < _hr)) AND (_type != "delete")) exitWith {hint format [localize "STR_TSK_BEMP_BLD_COST",_hr,_cost]};
+if (((_resourcesFIA < _cost) OR (_hrFIA < _hr)) AND (_type != "delete")) exitWith {hint format [localize "STR_TSK_TD_BEMP_BLD_COST",_hr,_cost]};
 
 if (_type != "delete") then {
 	[-_hr,-_cost] remoteExec ["resourcesFIA",2];

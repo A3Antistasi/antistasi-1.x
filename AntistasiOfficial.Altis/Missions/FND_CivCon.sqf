@@ -1,7 +1,7 @@
 if (!isServer and hasInterface) exitWith {};
 
-_tskTitle = localize "Str_tsk_fndCiv";
-_tskDesc = localize "Str_tskDesc_fndCiv";
+_tskTitle = localize "STR_TSK_TD_fndCiv";
+_tskDesc = localize "STR_TSK_TD_DESC_fndCiv";
 
 _site = _this select 0;
 _position = getMarkerPos _site;

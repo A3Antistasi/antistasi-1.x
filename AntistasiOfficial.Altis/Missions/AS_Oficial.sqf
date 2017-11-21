@@ -1,7 +1,7 @@
 if (!isServer and hasInterface) exitWith {};
 
-_tskTitle = localize "Str_tsk_ASOfficer";
-_tskDesc = localize "Str_tskDesc_ASOfficer";
+_tskTitle = localize "STR_TSK_TD_ASOfficer";
+_tskDesc = localize "STR_TSK_TD_DESC_ASOfficer";
 
 _marcador = _this select 0;
 _source = _this select 1;

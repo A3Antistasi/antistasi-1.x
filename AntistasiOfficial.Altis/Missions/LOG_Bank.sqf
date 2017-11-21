@@ -1,7 +1,7 @@
 if (!isServer and hasInterface) exitWith {};
 
-_tskTitle = localize "Str_tsk_logBank";
-_tskDesc = localize "Str_tskDesc_logBank";
+_tskTitle = localize "STR_TSK_TD_logBank";
+_tskDesc = localize "STR_TSK_TD_DESC_logBank";
 
 _banco = _this select 0;
 

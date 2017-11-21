@@ -1,7 +1,7 @@
 if (!isServer and hasInterface) exitWith {};
 
-_tskTitle = localize "Str_tsk_logAmmo";
-_tskDesc = localize "Str_tskDesc_logAmmo";
+_tskTitle = localize "STR_TSK_TD_logAmmo";
+_tskDesc = localize "STR_TSK_TD_DESC_logAmmo";
 
 private ["_pos","_camion","_camionCreado","_grupo","_grupo1","_mrk"];
 

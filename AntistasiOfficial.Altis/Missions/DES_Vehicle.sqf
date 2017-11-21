@@ -1,7 +1,7 @@
 if (!isServer and hasInterface) exitWith {};
 
-_tskTitle = localize "Str_tsk_DesVehicle";
-_tskDesc = localize "Str_tskDesc_DesVehicle";
+_tskTitle = localize "STR_TSK_TD_DesVehicle";
+_tskDesc = localize "STR_TSK_TD_DESC_DesVehicle";
 
 private ["_marcador","_posicion","_fechalim","_fechalimnum","_nombredest","_tipoVeh","_texto","_camionCreado","_size","_pos","_veh","_grupo","_unit"];
 

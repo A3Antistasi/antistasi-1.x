@@ -1,7 +1,7 @@
 if (!isServer and hasInterface) exitWith {};
 
-_tskTitle = localize "Str_tsk_ASSTraitor";
-_tskDesc = localize "Str_tskDesc_ASSTraitor";
+_tskTitle = localize "STR_TSK_TD_ASSTraitor";
+_tskDesc = localize "STR_TSK_TD_DESC_ASSTraitor";
 
 _initialMarker = _this select 0;
 _source = _this select 1;

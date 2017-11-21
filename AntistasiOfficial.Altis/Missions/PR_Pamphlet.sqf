@@ -4,11 +4,11 @@ params ["_marker"];
 [3,[],[],[],[],[]] params ["_countBuildings","_targetBuildings","_allGroups","_allSoldiers","_allVehicles","_leafletCrates"];
 private ["_targetPosition","_targetName","_duration","_endTime","_task","_spawnPosition","_missionVehicle","_crate","_range","_allBuildings","_usableBuildings","_index","_perimeterBuildings","_currentBuilding","_lastBuilding","_bPositions","_groupType","_params","_group","_dog","_leaflets","_drop"];
 
-_tskTitle = localize "STR_TSK_PRPAMPHLET";
-_tskDesc = localize "STR_TSKDESC_PRPAMPHLET";
-_tskDesc_fail = localize "STR_TSKDESC_PRPAMPHLET_FAIL";
-_tskDesc_drop = localize "STR_TSKDESC_PRPAMPHLET_DROP";
-_tskDesc_success = localize "STR_TSKDESC_PRPAMPHLET_SUCCESS";
+_tskTitle = localize "STR_TSK_TD_PRPAMPHLET";
+_tskDesc = localize "STR_TSK_TD_DESC_PRPAMPHLET";
+_tskDesc_fail = localize "STR_TSK_TD_DESC_PRPAMPHLET_FAIL";
+_tskDesc_drop = localize "STR_TSK_TD_DESC_PRPAMPHLET_DROP";
+_tskDesc_success = localize "STR_TSK_TD_DESC_PRPAMPHLET_SUCCESS";
 
 _targetPosition = getMarkerPos _marker;
 _targetName = [_marker] call AS_fnc_localizar;

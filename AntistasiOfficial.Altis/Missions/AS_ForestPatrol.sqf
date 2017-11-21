@@ -2,8 +2,8 @@ if (!isServer and hasInterface) exitWith {};
 
 private ["_Forest","_posHQ","_mrkOutpost","_distance"];
 
-_tskTitle = localize "Str_tsk_ASFOREST";
-_tskDesc = localize "Str_tskDesc_ASFOREST";
+_tskTitle = localize "STR_TSK_TD_ASFOREST";
+_tskDesc = localize "STR_TSK_TD_DESC_ASFOREST";
 
 _posHQ = getMarkerPos guer_respawn;
 

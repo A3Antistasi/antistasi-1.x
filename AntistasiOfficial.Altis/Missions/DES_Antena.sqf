@@ -1,7 +1,7 @@
 if (!isServer and hasInterface) exitWith{};
 
-_tskTitle = localize "Str_tsk_DesAntenna";
-_tskDesc = localize "Str_tskDesc_DesAntenna";
+_tskTitle = localize "STR_TSK_TD_DesAntenna";
+_tskDesc = localize "STR_TSK_TD_DESC_DesAntenna";
 
 private ["_antena","_posicion","_tiempolim","_marcador","_nombredest","_mrkfin","_tsk"];
 

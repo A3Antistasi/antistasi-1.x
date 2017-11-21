@@ -1,7 +1,7 @@
 if (!isServer and hasInterface) exitWith {};
 
-_tskTitle = localize "Str_tsk_fndMil";
-_tskDesc = localize "Str_tskDesc_fndMil";
+_tskTitle = localize "STR_TSK_TD_fndMil";
+_tskDesc = localize "STR_TSK_TD_DESC_fndMil";
 
 private ["_mrk"];
 

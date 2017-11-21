@@ -1,7 +1,7 @@
 if (!isServer and hasInterface) exitWith {};
 
-_tskTitle = localize "Str_tsk_CONPower";
-_tskDesc = localize "Str_tskDesc_CONPower";
+_tskTitle = localize "STR_TSK_TD_CONPower";
+_tskDesc = localize "STR_TSK_TD_DESC_CONPower";
 
 private ["_marcador"];
 

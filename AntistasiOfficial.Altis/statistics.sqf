@@ -22,17 +22,17 @@ if (isMultiplayer) then
 			{
 			if (isPlayer Slowhand) then {_nombreC = name Slowhand} else {_nombreC = "NONE"};
 			if (activeBE) then {
-				_texto = format ["<t size='0.55'>" + localize "STR_TOP_TEXT1", server getVariable "hr", player getVariable ["Rank_PBar", "Init"], _nombreC, player getVariable "dinero",server getVariable "PrestigeNATO", server getVariable "prestigeCSAT", server getVariable "BE_PBar", [localize "STR_TOP_OVERT",localize "STR_TOP_INCOGNITO"] select (captive player), A3_Str_BLUE, A3_Str_RED];
+				_texto = format ["<t size='0.55'>" + localize "STR_UI_TOP_TEXT1", server getVariable "hr", player getVariable ["Rank_PBar", "Init"], _nombreC, player getVariable "dinero",server getVariable "PrestigeNATO", server getVariable "prestigeCSAT", server getVariable "BE_PBar", [localize "STR_UI_TOP_OVERT",localize "STR_UI_TOP_INCOGNITO"] select (captive player), A3_Str_BLUE, A3_Str_RED];
 			} else {
-				_texto = format ["<t size='0.55'>" + localize "STR_TOP_TEXT2", server getVariable "hr", player getVariable ["Rank_PBar", "Init"], _nombreC, player getVariable "dinero",server getVariable "PrestigeNATO", server getVariable "prestigeCSAT", [localize "STR_TOP_OVERT",localize "STR_TOP_INCOGNITO"] select (captive player), A3_Str_BLUE, A3_Str_RED];
+				_texto = format ["<t size='0.55'>" + localize "STR_UI_TOP_TEXT2", server getVariable "hr", player getVariable ["Rank_PBar", "Init"], _nombreC, player getVariable "dinero",server getVariable "PrestigeNATO", server getVariable "prestigeCSAT", [localize "STR_UI_TOP_OVERT",localize "STR_UI_TOP_INCOGNITO"] select (captive player), A3_Str_BLUE, A3_Str_RED];
 			};
 		}
 		else
 			{
 				if (activeBE) then {
-					_texto = format ["<t size='0.55'>" + localize "STR_TOP_TEXT3", server getVariable "hr", server getVariable "resourcesFIA", server getVariable "PrestigeNATO", server getVariable "prestigeCSAT", player getVariable ["Rank_PBar", "Init"], player getVariable "dinero", server getVariable "BE_PBar", [localize "STR_TOP_OVERT",localize "STR_TOP_INCOGNITO"] select (captive player), A3_Str_BLUE, A3_Str_RED];
+					_texto = format ["<t size='0.55'>" + localize "STR_UI_TOP_TEXT3", server getVariable "hr", server getVariable "resourcesFIA", server getVariable "PrestigeNATO", server getVariable "prestigeCSAT", player getVariable ["Rank_PBar", "Init"], player getVariable "dinero", server getVariable "BE_PBar", [localize "STR_UI_TOP_OVERT",localize "STR_UI_TOP_INCOGNITO"] select (captive player), A3_Str_BLUE, A3_Str_RED];
 				} else {
-					_texto = format ["<t size='0.55'>" + localize "STR_TOP_TEXT4", server getVariable "hr", server getVariable "resourcesFIA", server getVariable "PrestigeNATO", server getVariable "prestigeCSAT", player getVariable ["Rank_PBar", "Init"], player getVariable "dinero", [localize "STR_TOP_OVERT",localize "STR_TOP_INCOGNITO"] select (captive player), A3_Str_BLUE, A3_Str_RED];
+					_texto = format ["<t size='0.55'>" + localize "STR_UI_TOP_TEXT4", server getVariable "hr", server getVariable "resourcesFIA", server getVariable "PrestigeNATO", server getVariable "prestigeCSAT", player getVariable ["Rank_PBar", "Init"], player getVariable "dinero", [localize "STR_UI_TOP_OVERT",localize "STR_UI_TOP_INCOGNITO"] select (captive player), A3_Str_BLUE, A3_Str_RED];
 				};
 			};
 		//if (captive player) then {_texto = format ["%1 ON",_texto]} else {_texto = format ["%1 OFF",_texto]};
@@ -56,9 +56,9 @@ else
 		{
 		waitUntil {sleep 0.5; player == player getVariable ["owner",player]};
 		if (activeBE) then {
-			_texto = format ["<t size='0.55'>" + localize "STR_TOP_TEXT5", server getVariable "hr", server getVariable "resourcesFIA", server getVariable "PrestigeNATO", server getVariable "prestigeCSAT", server getVariable "BE_PBar", [localize "STR_TOP_OVERT",localize "STR_TOP_INCOGNITO"] select (captive player), A3_Str_BLUE, A3_Str_RED];
+			_texto = format ["<t size='0.55'>" + localize "STR_UI_TOP_TEXT5", server getVariable "hr", server getVariable "resourcesFIA", server getVariable "PrestigeNATO", server getVariable "prestigeCSAT", server getVariable "BE_PBar", [localize "STR_UI_TOP_OVERT",localize "STR_UI_TOP_INCOGNITO"] select (captive player), A3_Str_BLUE, A3_Str_RED];
 		} else {
-			_texto = format ["<t size='0.55'>" + localize "STR_TOP_TEXT6", server getVariable "hr", server getVariable "resourcesFIA", server getVariable "PrestigeNATO", server getVariable "prestigeCSAT", [localize "STR_TOP_OVERT",localize "STR_TOP_INCOGNITO"] select (captive player), A3_Str_BLUE, A3_Str_RED];
+			_texto = format ["<t size='0.55'>" + localize "STR_UI_TOP_TEXT6", server getVariable "hr", server getVariable "resourcesFIA", server getVariable "PrestigeNATO", server getVariable "prestigeCSAT", [localize "STR_UI_TOP_OVERT",localize "STR_UI_TOP_INCOGNITO"] select (captive player), A3_Str_BLUE, A3_Str_RED];
 		};
 		//if (captive player) then {_texto = format ["%1 ON",_texto]} else {_texto = format ["%1 OFF",_texto]};
 		if (_texto != _viejoTexto) then
