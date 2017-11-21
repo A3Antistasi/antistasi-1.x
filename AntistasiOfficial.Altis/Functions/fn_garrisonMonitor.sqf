@@ -2,7 +2,7 @@ params ["_marker", ["_garrison", []]];
 private ["_sizeZone", "_sizeGarrison", "_markerPosition", "_break"];
 
 if !(_marker in mrkAAF) exitWith {diag_log format ["Garrison monitor: invalid marker: %1", _marker]};
-if (count _garrison == 0) exitWith {diag_log format ["Garrison monitor: invalid garrison: %1", _garrison]};
+if (_garrison isEqualTo []) exitWith {diag_log format ["Garrison monitor: invalid garrison: %1", _garrison]};
 if !(spawner getVariable _marker) exitWith {diag_log format ["Garrison monitor: zone is inactive: %1", _marker]};
 
 sleep 15; // allow units to spawn in properly

@@ -84,7 +84,7 @@ while {(spawner getVariable _marker) AND (_counter < _maxVehicles)} do {
 		_groupType = [bluTeam, side_blue] call AS_fnc_pickGroup;
 		_group = [_spawnPos,side_blue, _groupType] call BIS_Fnc_spawnGroup;
 		sleep 1;
-		if ((count _statics > 0) and (_counter == 0)) then {
+		if (!(_statics isEqualTo []) and (_counter == 0)) then {
 			//[leader _group, _marker, "SAFE","SPAWNED","FORTIFY","NOVEH","NOFOLLOW"] execVM "scripts\UPSMON.sqf";  Stef 14/09 removed fortify for smoother attack
 			[leader _group, _marker, "SAFE","SPAWNED","NOVEH","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 		} else {

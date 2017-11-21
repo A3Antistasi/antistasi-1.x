@@ -6,7 +6,7 @@ Description:
 	Filter the building position and check if there're no unit near the position.
 
 Parameter(s):
-	<--- Building positions 
+	<--- Building positions
 Returns:
 	Building position
 ****************************************************************/
@@ -24,7 +24,7 @@ _id = -1;
 		If (count _x > 0) then
 		{
 			_unitnear = _x nearEntities [["CAManBase","STATICWEAPON"],0.5];
-			If (count _unitnear == 0) exitwith 
+			If (_unitnear isEqualTo []) exitwith
 			{
 				_altura = [_x,_id]
 			};

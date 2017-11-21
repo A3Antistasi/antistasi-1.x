@@ -1,11 +1,11 @@
 private ["_cycle","_grp","_members","_grpmission","_grpstatus","_grpid","_Ucthis","_lastcurrpos","_lastpos","_lastattackpos","_areamarker","_npc","_driver","_buildingdist","_deadbodiesnear","_stuck","_makenewtarget","_targetpos","_attackpos","_dist","_target","_wptype","_traveldist","_targetdist","_speedmode","_behaviour","_combatmode","_currPos","_grpcomposition","_typeofgrp","_capacityofgrp","_assignedvehicle","_supstatus","_TargetSearch"];
 
+scriptname "UPSMON_MAINLOOPCiv";
+UPSMON_MAINLOOPCiv_cycle = 15;
 while {true} do
 {
-	_cycle = ((random 1) + 10);
 	{
-		If (!IsNull _x) then
-		{
+		If (!IsNull _x) then{
 			_grp = _x;
 
 			_members = (_grp getvariable "UPSMON_Origin") select 4;
@@ -22,8 +22,7 @@ while {true} do
 
 			_areamarker = _Ucthis select 1;
 
-			if (({alive _x && !(captive _x)} count units _grp) == 0 ||  _grp getvariable ["UPSMON_Removegroup",false]) exitwith
-			{
+			if (({alive _x && !(captive _x)} count units _grp) == 0 ||  _grp getvariable ["UPSMON_Removegroup",false]) exitwith{
 				[_grp,_UCthis] call UPSMON_RESPAWN;
 			};
 
@@ -56,8 +55,7 @@ while {true} do
 			// current position
 			_currPos = getposATL _npc;
 
-			If (count(waypoints _grp) != 0) then
-			{
+			If (count(waypoints _grp) != 0) then{
 				_wppos = waypointPosition [_grp,count(waypoints _grp)-1];
 				_targetpos = _wppos;
 				_wptype = waypointType [_grp,count(waypoints _grp)-1];
@@ -71,29 +69,28 @@ while {true} do
 
 			_supstatus = [_grp] call UPSMON_supstatestatus;
 			_nowp = [_grp,_target,_supstatus] call UPSMON_NOWP;
+            if (_grp getvariable ["UPSMON_GrpHostility",0] > 0) then
+            {
+                _TargetSearch 	= [_grp,_areamarker] call UPSMON_TargetAcquisitionCiv;
+                _target = _TargetSearch select 0;
+                _dist = _TargetSearch select 1;
+                _attackpos = _TargetSearch select 2;
 
-		If (_grp getvariable ["UPSMON_GrpHostility",0] > 0) then
-		{
-			_TargetSearch 	= [_grp,_areamarker] call UPSMON_TargetAcquisitionCiv;
-			_target = _TargetSearch select 0;
-			_dist = _TargetSearch select 1;
-			_attackpos = _TargetSearch select 2;
-
-			If (_grp getvariable ["UPSMON_Grpmission",""] != "HARASS") then
-			{
-				If (!Isnull _target) then
-				{
-					_grp setvariable ["UPSMON_Grpmission","HARASS"]
-				};
-			}
-			else
-			{
-				If (Isnull _target) then
-				{
-					[_grp] call UPSMON_BackToNormal;
-				};
-			};
-		};
+                If (_grp getvariable ["UPSMON_Grpmission",""] != "HARASS") then
+                {
+                    If (!Isnull _target) then
+                    {
+                        _grp setvariable ["UPSMON_Grpmission","HARASS"]
+                    };
+                }
+                else
+                {
+                    If (Isnull _target) then
+                    {
+                        [_grp] call UPSMON_BackToNormal;
+                    };
+                };
+            };
 
 		//If in safe mode if find dead bodies change behaviour
 		{
@@ -287,12 +284,10 @@ while {true} do
 		_grp setvariable ["UPSMON_Lastinfos",[_currpos,_targetpos]];
 		_grp setvariable ["UPSMON_Lastattackpos",_attackpos];
 		_grp setvariable ["UPSMON_LastGrpmission",_grp getvariable ["UPSMON_Grpmission",""]];
-
 		sleep 0.1;
-
 		};
 
 	} foreach UPSMON_Civs;
-	If (ObjNull in UPSMON_NPCs) then {UPSMON_NPCs = UPSMON_NPCs - [ObjNull]};
-	sleep _cycle;
+	if (ObjNull in UPSMON_NPCs) then {UPSMON_NPCs = UPSMON_NPCs - [ObjNull]};
+	sleep UPSMON_MAINLOOPCiv_cycle;
 };

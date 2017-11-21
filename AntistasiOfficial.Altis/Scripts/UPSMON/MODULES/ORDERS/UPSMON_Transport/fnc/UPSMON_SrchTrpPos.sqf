@@ -13,11 +13,11 @@ Returns:
 	Position
 ****************************************************************/
 	private ["_npc","_direction","_dir","_jumpers","_position","_targetPos","_incar","_inheli","_inboat","_isdiver","_dist","_currPos","_water","_mindist","_i"];
-	
+
 _npc = _this select 0;
 _position = _this select 1;
 _typeofgrp = _this select 2;
-	
+
 _currPos = _position;
 _direction =[_currPos,getposATL _npc] call BIS_fnc_DirTo;
 _dir = [_direction + 270, _direction + 90];
@@ -27,14 +27,14 @@ _dist = 1;
 _mindist = 10;
 _road = [0,100];
 _water = 0;
-	
+
 if (!("ship" in _typeofgrp) && !("air" in _typeofgrp)&& !("car" in _typeofgrp) && !("tank" in _typeofgrp)) then {_isMan = true;};
-	
+
 // find a new target that's not too close to the current position
 
 if (!_isMan) then
 {
-	If (("car" in _typeofgrp) || ("tank" in _typeofgrp) || ("air" in _typeofgrp && (group _npc) getvariable ["UPSMON_MOVELANDING",false])) then		
+	If (("car" in _typeofgrp) || ("tank" in _typeofgrp) || ("air" in _typeofgrp && (group _npc) getvariable ["UPSMON_MOVELANDING",false])) then
 	{
 		_dist = 10;
 		_mindist = 30;
@@ -56,14 +56,14 @@ if (!_isMan) then
 		};
 	};
 };
-	
+
 _i = 0;
 
-while {count _targetPos == 0 && _i < 40} do 
+while {_targetPos isEqualTo [] && _i < 40} do
 {
 	_i = _i + 1;
 	_targetPosTemp = [_position,[0,200],_dir,_water,_road,_dist] call UPSMON_pos;
-	If (count _targetPos == 0) then 
+	If (_targetPos isEqualTo []) then
 	{
 		If (("car" in _typeofgrp) || ("tank" in _typeofgrp) || ((group _npc) getvariable ["UPSMON_LANDDROP",false])) then
 		{
@@ -87,7 +87,7 @@ while {count _targetPos == 0 && _i < 40} do
 			If ("ship" in _typeofgrp && (surfaceIsWater _targetPosTemp)) then
 			{
 				_targetpos = _targetPosTemp;
-			} 
+			}
 			else
 			{
 				if (!(surfaceIsWater _targetPosTemp) || ("air" in _typeofgrp)) then
@@ -99,7 +99,7 @@ while {count _targetPos == 0 && _i < 40} do
 	};
 	sleep 0.02;
 };
-	
-If (count _targetPos == 0) then {_targetPos = _currPos;};
+
+If (_targetPos isEqualTo []) then {_targetPos = _currPos;};
 _targetPos;
 

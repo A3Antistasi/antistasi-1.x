@@ -9,16 +9,27 @@ Parameter(s):
 Returns:
 
 ****************************************************************/
+if (isNil "UPS_forCh_arr") then {
+    UPS_forCh_arr = [];
+    [] spawn {
+        scriptName "UPSMON_formationChanger";
+        while {true} do {
+            if (UPS_forCh_arr  isEqualTo []) then {
+                sleep 10;
+            }else{
+                (UPS_forCh_arr deleteAt 0) params ["_what","_when"];
+                _when = _when - diag_tickTime;
+                if ( _when > 1 ) then {sleep _when;};
+                if (!IsNull _what) then
+                {
+                    _what setvariable ["UPSMON_haschangedformation",false];
+                };
+            };
+        };
+    };
+};
 
-private ["_grp","_supstatus","_attackpos","_dist","_terrainscan","_haslos","_time"];
-
-_grp = _this select 0;
-_supstatus = _this select 1;
-_attackpos = _this select 2;
-_dist = _this select 3;
-_terrainscan = _this select 4;
-_haslos = _this select 5;
-_typeofgrp = _this select 6;
+params ["_grp","_supstatus","_attackpos","_dist","_terrainscan","_haslos","_typeofgrp"];
 
 If (!(_grp getvariable ["UPSMON_haschangedformation",false])) then
 {
@@ -157,15 +168,4 @@ If (!(_grp getvariable ["UPSMON_haschangedformation",false])) then
 	};
 };
 
-[_grp] spawn 
-{
-	private ["_grp"];
-	
-	_grp = _this select 0;
-	
-	sleep 20;
-	If (!IsNull _grp) then
-	{
-		_grp setvariable ["UPSMON_haschangedformation",false];
-	};
-};
+UPS_forCh_arr pushBack [_grp, diag_tickTime + 20];

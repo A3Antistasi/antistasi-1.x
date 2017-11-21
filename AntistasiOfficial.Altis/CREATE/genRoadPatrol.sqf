@@ -1,4 +1,5 @@
 #include "script_component.hpp"
+scriptName "genRoadPatrol";
 private ["_allVehicles","_allGroups","_allSoldiers","_base","_spawnData","_spawnPosition","_direction","_vehicleArray","_vehicleType","_arrayBases","_arrayTargets","_distance","_vehicleData","_vehicle","_groupVehicle","_beach","_group","_target","_targetPosition","_wp_v_1","_object","_knowledge"];
 
 _allVehicles = [];
@@ -20,22 +21,22 @@ while {true} do {
 		_arrayBases = bases - mrkFIA;
 	};
 
-	if (count _arraybases == 0) then {
+	if (_arraybases isEqualTo []) then {
 		_vehicleArray = _vehicleArray - [_vehicleType];
 	} else {
 		while {true} do {
 			_base = [_arraybases,getMarkerPos guer_respawn] call BIS_fnc_nearestPosition;
 			if !(spawner getVariable _base) exitWith {};
 			if (spawner getVariable _base) then {_arraybases = _arraybases - [_base]};
-			if (count _arraybases == 0) exitWith {};
+			if (_arraybases isEqualTo []) exitWith {};
 		};
-		if (count _arraybases == 0) then {_vehicleArray = _vehicleArray - [_vehicleType]};
+		if (_arraybases isEqualTo []) then {_vehicleArray = _vehicleArray - [_vehicleType]};
 	};
-	if (count _vehicleArray == 0) exitWith {};
+	if (_vehicleArray isEqualTo []) exitWith {};
 	if !(spawner getVariable _base) exitWith {};
 };
 
-if (count _vehicleArray == 0) exitWith {};
+if (_vehicleArray isEqualTo []) exitWith {};
 
 _spawnPosition = getMarkerPos _base;
 

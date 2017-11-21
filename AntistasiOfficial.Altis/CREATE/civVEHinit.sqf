@@ -17,7 +17,7 @@ if (_vehicle isKindOf "Car") then {
 	}];
 };
 
-if (count crew _vehicle == 0) then {
+if ((crew _vehicle)isEqualTo []) then {
 	sleep 10;
 	_vehicle enableSimulationGlobal false;
 	_vehicle addEventHandler ["GetIn",{

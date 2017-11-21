@@ -14,8 +14,8 @@ if (_dif > 0) then
 while {true} do
 	{
 	_roads = _destino nearRoads _tam;
-	if (count _roads == 0) then {_tam = _tam + 50};
-	if (count _roads > 0) exitWith {};
+	if (_roads isEqualTo []) then {_tam = _tam + 50};
+	if !(_roads isEqualTo []) exitWith {};
 	};
 
 _road = _roads select 0;

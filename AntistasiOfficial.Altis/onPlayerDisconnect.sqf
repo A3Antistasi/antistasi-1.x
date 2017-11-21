@@ -55,7 +55,7 @@ if (_player isEqualTo Slowhand) then{
 		};
 	} forEach allGroups;
 
-	if (((count playableUnits > 0) and (count membersPool == 0)) or ({(getPlayerUID _x) in membersPool} count playableUnits > 0)) then{
+	if ((!(playableUnits isEqualTo []) and (membersPool isEqualTo [])) or ({(getPlayerUID _x) in membersPool} count playableUnits > 0)) then{
 		[] spawn assignStavros;
 	};
 

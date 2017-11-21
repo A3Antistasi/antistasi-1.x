@@ -135,7 +135,7 @@ for "_i" from 0 to (count _artyArray) - 1 do
 		};
 	};
 
-if (count _artyArrayDef1 == 0) exitWith {hint "The position you marked is out of bounds for that Battery"};
+if (_artyArrayDef1 isEqualTo []) exitWith {hint "The position you marked is out of bounds for that Battery"};
 
 _mrkfin = createMarker [format ["Arty%1", random 100], _posicionTel];
 _mrkfin setMarkerShape "ICON";
