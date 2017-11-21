@@ -708,6 +708,12 @@
 		</Container>
 
 		<Container name="Admin">
+			<Key ID="STR_UI_ADMIN_TGLPN_TEXT">
+				<Original>Map names</Original>
+			</Key>
+			<Key ID="STR_UI_ADMIN_TGLPN_TT">
+				<Original>Toggle player names displayed on map</Original>
+			</Key>
 			<Key ID="STR_UI_ADMIN_ADDMEM_TEXT">
 				<Original>Add Server Member</Original>
 			</Key>
@@ -949,14 +955,14 @@
 				<Original>Supply Recovery</Original>
 			</Key>
 			<Key ID="STR_TSKDESC_LOGMEDICAL">
-				<Original>We've had word from our informant that a sympathetic cell has sent supplies to %1. They ran into an %5 patrol and had to abandon the truck. Find and secure the vehicle, then deliver the supplies to the people in %1 before %2:%3. %5 command has probably dispatched a patrol from %4 to retrieve the goods, so you better hurry. </Original>
+				<Original>We've had word from our informant that a sympathetic cell has sent supplies to %1. They ran into an %5 patrol and the crate felt down from their truck while fleeing. Find and secure the goods, then deliver them to the people in %1 before %2:%3. %5 command has probably dispatched reinforcements from %4 to retrieve the goods, so you better hurry.</Original>
 			</Key>
 
 			<Key ID="STR_TSK_LOGSUPPLY">
 				<Original>City Supplies</Original>
 			</Key>
 			<Key ID="STR_TSKDESC_LOGSUPPLY">
-				<Original>%1 population is in need of supplies. As it happens, we have just what they need and it may improve our relationship with them. I reserved a transport truck with supplies near our HQ. Drive the transport truck to %1 city center. Hold it there for 2 minutes before %2:%3.</Original>
+				<Original>%1 population is in need of supplies. Load this box on a car and unload it where the marker indicate you. Keep the area secure for 2 minutes to let the population grab what they need. Do it before %2:%3.</Original>
 			</Key>
 
 			<Key ID="STR_TSK_NATOSUPPLY">

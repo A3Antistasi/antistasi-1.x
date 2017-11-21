@@ -9,3 +9,9 @@ _zc = [_sum1] call ws_fnc_filterZeroCrossing;
 
 //Get the ws_grid from the server:
 ws_grid = [missionNamespace, "ws_grid", Nil] call BIS_fnc_getServerVariable;
+
+//search for roadblocks
+private _no = nearestTerrainObjects [getPos player, ["BUILDING", "HOUSE", "FENCE", "WALL", "FUELSTATION"], 1000, false, true];
+
+readme.txt /JeroenArsenal/JNL/readme.txt
+Call jn_fnc_logistics_addAction on a cargo type to add the load action

@@ -15,24 +15,29 @@ _tsk = ["LOG",[side_blue,civilian],[format [_tskDesc,_nombredest,numberToDate [2
 misiones pushBack _tsk; publicVariable "misiones";
 _pos = (getMarkerPos guer_respawn) findEmptyPosition [1,50,AS_misSupplyBox];
 
-_camion = AS_misSupplyBox createVehicle _pos;
-[_camion] spawn VEHinit;
-{_x reveal _camion} forEach (allPlayers - hcArray);
-_camion setVariable ["destino",_nombredest,true];
-_camion addEventHandler ["GetIn",
+_sbox = AS_misSupplyBox createVehicle _pos;
+_sbox call jn_fnc_logistics_addAction;
+{_x reveal _sbox} forEach (allPlayers - hcArray); //HELP! the reveal must be applied to units around _sbox
+_sbox setVariable ["destino",_nombredest,true];
+_sbox addAction ["Delivery infos",
 	{
-	if (_this select 1 == "driver") then
-		{
-		_texto = format ["Bring this truck to %1 and deliver it's supplies to the population",(_this select 0) getVariable "destino"];
-		_texto remoteExecCall ["hint",_this select 2];
-		};
-	}];
+		_text = format ["Deliver this box to %1, unload it to start distributing to people",(_this select 0) getVariable "destino"];
+		_text remoteExecCall ["hint",_this select 2];
+	},
+	nil,
+	0,
+	false,
+	true,
+	"",
+	"(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"
+];
 
-[_camion,"Mission Vehicle"] spawn inmuneConvoy;
 
-waitUntil {sleep 1; (not alive _camion) or (dateToNumber date > _fechalimnum) or (_camion distance _posicion < 40)};
+[_sbox,"Supply Crate"] spawn inmuneConvoy;
 
-if ((not alive _camion) or (dateToNumber date > _fechalimnum)) then
+waitUntil {sleep 1; (not alive _sbox) or (dateToNumber date > _fechalimnum) or (_sbox distance _posicion < 40)};
+
+if ((not alive _sbox) or (dateToNumber date > _fechalimnum)) then
 	{
 	_tsk = ["LOG",[side_blue,civilian],[format [_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_marcador],_posicion,"FAILED",5,true,true,"Heal"] call BIS_fnc_setTask;
 	[5,-5,_posicion] remoteExec ["AS_fnc_changeCitySupport",2];
@@ -43,7 +48,7 @@ else
 	_cuenta = 120;
 	_counter = 0;
 	_active = false;
-	[_posicion] remoteExec ["patrolCA",HCattack];
+	[_posicion] remoteExec ["patrolCA",HCattack];  //This make the base busy, a base shouldn't be busy because of this
 	{_amigo = _x;
 	if (captive _amigo) then
 		{
@@ -54,20 +59,20 @@ else
 		{
 		if (_x distance _posicion < 300) then {_x doMove _posicion} else {_x reveal [_amigo,4]};
 		};
-	if ((side _x == civilian) and (_x distance _posicion < 300)) then {_x doMove position _camion};
+	if ((side _x == civilian) and (_x distance _posicion < 300)) then {_x doMove position _sbox};
 	} forEach allUnits;
-	} forEach ([300,0,_camion,"BLUFORSpawn"] call distanceUnits);
-	while {(_counter < _cuenta) and (alive _camion) and (dateToNumber date < _fechalimnum)} do
+	} forEach ([300,0,_sbox,"BLUFORSpawn"] call distanceUnits);
+	while {(_counter < _cuenta) and (alive _sbox) and (dateToNumber date < _fechalimnum)} do
 		{
-		while {(_counter < _cuenta) and (_camion distance _posicion < 40) && (speed _camion < 1) and (alive _camion) and !(isNull attachedTo _camion) and !({_x getVariable ["ASunconscious",false]} count ([40,0,_camion,"BLUFORSpawn"] call distanceUnits) == count ([40,0,_camion,"BLUFORSpawn"] call distanceUnits)) and ({(side _x == side_green) and (_x distance _camion < 50)} count allUnits == 0) and (dateToNumber date < _fechalimnum)} do
+		while {(_counter < _cuenta) and (_sbox distance _posicion < 40) && (speed _sbox < 1) and (alive _sbox) and (isNull attachedTo _sbox) and !({_x getVariable ["ASunconscious",false]} count ([40,0,_sbox,"BLUFORSpawn"] call distanceUnits) == count ([40,0,_sbox,"BLUFORSpawn"] call distanceUnits)) and ({(side _x == side_green) and (_x distance _sbox < 50)} count allUnits == 0) and (dateToNumber date < _fechalimnum)} do
 			{
 			if !(_active) then {
 				{
-					_x action ["eject", _camion];
-				} forEach (crew (_camion));
-				_camion lock 2;
-				_camion engineOn false;
-				{if (isPlayer _x) then {[(_cuenta - _counter),false] remoteExec ["pBarMP",_x]; [_camion,true] remoteExec ["AS_fnc_lockVehicle",_x];}} forEach ([80,0,_camion,"BLUFORSpawn"] call distanceUnits);
+					_x action ["eject", _sbox];
+				} forEach (crew (_sbox));
+				_sbox lock 2;
+				_sbox engineOn false;
+				{if (isPlayer _x) then {[(_cuenta - _counter),false] remoteExec ["pBarMP",_x]; [_sbox,true] remoteExec ["AS_fnc_lockVehicle",_x];}} forEach ([80,0,_sbox,"BLUFORSpawn"] call distanceUnits);
 				_active = true;
 				[[petros,"globalChat","Guard the truck!"],"commsMP"] call BIS_fnc_MP;
 			};
@@ -80,14 +85,14 @@ else
 			_counter = 0;
 			_active = false;
 
-			{if (isPlayer _x) then {[0,true] remoteExec ["pBarMP",_x]}} forEach ([100,0,_camion,"BLUFORSpawn"] call distanceUnits);
+			{if (isPlayer _x) then {[0,true] remoteExec ["pBarMP",_x]}} forEach ([100,0,_sbox,"BLUFORSpawn"] call distanceUnits);
 
-			if (((_camion distance _posicion > 40) or (not([40,1,_camion,"BLUFORSpawn"] call distanceUnits)) or ({(side _x == side_green) and (_x distance _camion < 50)} count allUnits != 0)) and (alive _camion)) then {[[petros,"hint","Don't get the truck far from the city center, and stay close to it, and clean all AAF presence in the surroundings or count will restart"],"commsMP"] call BIS_fnc_MP};
-			waitUntil {sleep 1; (!alive _camion) or ((_camion distance _posicion < 40) and ([40,1,_camion,"BLUFORSpawn"] call distanceUnits) and ({(side _x == side_green) and (_x distance _camion < 50)} count allUnits == 0)) or (dateToNumber date > _fechalimnum)};
+			if (((_sbox distance _posicion > 40) or (not([40,1,_sbox,"BLUFORSpawn"] call distanceUnits)) or ({(side _x == side_green) and (_x distance _sbox < 50)} count allUnits != 0)) and (alive _sbox)) then {[[petros,"hint","Don't get the truck far from the city center, and stay close to it, and clean all AAF presence in the surroundings or count will restart"],"commsMP"] call BIS_fnc_MP};
+			waitUntil {sleep 1; (!alive _sbox) or ((_sbox distance _posicion < 40) and ([40,1,_sbox,"BLUFORSpawn"] call distanceUnits) and ({(side _x == side_green) and (_x distance _sbox < 50)} count allUnits == 0)) or (dateToNumber date > _fechalimnum)};
 			};
-		if ((alive _camion) and !(_counter < _cuenta)) exitWith {};
+		if ((alive _sbox) and !(_counter < _cuenta)) exitWith {};
 	};
-	if ((alive _camion) and (dateToNumber date < _fechalimnum)) then {
+	if ((alive _sbox) and (dateToNumber date < _fechalimnum)) then {
 		[[petros,"hint","Supplies Delivered"],"commsMP"] call BIS_fnc_MP;
 		_tsk = ["LOG",[side_blue,civilian],[format [_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_marcador],_posicion,"SUCCEEDED",5,true,true,"Heal"] call BIS_fnc_setTask;
 		[0,15,_marcador] remoteExec ["AS_fnc_changeCitySupport",2];
@@ -106,13 +111,18 @@ else
 		[-10,Slowhand] call playerScoreAdd;
 	};
 };
-{if (isPlayer _x) then {[_camion,false] remoteExec ["AS_fnc_lockVehicle",_x];}} forEach ([100,0,_camion,"BLUFORSpawn"] call distanceUnits);
+{if (isPlayer _x) then {[_sbox,false] remoteExec ["AS_fnc_lockVehicle",_x];}} forEach ([100,0,_sbox,"BLUFORSpawn"] call distanceUnits);
+
+_ecpos = getpos _sbox;
+deleteVehicle _sbox;
+_empty = AS_misSupplyBoxEnd createVehicle _ecpos;
 
 //sleep (600 + random 1200);
 
 //[_tsk,true] call BIS_fnc_deleteTask;
-[1200,_tsk] spawn borrarTask;
-waitUntil {sleep 1; (not([distanciaSPWN,1,_camion,"BLUFORSpawn"] call distanceUnits)) or ((_camion distance (getMarkerPos guer_respawn) < 60) && (speed _camion < 1))};
-[_camion,true] call vaciar;
-deleteVehicle _camion;
+[600,_tsk] spawn borrarTask;
+waitUntil {sleep 1; (not([distanciaSPWN,1,_empty,"BLUFORSpawn"] call distanceUnits)) or ((_empty distance (getMarkerPos guer_respawn) < 60) && (speed _empty < 1))};
+[_sbox,true] call vaciar;
+
+deleteVehicle _empty;
 

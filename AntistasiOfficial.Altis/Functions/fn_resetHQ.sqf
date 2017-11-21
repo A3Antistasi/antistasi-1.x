@@ -1,14 +1,17 @@
+//#define DEBUG_SYNCHRONOUS
+//#define DEBUG_MODE_FULL
+#include "script_component.hpp"
 if !(isServer) exitWith {};
-
+LOG("START AS_fnc_resetHQ");
 params [["_position",static_defPosHQ,[[]]]];
 [petros] params ["_oldUnit"];
-
+TRACE_1("Call params",_position);
 if (typeName _position != "ARRAY") then {
 	_position = static_defPosHQ;
 };
 
 if (_position isEqualTo [0,0,0]) then {
-	diag_log "Error in resetHQ: target position was defined as [0,0,0]";
+	LOG("Error in resetHQ: target position was defined as [0,0,0]");
 	_position = static_defPosHQ;
 };
 
@@ -29,3 +32,5 @@ deleteVehicle _oldUnit;
 publicVariable "petros";
 
 AS_flag_resetDone = true;
+publicVariable "AS_flag_resetDone";
+LOG("END AS_fnc_resetHQ");

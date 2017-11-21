@@ -1,11 +1,14 @@
+#define DEBUG_SYNCHRONOUS
+#define DEBUG_MODE_FULL
+#include "script_component.hpp"
+
 params ["_unit","_isJIP"];
 private ["_colorWest", "_colorEast","_introShot","_title","_nearestMarker"];
 
 waitUntil {!isNull player};
-waitUntil {player == player};
 
+[] execVM "briefing.sqf";
 if (isMultiplayer) then {
-	[] execVM "briefing.sqf";
 	if (!isServer) then {
 		call compile preprocessFileLineNumbers "initVar.sqf";
 		if (!hasInterface) then {
@@ -63,8 +66,12 @@ if (isMultiplayer) then {
 };
 
 disableUserInput false;
-player addWeaponGlobal "itemmap";
-player addWeaponGlobal "itemgps";
+//Give default civilian gear
+player setUnitLoadout (getUnitLoadout (configFile >> "CfgVehicles" >> "C_man_polo_1_F"));
+player forceAddUniform (selectRandom civUniforms);
+player addWeapon "ItemRadio";
+player addWeapon "ItemGPS";
+player addWeapon "Binocular";
 
 // In order: controller, TK counter, funds, spawn-trigger, rank, score, known by hostile AI
 player setVariable ["owner",player,true];
@@ -115,8 +122,6 @@ if (_isJip) then {
 	waitUntil {scriptdone _introshot};
 	[] execVM "modBlacklist.sqf";
 	player setUnitRank "PRIVATE";
-	waitUntil {!isNil "posHQ"};
-	player setPos (server getVariable ["posHQ", getMarkerPos guer_respawn]);
 	[true] execVM "reinitY.sqf";
 	if !([player] call isMember) then {
 		if (serverCommandAvailable "#logout") then {
@@ -154,7 +159,7 @@ if (_isJip) then {
 				if (_nearestMarker in mrkAAF) then {
 					_x addAction [localize "STR_ACT_TAKEFLAG", {[[_this select 0, _this select 1],"mrkWIN"] call BIS_fnc_MP;},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"];
 				} else {
-					_x addAction [localize "STR_ACT_RECRUITUNIT", {nul=[] execVM "Dialogs\unit_recruit.sqf";;},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"];
+					_x addAction [localize "STR_ACT_RECRUITUNIT", {nul=[] execVM "Dialogs\unit_recruit.sqf";},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"];
 					_x addAction [localize "STR_ACT_BUYVEHICLE", {createDialog "vehicle_option";},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"];
 					_x addAction [localize "STR_ACT_PERSGARAGE", {[true] spawn garage},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"];
 				};
@@ -182,11 +187,7 @@ if (_isJip) then {
 
 	if ((player == Slowhand) AND (isNil "placementDone") AND (isMultiplayer)) then {
 		[] execVM "UI\startMenu.sqf";
-	} else {
-		[player]remoteExec ["AS_fnc_loadPlayer",2];
-		//[true] execVM "Dialogs\firstLoad.sqf";
 	};
-
 	diag_log "Antistasi MP Client. JIP client finished";
 } else {
 	if (isNil "placementDone") then {
@@ -212,8 +213,18 @@ if (_isJip) then {
 
 waitUntil {scriptDone _title};
 
-statistics = [] execVM "statistics.sqf";
+//Waiting for all game data loaded
+waitUntil {sleep 1; !isNil "placementDone";};
+INFO("Game is ready to initialize player");
+//Teleport to the camp
+player setPos (fuego getPos [8,random 360]);
+player setdir (player getdir petros);
+INFO("Player is moved to the camp");
+//Called from unscheduled environment to load data at once
+[player] remoteExecCall ["AS_fnc_loadPlayer",2];
+INFO("Player info loaded");
 
+statistics = [] execVM "statistics.sqf";
 
 // Add respawn in SP if ACE is active
 if !(isMultiplayer) then {

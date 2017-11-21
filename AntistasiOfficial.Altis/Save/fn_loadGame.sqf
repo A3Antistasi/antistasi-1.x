@@ -10,14 +10,6 @@ petros allowdamage false;
 flag_playerList = true;
 publicVariable "flag_playerList";
 
-
-//player
-{
-	[_x] call AS_fnc_loadPlayer;
-} forEach (allPlayers - entities "HeadlessClient_F");
-
-
-
 //game
 ["enableMemAcc"] call fn_loadData;
 ["enableOldFT"] call fn_loadData;
@@ -195,16 +187,6 @@ publicVariable "mrkFIA";
 ["vehicles"] call fn_loadData; publicVariable "staticsToSave";
 
 sleep 2;
-if (isMultiplayer) then {
-	{
-		_player = _x;
-		_player setPos (fuego getPos [8,random 360]);
-		_player setdir (_player getdir petros);
-	} forEach playableUnits;
-} else {
-	player setPos (fuego getPos [8,random 360]);
-	player setdir (player getdir petros);
-};
 
 if !(activeJNA) then {
 	[] call AS_fnc_updateArsenal;

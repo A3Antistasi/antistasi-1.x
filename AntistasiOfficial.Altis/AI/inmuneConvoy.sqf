@@ -1,9 +1,11 @@
+//#define DEBUG_SYNCHRONOUS
+//#define DEBUG_MODE_FULL
+#include "script_component.hpp"
 if (!isServer and hasInterface) exitWith{};
-
+params ["_veh", "_text"];
+TRACE_2("START inmuneConvoy", _veh, _text);
 private ["_veh","_text","_mrkfin","_pos","_side","_tipo","_newPos","_road","_amigos"];
 
-_veh = _this select 0;
-_text = _this select 1;
 _enemigo = true;
 _convoy = false;
 

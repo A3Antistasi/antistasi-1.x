@@ -1,14 +1,17 @@
 # Antistasi: An Arma III Guerilla simulator
 
+It's a persistent mission designed for semi-randomized asymmetric warfare.
 This is the developing version, many progress have been done since 1.7 however we aren't ready for a release.
 
 
 
-Author is Barbolani
+The Author is Barbolani
 
 After 1.2 Chris coded many changes under the supervision of Richard and Kendo with the contribution of Toshi and Tucks for porting and templates.
 
-After 1.7.6 Sparker and Jeroen continued because the 1.7 bugs weren't possible to be fixed unless changing a lot of the code. Stef is contributing with balancing and bugfixes considering his incompetence with the code.
+After 1.7.6 Sparker and Jeroen continued because the 1.7 bugs weren't possible to be fixed unless changing a lot of the code. 
+
+Currently: Stef is supervising the project, looking for coders and github help to continue.
 
 
 
@@ -16,27 +19,20 @@ Official website: http://www.a3antistasi.com/
 
 Official guide: https://docs.google.com/document/d/1_XamnTWgVgy0jDinYSDhAWG_vKDa49ngl6fGi5XdPLQ/edit
 
-# Get mission ready to play
+---
 
-Download here https://github.com/A3Antistasi/antistasiofficial/archive/master.zip
+# Get release mission ready to play
 
-Unzip the folder and open it
+!! [CBA](http://steamcommunity.com/sharedfiles/filedetails/?id=450814997) Mod is required . You can remove that dependency in the SQM if you want. This is [how to remove it](https://github.com/A3Antistasi/antistasiofficial/issues/5)
 
-Now you've several options:
+* [Visit release page](https://github.com/A3Antistasi/antistasiofficial/releases)
+* Download the .pbo
+* For singleplayer: drop it in \steamapps\common\Arma 3\Missions
+* For multiplayer: Arma 3\MPMissions
 
-a) drag your AntistasiOfficial.Altis folder where you save/load editor mission and play it form EDEN Editor
+---
 
-b1) download PBOManager from http://www.armaholic.com/page.php?id=16369
-
-b2) install it
-
-b3) right click on Antistasi.Altis folder then PBO manager then Pack into .pbo 
-
-b4) place it into \Arma3\Missions or \MPmission depending on your intentions.
-
-*To play it on dedicated server you've to make the .pbo and upload it to \Arma3\MPmissions
-
-# Change faction or island (portings are not fully supported)
+# Change faction or island (portings are not supported)
 
 \Change faction or island\ rename the mission you want to "mission.sqm" copy and paste into AntistasiOfficial.Altis
 

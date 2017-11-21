@@ -40,8 +40,8 @@ if !(count (server getVariable ["obj_vehiclePad",[]]) > 0) then {
 
 _missionVehicle = "C_Van_01_transport_F" createVehicle _spawnPosition;
 
-_missionVehicle lockCargo true;
-{_missionVehicle lockCargo [_x, false];} forEach [0 ,1];
+_lockedseats = [2,3,4,5,6,7,8,9,10,11];
+{_missionVehicle lockcargo [_x, true]} foreach _lockedseats;
 
 _crate = "Land_WoodenCrate_01_F" createVehicle [0,0,0];
 _crate attachTo [_missionVehicle,[0,-2.5,-0.25]];
