@@ -10,8 +10,7 @@ Returns:
 
 ****************************************************************/
 private ["_grpid","_leader","_pos","_rankshort","_lastname","_wppos","_markercolor","_grptype","_drawicon","_text","_trackername","_destname"];
-
-
+scriptName "UPSMON_TRACK";
 While {true} do
 {
 	{

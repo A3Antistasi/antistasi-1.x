@@ -80,13 +80,14 @@ UPSMON_MAINLOOP_postCycle = {};
 UPSMON_MAINLOOP_preItem = {};
 UPSMON_MAINLOOP_postItem = {};
 #endif
+scriptname "UPSMON_MAINLOOP";
+UPSMON_MAINLOOP_cycle = 10;
 
 while {true} do
 {
     #ifdef PROFILE_UPSMON
     call UPSMON_MAINLOOP_preCycle;
     #endif
-	_cycle = ((random 1) + 10);
 	{
 		#ifdef PROFILE_UPSMON
 		call UPSMON_MAINLOOP_preItem;
@@ -1056,5 +1057,5 @@ while {true} do
 	#ifdef PROFILE_UPSMON
 	call UPSMON_MAINLOOP_postCycle;
 	#endif
-	sleep _cycle;
+	sleep UPSMON_MAINLOOP_cycle;
 };

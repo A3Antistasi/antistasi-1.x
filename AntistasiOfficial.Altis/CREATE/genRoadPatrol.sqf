@@ -1,4 +1,5 @@
 #include "script_component.hpp"
+scriptName "genRoadPatrol";
 private ["_allVehicles","_allGroups","_allSoldiers","_base","_spawnData","_spawnPosition","_direction","_vehicleArray","_vehicleType","_arrayBases","_arrayTargets","_distance","_vehicleData","_vehicle","_groupVehicle","_beach","_group","_target","_targetPosition","_wp_v_1","_object","_knowledge"];
 
 _allVehicles = [];
