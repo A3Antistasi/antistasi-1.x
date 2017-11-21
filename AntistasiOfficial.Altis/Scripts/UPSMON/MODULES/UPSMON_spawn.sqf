@@ -83,7 +83,7 @@ if (UPSMON_Debug>0) then {diag_log format["Spawning %3 copies of template %1 on 
 			_unittype = _x select 0;
 			_roletype = _x select 2;
 			_targetpos = _orgpos findEmptyPosition [5,50];
-			if (count _targetpos == 0) then {_targetpos = _orgpos};
+			if (_targetpos isEqualTo []) then {_targetpos = _orgpos};
 			_newunit = _grp createUnit [_unittype, _targetpos, [], 0, "FORM"];
 			_equipment = _x select 1;
 			[_newunit,_equipment] call UPSMON_addequipment;
@@ -98,7 +98,7 @@ if (UPSMON_Debug>0) then {diag_log format["Spawning %3 copies of template %1 on 
 				call compile format ["%1",_index];
 			};
 
-			If (count _roletype > 0) then
+			If !(_roletype isEqualTo []) then
 			{
 				_crews pushback [_newunit,_roletype];
 			};
@@ -118,7 +118,7 @@ if (UPSMON_Debug>0) then {diag_log format["Spawning %3 copies of template %1 on 
 				_vehicle = _x;
 				_targetpos = _orgpos findEmptyPosition [10, 200];
 				sleep .4;
-				if (count _targetpos <= 0) then {_targetpos = _orgpos};
+				if (_targetpos isEqualTo []) then {_targetpos = _orgpos};
 				//if (UPSMON_Debug>0) then {player globalchat format["%1 create vehicle _newpos %2 ",_x,_targetpos]};
 				_newunit = (_x select 0) createvehicle (_targetpos);
 				_newunit setdir (_x select 1);

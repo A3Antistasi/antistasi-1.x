@@ -104,7 +104,7 @@ If (!_removeunit) then
 			if (_side == Civilian) then {_rnd=1+round(random 20); if (_rnd>1) then {_unittype=format["Civilian%1",_rnd]}};
 			_roletype = _x select 2;
 			_targetpos = _orgpos findEmptyPosition [5,50];
-			if (count _targetpos == 0) then {_targetpos = _orgpos};
+			if (_targetpos isEqualTo []) then {_targetpos = _orgpos};
 			_newunit = _group createUnit [_unittype, _targetpos, [], 0, "FORM"];
 			_equipment = _x select 1;
 			[_newunit,_equipment] call UPSMON_addequipment;
@@ -148,7 +148,7 @@ If (!_removeunit) then
 		{
 			_vehicle = _x;
 			_targetpos = _orgpos findEmptyPosition [10, 200];
-			if (count _targetpos == 0) then {_targetpos = _orgpos};
+			if (_targetpos isEqualTo []) then {_targetpos = _orgpos};
 			//if (UPSMON_Debug>0) then {player globalchat format["%1 create vehicle _newpos %2 ",_x,_targetpos]};
 			_newunit = (_vehicle select 0) createvehicle (_targetpos);
 			_newunit setdir (_vehicle select 1);

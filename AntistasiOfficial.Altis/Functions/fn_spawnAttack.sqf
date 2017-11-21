@@ -16,7 +16,7 @@ if ((random 100 > (server getVariable "prestigeCSAT")) or ({_x in bases} count m
 	_includeCSAT = false;
 };
 
-if (count _possibleTargets == 0) exitWith {	diag_log format ["fn_spawnAttack.sqf:  no possible targets found."];};
+if (_possibleTargets isEqualTo []) exitWith {diag_log format ["fn_spawnAttack.sqf:  no possible targets found."];};
 
 _scoreLand = APCAAFcurrent + (5*tanksAAFcurrent);
 _scoreAir = helisAAFcurrent + (5*planesAAFcurrent);
@@ -156,7 +156,7 @@ if ((count _objectives > 0) and (_difficulty < 3)) then {
 };
 
 if !("CONVOY" in misiones) then {
-	if (count _objectives == 0) then {
+	if (_objectives isEqualTo []) then {
 		{
 			_base = [_x] call AS_fnc_findBaseForConvoy;
 			if !(_base == "") then {
@@ -169,7 +169,7 @@ if !("CONVOY" in misiones) then {
 			};
 		} forEach (ciudades - mrkAAF);
 
-		if (count _objectives > 0) then {
+		if !(_objectives isEqualTo []) then {
 			_objective = selectRandom _objectives;
 			[(_objective select 0),(_objective select 1),"civ"] remoteExec ["CONVOY",HCattack];
 		};

@@ -10,13 +10,10 @@ Parameter(s):
 Returns:
 	nothing
 ****************************************************************/
+params ["_grp","_dist"];
+private ["_supstatus","_unit","_inbuilding","_NearestEnemy","_cansee","_poseni","_distance","_unitdirchk","_watch","_abx","_aby","_abz","_vec","_result","_bld","_bldpos","_pos"];
 
-private ["_grp","_dist","_supstatus","_unit","_inbuilding","_NearestEnemy","_cansee","_poseni","_distance","_unitdirchk","_watch","_abx","_aby","_abz","_vec","_result","_bld","_bldpos","_pos"];
-	
-_grp = _this select 0;
-_dist = _this select 1;
-	
-_grp setvariable ["UPSMON_Checkbuild",true]; 
+_grp setvariable ["UPSMON_Checkbuild",true];
 {
 	_unit = _x;
 	if (alive _unit && !captive _unit) then
@@ -28,10 +25,10 @@ _grp setvariable ["UPSMON_Checkbuild",true];
 			{
 				_NearestEnemy = _unit findNearestEnemy _unit;
 				_supstatus = _unit getvariable ["UPSMON_SUPSTATUS",""];
-				if (_supstatus != "SUPRESSED") then 
+				if (_supstatus != "SUPRESSED") then
 				{
 					_cansee = true;
-					if (stance _unit in ["CROUCH","PRONE"]) then {_unit setunitpos "MIDDLE";_cansee = [_unit,getdir _unit,10] call UPSMON_CanSee;}; 
+					if (stance _unit in ["CROUCH","PRONE"]) then {_unit setunitpos "MIDDLE";_cansee = [_unit,getdir _unit,10] call UPSMON_CanSee;};
 					if (!_cansee) then {_unit setunitpos "UP";};
 				};
 				if (!IsNull _NearestEnemy && alive _NearestEnemy) then
@@ -68,8 +65,8 @@ _grp setvariable ["UPSMON_Checkbuild",true];
 
 										// Main body of the function;
 										_unit setdir 0;
-										_unit setVectorDir _vec;		
-		
+										_unit setVectorDir _vec;
+
 										sleep 0.1;
 										_unit dowatch ObjNull;
 										_unit dowatch _watch;
@@ -79,7 +76,7 @@ _grp setvariable ["UPSMON_Checkbuild",true];
 									{
 										If (!_cansee) then {[_unit,getdir _unit,false] spawn UPSMON_WillSee;};
 									};
-								};								
+								};
 							}
 							else
 							{
@@ -87,12 +84,12 @@ _grp setvariable ["UPSMON_Checkbuild",true];
 								If (count _result > 0 && random 100 < 30) then
 								{
 									_bld = _result select 0;
-									_allpos = [_bld,"RANDOMA"] call UPSMON_SortOutBldpos; 
+									_allpos = [_bld,"RANDOMA"] call UPSMON_SortOutBldpos;
 									_allpos = _allpos select 0;
 									_bldpos = [];
 									{
 										_pos = _x;
-										If (count (_pos nearEntities ["CAManBase",1]) == 0) then 
+										If ((_pos nearEntities ["CAManBase",1]) isEqualTo []) then
 										{
 											If ([_pos,_poseni] call UPSMON_los) then
 											{
@@ -100,7 +97,7 @@ _grp setvariable ["UPSMON_Checkbuild",true];
 											};
 										};
 									} foreach _allpos;
-										
+
 									if (count _bldpos > 0) then
 									{
 										_bldpos = _bldpos select 0;
@@ -120,4 +117,4 @@ _grp setvariable ["UPSMON_Checkbuild",true];
 	sleep 0.01;
 }foreach units _grp;
 sleep 15;
-_grp setvariable ["UPSMON_Checkbuild",false]; 
+_grp setvariable ["UPSMON_Checkbuild",false];

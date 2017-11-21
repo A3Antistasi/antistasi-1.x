@@ -21,22 +21,22 @@ while {true} do {
 		_arrayBases = bases - mrkFIA;
 	};
 
-	if (count _arraybases == 0) then {
+	if (_arraybases isEqualTo []) then {
 		_vehicleArray = _vehicleArray - [_vehicleType];
 	} else {
 		while {true} do {
 			_base = [_arraybases,getMarkerPos guer_respawn] call BIS_fnc_nearestPosition;
 			if !(spawner getVariable _base) exitWith {};
 			if (spawner getVariable _base) then {_arraybases = _arraybases - [_base]};
-			if (count _arraybases == 0) exitWith {};
+			if (_arraybases isEqualTo []) exitWith {};
 		};
-		if (count _arraybases == 0) then {_vehicleArray = _vehicleArray - [_vehicleType]};
+		if (_arraybases isEqualTo []) then {_vehicleArray = _vehicleArray - [_vehicleType]};
 	};
-	if (count _vehicleArray == 0) exitWith {};
+	if (_vehicleArray isEqualTo []) exitWith {};
 	if !(spawner getVariable _base) exitWith {};
 };
 
-if (count _vehicleArray == 0) exitWith {};
+if (_vehicleArray isEqualTo []) exitWith {};
 
 _spawnPosition = getMarkerPos _base;
 

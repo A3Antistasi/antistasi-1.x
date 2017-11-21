@@ -19,15 +19,14 @@ _fechalimnum = dateToNumber _fechalim;
 _tam = [_initialMarker] call sizeMarker;
 
 _houses = nearestObjects [_initialPosition, ["Land_i_House_Big_02_V3_F","Land_i_House_Big_02_V2_F","Land_i_House_Big_01_V3_F","Land_i_House_Big_01_V1_F","Land_i_House_Big_01_V2_F","Land_Shop_Town_03_F","Land_House_Big_04_F","Land_House_Small_04_F","Land_House_Big_03_F","Land_Hotel_02_F","Land_Hotel_01_F"], _tam];
-if (count _houses == 0) then {_houses = nearestObjects [_initialPosition, ["house"], _tam];};
+if (_houses isEqualTo []) then {_houses = nearestObjects [_initialPosition, ["house"], _tam];};
 _housePositions = [];
 _house = _houses select 0;
-while {count _housePositions < 3} do
-	{
-	_house = _houses call BIS_Fnc_selectRandom;
-	_housePositions = [_house] call BIS_fnc_buildingPositions;
-	if (count _housePositions < 3) then {_houses = _houses - [_house]};
-	};
+while {count _housePositions < 3} do{
+    _house = _houses call BIS_Fnc_selectRandom;
+    _housePositions = [_house] call BIS_fnc_buildingPositions;
+    if (count _housePositions < 3) then {_houses = _houses - [_house]};
+};
 
 _max = (count _housePositions) - 1;
 _rnd = floor random _max;

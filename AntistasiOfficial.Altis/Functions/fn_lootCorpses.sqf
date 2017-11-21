@@ -45,7 +45,7 @@ _boxes = [];
 	};
 } forEach (nearestObjects [position _unit, ["Box_IND_Wps_F"], DIS]);
 
-if ((count _corpses == 0) && (count _boxes == 0)) exitWith {hintSilent "No corpses nearby."};
+if ((_corpses isEqualTo []) && (_boxes isEqualTo [])) exitWith {hintSilent "No corpses nearby."};
 
 _unit setVariable ["AS_lootingCorpses", true, true];
 _unit setBehaviour "SAFE";
@@ -92,9 +92,9 @@ while {true} do {
 		};
 
 		_containers = nearestObjects [_unit, ["WeaponHolderSimulated", "GroundWeaponHolder", "WeaponHolder"], 10];
-		if (count _containers == 0) then {breakTo "outerLoop"};
+		if (_containers isEqualTo []) then {breakTo "outerLoop"};
 		_container = _containers select 0;
-		if (count (weaponCargo _container) > 0) then {
+		if !((weaponCargo _container) isEqualTo []) then {
 			_unit doMove (getPosATL _container);
 			_timeOut = time + 20;
 
@@ -107,9 +107,9 @@ while {true} do {
 		};
 	} else {
 		_containers = nearestObjects [_unit, ["WeaponHolderSimulated", "GroundWeaponHolder", "WeaponHolder"], DIS];
-		if (count _containers == 0) then {breakTo "main"};
+		if (_containers isEqualTo []) then {breakTo "main"};
 		_container = _containers select 0;
-		if (count (weaponCargo _container) > 0) then {
+		if !((weaponCargo _container) isEqualTo []) then {
 			_unit doMove (getPosATL _container);
 			_timeOut = time + 20;
 
@@ -124,7 +124,7 @@ while {true} do {
 	sleep 1;
 };
 
-if (count _boxes > 0) then {
+if !(_boxes isEqualTo []) then {
 	if (_unit getVariable ["AS_cannotComply", false]) then {breakTo "main"};
 	while {true} do {
 
