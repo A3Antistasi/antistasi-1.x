@@ -3185,45 +3185,43 @@
 				<Russian>6 Совместимые моды</Russian>
 			</Key>
 			<Key ID="STR_BR_6CP">
-				<Original>Antistasi can be enjoyed running a vanilla ArmA 3 version, or with compatible mods, as long as they don’t affect the AI.&lt;br/&gt;
-Some mods are fully integrated in Antistasi; when loaded, these mods will change the warring factions as a whole, complete with different vehicles, gear and mechanics.&lt;br/&gt;
-At the moment, these are: RHS: (AFRF,  USAF, GREF), TFAR and ACE3.&lt;br/&gt;&lt;br/&gt;
+				<Original>
+					Antistasi can be enjoyed running a vanilla ArmA 3 version, or with compatible mods, as long as they don’t affect the AI.&lt;br/&gt;
+					Some mods are fully integrated in Antistasi; when loaded, these mods will change the warring factions as a whole, complete with different vehicles, gear and mechanics.&lt;br/&gt;
+					At the moment, these are: RHS: (AFRF,  USAF, GREF), TFAR and ACE3.&lt;br/&gt;&lt;br/&gt;
 
-When using ACE, basic medical system is selected, to set Advanced Medical System edit the .pbo and open AceSettings.hpp edit the first block from default= 1 to default= 2&lt;br/&gt;&lt;br/&gt;
+					When using ACE, basic medical system is selected, to set Advanced Medical System edit the .pbo and open AceSettings.hpp edit the first block from default= 1 to default= 2&lt;br/&gt;&lt;br/&gt;
 
+					Items from these integrated mods are also included in Supply Drops and Ammoboxes.&lt;br/&gt;
+					Other mods, adding new weapons or other gear for instance, will only be available in game by buying them at the Sketchy Irishman.&lt;br/&gt;&lt;br/&gt;
 
-Items from these integrated mods are also included in Supply Drops and Ammoboxes.&lt;br/&gt;
-Other mods, adding new weapons or other gear for instance, will only be available in game by buying them at the Sketchy Irishman.&lt;br/&gt;&lt;br/&gt; 
+					The Sketchy Irishman, also known as Devin, can be found by asking Petros for the Sketchy Irishman mission. At his shop, you can randomly purchase all items from installed mods. Do you want to play with that rusty WWII era mp40 or predator style minigun? You’ve got a chance to pick it up at the Sketchy Irishman’s shop! (No refunds.)&lt;br/&gt;&lt;br/&gt;
 
-The Sketchy Irishman, also known as Devin, can be found by asking Petros for the Sketchy Irishman mission. At his shop, you can randomly purchase all items from installed mods. Do you want to play with that rusty WWII era mp40 or predator style minigun? You’ve got a chance to pick it up at the Sketchy Irishman’s shop! (No refunds.)&lt;br/&gt;&lt;br/&gt;
+					The official Antistasi community server runs a small list of high-end mods. Visit a3antistasi.com or the community Teamspeak server to get the link to the steam collection and download them easily.&lt;br/&gt;&lt;br/&gt;
 
+					IMPORTANT: Persistent Saving with a mod will make the save incompatible if you wish to revert back to playing without the installed mod. This won’t apply to client-side mods.&lt;br/&gt;&lt;br/&gt;
 
-The official Antistasi community server runs a small list of high-end mods. Visit a3antistasi.com or the community Teamspeak server to get the link to the steam collection and download them easily.&lt;br/&gt;&lt;br/&gt;
+					Avoid mods that control or affect AI as these might break Antistasi AI mechanics.&lt;br/&gt;
+					You can check a3.antistasi.com for further information.
+				</Original>
+				<Russian>
+					В Antistasi Можно наслаждаться как оригинальной Arma 3 так и с модами если они не влияют на ИИ&lt;br/&gt;
+					Некоторые моды полностью интегрированы в Antistasi; при загрузке эти моды изменят воюющие группировки Полностью,изменяя транспорт,Обарудование и Механику.&lt;br/&gt;
+					На данный момент это: RHS: (AFRF,  USAF, GREF), TFAR И ACE3.&lt;br/&gt;&lt;br/&gt;
 
-IMPORTANT: Persistent Saving with a mod will make the save incompatible if you wish to revert back to playing without the installed mod. This won’t apply to client-side mods.&lt;br/&gt;&lt;br/&gt;
+					При использовании ACE выбирается базовая медицинская система, чтобы установить расшириную медицинскую систему, отредактируйте ".pbo" и откройте "AceSettings.hpp" ,Измените первый блок default= 1 на default= 2&lt;br/&gt;&lt;br/&gt;
 
-Avoid mods that control or affect AI as these might break Antistasi AI mechanics.&lt;br/&gt;
-You can check a3.antistasi.com for further information.</Original>
-				<Russian>В Antistasi Можно наслаждаться как оригинальной Arma 3 так и с модами если они не влияют на ИИ&lt;br/&gt;
-Некоторые моды полностью интегрированы в Antistasi; при загрузке эти моды изменят воюющие группировки Полностью,изменяя транспорт,Обарудование и Механику.&lt;br/&gt;
-На данный момент это: RHS: (AFRF,  USAF, GREF), TFAR И ACE3.&lt;br/&gt;&lt;br/&gt;
+					Элементы из этих модов также включены в комплект поставки боеприпасов и ящиков с амуницией.&lt;br/&gt;
+					Другие моды, добавляющие новое оружие или другое снаряжение,будут доступны только у Безумного Ирландца.&lt;br/&gt;&lt;br/&gt;
 
-При использовании ACE выбирается базовая медицинская система, чтобы установить расшириную медицинскую систему, отредактируйте ".pbo" и откройте "AceSettings.hpp" ,Измените первый блок default= 1 на default= 2&lt;br/&gt;&lt;br/&gt;
+					Безумный Ирландец Также известный как Девин, Его можно найти спросив Миссию "Безумный Ирландец" у Петроса. В его магазине вы можете случайным образом приобрести все предметы из установленных модов. Вы хотите играть со старым mp40 из Второй мировой или  с миниганом Хишника? У вас есть шанс купить его в магазине Безумного Ирландца! (Возврату не подлежит)&lt;br/&gt;&lt;br/&gt;
 
+					Официальный сервер сообщества Antistasi запускаетя с небольшим списком модов высокого уровня. Посетите сайт a3antistasi.com или сообщество Teamspeak, чтобы получить ссылку на steam Сборку и Легко скачайте их.&lt;br/&gt;&lt;br/&gt;
 
-Элементы из этих модов также включены в комплект поставки боеприпасов и ящиков с амуницией.&lt;br/&gt; 
-Другие моды, добавляющие новое оружие или другое снаряжение,будут доступны только у Безумного Ирландца.&lt;br/&gt;&lt;br/&gt; 
+					ВАЖНО: сохранение прогресса с модом сделает сохранение несовместимым, если вы захотите вернуться в игру без установленного мода. Это не относится к модам на стороне клиента.&lt;br/&gt;&lt;br/&gt;
 
-Безумный Ирландец Также известный как Девин, Его можно найти спросив Миссию "Безумный Ирландец" у Петроса . В его магазине вы можете случайным образом приобрести все предметы из установленных модов. Вы хотите играть со старым mp40 из Второй мировой или  с миниганом Хишника? У вас есть шанс купить его в магазине Безумного Ирландца! (Возврату не подлежит)&lt;br/&gt;&lt;br/&gt;
-
-
-Официальный сервер сообщества Antistasi запускаетя с небольшим списком модов высокого уровня. Посетите сайт a3antistasi.com или сообщество Teamspeak, чтобы получить ссылку на steam Сборку и Легко скачайте их.&lt;br/&gt;&lt;br/&gt;
-
-ВАЖНО: сохранение прогресса с модом сделает сохранение несовместимым, если вы захотите вернуться в игру без установленного мода. Это не относится к модам на стороне клиента.&lt;br/&gt;&lt;br/&gt;
-
-
-Избегайте модов, которые контролируют или влияют на ИИ, поскольку они могут нарушить работу механики Antistasi ИИ.&lt;br/&gt;
-Вы можете Посетить a3.antistasi.com за дополнительной информацией.
+					Избегайте модов, которые контролируют или влияют на ИИ, поскольку они могут нарушить работу механики Antistasi ИИ.&lt;br/&gt;
+					Вы можете Посетить a3.antistasi.com за дополнительной информацией.
                 </Russian>
 		    </Key>
 			<Key ID="STR_BR_5ANTOPT">
@@ -3231,135 +3229,144 @@ You can check a3.antistasi.com for further information.</Original>
 				<Russian>5 Антистаси Опции</Russian>
 			</Key>
 			<Key ID="STR_BR_5AO">
-				<Original>By interacting with the physical Map asset at HQ you can set:&lt;br/&gt;&lt;br/&gt;
+				<Original>
+					By interacting with the physical Map asset at HQ you can set:&lt;br/&gt;&lt;br/&gt;
 
-Civilian spawn rate: we suggest a value between 1% and 10% (5% is default);  they count as AI and as such, reduce performance. Keep in mind that below 1% no civilian vehicles will spawn, so no free transports.&lt;br/&gt;&lt;br/&gt;
+					Civilian spawn rate: we suggest a value between 1% and 10% (5% is default);  they count as AI and as such, reduce performance. Keep in mind that below 1% no civilian vehicles will spawn, so no free transports.&lt;br/&gt;&lt;br/&gt;
 
-Spawn distance: 1 km is optimal, higher values might let you long range snipe, but game performance might suffer. &lt;br/&gt;&lt;br/&gt;
+					Spawn distance: 1 km is optimal, higher values might let you long range snipe, but game performance might suffer. &lt;br/&gt;&lt;br/&gt;
 
-Garbage clean: corpses and items on the ground consume memory, clearing these might freeze the game for a short while but FPS should improve. (Some garbage already has an auto-delete timer.)&lt;br/&gt;&lt;br/&gt;
+					Garbage clean: corpses and items on the ground consume memory, clearing these might freeze the game for a short while but FPS should improve. (Some garbage already has an auto-delete timer.)&lt;br/&gt;&lt;br/&gt;
 
-FPS limiter: below the threshold civilians will minimally spawn. &lt;br/&gt;&lt;br/&gt;</Original>
-				<Russian>Взаимодействуя с Физической Картой на Базе, вы можете установить:&lt;br/&gt;&lt;br/&gt;
+					FPS limiter: below the threshold civilians will minimally spawn. &lt;br/&gt;&lt;br/&gt;
+				</Original>
+				<Russian>
+					Взаимодействуя с Физической Картой на Базе, вы можете установить:&lt;br/&gt;&lt;br/&gt;
 
-Кожффициент Появления Гражданских: мы предлагаем значение от 1% до 10% (по умолчанию 5%),;  Это Количество ИИ,и они снижают производительность. Имейте в виду, что значение менее 1% останавливает Спавн гражданских на машинах, поэтому никакого бесплатного транспорта.&lt;br/&gt;&lt;br/&gt;
+					Кожффициент Появления Гражданских: мы предлагаем значение от 1% до 10% (по умолчанию 5%);  Это Количество ИИ,и они снижают производительность. Имейте в виду, что значение менее 1% останавливает Спавн гражданских на машинах, поэтому никакого бесплатного транспорта.&lt;br/&gt;&lt;br/&gt;
 
-Дистанция Спавна:1 км является оптимальным, более высокие значения могут позволить вам использовать Снайперов ,но производительность игры может пострадать. &lt;br/&gt;&lt;br/&gt;
+					Дистанция Спавна:1 км является оптимальным, более высокие значения могут позволить вам использовать Снайперов ,но производительность игры может пострадать. &lt;br/&gt;&lt;br/&gt;
 
-Очистка мусора: трупы и предметы на земле потребляют память, очистка их может затормозить игру на короткое время, но FPS должен улучшиться. (У некоторого мусора уже есть таймер автоматического удаления.)&lt;br/&gt;&lt;br/&gt;
+					Очистка мусора: трупы и предметы на земле потребляют память, очистка их может затормозить игру на короткое время, но FPS должен улучшиться. (У некоторого мусора уже есть таймер автоматического удаления.)&lt;br/&gt;&lt;br/&gt;
 
-
-FPS Ограничитель: Чем меньше порог,тем меньше спавн гражданских лиц. </Russian> 
+					FPS Ограничитель: Чем меньше порог,тем меньше спавн гражданских лиц. &lt;br/&gt;&lt;br/&gt;
+				</Russian> 
 		    </Key>
 			<Key ID="STR_BR_4GAMED">
 				<Original>4 Game difficulty</Original>
 				<Russian>4 Сложность игры</Russian>
 			</Key>
 			<Key ID="STR_BR_4GD">
-				<Original>Antistasi sets a unique ‘Skill’ and ‘Precision’ for AI, which increases based on Army XP Level and enemy resource management.&lt;br/&gt;
-These parameters are influenced by the ArmA 3 game difficulty settings, which you can adjust (in singleplayer) from the options menu and on a server on #missions boot. &lt;br/&gt;&lt;br/&gt;
+				<Original>
+					Antistasi sets a unique ‘Skill’ and ‘Precision’ for AI, which increases based on Army XP Level and enemy resource management.&lt;br/&gt;
+					These parameters are influenced by the ArmA 3 game difficulty settings, which you can adjust (in singleplayer) from the options menu and on a server on #missions boot. &lt;br/&gt;&lt;br/&gt;
 
+					‘Skill’ primarily modulates AI movement (i.e. flanking and seeking cover).&lt;br/&gt;
+					‘Precision’ is the main parameter you want to adjust if you want to increase or decrease game difficulty. &lt;br/&gt;&lt;br/&gt;
 
-‘Skill’ primarily modulates AI movement (i.e. flanking and seeking cover).&lt;br/&gt; 
-‘Precision’ is the main parameter you want to adjust if you want to increase or decrease game difficulty. &lt;br/&gt;&lt;br/&gt;
+					Important to note is that Arma 3 AI-skill level is also dependent on the game engine: if the PC / Server is overloaded many actions in queue will be cancelled and AI will perform badly.&lt;br/&gt;&lt;br/&gt;
+				</Original>
+				<Russian>
+					Antistasi устанавливает уникальные показатели «навыка» и «точности» для ИИ, которые увеличиваются на основе уровня Опыта Армии и управления ресурсами противника.&lt;br/&gt;
+					На эти параметры влияют параметры сложности игры ArmA 3, которые вы можете настроить (в одиночном режиме) из меню опций и на сервере при загрузке #Миссии. &lt;br/&gt;&lt;br/&gt;
 
+					«Умение» в первую очередь модулирует движение ИИ (т.е. Защиту Флангов и поиск укрытия) &lt;br/&gt;
+					«Точность» - это основной параметр, который вы можете настроить, если хотите увеличить или уменьшить сложность игры. &lt;br/&gt;&lt;br/&gt;
 
-Important to note is that Arma 3 AI-skill level is also dependent on the game engine: if the PC / Server is overloaded many actions in queue will be cancelled and AI will perform badly.&lt;br/&gt;&lt;br/&gt;</Original>
-				<Russian>Antistasi устанавливает уникальные показатели «навыка» и «точности» для ИИ, которые увеличиваются на основе уровня Опыта Армии и управления ресурсами противника.&lt;br/&gt;
-На эти параметры влияют параметры сложности игры ArmA 3, которые вы можете настроить (в одиночном режиме) из меню опций и на сервере при загрузке #Миссии. &lt;br/&gt;&lt;br/&gt;
-
-«Умение» в первую очередь модулирует движение ИИ (т.е. Защиту Флангов и поиск укрытия) &lt;br/&gt;
-«Точность» - это основной параметр, который вы можете настроить, если хотите увеличить или уменьшить сложность игры. &lt;br/&gt;&lt;br/&gt;
-
-
-Важно отметить, что уровень мастерства ИИ в Arma 3 также зависит от игрового движка: если компьютер / сервер перегружен, многие действия в очереди будут отменены, и ИИ будет работать плохо.&lt;br/&gt;&lt;br/&gt;</Russian>
+					Важно отметить, что уровень мастерства ИИ в Arma 3 также зависит от игрового движка: если компьютер / сервер перегружен, многие действия в очереди будут отменены, и ИИ будет работать плохо.&lt;br/&gt;&lt;br/&gt;
+				</Russian>
 		    </Key>
 			<Key ID="STR_BR_3SSANDP">
 				<Original>3 Spawn system and Performance</Original>
 				<Russian>3 Система Спавна И Производительность</Russian>
 			</Key>
 			<Key ID="STR_BR_3SS">
-				<Original>Petros, Players, Controlled AI (i.e. freed refugees, recruited soldiers, squads and NATO/VMF ground units) trigger the spawn of enemies and civilians in a radius of 1km - the caching radius. NATO air vehicle won’t spawn in enemies to save performance there is a plan to add a chance of destroying the aircraft when flying by enemy territories. &lt;br/&gt;&lt;br/&gt;
+				<Original>
+					Petros, Players, Controlled AI (i.e. freed refugees, recruited soldiers, squads and NATO/VMF ground units) trigger the spawn of enemies and civilians in a radius of 1km - the caching radius. NATO air vehicle won’t spawn in enemies to save performance there is a plan to add a chance of destroying the aircraft when flying by enemy territories. &lt;br/&gt;&lt;br/&gt;
 
-Most enemies outside the caching radius will despawn and if you/your AI move in close again, they will respawn in a different position and at full strength.&lt;br/&gt;
-Enemy MRAPs, patrol helicopters, refugees/POWs before liberation, convoys, AAF attack forces will be active regardless of the spawn range. &lt;br/&gt;
-AAF attack forces only cache-in the friendly garrison of the objective and FIA roadblocks on the way. &lt;br/&gt;&lt;br/&gt;
+					Most enemies outside the caching radius will despawn and if you/your AI move in close again, they will respawn in a different position and at full strength.&lt;br/&gt;
+					Enemy MRAPs, patrol helicopters, refugees/POWs before liberation, convoys, AAF attack forces will be active regardless of the spawn range. &lt;br/&gt;
+					AAF attack forces only cache-in the friendly garrison of the objective and FIA roadblocks on the way. &lt;br/&gt;&lt;br/&gt;
 
-Arma 3 is badly optimized and can have game-breaking issues with more than 150 AI on the field. &lt;br/&gt;
-Because of this, try to converge people to the same AO and avoid caching in too many enemies at once, as this will result in a poor game experience with low FPS or AI not reacting as they should.&lt;br/&gt;
-Some tips: place HQ and Camps outside the spawning radius of towns and emplacements so they won't be cached-in permanently by Petros.&lt;br/&gt;&lt;br/&gt;
+					Arma 3 is badly optimized and can have game-breaking issues with more than 150 AI on the field. &lt;br/&gt;
+					Because of this, try to converge people to the same AO and avoid caching in too many enemies at once, as this will result in a poor game experience with low FPS or AI not reacting as they should.&lt;br/&gt;
+					Some tips: place HQ and Camps outside the spawning radius of towns and emplacements so they won't be cached-in permanently by Petros.&lt;br/&gt;&lt;br/&gt;
 
-Note that servers can add a Headless Client which will dramatically increase the handling of AI. There are 3 HC slots available.
+					Note that servers can add a Headless Client which will dramatically increase the handling of AI. There are 3 HC slots available.
                 </Original>
-				<Russian>Петрос, Игроки, контролируемые ИИ (Так же Освобожденные беженцы, набираемые солдаты, отряды и наземные подразделения НАТО / ВМФ) вызывают Спавн врагов и гражданских лиц в радиусе 1 км - это радиус кеширования. Воздушный транспорт НАТО не будет появляться у врагов, чтобы сохранить производительность, есть шанс уничтожения самолета при полете по вражеским территориям. &lt;br/&gt;&lt;br/&gt;
+				<Russian>
+					Петрос, Игроки, контролируемые ИИ (Так же Освобожденные беженцы, набираемые солдаты, отряды и наземные подразделения НАТО / ВМФ) вызывают Спавн врагов и гражданских лиц в радиусе 1 км - это радиус кеширования. Воздушный транспорт НАТО не будет появляться у врагов, чтобы сохранить производительность, есть шанс уничтожения самолета при полете по вражеским территориям. &lt;br/&gt;&lt;br/&gt;
 
-Большинство врагов, находящихся за пределами радиуса кеширования, будут исчезать, и если вы / ваш ИИ движетесь снова, они будут возрождаться на другой позиции полные сил.&lt;br/&gt;
-Вражеские MRAP, патрульные вертолеты, беженцы / военнопленные до освобождения, конвои, силы нападения AAF будут активны независимо от диапазона появления. &lt;br/&gt;
-Атака AAF заставляет кешировать только дружественные объекты гарнизона и блокпосты FIA на своём пути.&lt;br/&gt;&lt;br/&gt;
+					Большинство врагов, находящихся за пределами радиуса кеширования, будут исчезать, и если вы / ваш ИИ движетесь снова, они будут возрождаться на другой позиции полные сил.&lt;br/&gt;
+					Вражеские MRAP, патрульные вертолеты, беженцы / военнопленные до освобождения, конвои, силы нападения AAF будут активны независимо от диапазона появления. &lt;br/&gt;
+					Атака AAF заставляет кешировать только дружественные объекты гарнизона и блокпосты FIA на своём пути.&lt;br/&gt;&lt;br/&gt;
 
-Arma 3 плохо оптимизирована и может иметь проблемы с игрой при более чем 150 ИИ на поле. &lt;br/&gt;
-Из-за этого старайтесь сблизить людей с тем же АО и избегать кэширования слишком большого количества врагов одновременно, так как это приведет к плохой игре с низким уровнем FPS или ИИ, которые не реагируют так, как должны.&lt;br/&gt;
+					Arma 3 плохо оптимизирована и может иметь проблемы с игрой при более чем 150 ИИ на поле. &lt;br/&gt;
+					Из-за этого старайтесь сблизить людей с тем же АО и избегать кэширования слишком большого количества врагов одновременно, так как это приведет к плохой игре с низким уровнем FPS или ИИ, которые не реагируют так, как должны.&lt;br/&gt;
+					Пара советов:разместите Базу и лагеря за пределами радиуса спавна городов и мест размещения врага, чтобы они не были забиты всегда из за Петроса.&lt;br/&gt;&lt;br/&gt;
 
-Пара советов:разместите Базу и лагеря за пределами радиуса спавна городов и мест размещения врага, чтобы они не были забиты всегда из за Петроса.&lt;br/&gt;&lt;br/&gt;
-
-Обратите внимание, что серверы могут добавлять Headless клиента, что значительно увеличит обработку AI. Доступны 3 Слота HC.</Russian>
+					Обратите внимание, что серверы могут добавлять Headless клиента, что значительно увеличит обработку AI. Доступны 3 Слота HC.
+				</Russian>
 		    </Key>
 			<Key ID="STR_BR_2SALORE">
 				<Original>2 Save Load Restart</Original>
 				<Russian>2 Сохранение,Загрузка,Рестарт</Russian>
 			</Key>
 			<Key ID="STR_BR_2SLR">
-				<Original>There is no vanilla saving option because it breaks the mission, the Commander has to Persistent Save by interacting with the in-game Map at HQ and, upon restart, Antistasi asks if you want to load Previous Session. &lt;br/&gt;
-If you’re a normal player your equipment, money and rank will be saved automatically upon disconnect.&lt;br/&gt;&lt;br/&gt;
+				<Original>
+					There is no vanilla saving option because it breaks the mission, the Commander has to Persistent Save by interacting with the in-game Map at HQ and, upon restart, Antistasi asks if you want to load Previous Session. &lt;br/&gt;
+					If you’re a normal player your equipment, money and rank will be saved automatically upon disconnect.&lt;br/&gt;&lt;br/&gt;
 
-Saved data is stored in documents/Arma 3/user.vars.Arma3Profile and is saved separately for each island and respective blufor and greenfor version. &lt;br/&gt;&lt;br/&gt;
+					Saved data is stored in documents/Arma 3/user.vars.Arma3Profile and is saved separately for each island and respective blufor and greenfor version. &lt;br/&gt;&lt;br/&gt;
 
-What is saved:&lt;br/&gt;
-- HQ location with static guns and vehicle within 50m without their inventory.&lt;br/&gt;
-- deployed static guns in garrisoned territories.&lt;br/&gt;
-- roablocks, garrisons, money, HR, garage, support.&lt;br/&gt;
-- Arsenal items and Garage vehicles.&lt;br/&gt;
-
-What isn’t saved: AI positions, items inside vehicle crates, recruited AI (part of their cost is refunded).
+					What is saved:&lt;br/&gt;
+					- HQ location with static guns and vehicle within 50m without their inventory.&lt;br/&gt;
+					- deployed static guns in garrisoned territories.&lt;br/&gt;
+					- roablocks, garrisons, money, HR, garage, support.&lt;br/&gt;
+					- Arsenal items and Garage vehicles.&lt;br/&gt;
+					What isn’t saved: AI positions, items inside vehicle crates, recruited AI (part of their cost is refunded).
                 </Original>
-				<Russian>Авто сохранения нету, потому что это нарушает миссию, Командующий должен сам постоянно сохраняться, взаимодействуя с внутриигровой картой на Базе, а после перезагрузки Antistasi спрашивает, хотите ли вы загрузить предыдущую сессию. &lt;br/&gt;
-Если вы обычный игрок, ваше оборудование, деньги и ранг будут автоматически сохранены после отключения.&lt;br/&gt;&lt;br/&gt;
+				<Russian>
+					Авто сохранения нету, потому что это нарушает миссию, Командующий должен сам постоянно сохраняться, взаимодействуя с внутриигровой картой на Базе, а после перезагрузки Antistasi спрашивает, хотите ли вы загрузить предыдущую сессию. &lt;br/&gt;
+					Если вы обычный игрок, ваше оборудование, деньги и ранг будут автоматически сохранены после отключения.&lt;br/&gt;&lt;br/&gt;
 
-Сохраненные данные сохраняются в документах / Arma 3 / user.vars.Arma3Profile и сохраняются отдельно для каждого острова и соответствующих blufor и greenfor версиий. &lt;br/&gt;&lt;br/&gt;
+					Сохраненные данные сохраняются в документах / Arma 3 / user.vars.Arma3Profile и сохраняются отдельно для каждого острова и соответствующих blufor и greenfor версиий. &lt;br/&gt;&lt;br/&gt;
 
-Что сохранено:&lt;br/&gt;
-- Расположение Базы со статическими орудиями и транспортным средством в пределах 50 м без их инвентаря.&lt;br/&gt;
-- развернутые статические орудия на гарнизонных территориях.&lt;br/&gt;
-- блокпосты, гарнизоны, деньги, HR, гараж, поддержка.&lt;br/&gt;
-- Предметы Арсенала и Гаражные транспортные средства.&lt;br/&gt;
-
-Что не сохраняется: позиции ИИ, предметы внутри ящиков для транспортных средств, завербованные ИИ (часть их стоимости возвращается).</Russian> <!-- Редакт. -->
+					Что сохранено:&lt;br/&gt;
+					- Расположение Базы со статическими орудиями и транспортным средством в пределах 50 м без их инвентаря.&lt;br/&gt;
+					- развернутые статические орудия на гарнизонных территориях.&lt;br/&gt;
+					- блокпосты, гарнизоны, деньги, HR, гараж, поддержка.&lt;br/&gt;
+					- Предметы Арсенала и Гаражные транспортные средства.&lt;br/&gt;
+					Что не сохраняется: позиции ИИ, предметы внутри ящиков для транспортных средств, завербованные ИИ (часть их стоимости возвращается).
+				</Russian> <!-- Редакт. -->
 		    </Key>
 			<Key ID="STR_BR_1WELCOME">
 				<Original>1 Welcome</Original>
 				<Russian>1 Добро Пожаловать</Russian>
 			</Key>
 			<Key ID="STR_BR_1W">
-				<Original>This campaign is a long lasting scenario which simulates guerrilla combat in an asymmetric warfare situation. It might take weeks to complete, however the fun comes from playing it step by step.&lt;br/&gt;&lt;br/&gt;
+				<Original>
+					This campaign is a long lasting scenario which simulates guerrilla combat in an asymmetric warfare situation. It might take weeks to complete, however the fun comes from playing it step by step.&lt;br/&gt;&lt;br/&gt;
 
-There are several ways of playing Antistasi to complete the main objective.&lt;br/&gt;
-The goal is to gain the support of more than 50% of the civilian population on the island. &lt;br/&gt;
-The campaign is lost if CSAT destroys 8 towns by bombardment. &lt;br/&gt;&lt;br/&gt;
+					There are several ways of playing Antistasi to complete the main objective.&lt;br/&gt;
+					The goal is to gain the support of more than 50% of the civilian population on the island. &lt;br/&gt;
+					The campaign is lost if CSAT destroys 8 towns by bombardment. &lt;br/&gt;&lt;br/&gt;
 
+					Special keys: press  ‘Y’, ‘shift+Y’, ‘Delete’, and ‘U’ to access vital functions, be sure to unbind those keys from your custom controls otherwise they won’t work.&lt;br/&gt;&lt;br/&gt;
 
-Special keys: press  ‘Y’, ‘shift+Y’, ‘Delete’, and ‘U’ to access vital functions, be sure to unbind those keys from your custom controls otherwise they won’t work.&lt;br/&gt;&lt;br/&gt;
-
-For more info and tips check categories on the left side.&lt;br/&gt;
+					For more info and tips check categories on the left side.&lt;br/&gt;
                 </Original>
-				<Russian>Эта кампания является долговечным сценарием, который имитирует партизанские бои в условиях асимметричной войны. Потребуются недели, чтобы закончить, однако удовольствие от игры вы получите шаг за шагом.&lt;br/&gt;&lt;br/&gt;
+				<Russian>
+					Эта кампания является долговечным сценарием, который имитирует партизанские бои в условиях асимметричной войны. Потребуются недели, чтобы закончить, однако удовольствие от игры вы получите шаг за шагом.&lt;br/&gt;&lt;br/&gt;
 
-Существует несколько способов играть в «Антистаси», чтобы выполнить основную задачу.&lt;br/&gt;
-Цель состоит в том, чтобы получить поддержку более 50% гражданского населения на острове. &lt;br/&gt;
-Кампания Провалина, если CSAT уничтожает 8 городов путем бомбардировки. &lt;br/&gt;&lt;br/&gt;
+					Существует несколько способов играть в «Антистаси», чтобы выполнить основную задачу.&lt;br/&gt;
+					Цель состоит в том, чтобы получить поддержку более 50% гражданского населения на острове. &lt;br/&gt;
+					Кампания Провалина, если CSAT уничтожает 8 городов путем бомбардировки. &lt;br/&gt;&lt;br/&gt;
 
-Специальные клавиши: нажмите «Y», «shift + Y», «Delete» и «U», чтобы получить доступ к жизненно важным функциям, обязательно отвяжите эти Кнопки от своих пользовательских элементов управления, иначе они не будут работать.&lt;br/&gt;&lt;br/&gt;
+					Специальные клавиши: нажмите «Y», «shift + Y», «Delete» и «U», чтобы получить доступ к жизненно важным функциям, обязательно отвяжите эти Кнопки от своих пользовательских элементов управления, иначе они не будут работать.&lt;br/&gt;&lt;br/&gt;
 
-Для получения дополнительной информации и советов проверьте категории с левой стороны.</Russian>
+					Для получения дополнительной информации и советов проверьте категории с левой стороны.
+				</Russian>
 			</Key>
 			<Key ID="STR_BR_BT0">
 				<Original>Begin Tutorial</Original>
@@ -3370,53 +3377,53 @@ For more info and tips check categories on the left side.&lt;br/&gt;
 				<Russian>ШТАБ</Russian>
 			</Key>
 			<Key ID="STR_BR_BT_QH">
-				<Original>Place the HQ safely away from main roads, but possibly close to a small one.&lt;br/&gt;
-DON'T set HQ inside of a building to avoid major collision bugs. &lt;br/&gt;&lt;br/&gt;
+				<Original>
+					Place the HQ safely away from main roads, but possibly close to a small one.&lt;br/&gt;
+					DON'T set HQ inside of a building to avoid major collision bugs.&lt;br/&gt;&lt;br/&gt;
 
-Consider that mission vehicles spawn around the Campfire, purchased vehicles spawn around the Flag, reinforcements spawn at the closest road as do vehicles of players/AI when Fast Travelling. &lt;br/&gt;&lt;br/&gt;
+					Consider that mission vehicles spawn around the Campfire, purchased vehicles spawn around the Flag, reinforcements spawn at the closest road as do vehicles of players/AI when Fast Travelling.&lt;br/&gt;&lt;br/&gt;
 
-As said in ‘Spawn System’, Petros will keep an area of 1km cached in, so avoid placing the HQ where he will cache-in civilians or town patrols. (Even in friendly territory to save game performance.)  Enemies might just stumble into Petros and kill him while you’re operating far away.&lt;br/&gt;&lt;br/&gt;
+					As said in ‘Spawn System’, Petros will keep an area of 1km cached in, so avoid placing the HQ where he will cache-in civilians or town patrols. (Even in friendly territory to save game performance.)  Enemies might just stumble into Petros and kill him while you’re operating far away.&lt;br/&gt;&lt;br/&gt;
 
-Once you safely placed your new HQ, interact with Petros, the Flag, Arsenal, Campfire and the Heal and Repair box to discover their unique functions.&lt;br/&gt;&lt;br/&gt;
+					Once you safely placed your new HQ, interact with Petros, the Flag, Arsenal, Campfire and the Heal and Repair box to discover their unique functions.&lt;br/&gt;&lt;br/&gt;
 
-- Map: edit Antistasi Options and Persistent Save your progress, inspect detailed town/garrison info.&lt;br/&gt;&lt;br/&gt;
+					- Map: edit Antistasi Options and Persistent Save your progress, inspect detailed town/garrison info.&lt;br/&gt;&lt;br/&gt;
 
-- Flagpole: recruit AI, buy vehicles and static weapons, manage HQ.&lt;br/&gt;&lt;br/&gt;
+					- Flagpole: recruit AI, buy vehicles and static weapons, manage HQ.&lt;br/&gt;&lt;br/&gt;
 
-- Campfire: fast forward time by 8 hours and burn your feet. (Current missions will fail, and you can’t skip time when AAF attack is going on.)&lt;br/&gt;&lt;br/&gt;
+					- Campfire: fast forward time by 8 hours and burn your feet. (Current missions will fail, and you can’t skip time when AAF attack is going on.)&lt;br/&gt;&lt;br/&gt;
 
-- Arsenal Crate: store loot and edit your loadout.&lt;br/&gt;&lt;br/&gt;
+					- Arsenal Crate: store loot and edit your loadout.&lt;br/&gt;&lt;br/&gt;
 
-- Heal and Repair box: heal, repair yourself and rearm AI. Reset undercover status and change vehicle plates, automatically resupply nearby HC units and static guns.&lt;br/&gt;&lt;br/&gt;
+					- Heal and Repair box: heal, repair yourself and rearm AI. Reset undercover status and change vehicle plates, automatically resupply nearby HC units and static guns.&lt;br/&gt;&lt;br/&gt;
 
- - Petros: ask for missions.&lt;br/&gt;&lt;br/&gt;
+					 - Petros: ask for missions.&lt;br/&gt;&lt;br/&gt;
 
-HQ location is revealed to CSAT only if you scary a traitor and he manage to flee to an enemy base. Also, mortar fire is an easy way to get triangulated, expect aggressive enemies in both cases.</Original>
-				<Russian>Место Базы защищено от основных дорог, но, возможно, рядом с небольшими.
-НЕ устанавливайте Базу внутри здания, чтобы избежать крупных ошибок при столкновении объектов. &lt;br/&gt;&lt;br/&gt;
+					 HQ location is revealed to CSAT only if you scary a traitor and he manage to flee to an enemy base. Also, mortar fire is an easy way to get triangulated, expect aggressive enemies in both cases.
+				</Original>
+				<Russian>
+					Место Базы защищено от основных дорог, но, возможно, рядом с небольшими.&lt;br/&gt;
+					НЕ устанавливайте Базу внутри здания, чтобы избежать крупных ошибок при столкновении объектов.&lt;br/&gt;&lt;br/&gt;
 
-Подумайте о том, что транспортные средства из миссий появляются возле Костра, купленные транспортные средства появляются вокруг Флага, подкрепление появляется на ближайшей дороге, как и транспортные средства игроков / ИИ, при быстром путешествии.&lt;br/&gt;&lt;br/&gt;
+					Подумайте о том, что транспортные средства из миссий появляются возле Костра, купленные транспортные средства появляются вокруг Флага, подкрепление появляется на ближайшей дороге, как и транспортные средства игроков / ИИ, при быстром путешествии.&lt;br/&gt;&lt;br/&gt;
 
-Как сказано в разделе «Система Спавна», Petros сохранит область в 1 км в кэше, поэтому избегайте размещения штаб-квартиры, где он будет кэшировать гражданские или городские патрули. (Даже на дружественной территории, чтобы сохранить игру.) Враги могут просто наткнуться на Петроса и убить его, пока вы находитесь далеко.&lt;br/&gt;&lt;br/&gt;
+					Как сказано в разделе «Система Спавна», Petros сохранит область в 1 км в кэше, поэтому избегайте размещения штаб-квартиры, где он будет кэшировать гражданские или городские патрули. (Даже на дружественной территории, чтобы сохранить игру.) Враги могут просто наткнуться на Петроса и убить его, пока вы находитесь далеко.&lt;br/&gt;&lt;br/&gt;
 
-После того, как вы благополучно разместили свой новый штаб, взаимодействуйте с Петросом, флагом, арсеналом, Костром и Ящиком «Исцеление и ремонт», чтобы обнаружить их уникальные функции.&lt;br/&gt;&lt;br/&gt;
+					После того, как вы благополучно разместили свой новый штаб, взаимодействуйте с Петросом, флагом, арсеналом, Костром и Ящиком «Исцеление и ремонт», чтобы обнаружить их уникальные функции.&lt;br/&gt;&lt;br/&gt;
 
-- Карта: редактируйте параметры Антистаси и сохраняйте свой прогресс, проверьте подробную информацию о городе / гарнизоне.&lt;br/&gt;&lt;br/&gt;
+					- Карта: редактируйте параметры Антистаси и сохраняйте свой прогресс, проверьте подробную информацию о городе / гарнизоне.&lt;br/&gt;&lt;br/&gt;
 
-- Флагшток: набирайте ИИ, покупате транспортные средства и статическое оружие, управляйте Базой.&lt;br/&gt;&lt;br/&gt;
+					- Флагшток: набирайте ИИ, покупате транспортные средства и статическое оружие, управляйте Базой.&lt;br/&gt;&lt;br/&gt;
 
+					- Костер: Перемотайте время вперед на 8 часов и погрейте ноги. (Текущие миссии будут Провалены, и вы не сможете пропустить время, когда идёт атака AAF.страдайте)&lt;br/&gt;&lt;br/&gt;
 
-- Костер: Перемотайте время вперед на 8 часов и погрейте ноги. (Текущие миссии будут Провалены, и вы не сможете пропустить время, когда идёт атака AAF.страдайте)&lt;br/&gt;&lt;br/&gt; 
+					- Ящик Арсенала: храните добычу и редактируйте свою загрузку.&lt;br/&gt;&lt;br/&gt;
 
-- Ящик Арсенала: храните добычу и редактируйте свою загрузку.&lt;br/&gt;&lt;br/&gt;
+					- Лечить,Ченить Перевооружить:Лечите себя,чените транспорт и перевооружайте ИИ. Сбросьте перезарядку "под прикрытием" и смените знаки с Транспорта, автоматически пополняется рядом с HC и статическим оружием.&lt;br/&gt;&lt;br/&gt;
 
+					- Петрос: попросите миссию.&lt;br/&gt;&lt;br/&gt;
 
-- Лечить,Ченить Перевооружить:Лечите себя,чените транспорт и перевооружайте ИИ. Сбросьте перезарядку "под прикрытием" и смените знаки с Транспорта, автоматически пополняется рядом с HC и статическим оружием.&lt;br/&gt;&lt;br/&gt;
-
-- Петрос: попросите миссию.&lt;br/&gt;&lt;br/&gt;
-
-
-Расположение Базы обнаруживается Противником только в том случае, если вы раскрыли предателя и ему удается бежать на базу противника. Кроме того, минометный огонь - это простой способ получить место положения противника,Ждите агрессивных врагов в обоих случаях.			
+					Расположение Базы обнаруживается Противником только в том случае, если вы раскрыли предателя и ему удается бежать на базу противника. Кроме того, минометный огонь - это простой способ получить место положения противника,Ждите агрессивных врагов в обоих случаях.			
 				</Russian>
 		    </Key>
 			<Key ID="STR_BR_BT1TIB">
@@ -3424,163 +3431,174 @@ HQ location is revealed to CSAT only if you scary a traitor and he manage to fle
 				<Russian>Верхняя панель информации</Russian>
 			</Key>
 			<Key ID="STR_BR_BT_TIB">
-				<Original>The Info Bar displays campaign info, resources and undercover status.&lt;br/&gt;&lt;br/&gt;
+				<Original>
+					The Info Bar displays campaign info, resources and undercover status.&lt;br/&gt;&lt;br/&gt;
 
--Commander: the current Commander. ‘None’ is displayed when membership is enabled and there isn’t any member online who is eligible to command. In this case, the following features will be frozen: economy per tick, main enemy response such as QRFs and Attacks and random mission spawns.&lt;br/&gt;&lt;br/&gt;
+					-Commander: the current Commander. ‘None’ is displayed when membership is enabled and there isn’t any member online who is eligible to command. In this case, the following features will be frozen: economy per tick, main enemy response such as QRFs and Attacks and random mission spawns.&lt;br/&gt;&lt;br/&gt;
 
--Rank: affects the courage of your AI and how precisely they will execute orders. Progress rank by killing enemies and, more effectively, by completing missions. In multiplayer you can also donate your money to FIA to gain ranks.&lt;br/&gt;
-Player Rank is saved automatically in multiplayer upon disconnect
-&lt;br/&gt;&lt;br/&gt;
+					-Rank: affects the courage of your AI and how precisely they will execute orders. Progress rank by killing enemies and, more effectively, by completing missions. In multiplayer you can also donate your money to FIA to gain ranks.&lt;br/&gt;
+					Player Rank is saved automatically in multiplayer upon disconnect&lt;br/&gt;&lt;br/&gt;
 
-- HR: Human Resources are used to recruit AI, add garrison troops to conquered emplacements and, in singleplayer only, 10% of HR and 5% of money is subtracted every time you die. &lt;br/&gt;
-Gain HR by escorting refugees or POWs to HQ, or controlling towns and cities.&lt;br/&gt;
-Game ticks every 10 minutes add HR depending on amount of civilian supporting FIA.&lt;br/&gt;&lt;br/&gt;
+					- HR: Human Resources are used to recruit AI, add garrison troops to conquered emplacements and, in singleplayer only, 10% of HR and 5% of money is subtracted every time you die. &lt;br/&gt;
+					Gain HR by escorting refugees or POWs to HQ, or controlling towns and cities.&lt;br/&gt;
+					Game ticks every 10 minutes add HR depending on amount of civilian supporting FIA.&lt;br/&gt;&lt;br/&gt;
 
-- Money: in singleplayer, only 'FIA money' is available. Useful for buying vehicles, recruit AI, add garrisons and increase Army Xp Level. &lt;br/&gt;
-In multiplayer the player’s and FIA accounts are separated; if you die you lose a percentage of your personal account.&lt;br/&gt;
-Game ticks every 10 minutes add money to the FIA account depending on controlled territories.&lt;br/&gt;
-Player Money are saved automatically in multiplayer upon disconnect
-&lt;br/&gt;&lt;br/&gt;
+					- Money: in singleplayer, only 'FIA money' is available. Useful for buying vehicles, recruit AI, add garrisons and increase Army Xp Level. &lt;br/&gt;
+					In multiplayer the player’s and FIA accounts are separated; if you die you lose a percentage of your personal account.&lt;br/&gt;
+					Game ticks every 10 minutes add money to the FIA account depending on controlled territories.&lt;br/&gt;
+					Player Money are saved automatically in multiplayer upon disconnect&lt;br/&gt;&lt;br/&gt;
 
-- NATO support: Commander can call-in the friendly faction to assist in overwhelming fights (the friendly-faction is different depending on mod/vanilla blufor/greenfor). Check Commander Options diary entry and Antistasi Features - Support entry. &lt;br/&gt;&lt;br/&gt;
+					- NATO support: Commander can call-in the friendly faction to assist in overwhelming fights (the friendly-faction is different depending on mod/vanilla blufor/greenfor). Check Commander Options diary entry and Antistasi Features - Support entry. &lt;br/&gt;&lt;br/&gt;
 
-- CSAT support: enemy-faction (again, different depending on mod/vanilla blufor/greenfor) will help the enemy and when this value is very high, they’ll start bombarding towns. &lt;br/&gt;
-After 8 destroyed towns the campaign is lost. CSAT support grows if you conquer enemy bases and airports, also if you destroy AA emplacements on named Hilltops. &lt;br/&gt;&lt;br/&gt;
+					- CSAT support: enemy-faction (again, different depending on mod/vanilla blufor/greenfor) will help the enemy and when this value is very high, they’ll start bombarding towns. &lt;br/&gt;
+					After 8 destroyed towns the campaign is lost. CSAT support grows if you conquer enemy bases and airports, also if you destroy AA emplacements on named Hilltops. &lt;br/&gt;&lt;br/&gt;
 
-- Army Xp: indicator of Army Xp Level, check the relative diary section for a detailed explanation, the arrows let you know when you’re close to the next tier and, if they’re red, it means you haven’t matched the requirement for the next tier upgrade.&lt;br/&gt;&lt;br/&gt;
+					- Army Xp: indicator of Army Xp Level, check the relative diary section for a detailed explanation, the arrows let you know when you’re close to the next tier and, if they’re red, it means you haven’t matched the requirement for the next tier upgrade.&lt;br/&gt;&lt;br/&gt;
 
-- Overt / Incognito: indicator of your undercover status, when it displays Incognito, enemies will think you’re a civilian and ignore you. &lt;br/&gt;
-Get undercover status by selecting it in the Y menu or by entering a civilian car. This is only possible if you match all the conditions. &lt;br/&gt;
-Check relative diary section for a more detailed explanation.</Original>
-				<Russian>В информационной строке отображаются информация о кампании, ресурсах и секретном статусе.&lt;br/&gt;&lt;br/&gt;
+					- Overt / Incognito: indicator of your undercover status, when it displays Incognito, enemies will think you’re a civilian and ignore you. &lt;br/&gt;
+					Get undercover status by selecting it in the Y menu or by entering a civilian car. This is only possible if you match all the conditions. &lt;br/&gt;
+					Check relative diary section for a more detailed explanation.
+				</Original>
+				<Russian>
+					В информационной строке отображаются информация о кампании, ресурсах и секретном статусе.&lt;br/&gt;&lt;br/&gt;
 
--Командир: нынешний командир. (Не) отображается, когда членство включено, и нет ни одного члена онлайн, который имеет право на командира. В этом случае будут заморожены следующие функции: Экономика за точку, главная контратак врага, такая как атака как отряд быстрого реагирования, и случайные миссии.&lt;br/&gt;&lt;br/&gt;
+					- Командир: нынешний командир. (Не) отображается, когда членство включено, и нет ни одного члена онлайн, который имеет право на командира. В этом случае будут заморожены следующие функции: Экономика за точку, главная контратак врага, такая как атака как отряд быстрого реагирования, и случайные миссии.&lt;br/&gt;&lt;br/&gt;
 
--Ранг: влияет на мужество вашего ИИ и то, как именно они будут выполнять приказы.Прогресс ранга происходит за счёт: убийства врагов и, более эффективное завершение миссий. В мультиплеере вы также можете пожертвовать свои деньги FIA, чтобы получить звание.&lt;br/&gt;
-Ранг игрока автоматически сохраняется в мультиплеере при отключении
-&lt;br/&gt;&lt;br/&gt;
+					- Ранг: влияет на мужество вашего ИИ и то, как именно они будут выполнять приказы.Прогресс ранга происходит за счёт: убийства врагов и, более эффективное завершение миссий. В мультиплеере вы также можете пожертвовать свои деньги FIA, чтобы получить звание.&lt;br/&gt;
+					Ранг игрока автоматически сохраняется в мультиплеере при отключении&lt;br/&gt;&lt;br/&gt;
 
-- HR: Людские ресурсы,используются для набора ИИ, добавления войск гарнизона к завоеванным местам, и только в одиночном режиме, 10% HR и 5% денег вычитаются каждый раз когда вы умираете. &lt;br/&gt;
-Приобретайте HR, сопроводив беженцев или военнопленных на базу или контролируемые города и деревни&lt;br/&gt;
-Игровой счётчик каждые 10 минут добавляют HR в зависимости от количества гражданских лиц, поддерживающих FIA.&lt;br/&gt;&lt;br/&gt;
+					- HR: Людские ресурсы,используются для набора ИИ, добавления войск гарнизона к завоеванным местам, и только в одиночном режиме, 10% HR и 5% денег вычитаются каждый раз когда вы умираете. &lt;br/&gt;
+					Приобретайте HR, сопроводив беженцев или военнопленных на базу или контролируемые города и деревни&lt;br/&gt;
+					Игровой счётчик каждые 10 минут добавляют HR в зависимости от количества гражданских лиц, поддерживающих FIA.&lt;br/&gt;&lt;br/&gt;
 
-- Деньги: в одиночном режиме доступно только «FIA деньги».на них можно покупать автомобили, набирать ИИ, добавлять гарнизоны и повышать уровень Армии. &lt;br/&gt;
-В мультиплеере учетные записи игроков и FIA разделяются; если вы умрете, вы потеряете процент вашей личной учетной записи.&lt;br/&gt;
-Игровой Счётчик каждые 10 минут добавляют деньги на счет FIA в зависимости от контролируемых территорий.&lt;br/&gt;
-Деньги игрока автоматически сохраняются в мультиплеере при отключении
-&lt;br/&gt;&lt;br/&gt;
+					- Деньги: в одиночном режиме доступно только «FIA деньги».на них можно покупать автомобили, набирать ИИ, добавлять гарнизоны и повышать уровень Армии. &lt;br/&gt;
+					В мультиплеере учетные записи игроков и FIA разделяются; если вы умрете, вы потеряете процент вашей личной учетной записи.&lt;br/&gt;
+					Игровой Счётчик каждые 10 минут добавляют деньги на счет FIA в зависимости от контролируемых территорий.&lt;br/&gt;
+					Деньги игрока автоматически сохраняются в мультиплеере при отключении&lt;br/&gt;&lt;br/&gt;
 
-- Поддержка Зоюзника: Командующий может вызвать дружественную фракцию, чтобы помочь в подавление Бойцов врага (дружеская фракция отличается в зависимости от мода / стандартного blufor / greenfor). Вкладка Дневника "Опции Командира и функции Antistasi" -> "поддержка". &lt;br/&gt;&lt;br/&gt;
+					- Поддержка Зоюзника: Командующий может вызвать дружественную фракцию, чтобы помочь в подавление Бойцов врага (дружеская фракция отличается в зависимости от мода / стандартного blufor / greenfor). Вкладка Дневника "Опции Командира и функции Antistasi" -> "поддержка". &lt;br/&gt;&lt;br/&gt;
 
-- Поддержка Врага: вражеская фракция (опять же, в зависимости от мода / Стандартного blufor / greenfor ) помощи врагу, и когда это значение будет очень высоким, они начнут бомбардировать города. &lt;br/&gt;
-После 8 разрушенных городов кампания будет провалина. Поддержка противника возрастает, если вы захватываете вражеские базы и аэропорты, также если вы уничтожаете элементы ПВО на вершинах холмов. &lt;br/&gt;&lt;br/&gt;
+					- Поддержка Врага: вражеская фракция (опять же, в зависимости от мода / Стандартного blufor / greenfor ) помощи врагу, и когда это значение будет очень высоким, они начнут бомбардировать города. &lt;br/&gt;
+					После 8 разрушенных городов кампания будет провалина. Поддержка противника возрастает, если вы захватываете вражеские базы и аэропорты, также если вы уничтожаете элементы ПВО на вершинах холмов. &lt;br/&gt;&lt;br/&gt;
 
-- Опыт Армии: индикатор уровня оптыа Армии, проверьте раздел относительно дневника для подробного объяснения, стрелки сообщают вам, ккак близко вы находитесь к следующему уровню, и, если они красные, это означает, что вы не соответствуете условиям для перехода на следующий уровень.&lt;br/&gt;&lt;br/&gt;
+					- Опыт Армии: индикатор уровня оптыа Армии, проверьте раздел относительно дневника для подробного объяснения, стрелки сообщают вам, ккак близко вы находитесь к следующему уровню, и, если они красные, это означает, что вы не соответствуете условиям для перехода на следующий уровень.&lt;br/&gt;&lt;br/&gt;
 
-- Раскрыт / Под Прикрытие: индикатор вашего тайного статуса, когда он отображает Раскрыт, враги будут думать, что вы гражданский и будут игнорировать вас. &lt;br/&gt;
-Получите статус Под Прикрытие, выбрав его в меню Y или ведя гражданский автомобиль. Это возможно только в том случае, если вы соответствуете всем условиям. &lt;br/&gt;
-Проверьте более подробное объяснение в разделе относительно дневника.</Russian>
+					- Раскрыт / Под Прикрытие: индикатор вашего тайного статуса, когда он отображает Раскрыт, враги будут думать, что вы гражданский и будут игнорировать вас. &lt;br/&gt;
+					Получите статус Под Прикрытие, выбрав его в меню Y или ведя гражданский автомобиль. Это возможно только в том случае, если вы соответствуете всем условиям. &lt;br/&gt;
+					Проверьте более подробное объяснение в разделе относительно дневника.
+				</Russian>
 			</Key>
 			<Key ID="STR_BR_BT2YM">
 				<Original>Y menu</Original>
 				<Russian>Y Меню</Russian>
 			</Key>
 			<Key ID="STR_BR_BT_YM">
-				<Original>Hitting ‘Y’ will open the PDA, with 3 buttons on the far right which respectively correspond from top to bottom to: Player &lt;br/&gt;
-Commander  &lt;br/&gt;
-Admin.&lt;br/&gt;&lt;br/&gt;
+				<Original>
+					Hitting ‘Y’ will open the PDA, with 3 buttons on the far right which respectively correspond from top to bottom to:&lt;br/&gt;
+					Player &lt;br/&gt;
+					Commander  &lt;br/&gt;
+					Admin.&lt;br/&gt;&lt;br/&gt;
 
-Move the cursor over the options to get a description.</Original>
-				<Russian>Нажатие «Y» откроется КПК с тремя кнопками справа, которые соответственно соответствуют сверху вниз:&lt;br/&gt;
-Игроку  &lt;br/&gt;
-Командир  &lt;br/&gt;
-Админ.&lt;br/&gt;&lt;br/&gt;
+					Move the cursor over the options to get a description.
+				</Original>
+				<Russian>
+					Нажатие «Y» откроется КПК с тремя кнопками справа, которые соответственно соответствуют сверху вниз:&lt;br/&gt;
+					Игроку  &lt;br/&gt;
+					Командир  &lt;br/&gt;
+					Админ.&lt;br/&gt;&lt;br/&gt;
 
-Переместите курсор на параметры, чтобы получить описание.</Russian>
+					Переместите курсор на параметры, чтобы получить описание.
+				</Russian>
 			</Key>
 			<Key ID="STR_BR_BT3WTD">
 				<Original>What to do</Original>
 				<Russian>Что делать</Russian>
 			</Key>
 			<Key ID="STR_BR_BT_WTD">
-				<Original>The Arsenal is empty, with money barely enough to fund your first missions...&lt;br/&gt;
-First goal is to gain money and scavenge gear. Ask Petros for missions and decide for yourself to go for them or not.&lt;br/&gt;
-Missions aren’t the real goal of the game, just options that sometimes you might even have to ignore. Look at the map or scout ahead, because some missions might just be impossible for your current capabilities. Binoculars and the Undercover system will be your friends. &lt;br/&gt;&lt;br/&gt;
+				<Original>
+					The Arsenal is empty, with money barely enough to fund your first missions...&lt;br/&gt;
+					First goal is to gain money and scavenge gear. Ask Petros for missions and decide for yourself to go for them or not.&lt;br/&gt;
+					Missions aren’t the real goal of the game, just options that sometimes you might even have to ignore. Look at the map or scout ahead, because some missions might just be impossible for your current capabilities. Binoculars and the Undercover system will be your friends. &lt;br/&gt;&lt;br/&gt;
 
-Missions are triggered within 4 km of your HQ. Don’t try them alone, gather friends or recruit AI at the flag, they aren’t good as the enemy army soldiers however they can be useful in diversion and covering fire. Some objectives might be very remote, or are too risky to reach from HQ directly. If so, the Commander can set up a Camp where you can Fast Travel (teleport) to, speeding up your movement or giving you a safer approach.&lt;br/&gt;&lt;br/&gt;
+					Missions are triggered within 4 km of your HQ. Don’t try them alone, gather friends or recruit AI at the flag, they aren’t good as the enemy army soldiers however they can be useful in diversion and covering fire. Some objectives might be very remote, or are too risky to reach from HQ directly. If so, the Commander can set up a Camp where you can Fast Travel (teleport) to, speeding up your movement or giving you a safer approach.&lt;br/&gt;&lt;br/&gt;
 
-Scavenge gear, load it in a vehicle, go back to HQ, interact with the Arsenal, choose Transfer Vehicle Cargo to Ammobox to load all the gear into the Arsenal Crate. Check relative section Arsenal, Inventory and Unlocking below for more info.&lt;br/&gt;&lt;br/&gt;
+					Scavenge gear, load it in a vehicle, go back to HQ, interact with the Arsenal, choose Transfer Vehicle Cargo to Ammobox to load all the gear into the Arsenal Crate. Check relative section Arsenal, Inventory and Unlocking below for more info.&lt;br/&gt;&lt;br/&gt;
 
-Enemies react to your moves by sending reinforcements or patrols departing physically from a base, so, reaction time is different depending on range from the base, what mode of transport the enemy uses and if they can reach you at all. &lt;br/&gt;
-Try to eliminate the enemy quickly if you want to have a chance of looting and running away safely. &lt;br/&gt;&lt;br/&gt;
+					Enemies react to your moves by sending reinforcements or patrols departing physically from a base, so, reaction time is different depending on range from the base, what mode of transport the enemy uses and if they can reach you at all. &lt;br/&gt;
+					Try to eliminate the enemy quickly if you want to have a chance of looting and running away safely. &lt;br/&gt;&lt;br/&gt;
 
-Playing alone might be difficult unless you properly scout and know the territory. Try to recruit AI (1 or 2 can do the job, they aren’t trained enough to kill enemies, however they’re a great diversion or can provide covering fire if smartly placed). AI will try to revive you if you are downed and they aren’t engaged by enemies. &lt;br/&gt;&lt;br/&gt;
+					Playing alone might be difficult unless you properly scout and know the territory. Try to recruit AI (1 or 2 can do the job, they aren’t trained enough to kill enemies, however they’re a great diversion or can provide covering fire if smartly placed). AI will try to revive you if you are downed and they aren’t engaged by enemies. &lt;br/&gt;&lt;br/&gt;
 
-However, Antistasi really shines if you play with friends, so join Antistasi Official Servers and make some new ones!</Original>
-				<Russian>«Арсенал» пуст, а денег недостаточно для финансирования ваших первых миссий ...&lt;br/&gt;
-Первая цель - заработать деньги и Получить снаряжение. Спросите Петроса о миссиях и решите самостоятельно пойти за ними или нет.&lt;br/&gt;
-Миссии - это не настоящая цель игры, а просто варианты, которые иногда вам даже придется игнорировать. Посмотрите на карту или пошлите разведчика вперед, потому что некоторые миссии могут быть просто невозможны для ваших текущего состояния. Бинокли и система "Под прикрытием" станут вашими друзьями. &lt;br/&gt;&lt;br/&gt;
+					However, Antistasi really shines if you play with friends, so join Antistasi Official Servers and make some new ones!
+				</Original>
+				<Russian>
+					«Арсенал» пуст, а денег недостаточно для финансирования ваших первых миссий ...&lt;br/&gt;
+					Первая цель - заработать деньги и Получить снаряжение. Спросите Петроса о миссиях и решите самостоятельно пойти за ними или нет.&lt;br/&gt;
+					Миссии - это не настоящая цель игры, а просто варианты, которые иногда вам даже придется игнорировать. Посмотрите на карту или пошлите разведчика вперед, потому что некоторые миссии могут быть просто невозможны для ваших текущего состояния. Бинокли и система "Под прикрытием" станут вашими друзьями. &lt;br/&gt;&lt;br/&gt;
 
-Миссии запускаются в пределах 4 км от вашего штаба. Не пробуйте пройти их в одиночку, собирайте друзей или нанимайте ИИ на флаге, они не так хороши, как солдаты вражеской армии, однако они могут быть полезны при деверсии и прикрытии огнём. Некоторые цели могут быть очень отдаленными или слишком рискованными для непосредственного доступа С Базы. Если это так, Командир может создать лагерь, где вы можете совершать быстрые поездки (телепорт), ускоряя свое движение или предоставляя более безопасный подход.&lt;br/&gt;&lt;br/&gt;
+					Миссии запускаются в пределах 4 км от вашего штаба. Не пробуйте пройти их в одиночку, собирайте друзей или нанимайте ИИ на флаге, они не так хороши, как солдаты вражеской армии, однако они могут быть полезны при деверсии и прикрытии огнём. Некоторые цели могут быть очень отдаленными или слишком рискованными для непосредственного доступа С Базы. Если это так, Командир может создать лагерь, где вы можете совершать быстрые поездки (телепорт), ускоряя свое движение или предоставляя более безопасный подход.&lt;br/&gt;&lt;br/&gt;
 
-Соберите снаряжение, загрузите его в транспортное средство, вернитесь На базу, взаимодействуйте с Арсеналом, выберите «Передать транспортный груз в Арсенал», чтобы загрузить всю экипировку в ящик Арсенала. Для получения дополнительной информации см. Относительный раздел «Арсенал», «Инвентаризация и разблокировка» ниже.&lt;br/&gt;&lt;br/&gt;
+					Соберите снаряжение, загрузите его в транспортное средство, вернитесь На базу, взаимодействуйте с Арсеналом, выберите «Передать транспортный груз в Арсенал», чтобы загрузить всю экипировку в ящик Арсенала. Для получения дополнительной информации см. Относительный раздел «Арсенал», «Инвентаризация и разблокировка» ниже.&lt;br/&gt;&lt;br/&gt;
 
-Враги реагируют на ваши ходы, отправляя подкрепление или патрулирование физически покидая базу, поэтому время реакции различается в зависимости от дальности нахождения базы, какой вид транспорта используется противником, и могут ли они достичь вас вообще. &lt;br/&gt;
-Попытайтесь быстро устранить противника, если хотите, чтобы у вас была возможность грабежа и бегства. &lt;br/&gt;&lt;br/&gt;
+					Враги реагируют на ваши ходы, отправляя подкрепление или патрулирование физически покидая базу, поэтому время реакции различается в зависимости от дальности нахождения базы, какой вид транспорта используется противником, и могут ли они достичь вас вообще. &lt;br/&gt;
+					Попытайтесь быстро устранить противника, если хотите, чтобы у вас была возможность грабежа и бегства. &lt;br/&gt;&lt;br/&gt;
 
-Игра в одиночку может быть затруднена, если вы не будете правильно разведывать и запоминать территорию. Попытайтесь набирать ИИ (1 или 2 могут выполнять работу, они недостаточно подготовлены, чтобы убивать врагов, однако они являются отличной группой диверсии или могут обеспечить прекрытие огнем, если они надежно расположены). ИИ попытается оживить вас, если вы сбиты, и врагов не будет по близости. &lt;br/&gt;&lt;br/&gt;
+					Игра в одиночку может быть затруднена, если вы не будете правильно разведывать и запоминать территорию. Попытайтесь набирать ИИ (1 или 2 могут выполнять работу, они недостаточно подготовлены, чтобы убивать врагов, однако они являются отличной группой диверсии или могут обеспечить прекрытие огнем, если они надежно расположены). ИИ попытается оживить вас, если вы сбиты, и врагов не будет по близости. &lt;br/&gt;&lt;br/&gt;
 
-
-Тем не менее, Antistasi раскрывает весь свой потенциал, если вы играете с друзьями, поэтому присоединяйтесь к официальным серверам Antistasi и создавайте новые!</Russian>
+					Тем не менее, Antistasi раскрывает весь свой потенциал, если вы играете с друзьями, поэтому присоединяйтесь к официальным серверам Antistasi и создавайте новые!
+				</Russian>
 		    </Key>
 			<Key ID="STR_BR_BT4JAS">
 				<Original>Jeroen Arsenal System</Original>
 				<Russian>Jeroen Система Арсенала</Russian>
 			</Key>
 			<Key ID="STR_BR_BT_JAS">
-				<Original>The inventory system in Antistasi is unique: Loading Previous Session will empty all the inventories from vehicles. Only the contents of the Virtual Arsenal and the inventory of the Arsenal Crate are saved. &lt;br/&gt;&lt;br/&gt;
+				<Original>
+					The inventory system in Antistasi is unique: Loading Previous Session will empty all the inventories from vehicles. Only the contents of the Virtual Arsenal and the inventory of the Arsenal Crate are saved. &lt;br/&gt;&lt;br/&gt;
 
-You can use them as follows:&lt;br/&gt;
-- Arsenal Crate inventory = temporary storage for items. Gear transferred by the ‘Transfer Vehicle Cargo to Ammobox’ function will end up here. &lt;br/&gt;
-- Virtual Arsenal = main gear storage. Move items from the Arsenal Crate into the Arsenal by pressing ‘To Crate’ in the Virtual Arsenal environment.&lt;br/&gt;&lt;br/&gt;
+					You can use them as follows:&lt;br/&gt;
+					- Arsenal Crate inventory = temporary storage for items. Gear transferred by the ‘Transfer Vehicle Cargo to Ammobox’ function will end up here. &lt;br/&gt;
+					- Virtual Arsenal = main gear storage. Move items from the Arsenal Crate into the Arsenal by pressing ‘To Crate’ in the Virtual Arsenal environment.&lt;br/&gt;&lt;br/&gt;
 
-By opening the Arsenal you will see JAS’s modified Arsenal interface. On the left hand side the item categories are displayed. Red categories indicate items not yet equipped.&lt;br/&gt;&lt;br/&gt;
+					By opening the Arsenal you will see JAS’s modified Arsenal interface. On the left hand side the item categories are displayed. Red categories indicate items not yet equipped.&lt;br/&gt;&lt;br/&gt;
 
-The number between brackets in front of each item is the actual number of copies in the Arsenal.&lt;br/&gt;
-The same goes for the magazines (which are counted separately in single bullets), grenades and other consumables, displayed in the right hand side window.&lt;br/&gt;&lt;br/&gt;
+					The number between brackets in front of each item is the actual number of copies in the Arsenal.&lt;br/&gt;
+					The same goes for the magazines (which are counted separately in single bullets), grenades and other consumables, displayed in the right hand side window.&lt;br/&gt;&lt;br/&gt;
 
-Unlike previous Antistasi versions, there is no way to unlock an item permanently and in unlimited amount. Everything is limited to what you actually scavenge and bring back to HQ.&lt;br/&gt;&lt;br/&gt;
+					Unlike previous Antistasi versions, there is no way to unlock an item permanently and in unlimited amount. Everything is limited to what you actually scavenge and bring back to HQ.&lt;br/&gt;&lt;br/&gt;
 
-Accessing the Arsenal from the driver seat of a vehicle lets you add items into the vehicle itself.&lt;br/&gt;&lt;br/&gt;
+					Accessing the Arsenal from the driver seat of a vehicle lets you add items into the vehicle itself.&lt;br/&gt;&lt;br/&gt;
 
-The custom buttons at the bottom are:&lt;br/&gt;
-- Default gear: adds stuff that you’ll always need according to the modset.&lt;br/&gt;&lt;br/&gt;
-- To Crate: Moves all the items in the Arsenal Crate to the JAS inventory.&lt;br/&gt;&lt;br/&gt;
+					The custom buttons at the bottom are:&lt;br/&gt;
+					- Default gear: adds stuff that you’ll always need according to the modset.&lt;br/&gt;&lt;br/&gt;
 
-AI Gear (WiP): recruited AI spawn with gear available in the Arsenal depending on their class. This won’t reduce the actual amount of stored items.</Original>
-				<Russian>Система инвентаризации в Антистаси уникальна: загрузка предыдущей сессии освободит весь инвентарь транспортных средств. Сохраняется только содержимое виртуального арсенала и инвентарь Ящика Арсенала. &lt;br/&gt;&lt;br/&gt;
+					- To Crate: Moves all the items in the Arsenal Crate to the JAS inventory.&lt;br/&gt;&lt;br/&gt;
 
-Вы можете использовать их следующим образом:&lt;br/&gt;
+					AI Gear (WiP): recruited AI spawn with gear available in the Arsenal depending on their class. This won’t reduce the actual amount of stored items.
+				</Original>
+				<Russian>
+					Система инвентаризации в Антистаси уникальна: загрузка предыдущей сессии освободит весь инвентарь транспортных средств. Сохраняется только содержимое виртуального арсенала и инвентарь Ящика Арсенала. &lt;br/&gt;&lt;br/&gt;
 
-- Инвентарь ящика Арсенала = временное хранение предметов.Функция для передачи «выгрузить из транспорта в Арсенал»,осуществляется именно в снаряжение арсенала. &lt;br/&gt;
-- Виртуальный арсенал = постоянное хранение предметов. Переместите предметы из инвенторя Арсенала в виртуальный Арсенал, нажав «To Crate» в среде Виртуального Арсенала.&lt;br/&gt;&lt;br/&gt;
+					Вы можете использовать их следующим образом:&lt;br/&gt;
+					- Инвентарь ящика Арсенала = временное хранение предметов.Функция для передачи «выгрузить из транспорта в Арсенал»,осуществляется именно в снаряжение арсенала. &lt;br/&gt;
+					- Виртуальный арсенал = постоянное хранение предметов. Переместите предметы из инвенторя Арсенала в виртуальный Арсенал, нажав «To Crate» в среде Виртуального Арсенала.&lt;br/&gt;&lt;br/&gt;
 
-Открыв Арсенал, вы увидите модифицированный интерфейс Арсенала JAS. С левой стороны отображаются категории товаров. Красные категории указывают на предметы, которые еще не оборудованы.&lt;br/&gt;&lt;br/&gt;
+					Открыв Арсенал, вы увидите модифицированный интерфейс Арсенала JAS. С левой стороны отображаются категории товаров. Красные категории указывают на предметы, которые еще не оборудованы.&lt;br/&gt;&lt;br/&gt;
 
+					Число между скобками перед каждым элементом - это фактическое количество копий в «Арсенале».&lt;br/&gt;
+					То же самое касается магазинов (которые подсчитываются отдельно в отдельных пулях), гранаты и других расходных материалов, отображаются в правом окне.&lt;br/&gt;&lt;br/&gt;
 
-Число между скобками перед каждым элементом - это фактическое количество копий в «Арсенале».&lt;br/&gt;
-То же самое касается магазинов (которые подсчитываются отдельно в отдельных пулях), гранаты и других расходных материалов, отображаются в правом окне.&lt;br/&gt;&lt;br/&gt;
+					В отличие от предыдущих версий Antistasi, нет возможности разблокировать элемент постоянно и в неограниченном количестве. Все ограничено тем, что вы фактически берёте и возвращаете На базу .&lt;br/&gt;&lt;br/&gt;
 
-В отличие от предыдущих версий Antistasi, нет возможности разблокировать элемент постоянно и в неограниченном количестве. Все ограничено тем, что вы фактически берёте и возвращаете На базу .&lt;br/&gt;&lt;br/&gt;
+					Доступ к арсеналу с места водителя транспортного средства позволяет добавлять предметы в автомобиль.&lt;br/&gt;&lt;br/&gt;
 
-Доступ к арсеналу с места водителя транспортного средства позволяет добавлять предметы в автомобиль.&lt;br/&gt;&lt;br/&gt;
+					Пользовательские кнопки внизу:&lt;br/&gt;
+					- Default gear: добавляет вещи, которые вам всегда понадобятся в соответствии с классом.&lt;br/&gt;&lt;br/&gt;
 
-Пользовательские кнопки внизу:&lt;br/&gt;
+					- To Crate: перемещает все предметы в инвентаре арсенала в инвентарь JAS.&lt;br/&gt;&lt;br/&gt;
 
-- Default gear: добавляет вещи, которые вам всегда понадобятся в соответствии с классом.&lt;br/&gt;&lt;br/&gt; 
-- To Crate: перемещает все предметы в инвентаре арсенала в инвентарь JAS.&lt;br/&gt;&lt;br/&gt; 
- 
-ИИ Снаряжение (WiP): завербованный ИИ с снаряжением, доступным в Арсенале, в зависимости от их класса. Это не уменьшит фактическое количество сохраненных элементов.</Russian>
+					ИИ Снаряжение (WiP): завербованный ИИ с снаряжением, доступным в Арсенале, в зависимости от их класса. Это не уменьшит фактическое количество сохраненных элементов.
+				</Russian>
 		    </Key>
 			<Key ID="STR_BR_BT5TA">
 				<Original>Town allegiance</Original>
@@ -3588,90 +3606,94 @@ AI Gear (WiP): recruited AI spawn with gear available in the Arsenal depending o
 				<!-- Редакт. -->
 			</Key>
 			<Key ID="STR_BR_BT_TA">
-				<Original>The civilian population on the island has to be convinced that your cause is the right one. This is the goal of Antistasi. As you build up support in a town, the enemy tries to do the same.&lt;br/&gt;&lt;br/&gt;
+				<Original>
+					The civilian population on the island has to be convinced that your cause is the right one. This is the goal of Antistasi. As you build up support in a town, the enemy tries to do the same.&lt;br/&gt;&lt;br/&gt;
 
-Each town has a number of inhabitants, that can either support you, the enemy or be neutral.&lt;br/&gt;
-You can check the current Town Support value on the Map at HQ, and when in a town, it is displayed in the bottom right corner.&lt;br/&gt;&lt;br/&gt;
+					Each town has a number of inhabitants, that can either support you, the enemy or be neutral.&lt;br/&gt;
+					You can check the current Town Support value on the Map at HQ, and when in a town, it is displayed in the bottom right corner.&lt;br/&gt;&lt;br/&gt;
 
-Increase Town Support by killing enemy soldiers, bringing supplies, by leaflet drops, capturing the nearby power plant or establishing a propaganda station. &lt;br/&gt;
-A successful mission nets the favor of a relative number of people which means not every mission gains the same % amount across different towns.&lt;br/&gt;
+					Increase Town Support by killing enemy soldiers, bringing supplies, by leaflet drops, capturing the nearby power plant or establishing a propaganda station. &lt;br/&gt;
+					A successful mission nets the favor of a relative number of people which means not every mission gains the same % amount across different towns.&lt;br/&gt;
+					Town Support will drop if civilians get killed, the enemy bring supplies or if the town is without electricity.&lt;br/&gt;&lt;br/&gt;
 
-Town Support will drop if civilians get killed, the enemy bring supplies or if the town is without electricity.&lt;br/&gt;&lt;br/&gt;
+					Towns will only be powered if they support the faction which controls the nearby power plant.&lt;br/&gt;
+					If the town supports the rebels, the enemy will cut their power and you will lose Town Support over time, same goes for towns that support the enemy and power plants you control.&lt;br/&gt;.&lt;br/&gt;
 
-Towns will only be powered if they support the faction which controls the nearby power plant.&lt;br/&gt;
-If the town supports the rebels, the enemy will cut their power and you will lose Town Support over time, same goes for towns that support the enemy and power plants you control.&lt;br/&gt;.&lt;br/&gt;
+					Towns supporting the enemy will have enemy patrols around, and towns supporting your faction will have a small friendly patrol around.
+				</Original>
+				<Russian>
+					Гражданское население острова должно быть убеждено в том, что ваше дело является правильным. Это цель Антистаси. Когда вы строите поддержку в городе, враг пытается сделать то же самое.&lt;br/&gt;&lt;br/&gt;
 
-Towns supporting the enemy will have enemy patrols around, and towns supporting your faction will have a small friendly patrol around.</Original>
-				<Russian>Гражданское население острова должно быть убеждено в том, что ваше дело является правильным. Это цель Антистаси. Когда вы строите поддержку в городе, враг пытается сделать то же самое.&lt;br/&gt;&lt;br/&gt;
+					В каждом городе есть множество жителей, которые могут поддерживать вас, врага или быть нейтральными.&lt;br/&gt;
+					Вы можете проверить текущее значение поддержки города на карте что находится на Базе,или в городе - в правом нижнем углу.&lt;br/&gt;&lt;br/&gt;
 
-В каждом городе есть множество жителей, которые могут поддерживать вас, врага или быть нейтральными.&lt;br/&gt;
-Вы можете проверить текущее значение поддержки города на карте что находится на Базе,или в городе - в правом нижнем углу.&lt;br/&gt;&lt;br/&gt;
+					Увеличьте поддержку города, убив вражеских солдат, доставляя предметы снабжения, разбрасывая листовки, захватывая близлежащую электростанцию или создавая пропагандистскую станцию. &lt;br/&gt;
+					Успешная миссия обеспечивает предпочтение относительного числа людей, что означает, что не каждая миссия получает ту же самую сумму поддержки, разных городах по разному.&lt;br/&gt;
+					Городская поддержка будет падать, если гражданские лица будут убиты, враг принесет припасы или если в городе нет электричества.&lt;br/&gt;&lt;br/&gt;
 
-Увеличьте поддержку города, убив вражеских солдат, доставляя предметы снабжения, разбрасывая листовки, захватывая близлежащую электростанцию или создавая пропагандистскую станцию. &lt;br/&gt;
-Успешная миссия обеспечивает предпочтение относительного числа людей, что означает, что не каждая миссия получает ту же самую сумму поддержки, разных городах по разному.&lt;br/&gt;
+					Города будут работать только в том случае, если они поддерживают фракцию, которая контролирует соседнюю электростанцию.&lt;br/&gt;
+					Если город поддерживает повстанцев, противник потеряет свою власть, и вы потеряете поддержку города со временем если врага контролирует электростанцию.&lt;br/&gt;.&lt;br/&gt;
 
-Городская поддержка будет падать, если гражданские лица будут убиты, враг принесет припасы или если в городе нет электричества.&lt;br/&gt;&lt;br/&gt;
-
-Города будут работать только в том случае, если они поддерживают фракцию, которая контролирует соседнюю электростанцию.&lt;br/&gt;
-
-Если город поддерживает повстанцев, противник потеряет свою власть, и вы потеряете поддержку города со временем если врага контролирует электростанцию.&lt;br/&gt;.&lt;br/&gt; 
-
-Города, поддерживающие врага, будут иметь вражеские патрули, а города, поддерживающие вашу фракцию, будут иметь небольшой дружественный патруль.</Russian>
+					Города, поддерживающие врага, будут иметь вражеские патрули, а города, поддерживающие вашу фракцию, будут иметь небольшой дружественный патруль.
+				</Russian>
 		    </Key>
 			<Key ID="STR_BR_BT6HT">
 				<Original>Holding territories</Original>
 				<Russian>Удерживание Территории</Russian>
 			</Key>
 			<Key ID="STR_BR_BT_HT">
-				<Original>Everytime you conquest or kill some special targets, enemy will dispatch a QRF from the available base or airport, the first step to secure an area is to wait and defend it from that first attack.
-Overtime, enemies will check the garrison amount and can decide to send a patrol to take it back in case it’s abbandoned.
-
-That said, you need HR to garrison the position and increase the ArmyXPLevel to make your garrison good enough to resist an Attack which is a mission where massive amount of forces are sent to recapture an objective. Note that NATO is very handy in this case.
-
-The Commander can set up a roadblock from the Y menu. Roadblocks are very effective in taking out one or two enemy vehicles thanks to their AT capabilities and .50 cal machine guns.&lt;br/&gt;&lt;br/&gt;</Original>
-				<Russian>Каждый раз, когда вы захватываете или убиваете какие-то специальные цели, враг отправляет ОБР из ближайшей базы или аэропорта, первым шагом, чтобы защитить зону, является ожидание и защита от этой первой атаки. &lt;br/&gt;
-Специальные враги будут проверять сумму гарнизона и могут принять решение отправить патруль, чтобы вернуть его на случай, если он будет разбит. &lt;br/&gt; 
-
-Тем не менее, вам нужен HR, чтобы гарнизонировать позицию и увеличить Уровень Опыта Армии, чтобы ваш гарнизон был достаточно хорош, чтобы противостоять атаке, которая является миссией, когда огромное количество сил отправляется, чтобы вернуть цель. Отметим, что НАТО очень удобно в этом случае. &lt;br/&gt;
-
-Командующий может настроить дорожный блок из меню Y. Дорожные блоки очень эффективны в том, чтобы вытащить один или два вражеских транспортных средства благодаря своим возможностям ПТ и Крупно Калиберным пулемётам. &lt;br/&gt;&lt;br/&gt;</Russian>
+				<Original>
+					Everytime you conquest or kill some special targets, enemy will dispatch a QRF from the available base or airport, the first step to secure an area is to wait and defend it from that first attack.&lt;br/&gt;
+					Overtime, enemies will check the garrison amount and can decide to send a patrol to take it back in case it’s abbandoned.&lt;br/&gt;
+					That said, you need HR to garrison the position and increase the ArmyXPLevel to make your garrison good enough to resist an Attack which is a mission where massive amount of forces are sent to recapture an objective. Note that NATO is very handy in this case.&lt;br/&gt;
+					The Commander can set up a roadblock from the Y menu. Roadblocks are very effective in taking out one or two enemy vehicles thanks to their AT capabilities and .50 cal machine guns.&lt;br/&gt;&lt;br/&gt;
+				</Original>
+				<Russian>
+					Каждый раз, когда вы захватываете или убиваете какие-то специальные цели, враг отправляет ОБР из ближайшей базы или аэропорта, первым шагом, чтобы защитить зону, является ожидание и защита от этой первой атаки. &lt;br/&gt;
+					Специальные враги будут проверять сумму гарнизона и могут принять решение отправить патруль, чтобы вернуть его на случай, если он будет разбит.&lt;br/&gt;
+					Тем не менее, вам нужен HR, чтобы гарнизонировать позицию и увеличить Уровень Опыта Армии, чтобы ваш гарнизон был достаточно хорош, чтобы противостоять атаке, которая является миссией, когда огромное количество сил отправляется, чтобы вернуть цель. Отметим, что НАТО очень удобно в этом случае.&lt;br/&gt;
+					Командующий может настроить дорожный блок из меню Y. Дорожные блоки очень эффективны в том, чтобы вытащить один или два вражеских транспортных средства благодаря своим возможностям ПТ и Крупно Калиберным пулемётам.&lt;br/&gt;&lt;br/&gt;
+				</Russian>
 			</Key>
 			<Key ID="STR_BR_BT7MI">
 				<Original>Missions</Original>
 				<Russian>Миссии</Russian>
 			</Key>
 			<Key ID="STR_BR_BT_MI">
-				<Original>Missions can be requested at Petros, as side missions at the Corrupted Politician/Officer, or they can appear spontaneously. &lt;br/&gt;
-Most of them are scheduled by time and can be can tracked by checking the tasks on your map. There might be many active missions at same time; it’s your choice which one you want to complete.&lt;br/&gt;&lt;br/&gt;
+				<Original>
+					Missions can be requested at Petros, as side missions at the Corrupted Politician/Officer, or they can appear spontaneously. &lt;br/&gt;
+					Most of them are scheduled by time and can be can tracked by checking the tasks on your map. There might be many active missions at same time; it’s your choice which one you want to complete.&lt;br/&gt;&lt;br/&gt;
 
-There are around 18 missions in Antistasi, but some missions might not be available in your HQ area (4 km radius), depending on surrounding towns, cities and base types.&lt;br/&gt;&lt;br/&gt;
+					There are around 18 missions in Antistasi, but some missions might not be available in your HQ area (4 km radius), depending on surrounding towns, cities and base types.&lt;br/&gt;&lt;br/&gt;
 
-The missions will vary in difficulty depending on nearby enemy positions (roadblocks, mortar positions and AA hilltops), the gear you equip, the manpower you bring and the amount of time you spend.&lt;br/&gt;
-All these factors should be considered when choosing one mission over the other, and completion times can differ greatly depending on planning.&lt;br/&gt;&lt;br/&gt;
+					The missions will vary in difficulty depending on nearby enemy positions (roadblocks, mortar positions and AA hilltops), the gear you equip, the manpower you bring and the amount of time you spend.&lt;br/&gt;
+					All these factors should be considered when choosing one mission over the other, and completion times can differ greatly depending on planning.&lt;br/&gt;&lt;br/&gt;
 
-Ignoring missions is also a valid option, though ignoring missions may have repercussions, such as:&lt;br/&gt;
-Kill the Traitor: lose a percentage of money and HR and attacks on your territories will be more frequent. &lt;br/&gt;
-Supply Convoy: towns that are successfully supplied by the enemy convoy will gain support in their favor.&lt;br/&gt;&lt;br/&gt;
+					Ignoring missions is also a valid option, though ignoring missions may have repercussions, such as:&lt;br/&gt;
+					Kill the Traitor: lose a percentage of money and HR and attacks on your territories will be more frequent. &lt;br/&gt;
+					Supply Convoy: towns that are successfully supplied by the enemy convoy will gain support in their favor.&lt;br/&gt;&lt;br/&gt;
 
-Petros gives you 1 mission per type with a cooldown of 30 minutes real time, so skipping time won’t let you have another mission faster. On the other hand, mission time is based on in-game time, so if you skip time when missions are active, they will be considered failed.&lt;br/&gt;&lt;br/&gt;
+					Petros gives you 1 mission per type with a cooldown of 30 minutes real time, so skipping time won’t let you have another mission faster. On the other hand, mission time is based on in-game time, so if you skip time when missions are active, they will be considered failed.&lt;br/&gt;&lt;br/&gt;
 
-Note that requesting Propaganda on a town which has less than 12% FIA support will spawn a Leaflett Drop mission instead. The real propaganda spawns a custom propaganda truck.</Original>
-				<Russian>Миссии могут быть запрошены у Петроса, в качестве побочных миссий "Коррумпированный политик/Офицер", или они могут появляться спонтанно. &lt;br/&gt;
-Большинство из них запланировано по времени, и их можно отслеживать, проверяя задачи на своей карте. В то же время может быть много активных миссий; это ваш выбор, какие вы хотите завершить.&lt;br/&gt;&lt;br/&gt;
+					Note that requesting Propaganda on a town which has less than 12% FIA support will spawn a Leaflett Drop mission instead. The real propaganda spawns a custom propaganda truck.
+				</Original>
+				<Russian>
+					Миссии могут быть запрошены у Петроса, в качестве побочных миссий "Коррумпированный политик/Офицер", или они могут появляться спонтанно. &lt;br/&gt;
+					Большинство из них запланировано по времени, и их можно отслеживать, проверяя задачи на своей карте. В то же время может быть много активных миссий; это ваш выбор, какие вы хотите завершить.&lt;br/&gt;&lt;br/&gt;
 
-В Антистаси около 18 миссий, но некоторые миссии могут быть недоступны на вашей Базе (радиус 4 км), в зависимости от городов, Деревень и баз разных типов.&lt;br/&gt;&lt;br/&gt;
+					В Антистаси около 18 миссий, но некоторые миссии могут быть недоступны на вашей Базе (радиус 4 км), в зависимости от городов, Деревень и баз разных типов.&lt;br/&gt;&lt;br/&gt;
 
-Миссии различаются по сложности в зависимости от ближайших позиций противника (контрольно-пропускные пункты, минометные позиции и холмы ПВО), снаряжение, которое вы экипируете, трудовые ресурсы, которые вы приносите, и количество времени, которое вы потратите.&lt;br/&gt;
-Все эти факторы следует учитывать при выборе одной миссии, а время завершения может сильно различаться в зависимости от планирования.&lt;br/&gt;&lt;br/&gt;
+					Миссии различаются по сложности в зависимости от ближайших позиций противника (контрольно-пропускные пункты, минометные позиции и холмы ПВО), снаряжение, которое вы экипируете, трудовые ресурсы, которые вы приносите, и количество времени, которое вы потратите.&lt;br/&gt;
+					Все эти факторы следует учитывать при выборе одной миссии, а время завершения может сильно различаться в зависимости от планирования.&lt;br/&gt;&lt;br/&gt;
 
-Игнорирование миссий также является допустимым вариантом, хотя игнорирование миссий может иметь последствия, такие как:&lt;br/&gt;
-Убейте предателя: потеряйте процент денег и HR,а атаки на ваши территории будут более частыми. &lt;br/&gt;
-Конвои поставки: города, которые успешно снабжены конвоем противника,предоставляют поддержку в пользу противника.&lt;br/&gt;&lt;br/&gt;
+					Игнорирование миссий также является допустимым вариантом, хотя игнорирование миссий может иметь последствия, такие как:&lt;br/&gt;
+					Убейте предателя: потеряйте процент денег и HR,а атаки на ваши территории будут более частыми. &lt;br/&gt;
+					Конвои поставки: города, которые успешно снабжены конвоем противника,предоставляют поддержку в пользу противника.&lt;br/&gt;&lt;br/&gt;
 
-Petros дает вам 1 миссию определенного типа,с перезарядкой 30 минут реального времени, поэтому пропустить время не поможет вам быстрее выполнять еще одну миссию. С другой стороны, время миссии основано на внутриигровом времени, поэтому, если вы пропустите время, когда миссии активны, они будут считаться проваленными.&lt;br/&gt;&lt;br/&gt;
+					Petros дает вам 1 миссию определенного типа,с перезарядкой 30 минут реального времени, поэтому пропустить время не поможет вам быстрее выполнять еще одну миссию. С другой стороны, время миссии основано на внутриигровом времени, поэтому, если вы пропустите время, когда миссии активны, они будут считаться проваленными.&lt;br/&gt;&lt;br/&gt;
 
-
-Обратите внимание, что запрос Пропаганды в городе, который имеет поддержку FIA менее чем 12%,создаёт миссию Разброс листовок. Настоящая пропаганда создаёт специальный пропагандистский грузовик.</Russian>
+					Обратите внимание, что запрос Пропаганды в городе, который имеет поддержку FIA менее чем 12%,создаёт миссию Разброс листовок. Настоящая пропаганда создаёт специальный пропагандистский грузовик.
+				</Russian>
 		    </Key>
 			<Key ID="STR_BR_AF0">
 				<Original>Antistasi features</Original>
@@ -3682,297 +3704,298 @@ Petros дает вам 1 миссию определенного типа,с п�
 				<Russian>Система классов</Russian>
 			</Key>
 			<Key ID="STR_BR_AF_CS">
-				<Original>Most of the playable classes have special abilities, and/or weapon proficiencies.&lt;br/&gt;
-A class which doesn’t have a proficiency for a specific type can still use the weapon but with handling difficulties, everyone can use AT weapons without any malus.&lt;br/&gt;
+				<Original>
+					Most of the playable classes have special abilities, and/or weapon proficiencies.&lt;br/&gt;
+					A class which doesn’t have a proficiency for a specific type can still use the weapon but with handling difficulties, everyone can use AT weapons without any malus.&lt;br/&gt;
+					Class affects: &lt;br/&gt;
+					- Officer: sneaky steps and harder to be spotted, less carrying capacity&lt;br/&gt;
+					- Teamleader: standard&lt;br/&gt;
+					- Soldier: sneaky steps, less carrying capacity.&lt;br/&gt;
+					- Medic: can use medikit, can give blood (ACE basic), can use Surgical Kit (ACE advanced)&lt;br/&gt;
+					- Engineer: can use toolkit, with ACE can repair (everyone can change wheels if they have a toolkit)&lt;br/&gt;
+					- Autorifleman: loud steps, more carrying capacity, has proficiency for machineguns&lt;br/&gt;
+					- Marksman: harder to be spotted, less carrying capacity, has proficiency for sniper rifles&lt;br/&gt;
+					- Ammobearer: loud steps, more easily spotted, way more carrying capacity&lt;br/&gt;
+					- AT rifleman: more easily spotted, more carry capacity.&lt;br/&gt;&lt;br/&gt;
 
-Class affects: &lt;br/&gt;
-- Officer: sneaky steps and harder to be spotted, less carrying capacity&lt;br/&gt;
-- Teamleader: standard&lt;br/&gt;
-- Soldier: sneaky steps, less carrying capacity.&lt;br/&gt;
-- Medic: can use medikit, can give blood (ACE basic), can use Surgical Kit (ACE advanced)&lt;br/&gt;
-- Engineer: can use toolkit, with ACE can repair (everyone can change wheels if they have a toolkit)&lt;br/&gt;
-- Autorifleman: loud steps, more carrying capacity, has proficiency for machineguns&lt;br/&gt;
-- Marksman: harder to be spotted, less carrying capacity, has proficiency for sniper rifles&lt;br/&gt;
-- Ammobearer: loud steps, more easily spotted, way more carrying capacity&lt;br/&gt;
-- AT rifleman: more easily spotted, more carry capacity.&lt;br/&gt;&lt;br/&gt;
+					Choosing your class is important just as balancing the roles among your group is.&lt;br/&gt;&lt;br/&gt;
 
-Choosing your class is important just as balancing the roles among your group is.&lt;br/&gt;&lt;br/&gt;
+					In Singleplayer you can interact with the Arsenal Crate and Change Role anytime you want. Note that it won’t Persistent Save, so upon restart you will have to Change Role again.&lt;br/&gt;&lt;br/&gt;
 
-In Singleplayer you can interact with the Arsenal Crate and Change Role anytime you want. Note that it won’t Persistent Save, so upon restart you will have to Change Role again.&lt;br/&gt;&lt;br/&gt;
-
-In Multiplayer you select your class upon login and you can change it by logging out and in again.</Original>
-				<Russian>Большинство игровых классов обладают особыми способностями и/или навыками оружия.&lt;br/&gt;
-
-Класс, который не обладает навыками для определенного типа оружия, все еще может использовать его, но с трудностями при использование, каждый может использовать ПТ оружие без Автонаведения.&lt;br/&gt;  <!-- Редакт. -->
-
-Эффекты классов: &lt;br/&gt;
-
-- Офицер: Тихие шаги и сложнее заметить, меньше грузоподъемность. &lt;br/&gt;
-- Лидер Группы: стандартный &lt;br/&gt;
-- Солдат: Тихие шаги, меньшая грузоподъемность. &lt;br/&gt;
-- Медик: может использовать Аптечку, может Переливать кровь (ACE базовый), может использовать хирургический комплект (ACE продвинутый)&lt;br/&gt;
-- Инженер: может использовать инструментарий, с ACE можно отремонтировать (каждый может менять колеса, если у них есть инструментарий)&lt;br/&gt;  
-					
-					
-					
-					
-					
-					<!-- Редакт. -->
+					In Multiplayer you select your class upon login and you can change it by logging out and in again.
+				</Original>
+				<Russian>
+					Большинство игровых классов обладают особыми способностями и/или навыками оружия.&lt;br/&gt;
+					Класс, который не обладает навыками для определенного типа оружия, все еще может использовать его, но с трудностями при использование, каждый может использовать ПТ оружие без Автонаведения.&lt;br/&gt;  <!-- Редакт. -->
+					Эффекты классов: &lt;br/&gt;
+					- Офицер: Тихие шаги и сложнее заметить, меньше грузоподъемность. &lt;br/&gt;
+					- Лидер Группы: стандартный &lt;br/&gt;
+					- Солдат: Тихие шаги, меньшая грузоподъемность. &lt;br/&gt;
+					- Медик: может использовать Аптечку, может Переливать кровь (ACE базовый), может использовать хирургический комплект (ACE продвинутый)&lt;br/&gt;
+					- Инженер: может использовать инструментарий, с ACE можно отремонтировать (каждый может менять колеса, если у них есть инструментарий)&lt;br/&gt;<!-- Редакт. -->
 					- Стрелок: громкие шаги, большая грузоподъемность, обладает навыками для пулеметов &lt;br/&gt;
-- Снайпер: сложнее заметить, меньше грузоподъемность, обладает навыками для снайперских винтовок &lt;br/&gt;
-- Ammobearer: громкие шаги, более легко заметить, способен увеличить грузоподъемность &lt;br/&gt;
+					- Снайпер: сложнее заметить, меньше грузоподъемность, обладает навыками для снайперских винтовок &lt;br/&gt;
+					- Ammobearer: громкие шаги, более легко заметить, способен увеличить грузоподъемность &lt;br/&gt;
+					- ПТ Стрелок: легко заметить, большая грузоподъемность. &lt;br/&gt;&lt;br/&gt;
 
-- ПТ Стрелок: легко заметить, большая грузоподъемность. &lt;br/&gt;&lt;br/&gt; 
+					Выбор вашего класса важен так же, как баланс ролей среди вашей группы. &lt;br/&gt;&lt;br/&gt;
 
-Выбор вашего класса важен так же, как баланс ролей среди вашей группы. &lt;br/&gt;&lt;br/&gt;
+					В Одиночном режиме вы можете взаимодействовать с ящиком Арсенал и изменять роль в любое время. Обратите внимание, что это не будет сохранено в прогрессе, поэтому при перезагрузке вам придется снова изменить роль. &lt;br/&gt;&lt;br/&gt;
 
-
-В Одиночном режиме вы можете взаимодействовать с ящиком Арсенал и изменять роль в любое время. Обратите внимание, что это не будет сохранено в прогрессе, поэтому при перезагрузке вам придется снова изменить роль. &lt;br/&gt;&lt;br/&gt;
-
-В Мультиплеере вы выбираете свой класс при входе в систему, и вы можете изменить его, выйдя из системы и снова зайдя.</Russian>
+					В Мультиплеере вы выбираете свой класс при входе в систему, и вы можете изменить его, выйдя из системы и снова зайдя.
+				</Russian>
 			</Key>
 			<Key ID="STR_BR_AF2AIME">
 		        <Original>AI Management / Enhancements</Original>
 				<Russian>Управление ИИ / улучшение</Russian>  
 		    </Key>
 			<Key ID="STR_BR_AF_AIME">
-				<Original>Commander and server members can recruit AI at the Flag or add garrison to conquered objectives. Those guys starts with civilian clothes and their weapons correspond to a random choice between their class weapons present into the Arsenal, at this modding stage they don’t substract the weapon from it nor they require a threshold amount like it was with original Arsenal system. &lt;br/&gt;&lt;br/&gt;
+				<Original>
+					Commander and server members can recruit AI at the Flag or add garrison to conquered objectives. Those guys starts with civilian clothes and their weapons correspond to a random choice between their class weapons present into the Arsenal, at this modding stage they don’t substract the weapon from it nor they require a threshold amount like it was with original Arsenal system. &lt;br/&gt;&lt;br/&gt;
 
-Progress with Army XP level is the way to make them better both in fighting skills and dressing.&lt;br/&gt;&lt;br/&gt;
+					Progress with Army XP level is the way to make them better both in fighting skills and dressing.&lt;br/&gt;&lt;br/&gt;
 
-Commanding AI is Vanilla feature, check on BIS wiki to learn more about it. Hold fire, form line or file and regroup are very important expecially when driving in undercover truck with AI riding as passengers, if not told to hold fire they might blow up your sneaky actions.&lt;br/&gt;&lt;br/&gt;
+					Commanding AI is Vanilla feature, check on BIS wiki to learn more about it. Hold fire, form line or file and regroup are very important expecially when driving in undercover truck with AI riding as passengers, if not told to hold fire they might blow up your sneaky actions.&lt;br/&gt;&lt;br/&gt;
 
-Without a radio equipped you can’t control them if you go 500m away, in that case, they disappear temporanely from the bottom bar and start moving towards your position. &lt;br/&gt;&lt;br/&gt;
+					Without a radio equipped you can’t control them if you go 500m away, in that case, they disappear temporanely from the bottom bar and start moving towards your position. &lt;br/&gt;&lt;br/&gt;
 
-The Y menu give options to tell selected friendly AI to:&lt;br/&gt;&lt;br/&gt;
+					The Y menu give options to tell selected friendly AI to:&lt;br/&gt;&lt;br/&gt;
 
-- Auto Heal: set this for each recruited AI to let them heal teammates and themselves automatically. &lt;br/&gt;&lt;br/&gt;
+					- Auto Heal: set this for each recruited AI to let them heal teammates and themselves automatically. &lt;br/&gt;&lt;br/&gt;
 
-- Auto Ream: send AI to scavenge ammo and weapons from enemy bodies or resupply at crates according to their class.&lt;br/&gt;&lt;br/&gt;
+					- Auto Ream: send AI to scavenge ammo and weapons from enemy bodies or resupply at crates according to their class.&lt;br/&gt;&lt;br/&gt;
 
-- Remote control: if not undercover and no enemies nearby, lets you control the AI to fix some pathfinding issues or simply manage their inventory. You will lose control after 60 seconds or if the AI takes damage. You can access the arsenal and equip them how you wish to.&lt;br/&gt;&lt;br/&gt;
+					- Remote control: if not undercover and no enemies nearby, lets you control the AI to fix some pathfinding issues or simply manage their inventory. You will lose control after 60 seconds or if the AI takes damage. You can access the arsenal and equip them how you wish to.&lt;br/&gt;&lt;br/&gt;
 
-- Dismiss: send the unit back to HQ. Upon arrival their cost in money and HR is refunded.</Original>
-				<Russian>Командир и члены сервера могут набирать ИИ на флаге или добавлять гарнизон к завоеванным целям. Эти парни начинают с гражданской одежды, и их оружие соответствует случайному выбору между их классовым оружием, присутствующим в Арсенале, на этой стадии моддинга они не выберают оружие из него, и они не требуют пороговой суммы, как это было с оригинальной системой Арсенала. &lt;br/&gt;&lt;br/&gt; <!-- Редакт. -->
+					- Dismiss: send the unit back to HQ. Upon arrival their cost in money and HR is refunded.
+				</Original>
+				<Russian>
+					Командир и члены сервера могут набирать ИИ на флаге или добавлять гарнизон к завоеванным целям. Эти парни начинают с гражданской одежды, и их оружие соответствует случайному выбору между их классовым оружием, присутствующим в Арсенале, на этой стадии моддинга они не выберают оружие из него, и они не требуют пороговой суммы, как это было с оригинальной системой Арсенала. &lt;br/&gt;&lt;br/&gt; <!-- Редакт. -->
 
-Прогресс уровня опыта армии - это способ улучшить их как в боевых навыках, так и в одежде.&lt;br/&gt;&lt;br/&gt; 
+					Прогресс уровня опыта армии - это способ улучшить их как в боевых навыках, так и в одежде.&lt;br/&gt;&lt;br/&gt;
 
-Командующий ИИ - это функция Стандартна, проверьте вики BIS, чтобы узнать больше об этом. Удерживать огонь, формировать линию или калонну и перегруппироваться очень важно, когда вы едете в грузовике под прикрытием с ИИ, едете как пассажиры, если не сказать их не стрелять, они могут раскрыть вас когда вы будете под прикрытием действия. &lt;br/&gt;&lt;br/&gt; <!-- Редакт. -->
+					Командующий ИИ - это функция Стандартна, проверьте вики BIS, чтобы узнать больше об этом. Удерживать огонь, формировать линию или калонну и перегруппироваться очень важно, когда вы едете в грузовике под прикрытием с ИИ, едете как пассажиры, если не сказать их не стрелять, они могут раскрыть вас когда вы будете под прикрытием действия. &lt;br/&gt;&lt;br/&gt; <!-- Редакт. -->
 
-Без радиооборудования вы не сможете контролировать их, если вы пройдете 500 метров,то они временно исчезнут из нижней панели и начнут двигаться к вашей позиции. &lt;br/&gt;&lt;br/&gt;
+					Без радиооборудования вы не сможете контролировать их, если вы пройдете 500 метров,то они временно исчезнут из нижней панели и начнут двигаться к вашей позиции. &lt;br/&gt;&lt;br/&gt;
 
-Меню Y предоставляет опции для указаного выбранного дружественного ИИ: &lt;br/&gt;&lt;br/&gt; 
+					Меню Y предоставляет опции для указаного выбранного дружественного ИИ: &lt;br/&gt;&lt;br/&gt;
 
-- Авто исцеление: устанавливается для каждого завербованного ИИ, чтобы они могли исцелять товарищей по команде и сами,автоматически. &lt;br/&gt;&lt;br/&gt;
+					- Авто исцеление: устанавливается для каждого завербованного ИИ, чтобы они могли исцелять товарищей по команде и сами,автоматически. &lt;br/&gt;&lt;br/&gt;
 
+					- Авто Перевооружение: отправьте ИИ, чтобы вытащить боеприпасы и оружие из вражеских тел или пополнить запас в соответствии с их классом.  &lt;br/&gt;&lt;br/&gt;
 
-- Авто Перевооружение: отправьте ИИ, чтобы вытащить боеприпасы и оружие из вражеских тел или пополнить запас в соответствии с их классом.  &lt;br/&gt;&lt;br/&gt;
+					- Пульт дистанционного управления: если не под прикрытием,и поблизости нет врагов, вы можете управлять ИИ, чтобы исправить некоторые проблемы с поиском пути или просто управлять их инвентарем. Вы потеряете контроль через 60 секунд или если ИИ нанесли урон. Вы можете получить доступ к арсеналу и экипировать их, как хотите. &lt;br/&gt;&lt;br/&gt;
 
-- Пульт дистанционного управления: если не под прикрытием,и поблизости нет врагов, вы можете управлять ИИ, чтобы исправить некоторые проблемы с поиском пути или просто управлять их инвентарем. Вы потеряете контроль через 60 секунд или если ИИ нанесли урон. Вы можете получить доступ к арсеналу и экипировать их, как хотите. &lt;br/&gt;&lt;br/&gt;
-
-- Распустить: отправить Юнита обратно на базу. По прибытию возвращается их стоимость в деньгах и HR.</Russian>
+					- Распустить: отправить Юнита обратно на базу. По прибытию возвращается их стоимость в деньгах и HR.
+				</Russian>
 			</Key>
 			<Key ID="STR_BR_AF3AXPNL">
 				<Original>Army Xp and Level</Original>
 				<Russian>Опыт Армии и Уровень</Russian>
 			</Key>
 			<Key ID="STR_BR_AF_AXPNL">
-				<Original>Army Experience affects the skill of FIA recruited troops, reinforcements and garrisons. Gain Experience by fighting, completing missions and capturing objectives.&lt;br/&gt;
+				<Original>
+					Army Experience affects the skill of FIA recruited troops, reinforcements and garrisons. Gain Experience by fighting, completing missions and capturing objectives.&lt;br/&gt;&lt;br/&gt;
 
-&lt;br/&gt;&lt;br/&gt;
+					Army Level:&lt;br/&gt;
+					0) XP cap at 4, Recruits wear civilian clothing, Garage slots = 10 FIA and 3 Personal, can store basic vehicles and MRAPs only, HR cap at 50, Camps 2, normal Roadblocks 2, normal Watchposts 2.&lt;br/&gt;&lt;br/&gt;
 
-Army Level:
-0) XP cap at 4, Recruits wear civilian clothing, Garage slots = 10 FIA and 3 Personal, can store basic vehicles and MRAPs only, HR cap at 50, Camps 2, normal Roadblocks 2, normal Watchposts 2.&lt;br/&gt;&lt;br/&gt;
+					1) XP cap at 8, 25% Recruits wear guerrilla uniforms, Garage slots = 15 FIA and 5 Personal, can store APC, HR cap at 75, Camps 3, normal Roadblocks 4 , normal Watchposts 3, one-off NATO boost +10.&lt;br/&gt;&lt;br/&gt;
 
-1) XP cap at 8, 25% Recruits wear guerrilla uniforms, Garage slots = 15 FIA and 5 Personal, can store APC, HR cap at 75, Camps 3, normal Roadblocks 4 , normal Watchposts 3, one-off NATO boost +10.&lt;br/&gt;&lt;br/&gt;
+					2) XP cap at 12, 50% Recruits wear guerrilla uniforms, Garage slots = 20 FIA and 10 Personal, can store also Helicopters, HR cap at 100, Camps 4, enhanced Roadblocks 6 , enhanced Watchposts 4, one-off NATO boost +20&lt;br/&gt;&lt;br/&gt;
 
-2) XP cap at 12, 50% Recruits wear guerrilla uniforms, Garage slots = 20 FIA and 10 Personal, can store also Helicopters, HR cap at 100, Camps 4, enhanced Roadblocks 6 , enhanced Watchposts 4, one-off NATO boost +20&lt;br/&gt;&lt;br/&gt;
+					3) XP cap at 20h for both FIA and personal, all vehicles can be stored, HR cap at 150, Camps 5, enhanced Roadblocks 10, enhanced Watchposts 6, one-off NATO boost +30.
+				</Original>
+				<Russian>
+					Опыт армии влияет на умение FIA набирать войска, подкрепления и гарнизоны. Получите опыт, сражаясь, выполняя миссии и захватывая цели.&lt;br/&gt;&lt;br/&gt;
 
-3) XP cap at 20h for both FIA and personal, all vehicles can be stored, HR cap at 150, Camps 5, enhanced Roadblocks 10, enhanced Watchposts 6, one-off NATO boost +30.</Original>
-				<Russian>Опыт армии влияет на умение FIA набирать войска, подкрепления и гарнизоны. Получите опыт, сражаясь, выполняя миссии и захватывая цели.&lt;br/&gt;
+					Уровень Армии:&lt;br/&gt;
+					0) Максимум опыта = 4, новобранцы носят гражданскую одежду, слоты для гаража = 10 FIA и 3 персональных, могут хранить только базовые транспортные средства и MRAP,Максимум HR=50, лагеря=2, обычные КПП=2, обычные сторожевые посты=2.&lt;br/&gt;&lt;br/&gt;
 
-&lt;br/&gt;&lt;br/&gt;
+					1) Максимум опыта = 8, 25% новобранцев носят форму повстанцев, слоты для гаража = 15 FIA и 5 Персональных, могут хранить бронетранспортер,Максиум HR=75, лагерей=3, обычные КПП=4, обычные сторожевые посты=3, одноразовые повышения НАТО +10.&lt;br/&gt;&lt;br/&gt;
 
-Уровень Армии:
-0) Максимум опыта = 4, новобранцы носят гражданскую одежду, слоты для гаража = 10 FIA и 3 персональных, могут хранить только базовые транспортные средства и MRAP,Максимум HR=50, лагеря=2, обычные КПП=2, обычные сторожевые посты=2.&lt;br/&gt;&lt;br/&gt;
+					2) Максимум опыта = 12, 50% новобранцев носят форму повстанцев, слоты для гаража = 20 FIA и 10 персональных, могут хранить также вертолеты, Максиум HR=100, лагеря=4, улучшенные КПП=6, улучшенные сторожевые посты=4, одноразовые повышения НАТО + 20&lt;br/&gt;&lt;br/&gt;
 
-1) Максимум опыта = 8, 25% новобранцев носят форму повстанцев, слоты для гаража = 15 FIA и 5 Персональных, могут хранить бронетранспортер,Максиум HR=75, лагерей=3, обычные КПП=4, обычные сторожевые посты=3, одноразовые повышения НАТО +10.&lt;br/&gt;&lt;br/&gt;
-
-2) Максимум опыта = 12, 50% новобранцев носят форму повстанцев, слоты для гаража = 20 FIA и 10 персональных, могут хранить также вертолеты, Максиум HR=100, лагеря=4, улучшенные КПП=6, улучшенные сторожевые посты=4, одноразовые повышения НАТО + 20&lt;br/&gt;&lt;br/&gt;
-
-3) Максимум опыта = 20 часов как для FIA, так и для личного использования, все транспортные средства могут быть сохранены, максиум HR=150, лагеря=5, улучшенные КПП=10, улучшенные сторожевые посты=6, одноразовые повышения НАТО +30. </Russian>
+					3) Максимум опыта = 20 часов как для FIA, так и для личного использования, все транспортные средства могут быть сохранены, максиум HR=150, лагеря=5, улучшенные КПП=10, улучшенные сторожевые посты=6, одноразовые повышения НАТО +30.
+				</Russian>
 			</Key>
 			<Key ID="STR_BR_AF7JAG">
 				<Original>Jeroen Arsenal Garage</Original>
 				<Russian>Jeroen Арсенал\Гараж</Russian>
 			</Key>
 			<Key ID="STR_BR_AF_JAG">
-				<Original>Accessing the Garage opens a custom interface which lets you select the vehicle on the left side, and interact with the vehicle on the right.&lt;br/&gt;&lt;br/&gt;
+				<Original>
+					Accessing the Garage opens a custom interface which lets you select the vehicle on the left side, and interact with the vehicle on the right.&lt;br/&gt;&lt;br/&gt;
 
-Vehicles can be repaired piece by piece, glass included, through JAG and also reskinned. &lt;br/&gt;&lt;br/&gt;
+					Vehicles can be repaired piece by piece, glass included, through JAG and also reskinned.&lt;br/&gt;&lt;br/&gt;
 
-Stored vehicles are visible for everyone in the Garage. Green vehicles are yours, white ones are retrievable by everyone and red vehicles are locked. Only the owner of a vehicle can unlock a vehicle.&lt;br/&gt;&lt;br/&gt;
+					Stored vehicles are visible for everyone in the Garage. Green vehicles are yours, white ones are retrievable by everyone and red vehicles are locked. Only the owner of a vehicle can unlock a vehicle.&lt;br/&gt;&lt;br/&gt;
 
-Note: Static Weapons can be garaged like other vehicles and, found under their respective tab, can be attached to off-roads, trucks or other vehicles with a weapon hardpoint.</Original>
-				<Russian>Доступ к гаражу открывает пользовательский интерфейс, который позволяет выбрать автомобиль с левой стороны а взаимодействовать с автомобилем справа.&lt;br/&gt;&lt;br/&gt;
+					Note: Static Weapons can be garaged like other vehicles and, found under their respective tab, can be attached to off-roads, trucks or other vehicles with a weapon hardpoint.
+				</Original>
+				<Russian>
+					Доступ к гаражу открывает пользовательский интерфейс, который позволяет выбрать автомобиль с левой стороны а взаимодействовать с автомобилем справа.&lt;br/&gt;&lt;br/&gt;
 
-Транспортные средства могут быть отремонтированы по частям, включая стекло, через JAG, а также Корпус. &lt;br/&gt;&lt;br/&gt;
+					Транспортные средства могут быть отремонтированы по частям, включая стекло, через JAG, а также Корпус.&lt;br/&gt;&lt;br/&gt;
 
-Сохраненные автомобили видны для всех в Гараже. Зеленые транспортные средства - ваши, белые - все, и красные транспортные средства заблокированы. Только владелец транспортного средства может разблокировать автомобиль.&lt;br/&gt;&lt;br/&gt;
+					Сохраненные автомобили видны для всех в Гараже. Зеленые транспортные средства - ваши, белые - все, и красные транспортные средства заблокированы. Только владелец транспортного средства может разблокировать автомобиль.&lt;br/&gt;&lt;br/&gt;
 
-Примечание. Статическое оружие можно сохранять, как и другие транспортные средства, и, находясь под их соответствующей вкладкой, может быть прикреплено к внедорожникам, грузовикам или другим транспортным средствам с тяжелой точкой оружия.</Russian>
-				<!-- Редакт. -->
+					Примечание. Статическое оружие можно сохранять, как и другие транспортные средства, и, находясь под их соответствующей вкладкой, может быть прикреплено к внедорожникам, грузовикам или другим транспортным средствам с тяжелой точкой оружия.
+				</Russian><!-- Редакт. -->
 			</Key>
 			<Key ID="STR_BR_AF4FT">
 				<Original>Fast Travel</Original>
 				<Russian>Быстрое путешествие</Russian>
 			</Key>
 			<Key ID="STR_BRAF_FT">
-				<Original>Fast Travel lets you skip journeys which might be considered a waste of time, it is a teleport with variable travel time (black screen) scaled to destination distance. &lt;br/&gt;
-On foot, you are teleported directly to the map marker location, along with any AI in your group.&lt;br/&gt;
-If you are the driver of a vehicle, the whole crew will travel with you. Vehicles will end up on the road closest to the map marker location. &lt;br/&gt;&lt;br/&gt;
+				<Original>
+					Fast Travel lets you skip journeys which might be considered a waste of time, it is a teleport with variable travel time (black screen) scaled to destination distance. &lt;br/&gt;
+					On foot, you are teleported directly to the map marker location, along with any AI in your group.&lt;br/&gt;
+					If you are the driver of a vehicle, the whole crew will travel with you. Vehicles will end up on the road closest to the map marker location. &lt;br/&gt;&lt;br/&gt;
 
-Conditions:&lt;br/&gt;
-- Allowed destinations are the HQ or Camps.&lt;br/&gt;
-- No enemies must be present within 350m around both the place of departure and destination.&lt;br/&gt;&lt;br/&gt;
+					Conditions:&lt;br/&gt;
+					- Allowed destinations are the HQ or Camps.&lt;br/&gt;
+					- No enemies must be present within 350m around both the place of departure and destination.&lt;br/&gt;&lt;br/&gt;
 
-Warning:&lt;br/&gt;
-- Each Fast Travel to a Camp has a chance of being intercepted; enemies will send a helicopter and an infantry squad will fast-rope down and attack the Camp. Travel to HQ is always safe.&lt;br/&gt;
-- Avoid Fast Travelling vehicles while towing other vehicles, the latter have a high chance of exploding, or disappearing.&lt;br/&gt;
-- Avoid Fast Travelling with air vehicles or boats, again, a high chance of exploding.
-- In multiplayer you won’t notice other players are Fast Travelling (if you’re all in a car, only the driver will have the black Fast Travelling screen).
-- Be sure you’re not doing it at same time AND to the same location when driving vehicles, as they -you guessed it- might explode.
-</Original>
-				<Russian>Быстрое путешествие(Телепорт) позволяет пропустить поездки, которые могут считаться пустой тратой времени, это телепорт с пропуском временем движения (черный экран),перемещающий до места назначения. &lt;br/&gt; 
-Пешком вы телепортируетесь непосредственно в место расположения карты вместе с любым ИИ в своей группе.&lt;br/&gt;
+					Warning:&lt;br/&gt;
+					- Each Fast Travel to a Camp has a chance of being intercepted; enemies will send a helicopter and an infantry squad will fast-rope down and attack the Camp. Travel to HQ is always safe.&lt;br/&gt;
+					- Avoid Fast Travelling vehicles while towing other vehicles, the latter have a high chance of exploding, or disappearing.&lt;br/&gt;
+					- Avoid Fast Travelling with air vehicles or boats, again, a high chance of exploding.&lt;br/&gt;
+					- In multiplayer you won’t notice other players are Fast Travelling (if you’re all in a car, only the driver will have the black Fast Travelling screen).&lt;br/&gt;
+					- Be sure you’re not doing it at same time AND to the same location when driving vehicles, as they -you guessed it- might explode.
+				</Original>
+				<Russian>
+					Быстрое путешествие(Телепорт) позволяет пропустить поездки, которые могут считаться пустой тратой времени, это телепорт с пропуском временем движения (черный экран),перемещающий до места назначения. &lt;br/&gt;
+					Пешком вы телепортируетесь непосредственно в место расположения карты вместе с любым ИИ в своей группе.&lt;br/&gt;
+					Если вы водитель транспортного средства, весь экипаж переместиться с вами. Транспортные средства окажутся на дороге, ближайшей к месту расположения на карте. &lt;br/&gt;&lt;br/&gt;
 
-Если вы водитель транспортного средства, весь экипаж переместиться с вами. Транспортные средства окажутся на дороге, ближайшей к месту расположения на карте. &lt;br/&gt;&lt;br/&gt;
+					Условия:&lt;br/&gt;
+					- Разрешенные пункты назначения - База или лагеря. &lt;br/&gt;
+					- Никакие враги не должны находиться в пределах 350м вокруг места отправления и назначения.&lt;br/&gt;&lt;br/&gt;
 
-условия:&lt;br/&gt;
-- Разрешенные пункты назначения - База или лагеря. &lt;br/&gt;
-- Никакие враги не должны находиться в пределах 350м вокруг места отправления и назначения.&lt;br/&gt;&lt;br/&gt;
-
-Предупреждение: &lt;br/&gt;
-- Каждое быстрое путешествие в лагерь может быть перехвачено; враги отправят вертолет, и отряды пехоты,которые будут быстро прибывать и атаковать лагерь. Путешествие в штаб-квартиру всегда безопасно.&lt;br/&gt;
-- Избегайте быстрого передвижения транспортных средств при буксировке других транспортных средств, последние имеют высокую вероятность взрыва или исчезновения.&lt;br/&gt;
-- Избегайте быстрого путешествия с помощью воздушных судн или лодок, опять же,из за большой вероятности взрыва.&lt;br/&gt;
-- В мультиплеере вы не заметите, что другие игроки - Телепортируються (если вы все в машине, только у водителя будет черный экран быстрого передвижения).&lt;br/&gt;
-- Убедитесь, что вы не делаете это в одно и то же время И в том же месте, когда ведете транспортные средства, поскольку они, как вы догадались, могут взорваться. </Russian>
+					Предупреждение: &lt;br/&gt;
+					- Каждое быстрое путешествие в лагерь может быть перехвачено; враги отправят вертолет, и отряды пехоты,которые будут быстро прибывать и атаковать лагерь. Путешествие в штаб-квартиру всегда безопасно.&lt;br/&gt;
+					- Избегайте быстрого передвижения транспортных средств при буксировке других транспортных средств, последние имеют высокую вероятность взрыва или исчезновения.&lt;br/&gt;
+					- Избегайте быстрого путешествия с помощью воздушных судн или лодок, опять же,из за большой вероятности взрыва.&lt;br/&gt;
+					- В мультиплеере вы не заметите, что другие игроки - Телепортируються (если вы все в машине, только у водителя будет черный экран быстрого передвижения).&lt;br/&gt;
+					- Убедитесь, что вы не делаете это в одно и то же время И в том же месте, когда ведете транспортные средства, поскольку они, как вы догадались, могут взорваться.
+				</Russian>
 			</Key>
 			<Key ID="STR_BR_AF8JNES">
 				<Original>Friendly and Enemy Support</Original>
 				<Russian>Дружеская и вражеская поддержка</Russian>
 			</Key>
 			<Key ID="STR_BR_AF_JNES">
-				<Original>Friendly Faction support is gained by helping civilians, capturing bases and eliminating enemy support units.&lt;br/&gt;
-It is decreased when civilians are hurt (killed, or angry for loss of power) or prisoners are killed.&lt;br/&gt;
-The Commander can use Friendly Faction support for support actions (check relative section).&lt;br/&gt;&lt;br/&gt;
+				<Original>
+					Friendly Faction support is gained by helping civilians, capturing bases and eliminating enemy support units.&lt;br/&gt;
+					It is decreased when civilians are hurt (killed, or angry for loss of power) or prisoners are killed.&lt;br/&gt;
+					The Commander can use Friendly Faction support for support actions (check relative section).&lt;br/&gt;&lt;br/&gt;
 
-Enemy support is accrued by conquering Bases, Airports and Hilltops.&lt;br/&gt;
-It can be reduced by asking friendly support faction to raid their military emplacements away from Altis.&lt;br/&gt;
-If Enemy support gets too high, the Enemy Faction starts bombarding towns. If they destroy 8 towns the campaign is lost.</Original>
-				<Russian>Поддержка дружественных фракций достигается за счет оказания помощи мирным жителям, захвата баз и ликвидации подразделений поддержки противника.&lt;br/&gt;
-Оно уменьшается, когда гражданские лица пострадали (убиты или злятся за потерю поддержки), или заключенные погибли.&lt;br/&gt;
-Командующий может использовать поддержку дружественных фракций для действий поддержки (проверьте относительный раздел).&lt;br/&gt;&lt;br/&gt;
+					Enemy support is accrued by conquering Bases, Airports and Hilltops.&lt;br/&gt;
+					It can be reduced by asking friendly support faction to raid their military emplacements away from Altis.&lt;br/&gt;
+					If Enemy support gets too high, the Enemy Faction starts bombarding towns. If they destroy 8 towns the campaign is lost.
+				</Original>
+				<Russian>
+					Поддержка дружественных фракций достигается за счет оказания помощи мирным жителям, захвата баз и ликвидации подразделений поддержки противника.&lt;br/&gt;
+					Оно уменьшается, когда гражданские лица пострадали (убиты или злятся за потерю поддержки), или заключенные погибли.&lt;br/&gt;
+					Командующий может использовать поддержку дружественных фракций для действий поддержки (проверьте относительный раздел).&lt;br/&gt;&lt;br/&gt;
 
-Поддержка противников начисляется путем завоевания баз, аэропортов и холмов.&lt;br/&gt;
-
-Его можно уменьшить, попросив дружественную поддержку, чтобы нанести урон их военным объектам на Острове.&lt;br/&gt;
-Если поддержка врага становится слишком высокой, вражеская фракция начинает бомбардировать города. Если они уничтожат 8 городов, кампания будет провалена.</Russian>
+					Поддержка противников начисляется путем завоевания баз, аэропортов и холмов.&lt;br/&gt;
+					Его можно уменьшить, попросив дружественную поддержку, чтобы нанести урон их военным объектам на Острове.&lt;br/&gt;
+					Если поддержка врага становится слишком высокой, вражеская фракция начинает бомбардировать города. Если они уничтожат 8 городов, кампания будет провалена.
+				</Russian>
 		    </Key>
 			<Key ID="STR_BR_AF5SM">
 				<Original>Server Membership</Original>
 				<Russian>Членство на сервере</Russian>
 			</Key>
 			<Key ID="STR_BR_AF_SM">
-				<Original>In multiplayer, the Server Admin can give membership to players by using the Y menu and looking directly at the player.&lt;br/&gt;&lt;br/&gt;
+				<Original>
+					In multiplayer, the Server Admin can give membership to players by using the Y menu and looking directly at the player.&lt;br/&gt;&lt;br/&gt;
 
-Server membership is the best way to prevent random people from interfering with the Antistasi campaign in an open server, but lets people still enjoy Antistasi, with some options frozen;&lt;br/&gt;&lt;br/&gt;
+					Server membership is the best way to prevent random people from interfering with the Antistasi campaign in an open server, but lets people still enjoy Antistasi, with some options frozen;&lt;br/&gt;&lt;br/&gt;
 
-if no members are online, the commander slot will be empty, so no economy per tick, no main enemy response and no random mission spawns.&lt;br/&gt;&lt;br/&gt;
+					if no members are online, the commander slot will be empty, so no economy per tick, no main enemy response and no random mission spawns.&lt;br/&gt;&lt;br/&gt;
 
-Member privileges:&lt;br/&gt;
-- Eligible to be Commander. &lt;br/&gt;
-- Recruit AI.&lt;br/&gt;</Original>
-				<Russian>В многопользовательском режиме Администратор сервера может давать членство игрокам с помощью меню Y когда смотрит прямо на игрока.&lt;br/&gt;&lt;br/&gt;
+					Member privileges:&lt;br/&gt;
+					- Eligible to be Commander. &lt;br/&gt;
+					- Recruit AI.&lt;br/&gt;
+				</Original>
+				<Russian>
+					В многопользовательском режиме Администратор сервера может давать членство игрокам с помощью меню Y когда смотрит прямо на игрока.&lt;br/&gt;&lt;br/&gt;
 
+					Членство на сервере - лучший способ помешать случайным людям вмешиваться в кампанию Antistasi на открытом сервере, но позволяет людям по-прежнему наслаждаться Antistasi,заморозив некоторые опции;&lt;br/&gt;&lt;br/&gt;
 
-Членство на сервере - лучший способ помешать случайным людям вмешиваться в кампанию Antistasi на открытом сервере, но позволяет людям по-прежнему наслаждаться Antistasi,заморозив некоторые опции;&lt;br/&gt;&lt;br/&gt;
+					Если ни один из участников не находится в режиме онлайн, слот командира будет пустым, так что начислений за отметку не будет, никакой контратаки врага и никакой случайной миссии не появятся.&lt;br/&gt;&lt;br/&gt;
 
-Если ни один из участников не находится в режиме онлайн, слот командира будет пустым, так что начислений за отметку не будет, никакой контратаки врага и никакой случайной миссии не появятся.&lt;br/&gt;&lt;br/&gt;
-
-
-Права участников:&lt;br/&gt;
-- Право быть командиром. &lt;br/&gt;
-- Найм ИИ.&lt;br/&gt;</Russian>
+					Права участников:&lt;br/&gt;
+					- Право быть командиром. &lt;br/&gt;
+					- Найм ИИ.&lt;br/&gt;
+				</Russian>
 			</Key>
 			<Key ID="STR_BR_AF6U">
 				<Original>Undercover</Original>
 				<Russian>Под Прикрытием</Russian>
 			</Key>
 			<Key ID="STR_BR_AF_U">
-				<Original>When Undercover is enabled you will see the word ‘Incognito’ in green on the Info Bar and enemies will ignore you.&lt;br/&gt;&lt;br/&gt;
+				<Original>
+					When Undercover is enabled you will see the word ‘Incognito’ in green on the Info Bar and enemies will ignore you.&lt;br/&gt;&lt;br/&gt;
 
-Conditions to satisfy to become undercover:&lt;br/&gt;
-- not being reported in the last 30 minutes. If reported, hitting the Heal, Repair and Rearm option at HQ will allow becoming undercover again immediately. Respawning also reenables it.&lt;br/&gt;
-- no enemies present within a 350 m radius.&lt;br/&gt;
-- wearing civilian clothes and no military gear equipped. A hint screen on the top right will list what items are preventing you from going undercover.&lt;br/&gt;&lt;br/&gt;
+					Conditions to satisfy to become undercover:&lt;br/&gt;
+					- not being reported in the last 30 minutes. If reported, hitting the Heal, Repair and Rearm option at HQ will allow becoming undercover again immediately. Respawning also reenables it.&lt;br/&gt;
+					- no enemies present within a 350 m radius.&lt;br/&gt;
+					- wearing civilian clothes and no military gear equipped. A hint screen on the top right will list what items are preventing you from going undercover.&lt;br/&gt;&lt;br/&gt;
 
-If you meet the above conditions you can get Undercover by:&lt;br/&gt;
-- enabling Undercover from Y menu.&lt;br/&gt;
-- getting into an unreported civilian vehicle. In this case, you can even have military gear equipped.&lt;br/&gt;&lt;br/&gt;
+					If you meet the above conditions you can get Undercover by:&lt;br/&gt;
+					- enabling Undercover from Y menu.&lt;br/&gt;
+					- getting into an unreported civilian vehicle. In this case, you can even have military gear equipped.&lt;br/&gt;&lt;br/&gt;
 
-You will always lose undercover when you are:&lt;br/&gt;
-- within ~150m from, Outpost, Base or Airport.&lt;br/&gt;
-- within ~50m from a patrol with a dog.&lt;br/&gt;
-- spotted treating yourself or someone else&lt;br/&gt;
-- spotted placing explosives.&lt;br/&gt;
-- spotted repairing vehicles.&lt;br/&gt;&lt;br/&gt;
+					You will always lose undercover when you are:&lt;br/&gt;
+					- within ~150m from, Outpost, Base or Airport.&lt;br/&gt;
+					- within ~50m from a patrol with a dog.&lt;br/&gt;
+					- spotted treating yourself or someone else&lt;br/&gt;
+					- spotted placing explosives.&lt;br/&gt;
+					- spotted repairing vehicles.&lt;br/&gt;&lt;br/&gt;
 
-In a vehicle, undercover is lost if you are:&lt;br/&gt;
-- spotted driving ~25m off road.&lt;br/&gt;
-- driving over an enemy soldier.&lt;br/&gt;
-- if you disembarking without matching the equipment conditions.&lt;br/&gt;
-- if someone who isn’t undercover enters your vehicle with enemies around.&lt;br/&gt;
+					In a vehicle, undercover is lost if you are:&lt;br/&gt;
+					- spotted driving ~25m off road.&lt;br/&gt;
+					- driving over an enemy soldier.&lt;br/&gt;
+					- if you disembarking without matching the equipment conditions.&lt;br/&gt;
+					- if someone who isn’t undercover enters your vehicle with enemies around.&lt;br/&gt;
+					On foot, undercover is lost when:&lt;br/&gt;
+					- equipping military gear or dropping your civilian clothes (you can’t be undercover when naked).&lt;br/&gt;&lt;br/&gt;
 
-On foot, undercover is lost when:&lt;br/&gt;
-- equipping military gear or dropping your civilian clothes (you can’t be undercover when naked).&lt;br/&gt;&lt;br/&gt;
+					Note: ‘being spotted’ doesn’t require line of sight, it’s a radius around enemy units.
+				</Original>
+				<Russian>
+					Когда под прикрытием включен, вы увидите слово «Incognito» зеленым на информационной панели, и враги будут игнорировать вас.&lt;br/&gt;&lt;br/&gt;
 
-Note: ‘being spotted’ doesn’t require line of sight, it’s a radius around enemy units.</Original>
-				<Russian>Когда &quot;под прикрытием&quot; включен, вы увидите слово «Incognito» зеленым на информационной панели, и враги будут игнорировать вас.&lt;br/&gt;&lt;br/&gt;
-
-Условия, необходимые для того, чтобы стать под прикрытием:&lt;br/&gt;
-- не светиться последние 30 минут. Если сообщается, использование в Лечить,Ченить и перевооружить на Базе,то это позволит снова стать Под прикрытием. Повторное вскрытие также повторяет его.&lt;br/&gt; 
-					
-					
-					
-					
-					
-					<!-- Редакт. -->
+					Условия, необходимые для того, чтобы стать под прикрытием:&lt;br/&gt;
+					- не светиться последние 30 минут. Если сообщается, использование в Лечить,Ченить и перевооружить на Базе,то это позволит снова стать Под прикрытием. Повторное вскрытие также повторяет его.&lt;br/&gt;<!-- Редакт. -->
 					- нет врагов, находящихся в радиусе 350 м.&lt;br/&gt;
-- в гражданской одежде и без военной экипировки. Экран подсказки в верхнем правом списке отобразит, какие предметы не позволяют вам скрываться.&lt;br/&gt;&lt;br/&gt;
+					- в гражданской одежде и без военной экипировки. Экран подсказки в верхнем правом списке отобразит, какие предметы не позволяют вам скрываться.&lt;br/&gt;&lt;br/&gt;
 
-Если вы соответствуете вышеуказанным условиям, вы можете стать под прикрытием:&lt;br/&gt;
-- включение режима Под прикрытием из Y.&lt;br/&gt;
-- попадание в незарегистрированный гражданский автомобиль. В этом случае вы даже можете оснастить военную экипировку.&lt;br/&gt;&lt;br/&gt;
+					Если вы соответствуете вышеуказанным условиям, вы можете стать под прикрытием:&lt;br/&gt;
+					- включение режима Под прикрытием из Y.&lt;br/&gt;
+					- попадание в незарегистрированный гражданский автомобиль. В этом случае вы даже можете оснастить военную экипировку.&lt;br/&gt;&lt;br/&gt;
 
-Вы всегда будете Проваливать под прикрытием, когда будете:&lt;br/&gt;
-- в пределах ~ 150 м от, Аванпоста, Базы или Аэропорта .&lt;br/&gt;
-- в пределах ~ 50 м от патруля с собакой.&lt;br/&gt;
-- заметили Вас или кого-то другого&lt;br/&gt;
-- Заметят взрывчатых вещества.&lt;br/&gt;
-- Заметят ремонтные машины.&lt;br/&gt;&lt;br/&gt; 
+					Вы всегда будете Проваливать под прикрытием, когда будете:&lt;br/&gt;
+					- в пределах ~ 150 м от, Аванпоста, Базы или Аэропорта .&lt;br/&gt;
+					- в пределах ~ 50 м от патруля с собакой.&lt;br/&gt;
+					- заметили Вас или кого-то другого&lt;br/&gt;
+					- Заметят взрывчатых вещества.&lt;br/&gt;
+					- Заметят ремонтные машины.&lt;br/&gt;&lt;br/&gt;
 
-В транспортном средстве под прикрытием утеряно, если вы:&lt;br/&gt;
-- Заметят вождение в ~ 25 м от дороги.&lt;br/&gt;
-- вражеского солдата за рулем.&lt;br/&gt;
-- если вы выгружаетесь без соответствия условиям оборудования.&lt;br/&gt;
-- если кто-то, кто не является под прикрытием, входит в ваш автомобиль с врагами вокруг.&lt;br/&gt;
+					В транспортном средстве под прикрытием утеряно, если вы:&lt;br/&gt;
+					- Заметят вождение в ~ 25 м от дороги.&lt;br/&gt;
+					- вражеского солдата за рулем.&lt;br/&gt;
+					- если вы выгружаетесь без соответствия условиям оборудования.&lt;br/&gt;
+					- если кто-то, кто не является под прикрытием, входит в ваш автомобиль с врагами вокруг.&lt;br/&gt;
+					Пешком становитесь под прикрытием, когда:&lt;br/&gt;
+					- оснащение военной техники или снятие вашей гражданской одежды (вы не можете быть тайным, когда голые).&lt;br/&gt;&lt;br/&gt;
 
-Пешком становитесь под прикрытием, когда:&lt;br/&gt;
-- оснащение военной техники или снятие вашей гражданской одежды (вы не можете быть тайным, когда голые).&lt;br/&gt;&lt;br/&gt;
-
-Примечание: «что-бы быть замеченным» не требует быть в прямой видимости, это радиус вокруг вражеских юнитов.</Russian>
+					Примечание: «что-бы быть замеченным» не требует быть в прямой видимости, это радиус вокруг вражеских юнитов.
+				</Russian>
 			</Key>
 			<Key ID="STR_BR_CM0">
 				<Original>Commander Options</Original>
@@ -3983,84 +4006,81 @@ Note: ‘being spotted’ doesn’t require line of sight, it’s a radius aroun
 				<Russian>Передвижение Штаба</Russian>
 			</Key>
 			<Key ID="STR_BR_CM_MHQ">
-				<Original>HQ can be moved by the Commander who has to: &lt;br/&gt;
-- Interact with the physical Flag, choose 'HQ options' and click 'Move HQ', &lt;br/&gt;
-- Petros joins the Commander’s squad, and moves him to the new location, on foot or as a vehicle passenger. &lt;br/&gt;
-- Arsenal and Vehicle Crates have to be loaded on a truck, drive up to them and then interact with the crates to ‘Load Cargo in Vehicle’. &lt;br/&gt;
-- Once on the desired place, talk to Petros and ‘Build HQ’. &lt;br/&gt;&lt;br/&gt;
+				<Original>
+					HQ can be moved by the Commander who has to: &lt;br/&gt;
+					- Interact with the physical Flag, choose 'HQ options' and click 'Move HQ', &lt;br/&gt;
+					- Petros joins the Commander’s squad, and moves him to the new location, on foot or as a vehicle passenger. &lt;br/&gt;
+					- Arsenal and Vehicle Crates have to be loaded on a truck, drive up to them and then interact with the crates to ‘Load Cargo in Vehicle’. &lt;br/&gt;
+					- Once on the desired place, talk to Petros and ‘Build HQ’. &lt;br/&gt;&lt;br/&gt;
 
-The game allows you to move your HQ to wherever, even inside an enemy base with enemies in the surrounding, it’s up to you to make the smart decision on where move it, see the website for hints on good HQ locations.</Original>
-				<Russian>База может перемещаться Командующим, который должен: &lt;br/&gt;
-- Взаимодействуйте с флагом, выберите «Возможности Штаба» и нажмите «Перенос Штаба», &lt;br/&gt;
-- Петрос присоединяется к команде командира и перемещает его в новое место, пешком или в качестве пассажира транспортного средства. &lt;br/&gt;
-- Арсенал и ящики для транспортных средств должны быть загружены на грузовик, подъехать к ним, а затем взаимодействовать с ящиками, чтобы «загрузить Ящик в автомобиль»..&lt;br/&gt;
-- Побывав в нужном месте, поговорите с Петросом и «Постройте Штаб». &lt;br/&gt;&lt;br/&gt;
+					The game allows you to move your HQ to wherever, even inside an enemy base with enemies in the surrounding, it’s up to you to make the smart decision on where move it, see the website for hints on good HQ locations.
+				</Original>
+				<Russian>
+					База может перемещаться Командующим, который должен: &lt;br/&gt;
+					- Взаимодействуйте с флагом, выберите «Возможности Штаба» и нажмите «Перенос Штаба», &lt;br/&gt;
+					- Петрос присоединяется к команде командира и перемещает его в новое место, пешком или в качестве пассажира транспортного средства. &lt;br/&gt;
+					- Арсенал и ящики для транспортных средств должны быть загружены на грузовик, подъехать к ним, а затем взаимодействовать с ящиками, чтобы «загрузить Ящик в автомобиль»..&lt;br/&gt;
+					- Побывав в нужном месте, поговорите с Петросом и «Постройте Штаб». &lt;br/&gt;&lt;br/&gt;
 
-Игра позволяет вам перемещать свой штаб куда угодно, даже внутри вражеской базы с врагами в окружении, вам решать разумное решение о том, куда двигаться, см. Веб-сайт для подсказок о хороших местоположениях Баз.</Russian>
-				<!-- Редакт. -->
+					Игра позволяет вам перемещать свой штаб куда угодно, даже внутри вражеской базы с врагами в окружении, вам решать разумное решение о том, куда двигаться, см. Веб-сайт для подсказок о хороших местоположениях Баз.
+				</Russian><!-- Редакт. -->
 			</Key>
 			<Key ID="STR_BR_CM2FFS">
 				<Original>Friendly Faction Support</Original>
 				<Russian>Поддержка Друж. фракций</Russian>
 			</Key>
 			<Key ID="STR_BR_CM_FFS">
-				<Original>Командующий может вызвать различные формы поддержки из Дружественной фракции, выбрав один из вариантов через меню Y (вкладка Командира). Единицы или типы транспортных средств и сила вмешательства будут зависеть от вашего текущего значения поддержки. Каждый тип затрат очков поддержки объясняется ниже.&lt;br/&gt;&lt;br/&gt;
+				<Original>
+					Командующий может вызвать различные формы поддержки из Дружественной фракции, выбрав один из вариантов через меню Y (вкладка Командира). Единицы или типы транспортных средств и сила вмешательства будут зависеть от вашего текущего значения поддержки. Каждый тип затрат очков поддержки объясняется ниже.&lt;br/&gt;&lt;br/&gt;
 
-Support must physically travel to their target and they can get engaged before they arrive, this is important to remember especially for air forces, considering that each named hilltop has a spec-ops AA emplacement which can easily destroy them.&lt;br/&gt;&lt;br/&gt;
+					Support must physically travel to their target and they can get engaged before they arrive, this is important to remember especially for air forces, considering that each named hilltop has a spec-ops AA emplacement which can easily destroy them.&lt;br/&gt;&lt;br/&gt;
 
-There is a timer of 30 minutes, after which you lose control of them and they will return to base.
-&lt;br/&gt;
-You can’t board friendly support vehicles nor garage them.&lt;br/&gt;&lt;br/&gt;
+					There is a timer of 30 minutes, after which you lose control of them and they will return to base.&lt;br/&gt;
+					You can’t board friendly support vehicles nor garage them.&lt;br/&gt;&lt;br/&gt;
 
-- Air assault: send a mix of transport and assault helicopters, No control on High Command.&lt;br/&gt;&lt;br/&gt;
+					- Air assault: send a mix of transport and assault helicopters, No control on High Command.&lt;br/&gt;&lt;br/&gt;
 
-- Armored assault: select a controlled Base, Select waypoint, No control on High Command.&lt;br/&gt;&lt;br/&gt;
+					- Armored assault: select a controlled Base, Select waypoint, No control on High Command.&lt;br/&gt;&lt;br/&gt;
 
-- Artillery: select a controlled Base, select the unit from High Command bar and press Shift+Y.&lt;br/&gt;&lt;br/&gt;
+					- Artillery: select a controlled Base, select the unit from High Command bar and press Shift+Y.&lt;br/&gt;&lt;br/&gt;
 
-- Roadblock: select a controlled Base, Select a point on a road, Control on High Command to move them on location to build the effective Roadblock &lt;br/&gt;&lt;br/&gt;
+					- Roadblock: select a controlled Base, Select a point on a road, Control on High Command to move them on location to build the effective Roadblock &lt;br/&gt;&lt;br/&gt;
 
-- UAV: depart from Carrier or closest controlled Airport, Control on High Command to move it where you desire.&lt;br/&gt;&lt;br/&gt;
+					- UAV: depart from Carrier or closest controlled Airport, Control on High Command to move it where you desire.&lt;br/&gt;&lt;br/&gt;
 
--Resupply: select the approximate location where supply box should be dropped, Control on High Command and move it to designated location, will be marked by blue smoke.&lt;br/&gt;&lt;br/&gt;
+					-Resupply: select the approximate location where supply box should be dropped, Control on High Command and move it to designated location, will be marked by blue smoke.&lt;br/&gt;&lt;br/&gt;
 
-- CAS: Close Air Support; 3 air assets depart from Carrier or closest controlled Airport, Control them on High Command move them where you want.&lt;br/&gt;&lt;br/&gt;
+					- CAS: Close Air Support; 3 air assets depart from Carrier or closest controlled Airport, Control them on High Command move them where you want.&lt;br/&gt;&lt;br/&gt;
 
-- Bomb Run: select entry and exit point, a plane will depart from Carrier or closest controlled Airport, No control from High Command, requires practice to be effective.&lt;br/&gt;&lt;br/&gt;
+					- Bomb Run: select entry and exit point, a plane will depart from Carrier or closest controlled Airport, No control from High Command, requires practice to be effective.&lt;br/&gt;&lt;br/&gt;
 
-- QRF (xx points): Quick Reaction Forces; Small transport helicopters depart from Carrier or closest controlled Airport deploying troops at designated location.</Original>
-				<!-- Редакт. от сюда -->
-				<Russian>Командующий может вызвать различные формы поддержки из Дружественной фракции, выбрав один из вариантов через меню Y (вкладка Командира). Единицы или типы транспортных средств и сила вмешательства будут зависеть от вашего текущего значения поддержки. Каждый тип затрат очков поддержки объясняется ниже.&lt;br/&gt;&lt;br/&gt;
+					- QRF (xx points): Quick Reaction Forces; Small transport helicopters depart from Carrier or closest controlled Airport deploying troops at designated location.
+				</Original><!-- Редакт. от сюда -->
+				<Russian>
+					Командующий может вызвать различные формы поддержки из Дружественной фракции, выбрав один из вариантов через меню Y (вкладка Командира). Единицы или типы транспортных средств и сила вмешательства будут зависеть от вашего текущего значения поддержки. Каждый тип затрат очков поддержки объясняется ниже.&lt;br/&gt;&lt;br/&gt;
 
-Поддержка должна физически перемещаться к своей цели, и они могут начать заниматься до того, как они прибудут, это важно помнить специально для военно-воздушных сил, учитывая, что каждый названный холм имеет специальную опцию ПВО, которая может легко их уничтожить.&lt;br/&gt;&lt;br/&gt; 
-					
-					
-					
-					
-					
-					<!-- Редакт. -->
-					Существует таймер 30 минут, после которого вы теряете контроль над ними, и они вернутся на базу. &lt;br/&gt;
+					Поддержка должна физически перемещаться к своей цели, и они могут начать заниматься до того, как они прибудут, это важно помнить специально для военно-воздушных сил, учитывая, что каждый названный холм имеет специальную опцию ПВО, которая может легко их уничтожить.&lt;br/&gt;&lt;br/&gt;<!-- Редакт. -->
+					Существует таймер 30 минут, после которого вы теряете контроль над ними, и они вернутся на базу.&lt;br/&gt;
+					Вы не можете пользоваться дружественными транспортными средствами и гаражом.&lt;br/&gt;&lt;br/&gt;
 
-Вы не можете пользоваться дружественными транспортными средствами и гаражом.&lt;br/&gt;&lt;br/&gt;
+					- Воздушная Атака: отправьте смесь транспортных и штурмовых вертолетов, Нет контроля через меню Командира.&lt;br/&gt;&lt;br/&gt;
 
-- Воздушноая Атака: отправьте смесь транспортных и штурмовых вертолетов, Нет контроля через меню Командира.&lt;br/&gt;&lt;br/&gt;
+					- Бронированная Атака: выберите управляемую базу, выберите путевую точку, Без управления в команде «меню Командира».&lt;br/&gt;&lt;br/&gt;
 
-- Бронированная Атака: выберите управляемую базу, выберите путевую точку, Без управления в команде «меню Командира».&lt;br/&gt;&lt;br/&gt;
+					- Артиллерия: выберите управляемую базу, выберите устройство из панели Высшее Командира и нажмите Shift + Y.&lt;br/&gt;&lt;br/&gt;
 
-- Артиллерия: выберите управляемую базу, выберите устройство из панели Высшее Командира и нажмите Shift + Y.&lt;br/&gt;&lt;br/&gt;
+					- КПП: выберите управляемую базу, выберите точку на дороге, Контролирейте через меню Командира, чтобы переместить их на место, чтобы создать эффективный КПП &lt;br/&gt;&lt;br/&gt;
 
-- КПП: выберите управляемую базу, выберите точку на дороге, Контролирейте через меню Командира, чтобы переместить их на место, чтобы создать эффективный КПП &lt;br/&gt;&lt;br/&gt;
+					- БПЛА: отход от Перевозчика или ближайшего контролируемого аэропорта,Контролирейте через меню Командира, чтобы переместить его там, где вы желаете.&lt;br/&gt;&lt;br/&gt;
 
-- БПЛА: отход от Перевозчика или ближайшего контролируемого аэропорта,Контролирейте через меню Командира, чтобы переместить его там, где вы желаете.&lt;br/&gt;&lt;br/&gt;
+					-Поддержка: выберите приблизительное местоположение, в котором необходимо сбросить коробку поставки, «Контроль через меню Командира» и переместить его в указанное место, будет отмечен синим дымом.&lt;br/&gt;&lt;br/&gt;
 
--Поддержка: выберите приблизительное местоположение, в котором необходимо сбросить коробку поставки, «Контроль через меню Командира» и переместить его в указанное место, будет отмечен синим дымом.&lt;br/&gt;&lt;br/&gt;
+					- CAS: Поддержка с воздуха; 3 воздушных Судна отправляются с авианосца или ближайшего контролируемого аэропорта, контролируйте их по команде «Командира», перемещая их туда, куда вы хотите.&lt;br/&gt;&lt;br/&gt;
 
-- CAS: Поддержка с воздуха; 3 воздушных Судна отправляются с авианосца или ближайшего контролируемого аэропорта, контролируйте их по команде «Командира», перемещая их туда, куда вы хотите.&lt;br/&gt;&lt;br/&gt;
+					- Бомбардировка : выберите пункт Начала и Конца, самолет отправится с авианосца или ближайшего контролируемого аэропорта, без контроля от Командира, требует, чтобы практика была эффективной.&lt;br/&gt;&lt;br/&gt;
 
-- Бомбардировка : выберите пункт Начала и Конца, самолет отправится с авианосца или ближайшего контролируемого аэропорта, без контроля от Командира, требует, чтобы практика была эффективной.&lt;br/&gt;&lt;br/&gt;
-
-- СБР (xx Очков): силы быстрого реагирования; Малые транспортные вертолеты отходят от авианосца или ближайшего контролируемого аэропорта, перевозящего войска в указанном месте.</Russian>
-				<!-- Редакт. до сюда -->
+					- СБР (xx Очков): силы быстрого реагирования; Малые транспортные вертолеты отходят от авианосца или ближайшего контролируемого аэропорта, перевозящего войска в указанном месте.
+				</Russian><!-- Редакт. до сюда -->
 			</Key>
 			<Key ID="STR_BR_CM3R">
 				<Original>Reinforcements</Original>
@@ -4068,63 +4088,54 @@ You can’t board friendly support vehicles nor garage them.&lt;br/&gt;&lt;br/&g
 				<!-- Редакт. -->
 			</Key>
 			<Key ID="STR_BR_CM_R">
-				<Original>Commander can invest HR in FIA forces, controlled through High Command bar. These soldiers are affected by Army Xp Level. Once recruited they last until they die, get dismissed or the game is restarted (in which case they will get refunded depending on their health status).&lt;br/&gt;&lt;br/&gt;
+				<Original>
+					Commander can invest HR in FIA forces, controlled through High Command bar. These soldiers are affected by Army Xp Level. Once recruited they last until they die, get dismissed or the game is restarted (in which case they will get refunded depending on their health status).&lt;br/&gt;&lt;br/&gt;
 
-You can directly control the leader of each group by selecting the team in High Command mode and using the Direct AI Control function in Y menu.&lt;br/&gt;&lt;br/&gt;
+					You can directly control the leader of each group by selecting the team in High Command mode and using the Direct AI Control function in Y menu.&lt;br/&gt;&lt;br/&gt;
 
-* If RHS mod is loaded, this truck is unavailable and nothing will spawn.
-** Mortar teams have some (un)deploy time when given a movement order. Once deployed you’ll notice a different icon on the map and only then are they ready to fire.&lt;br/&gt;
-Press Shift+Y after selecting the mortar team and click on the map to choose a location to order a mortar strike.&lt;br/&gt;
-Mortars have limited range and ammunition. They can be resupplied at HQ by the Heal, Repair and Rearm function.</Original>
-				<Russian>Командир может инвестировать HR в силы FIA, контролируемые через панель Командира. На этих солдат влияет уровень Опыта Армии. После того, как они завербованы, они продолжаются до тех пор, пока они не умрут, не увольняются или игра возобновляется (в этом случае они будут возвращены в зависимости от их состояния здоровья).&lt;br/&gt;&lt;br/&gt;
+					* If RHS mod is loaded, this truck is unavailable and nothing will spawn.&lt;br/&gt;
+					** Mortar teams have some (un)deploy time when given a movement order. Once deployed you’ll notice a different icon on the map and only then are they ready to fire.&lt;br/&gt;
+					Press Shift+Y after selecting the mortar team and click on the map to choose a location to order a mortar strike.&lt;br/&gt;
+					Mortars have limited range and ammunition. They can be resupplied at HQ by the Heal, Repair and Rearm function.
+				</Original>
+				<Russian>
+					Командир может инвестировать HR в силы FIA, контролируемые через панель Командира. На этих солдат влияет уровень Опыта Армии. После того, как они завербованы, они продолжаются до тех пор, пока они не умрут, не увольняются или игра возобновляется (в этом случае они будут возвращены в зависимости от их состояния здоровья).&lt;br/&gt;&lt;br/&gt;
 
-Вы можете напрямую управлять лидером каждой группы, выбирая команду в режиме Командира и используя функцию Прямой контроль ИИ в меню Y.&lt;br/&gt;&lt;br/&gt;
+					Вы можете напрямую управлять лидером каждой группы, выбирая команду в режиме Командира и используя функцию Прямой контроль ИИ в меню Y.&lt;br/&gt;&lt;br/&gt;
 
-* Если загружен Мод RHS, этот грузовик недоступен, и ничего не появится.&lt;br/&gt;
-** Минометные команды имеют некоторое время на развертывания при задании движения. После развертывания вы увидите другой значок на карте, и только тогда они готовы к стрельбе.&lt;br/&gt; 
-					
-					
-					
-					
-					
-					<!-- Редакт. -->
+					* Если загружен Мод RHS, этот грузовик недоступен, и ничего не появится.&lt;br/&gt;
+					** Минометные команды имеют некоторое время на развертывания при задании движения. После развертывания вы увидите другой значок на карте, и только тогда они готовы к стрельбе.&lt;br/&gt;<!-- Редакт. -->
 					Нажмите Shift + Y после выбора группы минометов и нажмите на карту, чтобы выбрать место для заказа минометного удара.&lt;br/&gt;
-Минометы имеют ограниченный диапазон и боеприпасы. Они могут быть загружены На базе функцией Лечить,Ченить И Перевооружить.</Russian>
+					Минометы имеют ограниченный диапазон и боеприпасы. Они могут быть загружены На базе функцией Лечить,Ченить И Перевооружить.
+				</Russian>
 			</Key>
 			<Key ID="STR_BR_CM4G">
 				<Original>Garrison</Original>
 				<Russian>Гарнизон</Russian>
 			</Key>
 			<Key ID="STR_BR_CM_G">
-				<Original>The Commander can invest HR in FIA forces that garrison conquered emplacements or the HQ itself. These soldiers are affected by Army Xp Level and can’t be controlled directly. &lt;br/&gt;&lt;br/&gt;
+				<Original>
+					The Commander can invest HR in FIA forces that garrison conquered emplacements or the HQ itself. These soldiers are affected by Army Xp Level and can’t be controlled directly. &lt;br/&gt;&lt;br/&gt;
 
-At your HQ, interact with the Flag, HQ management, Recruit Garrison. Select the emplacement you want to garrison and add units.&lt;br/&gt;&lt;br/&gt;
+					At your HQ, interact with the Flag, HQ management, Recruit Garrison. Select the emplacement you want to garrison and add units.&lt;br/&gt;&lt;br/&gt;
 
-Adding manned static weapons: assemble a static gun, recruit a militiaman and he will man the gun. Garrison Info (viewed at HQ Map) will display the number of manned static weapons.&lt;br/&gt;&lt;br/&gt;
+					Adding manned static weapons: assemble a static gun, recruit a militiaman and he will man the gun. Garrison Info (viewed at HQ Map) will display the number of manned static weapons.&lt;br/&gt;&lt;br/&gt;
 
-Garrisoned mortar teams will engage anything over a long range, so be careful about where you station them to minimize friendly fire, civilian casualties and collateral damage.
-&lt;br/&gt;&lt;br/&gt;
+					Garrisoned mortar teams will engage anything over a long range, so be careful about where you station them to minimize friendly fire, civilian casualties and collateral damage.&lt;br/&gt;&lt;br/&gt;
 
-Note: Huge garrisons might lower game performance, please check relative section for more information.</Original>
-				<Russian>Командир может инвестировать HR в войска FIA, что гарнизон завоевал места или сам штаб. Эти солдаты подвергаются воздействию уровня опыта армии и не могут контролироваться напрямую. &lt;br/&gt;&lt;br/&gt; 
-					
-					
-					
-					
-					
-					<!-- Редакт. -->
+					Note: Huge garrisons might lower game performance, please check relative section for more information.
+				</Original>
+				<Russian>
+					Командир может инвестировать HR в войска FIA, что гарнизон завоевал места или сам штаб. Эти солдаты подвергаются воздействию уровня опыта армии и не могут контролироваться напрямую. &lt;br/&gt;&lt;br/&gt;<!-- Редакт. -->
+
 					В вашем штабе, взаимодействуйте с флагом, Управление Штабом, Найм Гарнизона. Выберите точку, которую вы хотите гарнизонировать, и добавьте единицы.&lt;br/&gt;&lt;br/&gt;
 
-Добавление пилотируемого статического оружия: соберите статическое оружие, наймите повстанца, и он будет управлять оружием. Информация гарнизон (просматриваемая на Карте что на Базе) отображает количество пилотируемых статических вооружений.&lt;br/&gt;&lt;br/&gt;
- 
-Гарнизованные минометные команды будут участвовать в чем-либо на большом расстоянии, поэтому будьте осторожны, где вы их ставите, чтобы свести к минимуму дружественный огонь, жертвы среди гражданского населения и побочный ущерб. &lt;br/&gt;&lt;br/&gt; 
-					
-					
-					
-					
-					
-					<!-- Редакт. -->
-					Примечание. Огромные гарнизоны могут снизить производительность игры, пожалуйста, проверьте относительный раздел для получения дополнительной информации.</Russian>
+					Добавление пилотируемого статического оружия: соберите статическое оружие, наймите повстанца, и он будет управлять оружием. Информация гарнизон (просматриваемая на Карте что на Базе) отображает количество пилотируемых статических вооружений.&lt;br/&gt;&lt;br/&gt;
+
+					Гарнизованные минометные команды будут участвовать в чем-либо на большом расстоянии, поэтому будьте осторожны, где вы их ставите, чтобы свести к минимуму дружественный огонь, жертвы среди гражданского населения и побочный ущерб. &lt;br/&gt;&lt;br/&gt;<!-- Редакт. -->
+
+					Примечание. Огромные гарнизоны могут снизить производительность игры, пожалуйста, проверьте относительный раздел для получения дополнительной информации.
+				</Russian>
 			</Key>
 			<Key ID="STR_BR_CM5E">
 				<Original>Emplacements</Original>
@@ -4132,57 +4143,58 @@ Note: Huge garrisons might lower game performance, please check relative section
 				<!-- Редакт. -->
 			</Key>
 			<Key ID="STR_BR_CM_E">
-				<Original>In the Y menu, the Commander can manage:&lt;br/&gt;&lt;br/&gt;
+				<Original>
+					In the Y menu, the Commander can manage:&lt;br/&gt;&lt;br/&gt;
 
-- Roadblocks: placed on roads, will defend the area with a .50 cal and rpgs: ideal to stop normal enemy patrols and even convoys, when they are upgraded to enhanced Roadblocks  (Army Level &gt;12).&lt;br/&gt;&lt;br/&gt;
+					- Roadblocks: placed on roads, will defend the area with a .50 cal and rpgs: ideal to stop normal enemy patrols and even convoys, when they are upgraded to enhanced Roadblocks  (Army Level >12).&lt;br/&gt;&lt;br/&gt;
 
-- Watchposts: placed in the field, 2 man sentry will observe the area reporting contacts through the High Command interface.&lt;br/&gt;&lt;br/&gt;
+					- Watchposts: placed in the field, 2 man sentry will observe the area reporting contacts through the High Command interface.&lt;br/&gt;&lt;br/&gt;
 
-- Camps: allow people to fast travel. There are crates with some free equipment and the ability to restore health and fuel, but vehicles can not be repaired here.&lt;br/&gt;&lt;br/&gt;
+					- Camps: allow people to fast travel. There are crates with some free equipment and the ability to restore health and fuel, but vehicles can not be repaired here.&lt;br/&gt;&lt;br/&gt;
 
-- HQ fortifications: consider these cosmetics, as the HQ isn’t supposed to be a fortified position.&lt;br/&gt;
-Lantern to illuminate the base a bit better than the Campfire.&lt;br/&gt;
-Spawn pad lets you set a default spawn location for vehicles.&lt;br/&gt;
-Camo net occludes Petros and the camp from enemy aircraft, but might collapse or cause mission vehicles to explode upon spawn if placed too close to campfire, so be really careful.</Original>
-				<Russian>В меню Y,командир может управлять:&lt;br/&gt;&lt;br/&gt;
+					- HQ fortifications: consider these cosmetics, as the HQ isn’t supposed to be a fortified position.&lt;br/&gt;
+					Lantern to illuminate the base a bit better than the Campfire.&lt;br/&gt;
+					Spawn pad lets you set a default spawn location for vehicles.&lt;br/&gt;
+					Camo net occludes Petros and the camp from enemy aircraft, but might collapse or cause mission vehicles to explode upon spawn if placed too close to campfire, so be really careful.
+				</Original>
+				<Russian>
+					В меню Y,командир может управлять:&lt;br/&gt;&lt;br/&gt;
 
-- КПП: размещенные на дорогах, будут защищать территорию с Пулемётом 0,50Калибра и РПГ: идеально подходят для остановки обычных патрулей противника и даже конвоев, когда они будут модернизированы до улучшенных КПП (уровень армии&gt;12).&lt;br/&gt;&lt;br/&gt;
+					- КПП: размещенные на дорогах, будут защищать территорию с Пулемётом 0,50Калибра и РПГ: идеально подходят для остановки обычных патрулей противника и даже конвоев, когда они будут модернизированы до улучшенных КПП (уровень армии>12).&lt;br/&gt;&lt;br/&gt;
 
-- Смотровые вышки: помещается в поле, 2 человека-сторожа будут наблюдать за участками, сообщающими о контактах через интерфейс Командира.&lt;br/&gt;&lt;br/&gt;
+					- Смотровые вышки: помещается в поле, 2 человека-сторожа будут наблюдать за участками, сообщающими о контактах через интерфейс Командира.&lt;br/&gt;&lt;br/&gt;
 
-- Лагеря: позволяют людям быстро путешествовать. Есть ящики с некоторым бесплатным оборудованием и способностью восстанавливать здоровье и топливо, но транспортные средства не могут быть отремонтированы здесь.&lt;br/&gt;&lt;br/&gt;
+					- Лагеря: позволяют людям быстро путешествовать. Есть ящики с некоторым бесплатным оборудованием и способностью восстанавливать здоровье и топливо, но транспортные средства не могут быть отремонтированы здесь.&lt;br/&gt;&lt;br/&gt;
 
-- Укрепления Базы: рассмотрите эти косметические средства, поскольку База не должна быть укрепленной.&lt;br/&gt;
-Фонарь для подсветки базы немного лучше, чем у костра.&lt;br/&gt;
-Площядка для Спавна позволяет установить место появления по умолчанию для транспортных средств.&lt;br/&gt;
-Камо-сеть закрывает Петроса и лагерь от вражеских самолетов, но может рухнуть или заставить технику миссии взорваться на пороге, если его поставить слишком близко к походному костру, поэтому будьте очень осторожны.</Russian>
+					- Укрепления Базы: рассмотрите эти косметические средства, поскольку База не должна быть укрепленной.&lt;br/&gt;
+					Фонарь для подсветки базы немного лучше, чем у костра.&lt;br/&gt;
+					Площядка для Спавна позволяет установить место появления по умолчанию для транспортных средств.&lt;br/&gt;
+					Камо-сеть закрывает Петроса и лагерь от вражеских самолетов, но может рухнуть или заставить технику миссии взорваться на пороге, если его поставить слишком близко к походному костру, поэтому будьте очень осторожны.
+				</Russian>
 			</Key>
 			<Key ID="STR_BR_CM6M">
 				<Original>Maintenance</Original>
-				<Russian>Обслуживание</Russian>
-				<!-- Редакт. -->
+				<Russian>Обслуживание</Russian><!-- Редакт. -->
 			</Key>
 			<Key ID="STR_BR_CM_M">
-				<Original>Some sticky situations can be fixed by the commander or admin, access them from Y menu.&lt;br/&gt;&lt;br/&gt;
+				<Original>
+					Some sticky situations can be fixed by the commander or admin, access them from Y menu.&lt;br/&gt;&lt;br/&gt;
 
-- Reset Petros Position: to fix the ‘too far from HQ’ bug when trying to move assets around the HQ.&lt;br/&gt;&lt;br/&gt;
+					- Reset Petros Position: to fix the ‘too far from HQ’ bug when trying to move assets around the HQ.&lt;br/&gt;&lt;br/&gt;
 
-- Reset Static positions: static weapons around HQ can be moved like other assets for a limited time, if the timer expires, use this command to make them movable again.&lt;br/&gt;&lt;br/&gt;
+					- Reset Static positions: static weapons around HQ can be moved like other assets for a limited time, if the timer expires, use this command to make them movable again.&lt;br/&gt;&lt;br/&gt;
 
-- Reset HQ: reset HQ location around Petros’ position. Note: if Petros was moved inside a building by ACE cable tie, collision bugs will occur.</Original>
-				<Russian>Некоторые неприятные ситуации могут быть исправлены командиром или администратором, доступ к ним из меню Y.&lt;br/&gt;&lt;br/&gt;
+					- Reset HQ: reset HQ location around Petros’ position. Note: if Petros was moved inside a building by ACE cable tie, collision bugs will occur.
+				</Original>
+				<Russian>
+					Некоторые неприятные ситуации могут быть исправлены командиром или администратором, доступ к ним из меню Y.&lt;br/&gt;&lt;br/&gt;
 
-- Сбросить позицию Петроса: исправить ошибку «слишком далеко от Базы» при попытке поместить активы вокруг Базы.&lt;br/&gt;&lt;br/&gt;
+					- Сбросить позицию Петроса: исправить ошибку «слишком далеко от Базы» при попытке поместить активы вокруг Базы.&lt;br/&gt;&lt;br/&gt;
 
-- Сброс Статические позиции: статическое оружие вокруг Базы можно перемещать, как и другие активы, в течение ограниченного времени, если таймер истекает, используйте эту команду, чтобы сделать их подвижными снова.&lt;br/&gt;&lt;br/&gt; 
-					
-					
-					
-					
-					
-					<!-- Редакт. -->
-					- Сброс Базы: сброс местоположения Базы вокруг позиции Петроса. Примечание: если Петрос был перемещен внутри здания с помощью кабельной стяжки ACE, будут возникать ошибки столкновения.</Russian>
-				<!-- Редакт. -->
+					- Сброс Статические позиции: статическое оружие вокруг Базы можно перемещать, как и другие активы, в течение ограниченного времени, если таймер истекает, используйте эту команду, чтобы сделать их подвижными снова.&lt;br/&gt;&lt;br/&gt;<!-- Редакт. -->
+
+					- Сброс Базы: сброс местоположения Базы вокруг позиции Петроса. Примечание: если Петрос был перемещен внутри здания с помощью кабельной стяжки ACE, будут возникать ошибки столкновения.
+				</Russian><!-- Редакт. -->
 			</Key>
 			<Key ID="STR_BR_8CNT">
 				<Original>8 Credits and Thanks</Original>
