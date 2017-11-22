@@ -14,7 +14,7 @@ _behaviour = _this select 8;
 _units = units _grp;
 _unitsout = [];
 {
-	If (alive _x) then 
+	If (alive _x) then
 	{
 		If (canmove _x) then
 		{
@@ -41,16 +41,16 @@ If (count _unitsout > 0) then
 			};
 		} foreach _assignedvehicle;
 	};
-	
-	If (_dist > 800 && _gothit == "") then 
+
+	If (_dist > 800 && _gothit == "") then
 	{
 		If (_targetpos select 0 != 0 && _targetpos select 1 != 0) then
 		{
 			If (_traveldist >= UPSMON_searchVehicledist) then
 			{
-				if (count _assignedvehicle == 0 && count (_grp getvariable ["UPSMON_Lastassignedvehicle",[]]) == 0) then
+				if ((_assignedvehicle isEqualTo []) && (_grp getvariable ["UPSMON_Lastassignedvehicle",[]]) isEqualTo []) then
 				{
-					if (_grp getvariable ["UPSMON_NOVEH",0] == 0) then 
+					if (_grp getvariable ["UPSMON_NOVEH",0] == 0) then
 					{
 						if (!("tank" in _typeofgrp) && !("armed" in _typeofgrp) && !("apc" in _typeofgrp) && !("air" in _typeofgrp)) then
 						{
@@ -62,11 +62,11 @@ If (count _unitsout > 0) then
 				{
 					If ("infantry" in _typeofgrp) then
 					{
-						If (count _assignedvehicle == 0) then
+						If (_assignedvehicle isEqualTo []) then
 						{
 							//_assignedvehicle = _grp getvariable ["UPSMON_Lastassignedvehicle",[]];
 						};
-						If (count _assignedvehicle > 0) then
+						If !(_assignedvehicle isEqualTo []) then
 						{
 							[_grp,_assignedvehicle,_targetpos] spawn UPSMON_getinassignedveh;
 						};

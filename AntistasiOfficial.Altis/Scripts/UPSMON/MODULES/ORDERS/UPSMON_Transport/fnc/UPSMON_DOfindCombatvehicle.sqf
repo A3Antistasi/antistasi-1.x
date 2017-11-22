@@ -23,7 +23,7 @@ _grp setvariable ["UPSMON_embarking",true];
 _unitsIn = [_npc,["air","land","sea","gun"],200] call UPSMON_GetIn_NearestVehicles;
 _timeout = time + 30;
 
-	if ( count _unitsIn == 0) then
+	if (_unitsIn isEqualTo []) then
 	{
 		//if (UPSMON_Debug>0 ) then {player sidechat format["%1: Geting in combat vehicle targetdist=%2",_grp getvariable ["UPSMON_Grpid",0],_npc distance _target]};
 

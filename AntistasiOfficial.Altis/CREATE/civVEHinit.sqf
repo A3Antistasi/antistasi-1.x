@@ -1,8 +1,5 @@
 params ["_vehicle"];
 
-_vehicle setfuelcargo 0.01;
-_vehicle setfuel 0.05;
-
 _vehicle setSpeedMode "LIMITED";
 [_vehicle] spawn vehicleRemover;
 _vehicle addEventHandler ["Killed",{[_this select 0] spawn postmortem}];
@@ -20,7 +17,7 @@ if (_vehicle isKindOf "Car") then {
 	}];
 };
 
-if (count crew _vehicle == 0) then {
+if ((crew _vehicle)isEqualTo []) then {
 	sleep 10;
 	_vehicle enableSimulationGlobal false;
 	_vehicle addEventHandler ["GetIn",{

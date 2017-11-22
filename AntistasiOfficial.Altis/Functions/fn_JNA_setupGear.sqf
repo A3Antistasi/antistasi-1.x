@@ -16,7 +16,7 @@
 params [["_array",[],[[]]]];
 private ["_className","_category","_index","_added"];
 
-if (count _array == 0) exitWith {diag_log "Error in JNA_setupGear: empty input array"};
+if (_array isEqualTo []) exitWith {diag_log "Error in JNA_setupGear: empty input array"};
 
 {
 	_className = _x;

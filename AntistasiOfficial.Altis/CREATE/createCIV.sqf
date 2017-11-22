@@ -61,8 +61,6 @@ while {(spawner getVariable _marker) AND (_counter < _countCiv)} do {
 					_vehicle = _vehicleType createVehicle _spawnPos;
 					[_vehicle] spawn AS_fnc_protectVehicle;
 					_vehicle setDir _orientation;
-					_vehicle setfuelcargo 0.01;
-					_vehicle setfuel 0.05;
 					_allVehicles pushBack _vehicle;
 					[_vehicle] spawn civVEHinit;
 				};
@@ -105,6 +103,8 @@ for "_i" from 1 to _patrolCounter do {
 			_vehicleType = selectRandom CIV_vehicles;
 			_vehicle = _vehicleType createVehicle _p1;
 			_vehicle setDir _orientation;
+			_vehicle setfuelcargo 0.01;
+			_vehicle setfuel 0.05;
 			_vehicle addEventHandler ["HandleDamage",{if (((_this select 1) find "wheel" != -1) and (_this select 4=="") and (!isPlayer driver (_this select 0))) then {0;} else {(_this select 2);};}];
 			_vehicle addEventHandler ["HandleDamage",           //STEF 01-09 civilian disembark on hit, thanks Barbolani
 					{

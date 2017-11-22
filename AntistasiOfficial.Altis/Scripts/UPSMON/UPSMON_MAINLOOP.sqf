@@ -80,13 +80,14 @@ UPSMON_MAINLOOP_postCycle = {};
 UPSMON_MAINLOOP_preItem = {};
 UPSMON_MAINLOOP_postItem = {};
 #endif
+scriptname "UPSMON_MAINLOOP";
+UPSMON_MAINLOOP_cycle = 10;
 
 while {true} do
 {
     #ifdef PROFILE_UPSMON
     call UPSMON_MAINLOOP_preCycle;
     #endif
-	_cycle = ((random 1) + 10);
 	{
 		#ifdef PROFILE_UPSMON
 		call UPSMON_MAINLOOP_preItem;
@@ -344,7 +345,7 @@ while {true} do
 
 			If (IsNull _target) then
 			{
-				If (count (_grp getvariable ["UPSMON_attackpos",[]]) == 0) then
+				If ((_grp getvariable ["UPSMON_attackpos",[]]) isEqualTo []) then
 				{
 					If (count _suspectenies > 0) then
 					{
@@ -367,12 +368,12 @@ while {true} do
 						If (!(UPSMON_FlareInTheAir)) then
 						{
 
-							If (count _artipos == 0) then
+							If (_artipos isEqualTo []) then
 							{
 								_artipos = [_currpos,[100,200],[0,360],0,[0,100],0] call UPSMON_pos;
 							};
 
-							If (count _artipos > 0) then
+							If !(_artipos isEqualTo []) then
 							{
 								_artillery = [_grp] call UPSMON_ArtiChk;
 								If (_artillery) then
@@ -395,12 +396,12 @@ while {true} do
 						If (_supstatus == "SUPRESSED") then
 						{
 							_smokepos = _grp getvariable ["UPSMON_SuspectPos",[]];
-							If (count _smokepos == 0) then
+							If (_smokepos isEqualTo []) then
 							{
 								_smokepos = [_currpos,[30,100],[0,360],0,[0,100],0] call UPSMON_pos;
 							};
 
-							If (count _smokepos > 0) then
+							If !(_smokepos isEqualTo []) then
 							{
 								_nosmoke = [_grp] call UPSMON_NOSMOKE;
 								If (!_nosmoke) then {[units _grp,_smokepos] spawn UPSMON_CreateSmokeCover;};
@@ -1056,5 +1057,5 @@ while {true} do
 	#ifdef PROFILE_UPSMON
 	call UPSMON_MAINLOOP_postCycle;
 	#endif
-	sleep _cycle;
+	sleep UPSMON_MAINLOOP_cycle;
 };

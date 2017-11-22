@@ -44,12 +44,11 @@ jnl_vehicleHardpoints = [
     	[1,		[0,-1.78506,-0.19277],	[]]
     ]],
 
-    //RHS another Ural truck, closed
-    ["\rhsafrf\addons\rhs_a2port_car\Ural\Ural.p3d", [
+    //RHS Ural closed with seats VV
+    ["\vsmafrf\addons\rhs_a2port_car\Ural\Ural.p3d", [
     	[1,		[0,-0.207184,-0.19277],	[]], //Cargo
     	[1,		[0,-1.78506,-0.19277],	[]]
     ]],
-
 
     //Speedboat minigun
     ["\A3\Boat_F\Boat_Armed_01\Boat_Armed_01_minigun_F.p3d", [

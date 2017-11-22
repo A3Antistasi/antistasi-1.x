@@ -8,9 +8,9 @@ Parameter(s):
 	<--- Group
 	<--- Does the group share enemy info
 	<--- Radius where Enemys is consider closed to the group
-	<--- Time 
+	<--- Time
 	<--- Last time group share infos
-	<--- 
+	<---
 Returns:
 	---> Enemies Array
 	---> Allies Array
@@ -20,13 +20,13 @@ Returns:
 	---> Is target near to the group (less than 300m)
 	---> known position of the target
 ****************************************************************/
-private ["_grp","_timeontarget","_react","_npc","_target","_opfknowval","_attackPos","_Enemies","_Allies","_targetsnear","_Units","_dist","_newattackPos","_newtarget"];
-	
-_grp = _this select 0;
+params["_grp"];
+private ["_timeontarget","_react","_npc","_target","_opfknowval","_attackPos","_Enemies","_Allies","_targetsnear","_Units","_dist","_newattackPos","_newtarget"];
+
 _accuracy = 1000;
 
 _npc = leader _grp;
-	
+
 _target = objNull;
 _opfknowval = 0;
 _attackPos = [];
@@ -36,15 +36,13 @@ _targetsnear = false;
 
 //Resets distance to target
 _dist = 10000;
-	
-///       GET ENEMIES AND ALLIES UNITS NEAR THE LEADER 			////		
+
+///       GET ENEMIES AND ALLIES UNITS NEAR THE LEADER 			////
 _Units = [_npc] call UPSMON_findnearestenemy;
-_Enemies = _Units select 0;
-_Allies = _Units select 1;
-_suspectenies = _Units select 2;
+_Units params["_Enemies", "_Allies", "_suspectenies"];
 
 _grp setvariable ["UPSMON_GrpEnies",_Enemies];
-If (count _Enemies == 0) then
+If (_Enemies isEqualTo []) then
 {
 	// Share the enemies infos we found with our allies
 	If (_grp getvariable ["UPSMON_Shareinfos",false]) then
@@ -53,7 +51,7 @@ If (count _Enemies == 0) then
 	};
 };
 
-///      ENEMIES FOUND, the first of the list is our enemy now :p 			////	
+///      ENEMIES FOUND, the first of the list is our enemy now :p 			////
 If (count _Enemies > 0) then
 {
 	//Get the most dangerous in the list of enies
@@ -78,15 +76,15 @@ If (count _Enemies > 0) then
 };
 
 //
-if (!IsNull (_grp getvariable ["UPSMON_Grptarget",ObjNull])) then 
+if (!IsNull (_grp getvariable ["UPSMON_Grptarget",ObjNull])) then
 {
 	If (!alive (_grp getvariable ["UPSMON_Grptarget",ObjNull])) then
 	{
 		_grp setvariable ["UPSMON_Grptarget",ObjNull];
 	};
-};	
-		
-If (count _attackpos == 0) then
+};
+
+If (_attackpos isEqualTo []) then
 {
 	_attackpos = _grp getvariable ["UPSMON_Attackpos",[]];
 };
@@ -99,7 +97,7 @@ If (count _attackpos > 0) then
 };
 
 If (_dist <= 300) then {_targetsnear = true;};
-		
+
 _result = [_Enemies,_Allies,_target,_dist,_targetsnear,_attackPos,_suspectenies,_opfknowval];
-		
+
 _result

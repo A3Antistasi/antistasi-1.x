@@ -13,7 +13,7 @@ _corpses = [];
 	};
 } forEach (entities "Man");
 
-if (count _corpses == 0) exitWith {hintSilent "No corpses within range."};
+if (_corpses isEqualTo []) exitWith {hintSilent "No corpses within range."};
 
 _stationary = true;
 [[petros,"hint","Deploying garden hoses..."],"commsMP"] call BIS_fnc_MP;

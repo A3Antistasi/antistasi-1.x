@@ -20,14 +20,14 @@ private ["_currpos","_direction","_dist","_targetPosTemp","_pool","_distmin","_i
 _currpos = _this select 0;
 _direction = _this select 1;
 _dist = _this select 2;
-	
+
 _guardPos = [];
 _targetPosTemp = [];
 _pool = [];
 _distmin = 5;
 _i = 0;
-	
-while {count _guardPos == 0 && _i < 30} do 
+
+while {(_guardPos isEqualTo []) && _i < 30} do
 {
 	_i = _i + 1;
 	_targetPosTemp = [_currpos,[_dist,_dist + 100],_direction,0,[0,50],_distmin] call UPSMON_pos;
@@ -40,6 +40,6 @@ while {count _guardPos == 0 && _i < 30} do
 		};
 	};
 };
-	
-if (count _guardPos == 0) then {_guardPos = _currpos;};
+
+if (_guardPos isEqualTo []) then {_guardPos = _currpos;};
 _guardPos;

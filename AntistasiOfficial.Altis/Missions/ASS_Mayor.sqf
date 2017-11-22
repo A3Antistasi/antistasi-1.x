@@ -19,7 +19,7 @@ _fechalimnum = dateToNumber _fechalim;
 _tam = [_initialMarker] call sizeMarker;
 
 _houses = nearestObjects [_initialPosition, ["Land_i_House_Big_02_V3_F","Land_i_House_Big_02_V2_F","Land_i_House_Big_01_V3_F","Land_i_House_Big_01_V1_F","Land_i_House_Big_01_V2_F","Land_Shop_Town_03_F","Land_House_Big_04_F","Land_House_Small_04_F","Land_House_Big_03_F","Land_Hotel_02_F","Land_Hotel_01_F"], _tam];
-if (count _houses == 0) then {_houses = nearestObjects [_initialPosition, ["house"], _tam];};
+if (_houses isEqualTo []) then {_houses = nearestObjects [_initialPosition, ["house"], _tam];};
 _housePositions = [];
 _house = _houses select 0;
 while {count _housePositions < 3} do
@@ -76,7 +76,7 @@ _mayorGroup selectLeader _mayor;
 _posTsk = (position _house) getPos [random 100, random 360];
 
 _spawnData = [_initialPosition, [ciudades, _initialPosition] call BIS_fnc_nearestPosition] call AS_fnc_findRoadspot;
-if (count _spawnData < 1) exitWith {diag_log format ["Error in traitor: no suitable roads found near %1",_initialMarker]};
+if (_spawnData isEqualTo []) exitWith {diag_log format ["Error in traitor: no suitable roads found near %1",_initialMarker]};
 _roadPos = _spawnData select 0;
 _roadDir = _spawnData select 1;
 
