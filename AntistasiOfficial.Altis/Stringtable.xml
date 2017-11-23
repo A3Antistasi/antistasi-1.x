@@ -1404,7 +1404,7 @@
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_DESANTENNA">
 				<Original>An opportunity to strike a Radio Tower in %1 presents its self. If we manage this it will interrupt %4 Comms Nework in the AO. We can destroy the antenna or capture the outpost but must complete it before %2:%3.</Original>
-				<Russian>Предоставилась возможность ударить по Радиовышке в %1. Если нам это удастся, это нарушит сеть связи %4 на оккупированной территории. Мы можем уничтожить антенну или захватить опорный пункт, но должны завершить это до %2:%3.</Russian>
+				<Russian>Представилась возможность нанести удар по Радиовышке в %1. Если нам это удастся, это нарушит сеть связи %4 на части оккупированной территории. Уничтожьте антенну или захватите опорный пункт, задание должно быть выполнено до %2:%3.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_DESHELI">
 				<Original>Destroy Air</Original>
@@ -1412,40 +1412,39 @@
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_DESHELI">
 				<Original>We have downed air vehicle. This is a great chance to destroy it before it is recovered by a recovery team from %1 reaches the crash site </Original>
-				<Russian>Мы сбили летательный аппарат. Это отличный шанс уничтожить его, прежде чем ремонтно-спасательная группа из %1 достигнет места катастрофы и он будет починен.</Russian>
+				<Russian>Мы посадили летательный аппарат противника. Необходимо его уничтожить, прежде чем ремонтно-спасательная группа из %1 достигнет места катастрофы и починит его.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_DESVEHICLE">
 				<Original>Steal or Destroy Armor</Original>
-				<Russian>Захватить или Уничтожить Броню</Russian>
-				<!-- Редакт. нужно подумать, длинно -->
+				<Russian>Диверсия</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_DESVEHICLE">
 				<Original>We know an %4 is stationed in %1. This is a good chance to steal or destroy it before it causes more damage. Do it before %2:%3.</Original>
-				<Russian>Мы знаем, что %4 дислоцируется в %1. Это хороший шанс, чтобы захватить или уничтожить его, прежде чем он нанесёт нам значительный урон. Сделайте это до %2:%3.</Russian>
+				<Russian>Мы узнали, что %4 дислоцируется в %1. Сейчас самое время, чтобы захватить или уничтожить его, прежде чем он сможет наделать бед. Задание должно быть выполнено до %2:%3.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_FNDCIV">
 				<Original>Contact the Corrupt Politician</Original>
-				<Russian>Встреча с Корумпированным Политиком</Russian>
+				<Russian>Политик</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_FNDCIV">
 				<Original>A local politician who is sympathetic to our cause is willing to meet us near %1 until %2:%3. As it happens, he has a couple of jobs he's offering to undermine %4 control in this AO. He has stated that he is willing to speak to us only on the condition that none of our agents are overt within that town. In other words, put on your sunday-best and meet him disguised. </Original>
-				<Russian>Местный политик, который с пониманием относится к нашему делу, готов встретиться с нами рядом с %1 до %2:%3. Как это часто бывает, у него есть несколько заданий, которые подорвут контроль %4 в этом регионе. Он заявил, что он готов говорить с нами только при условии, что ни один из наших агентов не будет обнаружен противником в районе места встречи. Другими словами, оденьте свой лучший воскресный костюм и избегайте обнаружения.</Russian>
+				<Russian>Местный политик, симпатизирующий нам, готов встретиться с нами рядом с %1 до %2:%3. Как это бывает, у него есть несколько заданий, которые, как он предполагает, смогут лишить %4 контроля в этом районе. Он заявил, что готов говорить с нами только при условии, что ни один из наших агентов не будет обнаружен противником в районе места встречи. Другими словами, оденьте свой лучший воскресный костюм и избегайте обнаружения.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_FNDEXP">
 				<Original>Find the Crazy Irishman</Original>
-				<Russian>Найти Сумасшедшего ирландца</Russian>
+				<Russian>Ирландец</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_FNDEXP">
 				<Original>Black Market dealer Devin Connell has been spotted near %1. He's scheduled for a flight to Metavira or Arulco at %2:%3, so you better hurry up if you wish to acquire some of his fine products. From our recent meetings with him, he has agreed to meet with FIA overt soldiers only, apparently he doesnt like civilians all that much. </Original>
-				<Russian>Дилер с черного рынка Девин Коннелл был замечен рядом с %1. Он запланировал рейс в Metavira или Arulco на %2:%3, так что вам лучше поторопиться, если вы хотите приобрести некоторые из его прекрасных продуктов. Из наших недавних встреч с ним, он согласился встретиться с FIA Открыто только, по-видимому, он не любит Когда мирных жителей много .</Russian>
+				<Russian>Дилер черного рынка Девин Коннелл торгует оружием рядом с %1. У него в кармане билет на самолёт, улетающий в %2:%3, так что вам лучше поторопиться, если вы хотите приобрести что-то из его прекрасного товара. Из наших последних встреч с ним стало понятно, что он будет разговаривать только с солдатами FIA без прикрытия, по видимому, непонятных гражданских он не очень любит.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_FNDMIL">
 				<Original>Contact the Corrupt Officer</Original>
-				<Russian>Контакт коррумпированного Офицера</Russian>
+				<Russian>Офицер</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_FNDMIL">
 				<Original>A disgruntled %4 officer is trying to leave Altis. His departure is scheduled for %2:%3. If you manage to get to him in time, you might be able to convince him to stay and support our case. He was spotted near %1 and has stated that he is willing to speak to us only on the condition that none of our agents are overt within that town. In other words, put on your sunday-best and meet him disguised. </Original>
-				<Russian>Офицер недовольный %4 пытается покинуть Altis. Его отъезд запланирован на %2:%3. Если вам удастся добраться до него вовремя, вы могли бы быть в состоянии убедить его остаться и поддержать наше дело. Он был замечен рядом с %1 и заявил, что он готов говорить с нами только при условии, что ни один из наших агентов не являются не замаскированым в этом городе. Другими словами, поставить на свой лучший воскресный наряд и встретиться с ним, замаскированными.</Russian>
+				<Russian>Офицер недовольный %4 пытается покинуть Altis. Его отъезд запланирован на %2:%3. Если вам удастся добраться до него раньше, вы могли бы убедить его остаться и поддержать наше дело. Он был замечен рядом с %1 и заявил, что он готов говорить с нами только при условии, что ни один из наших агентов не являются не замаскированым в этом городе. Другими словами, поставить на свой лучший воскресный наряд и встретиться с ним, замаскированными.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_LOGAMMO">
 				<Original>Steal or Destroy Ammotruck</Original>
