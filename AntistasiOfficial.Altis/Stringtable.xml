@@ -1436,7 +1436,7 @@
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_FNDEXP">
 				<Original>Black Market dealer Devin Connell has been spotted near %1. He's scheduled for a flight to Metavira or Arulco at %2:%3, so you better hurry up if you wish to acquire some of his fine products. From our recent meetings with him, he has agreed to meet with FIA overt soldiers only, apparently he doesnt like civilians all that much. </Original>
-				<Russian>Дилер черного рынка Девин Коннелл торгует оружием рядом с %1. У него в кармане билет на самолёт, улетающий в %2:%3, так что вам лучше поторопиться, если вы хотите приобрести что-то из его отличного товара. Судя по последняим встречам с ним, он будет разговаривать только с солдатами FIA без прикрытия, по видимому, непонятных гражданских он не очень любит.</Russian>
+				<Russian>Дилер черного рынка Девин Коннелл торгует оружием рядом с %1. У него в кармане билет на самолёт, улетающий в %2:%3, так что вам лучше поторопиться, если вы хотите приобрести что-то из его отличного товара. Судя по последним встречам с ним, он будет разговаривать только с солдатами FIA без прикрытия, по видимому, непонятных гражданских он не очень любит.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_FNDMIL">
 				<Original>Contact the Corrupt Officer</Original>
@@ -1485,7 +1485,7 @@
 			<Key ID="STR_TSK_TD_DESC_NATOSUPPLY">
 				<Original>Our Commander has asked %1 for a supply drop. Command the transport with your HC module and bring it to the designated position. Once it has landed you are free to use the equipment or bring it back to HQ. We dont think they will be able to supply us again for some time. </Original>
 				<Russian>Наш Командир запросил у %1 воздушную доставку снаряжения. Проведите транспорт до указанной точки, управляя им через управление группами. После того, как груз приземлится вы можете использовать снаряжение или доставить его в Штаб. Мы думаем, что они не смогут повторить воздушную доставку в течении некоторого времени.</Russian>
-			</Key>
+			</Key><!-- Triada остановился здесь -->
 			<Key ID="STR_TSK_TD_PRBRAIN">
 				<Original>Establish Propaganda Station</Original>
 				<Russian>Установить Станцию Пропаганды</Russian>
