@@ -1416,7 +1416,7 @@
 			</Key>
 			<Key ID="STR_TSK_TD_DESVEHICLE">
 				<Original>Steal or Destroy Armor</Original>
-				<Russian>Диверсия</Russian>
+				<Russian>Уничтожить "Броню"</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_DESVEHICLE">
 				<Original>We know an %4 is stationed in %1. This is a good chance to steal or destroy it before it causes more damage. Do it before %2:%3.</Original>
@@ -1424,67 +1424,67 @@
 			</Key>
 			<Key ID="STR_TSK_TD_FNDCIV">
 				<Original>Contact the Corrupt Politician</Original>
-				<Russian>Политик</Russian>
+				<Russian>Контакт с Политиком</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_FNDCIV">
 				<Original>A local politician who is sympathetic to our cause is willing to meet us near %1 until %2:%3. As it happens, he has a couple of jobs he's offering to undermine %4 control in this AO. He has stated that he is willing to speak to us only on the condition that none of our agents are overt within that town. In other words, put on your sunday-best and meet him disguised. </Original>
-				<Russian>Местный политик, симпатизирующий нам, готов встретиться с нами рядом с %1 до %2:%3. Как это бывает, у него есть несколько заданий, которые, как он предполагает, смогут лишить %4 контроля в этом районе. Он заявил, что готов говорить с нами только при условии, что ни один из наших агентов не будет обнаружен противником в районе места встречи. Другими словами, оденьте свой лучший воскресный костюм и избегайте обнаружения.</Russian>
+				<Russian>Местный политик, симпатизирующий нам, готов встретиться с нами рядом с %1 до %2:%3. Как это бывает, у него есть несколько заданий, которые, как он предполагает, смогут лишить %4 контроля в этом районе. Он заявил, что готов говорить с нами, если ни один из наших агентов не будет обнаружен противником в районе места встречи. Другими словами, оденьте свой лучший воскресный костюм и встретьтесь с ним замаскированным.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_FNDEXP">
 				<Original>Find the Crazy Irishman</Original>
-				<Russian>Ирландец</Russian>
+				<Russian>Крутой Ирландец</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_FNDEXP">
 				<Original>Black Market dealer Devin Connell has been spotted near %1. He's scheduled for a flight to Metavira or Arulco at %2:%3, so you better hurry up if you wish to acquire some of his fine products. From our recent meetings with him, he has agreed to meet with FIA overt soldiers only, apparently he doesnt like civilians all that much. </Original>
-				<Russian>Дилер черного рынка Девин Коннелл торгует оружием рядом с %1. У него в кармане билет на самолёт, улетающий в %2:%3, так что вам лучше поторопиться, если вы хотите приобрести что-то из его прекрасного товара. Из наших последних встреч с ним стало понятно, что он будет разговаривать только с солдатами FIA без прикрытия, по видимому, непонятных гражданских он не очень любит.</Russian>
+				<Russian>Дилер черного рынка Девин Коннелл торгует оружием рядом с %1. У него в кармане билет на самолёт, улетающий в %2:%3, так что вам лучше поторопиться, если вы хотите приобрести что-то из его отличного товара. Судя по последняим встречам с ним, он будет разговаривать только с солдатами FIA без прикрытия, по видимому, непонятных гражданских он не очень любит.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_FNDMIL">
 				<Original>Contact the Corrupt Officer</Original>
-				<Russian>Офицер</Russian>
+				<Russian>Контакт с Офицером</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_FNDMIL">
 				<Original>A disgruntled %4 officer is trying to leave Altis. His departure is scheduled for %2:%3. If you manage to get to him in time, you might be able to convince him to stay and support our case. He was spotted near %1 and has stated that he is willing to speak to us only on the condition that none of our agents are overt within that town. In other words, put on your sunday-best and meet him disguised. </Original>
-				<Russian>Офицер недовольный %4 пытается покинуть Altis. Его отъезд запланирован на %2:%3. Если вам удастся добраться до него раньше, вы могли бы убедить его остаться и поддержать наше дело. Он был замечен рядом с %1 и заявил, что он готов говорить с нами только при условии, что ни один из наших агентов не являются не замаскированым в этом городе. Другими словами, поставить на свой лучший воскресный наряд и встретиться с ним, замаскированными.</Russian>
+				<Russian>Недовольный %4 офицер, пытается покинуть Альтис. Его отъезд запланирован на %2:%3. Если вам удастся успеть добраться до него, вы могли бы убедить его остаться и поддержать нас. Его видели возле %1, он заявил, что готов говорить с нами, если ни один из наших агентов не будет обнаружен противником в районе места встречи. Другими словами, оденьте свой лучший воскресный костюм и встретьтесь с ним замаскированным.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_LOGAMMO">
 				<Original>Steal or Destroy Ammotruck</Original>
-				<Russian>Украсть или уничтожить  грузовик с Боеприпасами</Russian>
+				<Russian>Грузовик с Боеприпасами</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_LOGAMMO">
 				<Original>We've spotted an enemy Ammotruck in an %1. This is a great opportunity to scavange some well-needed gear from the enemy. We have until  %2:%3.</Original>
-				<Russian>Мы заметили Вражеский Грузовик с Боеприпасами в %1. Это отличная возможность собрать одну очень необходимую передачу от врага. мы должны до  %2:%3.</Russian>
+				<Russian>В %1 был замечен вражеский Грузовик с Боеприпасами. Это отличная возможность получить столь необходимые боеприпасы прямо от противника. Мы должны успеть до %2:%3.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_LOGBANK">
 				<Original>Bank Robbery</Original>
-				<Russian>Ограбление банка</Russian>
+				<Russian>Ограбить Банк</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_LOGBANK">
 				<Original>We know %4 is guarding a large amount of money in the bank of %1. Take this getaway vehicle and go there before %2:%3, hold the truck close to thw bank's main entrance for 2 minutes and the money will be transferred to the truck. Bring it back to HQ and the money will be ours.</Original>
-				<Russian>Мы знаем %4 охраняет большое количество денег в банке %1. Возьмите этот Транспорт и бегите туда до того %2:%3,держите грузовик близко к главному входу банка в течение 2 минут, и деньги будут переведены на грузовик. Принесите его обратно в штаб-квартиру и деньги будут наши.</Russian>
+				<Russian>Мы знаем, что силы %4 охраняют сейчас большую сумму денег в банке %1. Возьмите этот фургон для денег и успейте туда до %2:%3, подгоните фургон вплотную к главному входу банка на 2 минуты, и деньги будут погружены на грузовик. Пригоните его обратно в Штаб и деньги будут наши.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_LOGMEDICAL">
 				<Original>Supply Recovery</Original>
-				<Russian>Восстановление поддержки</Russian>
+				<Russian>Вернуть Груз</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_LOGMEDICAL">
 				<Original>We've had word from our informant that a sympathetic cell has sent supplies to %1. They ran into an %5 patrol and the crate felt down from their truck while fleeing. Find and secure the goods, then deliver them to the people in %1 before %2:%3. %5 command has probably dispatched reinforcements from %4 to retrieve the goods, so you better hurry.</Original>
-				<Russian>У нас было слово от нашего осведомителя, что симпатическая ячейка отправила материалы в% 1. Они столкнулись с патрулем в% 5, и ящик упал со своего грузовика, убегая. Найдите и закрепите товары, затем доставьте их людям в% 1 до% 2:% 3. Команда% 5, вероятно, отправила подкрепления из% 4 для извлечения товаров, поэтому вам лучше поторопиться.</Russian>
+				<Russian>Наш осведомитель сообщил, что дружественная подпольная ячейка отправила груз медикаментов в %1. Они столкнулись с патрулем в %5, контейнер с грузом выпал из грузовика во время бегства. Найдите и соберите груз, затем доставьте его людям в %1 до %2:%3. Командование %5, вероятно, отправило подкрепление из %4, забрать груз, поэтому вам лучше поторопиться.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_LOGSUPPLY">
 				<Original>City Supplies</Original>
-				<Russian>Городские Поставки</Russian>
+				<Russian>Гуманитарная Помощь</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_LOGSUPPLY">
 				<Original>%1 population is in need of supplies. Load this box on a car and unload it where the marker indicate you. Keep the area secure for 2 minutes to let the population grab what they need. Do it before %2:%3.</Original>
-				<Russian>% 1 население нуждается в поставках. Загрузите эту коробку на автомобиль и выгрузите ее, где указывает маркер. Храните область в безопасности в течение 2 минут, чтобы население захватило то, что им нужно. Сделайте это до% 2:% 3.</Russian>
+				<Russian>Население %1 нуждается в гуманитарной помощи. Загрузите ящик с гуманитарной помощью в автомобиль и доставьте на место, помеченное на карте. Обеспечьте безопасность этого места в течение 2 минут, чтобы население успело получить продукты и медикаменты. Сделайте это до %2:%3.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_NATOSUPPLY">
 				<Original>%1 Ammodrop</Original>
-				<Russian>Сброс Боеприпасов НАТО</Russian>
+				<Russian>Сброс Снаряжения %1</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_NATOSUPPLY">
 				<Original>Our Commander has asked %1 for a supply drop. Command the transport with your HC module and bring it to the designated position. Once it has landed you are free to use the equipment or bring it back to HQ. We dont think they will be able to supply us again for some time. </Original>
-				<Russian>Наш командир попросил НАТО о Воздушной поставе. Команда с транспортом и модулем HC принести его в указанное положение. После того, как он приземлится вы можете использовать оборудование или вернуть его в штаб-квартиру. Мы не думаю, что они смогут совершить поставку снова в течение некоторого времени.</Russian>
+				<Russian>Наш Командир запросил у %1 воздушную доставку снаряжения. Проведите транспорт до указанной точки, управляя им через управление группами. После того, как груз приземлится вы можете использовать снаряжение или доставить его в Штаб. Мы думаем, что они не смогут повторить воздушную доставку в течении некоторого времени.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_PRBRAIN">
 				<Original>Establish Propaganda Station</Original>
