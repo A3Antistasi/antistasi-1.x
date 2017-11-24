@@ -1492,15 +1492,15 @@
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_PRBRAIN">
 				<Original>We have noticed that the town of %1 is sympathetic to our cause. Travel there with this Truck and establish a semi-permanent propaganda station in order to spread the word. Once established, stay with and guard the station for as long as you deem necessary to raise town support. It would be wise to expect a number of enemy military responses to this action. You have until %2:%3 to arrive and set it up.</Original>
-				<Russian>Мы заметили, что в %1 многие жители нам симпатизируют. Отправляйтесь туда на этом грузовике и временно разверните там Радиостанцию Пропаганды и начните передачу. После того, как включите трансляцию, останьтесь и охраняйте её до тех пор, пока вы считаете необходимым повышать уровень поддержки населения в %1. Было бы разумно ожидать ряд вражеских ответных действий на эту акцию. Вы должны успеть приехать и развернуть станцию до %2:%3.</Russian>
+				<Russian>Мы заметили, что в %1 многие жители нам симпатизируют. Отправляйтесь туда на этом грузовике и временно разверните там Радиостанцию Пропаганды и начните трансляцию. После того, как включите трансляцию, останьтесь и охраняйте её до тех пор, пока вы считаете необходимым повышать уровень поддержки населения в %1. Было бы разумно ожидать ряд вражеских ответных действий на эту акцию. Вы должны успеть приехать и развернуть станцию до %2:%3.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_PRBRAIN_FAIL">
 				<Original>You failed to set up the gear before %2:%3.</Original>
-				<Russian>Вы не успели начать передачу до %2:%3.</Russian>
+				<Russian>Вы не успели начать трансляцию до %2:%3.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_PRBRAIN_HOLD">
 				<Original>Protect the station for as long as you can. We have enough battery capacity to run this station until %2:%3, so don't drag this out.</Original>
-				<Russian>Защищайте радиостанцию как можно дольше. Заряда батарей радиостанции достаточно, чтобы станция проработала до %2:%3, не дайте противнику её выключить.</Russian>
+				<Russian>Защищайте радиостанцию как можно дольше. Заряда батарей радиостанции достаточно, чтобы станция проработала до %2:%3, не дайте противнику её отключить.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_PRBRAIN_FAIL2">
 				<Original>You held the position for less than 10 minutes.</Original>
