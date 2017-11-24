@@ -1484,31 +1484,31 @@
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_NATOSUPPLY">
 				<Original>Our Commander has asked %1 for a supply drop. Command the transport with your HC module and bring it to the designated position. Once it has landed you are free to use the equipment or bring it back to HQ. We dont think they will be able to supply us again for some time. </Original>
-				<Russian>Наш Командир запросил у %1 воздушную доставку снаряжения. Проведите транспорт до указанной точки, управляя им через управление группами. После того, как груз приземлится вы можете использовать снаряжение или доставить его в Штаб. Мы думаем, что они не смогут повторить воздушную доставку в течении некоторого времени.</Russian>
-			</Key><!-- Triada остановился здесь -->
+				<Russian>Наш Командир запросил у %1 воздушную доставку снаряжения. Проведите транспорт до указанной точки, управляя им в режиме управления группами. После того, как груз приземлится, заберите снаряжение с собой или доставьте его в Штаб. Повтор воздушной доставки силы %1 сделают лишь через некоторое время.</Russian>
+			</Key>
 			<Key ID="STR_TSK_TD_PRBRAIN">
 				<Original>Establish Propaganda Station</Original>
-				<Russian>Установить Станцию Пропаганды</Russian>
+				<Russian>Радиостанция Пропаганды</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_PRBRAIN">
 				<Original>We have noticed that the town of %1 is sympathetic to our cause. Travel there with this Truck and establish a semi-permanent propaganda station in order to spread the word. Once established, stay with and guard the station for as long as you deem necessary to raise town support. It would be wise to expect a number of enemy military responses to this action. You have until %2:%3 to arrive and set it up.</Original>
-				<Russian>Мы заметили, что в городе %1 с пониманием относится к нашему делу. Отправляйся туда с этим грузовиком и создайте полупостоянную пропагандистскую станцию для того, чтобы распространить слово. После того, как установите, останьтесь и охраняйте станцию до тех пор, пока вы считаете необходимым поднимать поддержку города. Было бы разумно ожидать ряд вражеских контратак на эту акцию. Вы должны до %2:%3 для того чтобы приехать и установить его.</Russian>
+				<Russian>Мы заметили, что в %1 многие жители нам симпатизируют. Отправляйтесь туда на этом грузовике и временно разверните там Радиостанцию Пропаганды и начните передачу. После того, как включите трансляцию, останьтесь и охраняйте её до тех пор, пока вы считаете необходимым повышать уровень поддержки населения в %1. Было бы разумно ожидать ряд вражеских ответных действий на эту акцию. Вы должны успеть приехать и развернуть станцию до %2:%3.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_PRBRAIN_FAIL">
 				<Original>You failed to set up the gear before %2:%3.</Original>
-				<Russian>Вы не в состоянии настроить передачу до %2:%3.</Russian>
+				<Russian>Вы не успели начать передачу до %2:%3.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_PRBRAIN_HOLD">
 				<Original>Protect the station for as long as you can. We have enough battery capacity to run this station until %2:%3, so don't drag this out.</Original>
-				<Russian>Защищайте станцию до тех пор, как вы можете. Мы имеем достаточную емкость батареи для запуска этой станции до  %2:%3, поэтому не давите на её.</Russian>
+				<Russian>Защищайте радиостанцию как можно дольше. Заряда батарей радиостанции достаточно, чтобы станция проработала до %2:%3, не дайте противнику её выключить.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_PRBRAIN_FAIL2">
 				<Original>You held the position for less than 10 minutes.</Original>
-				<Russian>Вы занимали позицию менее 10 минут.</Russian>
+				<Russian>Вы смогли удерживать позицию менее 10 минут.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_PRBRAIN_SUCCESS">
 				<Original>You managed to hold the position long enough to inspire the population.</Original>
-				<Russian>Вам удалось удержать позицию достаточно долго, чтобы вдохновить население.</Russian>
+				<Russian>Вы смогли удерживать позицию достаточно долго, чтобы вдохновить население.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_PRPAMPHLET">
 				<Original>Leaflet Drop</Original>
@@ -1516,7 +1516,7 @@
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_PRPAMPHLET">
 				<Original>Supporters of our cause have been working hard to bring the population of %1 over to our side. Help these brave volunteers by delivering these leaflets to safe drop locations. Pick up will take place at %2:%3, so you better have them in place by then. This might be easier if you manage to remain undetected for as long as possible.</Original>
-				<Russian>Сторонники нашего дела упорно трудились, чтобы довести население %1 на нашу сторону. Помощь этих храбрых добровольцев, предоставила эти листовки в местах безопасного Сброса. Встреча будет проходить в %2:%3, так что вам лучше иметь их на месте к тому времени. Это будет проще, если вам удастся остаться незамеченными как можно дольше.</Russian>
+				<Russian>Наши добровольцы упорно трудятся, чтобы убедить население %1 стать нашими сторонниками. Помогите этим храбрым добровольцам, доставьте эти листовки по адресам, какие они скажут. Встреча будет проходить в %2:%3, так что вам лучше иметь их на месте к тому времени. Это будет проще, если вам удастся остаться незамеченными как можно дольше.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_PRPAMPHLET_FAIL">
 				<Original>You failed to provide leaflets for our volunteers in %1.</Original>
