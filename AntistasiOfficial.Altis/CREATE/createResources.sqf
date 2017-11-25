@@ -29,7 +29,7 @@ while {(spawner getVariable _marker) AND (_currentStrength < 2)} do {
 		_dog = _group createUnit ["Fin_random_F",_spawnPos,[],0,"FORM"];
 		[_dog] spawn guardDog;
 	};
-	[leader _group, _patrolMarker, "SAFE","SPAWNED", "NOVEH2"] execVM "scripts\UPSMON.sqf";
+	[_group, _patrolMarker, "SAFE","SPAWNED", "NOVEH2"] execVM "scripts\UPSMON.sqf";
 	_allGroups pushBack _group;
 	_currentStrength = _currentStrength +1;
 };
@@ -55,7 +55,7 @@ while {(spawner getVariable _marker) AND (_currentStrength < _maxStrength)} do {
 		_groupType = [infSquad, side_green] call AS_fnc_pickGroup;
 		_group = [_markerPos, side_green, _groupType] call BIS_Fnc_spawnGroup;
 		if (_reduced) then {[_group] call AS_fnc_adjustGroupSize};
-		_patrolParams = [leader _group, _marker, "SAFE","SPAWNED","NOVEH2","NOFOLLOW"];
+		_patrolParams = [_group, _marker, "SAFE","SPAWNED","NOVEH2","NOFOLLOW"];
 		if (_currentStrength == 0) then {_patrolParams pushBack "FORTIFY"};
 		_patrolParams execVM "scripts\UPSMON.sqf";
 		_allGroups pushBack _group;
@@ -74,7 +74,7 @@ if ((random 100 < (((server getVariable "prestigeNATO") + (server getVariable "p
 	_observer = _group createUnit [selectRandom CIV_journalists, _spawnPos, [],0, "NONE"];
 	[_observer] spawn CIVinit;
 	_allGroups pushBack _group;
-	[_observer, _marker, "SAFE", "SPAWNED","NOFOLLOW", "NOVEH2","NOSHARE","DoRelax"] execVM "scripts\UPSMON.sqf";
+	[_group, _marker, "SAFE", "SPAWNED","NOFOLLOW", "NOVEH2","NOSHARE","DoRelax"] execVM "scripts\UPSMON.sqf";
 };
 
 sleep 3;
@@ -107,7 +107,7 @@ if !(_marker in destroyedCities) then {
 			sleep 0.5;
 		};
 		[_marker,_workers] spawn destroyCheck;
-		[leader _group, _marker, "SAFE", "SPAWNED","NOFOLLOW", "NOSHARE","DORELAX"] execVM "scripts\UPSMON.sqf";
+		[_group, _marker, "SAFE", "SPAWNED","NOFOLLOW", "NOSHARE","DORELAX"] execVM "scripts\UPSMON.sqf";
 	};
 };
 

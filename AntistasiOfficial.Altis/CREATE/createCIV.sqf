@@ -82,7 +82,7 @@ if ((random 100 < ((server getVariable ["prestigeNATO",0]) + (server getVariable
 	_allCivilians pushBack _unit;
 };
 
-[leader _group, _marker, "SAFE", "SPAWNED","NOFOLLOW", "NOVEH2","NOSHARE","DoRelax"] execVM "scripts\UPSMON.sqf";
+[_group, _marker, "SAFE", "SPAWNED","NOFOLLOW", "NOVEH2","NOSHARE","DoRelax"] execVM "scripts\UPSMON.sqf";
 
 _patrolCities = [_marker] call AS_fnc_getNearbyCities;
 

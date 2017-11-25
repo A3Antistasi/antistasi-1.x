@@ -27,7 +27,7 @@ _piloto = ([_posicion, 0, opI_PIL, _grp] call bis_fnc_spawnvehicle) select 0;
 
 _grp selectLeader _oficial;
 sleep 1;
-[leader _grp, _marcador, "SAFE", "SPAWNED", "NOVEH", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
+[_grp, _marcador, "SAFE", "SPAWNED", "NOVEH", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 
 {[_x] spawn CSATinit; _x allowFleeing 0} forEach units _grp;
 

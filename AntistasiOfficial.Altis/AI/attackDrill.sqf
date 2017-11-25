@@ -1,15 +1,10 @@
-private ["_marcador","_grupo","_posicion","_size"];
+params ["_marker","_group"];
 
-_marcador = _this select 0;
-_grupo = _this select 1;
+private _position = getMarkerPos _marker;
+private _size = [_marker] call sizeMarker;
 
-_posicion = getMarkerPos _marcador;
+waitUntil {sleep 5; (leader _group distance _position < _size) or ({alive _x} count units _group == 0)};
 
-_size = [_marcador] call sizeMarker;
-
-waitUntil {sleep 5; (leader _grupo distance _posicion < _size) or ({alive _x} count units _grupo == 0)};
-
-if (leader _grupo distance _posicion < _size) then
-	{
-	[leader _grupo, _marcador, "COMBAT","SPAWNED","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
-	};
+if (leader _group distance _position < _size) then{
+	[_group, _marker, "COMBAT","SPAWNED","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
+};
