@@ -79,7 +79,7 @@ if (random 10 < 2.5) then {
 	[_dog,_group] spawn guardDog;
 };
 
-[leader _group, _marker, "SAFE","SPAWNED","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
+[_group, _marker, "SAFE","SPAWNED","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 {[_x] spawn genInitBASES; _allSoldiers pushBack _x} forEach units _group;
 _allGroups pushBack _group;
 

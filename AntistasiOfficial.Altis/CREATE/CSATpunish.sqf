@@ -113,7 +113,7 @@ for "_i" from 0 to _numCiv do
 	sleep 1;
 	};
 
-[leader _grupoCivil, _mrkDestino, "AWARE","SPAWNED","NOVEH2"] execVM "scripts\UPSMON.sqf";
+[_grupoCivil, _mrkDestino, "AWARE","SPAWNED","NOVEH2"] execVM "scripts\UPSMON.sqf";
 
 _civilMax = {alive _x} count _civiles;
 _solMax = count _soldados;

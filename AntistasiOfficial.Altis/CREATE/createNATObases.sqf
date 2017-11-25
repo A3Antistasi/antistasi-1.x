@@ -200,7 +200,7 @@ _allGroups pushBack _group;
 	for "_i" from 0 to (count _guerGroups) - 1 do {
 		_group = _guerGroups select _i;
 		//[leader _group, _marker, "SAFE","SPAWNED","RANDOM","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf"; Stef 14/09 changed to RANDOMUP for smoother attack
-		[leader _group, _marker, "SAFE","SPAWNED", "ORIGINAL","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
+		[_group, _marker, "SAFE","SPAWNED", "ORIGINAL","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 	};
 
 // Apex 22/9/17 21:12 UK Time
@@ -248,7 +248,7 @@ _allGroups pushBack _group;
 		_observer = _group createUnit [selectRandom CIV_journalists, _spawnPos, [],0, "NONE"];
 		[_observer] spawn CIVinit;
 		_allGroups pushBack _group;
-		[_observer, _marker, "SAFE", "SPAWNED","NOFOLLOW", "NOVEH2","NOSHARE","DoRelax"] execVM "scripts\UPSMON.sqf";
+		[_group, _marker, "SAFE", "SPAWNED","NOFOLLOW", "NOVEH2","NOSHARE","DoRelax"] execVM "scripts\UPSMON.sqf";
 	};
 
 //Despawn conditions

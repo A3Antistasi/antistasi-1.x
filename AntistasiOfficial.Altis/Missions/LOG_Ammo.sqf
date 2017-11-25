@@ -51,11 +51,11 @@ if (spawner getVariable _marcador) then
 		[_perro] spawn guardDog;
 		};
 
-	[leader _grupo, _mrk, "SAFE","SPAWNED", "NOVEH2"] execVM "scripts\UPSMON.sqf";
+	[_grupo, _mrk, "SAFE","SPAWNED", "NOVEH2"] execVM "scripts\UPSMON.sqf";
 
 	_grupo1 = [_pos, side_green, _tipoGrupo] call BIS_Fnc_spawnGroup;
 	sleep 1;
-	[leader _grupo1, _mrk, "SAFE","SPAWNED", "NOVEH2"] execVM "scripts\UPSMON.sqf";
+	[_grupo1, _mrk, "SAFE","SPAWNED", "NOVEH2"] execVM "scripts\UPSMON.sqf";
 
 	{[_x] spawn genInitBASES} forEach units _grupo;
 	{[_x] spawn genInitBASES} forEach units _grupo1;

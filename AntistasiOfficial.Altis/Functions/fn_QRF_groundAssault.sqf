@@ -22,7 +22,7 @@ if (typeName _infGroup == "STRING") then {
 	waitUntil {sleep 5; ((units _vehGroup select 0) distance _dest < 50) || ({alive _x} count units _vehGroup == 0)};
 };
 
-0 = [leader _vehGroup, _mrk, "COMBAT", "SPAWNED", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
+[_vehGroup, _mrk, "COMBAT", "SPAWNED", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 sleep _duration;
 
 [_vehGroup, _origin] spawn AS_fnc_QRF_RTB;

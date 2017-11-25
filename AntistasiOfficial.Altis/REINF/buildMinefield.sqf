@@ -100,7 +100,7 @@ if ((_camion distance _posicionTel < 50) and ({alive _x} count units _grupo > 0)
 		};
 	Slowhand hcRemoveGroup _grupo;
 	[[petros,"hint","Engineer Team deploying mines."],"commsMP"] call BIS_fnc_MP;
-	[leader _grupo, _mrk, "SAFE","SPAWNED", "SHOWMARKER"] execVM "scripts\UPSMON.sqf";
+	[_grupo, _mrk, "SAFE","SPAWNED", "SHOWMARKER"] execVM "scripts\UPSMON.sqf";
 	sleep 30*_cantidad;
 	if ((alive _camion) and ({alive _x} count units _grupo > 0)) then
 		{

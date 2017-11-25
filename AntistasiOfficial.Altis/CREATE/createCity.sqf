@@ -25,7 +25,7 @@ if (_marker in mrkAAF) then {
 	if (random 10 < 5) then {
 		_groupType = [opGroup_Sniper, side_red] call AS_fnc_pickGroup;
 		_group = [_markerPos, side_red, _groupType] call BIS_Fnc_spawnGroup;
-		[leader _group, _marker, "SAFE", "RANDOM", "SPAWNED","NOVEH2", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
+		[_group, _marker, "SAFE", "RANDOM", "SPAWNED","NOVEH2", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 		{[_x] spawn CSATinit; _allSoldiers pushBack _x} forEach units _group;
 		_allGroups pushBack _group;
 	};
@@ -51,7 +51,7 @@ while {(spawner getVariable _marker) AND (_counter < _size)} do {
 	} else {
 		{[_x] spawn AS_fnc_initialiseFIAGarrisonUnit; _allsoldiers pushBack _x} forEach units _group;   //STEF allSoldiers
 	};
-	[leader _group, _marker, "SAFE", "RANDOM", "SPAWNED","NOVEH2", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
+	[_group, _marker, "SAFE", "RANDOM", "SPAWNED","NOVEH2", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 	_allGroups pushBack _group;
 	_counter = _counter + 1;
 };
