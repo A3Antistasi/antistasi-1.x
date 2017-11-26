@@ -1,6 +1,6 @@
 //if (!isServer) exitWith {};
 
-private ["_crate","_NATOSupp","_weapons", "_lmgs", "_lmgAmmo", "_smAmmo", "_int"];
+private ["_crate","_NATOSupp"];
 
 _crate = _this select 0;
 _NATOSupp = _this select 1;
@@ -10,9 +10,6 @@ clearWeaponCargoGlobal _crate;
 clearItemCargoGlobal _crate;
 clearBackpackCargoGlobal _crate;
 
-//add jnl load action
-	_crate call jn_fnc_logistics_addAction;
-
 //Standard Equipment (good for 5 people)
 			//										Weapon
 			_crate addWeaponCargoGlobal 		[bluSmallWpn 		select 0,	5	];
@@ -20,14 +17,12 @@ clearBackpackCargoGlobal _crate;
 			_crate addWeaponCargoGlobal 		[bluSmallWpn 		select 1,	5	];
 			_crate addMagazineCargoGlobal 		[bluSmallAmmo 		select 1,	25	];
 			_crate addWeaponCargoGlobal 		[bluAT		 		select 0,	5	];	//AT tube
-			if(!activeAFRF) then{
-			_crate addWeaponCargoGlobal 		[bluATMissile		select 0,	5	];	//when no RHS or ACE it need ammo
-			};
+			_crate addWeaponCargoGlobal 		[bluATMissile		select 0,	5	];
 			_crate addItemCargoGlobal			["SmokeShellRed"			,	25	];
 			_crate addItemCargoGlobal			["SmokeShellGreen"			,	25	];
 			_crate addItemCargoGlobal			[bluAttachments 	select 0,	5	];	//flashlight
-				{_crate addItemCargoGlobal 		[_x							,	20	];}//Shells: Smoke and Flares Green and Red
-							foreach bluGLsmoke;
+				{_crate addItemCargoGlobal 		[_x							,	20	];	//Shells: Smoke and Flares Green and Red
+				} foreach bluGLsmoke;
 
 			_crate addWeaponCargoGlobal 		[selectrandom bluGL			,	1	];
 			_crate addMagazineCargoGlobal 		[selectrandom bluRifleAmmo	,	5	];
@@ -47,6 +42,9 @@ clearBackpackCargoGlobal _crate;
 
 			_crate addItemCargoGlobal 			["ToolKit"					,	1	];
 			_crate addItemCargoGlobal 			["MineDetector"				,	1	];
+			if (activeTFAR) then {
+			_crate addBackpackCargoGlobal 		[lrRadio					, 	5	];
+			};
 
 			//										From Tier 1
 			if(BE_currentStage > 0) then {
@@ -54,6 +52,15 @@ clearBackpackCargoGlobal _crate;
 						_crate addMagazineCargoGlobal 		[selectrandom bluRifleAmmo	,	35	];
 						_crate addItemCargoGlobal			[bluScopes			select 0,	4	];
 						//_crate addItemCargoGlobal			[bluSuppressor		select 0,	5	];  still missing in templates
+						if (activeACE) then {
+						_crate addMagazineCargoGlobal 		["ACE_HuntIR_M203"			, 	3	];
+						_crate addItemCargoGlobal 			["ACE_HuntIR_monitor"		, 	1	];
+						_crate addItemCargoGlobal 			["ACE_Vector"				, 	5	];
+						_crate addItemCargoGlobal 			["ACE_microDAGR"			, 	5	];
+						_crate addItemCargoGlobal 			["ACE_ATragMX"				, 	5	];
+						_crate addItemCargoGlobal 			["ACE_Kestrel4500"			, 	5	];
+						};
+			};
 
 // Additional equipment depending on ArmyLevel
 	if (BE_currentStage == 3) then {
@@ -107,41 +114,10 @@ clearBackpackCargoGlobal _crate;
 	};
 };
 
-
 if (activeAFRF) then {
 	_crate addItemCargoGlobal ["Laserdesignator",1];
 	_crate addItemCargoGlobal ["Laserbatteries",1];
 };
-
-_int = round (_NATOSupp/10);
-if (activeTFAR) then {
-	if (lrRadio in unlockedBackpacks) then {
-		_crate addBackpackCargoGlobal [lrRadio, 2];
-	}
-	else {
-		_crate addBackpackCargoGlobal [lrRadio, 1 + _int];
-	};
-};
-
-if (activeACE) then {
-	_crate addMagazineCargoGlobal ["ACE_HuntIR_M203", 3];
-	_crate addItemCargoGlobal ["ACE_HuntIR_monitor", 1];
-
-// This should be added only from the tier you get the sniper rifle.
-	if (_NATOSupp > 60) then {
-		_crate addItemCargoGlobal ["ACE_Vector", 5];
-		_crate addItemCargoGlobal ["ACE_microDAGR", 5];
-		_crate addItemCargoGlobal ["ACE_ATragMX", 5];
-		_crate addItemCargoGlobal ["ACE_Kestrel4500", 5];
-	}
-	else {
-		_crate addItemCargoGlobal ["ACE_Vector", 3];
-		_crate addItemCargoGlobal ["ACE_microDAGR", 3];
-		_crate addItemCargoGlobal ["ACE_ATragMX", 3];
-		_crate addItemCargoGlobal ["ACE_Kestrel4500", 3];
-	};
-};
-
 
 if (_NATOSupp < 50) then {
 	_crate addBackpackCargoGlobal ["B_Static_Designator_01_weapon_F",1];
@@ -161,3 +137,6 @@ if (activeUSAF) then
 {
 	_crate addBackpackCargoGlobal ["B_rhsusf_B_BACKPACK", 2];
 };
+
+//add jnl load action
+	_crate call jn_fnc_logistics_addAction;

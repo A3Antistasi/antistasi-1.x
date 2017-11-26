@@ -121,7 +121,7 @@
 	];
 
 	bluATMissile = [
-		//"",							//Tier 1
+		"",								//Tier 1
 		"rhs_mag_smaw_HEAA",			//Only high tier
 		"rhs_fgm148_magazine_AT"		//Locking
 	];
