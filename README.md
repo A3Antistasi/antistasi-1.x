@@ -16,9 +16,12 @@ Currently: *Stef* is supervising the project and coding some simple stuff, *IrLE
 We're looking for more coders, every contribution is appreciated!
 
 
-Official website: http://www.a3antistasi.com/
+Website: http://www.a3antistasi.com/
 
-Official guide: https://docs.google.com/document/d/1_XamnTWgVgy0jDinYSDhAWG_vKDa49ngl6fGi5XdPLQ/edit
+Server: steam://connect/85.190.158.136:29001
+Teamspeak: voip.a3antistasi.com
+
+Guide: https://docs.google.com/document/d/1_XamnTWgVgy0jDinYSDhAWG_vKDa49ngl6fGi5XdPLQ/edit
 
 ---
 
