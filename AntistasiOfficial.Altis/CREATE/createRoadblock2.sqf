@@ -77,7 +77,7 @@ _soldier = ([_markerPos, 0, sol_LAT, _group] call bis_fnc_spawnvehicle) select 0
 } forEach _turretArray;
 
 
-[leader _group, _marker, "SAFE","SPAWNED","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
+[_group, _marker, "SAFE","SPAWNED","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 {[_x] spawn genInitBASES; _allSoldiers pushBack _x} forEach units _group;
 
 //_allVehicles = _vehicleArray + _turretArray;

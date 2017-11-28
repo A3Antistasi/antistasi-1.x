@@ -48,7 +48,7 @@ misiones pushBack _tsk; publicVariable "misiones";
 _tipoGrupo = [infSquad, side_green] call AS_fnc_pickGroup;
 _group1 = [_ClearPosOutpost, side_green, _tipoGrupo] call BIS_Fnc_spawnGroup;
 sleep 1;
-[leader _group1, _mrkfin, "SPAWNED", "NOVEH2", "NOFOLLOW", "AWARE"] execVM "scripts\UPSMON.sqf";
+[_group1, _mrkfin, "SPAWNED", "NOVEH2", "NOFOLLOW", "AWARE"] execVM "scripts\UPSMON.sqf";
 {[_x] spawn genInit; _x allowFleeing 0} forEach units _group1;
 sleep 2;
 _group1 setFormation "STAG COLUMN";

@@ -75,7 +75,7 @@ while {true} do {
 		{
 			_tipoGrupo = [infSquad, side_green] call AS_fnc_pickGroup;
 			_group1	   = [_posmissionchurch, side_green, _tipogrupo] call BIS_Fnc_spawnGroup;
-			[leader _group1, _mrkchurch, "SAFE", "SPAWNED", "NOVEH2", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
+			[_group1, _mrkchurch, "SAFE", "SPAWNED", "NOVEH2", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 
 			{ [_x] spawn genInit;
 			  _soldados = _soldados + [_x]} forEach units _group1;
@@ -109,7 +109,7 @@ while {true} do {
 		} else {
 			_tipoGrupo = [opGroup_Squad, side_red] call AS_fnc_pickGroup;
 			_group1	   = [_posmissionchurch, side_red, _tipogrupo] call BIS_Fnc_spawnGroup;
-			[leader _group1, _mrkchurch, "SAFE", "SPAWNED", "NOVEH2", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
+			[_group1, _mrkchurch, "SAFE", "SPAWNED", "NOVEH2", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 
 
 			{ [_x] spawn CSATinit;

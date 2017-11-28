@@ -727,12 +727,12 @@
 		</Container>
 		<Container name="Vehicle Management">
 			<Key ID="STR_UI_VEHMGMT_PGAR_TEXT">
-				<Original>Garage</Original>
-				<Russian>В Гараж</Russian>
+				<Original>Garage / Store inventory</Original>
+				<Russian>В Гараж / Сохранить инвентарь</Russian>
 			</Key>
 			<Key ID="STR_UI_VEHMGMT_PGAR_TT">
-				<Original>Garage the vehicle you are looking at.</Original>
-				<Russian>Ставит в Гараж технику на которую Вы смотрите.</Russian>
+				<Original>Store the vehicle you are looking at and its inventory.</Original>
+				<Russian>Ставит в Гараж технику на которую Вы смотрите и её инвентарь.</Russian>
 			</Key>
 			<Key ID="STR_UI_VEHMGMT_UNL_TEXT">
 				<Original>(Un)lock Vehicle</Original>

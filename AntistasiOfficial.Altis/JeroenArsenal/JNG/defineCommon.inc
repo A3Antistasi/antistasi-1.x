@@ -53,13 +53,15 @@
 	private _ammoClassic = _data select 7;\
 	private _ammoPylon = _data select 8;\
 	private _damage = _data select 9;\
-	private _attachItem = _data select 10;
+	private _attachItem = _data select 10;\
+	private _fuel = _data select 11;\
+	private _fuelcargo = _data select 12;
 #define COMPILE_SAVE\
-	if(isnil "_name" || isnil "_beingChanged" || isnil "_locked" || isnil "_lockedName"  || isnil "_type" || isnil "_texture" || isnil "_animations" || isnil "_ammoClassic"|| isnil "_ammoPylon"|| isnil "_ammoClassic" || isnil "_damage")then{\
+	if(isnil "_name" || isnil "_beingChanged" || isnil "_locked" || isnil "_lockedName"  || isnil "_type" || isnil "_texture" || isnil "_animations" || isnil "_ammoClassic"|| isnil "_ammoPylon"|| isnil "_ammoClassic" || isnil "_damage" || isnil "_fuel" || isnil "_fuelcargo")then{\
 		["Error: ERROR COMPILE_SAVE"] call BIS_fnc_error;\
 		_error_compile_save = "ERROR COMPILE_SAVE fn_garage.sqf (JGA)";\
 	};\
-	private _data = [_name, _beingChanged, _locked, _lockedName, _type, _texture, _animations, _ammoClassic, _ammoPylon, _damage, _attachItem];\
+	private _data = [_name, _beingChanged, _locked, _lockedName, _type, _texture, _animations, _ammoClassic, _ammoPylon, _damage, _attachItem, _fuel, _fuelcargo];\
 	private _datastr = str _data;
 #define SPLIT_REARM\
 	private _magazine = _data select 0;\

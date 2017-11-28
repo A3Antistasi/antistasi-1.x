@@ -117,7 +117,7 @@ for "_i" from 0 to 1 do {
 	sleep 1;
 	_dog = _group createUnit ["Fin_random_F",_targetPosition,[],0,"FORM"];
 	[_dog] spawn guardDog;
-	[leader _group, _marker, "SAFE", "RANDOM", "SPAWNED","NOVEH2", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
+	[_group, _marker, "SAFE", "RANDOM", "SPAWNED","NOVEH2", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 	_allGroups pushBack _group;
 };
 

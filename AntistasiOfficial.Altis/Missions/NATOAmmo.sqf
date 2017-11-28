@@ -72,7 +72,7 @@ sleep 15;
 
 deleteMarker _mrkFin;
 
-[1200,_tsk] spawn borrarTask;
+[300,_tsk] spawn borrarTask;
 {
 _soldado = _x;
 waitUntil {sleep 1; {_x distance _soldado < distanciaSPWN} count (allPlayers - hcArray) == 0};

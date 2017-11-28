@@ -169,7 +169,7 @@ if (_isFrontline) then {_strength = _strength * 1}; //Stef 27/10 disabled the fr
 if (_marker in puestosAA) then {
 	_groupType = [infAA, side_green] call AS_fnc_pickGroup;
 	_group = [_markerPos, side_green, _groupType] call BIS_Fnc_spawnGroup;
-	[leader _group, _marker, "SAFE","SPAWNED","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
+	[_group, _marker, "SAFE","SPAWNED","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 	_allGroups pushBack _group;
 	sleep 1;
 };
@@ -180,7 +180,7 @@ while {(spawner getVariable _marker) AND (_currentStrength < _strength)} do {
 		_group = [_markerPos, side_green, _groupType] call BIS_Fnc_spawnGroup;
 		if (activeAFRF) then {_group = [_group, _markerPos] call AS_fnc_expandGroup};
 		sleep 1;
-		_patrolParams = [leader _group, _marker, "SAFE","SPAWNED","NOVEH2"]; //Stef removed "NOFOLLOW"
+		_patrolParams = [_group, _marker, "SAFE","SPAWNED","NOVEH2"]; //Stef removed "NOFOLLOW"
 		if (_currentStrength == 0) then {_patrolParams pushBack "FORTIFY"; _patrolParams pushBack "RANDOMUP"};
 		_patrolParams execVM "scripts\UPSMON.sqf";
 		_allGroups pushBack _group;
@@ -220,7 +220,7 @@ if ((random 100 < (((server getVariable "prestigeNATO") + (server getVariable "p
 	_observer = _group createUnit [selectRandom CIV_journalists, _position, [],0, "NONE"];
 	[_observer] spawn CIVinit;
 	_allGroups pushBack _group;
-	[_observer, _marker, "SAFE", "SPAWNED","NOFOLLOW", "NOVEH2","NOSHARE","DoRelax"] execVM "scripts\UPSMON.sqf";
+	[_group, _marker, "SAFE", "SPAWNED","NOFOLLOW", "NOVEH2","NOSHARE","DoRelax"] execVM "scripts\UPSMON.sqf";
 };
 
 {

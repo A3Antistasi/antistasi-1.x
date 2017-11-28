@@ -10,15 +10,20 @@ Returns:
 	---> Leader
 ****************************************************************/
 
-private ["_unit","_Leader", "_grp"];
+params[["_unit", objNull, [ objNull, grpNull]]];
+private ["_leader", "_grp"];
 
-_unit = _this select 0;
-_grp = group _unit;
-_Leader = leader (_grp);
+if (typename _unit == "GROUP") then {
+    _grp = _unit;
+    _unit = leader _grp;
+} else {
+      _grp = group _unit;
+};
+_leader = leader _grp;
 
 if ((_unit iskindof "Man")) then {
 
-	if(_unit != _Leader) then {
+	if(_unit != _leader) then {
 		_grp selectLeader _unit;
 	};
 
@@ -36,4 +41,4 @@ if ((_unit iskindof "Man")) then {
 	_grp selectLeader _unit;
 };
 
-_Leader
+_unit;

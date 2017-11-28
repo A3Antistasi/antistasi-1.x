@@ -62,7 +62,7 @@ _allGroups pushBackUnique _groupGunners;
 	_groupType = [opGroup_Security, side_red] call AS_fnc_pickGroup;
 	_group = [_x, side_red, _groupType] call BIS_Fnc_spawnGroup;
 	sleep 1;
-	[leader _group, _mrk, "SAFE","SPAWNED","NOFOLLOW","NOMOVE"] execVM "scripts\UPSMON.sqf";
+	[_group, _mrk, "SAFE","SPAWNED","NOFOLLOW","NOMOVE"] execVM "scripts\UPSMON.sqf";
 	_allGroups pushBackUnique _group;
 } forEach _spawnPoints;
 
@@ -70,7 +70,7 @@ for "_i" from 1 to 2 do {
 	_groupType = [opGroup_Recon_Team, side_red] call AS_fnc_pickGroup;
 	_group = [_position, side_red, _groupType] call BIS_Fnc_spawnGroup;
 	sleep 1;
-	[leader _group, _marker, "STEALTH","SPAWNED","NOFOLLOW","NOVEH2"] execVM "scripts\UPSMON.sqf";
+	[_group, _marker, "STEALTH","SPAWNED","NOFOLLOW","NOVEH2"] execVM "scripts\UPSMON.sqf";
 	_allGroups pushBackUnique _group;
 };
 

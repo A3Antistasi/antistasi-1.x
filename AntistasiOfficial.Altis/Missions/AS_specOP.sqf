@@ -35,11 +35,11 @@ _grupo = [_posicion, side_red, _tipoGrupo] call BIS_Fnc_spawnGroup;
 sleep 1;
 _uav = createVehicle [opUAVsmall, _posicion, [], 0, "FLY"];
 createVehicleCrew _uav;
-[leader _grupo, _mrkfin, "RANDOM", "SPAWNED", "NOVEH2", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
+[_grupo, _mrkfin, "RANDOM", "SPAWNED", "NOVEH2", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 {[_x] spawn CSATinit; _x allowFleeing 0} forEach units _grupo;
 
 _grupoUAV = group (crew _uav select 1);
-[leader _grupoUAV, _mrkfin, "SAFE", "SPAWNED","NOVEH", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
+[_grupoUAV, _mrkfin, "SAFE", "SPAWNED","NOVEH", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 
 waitUntil  {sleep 5; (dateToNumber date > _fechalimnum) or ({alive _x} count units _grupo == 0)};
 

@@ -48,7 +48,7 @@ _mrk setMarkerAlphaLocal 0;
 _tipoGrupo = [infSquad, side_green] call AS_fnc_pickGroup;
 _grupo = [_posicion, side_green, _tipogrupo] call BIS_Fnc_spawnGroup;
 sleep 1;
-[leader _grupo, _mrk, "SAFE","SPAWNED", "NOVEH2", "FORTIFY"] execVM "scripts\UPSMON.sqf";
+[_grupo, _mrk, "SAFE","SPAWNED", "NOVEH2", "FORTIFY"] execVM "scripts\UPSMON.sqf";
 {[_x] spawn genInitBASES} forEach units _grupo;
 
 _posicion = _banco buildingPos 1;

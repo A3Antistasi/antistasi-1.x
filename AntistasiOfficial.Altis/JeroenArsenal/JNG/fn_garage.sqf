@@ -1751,6 +1751,11 @@ switch _mode do {
 			[_center,_attachment, false,false] call jn_fnc_logistics_load;
 		};
 
+		//Load fuel and fuelcargo by Stef
+		_center	setfuel _fuel;
+		if(activeACE) then {[_center, _fuelcargo] call ace_refuel_fnc_setFuel;} else {_center setfuelcargo _fuelcargo};
+
+
 		_center//return
 	};
 
