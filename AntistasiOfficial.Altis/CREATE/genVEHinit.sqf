@@ -2,7 +2,7 @@ params ["_vehicle"];
 private ["_vehicleType"];
 
 _vehicle setfuel 0.15;
-if(activeACE) then {[_vehicle, 300] call ace_refuel_fnc_setFuel;} else {_vehicle setfuelcargo 0.1;};
+if(activeACE) then {[_vehicle, 4000] call ace_refuel_fnc_setFuel;} else {_vehicle setfuelcargo 0.6;};
 
 if ((_vehicle isKindOf "FlagCarrier") OR (_vehicle isKindOf "Building")) exitWith {};
 if (_vehicle isKindOf "ReammoBox_F") exitWith {[_vehicle] call cajaAAF};
