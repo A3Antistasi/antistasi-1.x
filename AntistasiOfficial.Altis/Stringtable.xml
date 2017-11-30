@@ -1571,11 +1571,11 @@
 				<Russian>Мы получили слово, что враг подавляет сообщество в своей поместной церкви. Если мы уничтожим их, мы, безусловно, окажем некоторую поддержку нашему делу. Идите в место и убейте команду.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_DESfuel">
-				<Original>Destroy the enemy fuel truck.</Original>
+				<Original>Steal or destroy Fuel Truck.</Original>
 				<Russian>Уничтожить вражескую автоцистерну.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_DESfuel">
-				<Original>The enemy is buying fuel from the civilians to supply their war machine. The truck is leaving from %1 and will return there once it is full. We have a contact who will let us know when the truck is at the fuel station. Destroy the fuel truck to show the enemy and the population that we will not stand for collaboration.</Original>
+				<Original>The enemy is taking fuel from the civilians to supply their war machine. The truck is leaving from %1 and will return there once it is full. We have a contact who will let us know when the truck is at the fuel station. Destroy the fuel truck or take its control.</Original>
 				<Russian>враг покупает топливо у гражданских лиц для поставки своей военной машины. Грузовик уходит из %1 и вернется туда, как только он будет заполнен. У нас есть контакт, который сообщит нам, когда грузовик находится на АЗС. Уничтожьте топливный грузовик, чтобы показать врагу и населению, что мы не будем выступать за сотрудничество.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_ASFOREST">

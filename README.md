@@ -5,19 +5,23 @@ This is the developing version, many progress have been done since 1.7 however w
 
 
 
-The Author is Barbolani
+The Author is **Barbolani**
 
-After 1.2 Chris coded many changes under the supervision of RickyTan and Kendo with the contribution of Toshi and Tucks for porting and templates.
+After 1.2 *Chris* coded many changes under the supervision of *RickyTan* and *Kendo* with the contribution of *Toshi* and *Tucks* for porting and templates.
 
-After 1.7.6 Sparker and Jeroen continued because the 1.7 bugs weren't possible to be fixed unless changing a lot of the code. 
+After 1.7.6 *Sparker* and *Jeroen* continued because the 1.7 bugs weren't possible to be fixed unless changing a lot of the code. 
 
-Currently: Stef is supervising the project, looking for coders and github help to continue.
+Currently: *Stef* is supervising the project and coding some simple stuff, *IrLED* started coding major fixes and improvement since 1.7.17, he also organized the github environment.
+
+We're looking for more coders, every contribution is appreciated!
 
 
+Website: http://www.a3antistasi.com/
 
-Official website: http://www.a3antistasi.com/
+Server: steam://connect/85.190.158.136:29001
+Teamspeak: voip.a3antistasi.com
 
-Official guide: https://docs.google.com/document/d/1_XamnTWgVgy0jDinYSDhAWG_vKDa49ngl6fGi5XdPLQ/edit
+Guide: https://docs.google.com/document/d/1_XamnTWgVgy0jDinYSDhAWG_vKDa49ngl6fGi5XdPLQ/edit
 
 ---
 

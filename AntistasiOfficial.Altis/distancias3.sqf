@@ -76,7 +76,7 @@ while {true} do {
 						[_marker] remoteExec ["createCity",HCGarrisons]
 					} else {
 						call {
-							if ((_marker in recursos) OR (_marker in fabricas)) exitWith {[_marker] remoteExec ["createFIArecursos",HCGarrisons]};
+							if ((_marker in recursos) OR (_marker in fabricas)) exitWith {[_marker] remoteExec ["createFIAresources",HCGarrisons]};
 							if ((_marker in power) OR (_marker == "FIA_HQ")) exitWith {[_marker] remoteExec ["createFIApower",HCGarrisons]};
 							if (_marker in aeropuertos) exitWith {[_marker] remoteExec ["createNATOaerop",HCGarrisons]};
 							if (_marker in bases) exitWith {[_marker] remoteExec ["createNATObases",HCGarrisons]};

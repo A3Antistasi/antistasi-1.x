@@ -253,7 +253,8 @@ if (_initpos!="ORIGINAL") then
 	
 	if (_initpos=="RANDOM") then
 	{
-		while {_try<20} do 
+	    _grp call UPSMON_DeleteWP;
+		while {_try<20} do
 		{
 			if (_grptype == "Isboat" || _grptype == "Isdiver") then 
 			{
@@ -284,7 +285,7 @@ if (_initpos!="ORIGINAL") then
 				_targetpos = _currPos findEmptyPosition [0, 50];
 				sleep .05;						
 				if (count _targetpos == 0) then {_targetpos = _currpos};
-				_x setpos _targetpos;	
+				_x setPos _targetpos;
 			}
 			else
 			{
@@ -292,7 +293,7 @@ if (_initpos!="ORIGINAL") then
 				If (_grptype != "Isboat") then {_targetpos = _currPos findEmptyPosition [10,50];};
 				sleep .05;						
 				if (count _targetpos == 0) then {_targetpos = _currpos};
-				_x setPos _targetpos;		
+				_x setPos _targetpos;
 			};
 		} foreach units _npc; 
 	} 
