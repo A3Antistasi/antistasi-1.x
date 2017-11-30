@@ -1851,20 +1851,14 @@
 			</Key>
 			<Key ID="STR_HINTS_GEN_INIT_MEMBER_GEAR">
 				<Original>Arsenal Unlocking Requirements\nWeapons: %1\nBackpacks: %5\nMagazines/Usables: %2\nOptics: %3\nVests: %3\nOther Items: %4\nImported Items: %6</Original>
-				<Russian>Требования к разблокировке Арсенала\nWeapons: %1\nBackpacks: %5\nMagazines/Usables: %2\nOptics: %3\nVests: %3\nOther Items: %4\nImported Items: %6</Russian>
-			</Key>
-			<Key ID="STR_HINTS_INIT_NOTMEMBER_INV">
-				<!-- Потерянная переменная -->
-				<Original>You are not in the members list of this Server.\n\nAsk the Commander in order to be allowed to access the HQ Ammobox.\n\nIn the meantime, you may use the other box to store equipment and share it with others.</Original>
-				<Russian>Вы не находитесь в списке участников этого сервера.\n\nСпросите командующего, чтобы получить доступ к Арсеналу Базы.\n\nТем временем вы можете использовать другое поле для хранения оборудования и поделиться им с другими.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_GEN_INIT_ADMIN_MEMBER">
 				<Original>You are not in the members list, but you have been added automatically due to your status as admin.</Original>
-				<Russian>Вы не находитесь в списке участников, но вы были добавлены автоматически из-за вашего статуса admin.</Russian>
+				<Russian>Вы не находитесь в списке друзей, но вы были добавлены автоматически из-за вашего статуса администратора.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_GEN_INIT_GUEST_WELCOME">
 				<Original>Welcome, %1. You are a guest on this server.</Original>
-				<Russian>Добро пожаловать, %1. Вы являетесь гостем на этом сервере.</Russian>
+				<Russian>Добро пожаловать, %1. Вы гость на этом сервере.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_GEN_INIT_MEMBER_RETURN">
 				<Original>Welcome back, %1</Original>
@@ -1872,120 +1866,119 @@
 			</Key>
 			<Key ID="STR_HINTS_GEN_EH_VEH_GROUP">
 				<Original>You cannot board another player's private vehicle if you are not in the same group.</Original>
-				<Russian>Вы не можете пользоваться частным транспортным средством другого игрока, если вы не в той же группе.</Russian>
+				<Russian>Вы не можете пользоваться личной техникой другого игрока, если вы не в одной группе с ним.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_GEN_OPR_TEMP">
 				<Original>You died while remote-controlling AI.</Original>
-				<Russian>Вы умерли в то время как дистанционное управление ИИ.</Russian>
+				<Russian>Вы умерли во время управление ИИ от первого лица.</Russian>
 			</Key>
 		</Container>
 		<Container name="Mission_Selection">
-			<!-- Нужно редактировать перевод в этом разделе -->
 			<Key ID="STR_HINTS_MIS_TYPE_ACTIVE">
 				<Original>You already have an active mission of this type.</Original>
-				<Russian>У вас уже есть активная миссия этого типа.</Russian>
+				<Russian>У вас уже активно задание этого типа.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_MIS_GIVEN">
 				<Original>I have a mission for you.</Original>
-				<Russian>У меня есть задание для вас.</Russian>
+				<Russian>У меня есть для вас задание.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_MIS_DES_NO_CHAT">
 				<Original>I have no destroy missions for you. Move our HQ closer to the enemy or finish some other missions in order to have better intel.</Original>
-				<Russian>У меня нет миссий для уничтожения. Двигайте наш штаб ближе к врагу или завершайте некоторые другие миссии, чтобы иметь более совершенный интеллект.</Russian>
+				<Russian>У меня нет для вас такого задания. Двигайте наш Штаб ближе к противнику или завершите другие задания, чтобы получить больше разведданных.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_MIS_DES_NO_HINT">
 				<Original>Destroy missions require radio towers or enemy cities within 4km of your HQ.</Original>
-				<Russian>Для уничтожения миссий требуются радиовышки или вражеские города в пределах 4 км от вашего штаба.</Russian>
+				<Russian>Уничтожение требует наличия радиовышки или враждебного населённого пункта в пределах 4км от Штаба.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_MIS_LOG_NO_CHAT">
 				<Original>I have no logistics missions for you. Move our HQ closer to the enemy or finish some other missions in order to have better intel.</Original>
-				<Russian>У меня нет логистических миссий для вас. Двигайте наш штаб ближе к врагу или завершайте некоторые другие миссии, чтобы иметь более совершенный интеллект.</Russian>
+				<Russian>У меня нет для вас такого задания. Двигайте наш Штаб ближе к противнику или завершите другие задания, чтобы получить больше разведданных.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_MIS_LOG_NO_HINT">
 				<Original>Logistics missions require enemy outposts, cities or banks within 4km of your HQ.</Original>
-				<Russian>Задания снабжения требуют наличия опорных постов противника, городов или банков в пределах 4 км от вашего штаба.</Russian>
+				<Russian>Снабжение требует наличия опорных пунктов противника, враждебных населённых пунктов или банков в пределах 4км от Штаба.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_MIS_RES_NO_CHAT">
 				<Original>I have no rescue missions for you. Move our HQ closer to the enemy or finish some other missions in order to have better intel.</Original>
-				<Russian>У меня нет спасательных миссий для вас. Двигайте наш штаб ближе к врагу или завершайте некоторые другие миссии, чтобы иметь более совершенный интеллект.</Russian>
+				<Russian>У меня нет для вас такого задания. Двигайте наш Штаб ближе к противнику или завершите другие задания, чтобы получить больше разведданных.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_MIS_RES_NO_HINT">
 				<Original>Rescue missions require enemy cities or bases within 4km of your HQ.</Original>
-				<Russian>Миссии по спасению требуют вражеских городов или баз в пределах 4 км от вашего штаба.</Russian>
+				<Russian>Спасение требует наличия опорных пунктов противника, враждебных населённых пунктов или военных баз в пределах 4км от Штаба.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_MIS_FND_NO_CHAT">
 				<Original>I have no contact missions right now.</Original>
-				<Russian>Сейчас у меня нет контактных миссий.</Russian>
+				<Russian>Сейчас у меня нет для вас такого задания.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_MIS_FND_NO_HINT">
 				<Original>Contact missions require enemy cities within 4km of your HQ.</Original>
-				<Russian>Контактные миссии требуют, чтобы вражеские города находились в пределах 4 км от вашего штаба.</Russian>
+				<Russian>Контакт требует наличия враждебного населённого пункта в пределах 4км от Штаба.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_MIS_FNDE_NO_CHAT">
 				<Original>I have no contact missions right now.</Original>
-				<Russian>Сейчас у меня нет контактных миссий.</Russian>
+				<Russian>Сейчас у меня нет для вас такого задания.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_MIS_FNDE_NO_HINT">
 				<Original>Contact missions require cities within 4km of your HQ.</Original>
-				<Russian>Контактные миссии требуют от городов в пределах 4 км от вашего штаба.</Russian>
+				<Russian>Контакт требует наличия враждебного населённого пункта в пределах 4км от Штаба.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_MIS_CVY_NO_CHAT">
 				<Original>I have no convoy missions for you. Move our HQ closer to the enemy or finish some other missions in order to have better intel.</Original>
-				<Russian>У меня нет конвойных миссий для вас. Двигайте наш штаб ближе к врагу или завершайте некоторые другие миссии, чтобы иметь более совершенный интеллект.</Russian>
+				<Russian>У меня нет для вас такого задания. Двигайте наш Штаб ближе к противнику или завершите другие задания, чтобы получить больше разведданных.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_MIS_CVY_NO_HINT">
 				<Original>Convoy missions require enemy cities within 4km of your HQ, and they must have an idle base in their surroundings.</Original>
-				<Russian>Миссии конвоя требуют вражеских городов в радиусе 4 км от вашего штаба, и они должны иметь простую базу в своем окружении.</Russian>
+				<Russian>Засада на конвой требует наличия враждебного населённого пункта в пределах 4км от Штаба, и военной базы противника в режиме бездействия, рядом с этим населённым пунктом.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_MIS_ASS_NO_CHAT">
 				<Original>I have no assassination missions for you. Move our HQ closer to the enemy or finish some other missions in order to have better intel.</Original>
-				<Russian>У меня нет миссий по убийству. Двигайте наш штаб ближе к врагу или завершайте некоторые другие миссии, чтобы иметь более совершенный интеллект.</Russian>
+				<Russian>У меня нет для вас такого задания. Двигайте наш Штаб ближе к противнику или завершите другие задания, чтобы получить больше разведданных.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_MIS_ASS_NO_HINT">
 				<Original>Assassination missions require enemy cities or outposts within 4km of your HQ.</Original>
-				<Russian>Миссии по убийствам требуются вражеские города или опорные посты в пределах 4 км от вашего штаба.</Russian>
+				<Russian>Устранение требует наличия враждебного населённого пункта или опорного пункта противника в пределах 4 км от Штаба.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_MIS_PR_NO_CHAT">
 				<Original>I have no PR missions for you. Move our HQ closer to the enemy or finish some other missions in order to have better intel.</Original>
-				<Russian>У меня нет для вас PR-миссий. Двигайте наш штаб ближе к врагу или завершайте некоторые другие миссии, чтобы иметь более совершенный интеллект.</Russian>
+				<Russian>У меня нет для вас такого задания. Двигайте наш Штаб ближе к противнику или завершите другие задания, чтобы получить больше разведданных.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_MIS_PR_NO_HINT">
 				<Original>PR missions require enemy cities within 4km of your HQ.</Original>
-				<Russian>PR-миссии требуют, чтобы вражеские города находились в пределах 4 км от вашего штаба.</Russian>
+				<Russian>Пропаганда требует наличия враждебного населённого пункта в пределах 4км от Штаба.</Russian>
 			</Key>
 		</Container>
 		<Container name="Fast_Travel">
 			<Key ID="STR_HINTS_FT_SINGLEGROUP">
 				<Original>You can only fast-travel one group at a time.</Original>
-				<Russian>Вы можете перемещать только одну группу за раз.</Russian>
+				<Russian>Вы можете телепортировать только одну группу за раз.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_FT_TEMPAI">
 				<Original>You cannot fast-travel while you are controlling AI.</Original>
-				<Russian>Вы не можете перемещаться, пока вы управляете ИИ.</Russian>
+				<Russian>Вы не можете телепортироваться, пока вы управляете ИИ от первого лица.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_FT_ENEMIES">
 				<Original>This group cannot fast-travel with enemies nearby.</Original>
-				<Russian>Эта группа не может перемещаться из-за противника рядом с ней.</Russian>
+				<Russian>Эта группа не может телепортироваться из-за находящегося рядом с ней противника.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_FT_ENEMIES_PERS">
 				<Original>You cannot fast-travel with enemies nearby.</Original>
-				<Russian>Вы не можете перемещаться когда поблизости противник.</Russian>
+				<Russian>Вы не можете телепортироваться, когда рядом находится противник.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_FT_DAMAGE">
 				<Original>You cannot fast-travel if one of your vehicles is damaged or doesn't have a driver.</Original>
-				<Russian>Вы не можете перемещаться, если один из ваших автомобилей поврежден или у него нет водителя.</Russian>
+				<Russian>Вы не можете телепортироваться, если один из ваших автомобилей поврежден или у него нет водителя.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_FT_MARKER">
 				<Original>You cannot fast-travel to an enemy-controlled zone.</Original>
-				<Russian>Вы не можете переместиться в зону, контролируемую противником.</Russian>
+				<Russian>Вы не можете телепортироваться в зону контролируемую противником.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_FT_ATTACK">
 				<Original>You cannot fast-travel to an area under attack or with enemies in the surrounding.</Original>
-				<Russian>Вы не можете переместиться в атакуемую зону или окружённую противником.</Russian>
+				<Russian>Вы не можете телепортироваться в зону атакованную или окружённую противником.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_FT_TARGET">
 				<Original>Click on the zone you want to travel to.</Original>
-				<Russian>Кликните на Штаб или Лагерь, в который хотите переместиться.</Russian>
+				<Russian>Кликните на Штаб или Лагерь, куда хотите телепортироваться.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_FT_TARGET_FAIL">
 				<Original>You must click near a camp or HQ.</Original>
@@ -1995,7 +1988,7 @@
 		<Container name="Undercover">
 			<Key ID="STR_HINTS_UND_SINGLEGROUP">
 				<Original>You cannot disguise yourself while you are controlling AI.</Original>
-				<Russian>Вы не можете замаскировать себя, пока вы контролируете ИИ.</Russian>
+				<Russian>Вы не можете быть под прикрытием, когда управляете ИИ от первого лица.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_UND_DISGUISED">
 				<Original>You are incognito already.</Original>
@@ -2007,27 +2000,27 @@
 			</Key>
 			<Key ID="STR_HINTS_UND_REPORTED_CAR">
 				<Original>The vehicle you are in has been reported to the enemy. Switch to another vehicle or change its plates at HQ to become incognito.</Original>
-				<Russian>Транспортное средство, в котором вы находитесь, было сообщено врагу. Переключитесь на другое транспортное средство или замените его пластины в HQ, чтобы под прикрытием.</Russian>
+				<Russian>Вы сидите в транспорте, который разыскивает противник. Смените транспортное средство или езжайте в Штаб за новыми номерами.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_UND_REPORTED">
 				<Original>You have been reported in the last 30 minutes and cannot go incognito.</Original>
-				<Russian>Вы были зарегистрированы за последние 30 минут и не можете войти в под прикрытием.</Russian>
+				<Russian>Вы не можете быть под прикрытием, вас ищут.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_UND_ENEMY_DIST">
 				<Original>You cannot become incognito with enemies less than %1m from you.</Original>
-				<Russian>Вы не можете стать под прикрытием с противниками менее %1 м от вас.</Russian>
+				<Russian>Вы не можете быть под прикрытием, противник ближе %1 м.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_UND_ENEMY_KNOW">
 				<Original>You cannot become incognito while enemies are still on the lookout for you nearby.</Original>
-				<Russian>Вы не можете стать под прикрытием, в то время как враги все еще ищут вас поблизости.</Russian>
+				<Russian>Вы не можете быть под прикрытием, вас ищут.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_UND_FAC_GRND">
 				<Original>You cannot become incognito near bases, outposts, or roadblocks.</Original>
-				<Russian>Вы не можете стать под прикрытием вблизи баз, опорных постов или блокпостов.</Russian>
+				<Russian>Вы не можете быть под прикрытием вблизи баз, опорных пунктов или блокпостов.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_UND_GEAR">
 				<Original>You cannot disguise yourself while wearing suspicious-looking gear.\n</Original>
-				<Russian>Вы не можете замаскировать себя, когда будете носить подозрительное снаряжение.\n</Russian>
+				<Russian>Вы не можете быть под прикрытием, если на вас одето подозрительное снаряжение.\n</Russian>
 			</Key>
 			<Key ID="STR_HINTS_UND_GEAR_PRIM">
 				<Original>%1\nPrimary Weapon: %2</Original>
