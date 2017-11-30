@@ -1492,7 +1492,7 @@
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_PRBRAIN">
 				<Original>We have noticed that the town of %1 is sympathetic to our cause. Travel there with this Truck and establish a semi-permanent propaganda station in order to spread the word. Once established, stay with and guard the station for as long as you deem necessary to raise town support. It would be wise to expect a number of enemy military responses to this action. You have until %2:%3 to arrive and set it up.</Original>
-				<Russian>Мы заметили, что в %1 многие жители нам симпатизируют. Отправляйтесь туда на этом грузовике и временно разверните там Радиостанцию Пропаганды и начните трансляцию. После того, как включите трансляцию, останьтесь и охраняйте её до тех пор, пока вы считаете необходимым повышать уровень поддержки населения в %1. Было бы разумно ожидать ряд вражеских ответных действий на эту акцию. Вы должны успеть приехать и развернуть станцию до %2:%3.</Russian>
+				<Russian>Мы заметили, что в %1 многие жители нам симпатизируют. Отправляйтесь туда на этом грузовике, временно разверните там Радиостанцию Пропаганды и начните трансляцию. После того, как включите трансляцию, останьтесь и охраняйте её до тех пор, пока вы считаете необходимым повышать уровень поддержки населения в %1. Было бы разумно ожидать ряд вражеских ответных действий на эту акцию. Вы должны успеть приехать и развернуть станцию до %2:%3.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_PRBRAIN_FAIL">
 				<Original>You failed to set up the gear before %2:%3.</Original>
@@ -1500,7 +1500,7 @@
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_PRBRAIN_HOLD">
 				<Original>Protect the station for as long as you can. We have enough battery capacity to run this station until %2:%3, so don't drag this out.</Original>
-				<Russian>Защищайте радиостанцию как можно дольше. Заряда батарей радиостанции достаточно, чтобы станция проработала до %2:%3, не дайте противнику её отключить.</Russian>
+				<Russian>Защищайте радиостанцию как можно дольше. Заряда батарей радиостанции достаточно, чтобы она проработала до %2:%3, не дайте противнику её отключить.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_PRBRAIN_FAIL2">
 				<Original>You held the position for less than 10 minutes.</Original>
@@ -1516,27 +1516,27 @@
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_PRPAMPHLET">
 				<Original>Supporters of our cause have been working hard to bring the population of %1 over to our side. Help these brave volunteers by delivering these leaflets to safe drop locations. Pick up will take place at %2:%3, so you better have them in place by then. This might be easier if you manage to remain undetected for as long as possible.</Original>
-				<Russian>Наши добровольцы упорно трудятся, чтобы убедить население %1 стать нашими сторонниками. Помогите этим храбрым добровольцам, доставьте эти листовки по адресам, какие они скажут. Встреча будет проходить в %2:%3, так что вам лучше иметь их на месте к тому времени. Это будет проще, если вам удастся остаться незамеченными как можно дольше.</Russian>
+				<Russian>Наши добровольцы упорно трудятся, чтобы убедить население %1 стать нашими сторонниками. Помогите этим храбрым добровольцам, доставьте эти листовки по адресам, какие они скажут. Ящики заберут в %2:%3, так что лучше их уже доставить к этому времени. Вам будет проще, если вам удастся остаться незамеченными как можно дольше.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_PRPAMPHLET_FAIL">
 				<Original>You failed to provide leaflets for our volunteers in %1.</Original>
-				<Russian>Вы не предоставили листовки для наших волонтеров в %1</Russian>
+				<Russian>Вы не доставили листовки для наших добровольцев в %1</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_PRPAMPHLET_DROP">
 				<Original>Drop a crate within 20m of the marked position, do this before %2:%3.</Original>
-				<Russian>Сбросьте ящик в пределах 20 м от указанной позиции, сделайте это до  %2:%3.</Russian>
+				<Russian>Сбросьте ящик в пределах 20 м от указанной на карте позиции, сделайте это до %2:%3.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_PRPAMPHLET_SUCCESS">
 				<Original>Well done. Our volunteers in %1 are now spreading the word.</Original>
-				<Russian>Отлично сработано. Наши волонтеры в %1 В настоящее время распространяют слово.</Russian>
+				<Russian>Отлично сработано. Наши волонтеры в %1 теперь смогут распространять наше дело.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_REPANTENNA">
 				<Original>Tower Rebuild Disrupt</Original>
-				<Russian>Разрушить Восстанавливаемую башню</Russian>
+				<Russian>Помешать восстановлению Радиовышки</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_REPANTENNA">
 				<Original>%4 is rebuilding a radio tower in %1. If we want to keep up the enemy comms breakdown, the work must be stopped. Destroy the repair truck parked nearby or capture the zone. Work will be finished at %2:%3.</Original>
-				<Russian>%4 восстанавливает РадиоВышку в %1. Если мы хотим, чтобы не отставать от разрушения Комуникаций противника , работа должна быть прекращена. Уничтожите автомастерскую припаркованную поблизости или захватить зону. Работа будет закончена в %2:%3.</Russian>
+				<Russian>%4 восстанавливает РадиоВышку в %1. Если мы хотим, чтобы сеть связи противника оставалась не работающей, работа должна быть прекращена. Уничтожите автомастерскую, припаркованную поблизости, или захватить зону. Работа будет закончена в %2:%3.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_RESPRISONERS">
 				<Original>POW Rescue</Original>
@@ -1544,7 +1544,7 @@
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_RESPRISONERS">
 				<Original>A group of POWs is awaiting execution at %1. We must rescue them before %2:%3 and bring them to HQ. It would be wise to avoid using anything explosive in your rescue attempt for fear of collateral damage. </Original>
-				<Russian>Группа военнопленных ожидает казни в %1. Мы должны спасти их, прежде чем %2:%3 и привести их в штаб-квартиру. Было бы целесообразно, не использовать что-нибудь взрывчатое в вашей спасательной операций из-за страха сопутствующего ущерба</Russian>
+				<Russian>Группа военнопленных ожидает казни в %1. Мы должны спасти их, до %2:%3 и привести в наш Штаб. Было бы разумно, не использовать взрывчатые боеприпасы в вашей спасательной операции из-за возможности нанести вред военнопленным.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_RESREFUGEES">
 				<Original>Refugees Evac</Original>
@@ -1552,67 +1552,67 @@
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_RESREFUGEES">
 				<Original>A group of FIA supportes are hidden in a house in %1. We have to get there and find them before %2 does and bring them back to base.</Original>
-				<Russian>Группа сторонников FIA спрятаны в доме в %1. Мы должны добраться туда и найти их, прежде чем %2 действуйте и верните их обратно на базу.</Russian>
+				<Russian>Группа сторонников FIA спрятались от противника в доме в %1. Мы должны добраться туда, найти их раньше %2 и вернуть их обратно в Штаб.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_INTREINF">
 				<Original>Intercept Reinforcements</Original>
-				<Russian>Перехват подкреплений</Russian>
+				<Russian>Перехват Подкрепления</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_INTREINF">
 				<Original>In response to the casualties suffered by the garrison at the %2, %1 are preparing to send reinforcements from %3. They will be ready to roll out within minutes. Try to catch them on the move!</Original>
-				<Russian>В ответ на потери, понесенные гарнизоном в %2, %1 готовятся к отправке подкреплений из %3. Они будут готовы к запуску в течение нескольких минут. Попытайтесь поймать их на ходу!</Russian>
+				<Russian>В ответ на потери, понесенные гарнизоном в %2, %1 готовятся отправить подкрепление из %3. Они будут готовы к отправке в течение нескольких минут. Попытайтесь перехватить подкрепление до того, как они лоберутся до места!</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_DESSuppression">
 				<Original>Destroy the enemy taskforce.</Original>
-				<Russian>Уничтожить целевую группу противника.</Russian>
+				<Russian>Уничтожить группу спецназа.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_DESSuppression">
-				<Original>We have received word that the enemy are supressing a community at their local church. If we wipe them out we will surely bring some support to our cause. Go to the location and kill the squad. </Original>
-				<Russian>Мы получили слово, что враг подавляет сообщество в своей поместной церкви. Если мы уничтожим их, мы, безусловно, окажем некоторую поддержку нашему делу. Идите в место и убейте команду.</Russian>
+				<Original>We have received word that the enemy are suppressing a community at their local church. If we wipe them out we will surely bring some support to our cause. Go to the location and kill the squad. </Original>
+				<Russian>Мы получили донесение о том, что группа спецназа удерживает жителей в местной церкви. Если мы уничтожим эту группу, мы, безусловно, поддержим наше дело. Идите в указанное место и устраните группу противника.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_DESfuel">
 				<Original>Destroy the enemy fuel truck.</Original>
-				<Russian>Уничтожить вражескую автоцистерну.</Russian>
+				<Russian>Уничтожить топливозаправщик.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_DESfuel">
 				<Original>The enemy is buying fuel from the civilians to supply their war machine. The truck is leaving from %1 and will return there once it is full. We have a contact who will let us know when the truck is at the fuel station. Destroy the fuel truck to show the enemy and the population that we will not stand for collaboration.</Original>
-				<Russian>враг покупает топливо у гражданских лиц для поставки своей военной машины. Грузовик уходит из %1 и вернется туда, как только он будет заполнен. У нас есть контакт, который сообщит нам, когда грузовик находится на АЗС. Уничтожьте топливный грузовик, чтобы показать врагу и населению, что мы не будем выступать за сотрудничество.</Russian>
+				<Russian>Противник закупает топливо у гражданских для снабжения своей военной машины. Топливозаправщик покинул %1 и вернется туда, как только он будет заполнен. У нас есть контакт, который должен сообщить нам, когда грузовик будет на АЗС. Уничтожьте топливозаправщик, чтобы показать противнику и населению, что мы не будем поддерживать сотрудничество с врагом.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_ASFOREST">
 				<Original>Forest Patrol</Original>
-				<Russian>Лесной патруль</Russian>
+				<Russian>Лесной Патруль</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_ASFOREST">
 				<Original>Reports have come in that a patrol is being dispatched from the %1 to this location. There will be a CSAT SpecOps ground team in the patrol training them in Forest warfare. We know they are patrolling within approximately 150 meters of this point. Go there and assassinate them. Do this before %2:%3. </Original>
-				<Russian>Появились сообщения о том, что патруль отправляется из %1 в это место. В патрулировании будет проведена команда CSAT Спецназ, которая будет тренировать их в Лесной войне. Мы знаем, что они патрулируют примерно в 150 метрах от этого пункта. Иди туда и убивай их. Сделайте это раньше %2:%3.</Russian>
+				<Russian>Появились сведения о том, что из %1 в это место отправился патруль противника. В патрулировании будет участвовать группа спецназа, которая будет тренироваться войне в лесу. Мы знаем, что они патрулируют примерно в 150 метрах от этого пункта. Идите туда и уничтожьте их. Сделайте это до %2:%3.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_RADIO_DESTROYED">
 				<Original>Radio Tower Destroyed</Original>
-				<Russian>Радио Башня Разрушена</Russian>
+				<Russian>Радиовышка Разрушена</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_RB_DESTROYED">
-				<Original>Roadblock cleansed.</Original>
-				<Russian>КПП Зачищен</Russian>
+				<Original>Roadblock Cleansed.</Original>
+				<Russian>Блокпост Зачищен</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_WP_DESTROYED">
 				<Original>Observation Camp Cleansed.</Original>
-				<Russian>Наблюдательный лагерь Зачищен.</Russian>
+				<Russian>Наблюдательный Пункт Зачищен.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_AAWP_DESTROYED">
 				<Original>%1 emplacement destroyed.</Original>
-				<Russian>%1 огневая позиция Разрушена.</Russian>
+				<Russian>Огневая Позиция %1 Разрушена.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_CAMP_DESTROYED">
 				<Original>Camp %1 was destroyed by hostile forces.</Original>
-				<Russian>Лагерь %1 был разрушен враждебными силами.</Russian>
+				<Russian>Лагерь %1 был разрушен вражескими силами.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_CA_CREATE">
 				<Original>Significant activity is being reported at %2. %1 appear to be preparing a major assault. Get ready.</Original>
-				<Russian>Значительная активность сообщается в %2. %1 похоже, готовят серьезное нападение. Приготовься.</Russian>
+				<Russian>Сообщение о значительной активности в %2. Похоже силы %1 готовят серьезное нападение. Приготовьтесь!</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_CA_CREATE_RED">
 				<Original>Sources near %4 report of an imminent attack by %1 and %2 on %3. Setup defences immediatly!</Original>
-				<Russian>Источники около %4 сообщают о неминуемой атаке %1 и %2 на %3. Немедленно установить защиту!</Russian>
+				<Russian>Источники около %4 сообщают о неминуемой атаке %1 и %2 на %3. Займитесь обороной немедленно!</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_CA_TARGET">
 				<Original>%1 is under attack!</Original>
@@ -1620,35 +1620,35 @@
 			</Key>
 			<Key ID="STR_TSK_TD_NATO_ARMOR">
 				<Original>Our Commander asked %5 for an armored column departing from %2 with destination %1. Provide whatever support you can. They are scheduled to leave the AO at %3:%4.</Original>
-				<Russian>Наш Командир попросил %5 для бронированной колонны, отходящей от %2 с пунктом назначения %1. Предоставьте любую поддержку. Они планируют покинуть АО в %3:%4.</Russian>
+				<Russian>Наш Командир попросил %5 организовать бронированную колонну, из %2 в %1. Предоставьте любую поддержку. Они планируют покинуть расположение в %3:%4.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_BEMP_RESTR">
 				<Original>We can only deploy\delete one emplacement at a time.</Original>
-				<Russian>Мы можем только развернуть \ удалить одну замену за раз.</Russian>
+				<Russian>Мы можем развернуть\удалить только одну позицию за раз.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_BEMP_RADIO">
 				<Original>You need a radio in your inventory to be able to give orders to other squads.</Original>
-				<Russian>Вам нужно радио в вашем инвентаре, чтобы иметь возможность отдавать приказы другим отрядам.</Russian>
+				<Russian>Вам нужна радиостанция, чтобы отдавать приказы другим отрядам.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_BEMP_DEL_NR">
 				<Original>We currently have no roadblocks or watchposts.</Original>
-				<Russian>В настоящее время у нас нет контрольно-пропускных пунктов.</Russian>
+				<Russian>В настоящее время у нас нет блокпостов или наблюдательных постов.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_BEMP_DEL_ENEMY">
 				<Original>You cannot delete an emplacement while there are enemies near it.</Original>
-				<Russian>Вы не можете удалить место, пока поблизости есть враги..</Russian>
+				<Russian>Вы не можете удалить позицию, пока поблизости есть противник.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_BEMP_BLD_INFO">
 				<Original>Click on the position you wish to build the wachpost or roadblock. \n Remember: to build roadblocks, you must click exactly on a road map section.</Original>
-				<Russian>Нажмите на позицию, в которой вы хотите построить КПП. \n Запомни: для создания контрольно-пропускных пунктов вы должны щелкнуть именно по разделу дорожной карты.</Russian>
+				<Russian>Кликните по позиции, где вы хотите построить наблюдательный пост или блокпост. \n Запомните: для создания блокпоста вы должны кликнуть точно по дороге на карте.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_BEMP_BLD_COST">
 				<Original>You lack of resources to build this emplacement. \n %1 HR and %2€ required.</Original>
-				<Russian>Отсутствие ресурсов для создания этой установки. \n %1 HR И %2€ обязательны.</Russian>
+				<Russian>Отсутствуют ресурсы для создания этой огневой позиции. \n Требуется %1 HR И %2€.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_BEMP_DEL_INFO">
 				<Original>Click on the watchpost or roadblock you wish to delete.</Original>
-				<Russian>Нажмите на КПП, который вы хотите удалить..</Russian>
+				<Russian>Нажмите на НП или БП, который вы хотите удалить.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_BEMP_DEL_NONE">
 				<Original>No emplacement nearby.</Original>
@@ -1660,19 +1660,19 @@
 		<Container name="Move Assets">
 			<Key ID="STR_INFO_MOVEASSETS_1">
 				<Original>Only the Commander may move assets.</Original>
-				<Russian>Только Командир может перемещать военное имущество.</Russian>
+				<Russian>Только Командир может перемещать установки.</Russian>
 			</Key>
 			<Key ID="STR_INFO_MOVEASSETS_2">
 				<Original>You need to be on foot and not controlling AI to move assets.</Original>
-				<Russian>Для того чтобы перемещать военное имущество Вам нужно спешиться и перестать управлять ИИ</Russian>
+				<Russian>Для того чтобы перемещать установки Вам нужно спешиться и перестать управлять ИИ</Russian>
 			</Key>
 			<Key ID="STR_INFO_MOVEASSETS_3">
 				<Original>This asset is too far from the zone.</Original>
-				<Russian>Этот военное имущество слишком далеко от зоны.</Russian>
+				<Russian>Эта установка слишком далеко от зоны.</Russian>
 			</Key>
 			<Key ID="STR_INFO_MOVEASSETS_4">
 				<Original>You cannot move assets farther than %1m from the zone.</Original>
-				<Russian>Вы не можете перемещать военное имущество дальше, чем %1м от зоны.</Russian>
+				<Russian>Вы не можете перемещать установки дальше %1м от зоны.</Russian>
 			</Key>
 		</Container>
 	</Package>
@@ -1680,7 +1680,7 @@
 		<Container name="Surrender">
 			<Key ID="STR_DIALOG_SURRENDER_REQ">
 				<Original>You have one chance, join us and help us liberate %1 from tyranny!</Original>
-				<Russian>У вас есть один шанс, присоединиться к нам и помочь нам освободить %1 от тирании!</Russian>
+				<Russian>У вас есть единственный шанс, присоединяйтесь к нам и помогите нам освободить %1 от тирании!</Russian>
 			</Key>
 			<Key ID="STR_DIALOG_SURRENDER_ACC">
 				<Original>Okay, thank you. I wasn't expecting this. See you at HQ.</Original>
@@ -1688,7 +1688,7 @@
 			</Key>
 			<Key ID="STR_DIALOG_SURRENDER_REF">
 				<Original>Sod off!</Original>
-				<Russian>Пошёл ты!</Russian>
+				<Russian>Пошёл ты на ...!</Russian>
 			</Key>
 		</Container>
 	</Package>
@@ -1714,7 +1714,7 @@
 			</Key>
 			<Key ID="STR_HINTS_HQPLACE_START_3">
 				<Original>Try not to select areas with nearby enemies\n\nGameplay and difficulty change with different starting locations.</Original>
-				<Russian>Старайтесь не выбирать позицию рядом с противником\n\nВыбор позиции на старте влияет на сложнось и процесс игры</Russian>
+				<Russian>Старайтесь не выбирать позицию рядом с противником\n\nВыбор позиции на старте влияет на сложность и процесс игры</Russian>
 			</Key>
 			<Key ID="STR_HINTS_HQPLACE_DEATH_TITLE">
 				<Original>Petros is Dead</Original>
@@ -1752,55 +1752,55 @@
 			</Key>
 			<Key ID="STR_HINTS_SAVE_COM_2">
 				<Original>Vehicles outside of your garage will only be saved if they are within 50m of your HQ flag, with no AI inside.</Original>
-				<Russian>Транспортные средства вне вашего гаража будут сохранены только в том случае, если они находятся в пределах 50 м от флага Штаба, без ИИ внутри.</Russian>
+				<Russian>Техника вне вашего гаража будет сохранена только в том случае, если она находится в пределах 50м от флага Штаба, без ИИ внутри.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_SAVE_COM_3">
 				<Original>AI units and squads will not be saved, but you will be reimbursed.</Original>
-				<Russian>Одиночные ИИ и группы ИИ не будут сохранены, но вы получите возмещение.</Russian>
+				<Russian>Одиночные ИИ и группы ИИ не будут сохранены, но будут компенсированы.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_SAVE_COM_4">
 				<Original>Static weapons need to be within 50m of a friendly flag, and they need to be assembled, otherwise they will not be saved.</Original>
-				<Russian>Статичные установки должны находиться в пределах 50 м от дружественного флага, и должны быть в сборе, иначе они не будут сохранены.</Russian>
+				<Russian>Статичные установки должны находиться в пределах 50м от дружественного флага, и должны быть в сборе, иначе они не будут сохранены.</Russian>
 			</Key>
 		</Container>
 		<Container name="Commander">
 			<Key ID="STR_HINTS_COMMANDER_DIS">
 				<Original>Player Commander disconnected or retired. %1 is our new leader. Greet him!</Original>
-				<Russian>Игрок Командир отключен или удален. %1 - наш новый лидер. Приветствуйте его!</Russian>
+				<Russian>Командир отключился или был удалён. Наш новый лидер - 1%.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_COMMANDER_REP">
 				<Original>%2 replaced %1 as the leader of our forces. Greet him!</Original>
-				<Russian>%2 заменил %1 лидером наших сил. Приветствуйте его!</Russian>
+				<Russian>Вместо %1 наш новый лидер - 2%.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_COMMANDER_RES">
 				<Original>You step down from being Commander. Others will take your place.</Original>
-				<Russian>Вы отступаете от командора. Другие займут ваше место.</Russian>
+				<Russian>Вы ушли в отставку с поста Командира. Другие займут ваше место.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_COMMANDER_DEN">
 				<Original>You are no longer eligible to command our forces.</Original>
-				<Russian>Вы больше не имеете права командовать нашими силами.</Russian>
+				<Russian>Вы больше не будете командовать нашими силами.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_COMMANDER_ACC">
 				<Original>You are now eligible to command our forces.</Original>
-				<Russian>Теперь вы имеете право командовать нашими силами.</Russian>
+				<Russian>Теперь вы снова  сможете командовать нашими силами.</Russian>
 			</Key>
 		</Container>
 		<Container name="General">
 			<Key ID="STR_HINTS_GEN_DONATE_FAIL">
 				<Original>You have less than 100€ to donate.</Original>
-				<Russian>У вас есть менее 100 евро для пожертвования.</Russian>
+				<Russian>У вас менее 100€.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_GEN_DONATE_FIA">
 				<Original>You have donated 100€ to the cause. This will raise your status among FIA forces.</Original>
-				<Russian>Вы пожертвовали 100 € на Дело. Это повысит ваш статус среди сил FIA.</Russian>
+				<Russian>Вы отдали 100€ в Фонд. Это повышает ваш статус в FIA.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_GEN_DONATE_PLAYER_FAIL">
 				<Original>You must be looking at a player in order to donate money.</Original>
-				<Russian>Вы должны смотреть на игрока, чтобы пожертвовать деньги.</Russian>
+				<Russian>Вы должны смотреть на игрока, чтобы передать ему деньги.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_GEN_DONATE_PLAYER">
 				<Original>You have donated 100€ to %1.</Original>
-				<Russian>Вы пожертвовали 100 евро на %1.</Russian>
+				<Russian>Вы передали 100€ товарищу %1.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_GEN_RESTRICTED_COM">
 				<Original>Only the Commander has access to this function.</Original>
@@ -1812,44 +1812,42 @@
 			</Key>
 			<Key ID="STR_HINTS_GEN_STEAL_FAIL">
 				<Original>There are not enough funds for you to borrow anything.</Original>
-				<Russian>Недостаточно средств для вас, чтобы одолжить что-либо.</Russian>
+				<Russian>Недостаточно средств для вас, чтобы одолжить что-либо.</Russian><Редакт.>
 			</Key>
 			<Key ID="STR_HINTS_GEN_STEAL_SUC">
 				<Original>You've taken 100€ from the general budget. Invest it wisely.</Original>
-				<Russian>Вы взяли 100 € из общего бюджета. Инвестируйте это с умом.</Russian>
+				<Russian>Вы взяли 100€ из общего бюджета. Потратьте их с умом.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_GEN_MEM_DIS">
 				<Original>Server membership is disabled.</Original>
-				<Russian>Членство в сервере отключено.</Russian>
+				<Russian>Список друзей отключён.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_GEN_MEM_TARGET">
 				<Original>You are not looking at a player.</Original>
-				<Russian>Вы не смотрите на игрока.</Russian>
+				<Russian>Вы смотрите не на игрока.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_GEN_MEM_ADD_FAIL">
 				<Original>The player is already a member on this server.</Original>
-				<Russian>Игрок уже участвует на этом сервере.</Russian>
+				<Russian>Игрок уже в списке друзей.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_GEN_MEM_REM_FAIL">
 				<Original>The player is already not a member on this server.</Original>
-				<Russian>Игрок уже не участвует на этом сервере.</Russian>
+				<Russian>Игрок не в списке друзей.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_GEN_MEM_ADD_SUC">
 				<Original>%1 has been added to this server's members list.</Original>
-				<Russian>%1 был добавлен в список участников этого сервера.</Russian>
+				<Russian>%1 был добавлен в список друзей сервера.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_GEN_MEM_REM_SUC">
 				<Original>%1 has been removed from this server's members list.</Original>
-				<Russian>%1 был удален из списка участников этого сервера.</Russian>
+				<Russian>%1 был удален из списка друзей сервера.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_GEN_CLEARED_FOREST">
 				<Original>You've cleared the surroundings of trees and bushes.</Original>
-				<Russian>Вы очистили окрестности деревьев и кустов.</Russian>
+				<Russian>Вы почистили ближайшие деревья и кусты.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_GEN_INIT_NOTMEMBER_GEAR">
 				<Original>You are not on the members list of this Server.\n\nAsk the Commander in order to be allowed to access the HQ Ammobox.\n\nIn the meantime you may use the other box to store equipment and share it with others.\n\nArsenal Unlocking Requirements\nWeapons: %1\nBackpacks: %5\nMagazines/Usables: %2\nOptics: %3\nVests: %3\nOther Items: %4\nImported Items: %6</Original>
-				<Russian>Вы не находитесь в списке участников этого сервера.\n\nСпросите командующего, чтобы получить доступ к Арсеналу Базы.\n\nТем временем вы можете использовать другое поле для хранения оборудования и совместного использования его с другими.\n\nArsenal Unlocking Requirements\nWeapons: %1\nBackpacks: %5\nMagazines/Usables: %2\nOptics: %3\nVests: %3\nOther Items: %4\nImported Items: %6</Russian>
-				<!-- что именно сдесь можно перевести? -->
 			</Key>
 			<Key ID="STR_HINTS_GEN_INIT_MEMBER_GEAR">
 				<Original>Arsenal Unlocking Requirements\nWeapons: %1\nBackpacks: %5\nMagazines/Usables: %2\nOptics: %3\nVests: %3\nOther Items: %4\nImported Items: %6</Original>
