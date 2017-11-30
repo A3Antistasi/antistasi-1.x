@@ -237,16 +237,21 @@ while {(spawner getVariable _marker) AND (_counter < _strength)} do {
 //NATO Garrison add to array
 	_gunnerGroup = createGroup side_blue;
 	_guerGroups pushBack _gunnerGroup;
-	_group = createGroup side_blue;
-	_guerGroups pushBack _group;
 	_garrison = garrison getVariable [_marker,[]];
 	_strength = count _garrison;
 	_counter = 0;
-
+    private _group = grpNull;
 //FIA Garrison selection
 	while {(spawner getVariable _marker) AND (_counter < _strength)} do {
+		if (isNull _group) then {
+			_group = createGroup side_blue;
+			_guerGroups pushBack _group;
+			while {true} do {
+				_spawnPos = [_markerPos, random _size,random 360] call BIS_fnc_relPos;
+				if (!surfaceIsWater _spawnPos) exitWith {};
+			};
+		};
 		_unitType = _garrison select _counter;
-
 		call {
 			if (_unitType == guer_sol_UN) exitWith {
 				_unit = _gunnerGroup createUnit [_unitType, _markerPos, [], 0, "NONE"];
@@ -276,17 +281,7 @@ while {(spawner getVariable _marker) AND (_counter < _strength)} do {
 		};
 
 		_counter = _counter + 1;
-		sleep 0.5;
-
-		if (count units _group == 8) then {
-			_guerGroups pushBack _group; //Sparker.
-			_group = createGroup side_blue;
-			//_guerGroups pushBack _group;
-			while {true} do {
-				_spawnPos = [_markerPos, random _size,random 360] call BIS_fnc_relPos;
-				if (!surfaceIsWater _spawnPos) exitWith {};
-			};
-		};
+		if(count units _group == 4) then {_group = grpNull;};
 	};
 
 // Apex 21/9/2017 21:15 UK Time

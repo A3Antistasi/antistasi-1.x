@@ -73,14 +73,20 @@ if (getPos _antenna distance _markerPos < 100) then {
 	[_flag,"jam"] remoteExec ["AS_fnc_addActionMP"];
 };
 
-_group = createGroup side_blue;
-_allGroups pushBack _group;
 _garrison = garrison getVariable [_marker,[]];
 _strength = count _garrison;
 _counter = 0;
+_group = grpNull;
 while {(spawner getVariable _marker) AND (_counter < _strength)} do {
+    if (isNull _group) then {
+        _group = createGroup side_blue;
+        _guerGroups pushBack _group;
+        while {true} do {
+            _spawnPos = [_markerPos, random _size,random 360] call BIS_fnc_relPos;
+            if (!surfaceIsWater _spawnPos) exitWith {};
+        };
+    };
 	_unitType = _garrison select _counter;
-
 	call {
 		if (_unitType == guer_sol_UN) exitWith {
 			_unit = _groupGunners createUnit [_unitType, _markerPos, [], 0, "NONE"];
@@ -110,11 +116,7 @@ while {(spawner getVariable _marker) AND (_counter < _strength)} do {
 	};
 
 	_counter = _counter + 1;
-	sleep 0.5;
-	if (count units _group == 8) then {
-		_group = createGroup side_blue;
-		_allGroups pushBack _group;
-	};
+    if(count units _group == 4) then {_group = grpNull;};
 };
 
 for "_i" from 0 to (count _allGroups) - 1 do {   //Stef 02/10 check here for adapting mobility
