@@ -313,7 +313,7 @@ class Params {
             typeName = "BOOL";
             force = 1;
     };
-
+};
 class Params {
     class AS_enableSwitchComm {
         title = "Enable Switch Commander";
@@ -323,7 +323,7 @@ class Params {
             typeName = "BOOL";
             force = 1;
     };
-
+};
 class Params {
     class AS_enableServerMember {
         title = "Enable Server Membership";
@@ -333,7 +333,7 @@ class Params {
             typeName = "BOOL";
             force = 1;
     };
-
+};
     class AS_param_useJNA {
         title = "Use customized arsenal by Jeroen Not";
             values[] = {0,1};
