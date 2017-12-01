@@ -38,23 +38,7 @@ addMissionEventHandler ["HandleDisconnect",{_this call onPlayerDisconnect;false}
 Slowhand = objNull;
 maxPlayers = playableSlotsNumber west;
 
-if (serverName in servidoresOficiales) then {
-    [] execVM "serverAutosave.sqf";
- } else {
-    if (isNil "comandante") then {comandante = (playableUnits select 0)};
-    if (isNull comandante) then {comandante = (playableUnits select 0)};
-
-    {
-        if (_x ==comandante) then {
-            Slowhand = _x;
-            publicVariable "Slowhand";
-            _x setRank "CORPORAL";
-            [_x,"CORPORAL"] remoteExec ["ranksMP"];
-        };
-    } forEach playableUnits;
-    diag_log "Antistasi MP Server. Players are in";
-    };
-publicVariable "maxPlayers";
+[] execVM "serverAutosave.sqf"; //01 december 2017 Stef removed officialserver restriction
 
 hcArray = [];
 

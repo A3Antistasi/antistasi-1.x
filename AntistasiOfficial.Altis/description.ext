@@ -12,7 +12,6 @@ overviewText = "Be the Resistance Leader. Fight against a superior enemy in tech
 allowFunctionsLog = 1;
 enableDebugConsole = 1;
 //allowFunctionsRecompile = 1;
-
 respawn = "BASE";
 respawnDelay = 30;
 respawnVehicleDelay = 120;
@@ -314,6 +313,27 @@ class Params {
             typeName = "BOOL";
             force = 1;
     };
+
+class Params {
+    class AS_enableSwitchComm {
+        title = "Enable Switch Commander";
+            values[] = {0,1};
+            texts[] = {"Off","On"};
+            default = 0;
+            typeName = "BOOL";
+            force = 1;
+    };
+
+class Params {
+    class AS_enableServerMember {
+        title = "Enable Server Membership";
+            values[] = {0,1};
+            texts[] = {"Off","On"};
+            default = 1;
+            typeName = "BOOL";
+            force = 1;
+    };
+
     class AS_param_useJNA {
         title = "Use customized arsenal by Jeroen Not";
             values[] = {0,1};

@@ -8,7 +8,7 @@ diag_log "InitVar.sqf: start";
 //Don't touch them.
 antistasiVersion = "v 1.7.17H.rc6 -- modded";
 
-servidoresOficiales = ["Antistasi Official: Main","Antistasi Official: Hardcore", "Antistasi Official: USA"];//this is for author's fine tune the official servers. If I get you including your server in this variable, I will create a special variable for your server. Understand?
+servidoresOficiales = ["Antistasi Official: Main","Antistasi Official: Hardcore", "Antistasi Official: USA"];//I'm going to remove this
 
 debug = false;//debug variable, not useful for everything..
 
@@ -17,7 +17,7 @@ distanciaSPWN = 1000;//initial spawn distance. Less than 1Km makes parked vehicl
 musicON = false;
 civPerc = 0.02;//initial % civ spawn rate
 minimoFPS = 15;//initial FPS minimum.
-autoHeal = false;
+autoHeal = true;
 allowPlayerRecruit = true;
 server setvariable ["flag_allowRoleSelection",true,true];  //Stef
 recruitCooldown = 0;
@@ -31,14 +31,9 @@ closeMarkersUpdating = 0;
 static_playerSide = "B";
 
 //get enableRestart from server's parameters in multiplayer
-enableRestart = if (isMultiplayer) then
-{
-	[true, false] select (("AS_enableCampaignReset" call BIS_fnc_getParamValue) == 0)
-}
-else
-{
-	true
-};
+freshstart = if (isMultiplayer) then {[true, false] select (("AS_enableCampaignReset" call BIS_fnc_getParamValue) == 0)} else { true};
+commanderswitch =  if (isMultiplayer) then {[true, false] select (("AS_enableSwitchComm" call BIS_fnc_getParamValue) == 0)} else { true};  //missing where to change commanderswitch on if parameters state it.
+membership = if (isMultiplayer) then {[true, false] select (("AS_enableServerMember" call BIS_fnc_getParamValue) == 0)} else { true}; //missing where to change membership off if parameters state it.
 
 status_templatesLoaded = false;
 activeJNA = (("AS_param_useJNA" call BIS_fnc_getParamValue) == 1);
@@ -110,7 +105,7 @@ if (!isServer) exitWith {};
 server setVariable ["milActive", 0, true];
 server setVariable ["civActive", 0, true];
 server setVariable ["expActive", false, true];
-server setVariable ["blockCSAT", false, true];    //17/08 Stef, what is this?
+server setVariable ["blockCSAT", false, true];
 server setVariable ["jTime", 0, true];
 
 server setVariable ["genLMGlocked",true,true];
