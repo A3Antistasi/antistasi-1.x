@@ -18,7 +18,7 @@ if ((server getVariable "resourcesFIA" < _coste) or (server getVariable "hr" < _
 if (_tipo == "delete") exitWith
 	{
 	hint "Sapper/engineer is available on your High Command bar.\n\nSend him anywhere on the map and he will deactivate and load in his truck any mine he may find.\n\nReturning back to HQ will unload the mines he stored in his vehicle";
-	[[], "AI\mineSweep.sqf"] remoteExec ["execVM", HCattack];
+	[[], "AI\mineSweep.sqf"] remoteExec ["execVM",  call AS_fnc_getNextWorker];
 	};
 
 openMap true;
@@ -64,4 +64,4 @@ if (_cantidad > _cantidadMax) then
 	_cantidad = _cantidadMax;
 	};
 
-[[_tipo,_posicionTel,_cantidad], "REINF\buildMinefield.sqf"] remoteExec ["execVM",HCattack];
+[[_tipo,_posicionTel,_cantidad], "REINF\buildMinefield.sqf"] remoteExec ["execVM", call AS_fnc_getNextWorker];

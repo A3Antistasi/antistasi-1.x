@@ -38,9 +38,9 @@ _city = [ciudades, temp_position] call BIS_Fnc_nearestPosition;
 if !((_city in _optionsPamphlet) OR (_city in _optionsBrainwash)) exitWith {openMap false; hint "No mission for you, mate!";};
 
 if (_city in _optionsBrainwash) then {
-	[_city] remoteExec ["PR_Brainwash",HCgarrisons];
+	[_city] remoteExec ["PR_Brainwash", call AS_fnc_getNextWorker];
 } else {
-	[_city] remoteExec ["PR_Pamphlet",HCgarrisons];
+	[_city] remoteExec ["PR_Pamphlet", call AS_fnc_getNextWorker];
 };
 openMap false;
 temp_position = nil;

@@ -55,7 +55,7 @@ sleep 30;
 	private ["_house"];
 	_house = _this select 0;
 	sleep 300 + (random 1800);
-	if ("RES" in misiones) then {[position _house] remoteExec ["patrolCA",HCattack]};
+	if ("RES" in misiones) then {[position _house] remoteExec ["patrolCA", call AS_fnc_getNextWorker]};
 };
 
 waitUntil {sleep 1; ({alive _x} count _POWs == 0) OR ({(alive _x) AND (_x distance getMarkerPos guer_respawn < 50)} count _POWs > 0)};
@@ -72,7 +72,7 @@ if ({alive _x} count _POWs == 0) then {
 	[_count,_count*100] remoteExec ["resourcesFIA",2];
 	[0,_count,_marker] remoteExec ["AS_fnc_changeCitySupport",2];
 	[_count,0] remoteExec ["prestige",2];
-	{if (_x distance getMarkerPos guer_respawn < 500) then {[_count,_x] call playerScoreAdd}} forEach (allPlayers - hcArray);
+	{if (_x distance getMarkerPos guer_respawn < 500) then {[_count,_x] call playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
 	[round (_count/2),Slowhand] call playerScoreAdd;
 	{[_x] join _groupPOW; [_x] orderGetin false} forEach _POWs;
 	// BE module
