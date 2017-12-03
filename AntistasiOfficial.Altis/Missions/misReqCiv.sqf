@@ -49,7 +49,7 @@ if (_tipo == "ASS") then {
 	}
 	else {
 		_sitio = _posibles call BIS_fnc_selectRandom;
-		[_sitio, "civ"] remoteExec ["ASS_Traidor",HCgarrisons];
+		[_sitio, "civ"] remoteExec ["ASS_Traidor", call AS_fnc_getNextWorker];
 	};
 };
 
@@ -69,7 +69,7 @@ if (_tipo == "CON") then {
 	}
 	else {
 		_sitio = _posibles call BIS_fnc_selectRandom;
-		[_sitio, "civ"] remoteExec ["CON_Power",HCgarrisons];
+		[_sitio, "civ"] remoteExec ["CON_Power", call AS_fnc_getNextWorker];
 	};
 };
 
@@ -95,7 +95,7 @@ if (_tipo == "CONVOY") then {
 	else {
 		_sitio = _posibles call BIS_fnc_selectRandom;
 		_base = [_sitio] call AS_fnc_findBaseForConvoy;
-		[_sitio,_base,"civ"] remoteExec ["CONVOY",HCgarrisons];
+		[_sitio,_base,"civ"] remoteExec ["CONVOY", call AS_fnc_getNextWorker];
 	};
 };
 

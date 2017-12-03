@@ -40,7 +40,7 @@ if (spawner getVariable _marker) then {
 		_task = ["REP",[side_blue,civilian],[format [_tskDesc,_targetName,numberToDate [2035,_endTime] select 3,numberToDate [2035,_endTime] select 4, A3_Str_INDEP],_tskTitle,_marker],_posAntenna,"SUCCEEDED",5,true,true,"Destroy"] call BIS_fnc_setTask;
 		[2,0] remoteExec ["prestige",2];
 		[1200] remoteExec ["AS_fnc_increaseAttackTimer",2];
-		{if (_x distance _vehicle < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - hcArray);
+		{if (_x distance _vehicle < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
 		[5,Slowhand] call playerScoreAdd;
 	};
 };
@@ -50,7 +50,7 @@ if (dateToNumber date > _endTime) then {
 		_task = ["REP",[side_blue,civilian],[format [_tskDesc,_targetName,numberToDate [2035,_endTime] select 3,numberToDate [2035,_endTime] select 4, A3_Str_INDEP],_tskTitle,_marker],_posAntenna,"SUCCEEDED",5,true,true,"Destroy"] call BIS_fnc_setTask;
 		[2,0] remoteExec ["prestige",2];
 		[1200] remoteExec ["AS_fnc_increaseAttackTimer",2];
-		{if (_x distance _vehicle < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - hcArray);
+		{if (_x distance _vehicle < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
 		[5,Slowhand] call playerScoreAdd;
 		// BE module
 		if (activeBE) then {

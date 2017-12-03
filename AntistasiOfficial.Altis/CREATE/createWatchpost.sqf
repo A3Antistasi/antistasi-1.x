@@ -92,7 +92,7 @@ then {
 	mrkFIA = mrkFIA + [_marker];
 	publicVariable "mrkAAF";
 	publicVariable "mrkFIA";
-	[_markerPos] remoteExec ["patrolCA",HCattack];
+	[_markerPos] remoteExec ["patrolCA", call AS_fnc_getNextWorker];
 	if (activeBE) then {["cl_loc"] remoteExec ["fnc_BE_XP", 2]};
 };
 

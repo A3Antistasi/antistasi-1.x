@@ -109,13 +109,13 @@ call {
 					if !("DEF_HQ" in misiones) then {
 						_leader = leader (gunner _mortar);
 						if (!isPlayer _leader) then {
-							[] remoteExec ["ataqueHQ",HCattack];
+							[] remoteExec ["ataqueHQ", call AS_fnc_getNextWorker];
 						} else {
-							if ([_leader] call isMember) then {[] remoteExec ["ataqueHQ",HCattack]};
+							if ([_leader] call isMember) then {[] remoteExec ["ataqueHQ", call AS_fnc_getNextWorker]};
 						};
 					};
 				} else {
-					[position _mortar] remoteExec ["patrolCA",HCattack];
+					[position _mortar] remoteExec ["patrolCA", call AS_fnc_getNextWorker];
 				};
 			};
 		}];

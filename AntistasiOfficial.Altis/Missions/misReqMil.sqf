@@ -50,10 +50,10 @@ if (_tipo == "AS") then {
 	}
 	else {
 		_ran = ((floor random 10) < 3);
-		if ((count (_posibles arrayIntersect bases) > 0) && _ran) exitWith {[selectRandom (_posibles arrayIntersect bases), "mil"] remoteExec ["AS_Oficial",HCgarrisons]};
+		if ((count (_posibles arrayIntersect bases) > 0) && _ran) exitWith {[selectRandom (_posibles arrayIntersect bases), "mil"] remoteExec ["AS_Oficial", call AS_fnc_getNextWorker]};
 		_sitio = _posibles call BIS_fnc_selectRandom;
-		if (_sitio in ciudades) then {[_sitio, "mil"] remoteExec ["AS_specOP",HCgarrisons];};
-		if (_sitio in bases) then {[_sitio, "mil"] remoteExec ["AS_Oficial",HCgarrisons];};
+		if (_sitio in ciudades) then {[_sitio, "mil"] remoteExec ["AS_specOP", call AS_fnc_getNextWorker];};
+		if (_sitio in bases) then {[_sitio, "mil"] remoteExec ["AS_Oficial", call AS_fnc_getNextWorker];};
 	};
 };
 /*if (_tipo == "CON") then {
@@ -72,7 +72,7 @@ if (_tipo == "AS") then {
 	}
 	else {
 		_sitio = _posibles call BIS_fnc_selectRandom;
-		if (_sitio in colinasAA) then {[_sitio, "mil"] remoteExec ["CON_AA",HCgarrisons];};
+		if (_sitio in colinasAA) then {[_sitio, "mil"] remoteExec ["CON_AA", call AS_fnc_getNextWorker];};
 	};
 }; */  // Stef 14/09 removed conquer AA hilltop because it has no more sense.
 if (_tipo == "DES") then {
@@ -99,8 +99,8 @@ if (_tipo == "DES") then {
 	}
 	else {
 		_sitio = _posibles call BIS_fnc_selectRandom;
-		if (_sitio in bases) then {[_sitio, "mil"] remoteExec ["DES_Vehicle",HCgarrisons]};
-		if (_sitio in aeropuertos) then {[_sitio, "mil"] remoteExec ["DES_Heli",HCgarrisons]};
+		if (_sitio in bases) then {[_sitio, "mil"] remoteExec ["DES_Vehicle", call AS_fnc_getNextWorker]};
+		if (_sitio in aeropuertos) then {[_sitio, "mil"] remoteExec ["DES_Heli", call AS_fnc_getNextWorker]};
 	};
 };
 
@@ -124,7 +124,7 @@ if (_tipo == "CONVOY") then {
 	else {
 		_sitio = _posibles call BIS_fnc_selectRandom;
 		_base = [_sitio] call AS_fnc_findBaseForConvoy;
-		[_sitio,_base,"mil"] remoteExec ["CONVOY",HCgarrisons];
+		[_sitio,_base,"mil"] remoteExec ["CONVOY", call AS_fnc_getNextWorker];
 	};
 };
 

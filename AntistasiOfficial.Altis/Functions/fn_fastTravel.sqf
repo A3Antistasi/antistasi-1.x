@@ -133,7 +133,7 @@ if (count _targetPosition > 0) then {
 		};
 
 		if ((_marker in campsFIA) AND (random 10 < 1) AND !(captive player)) then {
-			[_marker] remoteExec ["DEF_Camp",HCattack];
+			[_marker] remoteExec ["DEF_Camp", call AS_fnc_getNextWorker];
 			[format ["Camp under attack: %1", _marker]] remoteExec ["AS_fnc_logOutput", 2];
 		};
 

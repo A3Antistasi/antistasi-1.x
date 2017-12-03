@@ -37,7 +37,7 @@ if (_resourcesAAF > 5000) then{
 					_marcador = [markers, _x] call BIS_fnc_nearestPosition;
 					if ((_marcador in mrkAAF) and (not(spawner getVariable _marcador))) then {
 						diag_log format ["Repairing antenna: %1", _marcador];
-						[_marcador,_x] remoteExec ["REP_Antena",HCattack];
+						[_marcador,_x] remoteExec ["REP_Antena", call AS_fnc_getNextWorker];
 						_resourcesAAF = _resourcesAAF - (5000*_multiplicador);
 					};
 				};

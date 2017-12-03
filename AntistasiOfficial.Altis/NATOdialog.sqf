@@ -74,8 +74,8 @@ _NATOSupp = server getVariable "prestigeNATO";
 
 if (_NATOSupp < _costeNATO) exitWith {hint format ["We lack of enough NATO Support in order to proceed with this request (%1 needed)",_costeNATO]};
 
-if (_tipo == "NATOCAS") exitWith {[] remoteExec [_tipo,HCattack]};
-if (_tipo == "NATOUAV") exitWith {[] remoteExec [_tipo,HCattack]};
+if (_tipo == "NATOCAS") exitWith {[] remoteExec [_tipo, call AS_fnc_getNextWorker]};
+if (_tipo == "NATOUAV") exitWith {[] remoteExec [_tipo, call AS_fnc_getNextWorker]};
 
 if (_tipo == "NATORED") exitWith {[-100,-10] remoteExec ["prestige",2];}; //Stef 30-08 added the support change, maybe add a sleep 5 minute to take effect to simulate jets moving to them.
 
@@ -106,10 +106,10 @@ _loc = "spawnNATO";
 if (_tipo == "NATORoadblock") exitWith {
 	_check = isOnRoad _posicionTel;
 	if !(_check) exitWith {hint "Roadblocks can only be placed on roads."};
-	[_posicionTel] remoteExec [_tipo,HCattack];
+	[_posicionTel] remoteExec [_tipo, call AS_fnc_getNextWorker];
 };
 
-if (_tipo == "NATOAmmo") exitWith {[_posiciontel,_NATOSupp] remoteExec [_tipo, HCattack]};
+if (_tipo == "NATOAmmo") exitWith {[_posiciontel,_NATOSupp] remoteExec [_tipo,  call AS_fnc_getNextWorker]};
 
 _sitio = [markers, _posicionTel] call BIS_Fnc_nearestPosition;
 
@@ -136,14 +136,14 @@ if (_tipo == "NATOQRF") exitWith {
 
 	if (surfaceIsWater _destino) exitWith {hint "No LCS available this decade, QRF is restricted to land."};
 	hint "QRF inbound.";
-	[_loc,_destino] remoteExec ["NATOQRF",HCattack];
+	[_loc,_destino] remoteExec ["NATOQRF", call AS_fnc_getNextWorker];
 };
 
 if (_posicionTel distance getMarkerPos _sitio > 50) exitWith {hint "You must click near a map marker"};
 
 if (_tipo == "NATOArty") exitWith {
 	if (not(_sitio in _bases)) exitWith {hint "Artillery support can only be obtained from bases."};
-	[_sitio] remoteExec ["NATOArty", HCattack];
+	[_sitio] remoteExec ["NATOArty",  call AS_fnc_getNextWorker];
 };
 
 if (_tipo == "NATOArmor") then {
@@ -171,7 +171,7 @@ if (_tipo == "NATOArmor") then {
 			_salir = true
 		}
 		else {
-			[[_sitio,_destino], "CREATE\NATOArmor.sqf"] remoteExec ["execVM",HCattack];
+			[[_sitio,_destino], "CREATE\NATOArmor.sqf"] remoteExec ["execVM", call AS_fnc_getNextWorker];
 		};
 	};
 };
@@ -184,6 +184,6 @@ if (_tipo == "NATOCA") then {
 if (_salir) exitWith {};
 
 if (_tipo == "NATOCA") then {
-	[_sitio] remoteExec [_tipo,HCattack];
+	[_sitio] remoteExec [_tipo, call AS_fnc_getNextWorker];
 };
 
