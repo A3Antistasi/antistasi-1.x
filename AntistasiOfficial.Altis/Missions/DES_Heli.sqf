@@ -153,7 +153,7 @@ if (not alive _heli) then
 	[0,0] remoteExec ["prestige",2];
 	//[-3,3,_posicion] remoteExec ["AS_fnc_changeCitySupport",2];
 	[1200] remoteExec ["AS_fnc_increaseAttackTimer",2];
-	{if (_x distance _heli < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - hcArray);
+	{if (_x distance _heli < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
 	[5,Slowhand] call playerScoreAdd;
 	// BE module
 	if (activeBE) then {

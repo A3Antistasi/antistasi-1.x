@@ -62,13 +62,13 @@ _markerPatrol setMarkerTypeLocal "hd_warning";
 _markerPatrol setMarkerColorLocal "ColorRed";
 _markerPatrol setMarkerBrushLocal "DiagGrid";
 
-[leader _groupGunners, _markerPatrol, "AWARE", "SPAWNED","NOVEH", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
+[_groupGunners, _markerPatrol, "AWARE", "SPAWNED","NOVEH", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 
 _UAV = createVehicle [opUAVsmall, _posCmp, [], 0, "FLY"];
 _allVehicles pushBack _UAV;
 createVehicleCrew _UAV;
 _groupUAV = group (crew _UAV select 1);
-[leader _groupUAV, _markerPatrol, "SAFE", "SPAWNED","NOVEH", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
+[_groupUAV, _markerPatrol, "SAFE", "SPAWNED","NOVEH", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 {[_x] spawn genInitBASES; _allSoldiers pushBack _x} forEach units _groupUAV;
 _allGroups pushBack _groupUAV;
 
@@ -78,7 +78,7 @@ _spawnGroup = {
 	_groupType = [_type, side_green] call AS_fnc_pickGroup;
 	_groupPatrol = [_posMarker, side_green, _groupType] call BIS_Fnc_spawnGroup;
 	sleep 1;
-	[leader _groupPatrol, _marker, "SAFE","SPAWNED","NOFOLLOW","NOVEH2"] execVM "scripts\UPSMON.sqf";
+	[_groupPatrol, _marker, "SAFE","SPAWNED","NOFOLLOW","NOVEH2"] execVM "scripts\UPSMON.sqf";
 	{[_x] spawn genInitBASES; _allSoldiers pushBack _x} forEach units _groupPatrol;
 	_allGroups pushBack _groupPatrol;
 };
@@ -104,7 +104,7 @@ if (_hasSPAA) then {
 		mrkFIA = mrkFIA + [_marker];
 		publicVariable "mrkAAF";
 		publicVariable "mrkFIA";
-		[_posMarker] remoteExec ["patrolCA",HCattack];
+		[_posMarker] remoteExec ["patrolCA", call AS_fnc_getNextWorker];
 		if (activeBE) then {["cl_loc"] remoteExec ["fnc_BE_XP", 2]};
 	};
 } else {
@@ -120,7 +120,7 @@ if (_hasSPAA) then {
 		mrkFIA = mrkFIA + [_marker];
 		publicVariable "mrkAAF";
 		publicVariable "mrkFIA";
-		[_posMarker] remoteExec ["patrolCA",HCattack];
+		[_posMarker] remoteExec ["patrolCA", call AS_fnc_getNextWorker];
 		if (activeBE) then {["cl_loc"] remoteExec ["fnc_BE_XP", 2]};
 	};
 };

@@ -2,6 +2,9 @@
 #define DEBUG_MODE_FULL
 #include "script_component.hpp"
 
+diag_log "####initPlayerLocal.sqf called";
+call AS_fnc_initWorker;
+
 params ["_unit","_isJIP"];
 private ["_colorWest", "_colorEast","_introShot","_title","_nearestMarker"];
 
@@ -216,8 +219,8 @@ waitUntil {scriptDone _title};
 //Waiting for all game data loaded
 waitUntil {sleep 1; !isNil "placementDone";};
 INFO("Game is ready to initialize player");
-//Teleport to the camp
-player setPos (fuego getPos [8,random 360]);
+//Teleport to the guer_respawn marker
+player setPos ((getMarkerPos guer_respawn) getPos [8,random 360]);
 player setdir (player getdir petros);
 INFO("Player is moved to the camp");
 //Called from unscheduled environment to load data at once

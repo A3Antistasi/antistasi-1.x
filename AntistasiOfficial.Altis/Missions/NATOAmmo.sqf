@@ -58,7 +58,7 @@ if (_heli distance _posicion < 300) then
 	_wp3 setWaypointType "MOVE";
 	_wp3 setWaypointSpeed "FULL";
     waitUntil {position _crate select 2 < 0.5 || isNull _chute};
-
+    detach _crate;
     _tsk = ["NATOAmmo",[side_blue,civilian],[_tskDesc,_tskTitle,_mrkfin],_posicion,"SUCCEEDED",5,true,true,"rifle"] call BIS_fnc_setTask;
 	_humo = "SmokeShellBlue" createVehicle position _crate;
 	_vehiculos = _vehiculos + [_humo];
@@ -72,14 +72,14 @@ sleep 15;
 
 deleteMarker _mrkFin;
 
-[1200,_tsk] spawn borrarTask;
+[300,_tsk] spawn borrarTask;
 {
 _soldado = _x;
-waitUntil {sleep 1; {_x distance _soldado < distanciaSPWN} count (allPlayers - hcArray) == 0};
+waitUntil {sleep 1; {_x distance _soldado < distanciaSPWN} count (allPlayers - (entities "HeadlessClient_F")) == 0};
 deleteVehicle _soldado;
 } forEach _heliCrew;
 deleteGroup _grupoHeli;
 {_vehiculo = _x;
-waitUntil {sleep 1; {_x distance _vehiculo < distanciaSPWN} count (allPlayers - hcArray) == 0};
+waitUntil {sleep 1; {_x distance _vehiculo < distanciaSPWN} count (allPlayers - (entities "HeadlessClient_F")) == 0};
 deleteVehicle _vehiculo;
 } forEach _vehiculos;

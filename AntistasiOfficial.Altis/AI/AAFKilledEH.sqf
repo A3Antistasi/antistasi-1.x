@@ -54,7 +54,7 @@ if ((side _killer == side_blue) || (captive _killer)) then {
 							if (random 1 < 0.1) then {
 								_enemy = _x findNearestEnemy _x;
 								if (!isNull _enemy) then {
-									[position _enemy] remoteExec ["patrolCA",HCattack];
+									[position _enemy] remoteExec ["patrolCA", call AS_fnc_getNextWorker];
 								};
 							};
 						};

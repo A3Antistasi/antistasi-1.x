@@ -215,10 +215,10 @@ smallCAmrk = [];
 	_base = [_x] call AS_fnc_findBaseForCA;
 	_radio = [_x] call AS_fnc_radioCheck;
 	if ((_base != "") AND (_radio) AND (_x in mrkFIA) AND !(_x in smallCAmrk)) then {
-		[_x] remoteExec ["patrolCA",HCattack];
+		[_x] remoteExec ["patrolCA", call AS_fnc_getNextWorker];
 		sleep 5;
 		smallCAmrk pushBackUnique _x;
-		[_x] remoteExec ["autoGarrison",HCattack];
+		[_x] remoteExec ["autoGarrison", call AS_fnc_getNextWorker];
 	};
 } forEach _tmpCAmrk;
 publicVariable "smallCAmrk";

@@ -40,7 +40,7 @@ if (count _buildings > 1) then {
 		_counter = _counter + 1;
 	};
 
-	[leader _group, _marker, "SAFE","SPAWNED","NOFOLLOW","NOVEH"] execVM "scripts\UPSMON.sqf";
+	[_group, _marker, "SAFE","SPAWNED","NOFOLLOW","NOVEH"] execVM "scripts\UPSMON.sqf";
 };
 
 _spawnPos = [_markerPos, 3,0] call BIS_fnc_relPos;
@@ -237,16 +237,21 @@ while {(spawner getVariable _marker) AND (_counter < _strength)} do {
 //NATO Garrison add to array
 	_gunnerGroup = createGroup side_blue;
 	_guerGroups pushBack _gunnerGroup;
-	_group = createGroup side_blue;
-	_guerGroups pushBack _group;
 	_garrison = garrison getVariable [_marker,[]];
 	_strength = count _garrison;
 	_counter = 0;
-
+    private _group = grpNull;
 //FIA Garrison selection
 	while {(spawner getVariable _marker) AND (_counter < _strength)} do {
+		if (isNull _group) then {
+			_group = createGroup side_blue;
+			_guerGroups pushBack _group;
+			while {true} do {
+				_spawnPos = [_markerPos, random _size,random 360] call BIS_fnc_relPos;
+				if (!surfaceIsWater _spawnPos) exitWith {};
+			};
+		};
 		_unitType = _garrison select _counter;
-
 		call {
 			if (_unitType == guer_sol_UN) exitWith {
 				_unit = _gunnerGroup createUnit [_unitType, _markerPos, [], 0, "NONE"];
@@ -276,24 +281,14 @@ while {(spawner getVariable _marker) AND (_counter < _strength)} do {
 		};
 
 		_counter = _counter + 1;
-		sleep 0.5;
-
-		if (count units _group == 8) then {
-			_guerGroups pushBack _group; //Sparker.
-			_group = createGroup side_blue;
-			//_guerGroups pushBack _group;
-			while {true} do {
-				_spawnPos = [_markerPos, random _size,random 360] call BIS_fnc_relPos;
-				if (!surfaceIsWater _spawnPos) exitWith {};
-			};
-		};
+		if(count units _group == 4) then {_group = grpNull;};
 	};
 
 // Apex 21/9/2017 21:15 UK Time
 for "_i" from 0 to (count _guerGroups) - 1 do {
 	_group = _guerGroups select _i;
 	//[leader _group, _marker, "SAFE","SPAWNED","RANDOM","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf"; Stef 14/09 changed to ORIGINAL for smoother attack
-	[leader _group, _marker, "SAFE","SPAWNED","ORIGINAL","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
+	[_group, _marker, "SAFE","SPAWNED","ORIGINAL","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 };
 
 {
@@ -331,7 +326,7 @@ if ((random 100 < (((server getVariable "prestigeNATO") + (server getVariable "p
 	_observer = _group createUnit [selectRandom CIV_journalists, _spawnPos, [],0, "NONE"];
 	[_observer] spawn CIVinit;
 	_allGroups pushBack _group;
-	[_observer, _marker, "SAFE", "SPAWNED","NOFOLLOW", "NOVEH2","NOSHARE","DoRelax"] execVM "scripts\UPSMON.sqf";
+	[_group, _marker, "SAFE", "SPAWNED","NOFOLLOW", "NOVEH2","NOSHARE","DoRelax"] execVM "scripts\UPSMON.sqf";
 };
 
 waitUntil {sleep 1; !(spawner getVariable _marker) OR (({!(vehicle _x isKindOf "Air")} count ([_size,0,_markerPos,"OPFORSpawn"] call distanceUnits)) > 3*(({alive _x} count _allSoldiers) + count ([_size,0,_markerPos,"BLUFORSpawn"] call distanceUnits)))};

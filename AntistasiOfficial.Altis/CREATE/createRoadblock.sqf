@@ -79,7 +79,7 @@ if (random 10 < 2.5) then {
 	[_dog,_group] spawn guardDog;
 };
 
-[leader _group, _marker, "SAFE","SPAWNED","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
+[_group, _marker, "SAFE","SPAWNED","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 {[_x] spawn genInitBASES; _allSoldiers pushBack _x} forEach units _group;
 _allGroups pushBack _group;
 
@@ -88,7 +88,7 @@ waitUntil {sleep 1; !(spawner getVariable _marker) or (count (allUnits select {(
 if (count (allUnits select {((side _x == side_green) or (side _x == side_red)) and (_x distance _markerPos <= _size)}) < 1) then {
 	[-5,0,_markerPos] remoteExec ["AS_fnc_changeCitySupport",2];
 	[["TaskSucceeded", ["", localize "STR_TSK_RB_DESTROYED"]],"BIS_fnc_showNotification"] call BIS_fnc_MP;
-	[_markerPos] remoteExec ["patrolCA",HCattack];
+	[_markerPos] remoteExec ["patrolCA", call AS_fnc_getNextWorker];
 	mrkAAF = mrkAAF - [_marker];
 	mrkFIA = mrkFIA + [_marker];
 	publicVariable "mrkAAF";

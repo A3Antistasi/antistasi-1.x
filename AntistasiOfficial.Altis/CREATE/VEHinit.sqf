@@ -2,7 +2,7 @@ params ["_vehicle"];
 private ["_vehicleType","_eh","_mortar","_leader","_tempVehicle"];
 
 _vehicle setfuel 0.1;
-_vehicle setfuelcargo 0.1;
+if(activeACE) then {[_vehicle, 300] call ace_refuel_fnc_setFuel;} else {_vehicle setfuelcargo 0.1;};
 
 if ((_vehicle isKindOf "FlagCarrier") OR (_vehicle isKindOf "Building")) exitWith {};
 if (_vehicle isKindOf "ReammoBox_F" && ((_vehicle getVariable ["HQ_vehicle", 0]) == 0)) exitWith {[_vehicle] call cajaAAF};
@@ -109,13 +109,13 @@ call {
 					if !("DEF_HQ" in misiones) then {
 						_leader = leader (gunner _mortar);
 						if (!isPlayer _leader) then {
-							[] remoteExec ["ataqueHQ",HCattack];
+							[] remoteExec ["ataqueHQ", call AS_fnc_getNextWorker];
 						} else {
-							if ([_leader] call isMember) then {[] remoteExec ["ataqueHQ",HCattack]};
+							if ([_leader] call isMember) then {[] remoteExec ["ataqueHQ", call AS_fnc_getNextWorker]};
 						};
 					};
 				} else {
-					[position _mortar] remoteExec ["patrolCA",HCattack];
+					[position _mortar] remoteExec ["patrolCA", call AS_fnc_getNextWorker];
 				};
 			};
 		}];

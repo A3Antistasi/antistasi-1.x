@@ -51,11 +51,11 @@ if (spawner getVariable _marcador) then
 		[_perro] spawn guardDog;
 		};
 
-	[leader _grupo, _mrk, "SAFE","SPAWNED", "NOVEH2"] execVM "scripts\UPSMON.sqf";
+	[_grupo, _mrk, "SAFE","SPAWNED", "NOVEH2"] execVM "scripts\UPSMON.sqf";
 
 	_grupo1 = [_pos, side_green, _tipoGrupo] call BIS_Fnc_spawnGroup;
 	sleep 1;
-	[leader _grupo1, _mrk, "SAFE","SPAWNED", "NOVEH2"] execVM "scripts\UPSMON.sqf";
+	[_grupo1, _mrk, "SAFE","SPAWNED", "NOVEH2"] execVM "scripts\UPSMON.sqf";
 
 	{[_x] spawn genInitBASES} forEach units _grupo;
 	{[_x] spawn genInitBASES} forEach units _grupo1;
@@ -74,7 +74,7 @@ if (spawner getVariable _marcador) then
 		_tsk = ["LOG",[side_blue,civilian],[format [_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_marcador],_posicion,"SUCCEEDED",5,true,true,"rearm"] call BIS_fnc_setTask;
 		[0,300] remoteExec ["resourcesFIA",2];
 		[1200] remoteExec ["AS_fnc_increaseAttackTimer",2];
-		{if (_x distance _camion < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - hcArray);
+		{if (_x distance _camion < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
 		[5,Slowhand] call playerScoreAdd;
 		// BE module
 		if (activeBE) then {

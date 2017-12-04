@@ -24,7 +24,7 @@ if ((_marker in mrkFIA) or !(_marker in reducedGarrisons)) exitWith {
 };
 
 diag_log format ["Reinforcement Timer: timer ran out: %1 -- dispatching reinforcements", _marker];
-[_marker, _base] remoteExec ["INT_Reinforcements", HCattack];
+[_marker, _base] remoteExec ["INT_Reinforcements",  call AS_fnc_getNextWorker];
 
 _endTime = [date select 0, date select 1, date select 2, date select 3, (date select 4) + (4*TIMER)];
 _endTime = dateToNumber _endTime;

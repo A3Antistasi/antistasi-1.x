@@ -385,10 +385,10 @@
 
 		<Container name="Vehicle Management">
 			<Key ID="STR_UI_VEHMGMT_PGAR_TEXT">
-				<Original>Garage</Original>
+				<Original>Garage / Store inventory</Original>
 			</Key>
 			<Key ID="STR_UI_VEHMGMT_PGAR_TT">
-				<Original>Garage the vehicle you are looking at.</Original>
+				<Original>Store the vehicle you are looking at and its inventory.</Original>
 			</Key>
 			<Key ID="STR_UI_VEHMGMT_UNL_TEXT">
 				<Original>(Un)lock Vehicle</Original>
@@ -1043,10 +1043,10 @@
 			</Key>
 
 			<Key ID="STR_TSK_DESfuel">
-				<Original> Destroy the enemy fuel truck.</Original>
+				<Original> Steal or destroy Fuel Truck.</Original>
 			</Key>
 			<Key ID="STR_TSKDESC_DESfuel">
-				<Original>The enemy is buying fuel from the civilians to supply their war machine. The truck is leaving from %1 and will return there once it is full. We have a contact who will let us know when the truck is at the fuel station. Destroy the fuel truck to show the enemy and the population that we will not stand for collaboration.</Original>
+				<Original>The enemy is taking fuel from the civilians to supply their war machine. The truck is leaving from %1 and will return there once it is full. We have a contact who will let us know when the truck is at the fuel station. Destroy the fuel truck or take its control.</Original>
 			</Key>
 
       		<Key ID="STR_TSK_ASFOREST">

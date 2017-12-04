@@ -117,7 +117,7 @@ for "_i" from 0 to 1 do {
 	sleep 1;
 	_dog = _group createUnit ["Fin_random_F",_targetPosition,[],0,"FORM"];
 	[_dog] spawn guardDog;
-	[leader _group, _marker, "SAFE", "RANDOM", "SPAWNED","NOVEH2", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
+	[_group, _marker, "SAFE", "RANDOM", "SPAWNED","NOVEH2", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 	_allGroups pushBack _group;
 };
 
@@ -298,7 +298,7 @@ if (!(alive _missionVehicle) OR (dateToNumber date > _endTime)) then {
 	_task = ["PR",[side_blue,civilian], [format [_tskDesc_success,_targetName,numberToDate [2035,_endTime] select 3,numberToDate [2035,_endTime] select 4],_tskTitle,_marker],_targetPosition,"SUCCEEDED",5,true,true,"Heal"] call BIS_fnc_setTask;
 	[-15,5,_marker] remoteExec ["AS_fnc_changeCitySupport",2];
 	[5,0] remoteExec ["prestige",2];
-	{if (_x distance _targetPosition < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - hcArray);
+	{if (_x distance _targetPosition < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
 	[5,Slowhand] call playerScoreAdd;
 	// BE module
 	if (activeBE) then {

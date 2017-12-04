@@ -2,7 +2,7 @@
 #include "dialogs.hpp"
 
 author="Barbolani";
-OnLoadName = "Antistasi - modified 1.7.17H.rc4";
+OnLoadName = "Antistasi - modified 1.7.18";
 OnLoadMission = "Be a Resistance Leader - Be a Hero";
 //loadScreen = "pic.paa";
 
@@ -11,6 +11,7 @@ overviewText = "Be the Resistance Leader. Fight against a superior enemy in tech
 
 allowFunctionsLog = 1;
 enableDebugConsole = 1;
+//allowFunctionsRecompile = 1;
 
 respawn = "BASE";
 respawnDelay = 30;

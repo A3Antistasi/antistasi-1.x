@@ -143,16 +143,22 @@ _allGroups pushBack _group;
 //NATO Garrison add to array
 	_gunnerGroup = createGroup side_blue;
 	_guerGroups pushBack _gunnerGroup;
-	_group = createGroup side_blue;
-	_guerGroups pushBack _group;
 	_garrison = garrison getVariable [_marker,[]];
 	_strength = count _garrison;
 	_counter = 0;
-
+    private _group = grpNull;
 //FIA Garrison selection
 	while {(spawner getVariable _marker) AND (_counter < _strength)} do {
+		if (isNull _group) then {
+			_group = createGroup side_blue;
+			_guerGroups pushBack _group; //Sparker.
+			//_guerGroups pushBack _group;
+			while {true} do {
+				_spawnPos = [_markerPos, random _size,random 360] call BIS_fnc_relPos;
+				if (!surfaceIsWater _spawnPos) exitWith {};
+			};
+		};
 		_unitType = _garrison select _counter;
-
 		call {
 			if (_unitType == guer_sol_UN) exitWith {
 				_unit = _gunnerGroup createUnit [_unitType, _markerPos, [], 0, "NONE"];
@@ -180,27 +186,14 @@ _allGroups pushBack _group;
 			_unit = _group createUnit [_unitType, _markerPos, [], 0, "NONE"];
 			if (_unitType == guer_sol_SL) then {_group selectLeader _unit};
 		};
-
 		_counter = _counter + 1;
-		sleep 0.5;
-
-		if (count units _group == 8) then {
-			_guerGroups pushBack _group; //Sparker.
-			_group = createGroup side_blue;
-			//_guerGroups pushBack _group;
-			while {true} do {
-				_spawnPos = [_markerPos, random _size,random 360] call BIS_fnc_relPos;
-				if (!surfaceIsWater _spawnPos) exitWith {};
-			};
-		};
+		if(count units _group == 4) then {_group = grpNull;};
 	};
-
-	if((count units _group) > 0) then {_allGroups pushBack _group;}; //Sparker.
 
 	for "_i" from 0 to (count _guerGroups) - 1 do {
 		_group = _guerGroups select _i;
 		//[leader _group, _marker, "SAFE","SPAWNED","RANDOM","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf"; Stef 14/09 changed to RANDOMUP for smoother attack
-		[leader _group, _marker, "SAFE","SPAWNED", "ORIGINAL","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
+		[_group, _marker, "SAFE","SPAWNED", "ORIGINAL","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 	};
 
 // Apex 22/9/17 21:12 UK Time
@@ -248,7 +241,7 @@ _allGroups pushBack _group;
 		_observer = _group createUnit [selectRandom CIV_journalists, _spawnPos, [],0, "NONE"];
 		[_observer] spawn CIVinit;
 		_allGroups pushBack _group;
-		[_observer, _marker, "SAFE", "SPAWNED","NOFOLLOW", "NOVEH2","NOSHARE","DoRelax"] execVM "scripts\UPSMON.sqf";
+		[_group, _marker, "SAFE", "SPAWNED","NOFOLLOW", "NOVEH2","NOSHARE","DoRelax"] execVM "scripts\UPSMON.sqf";
 	};
 
 //Despawn conditions

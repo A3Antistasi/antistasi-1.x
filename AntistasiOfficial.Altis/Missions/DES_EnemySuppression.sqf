@@ -75,7 +75,7 @@ while {true} do {
 		{
 			_tipoGrupo = [infSquad, side_green] call AS_fnc_pickGroup;
 			_group1	   = [_posmissionchurch, side_green, _tipogrupo] call BIS_Fnc_spawnGroup;
-			[leader _group1, _mrkchurch, "SAFE", "SPAWNED", "NOVEH2", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
+			[_group1, _mrkchurch, "SAFE", "SPAWNED", "NOVEH2", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 
 			{ [_x] spawn genInit;
 			  _soldados = _soldados + [_x]} forEach units _group1;
@@ -109,7 +109,7 @@ while {true} do {
 		} else {
 			_tipoGrupo = [opGroup_Squad, side_red] call AS_fnc_pickGroup;
 			_group1	   = [_posmissionchurch, side_red, _tipogrupo] call BIS_Fnc_spawnGroup;
-			[leader _group1, _mrkchurch, "SAFE", "SPAWNED", "NOVEH2", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
+			[_group1, _mrkchurch, "SAFE", "SPAWNED", "NOVEH2", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 
 
 			{ [_x] spawn CSATinit;
@@ -156,7 +156,7 @@ while {true} do {
 			_tsk = ["DES", [side_blue, civilian], [format [_tskDesc, _nombredest, numberToDate [2035, _fechalimnum] select 3, numberToDate [2035, _fechalimnum] select 4, A3_Str_INDEP], _tskTitle, _mrkfin], _missionchurch, "SUCCEEDED", 5, true, true, "Destroy"] call BIS_fnc_setTask;
 			[3, 200] remoteExec ["resourcesFIA", 2];
 			[0, 5, _posicion] remoteExec ["AS_fnc_changeCitySupport", 2];
-			[_mrkchurch] remoteExec ["patrolCA", HCattack];
+			[_mrkchurch] remoteExec ["patrolCA",  call AS_fnc_getNextWorker];
 
 			{if (isPlayer _x) then { [10, _x] call playerScoreAdd}} forEach ( [500, 0, _posicion, "BLUFORSpawn"] call distanceUnits);
 			 [10, Slowhand] call playerScoreAdd;

@@ -92,7 +92,7 @@ if (random 10 < 2.5) then
 	_doggo = _grupo createUnit ["Fin_random_F",_initialPosition,[],0,"FORM"];
 	[_doggo] spawn guardDog;
 	};
-[leader _grupo, _mrk, "SAFE","SPAWNED", "NOVEH2", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
+[_grupo, _mrk, "SAFE","SPAWNED", "NOVEH2", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 {[_x] spawn genInitBASES} forEach units _grupo;
 
 waitUntil {sleep 1; (dateToNumber date > _fechalimnum) or (not alive _traitor) or ({_traitor knowsAbout _x > 1.4} count ([500,0,_traitor,"BLUFORSpawn"] call distanceUnits) > 0)};
@@ -154,7 +154,7 @@ else
 			{
 			if (!("DEF_HQ" in misiones)) then
 				{
-				[] remoteExec ["ataqueHQ",HCattack];
+				[] remoteExec ["ataqueHQ", call AS_fnc_getNextWorker];
 				};
 			}
 		else

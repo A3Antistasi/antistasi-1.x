@@ -73,14 +73,20 @@ if (getPos _antenna distance _markerPos < 100) then {
 	[_flag,"jam"] remoteExec ["AS_fnc_addActionMP"];
 };
 
-_group = createGroup side_blue;
-_allGroups pushBack _group;
 _garrison = garrison getVariable [_marker,[]];
 _strength = count _garrison;
 _counter = 0;
+_group = grpNull;
 while {(spawner getVariable _marker) AND (_counter < _strength)} do {
+    if (isNull _group) then {
+        _group = createGroup side_blue;
+        _allGroups pushBack _group;
+        while {true} do {
+            _spawnPos = [_markerPos, random _size,random 360] call BIS_fnc_relPos;
+            if (!surfaceIsWater _spawnPos) exitWith {};
+        };
+    };
 	_unitType = _garrison select _counter;
-
 	call {
 		if (_unitType == guer_sol_UN) exitWith {
 			_unit = _groupGunners createUnit [_unitType, _markerPos, [], 0, "NONE"];
@@ -110,19 +116,15 @@ while {(spawner getVariable _marker) AND (_counter < _strength)} do {
 	};
 
 	_counter = _counter + 1;
-	sleep 0.5;
-	if (count units _group == 8) then {
-		_group = createGroup side_blue;
-		_allGroups pushBack _group;
-	};
+    if(count units _group == 4) then {_group = grpNull;};
 };
 
 for "_i" from 0 to (count _allGroups) - 1 do {   //Stef 02/10 check here for adapting mobility
 	_group = _allGroups select _i;
 	if (_i == 0) then {
-		[leader _group, _marker, "SAFE","SPAWNED","RANDOMUP","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
+		[_group, _marker, "SAFE","SPAWNED","RANDOMUP","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 	} else {
-		[leader _group, _marker, "SAFE","SPAWNED","RANDOM","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
+		[_group, _marker, "SAFE","SPAWNED","RANDOM","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 	};
 };
 
@@ -149,7 +151,7 @@ if ((random 100 < (((server getVariable "prestigeNATO") + (server getVariable "p
 	_observer = _group createUnit [selectRandom CIV_journalists, _spawnPos, [],0, "NONE"];
 	[_observer] spawn CIVinit;
 	_allGroups pushBack _group;
-	[_observer, _marker, "SAFE", "SPAWNED","NOFOLLOW", "NOVEH2","NOSHARE","DoRelax"] execVM "scripts\UPSMON.sqf";
+	[_group, _marker, "SAFE", "SPAWNED","NOFOLLOW", "NOVEH2","NOSHARE","DoRelax"] execVM "scripts\UPSMON.sqf";
 };
 
 waitUntil {sleep 1; !(spawner getVariable _marker) OR (({!(vehicle _x isKindOf "Air")} count ([_size,0,_markerPos,"OPFORSpawn"] call distanceUnits)) > 3*(({alive _x} count _allSoldiers) + count ([_size,0,_markerPos,"BLUFORSpawn"] call distanceUnits)))};
