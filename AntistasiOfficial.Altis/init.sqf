@@ -1,5 +1,8 @@
 //Arma 3 - Antistasi by Barbolani
 //Do whatever you want with this code, but credit me for the thousand hours spent making this.
+diag_log "####init.sqf called";
+
+
 enableSaving [ false, false ];
 
 call AS_fnc_init_hq;
@@ -25,11 +28,6 @@ if (!isMultiPlayer) then {
     //call compile preprocessFileLineNumbers "WarStatistics\initRoadblocks2.sqf";
     ws_grid = call ws_fnc_newGridArray;
     //(up to here)//
-
-    HCciviles = 2;
-    HCgarrisons = 2;
-    HCattack = 2;
-    hcArray = [HC1,HC2,HC3];
     serverInitDone = true;
     diag_log "Antistasi SP. serverInitDone is true. Arsenal loaded";
     [] execVM "modBlacklist.sqf";

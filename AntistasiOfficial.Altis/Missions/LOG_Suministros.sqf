@@ -17,7 +17,7 @@ _pos = (getMarkerPos guer_respawn) findEmptyPosition [1,50,AS_misSupplyBox];
 
 _sbox = AS_misSupplyBox createVehicle _pos;
 _sbox call jn_fnc_logistics_addAction;
-{_x reveal _sbox} forEach (allPlayers - hcArray); //HELP! the reveal must be applied to units around _sbox
+{_x reveal _sbox} forEach (allPlayers - (entities "HeadlessClient_F")); //HELP! the reveal must be applied to units around _sbox
 _sbox setVariable ["destino",_nombredest,true];
 _sbox addAction ["Delivery infos",
 	{
@@ -48,7 +48,7 @@ else
 	_cuenta = 120;
 	_counter = 0;
 	_active = false;
-	[_posicion] remoteExec ["patrolCA",HCattack];  //This make the base busy, a base shouldn't be busy because of this
+	[_posicion] remoteExec ["patrolCA", call AS_fnc_getNextWorker];  //This make the base busy, a base shouldn't be busy because of this
 	{_amigo = _x;
 	if (captive _amigo) then
 		{
@@ -97,7 +97,7 @@ else
 		_tsk = ["LOG",[side_blue,civilian],[format [_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_marcador],_posicion,"SUCCEEDED",5,true,true,"Heal"] call BIS_fnc_setTask;
 		[0,15,_marcador] remoteExec ["AS_fnc_changeCitySupport",2];
 		[5,0] remoteExec ["prestige",2];
-		{if (_x distance _posicion < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - hcArray);
+		{if (_x distance _posicion < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
 		[5,Slowhand] call playerScoreAdd;
 		// BE module
 		if (activeBE) then {

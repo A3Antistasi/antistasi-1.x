@@ -143,6 +143,16 @@ class AS {
 		class transferGear {};
 		class resetHQ {};
 	};
+
+    class headless {
+        file = "workers";
+        class initWorkerServer {};
+        class initWorker {};
+        class registerWorker {};
+        class unregisterWorker {};
+        class getNextWorker {};
+    };
+
 	class QRF {
 		file = "Functions";
 		class QRF_airCavalry {};

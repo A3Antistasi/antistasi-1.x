@@ -154,7 +154,7 @@ else
 			{
 			if (!("DEF_HQ" in misiones)) then
 				{
-				[] remoteExec ["ataqueHQ",HCattack];
+				[] remoteExec ["ataqueHQ", call AS_fnc_getNextWorker];
 				};
 			}
 		else

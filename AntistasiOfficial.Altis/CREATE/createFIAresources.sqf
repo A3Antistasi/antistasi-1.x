@@ -29,7 +29,7 @@ private _group = grpNull;
 while {(spawner getVariable _marker) AND (_counter < _strength)} do {
     if (isNull _group) then {
         _group = createGroup side_blue;
-        _guerGroups pushBack _group;
+        _allGroups pushBack _group;
         while {true} do {
             _spawnPos = [_markerPos, random _size,random 360] call BIS_fnc_relPos;
             if (!surfaceIsWater _spawnPos) exitWith {};

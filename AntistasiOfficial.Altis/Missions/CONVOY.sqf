@@ -488,7 +488,7 @@ if (_convoyType == "Prisoners") then {
 			[0,10,_posbase] remoteExec ["AS_fnc_changeCitySupport",2];
 			[2*_counter,0] remoteExec ["prestige",2];
 			{[_x] join _groupPOW; [_x] orderGetin false} forEach _POWs;
-			{[_counter,_x] call playerScoreAdd} forEach (allPlayers - hcArray);
+			{[_counter,_x] call playerScoreAdd} forEach (allPlayers - (entities "HeadlessClient_F"));
 			[round (_counter/2),Slowhand] call playerScoreAdd;
 			// BE module
 			if (activeBE) then {
@@ -540,7 +540,7 @@ if (_convoyType == "Money") then {
 			[-20,0] remoteExec ["prestige",2];
 			[0,5000] remoteExec ["resourcesFIA",2];
 			[-1200] remoteExec ["AS_fnc_increaseAttackTimer",2];
-			{if (_x distance _vehObj < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - hcArray);
+			{if (_x distance _vehObj < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
 			[5,Slowhand] call playerScoreAdd;
 			// BE module
 			if (activeBE) then {
@@ -575,7 +575,7 @@ if (_convoyType == "Supplies") then {
 				_tskOutcome = "SUCCEEDED";
 				[5,0] remoteExec ["prestige",2];
 				[0,15,_destination] remoteExec ["AS_fnc_changeCitySupport",2];
-				{if (_x distance _vehObj < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - hcArray);
+				{if (_x distance _vehObj < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
 				[5,Slowhand] call playerScoreAdd;
 				// BE module
 				if (activeBE) then {

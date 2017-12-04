@@ -104,7 +104,7 @@ if (_hasSPAA) then {
 		mrkFIA = mrkFIA + [_marker];
 		publicVariable "mrkAAF";
 		publicVariable "mrkFIA";
-		[_posMarker] remoteExec ["patrolCA",HCattack];
+		[_posMarker] remoteExec ["patrolCA", call AS_fnc_getNextWorker];
 		if (activeBE) then {["cl_loc"] remoteExec ["fnc_BE_XP", 2]};
 	};
 } else {
@@ -120,7 +120,7 @@ if (_hasSPAA) then {
 		mrkFIA = mrkFIA + [_marker];
 		publicVariable "mrkAAF";
 		publicVariable "mrkFIA";
-		[_posMarker] remoteExec ["patrolCA",HCattack];
+		[_posMarker] remoteExec ["patrolCA", call AS_fnc_getNextWorker];
 		if (activeBE) then {["cl_loc"] remoteExec ["fnc_BE_XP", 2]};
 	};
 };

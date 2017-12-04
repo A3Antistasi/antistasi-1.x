@@ -65,7 +65,7 @@ publicVariable "reducedGarrisons";
 
 [_marcador] call AS_fnc_markerUpdate;
 
-[_marcador] remoteExec ["patrolCA",HCattack];
+[_marcador] remoteExec ["patrolCA", call AS_fnc_getNextWorker];
 
 if (_marcador in aeropuertos) then
 	{
@@ -131,7 +131,7 @@ if ((_marcador in fabricas) or (_marcador in recursos)) then
 
 {[_marcador,_x] spawn AS_fnc_deleteRoadblock} forEach controles;
 sleep 15;
-[_marcador] remoteExec ["autoGarrison",HCattack];
+[_marcador] remoteExec ["autoGarrison", call AS_fnc_getNextWorker];
 
 waitUntil {sleep 1; (not (spawner getVariable _marcador)) or (({(not(vehicle _x isKindOf "Air")) and (alive _x) and (!fleeing _x)} count ([_size,0,_posicion,"OPFORSpawn"] call distanceUnits)) > 3*({(alive _x)} count ([_size,0,_posicion,"BLUFORSpawn"] call distanceUnits)))};
 

@@ -47,7 +47,7 @@ if (isMultiplayer) then {
 	};
 };
 
-[_airport, _targetPosition, _targetMarker, DURATION, "transport", _QRFsize, "campQRF", "campQRF"] remoteExec ["enemyQRF", HCattack];
+[_airport, _targetPosition, _targetMarker, DURATION, "transport", _QRFsize, "campQRF", "campQRF"] remoteExec ["enemyQRF",  call AS_fnc_getNextWorker];
 
 waitUntil {sleep 3; (server getVariable ["campQRF", false]) OR {!(_targetMarker in campsFIA)}};
 

@@ -2,6 +2,9 @@
 #define DEBUG_MODE_FULL
 #include "script_component.hpp"
 
+diag_log "####initPlayerLocal.sqf called";
+call AS_fnc_initWorker;
+
 params ["_unit","_isJIP"];
 private ["_colorWest", "_colorEast","_introShot","_title","_nearestMarker"];
 

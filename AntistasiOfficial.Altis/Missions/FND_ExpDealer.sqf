@@ -143,7 +143,7 @@ waitUntil {sleep 1; (dateToNumber date > _fechalimnum) || !(alive Devin) || ({(s
 // QRF, air-based
 //if (!(_qrf) && (random 8 < 1)) then {
 if !(_qrf) then {
-	["spawnCSAT", _posCmp, _site, 15, "transport", "small"] remoteExec ["enemyQRF",HCattack];
+	["spawnCSAT", _posCmp, _site, 15, "transport", "small"] remoteExec ["enemyQRF", call AS_fnc_getNextWorker];
 };
 // END QRF
 waitUntil {sleep 1; (dateToNumber date > _fechalimnum) || !(alive Devin) || ({((side _x isEqualTo side_blue) || (side _x isEqualTo civilian)) && (_x distance Devin < 10)} count allPlayers > 0)};
@@ -187,7 +187,7 @@ server setVariable ["expActive", false, true];
 sleep 30;
 deleteMarker "Devin";
 deleteMarker "DevPat";
-waitUntil {sleep 1; {_x distance Devin < distanciaSPWN/2} count (allPlayers - hcArray) == 0};
+waitUntil {sleep 1; {_x distance Devin < distanciaSPWN/2} count (allPlayers - (entities "HeadlessClient_F")) == 0};
 {deleteVehicle _x} forEach _vehiculos;
 {deleteVehicle _x} forEach _soldados;
 {deleteGroup _x} forEach _grupos;

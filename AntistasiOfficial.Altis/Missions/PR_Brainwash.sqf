@@ -83,7 +83,7 @@ _grafArray pushBack _graf4;
 
 // initialize mission vehicle
 [propTruck] spawn VEHinit;
-{_x reveal propTruck} forEach (allPlayers - hcArray);
+{_x reveal propTruck} forEach (allPlayers - (entities "HeadlessClient_F"));
 propTruck setVariable ["destino",_targetName,true];
 propTruck addEventHandler ["GetIn",
 	{
@@ -102,10 +102,10 @@ server setVariable ["BCactive", false, true];
 
 // dispatch a small QRF
 if !(_airport == "") then {
-	[_airport, _targetPosition, _targetMarker, _tiempolim, "transport", "small"] remoteExec ["enemyQRF",HCattack];
+	[_airport, _targetPosition, _targetMarker, _tiempolim, "transport", "small"] remoteExec ["enemyQRF", call AS_fnc_getNextWorker];
 }
 else {
-	[_base, _targetPosition, _targetMarker, _tiempolim, "transport", "small"] remoteExec ["enemyQRF",HCattack];
+	[_base, _targetPosition, _targetMarker, _tiempolim, "transport", "small"] remoteExec ["enemyQRF", call AS_fnc_getNextWorker];
 };
 
 // wait until the truck is in the target area or dead
@@ -316,7 +316,7 @@ if (_break) then {
 else {
 	_tsk = ["PR",[side_blue,civilian],[format [_tskDesc_success,_targetName,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_targetMarker],_targetPosition,"SUCCEEDED",5,true,true,"Heal"] call BIS_fnc_setTask;
 	[0,_prestige,_targetMarker] remoteExec ["AS_fnc_changeCitySupport",2];
-	{if (_x distance _targetPosition < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - hcArray);
+	{if (_x distance _targetPosition < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
 	[10,Slowhand] call playerScoreAdd;
 	// BE module
 	if (activeBE) then {

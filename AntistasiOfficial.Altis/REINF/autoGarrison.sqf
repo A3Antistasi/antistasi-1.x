@@ -96,11 +96,11 @@ while {(_size > 0)} do
 waitUntil {sleep 1;((not(_marcador in smallCAmrk)) or (_marcador in mrkAAF))};
 
 {_vehiculo = _x;
-waitUntil {sleep 1; {_x distance _vehiculo < distanciaSPWN} count (allPlayers - hcArray) == 0};
+waitUntil {sleep 1; {_x distance _vehiculo < distanciaSPWN} count (allPlayers - (entities "HeadlessClient_F")) == 0};
 deleteVehicle _vehiculo;
 } forEach _vehiculos;
 {_soldado = _x;
-waitUntil {sleep 1; {_x distance _soldado < distanciaSPWN} count (allPlayers - hcArray) == 0};
+waitUntil {sleep 1; {_x distance _soldado < distanciaSPWN} count (allPlayers - (entities "HeadlessClient_F")) == 0};
 deleteVehicle _soldado;
 } forEach _soldados;
 {deleteGroup _x} forEach _grupos;

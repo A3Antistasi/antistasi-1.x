@@ -1,3 +1,7 @@
+diag_log "####initServer.sqf called";
+
+call AS_fnc_initWorkerServer;
+
 if (!isMultiplayer) exitWith {};
 if (!(isNil "serverInitDone")) exitWith {};
 diag_log "Antistasi MP Server init";
@@ -55,38 +59,5 @@ if (serverName in servidoresOficiales) then {
     diag_log "Antistasi MP Server. Players are in";
     };
 publicVariable "maxPlayers";
-
-hcArray = [];
-
-if (!isNil "HC1") then {hcArray pushBack HC1};
-if (!isNil "HC2") then {hcArray pushBack HC2};
-if (!isNil "HC3") then {hcArray pushBack HC3};
-
-HCciviles = 2;
-HCgarrisons = 2;
-HCattack = 2;
-if (count hcArray > 0) then {
-    HCciviles = hcArray select 0;
-    HCattack = hcArray select 0;
-    diag_log "Antistasi MP Server. Headless Client 1 detected";
-    if (count hcArray > 1) then {
-        HCattack = hcArray select 1;
-        diag_log "Antistasi MP Server. Headless Client 2 detected";
-        if (count hcArray > 2) then {
-            HCgarrisons = hcArray select 2;
-            diag_log "Antistasi MP Server. Headless Client 3 detected";
-        };
-    };
-};
-
-publicVariable "HCciviles";
-publicVariable "HCgarrisons";
-publicVariable "HCattack";
-publicVariable "hcArray";
-
-dedicatedServer = false;
-if (isDedicated) then {dedicatedServer = true};
-publicVariable "dedicatedServer";
-
 serverInitDone = true; publicVariable "serverInitDone";
 diag_log "Antistasi MP Server. serverInitDone set to true.";

@@ -70,7 +70,7 @@ if (spawner getVariable _marcador) then
 		[2,0] remoteExec ["prestige",2];
 		if (_tipoVeh == opSPAA) then {[0,0] remoteExec ["prestige",2]; [0,10,_posicion] remoteExec ["AS_fnc_changeCitySupport",2]} else {[0,5,_posicion] remoteExec ["AS_fnc_changeCitySupport",2]};
 		[1200] remoteExec ["AS_fnc_increaseAttackTimer",2];
-		{if (_x distance _veh < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - hcArray);
+		{if (_x distance _veh < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
 		[5,Slowhand] call playerScoreAdd;
 		// BE module
 		if (activeBE) then {

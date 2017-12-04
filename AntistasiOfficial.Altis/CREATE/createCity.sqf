@@ -59,7 +59,7 @@ while {(spawner getVariable _marker) AND (_counter < _size)} do {
 waitUntil {sleep 1; !(spawner getVariable _marker) OR ({alive _x} count _allSoldiers == 0) OR ({fleeing _x} count _allSoldiers == {alive _x} count _allSoldiers)};
 
 if ((({alive _x} count _allSoldiers == 0) OR ({fleeing _x} count _allSoldiers == {alive _x} count _allSoldiers)) AND (_marker in mrkAAF)) then {
-	[_markerPos] remoteExec ["patrolCA",HCattack];
+	[_markerPos] remoteExec ["patrolCA", call AS_fnc_getNextWorker];
 };
 
 waitUntil {sleep 1; !(spawner getVariable _marker)};

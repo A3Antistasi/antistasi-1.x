@@ -97,7 +97,7 @@ if ({(alive _x) AND (_x distance getMarkerPos guer_respawn < 50)} count _POWs > 
 	[2*_count,100*_count] remoteExec ["resourcesFIA",2];
 	[0,10,_markerPos] remoteExec ["AS_fnc_changeCitySupport",2];
 	[_count,0] remoteExec ["prestige",2];
-	{if (_x distance getMarkerPos guer_respawn < 500) then {[_count,_x] call playerScoreAdd}} forEach (allPlayers - hcArray);
+	{if (_x distance getMarkerPos guer_respawn < 500) then {[_count,_x] call playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
 	[round (_count/2),Slowhand] call playerScoreAdd;
 	{[_x] join _groupPOW; [_x] orderGetin false} forEach _POWs;
 	// BE module
