@@ -1,8 +1,5 @@
 //Arma 3 - Antistasi by Barbolani
 //Do whatever you want with this code, but credit me for the thousand hours spent making this.
-diag_log "####init.sqf called";
-
-
 enableSaving [ false, false ];
 
 call AS_fnc_init_hq;
