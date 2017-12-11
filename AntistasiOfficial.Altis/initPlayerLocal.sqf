@@ -70,6 +70,7 @@ disableUserInput false;
 //Give default civilian gear
 player setUnitLoadout (getUnitLoadout (configFile >> "CfgVehicles" >> "C_man_polo_1_F"));
 player forceAddUniform (selectRandom civUniforms);
+removeGoggles player;
 player addWeapon "ItemRadio";
 player addWeapon "ItemGPS";
 player addWeapon "Binocular";
