@@ -31,8 +31,7 @@ closeMarkersUpdating = 0;
 static_playerSide = "B";
 
 //get enableRestart from server's parameters in multiplayer
-freshstart = if (isMultiplayer) then {[true, false] select (("AS_enableCampaignReset" call BIS_fnc_getParamValue) == 0)} else { true};
-commanderswitch =  if (isMultiplayer) then {[true, false] select (("AS_enableSwitchComm" call BIS_fnc_getParamValue) == 0)} else { true};  //missing where to change commanderswitch on if parameters state it.
+freshstart = !(isMultiplayer) OR {("AS_enableCampaignReset" call BIS_fnc_getParamValue) != 0};
 membership = if (isMultiplayer) then {[true, false] select (("AS_enableServerMember" call BIS_fnc_getParamValue) == 0)} else { true}; //missing where to change membership off if parameters state it.
 
 status_templatesLoaded = false;
