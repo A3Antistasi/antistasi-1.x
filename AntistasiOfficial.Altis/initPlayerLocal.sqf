@@ -72,7 +72,6 @@ player setUnitLoadout (getUnitLoadout (configFile >> "CfgVehicles" >> "C_man_pol
 player forceAddUniform (selectRandom civUniforms);
 removeGoggles player;
 player addWeapon "ItemRadio";
-player addWeapon "ItemGPS";
 player addWeapon "Binocular";
 
 // In order: controller, TK counter, funds, spawn-trigger, rank, score, known by hostile AI
