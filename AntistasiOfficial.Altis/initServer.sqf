@@ -1,5 +1,3 @@
-diag_log "####initServer.sqf called";
-
 call AS_fnc_initWorkerServer;
 
 if (!isMultiplayer) exitWith {};

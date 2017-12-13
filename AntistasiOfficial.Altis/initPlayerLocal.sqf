@@ -2,13 +2,11 @@
 #define DEBUG_MODE_FULL
 #include "script_component.hpp"
 
-diag_log "####initPlayerLocal.sqf called";
-call AS_fnc_initWorker;
-
 params ["_unit","_isJIP"];
 private ["_colorWest", "_colorEast","_introShot","_title","_nearestMarker"];
 
 waitUntil {!isNull player};
+call AS_fnc_initWorker;
 
 [] execVM "briefing.sqf";
 if (isMultiplayer) then {
@@ -72,8 +70,8 @@ disableUserInput false;
 //Give default civilian gear
 player setUnitLoadout (getUnitLoadout (configFile >> "CfgVehicles" >> "C_man_polo_1_F"));
 player forceAddUniform (selectRandom civUniforms);
+removeGoggles player;
 player addWeapon "ItemRadio";
-player addWeapon "ItemGPS";
 player addWeapon "Binocular";
 
 // In order: controller, TK counter, funds, spawn-trigger, rank, score, known by hostile AI

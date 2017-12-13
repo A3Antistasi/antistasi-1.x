@@ -17,5 +17,6 @@
 
 if !isServer exitWith {};
 params["_id"];
+if !(_id in workerArray) exitWith {};
 INFO_1("Deregistartion request received. ID: %1", _id);
 workerArray = workerArray - [_id];
