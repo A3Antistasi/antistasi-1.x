@@ -56,36 +56,29 @@ if(isServer) then {
     membersPool = []; publicVariable "membersPool";
 
     waitUntil {!isNil "serverID"};
-    //Loading members list anyway
-    //Loading membersPool from ext file
-    [] call compile preprocessFileLineNumbers "orgPlayers\mList.sqf";
-    //loading membersPool from profileNameSpace
-    ["membersPool"] call fn_loadData;
-
-    if (serverName in servidoresOficiales) then {
+        //Loading members list anyway
+        //Loading membersPool from ext file
+        [] call compile preprocessFileLineNumbers "orgPlayers\mList.sqf";
+        //loading membersPool from profileNameSpace
+        ["membersPool"] call fn_loadData;
         //[] execVM "orgPlayers\mList.sqf";
         {
             if (([_x] call isMember) AND (isNull Slowhand)) then {
                 Slowhand = _x;
-                _x setRank "LIEUTENANT";
-                [_x,"LIEUTENANT"] remoteExec ["ranksMP"];
                 diag_log format ["init.sqf: selected commander from member list: %1", Slowhand];
             };
         } forEach playableUnits;
         publicVariable "Slowhand";
         diag_log format ["init.sqf: commander is: %1", Slowhand];
-        if (isNull Slowhand) then {
+        /*if (isNull Slowhand) then {
             [] spawn AS_fnc_autoStart;
             diag_log "Antistasi MP Server. Players are in, no members";
         } else {
             diag_log "Antistasi MP Server. Players are in, member detected";
-        };
-    } else {
-        waitUntil {!isNil "Slowhand"};
-        waitUntil {isPlayer Slowhand};
-    };
+        };*/ //Stef disabled, autostart will work anyway unless there is a parameter that stops it.
+
     fpsCheck = [] execVM "fpsCheck.sqf";
-    [caja] call cajaAAF;
+    [caja] call cajaAAF; //Give few starting items
     if (activeJNA) then {
         ["complete"] call AS_fnc_JNA_pushLists;
     };

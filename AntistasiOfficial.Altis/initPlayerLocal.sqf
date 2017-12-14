@@ -45,8 +45,9 @@ if (isMultiplayer) then {
 
 _title = ["A3 - Antistasi","by Barbolani",antistasiVersion] spawn BIS_fnc_infoText;
 
+//Multiplayer start
 if (isMultiplayer) then {
-	player setVariable ["elegible",true,true];
+	player setVariable ["elegible",true,true]; //Why? so whoever start will be eligible to be commander?
 	musicON = false;
 	waitUntil {scriptdone _introshot};
 	disableUserInput true;
@@ -57,6 +58,7 @@ if (isMultiplayer) then {
 	diag_log "Antistasi MP Client. serverInitDone is public";
 	diag_log format ["Antistasi MP Client: JIP?: %1",_isJip];
 } else {
+//Singleplayer start
 	Slowhand = player;
 	(group player) setGroupId ["Slowhand","GroupColor4"];
 	player setIdentity "protagonista";
@@ -113,102 +115,99 @@ call AS_fnc_initPlayerEH;
 if (isMultiplayer) then {
 	["InitializePlayer", [player]] call BIS_fnc_dynamicGroups;//Exec on client
 	//["InitializeGroup", [player,WEST,true]] call BIS_fnc_dynamicGroups;
-	personalGarage = [];
+	personalGarage = []; //To-remove
 	if (!isNil "placementDone") then {
 		_isJip = true;
 	};
 };
 
-if (_isJip) then {
-	waitUntil {scriptdone _introshot};
-	[] execVM "modBlacklist.sqf";
-	player setUnitRank "PRIVATE";
-	[true] execVM "reinitY.sqf";
-	if !([player] call isMember) then {
-		if (serverCommandAvailable "#logout") then {
-			membersPool pushBack (getPlayerUID player);
-			publicVariable "membersPool";
-			hint localize "STR_HINTS_INIT_ADMIN_MEMBER"
-		} else {
-			hint format [localize "STR_HINTS_INIT_GUEST_WELCOME", name player];
-		};
-	} else {
-		hint format [localize "STR_HINTS_INIT_MEMBER_RETURN", name player];
+if (_isJip) then { waitUntil {scriptdone _introshot};
+		[] execVM "modBlacklist.sqf";
+		player setUnitRank "PRIVATE";
+		[true] execVM "reinitY.sqf";
 
-		if (serverName in servidoresOficiales) then {
-			if ((count playableUnits == maxPlayers) AND (({[_x] call isMember} count playableUnits) < count membersPool)) then {
-				{
-					if !([_x] call isMember) exitWith {
-						["serverFull",false,1,false,false] remoteExec ["BIS_fnc_endMission",_x];
-					};
-				} forEach playableUnits;
+		//Make members all players when admin starts (do we really want it?)
+		if !([player] call isMember) then {
+			if (serverCommandAvailable "#logout") then {
+				membersPool pushBack (getPlayerUID player);
+				publicVariable "membersPool";
+				hint localize "STR_HINTS_INIT_ADMIN_MEMBER"
+			} else {
+				hint format [localize "STR_HINTS_INIT_GUEST_WELCOME", name player];
+			};
+		} else {
+			hint format [localize "STR_HINTS_INIT_MEMBER_RETURN", name player];
+
+			//Old slot reservation rule, unnecessary for now, make a better one for later
+			/* if (serverName in servidoresOficiales) then {
+				if ((count playableUnits == maxPlayers) AND (({[_x] call isMember} count playableUnits) < count membersPool)) then {
+					{
+						if !([_x] call isMember) exitWith {
+							["serverFull",false,1,false,false] remoteExec ["BIS_fnc_endMission",_x];
+						};
+					} forEach playableUnits;
+				};
+			}; */
+
+			if ({[_x] call isMember} count playableUnits == 1) then {
+				[player] call stavrosInit;
+				[] remoteExec ["assignStavros",2];
 			};
 		};
 
-		if ({[_x] call isMember} count playableUnits == 1) then {
-			[player] call stavrosInit;
-			[] remoteExec ["assignStavros",2];
-		};
-	};
+		// Add actions to flags
+		{
+			if (_x isKindOf "FlagCarrier") then {
+				_nearestMarker = [markers,getPos _x] call BIS_fnc_nearestPosition;
 
-	// Add actions to flags
-	{
-		if (_x isKindOf "FlagCarrier") then {
-			_nearestMarker = [markers,getPos _x] call BIS_fnc_nearestPosition;
-
-			if (!(_nearestMarker in colinas) AND !(_nearestMarker in controles)) then {
-				if (_nearestMarker in mrkAAF) then {
-					_x addAction [localize "STR_ACT_TAKEFLAG", {[[_this select 0, _this select 1],"mrkWIN"] call BIS_fnc_MP;},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"];
-				} else {
-					_x addAction [localize "STR_ACT_RECRUITUNIT", {nul=[] execVM "Dialogs\unit_recruit.sqf";},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"];
-					_x addAction [localize "STR_ACT_BUYVEHICLE", {createDialog "vehicle_option";},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"];
-					_x addAction [localize "STR_ACT_PERSGARAGE", {[true] spawn garage},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"];
+				if (!(_nearestMarker in colinas) AND !(_nearestMarker in controles)) then {
+					if (_nearestMarker in mrkAAF) then {
+						_x addAction [localize "STR_ACT_TAKEFLAG", {[[_this select 0, _this select 1],"mrkWIN"] call BIS_fnc_MP;},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"];
+					} else {
+						_x addAction [localize "STR_ACT_RECRUITUNIT", {nul=[] execVM "Dialogs\unit_recruit.sqf";},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"];
+						_x addAction [localize "STR_ACT_BUYVEHICLE", {createDialog "vehicle_option";},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"];
+						_x addAction [localize "STR_ACT_PERSGARAGE", {[true] spawn garage},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"];
+					};
 				};
 			};
-		};
-	} forEach vehicles - [bandera,fuego,caja,cajaVeh];
+		} forEach vehicles - [bandera,fuego,caja,cajaVeh];
 
-	// Add actions to POWs
-	{
-		if (typeOf _x == guer_POW) then {
-			if (!isPlayer (leader group _x)) then {
-				_x addAction [localize "STR_ACT_ORDERREFUGEE", "AI\liberaterefugee.sqf",nil,0,false,true];
+		// Add actions to POWs
+		{
+			if (typeOf _x == guer_POW) then {
+				if (!isPlayer (leader group _x)) then {
+					_x addAction [localize "STR_ACT_ORDERREFUGEE", "AI\liberaterefugee.sqf",nil,0,false,true];
+				};
 			};
-		};
-	} forEach allUnits;
+		} forEach allUnits;
 
-	// If HQ is set up properly, add mission request action to Petros, otherwise add build HQ action
-	if (petros == leader group petros) then {
-		removeAllActions petros;
-		petros addAction [localize "STR_ACT_MISSIONREQUEST", {nul=CreateDialog "mission_menu";},nil,0,false,true];
-	} else {
-		removeAllActions petros;
-		petros addAction [localize "STR_ACT_BUILDHQ", {[] spawn buildHQ},nil,0,false,true];
+		// If HQ is set up properly, add mission request action to Petros, otherwise add build HQ action
+		if (petros == leader group petros) then {
+			removeAllActions petros;
+			petros addAction [localize "STR_ACT_MISSIONREQUEST", {nul=CreateDialog "mission_menu";},nil,0,false,true];
+		} else {
+			removeAllActions petros;
+			petros addAction [localize "STR_ACT_BUILDHQ", {[] spawn buildHQ},nil,0,false,true];
 		};
 
-	if ((player == Slowhand) AND (isNil "placementDone") AND (isMultiplayer)) then {
-		[] execVM "UI\startMenu.sqf";
-	};
-	diag_log "Antistasi MP Client. JIP client finished";
+		if ((player == Slowhand) AND (isNil "placementDone") AND (isMultiplayer) AND (freshstart)) then {
+			[] execVM "UI\startMenu.sqf";
+		};
+		diag_log "Antistasi MP Client. JIP client finished";
 } else {
 	if (isNil "placementDone") then {
 		waitUntil {!isNil "Slowhand"};
-		if (player == Slowhand) then {
-		    if (isMultiplayer) then {
-		    	HC_comandante synchronizeObjectsAdd [player];
-				player synchronizeObjectsAdd [HC_comandante];
-				//if (!(serverName in servidoresOficiales) OR (enableRestart)) then { //Sparker did that to allow other servers to autoload
-				//if (enableRestart) then {
-					[] execVM "UI\startMenu.sqf";
-				//} else {
-				//	[] remoteExec ["AS_fnc_autoStart",2];
-				//};
-				diag_log "Antistasi MP Client. Client finished";
-		    } else {
-		    	membersPool = [];
-		    	[] execVM "Dialogs\firstLoad.sqf";
-		    };
-		};
+			if (player == Slowhand) then {
+			   	 if (isMultiplayer) then {
+			    	HC_comandante synchronizeObjectsAdd [player];
+					player synchronizeObjectsAdd [HC_comandante];
+					if(freshstart) then {[] spawn placementSelection;} else {[] remoteExec ["AS_fnc_loadGame",2];};
+					diag_log "Antistasi MP Client. Client finished";
+				} else {
+			    	membersPool = [];
+			    	[] execVM "Dialogs\firstLoad.sqf";
+			    };
+			};
 	};
 };
 
