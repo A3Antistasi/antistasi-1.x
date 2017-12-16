@@ -15,6 +15,12 @@
 #include "script_component.hpp"
 
 workerArray = [2];
+
+//VCOM initialization
+if(isServer AND (['AS_enableVCOM', 0] call BIS_fnc_getParamValue) == 1) then {
+    [] execVM "VCOMAI\init.sqf";
+};
+
 addMissionEventHandler ["PlayerDisconnected",{[_this select 4] call AS_fnc_unregisterWorker;}];
 [] spawn {
     LOG("Waiting for allPlayers !isEqualTo []");

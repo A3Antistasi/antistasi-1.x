@@ -30,6 +30,11 @@ _this spawn{
     workerArray pushBackUnique _id;
 
     //custom post-registartion execution
-    private _workerInitialization ={INFO("[SERVER] Registartion successful.");};
+    private _workerInitialization ={
+        if ((['AS_enableVCOM', 0] call BIS_fnc_getParamValue) == 1) then {
+            [] execVM "VCOMAI\init.sqf";
+        };
+        INFO("[SERVER] Registartion successful.");
+    };
     [_workerInitialization] remoteExec ["call", _id];
 };
