@@ -38,7 +38,7 @@ _grp setvariable ["UPSMON_searchingpos",true];
 			
 // angle from unit to target
 _dir1 =[_currpos,_suspectPos] call BIS_fnc_DirTo;
-_dir2 = [_suspectPos,_currpos] call BIS_fnc_DirTo;;
+_dir2 = [_suspectPos,_currpos] call BIS_fnc_DirTo;
 	
 _suspectPos = [_suspectPos select 0,_suspectPos select 1,0];
 If (("ship" in _typeofgrp) || ("air" in _typeofgrp)) then
@@ -97,6 +97,7 @@ If (count _bldpositions > 0) then
 	_bldpos = (_bldpositions select 1) select 0;
 	_grp setvariable ["UPSMON_Grpmission","PATROLINBLD"];
 	_grp setvariable ["UPSMON_bldposToCheck",_bldpos];
+	_wptype = "MOVE";
 };
 [_grp,_targetpos,_wptype,"COLUMN",_speedmode,_Behaviour,"YELLOW",_radius] call UPSMON_DocreateWP;
 _grp setvariable ["UPSMON_searchingpos",false];	

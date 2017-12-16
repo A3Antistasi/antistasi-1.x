@@ -2,7 +2,7 @@
 #include "dialogs.hpp"
 
 author="Barbolani";
-OnLoadName = "Antistasi - modified 1.7.18";
+OnLoadName = "Antistasi - modified 1.7.18F";
 OnLoadMission = "Be a Resistance Leader - Be a Hero";
 //loadScreen = "pic.paa";
 
@@ -12,6 +12,7 @@ overviewText = "Be the Resistance Leader. Fight against a superior enemy in tech
 allowFunctionsLog = 1;
 enableDebugConsole = 1;
 //allowFunctionsRecompile = 1;
+
 respawn = "BASE";
 respawnDelay = 30;
 respawnVehicleDelay = 120;
@@ -306,36 +307,31 @@ class CfgDebriefing
 
 class Params {
     class AS_enableCampaignReset {
-        title = "Ability to start a fresh campaign";
+        title = "Antistasi: ability to start a fresh campaign";
             values[] = {0,1};
             texts[] = {"Off","On"};
             default = 0;
             typeName = "BOOL";
             force = 1;
     };
-
-
     class AS_enableSwitchComm {
-        title = "Enable Switch Commander";
+        title = "Antistasi: enable Switch Commander";
             values[] = {0,1};
             texts[] = {"Off","On"};
             default = 0;
             typeName = "BOOL";
             force = 1;
     };
-
-
     class AS_enableServerMember {
-        title = "Enable Server Membership";
+        title = "Antistasi: enable Server Membership";
             values[] = {0,1};
             texts[] = {"Off","On"};
             default = 1;
             typeName = "BOOL";
             force = 1;
     };
-
     class AS_param_useJNA {
-        title = "Use customized arsenal by Jeroen Not";
+        title = "Antistasi: use customized arsenal by Jeroen Not";
             values[] = {0,1};
             texts[] = {"Off","On"};
             default = 1;
@@ -344,7 +340,7 @@ class Params {
     };
 	//added by Fireman 12/08/2017
 	class AS_param_tkPenalty {
-        title = "Punish people for teamkilling";
+        title = "Antistasi: punish people for teamkilling";
             values[] = {0,1};
             texts[] = {"Off","On"};
             default = 0;
@@ -352,10 +348,18 @@ class Params {
             force = 1;
     };
     class AS_param_onlyPermanentMembers {
-        title = "Only permanent members are eligible for commandership at start";
-            values[] = {0,1};
-            texts[] = {"Off","On"};
-            default = 1;
+        title = "Antistasi: only permanent members are eligible for commandership at start";
+        values[] = {0,1};
+        texts[] = {"Off","On"};
+        default = 1;
+    };
+    class AS_enableVCOM {
+        title = "Antistasi: enable VCOM AI for server/headless client";
+        values[] = {0,1};
+        texts[] = {"Off","On"};
+        default = 0;
+        typeName = "BOOL";
+        force = 1;
     };
     #include "aceSettings.hpp"
 };
