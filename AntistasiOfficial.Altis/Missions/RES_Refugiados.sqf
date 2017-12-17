@@ -27,6 +27,7 @@ _count = (count _housePositions) min 8;
 
 for "_i" from 1 to (_count - 1) do {
 	_unit = _groupPOW createUnit [guer_POW, _housePositions select _i, [], 0, "NONE"];
+	_unit setVariable ["VCOM_NOAI", true, true]; //No VCOM AI for refugees
 	_unit allowDamage false;
 	_unit disableAI "MOVE";
 	_unit disableAI "AUTOTARGET";
