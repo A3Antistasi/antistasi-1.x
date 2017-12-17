@@ -1,6 +1,7 @@
 removeHeadgear petros;
 removeGoggles petros;
 petros setSkill 1;
+petros setVariable ["VCOM_NOAI", true, true]; //No VCOM AI for Petros
 petros setVariable ["ASunconscious",false,true];
 petros setVariable ["ASrespawning",false];
 petros allowDamage true;

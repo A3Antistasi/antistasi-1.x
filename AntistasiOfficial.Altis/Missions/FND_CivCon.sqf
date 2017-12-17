@@ -27,6 +27,7 @@ _nombredest = [_site] call AS_fnc_localizar;
 _grpVul = createGroup side_blue;
 _grpDealer = createGroup Civilian;
 Stranger = _grpDealer createUnit [CIV_specialUnits select 2, [8173.79,25308.9,0.00156975], [], 0.9, "NONE"];
+Stranger setVariable ["VCOM_NOAI", true, true]; //No VCOM AI for Stranger
 sleep 2;
 Stranger setPos _posDealer;
 Stranger setIdentity "Stranger";
