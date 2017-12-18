@@ -89,12 +89,11 @@ _crates = [];
 	_currentCrate =  "Land_PaperBox_01_small_closed_white_med_F" createVehicle _poscrash;
 	_currentCrate setPos ([getPos _sboxempty, _distance, _heading] call BIS_Fnc_relPos);
 	_currentCrate setDir (getDir _sboxempty + (floor random 180));
-
-	if (isClass(configfile >> "CfgPatches" >> "ace_dragging")) then { // check if ace dragging module is active
+	if(activeACE && {["ace_dragging"] call ace_common_fnc_isModLoaded}) then { // check if ace dragging module is active
 		[_currentCrate, false] call ace_dragging_fnc_setCarryable; //disable carrying
 		[_currentCrate, false] call ace_dragging_fnc_setDraggable; // disable dragging
 	};
-	if (isClass(configfile >> "CfgPatches" >> "ace_cargo")) then { // check if ace cargo module is active
+	if(activeACE && {["ace_cargo"] call ace_common_fnc_isModLoaded}) then { // check if ace cargo module is active
 		[_currentCrate, -1] call ace_cargo_fnc_setSize; // disable loading as cargo with ace
 	};
 
