@@ -19,7 +19,7 @@ private ["_corpses", "_corpse", "_foundCorpse", "_params", "_timeOut", "_contain
 #define DIS 50
 
 if ((!alive _unit) or (isPlayer _unit) or (vehicle _unit != _unit) or (player != leader group player) or (captive _unit)) exitWith {};
-if (_unit getVariable "ASunconscious") exitWith {};
+if ([_unit] call AS_fnc_isUnconscious) exitWith {};
 
 if (_unit getVariable ["ASmedHelping", false]) exitWith {_unit groupChat "I cannot grab gear right now, I'm busy treating someone's wounds."};
 if (_unit getVariable ["AS_storingGear", false]) exitWith {_unit groupChat "I am currently storing my gear."};

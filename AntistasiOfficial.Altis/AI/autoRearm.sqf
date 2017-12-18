@@ -3,7 +3,7 @@ private ["_unit","_Pweapon","_Sweapon","_cuenta","_magazines","_hayCaja","_dista
 _unit = _this select 0;
 
 if ((!alive _unit) or (isPlayer _unit) or (vehicle _unit != _unit) or (player != leader group player) or (captive _unit)) exitWith {};
-if (_unit getVariable "ASunconscious") exitWith {};
+if ([_unit] call AS_fnc_isUnconscious) exitWith {};
 _medHelping = _unit getVariable "ASmedHelping";
 if (!(isNil "_medHelping")) exitWith {_unit groupChat "I cannot rearm right now. I'm healing a comrade"};
 _rearming = _unit getVariable "ASrearming";

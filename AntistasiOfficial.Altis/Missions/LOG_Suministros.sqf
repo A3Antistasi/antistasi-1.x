@@ -64,7 +64,7 @@ else
 	} forEach ([300,0,_sbox,"BLUFORSpawn"] call distanceUnits);
 	while {(_counter < _cuenta) and (alive _sbox) and (dateToNumber date < _fechalimnum)} do
 		{
-		while {(_counter < _cuenta) and (_sbox distance _posicion < 40) && (speed _sbox < 1) and (alive _sbox) and (isNull attachedTo _sbox) and !({_x getVariable ["ASunconscious",false]} count ([40,0,_sbox,"BLUFORSpawn"] call distanceUnits) == count ([40,0,_sbox,"BLUFORSpawn"] call distanceUnits)) and ({(side _x == side_green) and (_x distance _sbox < 50)} count allUnits == 0) and (dateToNumber date < _fechalimnum)} do
+		while {(_counter < _cuenta) and (_sbox distance _posicion < 40) && (speed _sbox < 1) and (alive _sbox) and (isNull attachedTo _sbox) and !({[_x] call AS_fnc_isUnconscious} count ([40,0,_sbox,"BLUFORSpawn"] call distanceUnits) == count ([40,0,_sbox,"BLUFORSpawn"] call distanceUnits)) and ({(side _x == side_green) and (_x distance _sbox < 50)} count allUnits == 0) and (dateToNumber date < _fechalimnum)} do
 			{
 			if !(_active) then {
 				{
