@@ -69,30 +69,36 @@ _sboxempty = createVehicle [_tipoVeh, _poscrash, [], 0, "CAN_COLLIDE"];
 //{_sboxempty lockCargo [_x, false];} forEach [0 ,1];
 //_sboxempty setFuel 0;
 
-_crate1 = "Land_PaperBox_01_small_closed_white_med_F" createVehicle _poscrash; // This code require an optimization, they are all same items which should spawn in different position and all deleted at same time later.
-_crate2 = "Land_PaperBox_01_small_closed_white_med_F" createVehicle _poscrash;
-_crate3 = "Land_PaperBox_01_small_closed_white_med_F" createVehicle _poscrash;
-_crate4 = "Land_PaperBox_01_small_closed_white_med_F" createVehicle _poscrash;
-_crate5 = "Land_PaperBox_01_small_closed_white_med_F" createVehicle _poscrash;
-_crate6 = "Land_PaperBox_01_small_closed_white_med_F" createVehicle _poscrash;
-_crate7 = "Land_PaperBox_01_small_closed_white_med_F" createVehicle _poscrash;
-_crate8 = "Land_PaperBox_01_small_closed_white_med_F" createVehicle _poscrash;
-_crate1 setPos ([getPos _sboxempty, 6, 185] call BIS_Fnc_relPos);
-_crate2 setPos ([getPos _sboxempty, 4, 167] call BIS_Fnc_relPos);
-_crate3 setPos ([getPos _sboxempty, 8, 105] call BIS_Fnc_relPos);
-_crate4 setPos ([getPos _sboxempty, 5, 215] call BIS_Fnc_relPos);
-_crate5 setPos ([getPos _sboxempty, 6, 125] call BIS_Fnc_relPos);
-_crate6 setPos ([getPos _sboxempty, 4, 147] call BIS_Fnc_relPos);
-_crate7 setPos ([getPos _sboxempty, 8, 82] call BIS_Fnc_relPos);
-_crate8 setPos ([getPos _sboxempty, 5, 222] call BIS_Fnc_relPos);
-_crate1 setDir (getDir _sboxempty + (floor random 180));
-_crate2 setDir (getDir _sboxempty + (floor random 180));
-_crate3 setDir (getDir _sboxempty + (floor random 180));
-_crate4 setDir (getDir _sboxempty + (floor random 180));
-_crate5 setDir (getDir _sboxempty + (floor random 180));
-_crate6 setDir (getDir _sboxempty + (floor random 180));
-_crate7 setDir (getDir _sboxempty + (floor random 180));
-_crate8 setDir (getDir _sboxempty + (floor random 180));
+
+// number of crate offsets = number of spawned crates
+_crateOffsets = [
+	[ 6, 185],
+	[ 4, 167],
+	[ 8, 105],
+	[ 5, 215],
+	[ 6, 125],
+	[ 4, 147],
+	[ 8, 82 ],
+	[ 5, 222]
+];
+
+_crates = [];
+{
+	_x params ["_distance","_heading"];
+	
+	_currentCrate =  "Land_PaperBox_01_small_closed_white_med_F" createVehicle _poscrash;
+	_currentCrate setPos ([getPos _sboxempty, _distance, _heading] call BIS_Fnc_relPos);
+	_currentCrate setDir (getDir _sboxempty + (floor random 180));
+	if(activeACE && {["ace_dragging"] call ace_common_fnc_isModLoaded}) then { // check if ace dragging module is active
+		[_currentCrate, false] call ace_dragging_fnc_setCarryable; //disable carrying
+		[_currentCrate, false] call ace_dragging_fnc_setDraggable; // disable dragging
+	};
+	if(activeACE && {["ace_cargo"] call ace_common_fnc_isModLoaded}) then { // check if ace cargo module is active
+		[_currentCrate, -1] call ace_cargo_fnc_setSize; // disable loading as cargo with ace
+	};
+
+	_crates pushBack _currentCrate; 
+} forEach _crateOffsets;
 
 _tipoGrupo = [infGarrisonSmall, side_green] call AS_fnc_pickGroup;
 _grupo = [_poscrash, side_green, _tipogrupo] call BIS_Fnc_spawnGroup;
@@ -201,14 +207,12 @@ else {
 		if ((alive _sboxempty) and !(_counter < _cuenta)) exitWith {
 			_formato = format ["Good to go. Deliver these supplies to %1.",_nombredest];
 			{if (isPlayer _x) then {[petros,"hint",_formato] remoteExec ["commsMP",_x]}} forEach ([80,0,_sboxempty,"BLUFORSpawn"] call distanceUnits);
-			deleteVehicle _crate1;
-			deleteVehicle _crate2;
-			deleteVehicle _crate3;
-			deleteVehicle _crate4;
-			deleteVehicle _crate5;
-			deleteVehicle _crate6;
-			deleteVehicle _crate7;
-			deleteVehicle _crate8;
+
+			// delete boxes
+			{
+				deleteVehicle _x;
+			} forEach _crates ;
+		
 			_pos1 = getpos _sboxempty;
 			deleteVehicle _sboxempty;
 			s_box = AS_misSupplyBox createVehicle _pos1;
