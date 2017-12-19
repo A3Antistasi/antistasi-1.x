@@ -102,7 +102,7 @@ if (!activeACE) then {
 	if (!activeACEMedical) then {
 		[player] execVM "Revive\initRevive.sqf";
 	} else {
-		player setVariable ["ASunconscious",false,true];
+		[player, false] call AS_fnc_setUnconscious;
 	};
 
 	[] execVM "playerMarkers.sqf";
@@ -229,7 +229,7 @@ statistics = [] execVM "statistics.sqf";
 // Add respawn in SP if ACE is active
 if !(isMultiplayer) then {
 	if (activeACEMedical) then {
-		player setVariable ["ASunconscious",false,true];
+		[player, false] call AS_fnc_setUnconscious;
 		player setVariable ["ASrespawning",false];
 		player addEventHandler ["HandleDamage", {
 			if (player getVariable ["ACE_isUnconscious", false]) then {

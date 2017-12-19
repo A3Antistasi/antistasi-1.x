@@ -1,14 +1,12 @@
 params ["_player"];
 _old = {
 	sleep 5;
-	player setVariable ["ACE_isUnconscious",false,true];
-	player setDamage 0.9;
-	player setVariable ["ASunconscious",false,true];
+	[player, false] call AS_fnc_setUnconscious;
 	[player] spawn medUnconscious;
 };
 
 sleep 15;
-if !(_player getVariable ["ASunconscious", false]) then {
-	_player setVariable ["ASunconscious",true,true];
+if !([_player] call AS_fnc_isUnconscious) then {
+	[player, true] call AS_fnc_setUnconscious;
 	[] call _old;
 };

@@ -71,17 +71,11 @@ _transportUnit = {
 		_unit allowDamage false;
 	};
 	_ftPos = _ftPos findEmptyPosition [1, 50, typeOf _unit];
-	if !(isNil {_unit getVariable "ASunconscious"}) then {
-		if !(_unit getVariable "ASunconscious") then {
-			_ftPos = _ftPos findEmptyPosition [1, 50, typeOf _unit];
-			_unit setPosATL _ftPos;
-			sleep 0.1; // findEmptyPosition needs time or it returns a non-empty position :( by Golias
-		};
-	} else {
-		_ftPos = _ftPos findEmptyPosition [1, 50, typeOf _unit];
-		_unit setPosATL _ftPos;
-		sleep 0.1; // findEmptyPosition needs time or it returns a non-empty position :( by Golias
-	};
+    if !([_unit] call AS_fnc_isUnconscious) then {
+        _ftPos = _ftPos findEmptyPosition [1, 50, typeOf _unit];
+        _unit setPosATL _ftPos;
+        sleep 0.1; // findEmptyPosition needs time or it returns a non-empty position :( by Golias
+    };
 };
 
 targetPosition = [];

@@ -1,6 +1,6 @@
 params ["_control", "_key", "_shift", "_ctrl", "_alt"];
 
-if (player getVariable ["ASunconscious",false]) exitWith {false};
+if ([player] call AS_fnc_isUnconscious) exitWith {false};
 if (player getVariable ["owner",player] != player) exitWith {false};
 
 call {
