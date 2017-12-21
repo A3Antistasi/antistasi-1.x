@@ -47,7 +47,7 @@ if (_isMarker) then {
 	};
 };
 
-if (_exit) exitWith {diag_log format ["Info: Small attack on %1 called off, nearby small attack already in progress.", _marker]};
+//if (_exit) exitWith {diag_log format ["Info: Small attack on %1 called off, nearby small attack already in progress.", _marker]}; //Stef 05/12 patrolca should replace deaad units, so no points to prevent several in same zone.
 
 //_radioContact = [([_marker] call AS_fnc_radioCheck), true] select (_forcedAttack);  Stef 21/09 removed Radiotower QRF check.
 //if !(_radioContact) exitWith {diag_log format ["Info: Small attack on %1 called off, no radio contact.", _marker]};
@@ -64,31 +64,32 @@ if ((_base == "") AND (_airport == "")) then {
 
 if ((_base == "") AND (_airport == "") AND !(_involveCSAT)) exitWith {diag_log format ["Info: Small attack on %1 called off, no base to attack from.", _marker]};
 
-if ((_base == "") AND (!(_airport == "") OR (_involveCSAT))) then {
-	_threatEvaluation = [_markerPos] call AAthreatEval;
-	if (!(_airport == "") AND !(_forcedAttack)) then {
-		if ((_threatEvaluation > 15) AND !(count (indAirForce arrayIntersect planes) > 0)) then {
-			_airport = "";
-		} else {
-			if ((_threatEvaluation > 10) AND !(count (indAirForce arrayIntersect (heli_armed + planes)) > 0)) then {
+// threatEval -- it isn't working because of unlocks missing; values should be adjusted to different conditions
+	if ((_base == "") AND (!(_airport == "") OR (_involveCSAT))) then {
+		_threatEvaluation = [_markerPos] call AAthreatEval;
+		if (!(_airport == "") AND !(_forcedAttack)) then {
+			if ((_threatEvaluation > 15) AND !(count (indAirForce arrayIntersect planes) > 0)) then {
 				_airport = "";
+			} else {
+				if ((_threatEvaluation > 10) AND !(count (indAirForce arrayIntersect (heli_armed + planes)) > 0)) then {
+					_airport = "";
+				};
 			};
 		};
 	};
-};
 
-if !(_base == "") then {
-	_threatEvaluation = [_markerPos] call landThreatEval;
-	if !(_forcedAttack) then {
-		if ((_threatEvaluation > 15) AND !(count (enemyMotorpool arrayIntersect vehTank) > 0)) then {
-			_base = "";
-		} else {
-			if ((_threatEvaluation > 5) AND (count (enemyMotorpool arrayIntersect (vehAPC + vehIFV + vehTank)) > 0)) then {
+	if !(_base == "") then {
+		_threatEvaluation = [_markerPos] call landThreatEval;
+		if !(_forcedAttack) then {
+			if ((_threatEvaluation > 15) AND !(count (enemyMotorpool arrayIntersect vehTank) > 0)) then {
 				_base = "";
+			} else {
+				if ((_threatEvaluation > 5) AND (count (enemyMotorpool arrayIntersect (vehAPC + vehIFV + vehTank)) > 0)) then {
+					_base = "";
+				};
 			};
 		};
 	};
-};
 
 if ((_base == "") AND (_airport == "") AND !(_involveCSAT)) exitWith {diag_log format ["Info: Small attack on %1 called off, threat level too high (%2).", _marker, _threatEvaluation]};
 
@@ -111,15 +112,16 @@ _roads = [];
 if !(_base == "") then {
 	_airport = "";
 	_involveCSAT = false;
-	if !(_forcedAttack) then {[_base,20] spawn AS_fnc_addTimeForIdle};
+	if !(_forcedAttack) then {[_base,2] spawn AS_fnc_addTimeForIdle};
 	_originPosition = getMarkerPos _base;
 	_posData = [_originPosition, _markerPos] call AS_fnc_findSpawnSpots;
 	_posRoad = _posData select 0;
 	_dir = _posData select 1;
 
 	_vehicleType = enemyMotorpoolDef;
+	//threat eval isn't working and tanks are bad as qrf because of their poor behaviour
 	if (count (enemyMotorpool - vehPatrol) > 1) then {
-		_vehicleArray =+ (enemyMotorpool - vehPatrol);
+		_vehicleArray =+ (enemyMotorpool - vehPatrol -vehTank);
 		call {
 			if ((_threatEvaluation > 5) AND (count (enemyMotorpool arrayIntersect (vehTank + vehIFV)) > 0)) exitWith {
 				_vehicleArray = _vehicleArray - vehPatrol - vehTrucks;
@@ -164,7 +166,7 @@ if !(_base == "") then {
 };
 
 if !(_airport == "") then {
-	if !(_forcedAttack) then {[_airport,20] spawn AS_fnc_addTimeForIdle};
+	if !(_forcedAttack) then {[_airport,2] spawn AS_fnc_addTimeForIdle};
 	_originPosition = getMarkerPos _airport;
 	_vehicleArray = (indAirForce - planes);
 	_maxCounter = [1,2] select (_isMarker);

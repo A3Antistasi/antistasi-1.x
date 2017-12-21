@@ -22,6 +22,15 @@ for "_i" from 0 to (count _buildings) - 1 do {
 	_buildingType = typeOf _building;
 
 	call {
+		if 	(_buildingType == "Land_HelipadCivil_F") exitWith {
+			_vehicle = createVehicle [selectRandom vehDef, position _building, [],0, "CAN_COLLIDE"];
+			_vehicle setDir (getDir _building);
+			_unit = ([_markerPos, 0, infCrew, _groupGunners] call bis_fnc_spawnvehicle) select 0;
+			_unit moveInGunner _vehicle;
+			_allVehicles pushBack _vehicle;
+			sleep 1;
+		};
+
 		if 	((_buildingType == "Land_Cargo_HQ_V1_F") OR (_buildingType == "Land_Cargo_HQ_V2_F") OR (_buildingType == "Land_Cargo_HQ_V3_F")) exitWith {
 			_vehicle = createVehicle [statAA, (_building buildingPos 8), [],0, "CAN_COLLIDE"];
 			_vehicle setPosATL [(getPos _building select 0),(getPos _building select 1),(getPosATL _vehicle select 2)];
@@ -43,15 +52,6 @@ for "_i" from 0 to (count _buildings) - 1 do {
 			sleep 1;
 		};
 //Stef defensive vehicle with gunner on.
-		if 	(_buildingType == "Land_HelipadCivil_F") exitWith {
-			_vehicle = createVehicle [selectRandom vehDef, position _building, [],0, "CAN_COLLIDE"];
-			_vehicle setDir (getDir _building);
-			_unit = ([_markerPos, 0, infCrew, _groupGunners] call bis_fnc_spawnvehicle) select 0;
-			_unit moveInGunner _vehicle;
-			_allVehicles pushBack _vehicle;
-			sleep 1;
-		};
-
 		if ((_buildingType == "Land_HelipadSquare_F") AND (!_isFrontline)) exitWith {
 			_vehicle = createVehicle [selectRandom heli_unarmed, position _building, [],0, "CAN_COLLIDE"];
 			_vehicle setDir (getDir _building);

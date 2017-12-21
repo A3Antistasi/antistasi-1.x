@@ -34,6 +34,6 @@ while {true} do{
 };
 
 while {true} do{
-	[petros,"hint","A critical failure has been detected in Antistasi. Please contact Admin Alber and ask for a diagnose + server restart. Apologies."] remoteExec ["commsMP"];
+	[petros,"hint","A critical failure has been detected in Antistasi. Please contact Admin  and ask for a diagnose + server restart. Apologies."] remoteExec ["commsMP"];
 	sleep 10;
 };
