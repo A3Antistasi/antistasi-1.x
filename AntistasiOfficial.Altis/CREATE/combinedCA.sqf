@@ -51,7 +51,7 @@ if (_involveCSAT) then {
 		server setVariable ["resourcesAAF",_resourcesAAF - 20000,true];
 		[5,0] remoteExec ["prestige",2];
 	} else {
-		[5,-20] remoteExec ["prestige",2]
+		[5,0] remoteExec ["prestige",2]
 	};
 	_originPosition = getMarkerPos "spawnCSAT";
 	_originPosition set [2,300];
