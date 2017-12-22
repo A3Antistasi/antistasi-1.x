@@ -368,3 +368,7 @@ class CfgFunctions {
 	#include "Functions\functionList.hpp"
 	#include "JeroenArsenal\functions.hpp"
 };
+
+//Load CBA settings if CBA is not attached in the editor
+//Check it here: https://github.com/CBATeam/CBA_A3/wiki/CBA-Settings-System
+cba_settings_hasSettingsFile = 1;
