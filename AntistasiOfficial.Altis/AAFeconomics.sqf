@@ -41,8 +41,8 @@ if (_resourcesAAF > 5000) then{
 						_resourcesAAF = _resourcesAAF - (5000*_multiplicador);
 					};
 				};
-			} forEach antenasMuertas; */ //Stef disabled repair radiotower, the mission is buggy, reduntant and pointless
-		};
+			} forEach antenasMuertas;
+		}; */ //Stef disabled repair radiotower, the mission is buggy, reduntant and pointless
 	};
 };
 

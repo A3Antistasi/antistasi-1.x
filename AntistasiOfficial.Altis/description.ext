@@ -361,7 +361,7 @@ class Params {
         typeName = "BOOL";
         force = 1;
     };
-    #include "aceSettings.hpp"
+    #include "aceSettings.hpp" //TODO to be decommissioned
 };
 
 class CfgFunctions {
