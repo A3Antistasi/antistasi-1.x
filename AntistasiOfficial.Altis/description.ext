@@ -361,7 +361,7 @@ class Params {
         typeName = "BOOL";
         force = 1;
     };
-    #include "aceSettings.hpp" //TODO to be decommissioned
+    //#include "aceSettings.hpp" //TODO to be decommissioned
 };
 
 class CfgFunctions {
@@ -371,4 +371,4 @@ class CfgFunctions {
 
 //Load CBA settings if CBA is not attached in the editor
 //Check it here: https://github.com/CBATeam/CBA_A3/wiki/CBA-Settings-System
-cba_settings_hasSettingsFile = 1;
+//cba_settings_hasSettingsFile = 1;
