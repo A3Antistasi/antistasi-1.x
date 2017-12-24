@@ -36,9 +36,11 @@ if _playAnimation then{
 		private _objectType = _nodeArray select 0;
 		private _nodeID = _nodeArray select 1;
 
+		/*
 		if(_objectType == 0)then{//if its a weapon
 			_object enableWeaponDisassembly true;
 		};
+		*/
 
 		private _bbv = (boundingBoxReal _vehicle select 0 select 1) + ((boundingCenter _vehicle) select 1);
 		private _bbo = (boundingBoxReal _object select 0 select 1) + ((boundingCenter _object) select 1);

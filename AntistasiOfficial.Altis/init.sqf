@@ -25,6 +25,7 @@ if (!isMultiPlayer) then {
     //call compile preprocessFileLineNumbers "WarStatistics\initRoadblocks2.sqf";
     ws_grid = call ws_fnc_newGridArray;
     //(up to here)//
+	Slowhand = player; //Otherwise it might be undefined at further parts of code in this file!
     serverInitDone = true;
     diag_log "Antistasi SP. serverInitDone is true. Arsenal loaded";
     [] execVM "modBlacklist.sqf";
