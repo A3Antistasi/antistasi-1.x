@@ -14,7 +14,7 @@ _units = units group _unit;
 	{
 	if (typeOf _x == guer_sol_MED) then
 		{
-		if ((alive _x) and (_medItem in (items _x)) and (not (_x getVariable "ASunconscious")) and (vehicle _x == _x) and (_x distance _unit < 81)) then
+		if ((alive _x) and (_medItem in (items _x)) and !([_x] call AS_fnc_isUnconscious) and (vehicle _x == _x) and (_x distance _unit < 81)) then
 			{
 			_medAvail = true;
 			_medHelping = _x getVariable "ASmedHelping";
@@ -28,14 +28,14 @@ _units = units group _unit;
 	};
 } forEach _units;
 
-if ((!_medAvail) or (_unit getVariable "ASunconscious")) then
+if ((!_medAvail) or ([_unit] call AS_fnc_isUnconscious)) then
 	{
 	{
 	if (!isPlayer _x) then
 		{
 		if (typeOf _x != guer_sol_MED) then
 			{
-			if ((alive _x) and (_medItem in (items _x)) and (not (_x getVariable "ASunconscious")) and (vehicle _x == _x) and (_x distance _unit < _distance)) then
+			if ((alive _x) and (_medItem in (items _x)) and !([_x] call AS_fnc_isUnconscious) and (vehicle _x == _x) and (_x distance _unit < _distance)) then
 				{
 				_medHelping = _x getVariable "ASmedHelping";
 				if ((isNil "_medHelping") and (!(_x getVariable "ASrearming"))) then

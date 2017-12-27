@@ -31,7 +31,7 @@ if (_resourcesAAF > 5000) then{
 			};
 		} forEach _destroyedCities;
 	} else {
-		if ((count antenasMuertas > 0) and (not("REP" in misiones))) then{
+		/*if ((count antenasMuertas > 0) and (not("REP" in misiones))) then{
 			{
 				if ((_resourcesAAF > 5000) and (not("REP" in misiones))) then{
 					_marcador = [markers, _x] call BIS_fnc_nearestPosition;
@@ -42,7 +42,7 @@ if (_resourcesAAF > 5000) then{
 					};
 				};
 			} forEach antenasMuertas;
-		};
+		}; */ //Stef disabled repair radiotower, the mission is buggy, reduntant and pointless
 	};
 };
 

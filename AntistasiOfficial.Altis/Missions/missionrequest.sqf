@@ -6,6 +6,7 @@ params [["_type","LOG"],["_muted",false],["_manual",false]];
 [getMarkerPos guer_respawn,[],[],false] params ["_positionHQ","_options","_zones"];
 
 private ["_currentZone","_markerPos","_nearestZone","_gearCount","_threshold","_base","_data","_prestigeOPFOR","_prestigeBLUFOR"];
+_prestigeCSAT = server getVariable ["prestigeCSAT",0];
 
 if (_type in misiones) exitWith {
 	if (!_muted) then {
@@ -267,7 +268,7 @@ call {
 			};
 		} else {
 			_currentZone = selectRandom _options;
-			[_currentZone, "civ"] remoteExec [(["ASS_Traidor","AS_forest"] select (_currentZone in puestos)), call AS_fnc_getNextWorker];
+			if((random 100 < _prestigeCSAT) and (_prestigeCSAT > 21)) then {[_currentZone, "civ"] remoteExec [(["ASS_Traidor","AS_forest"] select (_currentZone in puestos)), call AS_fnc_getNextWorker];} else {}
 		};
 	};
 

@@ -30,7 +30,7 @@ waitUntil {(count playableUnits) > 0};
 waitUntil {({(isPlayer _x) AND (!isNull _x) AND (_x == _x)} count allUnits) == (count playableUnits)};
 [] execVM "modBlacklist.sqf";
 
-lockedWeapons = lockedWeapons - unlockedWeapons;
+lockedWeapons = lockedWeapons - unlockedWeapons; //Stef 14/12 is this still required?
 
 diag_log "Antistasi MP Server. Arsenal config finished";
 [[petros,"hint",localize "STR_INFO_INITSERVER"],"commsMP"] call BIS_fnc_MP;
@@ -40,22 +40,8 @@ addMissionEventHandler ["HandleDisconnect",{_this call onPlayerDisconnect;false}
 Slowhand = objNull;
 maxPlayers = playableSlotsNumber west;
 
-if (serverName in servidoresOficiales) then {
-    [] execVM "serverAutosave.sqf";
- } else {
-    if (isNil "comandante") then {comandante = (playableUnits select 0)};
-    if (isNull comandante) then {comandante = (playableUnits select 0)};
-
-    {
-        if (_x ==comandante) then {
-            Slowhand = _x;
-            publicVariable "Slowhand";
-            _x setRank "CORPORAL";
-            [_x,"CORPORAL"] remoteExec ["ranksMP"];
-        };
-    } forEach playableUnits;
-    diag_log "Antistasi MP Server. Players are in";
-    };
+[] execVM "serverAutosave.sqf";
+publicVariable "Slowhand";
 publicVariable "maxPlayers";
 serverInitDone = true; publicVariable "serverInitDone";
 diag_log "Antistasi MP Server. serverInitDone set to true.";

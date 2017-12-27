@@ -2,7 +2,7 @@
 #include "dialogs.hpp"
 
 author="Barbolani";
-OnLoadName = "Antistasi - modified 1.7.18";
+OnLoadName = "Antistasi - modified 1.7.18G";
 OnLoadMission = "Be a Resistance Leader - Be a Hero";
 //loadScreen = "pic.paa";
 
@@ -307,15 +307,31 @@ class CfgDebriefing
 
 class Params {
     class AS_enableCampaignReset {
-        title = "$STR_DES_ATSAFC";
+        title = $STR_DES_ATSAFC;
             values[] = {0,1};
             texts[] = {$STR_DES_OFF,$STR_DES_ON};
             default = 0;
             typeName = "BOOL";
             force = 1;
     };
+    class AS_enableSwitchComm {
+        title = $STR_DES_ESWCMD;
+            values[] = {0,1};
+            texts[] = {$STR_DES_OFF,$STR_DES_ON};
+            default = 0;
+            typeName = "BOOL";
+            force = 1;
+    };
+    class AS_enableServerMember {
+        title = $STR_DES_ESRMBR;
+            values[] = {0,1};
+            texts[] = {$STR_DES_OFF,$STR_DES_ON};
+            default = 1;
+            typeName = "BOOL";
+            force = 1;
+    };
     class AS_param_useJNA {
-        title = "$STR_DES_USABJN";
+        title = $STR_DES_USABJN;
             values[] = {0,1};
             texts[] = {$STR_DES_OFF,$STR_DES_ON};
             default = 1;
@@ -324,7 +340,7 @@ class Params {
     };
 	//added by Fireman 12/08/2017
 	class AS_param_tkPenalty {
-        title = "$STR_DES_PPFT";
+        title = $STR_DES_PPFT;
             values[] = {0,1};
             texts[] = {$STR_DES_OFF,$STR_DES_ON};
             default = 0;
@@ -332,15 +348,27 @@ class Params {
             force = 1;
     };
     class AS_param_onlyPermanentMembers {
-        title = "$STR_DES_OPMAEFCAS";
-            values[] = {0,1};
-            texts[] = {$STR_DES_OFF,$STR_DES_ON};
-            default = 1;
+        title = $STR_DES_OPMAEFCAS;
+        values[] = {0,1};
+        texts[] = {$STR_DES_OFF,$STR_DES_ON};
+        default = 1;
     };
-    #include "aceSettings.hpp"
+    class AS_enableVCOM {
+        title = $STR_DES_ENVCOMAI;
+        values[] = {0,1};
+        texts[] = {$STR_DES_OFF,$STR_DES_ON};
+        default = 0;
+        typeName = "BOOL";
+        force = 1;
+    };
+    //#include "aceSettings.hpp" //TODO to be decommissioned
 };
 
 class CfgFunctions {
 	#include "Functions\functionList.hpp"
 	#include "JeroenArsenal\functions.hpp"
 };
+
+//Load CBA settings if CBA is not attached in the editor
+//Check it here: https://github.com/CBATeam/CBA_A3/wiki/CBA-Settings-System
+//cba_settings_hasSettingsFile = 1;

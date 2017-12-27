@@ -1,7 +1,8 @@
 removeHeadgear petros;
 removeGoggles petros;
 petros setSkill 1;
-petros setVariable ["ASunconscious",false,true];
+petros setVariable ["VCOM_NOAI", true, true]; //No VCOM AI for Petros
+[petros, false] call AS_fnc_setUnconscious;
 petros setVariable ["ASrespawning",false];
 petros allowDamage true;
 
@@ -19,7 +20,7 @@ petros addEventHandler ["HandleDamage", {
     if ((isNull _injurer) OR (_injurer == petros)) then {_dam = 0};
     if (_part == "") then {
         if (_dam > 0.95) then {
-            if !(petros getVariable "ASunconscious") then {
+            if !([petros] call AS_fnc_isUnconscious) then {
                 _dam = 0.9;
                 [petros] spawn medUnconscious;
             } else {

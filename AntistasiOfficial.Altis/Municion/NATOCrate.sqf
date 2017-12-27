@@ -20,7 +20,7 @@ clearBackpackCargoGlobal _crate;
 			_crate addWeaponCargoGlobal 		[bluATMissile		select 0,	5	];
 			_crate addItemCargoGlobal			["SmokeShellRed"			,	25	];
 			_crate addItemCargoGlobal			["SmokeShellGreen"			,	25	];
-			_crate addItemCargoGlobal			[bluAttachments 	select 0,	5	];	//flashlight
+			_crate addItemCargoGlobal			[bluAttachments 	select 0,	6	];	//flashlight
 				{_crate addItemCargoGlobal 		[_x							,	20	];	//Shells: Smoke and Flares Green and Red
 				} foreach bluGLsmoke;
 
@@ -43,7 +43,7 @@ clearBackpackCargoGlobal _crate;
 			_crate addItemCargoGlobal 			["ToolKit"					,	1	];
 			_crate addItemCargoGlobal 			["MineDetector"				,	1	];
 			if (activeTFAR) then {
-			_crate addBackpackCargoGlobal 		[lrRadio					, 	5	];
+			_crate addBackpackCargoGlobal 		[lrRadio					, 	3	];
 			};
 
 			//										From Tier 1

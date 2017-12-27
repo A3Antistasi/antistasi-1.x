@@ -62,6 +62,7 @@ sleep 3;
 // Devin, as known from JA2 -- bow down to the masters at Sir-Tech!
 _groupDev = createGroup Civilian;
 Devin = _groupDev createUnit [CIV_specialUnits select 0, [8173.79,25308.9,0.00156975], [], 0.9, "NONE"];
+Devin setVariable ["VCOM_NOAI", true, true]; //No VCOM AI for Devin
 Devin allowDamage false;
 sleep 2;
 Devin setPos _posCmp;

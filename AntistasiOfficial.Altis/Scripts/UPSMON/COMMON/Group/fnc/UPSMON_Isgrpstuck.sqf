@@ -53,7 +53,9 @@ If (alive _npc) then
 													//{if (alive _x && leader _x != _x) then {_x dofollow (leader _x)};} foreach units _grp;
 													_grp setvariable ["UPSMON_RSTUCKCONTROL",0];
 													_stuck = true;
-		
+		                                            private _leader = leader _grp;
+		                                            {_x forceSpeed -1; _x doFollow _leader;}count units _grp;
+
 													if (UPSMON_Debug>0) then {player sidechat format["%1 stucked, moving",_grp getvariable ["UPSMON_Grpid",0]]};	
 													if (UPSMON_Debug>0) then {diag_log format["%1 stuck for %2 seconds - trying to move again",_grp getvariable ["UPSMON_Grpid",0]]};
 												};

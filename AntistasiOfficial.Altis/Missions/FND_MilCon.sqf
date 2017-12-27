@@ -30,6 +30,7 @@ _nombredest = [_site] call AS_fnc_localizar;
 _grpVul = createGroup side_blue;
 _grpDealer = createGroup Civilian;
 Nomad = _grpDealer createUnit [CIV_specialUnits select 1, [8173.79,25308.9,0.00156975], [], 0.9, "NONE"];
+Nomad setVariable ["VCOM_NOAI", true, true]; //No VCOM AI for Nomad
 sleep 2;
 Nomad setPos _posDealer;
 Nomad removeWeaponGlobal (primaryWeapon Nomad);

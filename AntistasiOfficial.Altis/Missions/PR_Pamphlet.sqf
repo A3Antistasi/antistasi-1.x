@@ -209,7 +209,7 @@ while {(alive _missionVehicle) AND (dateToNumber date < _endTime) AND (_currentD
 		};
 
 		// stop unloading when enemies get too close
-		while {(_counter < _deploymentTime) AND (alive _missionVehicle) AND !({_x getVariable ["ASunconscious",false]} count ([80,0,_missionVehicle,"BLUFORSpawn"] call distanceUnits) == count ([80,0,_missionVehicle,"BLUFORSpawn"] call distanceUnits)) AND ({((side _x == side_green) OR (side _x == side_red)) AND (_x distance _missionVehicle < 50)} count allUnits == 0) AND (dateToNumber date < _endTime) AND (server getVariable "pr_unloading_pamphlets")} do {
+		while {(_counter < _deploymentTime) AND (alive _missionVehicle) AND !({[_x] call AS_fnc_isUnconscious} count ([80,0,_missionVehicle,"BLUFORSpawn"] call distanceUnits) == count ([80,0,_missionVehicle,"BLUFORSpawn"] call distanceUnits)) AND ({((side _x == side_green) OR (side _x == side_red)) AND (_x distance _missionVehicle < 50)} count allUnits == 0) AND (dateToNumber date < _endTime) AND (server getVariable "pr_unloading_pamphlets")} do {
 
 			// spawn eye candy
 			if !(_unloading) then {

@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=364;
+		nextID=372;
 	};
 	class Camera
 	{
-		pos[]={3637.2073,26.639614,10378.357};
-		dir[]={-0.37561938,-0.19259754,-0.90654719};
-		up[]={-0.073725313,0.98127532,-0.17793444};
-		aside[]={-0.92384475,-2.4952169e-007,0.38278738};
+		pos[]={3641.3186,92.889587,10379.895};
+		dir[]={-0.42071614,-0.53006381,-0.73623675};
+		up[]={-0.26299173,0.84795314,-0.4602254};
+		aside[]={-0.86824602,2.3050234e-008,0.49615267};
 	};
 };
 binarizationWanted=0;
@@ -34,7 +34,6 @@ addons[]=
 	"A3_Structures_F_Mil_Flags",
 	"A3_Structures_F_Civ_InfoBoards",
 	"A3_Structures_F_Civ_Camping",
-	"cba_xeh",
 	"A3_Modules_F",
 	"A3_Characters_F",
 	"A3_Modules_F_Hc",
@@ -77,15 +76,15 @@ class AddonsMetaData
 		};
 		class Item4
 		{
-			className="A3_Characters_F";
-			name="Arma 3 Alpha - Characters and Clothing";
+			className="A3_Modules_F";
+			name="Arma 3 Alpha - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
 		class Item5
 		{
-			className="A3_Modules_F";
-			name="Arma 3 Alpha - Scripted Modules";
+			className="A3_Characters_F";
+			name="Arma 3 Alpha - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -96,38 +95,11 @@ class ScenarioData
 {
 	author="barbolani";
 };
-class CustomAttributes
-{
-	class Category0
-	{
-		name="Scenario";
-		class Attribute0
-		{
-			property="cba_settings_hasSettingsFile";
-			expression="false";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"BOOL"
-						};
-					};
-					value=1;
-				};
-			};
-		};
-		nAttributes=1;
-	};
-};
 class Mission
 {
 	class Intel
 	{
-		briefingName="[SP/CO] - Antistasi Altis Blufor 1.7.18 - hcfix2";
+		briefingName="[SP/CO] - Antistasi Altis Blufor 1.7.18G";
 		overviewText="Build FIA Army from scratch and defeat the AAF and CSAT forces in a whole map Dynamic Mission.";
 		resistanceWest=0;
 		resistanceEast=1;
@@ -5537,7 +5509,26 @@ class Mission
 						};
 					};
 				};
-				nAttributes=1;
+				class Attribute1
+				{
+					property="#hideLocally";
+					expression="_this setVariable [""#hideLocally"",_value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
 			};
 		};
 		class Item190
@@ -5926,7 +5917,26 @@ class Mission
 						};
 					};
 				};
-				nAttributes=1;
+				class Attribute1
+				{
+					property="#hideLocally";
+					expression="_this setVariable [""#hideLocally"",_value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
 			};
 		};
 		class Item205
@@ -6242,7 +6252,6 @@ class Mission
 			};
 			id=1009;
 			type="Land_HelipadCivil_F";
-			atlOffset=0.00048828125;
 			class CustomAttributes
 			{
 				class Attribute0

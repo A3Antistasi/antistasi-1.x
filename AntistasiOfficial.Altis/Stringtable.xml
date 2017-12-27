@@ -157,20 +157,20 @@
 		</Container>
 		<Container name="Description_settings">
 			<Key ID="STR_DES_ATSAFC">
-				<Original>Ability to start a fresh campaign</Original>
-				<Russian>Возможность начать новую кампанию</Russian>
+				<Original>Antistasi: ability to start a fresh campaign</Original>
+				<Russian>Antistasi: возможность начать новую кампанию</Russian>
 			</Key>
 			<Key ID="STR_DES_USABJN">
-				<Original>Use customized arsenal by Jeroen Not</Original>
-				<Russian>Использовать изменённый арсенал</Russian>
+				<Original>Antistasi: use customized arsenal by Jeroen Not</Original>
+				<Russian>Antistasi: использовать изменённый арсенал</Russian>
 			</Key>
 			<Key ID="STR_DES_PPFT">
-				<Original>Punish people for team-killing</Original>
-				<Russian>Наказывать за убийство своих игроков</Russian>
+				<Original>Antistasi: punish people for teamkilling</Original>
+				<Russian>Antistasi: наказывать за убийство своих игроков</Russian>
 			</Key>
 			<Key ID="STR_DES_OPMAEFCAS">
-				<Original>Only permanent members are eligible for commandership at start</Original>
-				<Russian>Только постоянные участники могут командовать после старта</Russian>
+				<Original>Antistasi: only permanent members are eligible for commandership at start</Original>
+				<Russian>Antistasi: только постоянные участники могут командовать после старта</Russian>
 			</Key>
 			<Key ID="STR_DES_ON">
 				<Original>On</Original>

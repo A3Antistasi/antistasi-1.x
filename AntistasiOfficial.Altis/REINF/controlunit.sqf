@@ -9,7 +9,7 @@ if (_unit == Petros) exitWith {hint "You cannot control Petros";};
 if (player != leader group player) exitWith {hint "You cannot control AI if you are not the squad leader"};
 if (isPlayer _unit) exitWith {hint "You cannot control another player"};
 if (!alive _unit) exitWith {hint "You cannot control a dead unit"};
-if (_unit getVariable ["ASunconscious",false]) exitWith {hint "You cannot control an unconscious unit"};
+if ([_unit] call AS_fnc_isUnconscious) exitWith {hint "You cannot control an unconscious unit"};
 if (captive _unit) exitWith {hint "You cannot control an Undercover unit"};
 if ((not(typeOf _unit in guer_soldierArray)) and (typeOf _unit != guer_POW)) exitWith {hint "You cannot control a unit which does not belong to FIA"};
 if ({((side _x == side_green) or (side _x == side_red)) and (not (captive _x)) and (_x distance player < 500)} count allUnits > 0) exitWith {hint "You cannot remote control with enemies nearby"};

@@ -37,8 +37,8 @@ _grpid = _grp getvariable ["UPSMON_Grpid",0];
 _water = 0;
 
 _grp setvariable ["UPSMON_searchingpos",true];	
-	
-_closeenough = UPSMON_closeenough;	
+
+_closeenough = UPSMON_closeenough;
 // get position of spotted unit in player group, and watch that spot										
 			
 // angle from unit to target
