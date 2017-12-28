@@ -16,10 +16,11 @@ Currently: *Stef* is supervising the project and coding some simple stuff, *IrLE
 We're looking for more coders, every contribution is appreciated!
 
 
-Website: http://www.a3antistasi.com/
+Website: http://www.a3antistasi.com/  (DNS error, waiting for Barbolani who has access to fix it)
 
 Server: steam://connect/85.190.158.136:29001
-Teamspeak: voip.a3antistasi.com
+
+Teamspeak: **5.135.85.232:9776**
 
 Guide: https://docs.google.com/document/d/1_XamnTWgVgy0jDinYSDhAWG_vKDa49ngl6fGi5XdPLQ/edit
 
