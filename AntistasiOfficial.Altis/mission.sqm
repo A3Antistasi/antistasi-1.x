@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=372;
+		nextID=380;
 	};
 	class Camera
 	{
@@ -99,7 +99,7 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="[SP/CO] - Antistasi Altis Blufor 1.7.18G";
+		briefingName="[SP/CO] - Antistasi Altis Blufor 1.7.18H";
 		overviewText="Build FIA Army from scratch and defeat the AAF and CSAT forces in a whole map Dynamic Mission.";
 		resistanceWest=0;
 		resistanceEast=1;
