@@ -16,7 +16,7 @@ Currently: *Stef* is supervising the project and coding some simple stuff, *IrLE
 We're looking for more coders, every contribution is appreciated!
 
 
-Website: http://www.a3antistasi.com/  (DNS error, waiting for Barbolani who has access to fix it)
+Website: http://a3antistasi.enjin.com/
 
 Server: steam://connect/85.190.158.136:29001
 
