@@ -5,10 +5,7 @@ private ["_crate","_NATOSupp"];
 _crate = _this select 0;
 _NATOSupp = _this select 1;
 
-clearMagazineCargoGlobal _crate;
-clearWeaponCargoGlobal _crate;
-clearItemCargoGlobal _crate;
-clearBackpackCargoGlobal _crate;
+[_crate] call emptyCrate;
 
 //Standard Equipment (good for 5 people)
 			//										Weapon

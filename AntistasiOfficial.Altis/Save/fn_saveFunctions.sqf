@@ -93,7 +93,13 @@ fn_setPlayerData = {
     TRACE_3("START fn_setPlayerData", _varName,_varValue,_player);
 	call {
 		if(_varName == 'loadout') exitWith {
-		    if(_varValue isEqualType []) then {_player setUnitLoadout _varValue;};
+		    if(_varValue isEqualType []) then {
+	        	    removeBackpackGlobal _player;
+                    removeVest _player;
+                    removeUniform _player;
+                    removeGoggles _player;
+		            _player setUnitLoadout _varValue;
+            };
 		};
 		if(_varName isEqualTo 'funds') exitWith {_player setVariable ["dinero",_varValue,true];};
 		if(_varName isEqualTo 'score') exitWith {_player setVariable ["score",_varValue,true];};

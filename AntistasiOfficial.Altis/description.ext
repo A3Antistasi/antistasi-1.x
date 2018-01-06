@@ -13,6 +13,10 @@ allowFunctionsLog = 1;
 enableDebugConsole = 1;
 //allowFunctionsRecompile = 1;
 
+//Load CBA settings if CBA is not attached in the editor
+//Check it here: https://github.com/CBATeam/CBA_A3/wiki/CBA-Settings-System
+cba_settings_hasSettingsFile = 1;
+
 respawn = "BASE";
 respawnDelay = 30;
 respawnVehicleDelay = 120;
@@ -368,7 +372,3 @@ class CfgFunctions {
 	#include "Functions\functionList.hpp"
 	#include "JeroenArsenal\functions.hpp"
 };
-
-//Load CBA settings if CBA is not attached in the editor
-//Check it here: https://github.com/CBATeam/CBA_A3/wiki/CBA-Settings-System
-//cba_settings_hasSettingsFile = 1;
