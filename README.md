@@ -20,7 +20,7 @@ Website: http://a3antistasi.enjin.com/
 
 Server: steam://connect/85.190.158.136:29001
 
-Teamspeak: **5.135.85.232:9776**
+Teamspeak: **antistasi.enjinvoice.com**
 
 Guide: https://docs.google.com/document/d/1_XamnTWgVgy0jDinYSDhAWG_vKDa49ngl6fGi5XdPLQ/edit
 
