@@ -70,11 +70,17 @@ if (isMultiplayer) then {
 
 disableUserInput false;
 //Give default civilian gear
-player setUnitLoadout (getUnitLoadout (configFile >> "CfgVehicles" >> "C_man_polo_1_F"));
-player forceAddUniform (selectRandom civUniforms);
+removeAllContainers player;
 removeGoggles player;
+removeHeadgear player;
+removeAllAssignedItems player;
+removeAllWeapons player;
+player forceAddUniform (selectRandom civUniforms);
+player addWeapon "ItemMap";
 player addWeapon "ItemRadio";
 player addWeapon "Binocular";
+player addWeapon "ItemCompass";
+player addWeapon "ItemWatch";
 
 // In order: controller, TK counter, funds, spawn-trigger, rank, score, known by hostile AI
 player setVariable ["owner",player,true];
@@ -114,8 +120,24 @@ call AS_fnc_initPlayerEH;
 
 if (isMultiplayer) then {
 	["InitializePlayer", [player]] call BIS_fnc_dynamicGroups;//Exec on client
-	//["InitializeGroup", [player,WEST,true]] call BIS_fnc_dynamicGroups;
-	personalGarage = []; //To-remove
+
+    if !([player] call isMember) then {
+        if (serverCommandAvailable "#logout") then {
+            membersPool pushBack (getPlayerUID player);
+            publicVariable "membersPool";
+            hint localize "STR_HINTS_INIT_ADMIN_MEMBER"
+        } else {
+            hint format [localize "STR_HINTS_INIT_GUEST_WELCOME", name player];
+        };
+    } else {
+        hint format [localize "STR_HINTS_INIT_MEMBER_RETURN", name player];
+    };
+
+    if ({[_x] call isMember} count playableUnits == 1) then {
+        [player] call stavrosInit;
+        [] remoteExec ["assignStavros",2];
+    };
+
 	if (!isNil "placementDone") then {
 		_isJip = true;
 	};
@@ -125,36 +147,6 @@ if (_isJip) then { waitUntil {scriptdone _introshot};
 		[] execVM "modBlacklist.sqf";
 		player setUnitRank "PRIVATE";
 		[true] execVM "reinitY.sqf";
-
-		//Make members all players when admin starts (do we really want it?)
-		if !([player] call isMember) then {
-			if (serverCommandAvailable "#logout") then {
-				membersPool pushBack (getPlayerUID player);
-				publicVariable "membersPool";
-				hint localize "STR_HINTS_INIT_ADMIN_MEMBER"
-			} else {
-				hint format [localize "STR_HINTS_INIT_GUEST_WELCOME", name player];
-			};
-		} else {
-			hint format [localize "STR_HINTS_INIT_MEMBER_RETURN", name player];
-
-			//Old slot reservation rule, unnecessary for now, make a better one for later
-			/* if (serverName in servidoresOficiales) then {
-				if ((count playableUnits == maxPlayers) AND (({[_x] call isMember} count playableUnits) < count membersPool)) then {
-					{
-						if !([_x] call isMember) exitWith {
-							["serverFull",false,1,false,false] remoteExec ["BIS_fnc_endMission",_x];
-						};
-					} forEach playableUnits;
-				};
-			}; */
-
-			if ({[_x] call isMember} count playableUnits == 1) then {
-				[player] call stavrosInit;
-				[] remoteExec ["assignStavros",2];
-			};
-		};
-
 		// Add actions to flags
 		{
 			if (_x isKindOf "FlagCarrier") then {
@@ -189,10 +181,6 @@ if (_isJip) then { waitUntil {scriptdone _introshot};
 			removeAllActions petros;
 			petros addAction [localize "STR_ACT_BUILDHQ", {[] spawn buildHQ},nil,0,false,true];
 		};
-
-		if ((player == Slowhand) AND (isNil "placementDone") AND (isMultiplayer) AND (freshstart)) then {
-			[] execVM "UI\startMenu.sqf";
-		};
 		diag_log "Antistasi MP Client. JIP client finished";
 } else {
 	if (isNil "placementDone") then {
@@ -201,7 +189,6 @@ if (_isJip) then { waitUntil {scriptdone _introshot};
 			   	 if (isMultiplayer) then {
 			    	HC_comandante synchronizeObjectsAdd [player];
 					player synchronizeObjectsAdd [HC_comandante];
-					if(freshstart) then {[] spawn placementSelection;} else {[] remoteExec ["AS_fnc_loadGame",2];};
 					diag_log "Antistasi MP Client. Client finished";
 				} else {
 			    	membersPool = [];
@@ -213,14 +200,32 @@ if (_isJip) then { waitUntil {scriptdone _introshot};
 
 waitUntil {scriptDone _title};
 
+if ((player == Slowhand) AND (isNil "placementDone") AND (isMultiplayer) AND (freshstart)) then {
+    systemChat "Commander freshstart menu";
+    [] execVM "UI\startMenu.sqf";
+};
+
 //Waiting for all game data loaded
-waitUntil {sleep 1; !isNil "placementDone";};
+while {isNil "placementDone"} do {
+    if (isMultiplayer) then {
+        if (freshstart) then {
+            systemChat format ["Game world is not initialized yet. Waiting for commander %1 to complete freshstart", Slowhand];
+        } else{
+            systemChat "Game world is not initialized yet. Waiting for autostart to complete";
+        };
+    };
+    sleep 10;
+};
+systemChat "Game world is READY";
 INFO("Game is ready to initialize player");
 //Teleport to the guer_respawn marker
-player setPos ((getMarkerPos guer_respawn) getPos [8,random 360]);
+waitUntil {!isNil "posHQ"};
+systemChat "Teleporting player to HQ";
+player setPos (posHQ getPos [8,random 360]);
 player setdir (player getdir petros);
 INFO("Player is moved to the camp");
 //Called from unscheduled environment to load data at once
+systemChat "Restoring player stats";
 [player] remoteExecCall ["AS_fnc_loadPlayer",2];
 INFO("Player info loaded");
 
