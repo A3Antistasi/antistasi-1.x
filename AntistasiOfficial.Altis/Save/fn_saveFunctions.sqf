@@ -94,11 +94,16 @@ fn_setPlayerData = {
 	call {
 		if(_varName == 'loadout') exitWith {
 		    if(_varValue isEqualType []) then {
-	        	    removeBackpackGlobal _player;
-                    removeVest _player;
-                    removeUniform _player;
-                    removeGoggles _player;
-		            _player setUnitLoadout _varValue;
+                [  _varValue,
+                    {
+                        removeBackpackGlobal player;
+                        removeVest player;
+                        removeUniform player;
+                        removeGoggles player;
+                        player setUnitLoadout _this;
+                        systemChat "Loadout restored";
+                    }
+                ] remoteExec ["call", _player];
             };
 		};
 		if(_varName isEqualTo 'funds') exitWith {_player setVariable ["dinero",_varValue,true];};
