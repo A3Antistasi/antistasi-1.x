@@ -80,10 +80,15 @@ if (_isInfantry) then {
 
 		if ((activeGREF) AND (_groupCategory isEqualTo guer_stat_AT)) exitWith {
 			_spawnPos = _roadPos findEmptyPosition [1,50,guer_veh_technical_AT];
-			_vehicleData = [_spawnPos,_direction,guer_veh_technical_AT,side_blue] call bis_fnc_spawnvehicle;
-			_vehicle = _vehicleData select 0;
-			_group = _vehicleData select 2;
-			_group setVariable ["staticAutoT",false,true];
+			_vehicle = guer_veh_technical_AT createVehicle _spawnpos;
+			_vehicle setDir _direction;
+			_group = createGroup side_blue;
+			_unit = _group createUnit [guer_sol_UN, _roadPos, [],0,"NONE"];
+			_unit assignAsDriver _vehicle;
+			_unit moveInDriver _vehicle;
+			_unit = _group createUnit [guer_sol_UN, _roadPos, [],0,"NONE"];
+			_unit moveInGunner _vehicle;
+			_unit assignAsGunner _vehicle;
 			_group setGroupId [format ["M.AT-%1",{side (leader _x) == side_blue} count allGroups]];
 		};
 
