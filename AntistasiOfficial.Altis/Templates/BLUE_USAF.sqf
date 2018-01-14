@@ -150,7 +150,9 @@
 		"rhsusf_acc_nt4_black"		//Higer tier only
 	];
 
-
+	blunvg = [
+	"rhsusf_ANPVS_15"
+	];
 
 	bluHelmet = [
 	"rhsusf_opscore_bk_pelt",					// Tier 1

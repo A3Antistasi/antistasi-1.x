@@ -52,7 +52,7 @@ bluTeam = 			["OIA_InfTeam"];
 bluATTeam = 		["OIA_InfTeam_AT"];
 
 bluIR = 	"acc_pointer_IR";
-
+blunvg =	["NVGoggles_OPFOR"];
 bluFlag = 	"Flag_CSAT_F";
 
 bluCfgInf = (configfile >> "CfgGroups" >> "East" >> "OPF_F" >> "Infantry");
