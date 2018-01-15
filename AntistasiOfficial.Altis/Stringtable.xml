@@ -4015,13 +4015,13 @@
 					Игра позволяет вам перемещать свой штаб куда угодно, даже внутри вражеской базы с врагами в окружении, вам решать,сделайте разумное решение о том, расположить штаб, см. Веб-сайт для подсказок о хороших местоположениях Баз.
 				</Russian>
 			</Key>
-			<Key ID="STR_BR_CM2FFS">
-				<Original>Friendly Faction Support</Original>
-				<Russian>Поддержка Друж. фракций</Russian>
+			<Key ID="STR_BR_CM2NA">
+				<Original>NATO Support</Original>
+				<Russian>Поддержка Нато</Russian>
 			</Key>
-			<Key ID="STR_BR_CM_FFS">
+			<Key ID="STR_BR_CM_NA">
 				<Original>
-					Командующий может вызвать различные формы поддержки из Дружественной фракции, выбрав один из вариантов через меню Y (вкладка Командира). Единицы или типы транспортных средств и сила вмешательства будут зависеть от вашего текущего значения поддержки. Каждый тип затрат очков поддержки объясняется ниже.&lt;br/&gt;&lt;br/&gt;
+					The Commander can call in various forms of support from the Friendly Faction by choosing one of the options through Y menu (Commander tab). Unit or vehicle types and strength of the intervention will depend on your current support value. Each type cost support points and are explained below.&lt;br/&gt;&lt;br/&gt;
 
 					Support must physically travel to their target and they can get engaged before they arrive, this is important to remember especially for air forces, considering that each named hilltop has a spec-ops AA emplacement which can easily destroy them.&lt;br/&gt;&lt;br/&gt;
 
@@ -4072,8 +4072,8 @@
 					- СБР (xx Очков): силы быстрого реагирования; Малые транспортные вертолеты выдвигаются с авианосца или ближайшего контролируемого аэропорта, перевозит войска в указанное место.
 				</Russian>
 			</Key>
-			<Key ID="STR_BR_CM3R">
-				<Original>Reinforcements</Original>
+			<Key ID="STR_BR_CM3R"> <!-- Вырезано. -->
+				<Original>Reinforcements</Original> 
 				<Russian>Подкрепление</Russian>
 			</Key>
 			<Key ID="STR_BR_CM_R">
@@ -4098,7 +4098,7 @@
 					Минометы имеют ограниченный диапазон и боеприпасы. Они могут быть загружены На базе функцией Лечить,Ченить И Перевооружить.
 				</Russian>
 			</Key>
-			<Key ID="STR_BR_CM4G">
+			<Key ID="STR_BR_CM4G"> <!-- Вырезано. -->
 				<Original>Garrison</Original>
 				<Russian>Гарнизон</Russian>
 			</Key>
@@ -4189,5 +4189,14 @@
 				<Russian>8 Авторы И Благодарность</Russian>
 			</Key>
 		</Container>
+	</Package>
+
+	<Package name="Name File">
+		<Container name="Name section">
+	        <Key ID="STR_Name">
+				<Original>Text</Original>
+				<Russian>Текст</Russian>
+			</Key>
+	    </Container>
 	</Package>
 </Project>
