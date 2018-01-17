@@ -24,8 +24,7 @@ _soldados = [];
 _vehiculos = [];
 _grupos = [];
 _tipoveh = "";
-_cuenta = server getVariable "prestigeNATO";
-_cuenta = round (_cuenta / 10);
+_cuenta = 3;
 
 [-20,0] remoteExec ["prestige",2];
 
@@ -171,6 +170,15 @@ for "_i" from 1 to _cuenta do
 	sleep 35;
 	};
 
+_sawnergroup = createGroup east;
+_spawner = _sawnergroup createUnit [selectrandom CIV_journalists, getmarkerpos _marker, [], 15,"None"];
+_spawner setVariable ["BLUFORSpawn",true,true];
+_spawner disableAI "ALL";
+_spawner setcaptive true;
+_spawner enableSimulation false;
+hideObjectGlobal _spawner;
+_vehiculos = _vehiculos + [_spawner];
+
 _solMax = count _soldados;
 _solMax = round (_solMax / 4);
 
@@ -197,4 +205,5 @@ deleteVehicle _soldado;
 _vehiculo = _x;
 waitUntil {sleep 1; {_x distance _vehiculo < distanciaSPWN/2} count (allPlayers - (entities "HeadlessClient_F")) == 0};
 deleteVehicle _x} forEach _vehiculos;
+
 
