@@ -28,6 +28,16 @@ _cuenta = 3;
 
 [-20,0] remoteExec ["prestige",2];
 
+_spawnergroup = createGroup east;
+_spawner = _spawnergroup createUnit [selectrandom CIV_journalists, getmarkerpos _marcador, [], 15,"None"];
+_spawner setVariable ["BLUFORSpawn",true,true];
+_spawner disableAI "ALL";
+_spawner setcaptive true;
+_spawner enableSimulation false;
+hideObjectGlobal _spawner;
+_vehiculos = _vehiculos + [_spawner];
+sleep 5;
+
 if ((_marcador in bases) or (_marcador in aeropuertos)) then
 	{
 	/*
@@ -91,6 +101,7 @@ for "_i" from 1 to _cuenta do
 				_vehiculos = _vehiculos + [_pad];
 				_wp0 = _grupoheli addWaypoint [_landpos, 0];
 				_wp0 setWaypointType "TR UNLOAD";
+				_wp0 setWaypointSpeed "FULL";
 				_wp0 setWaypointStatements ["true", "(vehicle this) land 'GET OUT'; [vehicle this] call smokeCoverAuto"];
 				[_grupoheli,0] setWaypointBehaviour "CARELESS";
 				_wp3 = _grupo addWaypoint [_landpos, 0];
@@ -100,6 +111,7 @@ for "_i" from 1 to _cuenta do
 				_wp4 setWaypointType "SAD";
 				_wp2 = _grupoheli addWaypoint [_orig, 1];
 				_wp2 setWaypointType "MOVE";
+				_wp2 setWaypointSpeed "FULL";
 				_wp2 setWaypointStatements ["true", "{deleteVehicle _x} forEach crew this; deleteVehicle this"];
 				[_grupoheli,1] setWaypointBehaviour "AWARE";
 				[_heli,true] spawn puertasLand;
@@ -120,6 +132,7 @@ for "_i" from 1 to _cuenta do
 		_vehiculos = _vehiculos + [_pad];
 		_wp0 = _grupoheli addWaypoint [_landpos, 0];
 		_wp0 setWaypointType "TR UNLOAD";
+		_wp0 setWaypointSpeed "FULL";
 		_wp0 setWaypointStatements ["true", "(vehicle this) land 'GET OUT'; [vehicle this] call smokeCoverAuto"];
 		[_grupoheli,0] setWaypointBehaviour "CARELESS";
 		_wp3 = _grupo addWaypoint [_landpos, 0];
@@ -128,6 +141,7 @@ for "_i" from 1 to _cuenta do
 		_wp4 = _grupo addWaypoint [_posicion, 1];
 		_wp4 setWaypointType "SAD";
 		_wp2 = _grupoheli addWaypoint [_orig, 1];
+		_wp2 setWaypointSpeed "FULL";
 		_wp2 setWaypointType "MOVE";
 		_wp2 setWaypointStatements ["true", "{deleteVehicle _x} forEach crew this; deleteVehicle this"];
 		[_grupoheli,1] setWaypointBehaviour "AWARE";
@@ -153,6 +167,7 @@ for "_i" from 1 to _cuenta do
 			_vehiculos = _vehiculos + [_pad];
 			_wp0 = _grupoheli addWaypoint [_landpos, 0];
 			_wp0 setWaypointType "TR UNLOAD";
+			_wp0 setWaypointSpeed "FULL";
 			_wp0 setWaypointStatements ["true", "(vehicle this) land 'GET OUT'; [vehicle this] call smokeCoverAuto"];
 			[_grupoheli,0] setWaypointBehaviour "CARELESS";
 			_wp3 = _grupo addWaypoint [_landpos, 0];
@@ -162,6 +177,7 @@ for "_i" from 1 to _cuenta do
 			_wp4 setWaypointType "SAD";
 			_wp2 = _grupoheli addWaypoint [_orig, 1];
 			_wp2 setWaypointType "MOVE";
+			_wp2 setWaypointSpeed "FULL";
 			_wp2 setWaypointStatements ["true", "{deleteVehicle _x} forEach crew this; deleteVehicle this"];
 			[_grupoheli,1] setWaypointBehaviour "AWARE";
 			[_heli,true] spawn puertasLand;
@@ -170,14 +186,7 @@ for "_i" from 1 to _cuenta do
 	sleep 35;
 	};
 
-_sawnergroup = createGroup east;
-_spawner = _sawnergroup createUnit [selectrandom CIV_journalists, getmarkerpos _marker, [], 15,"None"];
-_spawner setVariable ["BLUFORSpawn",true,true];
-_spawner disableAI "ALL";
-_spawner setcaptive true;
-_spawner enableSimulation false;
-hideObjectGlobal _spawner;
-_vehiculos = _vehiculos + [_spawner];
+
 
 _solMax = count _soldados;
 _solMax = round (_solMax / 4);
