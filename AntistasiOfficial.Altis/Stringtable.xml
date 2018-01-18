@@ -1439,7 +1439,7 @@
 			</Key>
 			<Key ID="STR_TSK_TD_FNDEXP">
 				<Original>Find the Crazy Irishman</Original>
-				<Russian>Крутой Ирландец</Russian>
+				<Russian>Безумный Ирландец</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_FNDEXP">
 				<Original>Black Market dealer Devin Connell has been spotted near %1. He's scheduled for a flight to Metavira or Arulco at %2:%3, so you better hurry up if you wish to acquire some of his fine products. From our recent meetings with him, he has agreed to meet with FIA overt soldiers only, apparently he doesnt like civilians all that much. </Original>
@@ -1897,7 +1897,7 @@
 			</Key>
 			<Key ID="STR_HINTS_MIS_DES_NO_HINT">
 				<Original>Destroy missions require radio towers or enemy cities within 4km of your HQ.</Original>
-				<Russian>Уничтожение требует наличия радиовышки или враждебного населённого пункта в пределах 4км от Штаба.</Russian>
+				<Russian>Уничтожение требует наличия радиовышки или враждебного населённого пункта в пределах 4км от Базы.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_MIS_LOG_NO_CHAT">
 				<Original>I have no logistics missions for you. Move our HQ closer to the enemy or finish some other missions in order to have better intel.</Original>
@@ -1905,7 +1905,7 @@
 			</Key>
 			<Key ID="STR_HINTS_MIS_LOG_NO_HINT">
 				<Original>Logistics missions require enemy outposts, cities or banks within 4km of your HQ.</Original>
-				<Russian>Снабжение требует наличия опорных пунктов противника, враждебных населённых пунктов или банков в пределах 4км от Штаба.</Russian>
+				<Russian>Снабжение требует наличия опорных пунктов противника, враждебных населённых пунктов или банков в пределах 4км от Базы.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_MIS_RES_NO_CHAT">
 				<Original>I have no rescue missions for you. Move our HQ closer to the enemy or finish some other missions in order to have better intel.</Original>
@@ -1913,7 +1913,7 @@
 			</Key>
 			<Key ID="STR_HINTS_MIS_RES_NO_HINT">
 				<Original>Rescue missions require enemy cities or bases within 4km of your HQ.</Original>
-				<Russian>Спасение требует наличия опорных пунктов противника, враждебных населённых пунктов или военных баз в пределах 4км от Штаба.</Russian>
+				<Russian>Спасение требует наличия опорных пунктов противника, враждебных населённых пунктов или военных баз в пределах 4км от Базы.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_MIS_FND_NO_CHAT">
 				<Original>I have no contact missions right now.</Original>
@@ -1921,7 +1921,7 @@
 			</Key>
 			<Key ID="STR_HINTS_MIS_FND_NO_HINT">
 				<Original>Contact missions require enemy cities within 4km of your HQ.</Original>
-				<Russian>Контакт требует наличия враждебного населённого пункта в пределах 4км от Штаба.</Russian>
+				<Russian>Контакт требует наличия враждебного населённого пункта в пределах 4км от Базы.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_MIS_FNDE_NO_CHAT">
 				<Original>I have no contact missions right now.</Original>
@@ -1929,31 +1929,31 @@
 			</Key>
 			<Key ID="STR_HINTS_MIS_FNDE_NO_HINT">
 				<Original>Contact missions require cities within 4km of your HQ.</Original>
-				<Russian>Контакт требует наличия враждебного населённого пункта в пределах 4км от Штаба.</Russian>
+				<Russian>Контакт требует наличия враждебного населённого пункта в пределах 4км от Базы.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_MIS_CVY_NO_CHAT">
 				<Original>I have no convoy missions for you. Move our HQ closer to the enemy or finish some other missions in order to have better intel.</Original>
-				<Russian>У меня нет для вас такого задания. Двигайте наш Штаб ближе к противнику или завершите другие задания, чтобы получить больше разведданных.</Russian>
+				<Russian>У меня нет для вас такого задания. Перенесите Базу ближе к противнику или завершите другие задания, чтобы получить больше разведданных.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_MIS_CVY_NO_HINT">
 				<Original>Convoy missions require enemy cities within 4km of your HQ, and they must have an idle base in their surroundings.</Original>
-				<Russian>Засада на конвой требует наличия враждебного населённого пункта в пределах 4км от Штаба, и военной базы противника в режиме бездействия, рядом с этим населённым пунктом.</Russian>
+				<Russian>Засада на конвой требует наличия враждебного населённого пункта в пределах 4км от Базы, и военной базы противника в режиме бездействия, рядом с этим населённым пунктом.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_MIS_ASS_NO_CHAT">
 				<Original>I have no assassination missions for you. Move our HQ closer to the enemy or finish some other missions in order to have better intel.</Original>
-				<Russian>У меня нет для вас такого задания. Двигайте наш Штаб ближе к противнику или завершите другие задания, чтобы получить больше разведданных.</Russian>
+				<Russian>У меня нет для вас такого задания. Перенисет Базу ближе к противнику или завершите другие задания, чтобы получить больше разведданных.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_MIS_ASS_NO_HINT">
 				<Original>Assassination missions require enemy cities or outposts within 4km of your HQ.</Original>
-				<Russian>Устранение требует наличия враждебного населённого пункта или опорного пункта противника в пределах 4 км от Штаба.</Russian>
+				<Russian>Устранение требует наличия враждебного населённого пункта или опорного пункта противника в пределах 4 км от Базы.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_MIS_PR_NO_CHAT">
 				<Original>I have no PR missions for you. Move our HQ closer to the enemy or finish some other missions in order to have better intel.</Original>
-				<Russian>У меня нет для вас такого задания. Двигайте наш Штаб ближе к противнику или завершите другие задания, чтобы получить больше разведданных.</Russian>
+				<Russian>У меня нет для вас такого задания. Перенесите Базу ближе к противнику или завершите другие задания, чтобы получить больше разведданных.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_MIS_PR_NO_HINT">
 				<Original>PR missions require enemy cities within 4km of your HQ.</Original>
-				<Russian>Пропаганда требует наличия враждебного населённого пункта в пределах 4км от Штаба.</Russian>
+				<Russian>Пропаганда требует наличия враждебного населённого пункта в пределах 4км от Базы.</Russian>
 			</Key>
 		</Container>
 		<Container name="Fast_Travel">
@@ -1987,11 +1987,11 @@
 			</Key>
 			<Key ID="STR_HINTS_FT_TARGET">
 				<Original>Click on the zone you want to travel to.</Original>
-				<Russian>Кликните на Штаб или Лагерь, куда хотите телепортироваться.</Russian>
+				<Russian>Кликните на Базу или Лагерь, куда хотите телепортироваться.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_FT_TARGET_FAIL">
 				<Original>You must click near a camp or HQ.</Original>
-				<Russian>Вы должны кликнуть на Лагерь или Штаб.</Russian>
+				<Russian>Вы должны кликнуть на Лагерь или Базу.</Russian>
 			</Key>
 		</Container>
 		<Container name="Undercover">
@@ -2053,8 +2053,7 @@
 			</Key>
 			<Key ID="STR_HINTS_UND_GEAR_HMD">
 				<Original>%1\nHMD: %2</Original>
-				<Russian>%1\nHMD: %2</Russian>
-				<!-- что это?? -->
+				<Russian>%1\nНаголовной дисплей: %2</Russian>
 			</Key>
 			<Key ID="STR_HINTS_UND_GEAR_UNI">
 				<Original>%1\nClothing: %2</Original>
@@ -2066,11 +2065,11 @@
 			</Key>
 			<Key ID="STR_HINTS_UND_CMP_VEH_MIL">
 				<Original>You entered a non-civilian vehicle.</Original>
-				<Russian>Вы вошли в гражданский Транспорт.</Russian>
+				<Russian>Вы сели не в гражданский Транспорт.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_UND_CMP_VEH_REP">
 				<Original>You entered a reported vehicle.</Original>
-				<Russian>Вы вошли в Передающий Транспорт.</Russian>
+				<Russian>Вы сели в известный врагу Транспорт.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_UND_CMP_FAC">
 				<Original>You have gotten too close to an enemy facility and have been spotted.</Original>
@@ -2102,7 +2101,7 @@
 		<Container name="Dialogs">
 			<Key ID="STR_D_FIA_HQOCO">
 				<Original>FIA HQ Options - Commander Only</Original>
-				<Russian>Возможности Штаба - Только для Командира</Russian>
+				<Russian>Возможности Базы - Только для Командира</Russian>
 			</Key>
 			<Key ID="STR_D_GRAB_FP">
 				<Original>Grab 100 € from Pool</Original>
@@ -2114,11 +2113,11 @@
 			</Key>
 			<Key ID="STR_D_MOVE_HQ_TAZ">
 				<Original>Move HQ to another Zone</Original>
-				<Russian>Перенос Штаба</Russian>
+				<Russian>Перенос Базы</Russian>
 			</Key>
 			<Key ID="STR_D_INGAME_ML">
 				<Original>Ingame Member's List</Original>
-				<Russian>Список Участников</Russian>
+				<Russian>Список Участников сервера</Russian>
 			</Key>
 			<Key ID="STR_D_TRAIN_FIA">
 				<Original>Train FIA</Original>
@@ -2130,7 +2129,7 @@
 			</Key>
 			<Key ID="STR_D_RECRU_OPT">
 				<Original>Recruitment Options</Original>
-				<Russian>Доступны для Вербовки</Russian>
+				<Russian>Опции вербовки</Russian>
 			</Key>
 			<Key ID="STR_D_RECRU_MIL">
 				<Original>Recruit Militiaman</Original>
@@ -2146,7 +2145,7 @@
 			</Key>
 			<Key ID="STR_D_RECRU_MARSKMAN">
 				<Original>Recruit Marksman</Original>
-				<Russian>Меткий Стрелок</Russian>
+				<Russian>Пехотный снайпер</Russian>
 			</Key>
 			<Key ID="STR_D_RECRU_ENGI">
 				<Original>Recruit Engineer</Original>
@@ -2170,7 +2169,7 @@
 			</Key>
 			<Key ID="STR_D_SQ_RECR_OP">
 				<Original>Squad Recruitment Options</Original>
-				<Russian>Доступные Отряды для Вербовки</Russian>
+				<Russian>Опции вербовки отрядов</Russian>
 				<!-- Редакт. -->
 			</Key>
 			<Key ID="STR_D_RECRU_INF_SQ">
@@ -2186,7 +2185,7 @@
 				<Russian>Гранатомётное Звено</Russian>
 			</Key>
 			<Key ID="STR_D_RECRU_AA_TR">
-				<Original>&quot;Recruit AA Truck</Original>
+				<Original>Recruit AA Truck</Original>
 				<Russian>Грузовик ПВО</Russian>
 			</Key>
 			<Key ID="STR_D_RECRU_SNI_TEAM">
@@ -2279,7 +2278,7 @@
 			</Key>
 			<Key ID="STR_D_HQ_FORT">
 				<Original>HQ Fortifications</Original>
-				<Russian>укрепления Базы</Russian>
+				<Russian>Укрепления Базы</Russian>
 			</Key>
 			<Key ID="STR_D_AV_MIS">
 				<Original>Available Missions</Original>
@@ -2338,8 +2337,7 @@
 			</Key>
 			<Key ID="STR_D_NATO_QRF">
 				<Original>NATO QRF</Original>
-				<Russian>NATO ОБР</Russian>
-				<!-- Редакт. -->
+				<Russian>НАТО ГБР</Russian>
 			</Key>
 			<Key ID="STR_D_NATO_UAV">
 				<Original>NATO UAV</Original>
@@ -2351,8 +2349,7 @@
 			</Key>
 			<Key ID="STR_D_CAS_SU">
 				<Original>CAS Support</Original>
-				<Russian>CAS Поддержка</Russian>
-				<!-- Редакт. -->
+				<Russian>Поддержка с воздуха</Russian>
 			</Key>
 			<Key ID="STR_D_BOMBR">
 				<Original>Bomb Run</Original>
@@ -2384,7 +2381,7 @@
 			</Key>
 			<Key ID="STR_D_REC_AUTORIL">
 				<Original>Recruit Autorifleman</Original>
-				<Russian>Нанять Стрелка</Russian>
+				<Russian>Нанять Пулемётчика</Russian>
 			</Key>
 			<Key ID="STR_D_REC_MED">
 				<Original>Recruit Medic</Original>
@@ -2392,7 +2389,7 @@
 			</Key>
 			<Key ID="STR_D_REC_MARKMAN">
 				<Original>Recruit Marksman</Original>
-				<Russian>Нанять Меткого Стрелка</Russian>
+				<Russian>Нанять Пехотного Снайпера</Russian>
 			</Key>
 			<Key ID="STR_D_REC_SQLEAD">
 				<Original>Recruit Squad Leader</Original>
@@ -2579,18 +2576,15 @@
 			</Key>
 			<Key ID="STR_D_CA_BOOM_STR">
 				<Original>Carpet Bombing Strike</Original>
-				<Russian>Покрытие Бомб. Удара</Russian>
-				<!-- Редакт. -->
+				<Russian>Удар Ковровой бомбардировкой</Russian>
 			</Key>
 			<Key ID="STR_D_HE_BOMB">
 				<Original>HE Bombs</Original>
-				<Russian>HE Бомбы</Russian>
-				<!-- Редакт. -->
+				<Russian>Фугасные бомбы</Russian>
 			</Key>
 			<Key ID="STR_D_CA_BOOM">
 				<Original>Carpet Bombing</Original>
-				<Russian>Покрытие Бомбардировки</Russian>
-				<!-- Редакт. -->
+				<Russian>Ковровая бомбардировка</Russian>
 			</Key>
 			<Key ID="STR_D_NAPALM_BOOM">
 				<Original>NAPALM Bomb</Original>
@@ -2619,7 +2613,7 @@
 			</Key>
 			<Key ID="STR_D_SN_RTBF">
 				<Original>Select No. Rounds to be fired</Original>
-				<Russian>Выбирите нет.Чтобы Отменить Увольнение</Russian>
+				<Russian>Выберете количество залпов</Russian>
 			</Key>
 			<Key ID="STR_D_STOS">
 				<Original>Select type of strike</Original>
@@ -2627,7 +2621,7 @@
 			</Key>
 			<Key ID="STR_D_SINPS">
 				<Original>Single Point Strike</Original>
-				<Russian>Одиночный Удар по Точке</Russian>
+				<Russian>Точечный удар</Russian>
 			</Key>
 			<Key ID="STR_D_BARRS">
 				<Original>Barrage Strike</Original>
@@ -2639,26 +2633,23 @@
 			</Key>
 			<Key ID="STR_D_HE">
 				<Original>HE</Original>
-				<Russian>HE</Russian>
-				<!-- Редакт. -->
+				<Russian>Фугас</Russian>
 			</Key>
 			<Key ID="STR_D_LAS_GUI">
 				<Original>Laser Guided</Original>
-				<Russian>Лазерное Наведение</Russian>
+				<Russian>С лазерным наведением</Russian>
 			</Key>
 			<Key ID="STR_D_SMOKE">
 				<Original>Smoke</Original>
-				<Russian>Дым</Russian>
+				<Russian>Дымовая завеса</Russian>
 			</Key>
 			<Key ID="STR_D_SEMA">
 				<Original>Select Mortar Ammo</Original>
-				<Russian>Выберите миномётные боеп</Russian>
-				<!-- Редакт. -->
+				<Russian>Тип миномётных снарядов</Russian>
 			</Key>
 			<Key ID="STR_D_BUI_MINF">
 				<Original>Build Minefield</Original>
-				<Russian>Построить Минное Поле</Russian>
-				<!-- Редакт. -->
+				<Russian>Создать Минное Поле</Russian>
 			</Key>
 			<Key ID="STR_D_APERS_MIN">
 				<Original>APERS Mines</Original>
@@ -2710,25 +2701,23 @@
 			</Key>
 			<Key ID="STR_D_YGSRNBGWBU">
 				<Original>You'll get some resources, and basic gear will be unlocked</Original>
-				<Russian>Вы получите некоторые ресурсы, и основное снаряжение будет разблокировано</Russian>
-				<!-- Редакт. -->
+				<Russian>Мы дадим Вам немного ресурсов и основное снаряжение</Russian>
 			</Key>
 			<Key ID="STR_D_PSISNPCII">
 				<Original>Pea shooters, iron sights and plain clothes it is</Original>
-				<Russian>Дешевое оружие, железные прицелы и обычная одежда</Russian>
-				<!-- Редакт. -->
+				<Russian>Плевательная трубка, стальной взор и простая рубаха - это Вам!</Russian>
 			</Key>
 			<Key ID="STR_D_ASSMI">
 				<Original>Assassination Mission</Original>
-				<Russian>Миссия Убийсва</Russian>
+				<Russian>Убийство</Russian>
 			</Key>
 			<Key ID="STR_D_CONAM">
 				<Original>Convoy Ambush</Original>
-				<Russian>Засада На Конвой</Russian>
+				<Russian>Засада</Russian>
 			</Key>
 			<Key ID="STR_D_CONQMIS">
 				<Original>Conquest Missions</Original>
-				<Russian>Миссия Захвата</Russian>
+				<Russian>Захват</Russian>
 			</Key>
 			<Key ID="STR_D_BUY_ORD">
 				<Original>Buy Ordnance</Original>
@@ -2736,8 +2725,7 @@
 			</Key>
 			<Key ID="STR_D_SOME_CHAR">
 				<Original>Some Charges</Original>
-				<Russian>Несколько Бомб</Russian>
-				<!-- Редакт. от сюда -->
+				<Russian>Немного зарядов</Russian>
 			</Key>
 			<Key ID="STR_D_SP3EOSBE">
 				<Original>Spend 300 Euros on a small bag of explosives.</Original>
@@ -2745,7 +2733,7 @@
 			</Key>
 			<Key ID="STR_D_MANY_CHAR">
 				<Original>Many Charges</Original>
-				<Russian>Много Бомб</Russian>
+				<Russian>Много зарядов</Russian>
 			</Key>
 			<Key ID="STR_D_SP8EOLBE">
 				<Original>Spend 800 Euros on a large bag of explosives.</Original>
@@ -2753,7 +2741,7 @@
 			</Key>
 			<Key ID="STR_D_SOME_WEA">
 				<Original>Some Weapons</Original>
-				<Russian>Некоторые виды оружия</Russian>
+				<Russian>Немного оружия</Russian>
 			</Key>
 			<Key ID="STR_D_SP10EOSCW">
 				<Original>Spend 1000 Euros on a small cache of weapons.</Original>
@@ -2785,7 +2773,7 @@
 			</Key>
 			<Key ID="STR_D_SOME_ACC">
 				<Original>Some Accessories</Original>
-				<Russian>Несколько Аксессуаров</Russian>
+				<Russian>Немного Аксессуаров</Russian>
 			</Key>
 			<Key ID="STR_D_SP5EOSCWA">
 				<Original>Spend 500 Euros on a small cache of weapon accessories.</Original>
@@ -2801,9 +2789,8 @@
 			</Key>
 			<Key ID="STR_D_SOME_AMMO">
 				<Original>Some Ammo</Original>
-				<Russian>Не много Боеприпасов</Russian>
-				<!-- Редакт. до сюда -->
-			</Key>
+				<Russian>Немного Боеприпасов</Russian>
+				</Key>
 			<Key ID="STR_D_CNA">
 				<Original>Currently not available</Original>
 				<Russian>В данный момент недоступно</Russian>
@@ -2912,7 +2899,7 @@
 			</Key>
 			<Key ID="STR_D_TTIAOP">
 				<Original>Turn the idle animation of Petros on/off.</Original>
-				<Russian>Включите Простую анимацию Петроса вкл / выкл.</Russian>
+				<Russian>Включите Простую анимацию Петроса вкл/выкл.</Russian>
 			</Key>
 			<Key ID="STR_D_TOG_ARM_XPS">
 				<Original>Toggle Army XP System</Original>
@@ -2920,7 +2907,7 @@
 			</Key>
 			<Key ID="STR_D_TTEAXPS">
 				<Original>Turn the extended Army XP system on/off, including all restrictions.</Original>
-				<Russian>Включите расширенную систему Army XP вкл / выкл, включая все ограничени.</Russian>
+				<Russian>Включите расширенную систему Army XP вкл/выкл, включая все ограничени.</Russian>
 			</Key>
 			<Key ID="STR_D_RESHQ">
 				<Original>Reset HQ</Original>
@@ -2928,7 +2915,7 @@
 			</Key>
 			<Key ID="STR_D_IYMTLOOYHAI">
 				<Original>If you managed to lose one of your HQ items, this will reset all of them near Petros.</Original>
-				<Russian>Если вам удалось потерять один из ваших пунктов HQ, это сбросит все из них рядом с Петроса.</Russian>
+				<Russian>Если Вы потеряли один из Ваших предметов Базы, это бросит их всех рядом с Петросом.</Russian>
 			</Key>
 			<Key ID="STR_D_RESPP">
 				<Original>Reset Petros' position</Original>
@@ -2936,16 +2923,16 @@
 			</Key>
 			<Key ID="STR_D_TPAMHNTTCAHQ">
 				<Original>Terminate Petros' animation, move him next to the campfire at HQ.</Original>
-				<Russian>Прекратить анимацию Петроса И Переместить его рядом с костром на Базе.</Russian>
+				<Russian>Прекратить анимацию Петроса и переместить его рядом с костром на Базе.</Russian>
 			</Key>
 			<Key ID="STR_D_MSHQI">
 				<Original>Move statics/HQ items</Original>
-				<Russian>Переместить статичных/HQ Предметов</Russian>
+				<Russian>Перемещение статичных/Штабных Предметов</Russian>
 				<!-- Редакт. -->
 			</Key>
 			<Key ID="STR_D_RYBTMSNHQA">
 				<Original>Reset your ability to move statics and HQ assets.</Original>
-				<Russian>Сбросить способность двигаться статику и активов Штаба.</Russian>
+				<Russian>Сброс настроек переноса статики и активово Штаба.</Russian>
 			</Key>
 			<Key ID="STR_D_OPMENU">
 				<Original>Options Menu</Original>
@@ -2958,7 +2945,7 @@
 			</Key>
 			<Key ID="STR_D_TTOFTSOOF">
 				<Original>Toggle the old Fast Travel system on/off</Original>
-				<Russian>Переключите старую систему быстрого перемещения вкл / выкл</Russian>
+				<Russian>Переключите старую систему быстрого перемещения вкл/выкл</Russian>
 			</Key>
 			<Key ID="STR_D_TII">
 				<Original>Toggle Increased Income</Original>
@@ -2966,7 +2953,7 @@
 			</Key>
 			<Key ID="STR_D_ARSAOOF">
 				<Original>Arsenal Access On/Off</Original>
-				<Russian>Арсенал Доступ Вкл / Выкл</Russian>
+				<Russian>Арсенал Доступ Вкл/Выкл</Russian>
 				<!-- Редакт. -->
 			</Key>
 			<Key ID="STR_D_SMAEFGRUATA">
@@ -2979,7 +2966,7 @@
 			</Key>
 			<Key ID="STR_D_TTEAXPSOOF">
 				<Original>Turn the extended Army XP system on/off, including all restrictions.</Original>
-				<Russian>Включите расширенную систему Army XP вкл / выкл, включая все ограничения.</Russian>
+				<Russian>Включите расширенную систему Army XP вкл/выкл, включая все ограничения.</Russian>
 			</Key>
 			<Key ID="STR_D_WEAP_PROF">
 				<Original>Weapon Proficiencies</Original>
@@ -2988,7 +2975,7 @@
 			</Key>
 			<Key ID="STR_D_TTEWPSOOF">
 				<Original>Turn the extended weapon proficiencies system on/off (MP exclusive)</Original>
-				<Russian>Включите расширенную систему оружия и боевых навыков Вкл / ВЫКЛ (МП исключение)</Russian>
+				<Russian>Включите расширенную систему оружия и боевых навыков Вкл/Выкл (только для МП)</Russian>
 			</Key>
 			<Key ID="STR_D_TFAR_MENU">
 				<Original>TFAR Menu</Original>
@@ -3027,7 +3014,7 @@
 			</Key>
 			<Key ID="STR_D_AUTORIFLEMAN">
 				<Original>Autorifleman</Original>
-				<Russian>Стрелок</Russian>
+				<Russian>Пулемётчик</Russian>
 			</Key>
 			<Key ID="STR_D_MEDIC">
 				<Original>Medic</Original>
@@ -3039,12 +3026,11 @@
 			</Key>
 			<Key ID="STR_D_AMMOBEARER">
 				<Original>Ammobearer</Original>
-				<Russian>Пулемётчик</Russian>
-				<!-- Редакт. -->
+				<Russian>Подносчик боеприпасов</Russian>
 			</Key>
 			<Key ID="STR_D_MARKSMAN">
 				<Original>Marksman</Original>
-				<Russian>Снайпер</Russian>
+				<Russian>Пехотный Снайпер</Russian>
 			</Key>
 			<Key ID="STR_D_COST20">
 				<Original>Cost: 20 points</Original>
@@ -3163,7 +3149,7 @@
 			</Key>
 			<Key ID="STR_DH_FIAIPI">
 				<Original>FIA income permanently increased.</Original>
-				<Russian>оход АСН постоянно увеличивался.</Russian>
+				<Russian>Доход АСН постоянно увеличивался.</Russian>
 				<!-- Редакт. -->
 			</Key>
 			<Key ID="STR_DH_AASTD">
@@ -3172,7 +3158,7 @@
 			</Key>
 			<Key ID="STR_DH_MNGTKTG">
 				<Original>Members now get to keep their gear.</Original>
-				<Russian>Станьте Участником,что-бы получить своё снаряжение</Russian>
+				<Russian>Станьте Участником, что-бы сохранить своё снаряжение</Russian>
 				<!-- Редакт. -->
 			</Key>
 		</Container>
@@ -3244,7 +3230,7 @@
 
 					Кожффициент Появления Гражданских: мы предлагаем значение от 1% до 10% (по умолчанию 5%);  Это Количество ИИ,и они снижают производительность. Имейте в виду, что значение менее 1% останавливает Спавн гражданских на машинах, поэтому никакого бесплатного транспорта.&lt;br/&gt;&lt;br/&gt;
 
-					Дистанция Спавна:1 км является оптимальным, более высокие значения могут позволить вам использовать Снайперов ,но производительность игры может пострадать. &lt;br/&gt;&lt;br/&gt;
+					Дистанция Спавна: 1 км является оптимальным, более высокие значения могут позволить вам использовать Снайперов ,но производительность игры может пострадать. &lt;br/&gt;&lt;br/&gt;
 
 					Очистка мусора: трупы и предметы на земле потребляют память, очистка их может затормозить игру на короткое время, но FPS должен улучшиться. (У некоторого мусора уже есть таймер автоматического удаления.)&lt;br/&gt;&lt;br/&gt;
 
