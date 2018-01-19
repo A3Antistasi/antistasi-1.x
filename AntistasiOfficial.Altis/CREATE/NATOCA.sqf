@@ -36,19 +36,7 @@ _spawner setcaptive true;
 _spawner enableSimulation false;
 hideObjectGlobal _spawner;
 _vehiculos = _vehiculos + [_spawner];
-sleep 5;
-
-if ((_marcador in bases) or (_marcador in aeropuertos)) then
-	{
-	/*
-	for "_i" from 1 to _cuenta do
-		{
-		[_marcador,"B_Plane_CAS_01_F"] spawn airstrike;
-		sleep 30;
-		};
-	*/
-	[_marcador] spawn artilleriaNATO;
-	};
+sleep 15;
 
 for "_i" from 1 to _cuenta do
 	{
