@@ -1773,11 +1773,11 @@
 		<Container name="Commander">
 			<Key ID="STR_HINTS_COMMANDER_HQBUILDFAR">
 				<Original>You're building HQ 500m away from any road \n\n some FIA reinforcements might not be available.</Original>
-				<Russian></Russian>
+				<Russian>empty</Russian>
 			</Key>
 			<Key ID="STR_HINTS_COMMANDER_HQRECRUITFAR">
 				<Original>HQ is further than 500m from any road, FIA reinforcements can't reach you!</Original>
-				<Russian></Russian>
+				<Russian>empty</Russian>
 			</Key>
 			<Key ID="STR_HINTS_COMMANDER_DIS">
 				<Original>Player Commander disconnected or retired. %1 is our new leader. Greet him!</Original>
