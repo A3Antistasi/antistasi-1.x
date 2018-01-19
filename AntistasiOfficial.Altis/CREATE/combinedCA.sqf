@@ -37,7 +37,16 @@ _originName = ([_base, _airport] select (_base == "")) call AS_fnc_localizar;
 _task = ["AtaqueAAF",[side_blue,civilian],[format [localize "STR_TSK_TD_CA_CREATE",A3_Str_INDEP,_originName],format ["%1 Attack",A3_Str_INDEP],_originMarker],getMarkerPos _originMarker,"CREATED",10,true,true,"Defend"] call BIS_fnc_setTask;
 
 misiones pushbackUnique "AtaqueAAF"; publicVariable "misiones";
-_attackDuration = time + 1800;
+_attackDuration = time + 2400;
+
+if(count (garrison getvariable _marker) > 0) then {
+_sawnergroup = createGroup east;
+_spawner = _sawnergroup createUnit [selectrandom CIV_journalists, getmarkerpos _marker, [], 15,"None"];
+_spawner setVariable ["OPFORSpawn",true,true];
+_spawner setcaptive true;
+_spawner enableSimulation false;
+hideObjectGlobal _spawner;
+};
 
 if !(_forceAirport == "") then {
 	_involveCSAT = false;
@@ -370,6 +379,7 @@ sleep 30;
 waitUntil {sleep 1; !(spawner getVariable _marker)};
 
 [_allGroups + _redGroups, _allSoldiers + _redSoldiers, _allVehicles + _redVehicles] spawn AS_fnc_despawnUnits;
+deletevehicle _spanwer;
 
 forcedSpawn = forcedSpawn - [_marker]; //Sparker: remove force spawn a base under attack
 publicVariable "forcedSpawn";
