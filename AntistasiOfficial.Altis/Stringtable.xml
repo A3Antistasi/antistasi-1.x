@@ -362,7 +362,7 @@
 			</Key>
 			<Key ID="STR_GENIDENT_CSAT">
 				<Original>CSAT</Original>
-				<Russian>Стратегический Альянс по Договору Кантона</Russian>	
+				<Russian>Стратегический Альянс по Договору Кантона</Russian>
 			</Key>
 			<Key ID="STR_GENIDENT_NATO">
 				<Original>NATO</Original>
@@ -1702,7 +1702,7 @@
 	<Package name="Hints">
 		<Container name="MAP">
 			<Key ID="STR_HINTS_MAP_TEXT_1">
-				<Original>Altis\n\nTotal pop: %1\nFIA Support: %2\nAAF SUpport: %3 \n\nDestroyed Cities: %4\n\nClick on the zone</Original>
+				<Original>%6\n\nTotal pop: %1\nFIA Support: %2\nAAF Support: %3 \n\nDestroyed Cities: %4\n\nClick on the zone \n\n Current active units = %5 \n  With more than 175 AI their performances drops a lot!</Original>
 				<Russian>Альтис\n\nВсего населения:  %1\nПоддерживают АСН:  %2\nПоддерживают противника:  %3 \n\nУничтоженных городов:  %4\n\nКликните по интересующей вас точке</Russian>
 			</Key>
 		</Container>
@@ -3235,7 +3235,7 @@
 					Очистка мусора: трупы и предметы на земле потребляют память, очистка их может затормозить игру на короткое время, но FPS должен улучшиться. (У некоторого мусора уже есть таймер автоматического удаления.)&lt;br/&gt;&lt;br/&gt;
 
 					FPS Ограничитель: Чем меньше порог,тем меньше спавн гражданских лиц. &lt;br/&gt;&lt;br/&gt;
-				</Russian> 
+				</Russian>
 		    </Key>
 			<Key ID="STR_BR_4GAMED">
 				<Original>4 Game difficulty</Original>
@@ -3408,7 +3408,7 @@
 
 					- Петрос: попросите миссию.&lt;br/&gt;&lt;br/&gt;
 
-					Расположение Базы обнаруживается Противником только в том случае, если вы раскрыли предателя и ему удается бежать на базу противника. Кроме того, минометный огонь - это простой способ получить место положения противника,Ждите агрессивных врагов в обоих случаях.			
+					Расположение Базы обнаруживается Противником только в том случае, если вы раскрыли предателя и ему удается бежать на базу противника. Кроме того, минометный огонь - это простой способ получить место положения противника,Ждите агрессивных врагов в обоих случаях.
 				</Russian>
 		    </Key>
 			<Key ID="STR_BR_BT1TIB">
@@ -3732,7 +3732,7 @@
 			</Key>
 			<Key ID="STR_BR_AF2AIME">
 		        <Original>AI Management / Enhancements</Original>
-				<Russian>Управление ИИ / улучшение</Russian>  
+				<Russian>Управление ИИ / улучшение</Russian>
 		    </Key>
 			<Key ID="STR_BR_AF_AIME">
 				<Original>
