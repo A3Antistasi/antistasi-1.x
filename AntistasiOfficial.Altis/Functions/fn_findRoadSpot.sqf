@@ -1,4 +1,4 @@
-params ["_origin","_destination",["_maxRadius",250]];
+params ["_origin","_destination",["_maxRadius",500]];
 private ["_roadA","_roadB","_roadC","_targetRoad","_spawnPos"];
 
 [[],false,20] params ["_roadArray","_roadsFound","_radius"];

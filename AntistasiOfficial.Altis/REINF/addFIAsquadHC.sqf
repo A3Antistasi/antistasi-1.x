@@ -42,6 +42,7 @@ if (_resourcesFIA < _cost) exitWith {hint format ["You do not have enough money 
 [-_costHR, -_cost] remoteExec ["resourcesFIA",2];
 
 _spawnData = [(getMarkerPos guer_respawn), [ciudades, (getMarkerPos guer_respawn)] call BIS_fnc_nearestPosition] call AS_fnc_findRoadspot;
+if(_spawnData isequalto []) exitwith {hint localize "STR_HINTS_COMMANDER_HQRECRUITFAR"; comandante globalChat localize "STR_HINTS_COMMANDER_HQRECRUITFAR";};
 _roadPos = _spawnData select 0;
 _direction = _spawnData select 1;
 

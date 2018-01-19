@@ -66,4 +66,10 @@ if (_movido) then {[] call vaciar};
 placementDone = true; publicVariable "placementDone";
 sleep 5;
 [[Petros,"mission"],"AS_fnc_addActionMP"] call BIS_fnc_MP;
+
+
+//Stef Check if road is found within 500m
+_arr1 = [(getMarkerPos guer_respawn), [ciudades, (getMarkerPos guer_respawn)] call BIS_fnc_nearestPosition] call AS_fnc_findRoadspot;
+if(_arr1 isequalto []) then {hint localize "STR_HINTS_COMMANDER_HQBUILDFAR"; comandante globalChat localize "STR_HINTS_COMMANDER_HQBUILDFAR"; comandante globalChat localize "STR_HINTS_HQFAR_BUILD"};
+
 //[] remoteExec ["petrosAnimation", 2];
