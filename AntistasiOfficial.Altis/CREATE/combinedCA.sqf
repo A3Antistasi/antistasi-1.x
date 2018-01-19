@@ -379,7 +379,7 @@ sleep 30;
 waitUntil {sleep 1; !(spawner getVariable _marker)};
 
 [_allGroups + _redGroups, _allSoldiers + _redSoldiers, _allVehicles + _redVehicles] spawn AS_fnc_despawnUnits;
-deletevehicle _spanwer;
+deletevehicle _spawner;
 
 forcedSpawn = forcedSpawn - [_marker]; //Sparker: remove force spawn a base under attack
 publicVariable "forcedSpawn";
