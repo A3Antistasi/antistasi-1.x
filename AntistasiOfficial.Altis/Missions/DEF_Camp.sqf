@@ -1,7 +1,7 @@
 if (!isServer and hasInterface) exitWith {};
 
-_tskTitle = localize "STR_TSK_DEFCAMP";
-_tskDesc = localize "STR_TSKDESC_DEFCAMP";
+_tskTitle = localize "STR_TSK_TD_DEFCAMP";
+_tskDesc = localize "STR_TSK_TD_DESC_DEFCAMP";
 
 if (server getVariable ["active_campQRF", false]) exitWith {};
 if (server getVariable ["blockCSAT", false]) exitWith {};

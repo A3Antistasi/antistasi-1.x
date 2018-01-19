@@ -1,7 +1,7 @@
 if (!isServer and hasInterface) exitWith{};
 
-_tskTitle = localize "Str_tsk_NATOSupply"; _tskTitle = format [_tskTitle, A3_Str_BLUE];
-_tskDesc = localize "Str_tskDesc_NATOSupply"; _tskDesc = format [_tskDesc, A3_Str_BLUE];
+_tskTitle = localize "STR_TSK_TD_NATOSupply"; _tskTitle = format [_tskTitle, A3_Str_BLUE];
+_tskDesc = localize "STR_TSK_TD_DESC_NATOSupply"; _tskDesc = format [_tskDesc, A3_Str_BLUE];
 
 _posicion = _this select 0;
 _NATOSupp = _this select 1;

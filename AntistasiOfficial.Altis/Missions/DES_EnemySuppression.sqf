@@ -1,7 +1,7 @@
 if (!isServer and hasInterface) exitWith {};
 
-_tskTitle = localize "STR_TSK_DESSuppression";
-_tskDesc  = localize "STR_TSKDESC_DESSuppression";
+_tskTitle = localize "STR_TSK_TD_DESSuppression";
+_tskDesc  = localize "STR_TSK_TD_DESC_DESSuppression";
 
 private ["_poscrash", "_posbase", "_mrkfin", "_mrkTarget", "_tipoveh", "_churches", "_vehiculos", "_soldados", "_grupos", "_unit", "_roads", "_road", "_vehicle", "_veh", "_tipogrupo", "_tsk", "_humo", "_emitterArray", "_poschurch", "_grupo", "_missionchurch", "_posmissionchurch", "_group1", "_MRAP"];
 
