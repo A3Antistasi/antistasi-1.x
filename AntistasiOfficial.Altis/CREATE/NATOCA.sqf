@@ -10,7 +10,7 @@ _posicion = getMarkerPos (_marcador);
 
 _aeropuertos = aeropuertos - mrkAAF + ["spawnNATO"];
 
-_threatEval = [_marcador] call AAthreatEval;
+_threatEval = 6;
 
 _origen = [_aeropuertos,_posicion] call BIS_fnc_nearestPosition;
 _orig = getMarkerPos _origen;
@@ -32,6 +32,7 @@ _spawnergroup = createGroup east;
 _spawner = _spawnergroup createUnit [selectrandom CIV_journalists, getmarkerpos _marcador, [], 15,"None"];
 _spawner setVariable ["BLUFORSpawn",true,true];
 _spawner disableAI "ALL";
+_spawner allowdamage false;
 _spawner setcaptive true;
 _spawner enableSimulation false;
 hideObjectGlobal _spawner;
@@ -46,7 +47,9 @@ for "_i" from 1 to _cuenta do
 	_heliCrew = _vehicle select 1;
 	_grupoheli = _vehicle select 2;
 	{[_x] spawn NATOinitCA} forEach _heliCrew;
+	sleep 2;
 	[_heli] spawn NATOVEHinit;
+	sleep 2;
 	_soldados = _soldados + _heliCrew;
 	_grupos = _grupos + [_grupoheli];
 	_vehiculos = _vehiculos + [_heli];
@@ -66,15 +69,17 @@ for "_i" from 1 to _cuenta do
 	*/
 	{_x setBehaviour "CARELESS";} forEach units _grupoheli;
 	[_heli,"NATO Air Transport"] spawn inmuneConvoy;
+	sleep 2;
 	if (_tipoveh in bluHeliDis) then
 		{
 		_tipoGrupo = [bluSquadWeapons, side_blue] call AS_fnc_pickGroup;
 		_grupo = [_orig, side_blue, _tipoGrupo] call BIS_Fnc_spawnGroup;
 		{_x assignAsCargo _heli; _x moveInCargo _heli; _soldados = _soldados + [_x]; [_x] spawn NATOinitCA} forEach units _grupo;
 		_grupos = _grupos + [_grupo];
-		if ((_marcador in aeropuertos) or (random 10 < _threatEval)) then
+		if (!(_marcador in puestos) or (random 10 < _threatEval)) then
 			{
-			[_heli,_grupo,_marcador,_threatEval] spawn airdrop
+			[_heli,_grupo,_marcador,_threatEval] spawn airdrop;
+			diag_log format ["STEF HeliDIS: %1, %2, %3 ",_heli,_grupo,_marcador];
 			}
 		else
 			{
@@ -112,11 +117,13 @@ for "_i" from 1 to _cuenta do
 		_tipoGrupo = [bluTeam, side_blue] call AS_fnc_pickGroup;
 		_grupo = [_orig, side_blue, _tipoGrupo] call BIS_Fnc_spawnGroup;
 		{_x assignAsCargo _heli; _x moveInCargo _heli; _soldados = _soldados + [_x]; [_x] spawn NATOinitCA} forEach units _grupo;
+		sleep 3;
 		_grupos = _grupos + [_grupo];
 		_landpos = [];
 		_landpos = [_posicion, 0, 500, 10, 0, 0.3, 0] call BIS_Fnc_findSafePos;
 		_landPos set [2, 0];
 		_pad = createVehicle ["Land_HelipadEmpty_F", _landpos, [], 0, "NONE"];
+		sleep 0.5;
 		_vehiculos = _vehiculos + [_pad];
 		_wp0 = _grupoheli addWaypoint [_landpos, 0];
 		_wp0 setWaypointType "TR UNLOAD";
@@ -134,6 +141,7 @@ for "_i" from 1 to _cuenta do
 		_wp2 setWaypointStatements ["true", "{deleteVehicle _x} forEach crew this; deleteVehicle this"];
 		[_grupoheli,1] setWaypointBehaviour "AWARE";
 		[_heli,true] spawn puertasLand;
+		diag_log format ["STEF HeliTS: %1, %2, %3 ",_heli,_grupo,_marcador];
 		};
 	if (_tipoveh in bluHeliRope) then
 		{
@@ -141,10 +149,12 @@ for "_i" from 1 to _cuenta do
 		_tipoGrupo = [bluSquad, side_blue] call AS_fnc_pickGroup;
 		_grupo = [_orig, side_blue, _tipoGrupo] call BIS_Fnc_spawnGroup;
 		{_x assignAsCargo _heli; _x moveInCargo _heli; _soldados = _soldados + [_x]; [_x] spawn NATOinitCA} forEach units _grupo;
+		sleep 3;
 		_grupos = _grupos + [_grupo];
-		if ((_marcador in aeropuertos) or (_marcador in bases) or (_marcador in puestos) or (random 10 < _threatEval)) then
+		if (!(_marcador in puestos) or (_marcador in bases) or (random 10 < _threatEval)) then
 			{
-			[_heli,_grupo,_marcador,_threatEval] spawn airdrop
+			[_heli,_grupo,_marcador,_threatEval] spawn airdrop;
+			diag_log format ["STEF HeliRope: %1, %2, %3,",_heli,_grupo,_marcador];
 			}
 		else
 			{
@@ -171,13 +181,17 @@ for "_i" from 1 to _cuenta do
 			[_heli,true] spawn puertasLand;
 			};
 		};
-	sleep 35;
+	sleep 15;
 	};
+
 
 
 
 _solMax = count _soldados;
 _solMax = round (_solMax / 4);
+
+sleep 20;
+[_marcador] spawn artilleriaNATO;
 
 waitUntil {sleep 1; (_marcador in mrkFIA) or ({alive _x} count _soldados < _solMax)};
 
