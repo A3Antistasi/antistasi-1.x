@@ -50,7 +50,7 @@ for "_i" from 1 to _cuenta do {
 		_gunnersgroup = createGroup west;
 		_gunners join _gunnersgroup;
 		_gunnersgroup setbehaviour "COMBAT";
-		{_x setSkill 1;} foreach _gunnersgroup;
+		{[_x] setSkill 1} foreach _gunnersgroup;
 		{[_x] call NATOinitCA} forEach _heliCrew;
 		[_heli] call NATOVEHinit;
 		_soldados = _soldados + _heliCrew;
