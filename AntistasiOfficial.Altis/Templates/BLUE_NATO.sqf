@@ -1,5 +1,5 @@
 //Blu NATO vehicles
-	bluHeliTrans = 		["B_Heli_Transport_01_camo_F","B_Heli_Transport_03_F"];
+	bluHeliTrans = 		["B_Heli_Transport_03_F"];
 	bluHeliTS = 		["B_Heli_Light_01_F"];
 	bluHeliDis = 		["B_Heli_Transport_01_camo_F"];
 	bluHeliRope = 		["B_Heli_Transport_03_F"];

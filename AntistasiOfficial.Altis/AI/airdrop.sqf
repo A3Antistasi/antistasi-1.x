@@ -1,5 +1,5 @@
 private ["_veh","_grupo","_marcador","_posicion","_heli","_engagepos","_orig","_landpos","_exitpos","_wp","_wp1","_wp2","_wp3","_wp4"];
-
+diag_log format ["NATOCA airdrop spawned"];
 _veh = _this select 0;
 _grupo = _this select 1;
 _marcador = _this select 2;
@@ -50,16 +50,17 @@ _engagepos = [_landpos, 1000, _randang] call BIS_Fnc_relPos;
 _veh flyInHeight (150+(20*_threat));
 
 _wp = _heli addWaypoint [_engagepos, 0];
-diag_log format ["NATOCA WP assigned"];
+diag_log format ["NATOCA WP assigned and _landpos = %1",_landpos];
 _wp setWaypointType "MOVE";
 _wp setWaypointSpeed "FULL";
 
 _wp1 = _heli addWaypoint [_landpos, 1];
 _wp1 setWaypointType "MOVE";
-_wp1 setWaypointSpeed "FULL";
+_wp1 setWaypointSpeed "NORMAL";
 
 _wp2 = _heli addWaypoint [_exitpos, 2];
 _wp2 setWaypointType "MOVE";
+_wp1 setWaypointSpeed "LIMITED";
 
 _wp3 = _heli addWaypoint [_orig, 3];
 _wp3 setWaypointType "MOVE";

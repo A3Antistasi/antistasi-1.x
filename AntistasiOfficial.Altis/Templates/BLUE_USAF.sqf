@@ -1,5 +1,5 @@
 //Blu USAF vehicles
-	bluHeliTrans = 		["RHS_UH60M","RHS_CH_47F_light"];
+	bluHeliTrans = 		["RHS_CH_47F_light"];
 	bluHeliTS = 		["RHS_MELB_MH6M"];
 	bluHeliDis = 		["RHS_UH60M"];
 	bluHeliRope = 		["RHS_CH_47F_light"];
