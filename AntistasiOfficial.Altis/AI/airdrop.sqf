@@ -50,6 +50,7 @@ _engagepos = [_landpos, 1000, _randang] call BIS_Fnc_relPos;
 _veh flyInHeight (150+(20*_threat));
 
 _wp = _heli addWaypoint [_engagepos, 0];
+diag_log format ["NATOCA WP assigned"];
 _wp setWaypointType "MOVE";
 _wp setWaypointSpeed "FULL";
 

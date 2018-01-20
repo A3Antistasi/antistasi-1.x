@@ -50,7 +50,6 @@ for "_i" from 1 to _cuenta do {
 		_gunnersgroup = createGroup west;
 		_gunners join _gunnersgroup;
 		_gunnersgroup setbehaviour "COMBAT";
-		{[_x] setSkill 1} foreach _gunnersgroup;
 		{[_x] call NATOinitCA} forEach _heliCrew;
 		[_heli] call NATOVEHinit;
 		_soldados = _soldados + _heliCrew;
@@ -142,7 +141,7 @@ for "_i" from 1 to _cuenta do {
 			//Decide airdrop or land
 			if (!(_marcador in puestos) or (_marcador in bases) or (random 10 < _threatEval)) then {
 				[_heli,_grupo,_marcador,_threatEval] spawn airdrop;
-				diag_log format ["STEF HeliRope: %1, %2, %3,",_heli,_grupo,_marcador];
+				diag_log format ["NATOCA HeliRope: %1, %2, %3,",_heli,_grupo,_marcador];
 			} else {
 				_landpos = [];
 				_landpos = [_posicion, 0, 300, 10, 0, 0.3, 0] call BIS_Fnc_findSafePos;
@@ -167,7 +166,7 @@ for "_i" from 1 to _cuenta do {
 				[_heli,true] spawn puertasLand;
 				};
 		};
-		sleep 15;
+		sleep 25;
 	};
 
 
