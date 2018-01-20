@@ -46,6 +46,11 @@ for "_i" from 1 to _cuenta do {
 		_heli = _vehicle select 0;
 		_heliCrew = _vehicle select 1;
 		_grupoheli = _vehicle select 2;
+		_gunners = _heliCrew - [driver _heli];
+		_gunnersgroup = createGroup west;
+		_gunners join _gunnersgroup;
+		_gunnersgroup setbehaviour "COMBAT";
+		{_x setSkill 1;} foreach _gunnersgroup;
 		{[_x] call NATOinitCA} forEach _heliCrew;
 		[_heli] call NATOVEHinit;
 		_soldados = _soldados + _heliCrew;
@@ -171,10 +176,10 @@ _solMax = round (_solMax / 4);
 
 sleep 20;
 //Taking out enemy mortar to balance the fight
-	if ((_marcador in bases) and ((player distance _marcador)>300)) then {
+	if ((_marcador in bases) and ((player distance _posicion)>300)) then {
 		[_marcador] spawn artilleriaNATO;
 	};
-	if ((_marcador in aeropuertos) and ((player distance _marcador)>300)) then {
+	if ((_marcador in aeropuertos) and ((player distance _posicion)>300)) then {
 		[_marcador] spawn artilleriaNATO;
 	};
 
