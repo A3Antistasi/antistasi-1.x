@@ -51,18 +51,18 @@ _veh flyInHeight (150+(20*_threat));
 
 _wp = _heli addWaypoint [_engagepos, 0];
 _wp setWaypointType "MOVE";
-_wp setWaypointSpeed "LIMITED";
+_wp setWaypointSpeed "FULL";
 
 _wp1 = _heli addWaypoint [_landpos, 1];
 _wp1 setWaypointType "MOVE";
-_wp1 setWaypointSpeed "LIMITED";
+_wp1 setWaypointSpeed "FULL";
 
 _wp2 = _heli addWaypoint [_exitpos, 2];
 _wp2 setWaypointType "MOVE";
 
 _wp3 = _heli addWaypoint [_orig, 3];
 _wp3 setWaypointType "MOVE";
-_wp3 setWaypointSpeed "NORMAL";
+_wp3 setWaypointSpeed "FULL";
 _wp3 setWaypointStatements ["true", "{deleteVehicle _x} forEach crew this; deleteVehicle this"];
 
 waitUntil {sleep 1; (currentWaypoint _heli == 3) or (not alive _veh)};
