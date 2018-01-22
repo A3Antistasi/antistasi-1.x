@@ -3,7 +3,7 @@ VCOMAI_Func =
 //Enable or disable the INGAME setting menu. This is off by default due to compatability issues with multiple mods and scripts. And I am tired of hearing people complain all the time :D 
 VCOM_AIINGAMEMENU = false;
 //Variable for enabling/disabling skill changes for AI. True is on, False is off.
-VCOM_AISkillEnabled = true;
+VCOM_AISkillEnabled = false;
 //Variable for finding out which config was loaded.
 VCOM_AIConfig = "Mission Folder";
 //Turn this on to see certain debug messages. 1 is on
@@ -68,7 +68,7 @@ VCOM_IRLaser = true;
 VCOM_AIDISTANCEVEHPATH = 150;
 
 //The longer an AI's target stays in 1 location, the more accurate and aware of the target the AI becomes.DEFAULT = [WEST,EAST,CIVILIAN,RESISTANCE];
-VCOM_IncreasingAccuracy = true;
+VCOM_IncreasingAccuracy = false;
 //VCOM_SideBasedMovement- Remove sides from the array below to force that specific AI side to not execute any advance movement code. (I.E. Moving to reinforce allies, being alerted by distant gunshots and etc). AI with this will still react normally in combat. DEFAULT = [WEST,EAST,CIVILIAN,RESISTANCE];
 VCOM_SideBasedMovement = [WEST,EAST,RESISTANCE];
 //VCOM_SideBasedExecution- Remove sides from the array below to remove that specific AI side from executing any of the VCOMAI scripts at all. DEFAULT = [WEST,EAST,CIVILIAN,RESISTANCE];

@@ -16,10 +16,11 @@ Currently: *Stef* is supervising the project and coding some simple stuff, *IrLE
 We're looking for more coders, every contribution is appreciated!
 
 
-Website: http://www.a3antistasi.com/
+Website: http://a3antistasi.enjin.com/
 
 Server: steam://connect/85.190.158.136:29001
-Teamspeak: voip.a3antistasi.com
+
+Teamspeak: **antistasi.enjinvoice.com**
 
 Guide: https://docs.google.com/document/d/1_XamnTWgVgy0jDinYSDhAWG_vKDa49ngl6fGi5XdPLQ/edit
 
@@ -27,12 +28,22 @@ Guide: https://docs.google.com/document/d/1_XamnTWgVgy0jDinYSDhAWG_vKDa49ngl6fGi
 
 # Get release mission ready to play
 
-!! [CBA](http://steamcommunity.com/sharedfiles/filedetails/?id=450814997) Mod is required . You can remove that dependency in the SQM if you want. This is [how to remove it](https://github.com/A3Antistasi/antistasiofficial/issues/5)
-
 * [Visit release page](https://github.com/A3Antistasi/antistasiofficial/releases)
 * Download the .pbo
 * For singleplayer: drop it in \steamapps\common\Arma 3\Missions
 * For multiplayer: Arma 3\MPMissions
+
+---
+
+# Mods
+
+The mission has no dependencies, however it can detect the following mods.
+* **CBA**, **TFAR**, RHS-**AFRF**+**GREF**(replace AAF, CSAT), RHS-**USAF**(replace NATO), **ACE**, **inidibi2**(multiple saves).
+
+Client side mods, as long they don't affect AI, are generally ok. Here's some suggestions
+* Dusty retexture project, JSRS, Enhanced Movement, Blastcore
+
+This is our steam collection: http://steamcommunity.com/sharedfiles/filedetails/?id=1097454107
 
 ---
 
@@ -43,3 +54,4 @@ Guide: https://docs.google.com/document/d/1_XamnTWgVgy0jDinYSDhAWG_vKDa49ngl6fGi
 In case you change world also rename the folder to .worldname.
 
 Example: rename "Antistasi NapfG.sqm" to "mission.sqm", copy paste into \AntistasiOfficial.Altis, rename that folder to AntistasiOfficial.Napf
+

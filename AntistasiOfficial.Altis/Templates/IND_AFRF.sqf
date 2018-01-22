@@ -359,7 +359,8 @@ if (activeGREF) then {
 	"rhs_weap_makarov_pm",
 	"rhs_weap_savz61",
 	"rhs_weap_kar98k",
-	"rhs_weap_m38"
+	"rhs_weap_m38",
+	"rhs_weap_savz61_folded"
 	];
 
 	unlockedRifles = [

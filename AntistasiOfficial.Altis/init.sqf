@@ -62,7 +62,6 @@ if(isServer) then {
         [] call compile preprocessFileLineNumbers "orgPlayers\mList.sqf";
         //loading membersPool from profileNameSpace
         ["membersPool"] call fn_loadData;
-        //[] execVM "orgPlayers\mList.sqf";
         {
             if (([_x] call isMember) AND (isNull Slowhand)) then {
                 Slowhand = _x;
@@ -71,12 +70,11 @@ if(isServer) then {
         } forEach playableUnits;
         publicVariable "Slowhand";
         diag_log format ["init.sqf: commander is: %1", Slowhand];
-        /*if (isNull Slowhand) then {
+
+        if(!freshstart) then {
+            diag_log "Antistasi. Autostarting last save";
             [] spawn AS_fnc_autoStart;
-            diag_log "Antistasi MP Server. Players are in, no members";
-        } else {
-            diag_log "Antistasi MP Server. Players are in, member detected";
-        };*/ //Stef disabled, autostart will work anyway unless there is a parameter that stops it.
+        };
 
     fpsCheck = [] execVM "fpsCheck.sqf";
     [caja] call cajaAAF; //Give few starting items

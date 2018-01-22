@@ -84,8 +84,11 @@
 #define INFO_AXP_RES "['restrictions'] remoteExecCall ['fnc_BE_broadcast', 2];"
 #define INFO_AXP_PRO "['progress'] remoteExecCall ['fnc_BE_broadcast', 2];"
 
+#define INFO_TEXTS ["STR_UI_INFO_AXPREST_TEXT"]
+#define INFO_TTS ["STR_UI_INFO_AXPREST_TT"]
+/* original ones, i changed them because there are no working restrictions
 #define INFO_TEXTS ["STR_UI_INFO_FIA_TEXT", "STR_UI_INFO_AXPREST_TEXT", "STR_UI_INFO_AXPPRO_TEXT"]
-#define INFO_TTS ["STR_UI_INFO_FIA_TT", "STR_UI_INFO_AXPREST_TT", "STR_UI_INFO_AXPPRO_TT"]
+#define INFO_TTS ["STR_UI_INFO_FIA_TT", "STR_UI_INFO_AXPREST_TT", "STR_UI_INFO_AXPPRO_TT"] */
 
 // MAINT MENU
 #define STR_GO_GAR "[] execVM 'garbageCleaner.sqf';"

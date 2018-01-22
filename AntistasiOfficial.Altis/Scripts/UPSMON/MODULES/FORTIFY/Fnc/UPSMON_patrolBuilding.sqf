@@ -19,6 +19,8 @@ _units = _this select 0;
 _bldpos = _this select 1;
 _grp = _this select 2;
 
+_bldpos = _bldpos select {!isNil "_x"};
+
 private _grpid = _grp getVariable "UPSMON_grpid";
 _grp setVariable ["UPSMON_inbuilding",true];
 private _exitPos = (leader _grp) getPos [30, random 360];
@@ -27,7 +29,7 @@ sleep 0.1;
 _units = [_units] call UPSMON_Getunits;
 
 if (count _units > 0) then {
-	_bldpos = _bldpos - ["sawThis"];
+	_bldpos = _bldpos - ["deletethis"];
 
     private _countAlive = 1;
     _time = time + (60 * count _bldpos);
@@ -47,10 +49,10 @@ if (count _units > 0) then {
                     {
                         private _aslPos = AGLToASL _x;
                         if (((lineIntersectsWith [_eyePos, _aslPos]) isEqualTo []) OR  (_x vectordistance _currPos < 1)) then {
-                            _bldpos set [_forEachIndex, "sawThis"];
+                            _bldpos set [_forEachIndex, "deletethis"];
                         };
                     }forEach _bldpos;
-                    _bldpos = _bldpos - ["sawThis"];
+                    _bldpos = _bldpos - ["deletethis"];
                     //Stuck checkWWW
                     _currPos = getPos _unit;
                     private _lastPos = _unit getVariable ["UPSMON_PATROLINBLD_lastpos", _currPos];
@@ -58,7 +60,7 @@ if (count _units > 0) then {
                     if (_lastPos vectordistance _currPos < 0.1) then {
                         //unstuck
                         If (count _bldpos > 0) then {
-                            _patrolto = _bldpos select random count _bldpos;
+                            _patrolto = selectRandom _bldpos;
                             doStop _unit;
                             _unit doMove _patrolto;
                             _unit setdestination [_patrolto,"LEADER PLANNED",true];

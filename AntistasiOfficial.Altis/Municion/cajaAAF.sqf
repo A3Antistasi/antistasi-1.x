@@ -1,13 +1,12 @@
 if (!isServer and hasInterface) exitWith {};
 
-params ["_crate", "_AAFcrate", "_FIAcrate", "_weaponList", "_magList", "_itemList", "_opticsList", "_mineList", "_typeInt", "_classInt", "_item", "_mags", "_rlist"];
+params ["_crate", "_AAFcrate","_weaponList", "_magList", "_itemList", "_opticsList", "_mineList", "_typeInt", "_classInt", "_item", "_mags", "_rlist"];
 
 private ["_cosa","_num","_magazines"];
 
 [_crate] call emptyCrate;
 
 _AAFcrate = "I_supplyCrate_F";
-_FIAcrate = "IG_supplyCrate_F";
 _weaponList = genWeapons - unlockedWeapons;
 _magList = genAmmo - unlockedMagazines;
 _itemList = genItems - unlockedItems;
@@ -135,7 +134,7 @@ _fnc_gear = {
 
 
 call {
-	if ((typeOf _crate == _AAFcrate) or (typeOf _crate == _FIAcrate)) exitWith {
+	if ((typeOf _crate == _AAFcrate) or ( _crate isEqualTo caja)) exitWith {
 		["weapon", 4, 4, 3] call _fnc_gear;
 		["magazine", 5, 10] call _fnc_gear;
 		["item", 5, 5] call _fnc_gear;
@@ -160,11 +159,19 @@ call {
 	};
 
 	if (typeOf _crate == campCrate) exitWith {
-		for "_i" from 0 to 2 do {
-			_item = selectRandom unlockedWeapons;
-			_crate addWeaponCargoGlobal [_item, 5];
-			_crate addMagazineCargoGlobal [getArray (configFile / "CfgWeapons" / _item / "magazines") select 0, 30];
-		};
+			if (activeAFRF) then {
+				_crate addWeaponCargoGlobal			["rhs_weap_Izh18"				,	random 10	];
+				_crate addMagazineCargoGlobal		["rhsgref_1Rnd_Slug"			,	random 100	];
+				_crate addWeaponCargoGlobal			["rhs_weap_savz58v"				,	random 3	];
+				_crate addMagazineCargoGlobal		["rhs_30Rnd_762x39mm_Savz58"	,	random 20	];
+				_crate additemCargoGlobal			["SmokeShellYellow"				,	random 10	];
+				_crate additemCargoGlobal			["Chemlight_blue"				,	random 20	];
+			} else {
+				_crate addWeaponCargoGlobal			["SMG_01_F"						,	random 10	];
+				_crate addMagazineCargoGlobal		["30Rnd_45ACP_Mag_SMG_01"		,	random 10	];
+				_crate additemCargoGlobal			["SmokeShellYellow"				,	random 10	];
+				_crate additemCargoGlobal			["Chemlight_blue"				,	random 20	];
+			};
 
 		_rlist = genATLaunchers arrayIntersect unlockedWeapons;
 		if (count _rlist > 0) then {
@@ -196,7 +203,7 @@ call {
 };
 
 if (activeTFAR) then {
-	if (typeOf _crate == _FIAcrate) then {
+	if (_crate isEqualTo caja) then {
 		_crate addBackpackCargoGlobal [lrRadio,2];
 	} else {
 		if (4 < random 5) then {
@@ -208,7 +215,6 @@ if (activeTFAR) then {
 _crate addBackpackCargoGlobal ["B_Carryall_oli", 1];
 
 //Add the action to load the crate with Jeroen's loading script. Sparker.
-if(!(_crate isEqualTo caja)) then
-{
+if(!(_crate isEqualTo caja)) then {
 	_crate call jn_fnc_logistics_addAction;
 };

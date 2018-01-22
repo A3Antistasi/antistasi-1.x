@@ -51,6 +51,7 @@ bluTeam = 			["rhs_group_rus_vdv_infantry_MANEUVER"]; // 4
 bluATTeam = 		["rhs_group_rus_vdv_infantry_section_AT"]; // 4
 
 bluIR = 	"rhs_acc_perst1ik";
+blunvg =	["rhs_1PN138"];
 
 bluFlag = 	"rhs_Flag_Russia_F";
 

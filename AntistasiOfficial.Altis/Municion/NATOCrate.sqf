@@ -5,10 +5,7 @@ private ["_crate","_NATOSupp"];
 _crate = _this select 0;
 _NATOSupp = _this select 1;
 
-clearMagazineCargoGlobal _crate;
-clearWeaponCargoGlobal _crate;
-clearItemCargoGlobal _crate;
-clearBackpackCargoGlobal _crate;
+[_crate] call emptyCrate;
 
 //Standard Equipment (good for 5 people)
 			//										Weapon
@@ -78,6 +75,8 @@ clearBackpackCargoGlobal _crate;
 			_crate addItemCargoGlobal			[bluScopes			select 1,	5	];
 			_crate addMagazineCargoGlobal 		[bluLMGAmmo 		select 0,	40	];
 			_crate addMagazineCargoGlobal 		[selectrandom bluRifleAmmo	,	50	]; // Extra ammo bonus
+			if (activeACE) then {
+			_crate addItemCargoGlobal 			[blunvg				select 0,	5	];};
 	}
 	else {
 	if (BE_currentStage == 2) then {
@@ -95,6 +94,8 @@ clearBackpackCargoGlobal _crate;
 			_crate addItemCargoGlobal			[bluScopes			select 1,	5	];
 			_crate addMagazineCargoGlobal 		[bluLMGAmmo 		select 0,	20	];
 			_crate addMagazineCargoGlobal 		[selectrandom bluRifleAmmo	,	25	]; // Extra ammo
+			if (activeACE) then {
+			_crate addItemCargoGlobal 			[blunvg				select 0,	2	];};
 	}
 	else {
 		if (BE_currentStage == 1) then {
@@ -110,6 +111,8 @@ clearBackpackCargoGlobal _crate;
 			_crate addWeaponCargoGlobal 		[bluLMG		 		select 0,	2	]; // LMG
 			_crate addItemCargoGlobal			[bluScopes			select 1,	2	];
 			_crate addMagazineCargoGlobal 		[bluLMGAmmo 		select 0,	8	];
+			if (activeACE) then {
+			_crate addItemCargoGlobal 			[blunvg				select 0,	1	];};
 		};
 	};
 };

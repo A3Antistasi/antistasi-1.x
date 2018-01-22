@@ -44,8 +44,7 @@ waitUntil {sleep 2; (_heli distance _posicion < 300) or (!canMove _heli) or (dat
 
 Slowhand hcRemoveGroup _grupoHeli;
 
-if (_heli distance _posicion < 300) then
-	{
+if (_heli distance _posicion < 300) then {
 	_chute = createVehicle ["B_Parachute_02_F", [100, 100, 200], [], 0, 'FLY'];
     _chute setPos [getPosASL _heli select 0, getPosASL _heli select 1, (getPosASL _heli select 2) - 50];
     _crate = createVehicle ["B_supplyCrate_F", position _chute, [], 0, 'NONE'];
@@ -59,14 +58,15 @@ if (_heli distance _posicion < 300) then
 	_wp3 setWaypointSpeed "FULL";
     waitUntil {position _crate select 2 < 0.5 || isNull _chute};
     detach _crate;
+    private _pos = getPos _crate;
+    _pos set [2, 0.5];
+    _crate setPos _pos;
     _tsk = ["NATOAmmo",[side_blue,civilian],[_tskDesc,_tskTitle,_mrkfin],_posicion,"SUCCEEDED",5,true,true,"rifle"] call BIS_fnc_setTask;
 	_humo = "SmokeShellBlue" createVehicle position _crate;
 	_vehiculos = _vehiculos + [_humo];
-	}
-else
-	{
+} else {
 	_tsk = ["NATOAmmo",[side_blue,civilian],[_tskDesc,_tskTitle,_mrkfin],_posicion,"FAILED",5,true,true,"rifle"] call BIS_fnc_setTask;
-	};
+};
 
 sleep 15;
 

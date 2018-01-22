@@ -21,6 +21,7 @@ if (_changeHelmet) then {
 			if (activeBE) then {
 				_result = ["outfit"] call fnc_BE_getCurrentValue;
 				if (random 100 > _result) then {
+				    removeUniform _unit;
 					_unit forceAddUniform (selectRandom civUniforms);
 					_unit addItemToUniform "FirstAidKit";
 					_unit addMagazine [guer_gear_grenHE, 1];
@@ -30,6 +31,7 @@ if (_changeHelmet) then {
 			// BE module
 			else {
 				if (random 10 > _skillFIA) then {
+				    removeUniform _unit;
 					_unit forceAddUniform (selectRandom civUniforms);
 					_unit addItemToUniform "FirstAidKit";
 					_unit addMagazine [guer_gear_grenHE, 1];
