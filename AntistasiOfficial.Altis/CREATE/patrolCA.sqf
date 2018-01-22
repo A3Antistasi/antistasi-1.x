@@ -297,6 +297,7 @@ if (_involveCSAT) then {
 			_redGroups pushBack _group;
 			[_vehicle,"CSAT Air Transport"] spawn inmuneConvoy;
 			if ((_marker in bases) OR (_marker in aeropuertos) OR (random 10 < _threatEvaluation)) then {
+				{removebackpack _x; _x addBackpack "B_Parachute"} forEach units _group;
 				[_vehicle,_group,_marker,_threatEvaluation] spawn airdrop;
 			}
 			else {

@@ -37,7 +37,7 @@ _spawner setcaptive true;
 _spawner enableSimulation false;
 hideObjectGlobal _spawner;
 _vehiculos = _vehiculos + [_spawner];
-sleep 15;
+//sleep 15;
 
 for "_i" from 1 to _cuenta do {
 	//Create and initialise aircraft
@@ -50,6 +50,7 @@ for "_i" from 1 to _cuenta do {
 		_gunnersgroup = createGroup west;
 		_gunners join _gunnersgroup;
 		_gunnersgroup setbehaviour "COMBAT";
+		{_x setskill 1} foreach units _gunnersgroup;
 		{[_x] call NATOinitCA} forEach _heliCrew;
 		[_heli] call NATOVEHinit;
 		_soldados = _soldados + _heliCrew;
@@ -67,6 +68,7 @@ for "_i" from 1 to _cuenta do {
 			_grupos = _grupos + [_grupo];
 			//Decide for aidrop or fastrope/land
 			if ((_marcador in puestos) or (random 10 < _threatEval)) then {
+				{removebackpack _x; _x addBackpack "B_Parachute"} forEach units _grupo;
 				[_heli,_grupo,_marcador,_threatEval] spawn airdrop;
 				diag_log format ["NATOCA HeliDIS airdropping: %1, %2, %3 ",_heli,_grupo,_marcador];
 			} else {
@@ -140,6 +142,7 @@ for "_i" from 1 to _cuenta do {
 
 			//Decide airdrop or land
 			if (!(_marcador in puestos) or (_marcador in bases) or (random 10 < _threatEval)) then {
+				{removebackpack _x; _x addBackpack "B_Parachute"} forEach units _grupo;
 				[_heli,_grupo,_marcador,_threatEval] spawn airdrop;
 				diag_log format ["NATOCA HeliRope: %1, %2, %3,",_heli,_grupo,_marcador];
 			} else {

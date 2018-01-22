@@ -69,7 +69,7 @@ _wp3 setWaypointStatements ["true", "{deleteVehicle _x} forEach crew this; delet
 
 waitUntil {sleep 1; (currentWaypoint _heli == 3) or (not alive _veh)};
 
-[_veh] call puertasLand;
+//[_veh] call puertasLand;
 
 if (alive _veh) then
 	{
@@ -78,9 +78,9 @@ if (alive _veh) then
 	   _x allowDamage false;
 	   moveOut _x;
 	   sleep 0.35;
-	   _chute = createVehicle ["NonSteerable_Parachute_F", (getPos _x), [], 0, "NONE"];
-	   _chute setPos (getPos _x);
-	   _x moveinDriver _chute;
+	   //_chute = createVehicle ["NonSteerable_Parachute_F", (getPos _x), [], 0, "NONE"];
+	   //_chute setPos (getPos _x);
+	   //_x moveinDriver _chute;
 	   _x allowDamage true;
 	   sleep 0.5;
 	  } forEach units _grupo;
@@ -89,4 +89,4 @@ if (alive _veh) then
 _wp4 = _grupo addWaypoint [_posicion, 0];
 _wp4 setWaypointType "SAD";
 
-[_veh] call puertasLand;
+//[_veh] call puertasLand;
