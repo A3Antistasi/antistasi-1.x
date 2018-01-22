@@ -3813,10 +3813,10 @@
 				</Russian>
 			</Key>
 			<Key ID="STR_BR_AF7JAG">
-				<Original>Jeroen Arsenal Garage</Original>
+				<Original>Jeroen Arsenal Garage</Original> <!-- Вырез. -->
 				<Russian>Jeroen Арсенал\Гараж</Russian>
 			</Key>
-			<Key ID="STR_BR_AF_JAG">
+			<Key ID="STR_BR_AF_JAG"> <!-- Вырез. -->
 				<Original>
 					Accessing the Garage opens a custom interface which lets you select the vehicle on the left side, and interact with the vehicle on the right.&lt;br/&gt;&lt;br/&gt;
 
@@ -3875,7 +3875,7 @@
 				</Russian>
 			</Key>
 			<Key ID="STR_BR_AF8JNES">
-				<Original>Friendly and Enemy Support</Original>
+				<Original>NATO and CSAT Support</Original>
 				<Russian>Дружеская и вражеская поддержка</Russian>
 			</Key>
 			<Key ID="STR_BR_AF_JNES">
@@ -4019,7 +4019,7 @@
 				</Russian>
 			</Key>
 			<Key ID="STR_BR_CM2FFS">
-				<Original>Friendly Faction Support</Original>
+				<Original>NATO Support</Original>
 				<Russian>Поддержка Друж. фракций</Russian>
 			</Key>
 			<Key ID="STR_BR_CM_FFS">
