@@ -1,7 +1,7 @@
 if (!isServer and hasInterface) exitWith {};
 
 params ["_marker"];
-[localize "STR_TSK_RESREFUGEES",localize "STR_TSKDESC_RESREFUGEES",[],[]] params ["_taskTitle","_taskDesc","_POWs","_housePositions"];
+[localize "STR_TSK_TD_RESREFUGEES",localize "STR_TSK_TD_DESC_RESREFUGEES",[],[]] params ["_taskTitle","_taskDesc","_POWs","_housePositions"];
 
 private ["_markerPos","_size","_houses","_house","_townName","_task","_groupPOW","_count","_unit"];
 

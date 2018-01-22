@@ -1,7 +1,7 @@
 if (!isServer and hasInterface) exitWith {};
 
-_tskTitle = localize "Str_tsk_logMedical";
-_tskDesc = localize "Str_tskDesc_logMedical";
+_tskTitle = localize "STR_TSK_TD_logMedical";
+_tskDesc = localize "STR_TSK_TD_DESC_logMedical";
 
 private ["_poscrash","_posbase","_mrkfin","_mrkTarget","_tipoveh","_heli","_vehiculos","_soldados","_grupos","_unit","_roads","_road","_vehicle","_veh","_tipogrupo","_tsk","_humo","_emitterArray"];
 

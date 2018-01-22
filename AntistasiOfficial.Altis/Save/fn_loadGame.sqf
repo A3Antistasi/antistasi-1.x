@@ -93,21 +93,21 @@ _markers = _markers + controles;
 			};
 
 			if (_x in aeropuertos) exitWith {
-				_mrkD setMarkerText format ["%2 Airport: %1",count (garrison getVariable _x), A3_Str_BLUE];
+				_mrkD setMarkerText format [localize "STR_GL_MAP_AP1",count (garrison getVariable _x), A3_Str_BLUE];
 				_mrkD setMarkerType guer_marker_type;
 				planesAAFmax = planesAAFmax - 1;
 			    helisAAFmax = helisAAFmax - 2;
 			};
 
 			if (_x in bases) exitWith {
-				_mrkD setMarkerText format ["%2 Base: %1",count (garrison getVariable _x), A3_Str_BLUE];
+				_mrkD setMarkerText format [localize "STR_GL_MAP_MB1",count (garrison getVariable _x), A3_Str_BLUE];
 				_mrkD setMarkerType guer_marker_type;
 				APCAAFmax = APCAAFmax - 2;
 		    	tanksAAFmax = tanksAAFmax - 1;
 			};
 
 			if (_x in puestos) exitWith {
-				_mrkD setMarkerText format ["%2 Outpost: %1",count (garrison getVariable _x), A3_Str_PLAYER];
+				_mrkD setMarkerText format [localize "STR_GL_MAP_OP1",count (garrison getVariable _x), A3_Str_PLAYER];
 			};
 
 			if (_x in ciudades) exitWith {
@@ -119,7 +119,7 @@ _markers = _markers + controles;
 			};
 
 			if ((_x in recursos) OR (_x in fabricas)) exitWith {
-				if (_x in recursos) then {_mrkD setMarkerText format ["Resource: %1",count (garrison getVariable _x)]} else {_mrkD setMarkerText format ["Factory: %1",count (garrison getVariable _x)]};
+				if (_x in recursos) then {_mrkD setMarkerText format [localize "STR_GL_MAP_RS"+": %1",count (garrison getVariable _x)]} else {_mrkD setMarkerText format [localize "STR_GL_MAP_FAC"+": %1",count (garrison getVariable _x)]};
 				_power = [power, getMarkerPos _x] call BIS_fnc_nearestPosition;
 				if (!(_power in mrkFIA) OR (_power in destroyedCities)) then {
 					[_x,false] spawn AS_fnc_adjustLamps;
@@ -128,11 +128,11 @@ _markers = _markers + controles;
 			};
 
 			if (_x in puertos) exitWith {
-				_mrkD setMarkerText format ["Sea Port: %1",count (garrison getVariable _x)];
+				_mrkD setMarkerText format [localize "STR_GL_MAP_SP"+": %1",count (garrison getVariable _x)];
 			};
 
 			if (_x in power) exitWith {
-				_mrkD setMarkerText format ["Power Plant: %1",count (garrison getVariable _x)];
+				_mrkD setMarkerText format [localize "STR_GL_MAP_PP"+": %1",count (garrison getVariable _x)];
 				if (_x in destroyedCities) then {[_x] call AS_fnc_destroyCity};
 			};
 		};

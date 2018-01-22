@@ -33,7 +33,7 @@ waitUntil {({(isPlayer _x) AND (!isNull _x) AND (_x == _x)} count allUnits) == (
 lockedWeapons = lockedWeapons - unlockedWeapons; //Stef 14/12 is this still required?
 
 diag_log "Antistasi MP Server. Arsenal config finished";
-[[petros,"hint","Server Init Completed"],"commsMP"] call BIS_fnc_MP;
+[[petros,"hint",localize "STR_INFO_INITSERVER"],"commsMP"] call BIS_fnc_MP;
 
 addMissionEventHandler ["HandleDisconnect",{_this call onPlayerDisconnect;false}];
 

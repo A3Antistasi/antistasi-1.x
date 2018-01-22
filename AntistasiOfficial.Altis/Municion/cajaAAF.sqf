@@ -159,11 +159,19 @@ call {
 	};
 
 	if (typeOf _crate == campCrate) exitWith {
-		for "_i" from 0 to 2 do {
-			_item = selectRandom unlockedWeapons;
-			_crate addWeaponCargoGlobal [_item, 5];
-			_crate addMagazineCargoGlobal [getArray (configFile / "CfgWeapons" / _item / "magazines") select 0, 30];
-		};
+			if (activeAFRF) then {
+				_crate addWeaponCargoGlobal			["rhs_weap_Izh18"				,	random 10	];
+				_crate addMagazineCargoGlobal		["rhsgref_1Rnd_Slug"			,	random 100	];
+				_crate addWeaponCargoGlobal			["rhs_weap_savz58v"				,	random 3	];
+				_crate addMagazineCargoGlobal		["rhs_30Rnd_762x39mm_Savz58"	,	random 20	];
+				_crate additemCargoGlobal			["SmokeShellYellow"				,	random 10	];
+				_crate additemCargoGlobal			["Chemlight_blue"				,	random 20	];
+			} else {
+				_crate addWeaponCargoGlobal			["SMG_01_F"						,	random 10	];
+				_crate addMagazineCargoGlobal		["30Rnd_45ACP_Mag_SMG_01"		,	random 10	];
+				_crate additemCargoGlobal			["SmokeShellYellow"				,	random 10	];
+				_crate additemCargoGlobal			["Chemlight_blue"				,	random 20	];
+			};
 
 		_rlist = genATLaunchers arrayIntersect unlockedWeapons;
 		if (count _rlist > 0) then {

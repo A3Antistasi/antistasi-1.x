@@ -12,7 +12,7 @@ waitUntil {alive player};
 _owner = _oldUnit getVariable ["owner",_oldUnit];
 
 if (_owner != _oldUnit) exitWith {
-	hint localize "STR_HINTS_OPR_TEMP";
+	hint localize "STR_HINTS_GEN_OPR_TEMP";
 	selectPlayer _owner;
 	disableUserInput false;
 	deleteVehicle _newUnit;

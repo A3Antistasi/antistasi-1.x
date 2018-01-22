@@ -1,7 +1,7 @@
 if (!isServer and hasInterface) exitWith {};
 
 params ["_marker","_posAntenna"];
-[localize "STR_TSK_REPANTENNA",localize "STR_TSKDESC_REPANTENNA",""] params ["_tskTitle","_tskDesc","_group"];
+[localize "STR_TSK_TD_REPANTENNA",localize "STR_TSK_TD_DESC_REPANTENNA",""] params ["_tskTitle","_tskDesc","_group"];
 
 private ["_duration","_endTime","_targetName","_task","_size","_position","_vehicle","_unit","_antenna","_resourcesAAF"];
 
@@ -84,7 +84,7 @@ if (dateToNumber date > _endTime) then {
 		antenas = antenas - [_object];
 		antenasmuertas pushBack (getPos _object);
 		deleteMarker _mrk;
-		[["TaskSucceeded", ["", localize "STR_TSK_RADIO_DESTROYED"]],"BIS_fnc_showNotification"] call BIS_fnc_MP;
+		[["TaskSucceeded", ["", localize "STR_TSK_TD_RADIO_DESTROYED"]],"BIS_fnc_showNotification"] call BIS_fnc_MP;
 	}];
 };
 

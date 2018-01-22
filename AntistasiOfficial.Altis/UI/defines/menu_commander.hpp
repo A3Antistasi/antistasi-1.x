@@ -23,13 +23,13 @@
 #define NATO_QRF "closeDialog 0; ['NATOQRF'] execVM 'NatoDialog.sqf';"
 #define NATO_RED "closeDialog 0; ['NATORED'] execVM 'NatoDialog.sqf';"  //Stef 30-08
 
-#define NATO_TEXTS_L ["STR_UI_NATO_CA_TEXT", "STR_UI_NATO_ARM_TEXT", "STR_UI_NATO_ART_TEXT", "STR_UI_NATO_RB_TEXT", "STR_UI_NATO_QRF_TEXT"]
-#define NATO_TEXTS_R ["STR_UI_NATO_UAV_TEXT", "STR_UI_NATO_AMMO_TEXT", "STR_UI_NATO_CAS_TEXT", "STR_UI_NATO_BOMB_TEXT", "STR_UI_NATO_RED_TEXT"]
+#define NATO_TEXTS_L ["STR_UI_ALLY_CA_TEXT", "STR_UI_ALLY_ARM_TEXT", "STR_UI_ALLY_ART_TEXT", "STR_UI_ALLY_RB_TEXT", "STR_UI_ALLY_QRF_TEXT"]
+#define NATO_TEXTS_R ["STR_UI_ALLY_UAV_TEXT", "STR_UI_ALLY_AMMO_TEXT", "STR_UI_ALLY_CAS_TEXT", "STR_UI_ALLY_BOMB_TEXT", "STR_UI_ALLY_RED_TEXT"]
 //#define NATO_TEXTS_M   moved to make it even
 
-#define NATO_TTS_L ["STR_UI_NATO_CA_TT", "STR_UI_NATO_ARM_TT", "STR_UI_NATO_ART_TT", "STR_UI_NATO_RB_TT", "STR_UI_NATO_QRF_TT"]
-#define NATO_TTS_R ["STR_UI_NATO_UAV_TT", "STR_UI_NATO_AMMO_TT", "STR_UI_NATO_CAS_TT", "STR_UI_NATO_BOMB_TT", "STR_UI_NATO_RED_TT"]
-//#define NATO_TTS_M "STR_UI_NATO_QRF_TT" moved to make it even
+#define NATO_TTS_L ["STR_UI_ALLY_CA_TT", "STR_UI_ALLY_ARM_TT", "STR_UI_ALLY_ART_TT", "STR_UI_ALLY_RB_TT", "STR_UI_ALLY_QRF_TT"]
+#define NATO_TTS_R ["STR_UI_ALLY_UAV_TT", "STR_UI_ALLY_AMMO_TT", "STR_UI_ALLY_CAS_TT", "STR_UI_ALLY_BOMB_TT", "STR_UI_ALLY_RED_TT"]
+//#define NATO_TTS_M "STR_UI_ALLY_QRF_TT" moved to make it even
 
 // SQUAD RECRUITMENT
 #define SR_INFSQUAD "[guer_grp_squad] spawn addFIAsquadHC"
@@ -84,8 +84,11 @@
 #define INFO_AXP_RES "['restrictions'] remoteExecCall ['fnc_BE_broadcast', 2];"
 #define INFO_AXP_PRO "['progress'] remoteExecCall ['fnc_BE_broadcast', 2];"
 
+#define INFO_TEXTS ["STR_UI_INFO_AXPREST_TEXT"]
+#define INFO_TTS ["STR_UI_INFO_AXPREST_TT"]
+/* original ones, i changed them because there are no working restrictions
 #define INFO_TEXTS ["STR_UI_INFO_FIA_TEXT", "STR_UI_INFO_AXPREST_TEXT", "STR_UI_INFO_AXPPRO_TEXT"]
-#define INFO_TTS ["STR_UI_INFO_FIA_TT", "STR_UI_INFO_AXPREST_TT", "STR_UI_INFO_AXPPRO_TT"]
+#define INFO_TTS ["STR_UI_INFO_FIA_TT", "STR_UI_INFO_AXPREST_TT", "STR_UI_INFO_AXPPRO_TT"] */
 
 // MAINT MENU
 #define STR_GO_GAR "[] execVM 'garbageCleaner.sqf';"
@@ -93,5 +96,5 @@
 #define MAINT_MOV "[] remoteExec ['AS_fnc_addMoveObjAction',Slowhand];"
 #define MAINT_RES "createDialog 'HQ_reset_menu';"
 
-#define MAINT_TEXTS ["STR_GO_GAR_TEXT", "STR_UI_MAINT_PET_TEXT", "STR_UI_MAINT_MOV_TEXT", "STR_UI_MAINT_RES_TEXT"]
-#define MAINT_TTS ["STR_GO_GAR_TT", "STR_UI_MAINT_PET_TT", "STR_UI_MAINT_MOV_TT", "STR_UI_MAINT_RES_TT"]
+#define MAINT_TEXTS ["STR_UI_MAINT_GAR_TEXT", "STR_UI_MAINT_PET_TEXT", "STR_UI_MAINT_MOV_TEXT", "STR_UI_MAINT_RES_TEXT"]
+#define MAINT_TTS ["STR_UI_MAINT_GAR_TT", "STR_UI_MAINT_PET_TT", "STR_UI_MAINT_MOV_TT", "STR_UI_MAINT_RES_TT"]

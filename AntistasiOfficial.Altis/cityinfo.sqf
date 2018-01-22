@@ -16,7 +16,7 @@ _pop = _pop + _numCiv;
 } forEach ciudades;
 _popFIA = round _popFIA;
 _popAAF = round _popAAF;
-hint format ["%6\n\nTotal pop: %1\nFIA Support: %2\nAAF Support: %3 \n\nDestroyed Cities: %4\n\nClick on the zone \n\n Current active units = %5 \n  With more than 175 AI their performances drops a lot!",_pop, _popFIA, _popAAF, {_x in destroyedCities} count ciudades,count allunits,worldname];  //Stef need to change Altis to "worldname", don't know syntax
+hint format [localize "STR_HINTS_MAP_TEXT_1",_pop, _popFIA, _popAAF, {_x in destroyedCities} count ciudades];  //Stef need to change Altis to "worldname", don't know syntax
 
 openMap true;
 

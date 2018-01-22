@@ -200,37 +200,37 @@ if (worldName in ["Altis", "altis", "Bornholm", "bornholm", "Tanoa", "tanoa", "N
 };
 
 {
-    [_x, "loc_power", "Power Plant"] call _fnc_marker;
+    [_x, "loc_power", localize "STR_GL_MAP_PP"] call _fnc_marker;
 } forEach power;
 
 {
-    [_x, IND_marker_type, format ["%1 Airport", A3_Str_INDEP]] call _fnc_marker;
+    [_x, IND_marker_type, format [localize "STR_GL_MAP_AP", A3_Str_INDEP]] call _fnc_marker;
     server setVariable [_x,dateToNumber date,true];
 } forEach aeropuertos;
 
 {
-    [_x, IND_marker_type, format ["%1 Base", A3_Str_INDEP]] call _fnc_marker;
+    [_x, IND_marker_type, format [localize "STR_GL_MAP_MB", A3_Str_INDEP]] call _fnc_marker;
     server setVariable [_x,dateToNumber date,true];
 } forEach bases;
 
 {
-    [_x, "loc_rock", "Resources"] call _fnc_marker;
+    [_x, "loc_rock", localize "STR_GL_MAP_RS"] call _fnc_marker;
 } forEach recursos;
 
 {
-    [_x, "u_installation", "Factory"] call _fnc_marker;
+    [_x, "u_installation", localize "STR_GL_MAP_FAC"] call _fnc_marker;
 } forEach fabricas;
 
 {
-    [_x, "loc_bunker", format ["%1 AA OP", A3_Str_INDEP]] call _fnc_marker;
+    [_x, "loc_bunker", format [localize "STR_GL_MAP_AA", A3_Str_INDEP]] call _fnc_marker;
 } forEach puestosAA;
 
 {
-    [_x, "loc_bunker", format ["%1 Outpost", A3_Str_INDEP]] call _fnc_marker;
+    [_x, "loc_bunker", format [localize "STR_GL_MAP_OP", A3_Str_INDEP]] call _fnc_marker;
 } forEach puestos;
 
 {
-    [_x, "b_naval", "Sea Port"] call _fnc_marker;
+    [_x, "b_naval", localize "STR_GL_MAP_SP"] call _fnc_marker;
 } forEach puertos;
 
 markers = markers arrayIntersect markers;
@@ -263,9 +263,9 @@ publicVariable "safeDistance_garrison";
 publicVariable "safeDistance_fasttravel";
 
 "spawnCSAT" setMarkerType OPFOR_marker_type;
-"spawnCSAT" setMarkerText format ["%1 Carrier", A3_Str_RED];
+"spawnCSAT" setMarkerText format [localize "STR_GL_MAP_CRR", A3_Str_RED];
 "spawnNATO" setMarkerType BLUFOR_marker_type;
-"spawnNATO" setMarkerText format ["%1 Carrier", A3_Str_BLUE];
+"spawnNATO" setMarkerText format [localize "STR_GL_MAP_CRR", A3_Str_BLUE];
 
 if (count posAntenas > 0) then {
     for "_i" from 0 to (count posantenas - 1) do {
@@ -277,14 +277,14 @@ if (count posAntenas > 0) then {
             _mrkfin setMarkerShape "ICON";
             _mrkfin setMarkerType "loc_Transmitter";
             _mrkfin setMarkerColor "ColorBlack";
-            _mrkfin setMarkerText "Radio Tower";
+            _mrkfin setMarkerText localize "STR_GL_MAP_RT";
             mrkAntenas = mrkAntenas + [_mrkfin];
             _antenna addEventHandler ["Killed", {
                 _antenna = _this select 0;
                 _mrk = [mrkAntenas, _antenna] call BIS_fnc_nearestPosition;
                 antenas = antenas - [_antenna]; antenasmuertas = antenasmuertas + [getPos _antenna]; deleteMarker _mrk;
                 if (activeBE) then {["cl_loc"] remoteExec ["fnc_BE_XP", 2]};
-                [["TaskSucceeded", ["", localize "STR_TSK_RADIO_DESTROYED"]],"BIS_fnc_showNotification"] call BIS_fnc_MP;
+                [["TaskSucceeded", ["", localize "STR_TSK_TD_RADIO_DESTROYED"]],"BIS_fnc_showNotification"] call BIS_fnc_MP;
             }];
         };
     };

@@ -1,7 +1,7 @@
 if (!isServer and hasInterface) exitWith {};
 
-_tskTitle = localize "Str_tsk_fndExp";
-_tskDesc = localize "Str_tskDesc_fndExp";
+_tskTitle = localize "STR_TSK_TD_fndExp";
+_tskDesc = localize "STR_TSK_TD_DESC_fndExp";
 
 _site = _this select 0;
 

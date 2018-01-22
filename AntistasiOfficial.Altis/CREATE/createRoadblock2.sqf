@@ -94,7 +94,7 @@ private _removeMarker = false;
 if (count (allUnits select {((side _x == side_green) or (side _x == side_red)) and (_x distance _markerPos <= _size)}) < 1) then { //Did everyone die?
 	_removeMarker = true;
 	[-5,0,_markerPos] remoteExec ["AS_fnc_changeCitySupport",2];
-	[["TaskSucceeded", ["", localize "STR_TSK_RB_DESTROYED"]],"BIS_fnc_showNotification"] call BIS_fnc_MP;
+	[["TaskSucceeded", ["", localize "STR_TSK_TD_RB_DESTROYED"]],"BIS_fnc_showNotification"] call BIS_fnc_MP;
 	[_markerPos] remoteExec ["patrolCA", call AS_fnc_getNextWorker];
 };
 

@@ -1,7 +1,7 @@
 if (!isServer and hasInterface) exitWith {};
 
-_tskTitle = localize "Str_tsk_DesHeli";
-_tskDesc = localize "Str_tskDesc_DesHeli";
+_tskTitle = localize "STR_TSK_TD_DesHeli";
+_tskDesc = localize "STR_TSK_TD_DESC_DesHeli";
 
 private ["_poscrash","_marcador","_posicion","_mrkfin","_tipoveh","_efecto","_heli","_vehiculos","_soldados","_grupos","_unit","_roads","_road","_vehicle","_veh","_tipogrupo","_tsk","_humo","_emitterArray"];
 
