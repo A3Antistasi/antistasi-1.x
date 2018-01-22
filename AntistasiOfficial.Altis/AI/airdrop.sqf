@@ -11,14 +11,11 @@ _heli = group driver _veh;
 {_x disableAI "TARGET"; _x disableAI "AUTOTARGET"} foreach units _heli;
 _dist = 400 + (10*_threat);
 _orig = [0,0,0];
-if (side driver _veh == side_red) then
-	{
-	_orig = getMarkerPos "spawnCSAT";
-	}
-else
-	{
-	_orig = getMarkerPos "spawnNATO";
-	};
+_distEng = if (_veh isKindOf "Helicopter") then {1000} else {5000};
+_distExit = if (_veh isKindOf "Helicopter") then {400} else {1000};
+if (side driver _veh == side_red) then {_orig = getMarkerPos "spawnCSAT";} else {_orig = getMarkerPos "spawnNATO";};
+
+
 
 _engagepos = [];
 _landpos = [];
@@ -26,20 +23,19 @@ _exitpos = [];
 
 _randang = random 360;
 
-while {true} do
-	{
- 	_landpos = [_posicion, _dist, _randang] call BIS_Fnc_relPos;
+while {true} do {
+ 	_landpos = _posicion getPos [_dist, _randang];
  	if (!surfaceIsWater _landpos) exitWith {};
-	};
+   _randAng = _randAng + 1;
+};
 
 _randang = _randang + 90;
 
-while {true} do
-	{
- 	_exitpos = [_posicion, 400, _randang] call BIS_Fnc_relPos;
+while {true} do {
+ 	_exitpos = _posicion getPos [_distExit, _randang];
  	_randang = _randang + 1;
  	if ((!surfaceIsWater _exitpos) and (_exitpos distance _posicion > 300)) exitWith {};
-	};
+};
 
 _randang = [_landpos,_exitpos] call BIS_fnc_dirTo;
 _randang = _randang - 180;
@@ -47,7 +43,11 @@ _randang = _randang - 180;
 _engagepos = [_landpos, 1000, _randang] call BIS_Fnc_relPos;
 
 {_x setBehaviour "CARELESS"} forEach units _heli;
-_veh flyInHeight (150+(20*_threat));
+_engagepos = _landpos getPos [_distEng, _randang];
+{_x set [2,300]} forEach [_landPos,_exitPos,_engagePos];
+{_x setBehaviour "CARELESS"} forEach units _heli;
+_veh flyInHeight 300;
+_veh setCollisionLight false;
 
 _wp = _heli addWaypoint [_engagepos, 0];
 diag_log format ["NATOCA WP assigned and _landpos = %1",_landpos];
