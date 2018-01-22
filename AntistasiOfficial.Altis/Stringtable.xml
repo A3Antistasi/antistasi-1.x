@@ -2005,7 +2005,7 @@
 		<Container name="Undercover">
 			<Key ID="STR_HINTS_UND_SINGLEGROUP">
 				<Original>You cannot disguise yourself while you are controlling AI.</Original>
-				<Russian>Вы не можете быть под прикрытием, когда управляете ИИ от первого лица.</Russian>
+				<Russian>Вы не можете находиться прикрытием, когда управляете ИИ от первого лица.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_UND_DISGUISED">
 				<Original>You are incognito already.</Original>
@@ -2021,23 +2021,23 @@
 			</Key>
 			<Key ID="STR_HINTS_UND_REPORTED">
 				<Original>You have been reported in the last 30 minutes and cannot go incognito.</Original>
-				<Russian>Вы не можете быть под прикрытием, вас ищут.</Russian>
+				<Russian>Вы не можете находиться под прикрытием, вас ищут.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_UND_ENEMY_DIST">
 				<Original>You cannot become incognito with enemies less than %1m from you.</Original>
-				<Russian>Вы не можете быть под прикрытием, противник ближе %1 м.</Russian>
+				<Russian>Вы не можете находиться под прикрытием, противник ближе %1 м.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_UND_ENEMY_KNOW">
 				<Original>You cannot become incognito while enemies are still on the lookout for you nearby.</Original>
-				<Russian>Вы не можете быть под прикрытием, вас ищут.</Russian>
+				<Russian>Вы не можете находиться под прикрытием, вас ищут.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_UND_FAC_GRND">
 				<Original>You cannot become incognito near bases, outposts, or roadblocks.</Original>
-				<Russian>Вы не можете быть под прикрытием вблизи баз, опорных пунктов или блокпостов.</Russian>
+				<Russian>Вы не можете находиться под прикрытием вблизи баз, опорных пунктов или блокпостов.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_UND_GEAR">
 				<Original>You cannot disguise yourself while wearing suspicious-looking gear.\n</Original>
-				<Russian>Вы не можете быть под прикрытием, если на вас одето подозрительное снаряжение.\n</Russian>
+				<Russian>Вы не можете находиться под прикрытием, если на вас одето подозрительное снаряжение.\n</Russian>
 			</Key>
 			<Key ID="STR_HINTS_UND_GEAR_PRIM">
 				<Original>%1\nPrimary Weapon: %2</Original>
@@ -3813,10 +3813,10 @@
 				</Russian>
 			</Key>
 			<Key ID="STR_BR_AF7JAG">
-				<Original>Jeroen Arsenal Garage</Original> <!-- Вырез. -->
+				<Original>Jeroen Arsenal Garage</Original> 
 				<Russian>Jeroen Арсенал\Гараж</Russian>
 			</Key>
-			<Key ID="STR_BR_AF_JAG"> <!-- Вырез. -->
+			<Key ID="STR_BR_AF_JAG"> 
 				<Original>
 					Accessing the Garage opens a custom interface which lets you select the vehicle on the left side, and interact with the vehicle on the right.&lt;br/&gt;&lt;br/&gt;
 
@@ -3834,6 +3834,26 @@
 					Сохраненные автомобили видны для всех в Гараже. Зеленые транспортные средства - ваши, белые - все, и красные транспортные средства заблокированы. Только владелец транспортного средства может разблокировать автомобиль.&lt;br/&gt;&lt;br/&gt;
 
 					Примечание. Статическое оружие можно сохранять, как и другие транспортные средства, и, находясь под их соответствующей вкладкой, может быть прикреплено к внедорожникам, грузовикам или другим транспортным средствам с тяжелой точкой оружия.
+				</Russian><!-- Редакт. -->
+			</Key>
+			<Key ID="STR_BR_AF9JNSL">
+				<Original>Jeroen and Sparker Logistic</Original> 
+				<Russian>Jeroen и Sparker Логистика</Russian>
+			</Key>
+			<Key ID="STR_BR_AF_JNSL"> 
+				<Original>
+					Crates, ammoboxes and several others can be interacted and Load to vehicle, an animation will move the object into the vehicle locking up some seats if necessary.&lt;br/&gt;&lt;br/&gt;
+
+                    Bring supplies, steal enemy ammobox, move Arsenal and Garage when relocating HQ thanks to this function without using any additional mod.&lt;br/&gt;&lt;br/&gt;
+				    
+					Wip
+				</Original>
+				<Russian>
+				    Ящики, боеприпасы и некоторые другие объекты с которыми можно взаимодействовать и загружать их в автомобиль, анимация будет перемещать объект в транспортное средство, блокируя некоторые сиденья, если это необходимо.&lt;br/&gt;&lt;br/&gt;
+					
+					Теперь возможен Перенос припасов, кража вражеских боеприпасов, перемещение Арсенал и Гаража при перемещении штаб-квартиры благодаря этой функции без использования какого-либо дополнительного мода.&lt;br/&gt;&lt;br/&gt;
+					
+					Работа в процессе
 				</Russian><!-- Редакт. -->
 			</Key>
 			<Key ID="STR_BR_AF4FT">
@@ -3985,7 +4005,7 @@
 					- если вы выгружаетесь без соответствия условиям оборудования.&lt;br/&gt;
 					- если кто-то, кто не является под прикрытием, входит в ваш автомобиль с врагами вокруг.&lt;br/&gt;
 					Пешком становитесь под прикрытием, когда:&lt;br/&gt;
-					- оснащение военной техники или снятие вашей гражданской одежды (вы не можете быть тайным, когда голые).&lt;br/&gt;&lt;br/&gt;
+					- оснащение военной техники или снятие вашей гражданской одежды (вы не можете находиться под прикрытием, когда голые).&lt;br/&gt;&lt;br/&gt;
 
 					Примечание: «что-бы быть замеченным» не требует быть в прямой видимости, это радиус вокруг вражеских юнитов.
 				</Russian>
