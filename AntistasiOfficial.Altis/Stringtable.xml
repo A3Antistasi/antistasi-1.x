@@ -1536,7 +1536,7 @@
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_PRPAMPHLET_SUCCESS">
 				<Original>Well done. Our volunteers in %1 are now spreading the word.</Original>
-				<Russian>Отлично сработано. Наши волонтеры в %1 теперь смогут распространять наше дело.</Russian>
+				<Russian>Отлично сработано. Наши добровольцы в %1 теперь смогут распространять наше дело.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_REPANTENNA">
 				<Original>Tower Rebuild Disrupt</Original>
@@ -1544,7 +1544,7 @@
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_REPANTENNA">
 				<Original>%4 is rebuilding a radio tower in %1. If we want to keep up the enemy comms breakdown, the work must be stopped. Destroy the repair truck parked nearby or capture the zone. Work will be finished at %2:%3.</Original>
-				<Russian>%4 восстанавливает РадиоВышку в %1. Если мы хотим, чтобы сеть связи противника оставалась не работающей, работа должна быть прекращена. Уничтожите автомастерскую, припаркованную поблизости, или захватить зону. Работа будет закончена в %2:%3.</Russian>
+				<Russian>%4 восстанавливает РадиоВышку в %1. Если мы хотим, чтобы сеть связи противника не функционировала, работа должна быть прекращена. Уничтожьте ремонтную машину, припаркованную поблизости, или захватите зону. Работа будет закончена в %2:%3.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_RESPRISONERS">
 				<Original>POW Rescue</Original>
