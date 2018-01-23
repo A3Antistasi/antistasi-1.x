@@ -6,7 +6,7 @@ diag_log "InitVar.sqf: start";
 //You do not have enough balls to make any modification and after making a Bug report because something is wrong. You don't wanna be there. Believe me.
 //Not commented lines cannot be changed.
 //Don't touch them.
-antistasiVersion = "v 1.7.19 -- modded";
+antistasiVersion = "v 1.7.19A1 -- modded";
 
 servidoresOficiales = ["Antistasi Official: Main","Antistasi Official: Hardcore", "Antistasi Official: USA"];//I'm going to remove this
 

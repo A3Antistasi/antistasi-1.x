@@ -8,7 +8,7 @@ class EditorData
 	toggles=2;
 	class ItemIDProvider
 	{
-		nextID=1044;
+		nextID=899;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=404;
+		nextID=396;
 	};
 	class Camera
 	{
-		pos[]={3630.9243,38.290424,10236.195};
-		dir[]={-0.038438048,-0.21885642,0.97500414};
-		up[]={-0.0086214896,0.97575742,0.21868823};
-		aside[]={0.99922818,-8.7056833e-009,0.039393101};
+		pos[]={3630.7517,23.749151,10377.364};
+		dir[]={-0.02729826,-0.036724221,-0.99897337};
+		up[]={-0.0010041991,0.99932665,-0.0367366};
+		aside[]={-0.99965197,-7.6924243e-007,0.027318981};
 	};
 };
 binarizationWanted=0;
@@ -182,7 +182,7 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="[SP/CO] - Antistasi 1.7.19 Altis Blufor";
+		briefingName="[SP/CO] - Antistasi 1.7.19A1 Altis Blufor";
 		overviewText="Build FIA Army from scratch and defeat the AAF and CSAT forces in a whole map Dynamic Mission.";
 		resistanceWest=0;
 		resistanceEast=1;
@@ -838,7 +838,7 @@ class Mission
 			colorName="ColorBlue";
 			a=70;
 			b=80;
-			angle=90.451027;
+			angle=90.451019;
 			id=55;
 			atlOffset=-2.1889174;
 		};
