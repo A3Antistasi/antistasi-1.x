@@ -21,7 +21,7 @@ Vcom AI by Genesis92x<br/><br/>
 
 Briefing by Stef, Dethleffs, Fireman, everyone of the Official Community who add suggestions and corrections
 IrLED: headlessclient balanced unit assignment, Vcom AI integration.<br/>
-AlexTriada, VelvetNight and BeZZuBik41: Russian translate<br/>
+AlexTriada, VelvetNight and BeZZuBik41: Russian translate and Multilingual platform<br/>
 nuker: For testing and ideas.<br/>
 Ghost: For MP DS testing and teaching me how to run a DS.<br/>
 Nirvana and CWW clan for testing.<br/>
