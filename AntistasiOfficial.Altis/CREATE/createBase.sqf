@@ -83,102 +83,109 @@ _allVehicles pushBack _flag;
 _crate = "I_supplyCrate_F" createVehicle _markerPos;
 _allVehicles pushBack _crate;
 
-_vehicleCount = 4 min (round (_size / 30));
-if ( _vehicleCount > 0 ) then {
-	_spawnPos = [_markerPos, random (_size / 2),random 360] call BIS_fnc_relPos;
-	_currentCount = 0;
-	while {(spawner getVariable _marker) AND (_currentCount < _vehicleCount)} do {
-		_spawnPos = [_markerPos] call mortarPos;
-		_vehicle = statMortar createVehicle _spawnPos;
-		[_vehicle] execVM "scripts\UPSMON\MON_artillery_add.sqf";
-		_unit = ([_markerPos, 0, infGunner, _groupGunners] call bis_fnc_spawnvehicle) select 0;
-		_unit moveInGunner _vehicle;
-		_allVehicles pushBack _vehicle;
-		sleep 1;
-		_currentCount = _currentCount + 1;
+//Create Mortars
+	_vehicleCount = 1 max (round (_size/30));
+	if ( _vehicleCount > 0 ) then {
+		_spawnPos = [_markerPos, random (_size / 2),random 360] call BIS_fnc_relPos;
+		_currentCount = 0;
+		while {(spawner getVariable _marker) AND (_currentCount < _vehicleCount)} do {
+			_spawnPos = [_markerPos] call mortarPos;
+			_vehicle = statMortar createVehicle _spawnPos;
+			[_vehicle] execVM "scripts\UPSMON\MON_artillery_add.sqf";
+			_unit = ([_markerPos, 0, infGunner, _groupGunners] call bis_fnc_spawnvehicle) select 0;
+			_unit moveInGunner _vehicle;
+			_allVehicles pushBack _vehicle;
+			sleep 1;
+			_currentCount = _currentCount + 1;
+		};
 	};
-};
-
-if ((spawner getVariable _marker) AND (_isFrontline)) then {
-	_roads = _markerPos nearRoads _size;
-	if (count _roads != 0) then {
-		_data = [_markerPos, _roads, statAT] call AS_fnc_spawnBunker;
-		_allVehicles pushBack (_data select 0);
-		_vehicle = (_data select 1);
-		_allVehicles pushBack _vehicle;
-		_unit = ([_markerPos, 0, infGunner, _groupGunners] call bis_fnc_spawnvehicle) select 0;
-		_unit moveInGunner _vehicle;
+//Create Frontline Bunker
+	if ((spawner getVariable _marker) AND (_isFrontline)) then {
+		_roads = _markerPos nearRoads _size;
+		if (count _roads != 0) then {
+			_data = [_markerPos, _roads, statAT] call AS_fnc_spawnBunker;
+			_allVehicles pushBack (_data select 0);
+			_vehicle = (_data select 1);
+			_allVehicles pushBack _vehicle;
+			_unit = ([_markerPos, 0, infGunner, _groupGunners] call bis_fnc_spawnvehicle) select 0;
+			_unit moveInGunner _vehicle;
+		};
 	};
-};
 
 _allGroups pushBack _groupGunners;
 
-if (!_busy) then {
-	_spawnpool = vehPatrol + enemyMotorpool - [heli_default]; //Stef removed APC from here added fixed position with gunner inside.
-	_vehicleCount = 1 max (round (_size/30));
-	_spawnPos = _markerPos;
-	_currentCount = 0;
-	while {(spawner getVariable _marker) AND (_currentCount < _vehicleCount)} do {
-		if (diag_fps > minimoFPS) then {
-			_vehicleType = selectRandom _spawnpool;
-			_spawnPos = [_spawnPos findEmptyPosition [10,60,_vehicleType], [_markerPos, 10, _size/2, 10, 0, 0.3, 0] call BIS_Fnc_findSafePos] select (_size > 40);
-			_vehicle = createVehicle [_vehicleType, _spawnPos, [], 0, "NONE"];
-			_vehicle setDir random 360;
-			_allVehicles pushBack _vehicle;
+//Create Vehicles
+	if (!_busy) then {
+		_spawnpool = vehPatrol + enemyMotorpool - [heli_default]; //Stef removed APC from here added fixed position with gunner inside.
+		_vehicleCount = 1 max (round (_size/45));
+		//_vehicleCount = 1 max (round (_size/30)); Stef increased the size = less vehicle
+		_spawnPos = _markerPos;
+		_currentCount = 0;
+		while {(spawner getVariable _marker) AND (_currentCount < _vehicleCount)} do {
+			if (diag_fps > minimoFPS) then {
+				_vehicleType = selectRandom _spawnpool;
+				_spawnPos = [_spawnPos findEmptyPosition [10,60,_vehicleType], [_markerPos, 10, _size/2, 10, 0, 0.3, 0] call BIS_Fnc_findSafePos] select (_size > 40);
+				_vehicle = createVehicle [_vehicleType, _spawnPos, [], 0, "NONE"];
+				_vehicle setDir random 360;
+				_allVehicles pushBack _vehicle;
+			};
+			sleep 1;
+			_currentCount = _currentCount + 1;
 		};
-		sleep 1;
-		_currentCount = _currentCount + 1;
 	};
-};
 
+//Initialize Vehicles
 {[_x] spawn genVEHinit} forEach _allVehicles;
 
-_currentCount = 0;
-while {(spawner getVariable _marker) AND (_currentCount < 4)} do {
-	while {true} do {
-		_spawnPos = [_markerPos, 150 + (random 350) ,random 360] call BIS_fnc_relPos;
-		if (!surfaceIsWater _spawnPos) exitWith {};
-	};
-	_groupType = [infPatrol, side_green] call AS_fnc_pickGroup;
-	_group = [_spawnPos, side_green, _groupType] call BIS_Fnc_spawnGroup;
-	sleep 1;
-	if (random 10 < 2.5) then {
-		_dog = _group createUnit ["Fin_random_F",_spawnPos,[],0,"FORM"];
-		[_dog] spawn guardDog;
-	};
-	[_group, _patrolMarker, "SAFE","SPAWNED", "NOVEH2"] execVM "scripts\UPSMON.sqf";
-	_allGroups pushBack _group;
-	_currentCount = _currentCount +1;
-};
-
-_groupType = [infSquad, side_green] call AS_fnc_pickGroup;
-_group = [_markerPos, side_green, _groupType] call BIS_Fnc_spawnGroup;
-if (activeAFRF) then {_group = [_group, _markerPos] call AS_fnc_expandGroup};
-sleep 1;
-[_group, _marker, "SAFE", "RANDOMUP","SPAWNED", "NOVEH", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
-_allGroups pushBack _group;
-{_x setUnitPos "MIDDLE";} forEach units _group;
-
-_currentCount = 0;
-if (_isFrontline) then {_vehicleCount = _vehicleCount * 2};
-while {(spawner getVariable _marker) AND (_currentCount < _vehicleCount)} do {
-	if (diag_fps > minimoFPS) then {
+//Create 5 Patrols
+	_currentCount = 0;
+	while {(spawner getVariable _marker) AND (_currentCount < 6)} do {
 		while {true} do {
-			_spawnPos = [_markerPos, 15 + (random _size),random 360] call BIS_fnc_relPos;
+			_spawnPos = [_markerPos, 150 + (random 350) ,random 360] call BIS_fnc_relPos;
 			if (!surfaceIsWater _spawnPos) exitWith {};
 		};
-		_groupType = [infSquad, side_green] call AS_fnc_pickGroup;
+		_groupType = [infPatrol, side_green] call AS_fnc_pickGroup;
 		_group = [_spawnPos, side_green, _groupType] call BIS_Fnc_spawnGroup;
-		if (activeAFRF) then {_group = [_group, _markerPos] call AS_fnc_expandGroup};
 		sleep 1;
-		[_group, _marker, "SAFE","SPAWNED", "NOVEH", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
+		if (random 10 < 2.5) then {
+			_dog = _group createUnit ["Fin_random_F",_spawnPos,[],0,"FORM"];
+			[_dog] spawn guardDog;
+		};
+		[_group, _patrolMarker, "SAFE","SPAWNED", "NOVEH2"] execVM "scripts\UPSMON.sqf";
 		_allGroups pushBack _group;
+		_currentCount = _currentCount +1;
 	};
+
+	_groupType = [infSquad, side_green] call AS_fnc_pickGroup;
+	_group = [_markerPos, side_green, _groupType] call BIS_Fnc_spawnGroup;
+	if (activeAFRF) then {_group = [_group, _markerPos] call AS_fnc_expandGroup};
 	sleep 1;
-	_currentCount = _currentCount + 1;
-};
+	[_group, _marker, "SAFE", "RANDOMUP","SPAWNED", "NOVEH", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
+	_allGroups pushBack _group;
+	{_x setUnitPos "MIDDLE";} forEach units _group;
+
+//Create units
+	_currentCount = 0;
+	if (_isFrontline) then {_vehicleCount = _vehicleCount * 1}; //removed the *2, frontline base should fancy just better defense instead of more units
+	while {(spawner getVariable _marker) AND (_currentCount < _vehicleCount)} do {
+		if (diag_fps > minimoFPS) then {
+			while {true} do {
+				_spawnPos = [_markerPos, 15 + (random _size),random 360] call BIS_fnc_relPos;
+				if (!surfaceIsWater _spawnPos) exitWith {};
+			};
+			_groupType = [infSquad, side_green] call AS_fnc_pickGroup;
+			_group = [_spawnPos, side_green, _groupType] call BIS_Fnc_spawnGroup;
+			//if (activeAFRF) then {_group = [_group, _markerPos] call AS_fnc_expandGroup}; No need for bigger groups in base creation
+			sleep 1.5;
+			[_group, _marker, "SAFE","SPAWNED", "NOVEH", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
+			_allGroups pushBack _group;
+		};
+		sleep 1.5;
+		_currentCount = _currentCount + 1;
+	};
 
 sleep 3;
+
 
 {
 	_group = _x;

@@ -1703,8 +1703,8 @@
 	<Package name="Hints">
 		<Container name="MAP">
 			<Key ID="STR_HINTS_MAP_TEXT_1">
-				<Original>Altis\n\nTotal pop: %1\nFIA Support: %2\nAAF SUpport: %3 \n\nDestroyed Cities: %4\n\nClick on the zone</Original>
-				<Russian>Альтис\n\nВсего населения:  %1\nПоддерживают FIA:  %2\nПоддерживают противника:  %3 \n\nУничтоженных городов:  %4\n\nКликните по интересующей вас точке</Russian>
+				<Original>%6\n\nTotal pop: %1\nFIA Support: %2\nAAF Support: %3 \n\nDestroyed Cities: %4\n\nClick on the zone \n\n Current active units = %5 \n  With more than 175 AI their performances drops a lot!</Original>
+				<Russian>%6\n\nВсего населения: %1\nПоддерживают FIA:  %2\nПоддерживают противника:  %3 \n\nУничтоженных Городов: %4\n\nКликните по интересующей вас зоне \n\n Юнитов активно = %5 \n Если активно более 175 AI это сильно влияет на производительность!</Russian>
 			</Key>
 		</Container>
 		<Container name="HQ_Placement">

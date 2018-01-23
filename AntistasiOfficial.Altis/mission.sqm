@@ -99,7 +99,7 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="[SP/CO] - Antistasi Altis Blufor 1.7.18H";
+		briefingName="[SP/CO] - Antistasi 1.7.19 Altis Blufor";
 		overviewText="Build FIA Army from scratch and defeat the AAF and CSAT forces in a whole map Dynamic Mission.";
 		resistanceWest=0;
 		resistanceEast=1;
