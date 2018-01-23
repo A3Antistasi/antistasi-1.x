@@ -1536,7 +1536,7 @@
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_PRPAMPHLET_SUCCESS">
 				<Original>Well done. Our volunteers in %1 are now spreading the word.</Original>
-				<Russian>Отлично сработано. Наши волонтеры в %1 теперь смогут распространять наше дело.</Russian>
+				<Russian>Отлично сработано. Наши добровольцы в %1 теперь смогут распространять наше дело.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_REPANTENNA">
 				<Original>Tower Rebuild Disrupt</Original>
