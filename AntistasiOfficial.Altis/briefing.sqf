@@ -89,6 +89,8 @@ player createDiaryRecord ["af",[localize "STR_BR_AF4FT",localize "STR_BRAF_FT"]]
 
 player createDiaryRecord ["af",[localize "STR_BR_AF8JNES",localize "STR_BR_AF_JNES"]];
 
+player createDiaryRecord ["af",[localize "STR_BR_AF10FS",localize "STR_BR_AF_FS"]];
+
 player createDiaryRecord ["af",[localize "STR_BR_AF5SM",localize "STR_BR_AF_SM"]];
 
 player createDiaryRecord ["af",[localize "STR_BR_AF6U",localize "STR_BR_AF_U"]];

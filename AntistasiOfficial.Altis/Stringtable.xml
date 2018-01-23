@@ -3183,7 +3183,7 @@
 					Some mods are fully integrated in Antistasi; when loaded, these mods will change the warring factions as a whole, complete with different vehicles, gear and mechanics.&lt;br/&gt;
 					At the moment, these are: RHS: (AFRF,  USAF, GREF), TFAR and ACE3.&lt;br/&gt;&lt;br/&gt;
 
-					When using ACE, basic medical system is selected, to set Advanced Medical System edit the .pbo and open AceSettings.hpp edit the first block from default= 1 to default= 2&lt;br/&gt;&lt;br/&gt;
+					ACE settings are given by default however they can be changed permanently in dedicated server by adding class to profile.arma3profile, TFAR frequency syncronization can be set before starting the mission in configure addons  check github for further informations.&lt;br/&gt;&lt;br/&gt;
 
 					Items from these integrated mods are also included in Supply Drops and Ammoboxes.&lt;br/&gt;
 					Other mods, adding new weapons or other gear for instance, will only be available in game by buying them at the Sketchy Irishman.&lt;br/&gt;&lt;br/&gt;
@@ -3202,7 +3202,7 @@
 					Некоторые моды полностью интегрированы в Antistasi; при загрузке эти моды изменят воюющие группировки Полностью,изменяя транспорт,Обарудование и Механику.&lt;br/&gt;
 					На данный момент это: RHS: (AFRF,  USAF, GREF), TFAR И ACE3.&lt;br/&gt;&lt;br/&gt;
 
-					При использовании ACE выбирается базовая медицинская система, чтобы установить расшириную медицинскую систему, отредактируйте ".pbo" и откройте "AceSettings.hpp" ,Измените первый блок default= 1 на default= 2&lt;br/&gt;&lt;br/&gt;
+					Настройки ACE задаются по умолчанию, однако их можно постоянно изменять на выделенном сервере, добавив класс в profile.arma3profile. Синхронизация частоты TFAR может быть установлена до запуска миссии в настройках аддонов проверьте github для получения дополнительной информации.&lt;br/&gt;&lt;br/&gt;
 
 					Элементы из этих модов также включены в комплект поставки боеприпасов и ящиков с амуницией.&lt;br/&gt;
 					Другие моды, добавляющие новое оружие или другое снаряжение,будут доступны только у Безумного Ирландца.&lt;br/&gt;&lt;br/&gt;
@@ -3283,7 +3283,7 @@
 
 					Arma 3 is badly optimized and can have game-breaking issues with more than 150 AI on the field. &lt;br/&gt;
 					Because of this, try to converge people to the same AO and avoid caching in too many enemies at once, as this will result in a poor game experience with low FPS or AI not reacting as they should.&lt;br/&gt;
-					Some tips: place HQ and Camps outside the spawning radius of towns and emplacements so they won't be cached-in permanently by Petros.&lt;br/&gt;&lt;br/&gt;
+					Also, try to place HQ and Camps outside the spawning radius of towns and emplacements so they won't be cached-in permanently.&lt;br/&gt;&lt;br/&gt;
 
 					Note that servers can add a Headless Client which will dramatically increase the handling of AI. There are 3 HC slots available.
                 </Original>
@@ -3296,7 +3296,7 @@
 
 					Arma 3 плохо оптимизирована и может иметь проблемы с игрой при более чем 150 ИИ на поле. &lt;br/&gt;
 					Из-за этого старайтесь сблизить людей с тем же АО и избегать кэширования слишком большого количества врагов одновременно, так как это приведет к плохой игре с низким уровнем FPS или ИИ, которые не реагируют так, как должны.&lt;br/&gt;
-					Пара советов:разместите Базу и лагеря за пределами радиуса спавна городов и мест размещения врага, чтобы они не были забиты всегда из за Петроса.&lt;br/&gt;&lt;br/&gt;
+					Кроме того, постарайтесь разместить штаб-квартиры и лагеря за пределами нерестового радиуса городов и мест размещения, чтобы они не были навсегда сохранены.&lt;br/&gt;&lt;br/&gt; <!-- Редакт. -->
 
 					Обратите внимание, что серверы могут добавлять Headless клиента, что значительно увеличит обработку AI. Доступны 3 Слота HC.
 				</Russian>
@@ -3307,7 +3307,7 @@
 			</Key>
 			<Key ID="STR_BR_2SLR">
 				<Original>
-					There is no vanilla saving option because it breaks the mission, the Commander has to Persistent Save by interacting with the in-game Map at HQ and, upon restart, Antistasi asks if you want to load Previous Session. &lt;br/&gt;
+					Vanilla saving option is disabled because it breaks the mission. In order to save progress, the Commander has to Persistent Save by interacting with the in-game Map at HQ and, upon restart, Antistasi asks if you want to load Previous Session.&lt;br/&gt;
 					If you’re a normal player your equipment, money and rank will be saved automatically upon disconnect.&lt;br/&gt;&lt;br/&gt;
 
 					Saved data is stored in documents/Arma 3/user.vars.Arma3Profile and is saved separately for each island and respective blufor and greenfor version. &lt;br/&gt;&lt;br/&gt;
@@ -3317,10 +3317,11 @@
 					- deployed static guns in garrisoned territories.&lt;br/&gt;
 					- roablocks, garrisons, money, HR, garage, support.&lt;br/&gt;
 					- Arsenal items and Garage vehicles.&lt;br/&gt;
-					What isn’t saved: AI positions, items inside vehicle crates, recruited AI (part of their cost is refunded).
+					What isn’t saved: AI positions, items inside vehicle crates, recruited AI (part of their cost is refunded).&lt;br/&gt;
+					To have multiple saves and keep your gear when disconnecting within 100m from HQ, run the mod inidbi2 by code34.
                 </Original>
 				<Russian>
-					Авто сохранения нету, потому что это нарушает миссию, Командующий должен сам постоянно сохраняться, взаимодействуя с внутриигровой картой на Базе, а после перезагрузки Antistasi спрашивает, хотите ли вы загрузить предыдущую сессию. &lt;br/&gt;
+					Вариант Автосохранения отключен, так как он нарушает миссию. Чтобы сохранить прогресс, Командующий должен постоянно сохраняться, взаимодействуя с внутриигровой картой в HQ, а после перезагрузки Antistasi спрашивает, хотите ли вы загрузить предыдущую сессию.&lt;br/&gt;
 					Если вы обычный игрок, ваше оборудование, деньги и ранг будут автоматически сохранены после отключения.&lt;br/&gt;&lt;br/&gt;
 
 					Сохраненные данные сохраняются в документах / Arma 3 / user.vars.Arma3Profile и сохраняются отдельно для каждого острова и соответствующих blufor и greenfor версиий. &lt;br/&gt;&lt;br/&gt;
@@ -3330,7 +3331,8 @@
 					- развернутые статические орудия на гарнизонных территориях.&lt;br/&gt;
 					- блокпосты, гарнизоны, деньги, HR, гараж, поддержка.&lt;br/&gt;
 					- Предметы Арсенала и Гаражные транспортные средства.&lt;br/&gt;
-					Что не сохраняется: позиции ИИ, предметы внутри ящиков для транспортных средств, завербованные ИИ (часть их стоимости возвращается).
+					Что не сохраняется: позиции ИИ, предметы внутри ящиков для транспортных средств, завербованные ИИ (часть их стоимости возвращается).&lt;br/&gt;
+					Чтобы иметь несколько сохранений и сохранить свое снаряжение при отключении в пределах 100 м от HQ, запустите modid inidbi2 с помощью кода 34.
 				</Russian> <!-- Редакт. -->
 		    </Key>
 			<Key ID="STR_BR_1WELCOME">
@@ -3345,8 +3347,14 @@
 					The goal is to gain the support of more than 50% of the civilian population on the island. &lt;br/&gt;
 					The campaign is lost if CSAT destroys 8 towns by bombardment. &lt;br/&gt;&lt;br/&gt;
 
-					Special keys: press  ‘Y’, ‘shift+Y’, ‘Delete’, and ‘U’ to access vital functions, be sure to unbind those keys from your custom controls otherwise they won’t work.&lt;br/&gt;&lt;br/&gt;
-
+					Multiplayer notes:&lt;br/&gt;
+					- Parameters are accessible after selecting the mission in the role selection screen top right before the mission is started.&lt;br/&gt;
+					- The previous save is automatically loaded unless admin/host change Parameters enabling the fresh start&lt;br/&gt;
+					
+					Special keys:&lt;br/&gt;
+					US keyboard = press‘Y’, ‘shift+Y’, ‘Delete’, and ‘U’ to access vital functions, be sure to unbind those keys from your custom controls otherwise they won’t work.&lt;br/&gt;&lt;br/&gt;
+					German keyboard = press Z, shift+Z … instead.&lt;br/&gt;
+					
 					For more info and tips check categories on the left side.&lt;br/&gt;
                 </Original>
 				<Russian>
@@ -3356,8 +3364,14 @@
 					Цель состоит в том, чтобы получить поддержку более 50% гражданского населения на острове. &lt;br/&gt;
 					Кампания Провалина, если CSAT уничтожает 8 городов путем бомбардировки. &lt;br/&gt;&lt;br/&gt;
 
-					Специальные клавиши: нажмите «Y», «shift + Y», «Delete» и «U», чтобы получить доступ к жизненно важным функциям, обязательно отвяжите эти Кнопки от своих пользовательских элементов управления, иначе они не будут работать.&lt;br/&gt;&lt;br/&gt;
-
+					Мультиплеерные заметки:&lt;br/&gt;
+					- Параметры доступны после выбора миссии на экране выбора ролика справа перед началом миссии.&lt;br/&gt;
+					- Предыдущее сохранение автоматически загружается, если не изменятся параметры администратора / хоста. Параметры, позволяющие начать новый запуск&lt;br/&gt;
+					
+					Специальные клавиши:&lt;br/&gt;
+					Клавиатура США: нажмите «Y», «shift + Y», «Delete» и «U», чтобы получить доступ к жизненно важным функциям, обязательно отвяжите эти Кнопки от своих пользовательских элементов управления, иначе они не будут работать.&lt;br/&gt;&lt;br/&gt;
+					Немецкая клавиатура = нажмите Z,вместо shift+Z .&lt;br/&gt;
+					
 					Для получения дополнительной информации и советов проверьте категории с левой стороны.
 				</Russian>
 			</Key>
@@ -3390,9 +3404,9 @@
 
 					- Heal and Repair box: heal, repair yourself and rearm AI. Reset undercover status and change vehicle plates, automatically resupply nearby HC units and static guns.&lt;br/&gt;&lt;br/&gt;
 
-					 - Petros: ask for missions.&lt;br/&gt;&lt;br/&gt;
+					- Petros: ask for missions.&lt;br/&gt;&lt;br/&gt;
 
-					 HQ location is revealed to CSAT only if you scary a traitor and he manage to flee to an enemy base. Also, mortar fire is an easy way to get triangulated, expect aggressive enemies in both cases.
+					HQ location is revealed to CSAT only if you scary a traitor and he manage to flee to an enemy base. Also, mortar fire is an easy way to get triangulated, expect aggressive enemies in both cases.
 				</Original>
 				<Russian>
 					Место Базы защищено от основных дорог, но, возможно, рядом с небольшими.&lt;br/&gt;
@@ -3428,7 +3442,8 @@
 					The Info Bar displays campaign info, resources and undercover status.&lt;br/&gt;&lt;br/&gt;
 
 					-Commander: the current Commander. ‘None’ is displayed when membership is enabled and there isn’t any member online who is eligible to command. In this case, the following features will be frozen: economy per tick, main enemy response such as QRFs and Attacks and random mission spawns.&lt;br/&gt;&lt;br/&gt;
-
+                    Press resign on Y (US-keyboard layout) menu when commander ‘none’ will check for a new commander.&lt;br/&gt;
+					
 					-Rank: affects the courage of your AI and how precisely they will execute orders. Progress rank by killing enemies and, more effectively, by completing missions. In multiplayer you can also donate your money to FIA to gain ranks.&lt;br/&gt;
 					Player Rank is saved automatically in multiplayer upon disconnect&lt;br/&gt;&lt;br/&gt;
 
@@ -3456,7 +3471,8 @@
 					В информационной строке отображаются информация о кампании, ресурсах и секретном статусе.&lt;br/&gt;&lt;br/&gt;
 
 					- Командир: нынешний командир. (Не) отображается, когда членство включено, и нет ни одного члена онлайн, который имеет право на командира. В этом случае будут заморожены следующие функции: Экономика за точку, главная контратак врага, такая как атака как отряд быстрого реагирования, и случайные миссии.&lt;br/&gt;&lt;br/&gt;
-
+                    Нажмите кнопку «Y»(расположение клавиатуры США), когда командующий «Отсутствует»,будет проведеня проверка на нового командира.&lt;br/&gt;
+					
 					- Ранг: влияет на мужество вашего ИИ и то, как именно они будут выполнять приказы.Прогресс ранга происходит за счёт: убийства врагов и, более эффективное завершение миссий. В мультиплеере вы также можете пожертвовать свои деньги АСН, чтобы получить звание.&lt;br/&gt;
 					Ранг игрока автоматически сохраняется в мультиплеере при отключении&lt;br/&gt;&lt;br/&gt;
 
@@ -3638,12 +3654,14 @@
 				<Original>
 					Everytime you conquest or kill some special targets, enemy will dispatch a QRF from the available base or airport, the first step to secure an area is to wait and defend it from that first attack.&lt;br/&gt;
 					Overtime, enemies will check the garrison amount and can decide to send a patrol to take it back in case it’s abbandoned.&lt;br/&gt;
+					ack or simply send a patrol to take it back in case it’s abandoned.&lt;br/&gt;
 					That said, you need HR to garrison the position and increase the ArmyXPLevel to make your garrison good enough to resist an Attack which is a mission where massive amount of forces are sent to recapture an objective. Note that NATO is very handy in this case.&lt;br/&gt;
 					The Commander can set up a roadblock from the Y menu. Roadblocks are very effective in taking out one or two enemy vehicles thanks to their AT capabilities and .50 cal machine guns.&lt;br/&gt;&lt;br/&gt;
 				</Original>
 				<Russian>
 					Каждый раз, когда вы захватываете или убиваете какие-то специальные цели, враг отправляет ОБР из ближайшей базы или аэропорта, первым шагом, чтобы защитить зону, является ожидание и защита от этой первой атаки. &lt;br/&gt;
 					Специальные враги будут проверять сумму гарнизона и могут принять решение отправить патруль, чтобы вернуть его на случай, если он будет разбит.&lt;br/&gt;
+					Навестите или просто отправте патруль, чтобы вернуть его, если он заброшен.&lt;br/&gt;
 					Тем не менее, вам нужен HR, чтобы гарнизонировать позицию и увеличить Уровень Опыта Армии, чтобы ваш гарнизон был достаточно хорош, чтобы противостоять атаке, которая является миссией, когда огромное количество сил отправляется, чтобы вернуть цель. Отметим, что НАТО очень удобно в этом случае.&lt;br/&gt;
 					Командующий может настроить дорожный блок из меню Y. Дорожные блоки очень эффективны в том, чтобы вытащить один или два вражеских транспортных средства благодаря своим возможностям ПТ и Крупно Калиберным пулемётам.&lt;br/&gt;&lt;br/&gt;
 				</Russian>
@@ -3746,7 +3764,9 @@
 				<Original>
 					Commander and server members can recruit AI at the Flag or add garrison to conquered objectives. Those guys starts with civilian clothes and their weapons correspond to a random choice between their class weapons present into the Arsenal, at this modding stage they don’t substract the weapon from it nor they require a threshold amount like it was with original Arsenal system. &lt;br/&gt;&lt;br/&gt;
 
-					Progress with Army XP level is the way to make them better both in fighting skills and dressing.&lt;br/&gt;&lt;br/&gt;
+					However, in the current version they don’t subtract the weapon from the Arsenal nor do they require a threshold amount to unlock them (Antistasi 1.7.5 and before). &lt;br/&gt;&lt;br/&gt;
+					
+					Advancing Army XP level is the way to make them better both in fighting skill and clothing choices.&lt;br/&gt;&lt;br/&gt;
 
 					Commanding AI is Vanilla feature, check on BIS wiki to learn more about it. Hold fire, form line or file and regroup are very important expecially when driving in undercover truck with AI riding as passengers, if not told to hold fire they might blow up your sneaky actions.&lt;br/&gt;&lt;br/&gt;
 
@@ -3765,7 +3785,9 @@
 				<Russian>
 					Командир и члены сервера могут набирать ИИ на флаге или добавлять гарнизон к завоеванным целям. Эти парни начинают с гражданской одежды, и их оружие соответствует случайному выбору между их классовым оружием, присутствующим в Арсенале, на этой стадии моддинга они не выберают оружие из него, и они не требуют пороговой суммы, как это было с оригинальной системой Арсенала. &lt;br/&gt;&lt;br/&gt; <!-- Редакт. -->
 
-					Прогресс уровня опыта армии - это способ улучшить их как в боевых навыках, так и в одежде.&lt;br/&gt;&lt;br/&gt;
+					Однако в текущей версии они не вычитают оружие из Арсенала и не требуют порогового количества, чтобы разблокировать их (Antistasi 1.7.5 и ранее). &lt;br/&gt;&lt;br/&gt;
+					
+					Повышение уровня армейской армии - это способ сделать их лучше как в борьбе с навыками, так и в выборе одежды.&lt;br/&gt;&lt;br/&gt;
 
 					Командующий ИИ - это функция Стандартна, проверьте вики BIS, чтобы узнать больше об этом. Удерживать огонь, формировать линию или калонну и перегруппироваться очень важно, когда вы едете в грузовике под прикрытием с ИИ, едете как пассажиры, если не сказать их не стрелять, они могут раскрыть вас когда вы будете под прикрытием действия. &lt;br/&gt;&lt;br/&gt; <!-- Редакт. -->
 
@@ -3820,6 +3842,8 @@
 				<Original>
 					Accessing the Garage opens a custom interface which lets you select the vehicle on the left side, and interact with the vehicle on the right.&lt;br/&gt;&lt;br/&gt;
 
+					The camera can be tricky, so place the box in open field without obstacles around, the vehicle preview will spawn opposite your position at same distance you are from the crate. Keep some distance from the box to spawn the vehicle a little further. &lt;br/&gt;&lt;br/&gt;
+
 					Vehicles can be repaired piece by piece, glass included, through JAG and also reskinned.&lt;br/&gt;&lt;br/&gt;
 
 					Stored vehicles are visible for everyone in the Garage. Green vehicles are yours, white ones are retrievable by everyone and red vehicles are locked. Only the owner of a vehicle can unlock a vehicle.&lt;br/&gt;&lt;br/&gt;
@@ -3829,6 +3853,8 @@
 				<Russian>
 					Доступ к гаражу открывает пользовательский интерфейс, который позволяет выбрать автомобиль с левой стороны а взаимодействовать с автомобилем справа.&lt;br/&gt;&lt;br/&gt;
 
+					Камера может быть сложной, поэтому размещайте ящик в открытом поле без препятствий вокруг, предварительный просмотр автомобиля будет появляться напротив вашей позиции на том же расстоянии, что и вы из ящика. Держитесь на некотором расстоянии от коробки, чтобы немного развернуть автомобиль. &lt;br/&gt;&lt;br/&gt;
+					
 					Транспортные средства могут быть отремонтированы по частям, включая стекло, через JAG, а также Корпус.&lt;br/&gt;&lt;br/&gt;
 
 					Сохраненные автомобили видны для всех в Гараже. Зеленые транспортные средства - ваши, белые - все, и красные транспортные средства заблокированы. Только владелец транспортного средства может разблокировать автомобиль.&lt;br/&gt;&lt;br/&gt;
@@ -3918,6 +3944,20 @@
 					Если поддержка врага становится слишком высокой, вражеская фракция начинает бомбардировать города. Если они уничтожат 8 городов, кампания будет провалена.
 				</Russian>
 		    </Key>
+			<Key ID="STR_BR_AF10FS">
+				<Original>Frontline system</Original>
+				<Russian>Система Передовой</Russian>
+			</Key>
+			<Key ID="STR_BR_AF_FS">
+				<Original>
+				Depending on controlled objectives, towns excluded, the enemy will build roadblocks and reinforce more outposts.&lt;br/&gt;
+                WiP	
+				</Original>
+				<Russian>
+				В зависимости от контролируемых целей, исключенных городов, противник будет строить блокпосты и укреплять больше форпостов.&lt;br/&gt;
+                Работа в процессе
+				</Russian>
+			</Key>
 			<Key ID="STR_BR_AF5SM">
 				<Original>Server Membership</Original>
 				<Russian>Членство на сервере</Russian>
