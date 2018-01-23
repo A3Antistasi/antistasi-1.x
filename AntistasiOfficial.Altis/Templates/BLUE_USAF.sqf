@@ -1,11 +1,12 @@
 //Blu USAF vehicles
-	bluHeliTrans = 		["RHS_MELB_MH6M","RHS_UH60M","RHS_CH_47F_light"];
+	bluHeliTrans = 		["RHS_UH60M"];
 	bluHeliTS = 		["RHS_MELB_MH6M"];
-	bluHeliDis = 		["RHS_UH60M"];
-	bluHeliRope = 		["RHS_CH_47F_light"];
+	bluHeliDis = 		["RHS_CH_47F_light"];
+	bluHeliRope = 		["RHS_UH60M"];
 	bluHeliArmed = 		["RHS_MELB_AH6M_H","RHS_MELB_AH6M_M"];
 	bluHeliGunship = 	["RHS_AH64D_AA","RHS_AH64D_GS","RHS_AH64D"];
 	bluCASFW = 			["RHS_A10"];
+	bluTSairdrop =		["B_T_VTOL_01_vehicle_F"];
 
 	bluAS = 			["rhsusf_f22"];
 	bluC130 = 			["RHS_C130J"];

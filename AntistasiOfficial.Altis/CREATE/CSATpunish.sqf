@@ -37,7 +37,7 @@ for "_i" from 1 to 3 do
 	if (count _pos == 0) then {_pos = _posorigen};
 	_vehicle=[_pos, 0, _tipoveh, side_red] call bis_fnc_spawnvehicle;
 	_heli = _vehicle select 0;
-	_heli setVariable ["BLUFORSpawn",false];
+	_heli setVariable ["OPFORSpawn",true];
 	_heliCrew = _vehicle select 1;
 	_grupoheli = _vehicle select 2;
 	_pilotos = _pilotos + _heliCrew;
@@ -118,7 +118,6 @@ for "_i" from 0 to _numCiv do
 _civilMax = {alive _x} count _civiles;
 _solMax = count _soldados;
 
-
 for "_i" from 0 to round random 2 do
 	{
 	[_mrkdestino, selectRandom opCASFW] spawn airstrike;
@@ -159,8 +158,10 @@ else
 forcedSpawn = forcedSpawn - [_mrkDestino]; publicVariable "forcedSpawn";
 sleep 15;
 
+[_grupoCivil,_soldados] spawn CSATtimetoreveal;
+
 [0,_tsk] spawn borrarTask;
-[7200] remoteExec ["AS_fnc_increaseAttackTimer",2];
+[2400] remoteExec ["AS_fnc_increaseAttackTimer",2];
 {
 waitUntil {sleep 1; !([distanciaSPWN,1,_x,"BLUFORSpawn"] call distanceUnits)};
 deleteVehicle _x;

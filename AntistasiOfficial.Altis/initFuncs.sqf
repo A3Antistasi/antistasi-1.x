@@ -102,6 +102,7 @@ addFIAsquadHC = compile preProcessFileLineNumbers "REINF\addFIAsquadHC.sqf";
 addFIAveh = compile preProcessFileLineNumbers "REINF\addFIAveh.sqf";
 FIAskillAdd = compile preProcessFileLineNumbers "REINF\FIAskillAdd.sqf";
 CSATinit = compile preProcessFileLineNumbers "CREATE\CSATinit.sqf";
+CSATtimetoreveal = compile preProcessFileLineNumbers "CREATE\CSATtimetoreveal.sqf";
 NATOinit = compile preProcessFileLineNumbers "CREATE\NATOinit.sqf";
 NATOinitCA = compile preProcessFileLineNumbers "CREATE\NATOinitCA.sqf";
 CIVinit = compile preProcessFileLineNumbers "CREATE\CIVinit.sqf";

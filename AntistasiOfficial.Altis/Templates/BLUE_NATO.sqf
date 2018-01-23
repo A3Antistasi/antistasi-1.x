@@ -1,5 +1,5 @@
 //Blu NATO vehicles
-	bluHeliTrans = 		["B_Heli_Light_01_F","B_Heli_Transport_01_camo_F","B_Heli_Transport_03_F"];
+	bluHeliTrans = 		["B_Heli_Transport_03_F"];
 	bluHeliTS = 		["B_Heli_Light_01_F"];
 	bluHeliDis = 		["B_Heli_Transport_01_camo_F"];
 	bluHeliRope = 		["B_Heli_Transport_03_F"];
@@ -49,10 +49,10 @@
 	bluAirCav = 	["B_recon_TL_F","B_recon_LAT_F","B_Recon_Sharpshooter_F","B_recon_medic_F","B_recon_F","B_recon_JTAC_F"];
 
 
-	bluSquad = 			["BUS_InfSquad"];
-	bluSquadWeapons = 	["BUS_InfSquad_Weapons"];
-	bluTeam = 			["BUS_InfTeam"];
-	bluATTeam = 		["BUS_InfTeam_AT"];
+	bluSquad = 			["BUS_InfSquad"]; 				// 8 men
+	bluSquadWeapons = 	["BUS_InfSquad_Weapons"];		// 8 men
+	bluTeam = 			["BUS_InfTeam"];				// 4 men
+	bluATTeam = 		["BUS_InfTeam_AT"]; 			// 4 men
 
 	bluIR = 	"acc_pointer_IR";
 
