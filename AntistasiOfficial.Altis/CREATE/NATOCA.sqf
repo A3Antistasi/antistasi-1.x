@@ -24,22 +24,19 @@ _soldados = [];
 _vehiculos = [];
 _grupos = [];
 _tipoveh = "";
-_cuenta = server getVariable "prestigeNATO";
-_cuenta = round (_cuenta / 10);
+_cuenta = 3;
 
 [-20,0] remoteExec ["prestige",2];
 
-if ((_marcador in bases) or (_marcador in aeropuertos)) then
-	{
-	/*
-	for "_i" from 1 to _cuenta do
-		{
-		[_marcador,"B_Plane_CAS_01_F"] spawn airstrike;
-		sleep 30;
-		};
-	*/
-	[_marcador] spawn artilleriaNATO;
-	};
+_spawnergroup = createGroup east;
+_spawner = _spawnergroup createUnit [selectrandom CIV_journalists, getmarkerpos _marcador, [], 15,"None"];
+_spawner setVariable ["BLUFORSpawn",true,true];
+_spawner disableAI "ALL";
+_spawner setcaptive true;
+_spawner enableSimulation false;
+hideObjectGlobal _spawner;
+_vehiculos = _vehiculos + [_spawner];
+sleep 15;
 
 for "_i" from 1 to _cuenta do
 	{
@@ -92,6 +89,7 @@ for "_i" from 1 to _cuenta do
 				_vehiculos = _vehiculos + [_pad];
 				_wp0 = _grupoheli addWaypoint [_landpos, 0];
 				_wp0 setWaypointType "TR UNLOAD";
+				_wp0 setWaypointSpeed "FULL";
 				_wp0 setWaypointStatements ["true", "(vehicle this) land 'GET OUT'; [vehicle this] call smokeCoverAuto"];
 				[_grupoheli,0] setWaypointBehaviour "CARELESS";
 				_wp3 = _grupo addWaypoint [_landpos, 0];
@@ -101,6 +99,7 @@ for "_i" from 1 to _cuenta do
 				_wp4 setWaypointType "SAD";
 				_wp2 = _grupoheli addWaypoint [_orig, 1];
 				_wp2 setWaypointType "MOVE";
+				_wp2 setWaypointSpeed "FULL";
 				_wp2 setWaypointStatements ["true", "{deleteVehicle _x} forEach crew this; deleteVehicle this"];
 				[_grupoheli,1] setWaypointBehaviour "AWARE";
 				[_heli,true] spawn puertasLand;
@@ -121,6 +120,7 @@ for "_i" from 1 to _cuenta do
 		_vehiculos = _vehiculos + [_pad];
 		_wp0 = _grupoheli addWaypoint [_landpos, 0];
 		_wp0 setWaypointType "TR UNLOAD";
+		_wp0 setWaypointSpeed "FULL";
 		_wp0 setWaypointStatements ["true", "(vehicle this) land 'GET OUT'; [vehicle this] call smokeCoverAuto"];
 		[_grupoheli,0] setWaypointBehaviour "CARELESS";
 		_wp3 = _grupo addWaypoint [_landpos, 0];
@@ -129,6 +129,7 @@ for "_i" from 1 to _cuenta do
 		_wp4 = _grupo addWaypoint [_posicion, 1];
 		_wp4 setWaypointType "SAD";
 		_wp2 = _grupoheli addWaypoint [_orig, 1];
+		_wp2 setWaypointSpeed "FULL";
 		_wp2 setWaypointType "MOVE";
 		_wp2 setWaypointStatements ["true", "{deleteVehicle _x} forEach crew this; deleteVehicle this"];
 		[_grupoheli,1] setWaypointBehaviour "AWARE";
@@ -154,6 +155,7 @@ for "_i" from 1 to _cuenta do
 			_vehiculos = _vehiculos + [_pad];
 			_wp0 = _grupoheli addWaypoint [_landpos, 0];
 			_wp0 setWaypointType "TR UNLOAD";
+			_wp0 setWaypointSpeed "FULL";
 			_wp0 setWaypointStatements ["true", "(vehicle this) land 'GET OUT'; [vehicle this] call smokeCoverAuto"];
 			[_grupoheli,0] setWaypointBehaviour "CARELESS";
 			_wp3 = _grupo addWaypoint [_landpos, 0];
@@ -163,6 +165,7 @@ for "_i" from 1 to _cuenta do
 			_wp4 setWaypointType "SAD";
 			_wp2 = _grupoheli addWaypoint [_orig, 1];
 			_wp2 setWaypointType "MOVE";
+			_wp2 setWaypointSpeed "FULL";
 			_wp2 setWaypointStatements ["true", "{deleteVehicle _x} forEach crew this; deleteVehicle this"];
 			[_grupoheli,1] setWaypointBehaviour "AWARE";
 			[_heli,true] spawn puertasLand;
@@ -170,6 +173,8 @@ for "_i" from 1 to _cuenta do
 		};
 	sleep 35;
 	};
+
+
 
 _solMax = count _soldados;
 _solMax = round (_solMax / 4);
@@ -197,4 +202,5 @@ deleteVehicle _soldado;
 _vehiculo = _x;
 waitUntil {sleep 1; {_x distance _vehiculo < distanciaSPWN/2} count (allPlayers - (entities "HeadlessClient_F")) == 0};
 deleteVehicle _x} forEach _vehiculos;
+
 

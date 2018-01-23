@@ -159,6 +159,11 @@
 	"muzzle_snds_L"
 	];
 
+	blunvg = [
+	"NVGoggles"
+
+	];
+
 	bluHelmet = [
 	"H_HelmetB_light_black",		// Tier 1
 	"H_HelmetB_black",				// Tier 2

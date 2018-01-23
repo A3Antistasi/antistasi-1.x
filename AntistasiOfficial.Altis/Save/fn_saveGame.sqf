@@ -178,17 +178,19 @@ _vehiclesToSave = [];
 								if (_vehicleType != AS_misSupplyBox) then {
 									if (_vehicleType != "I_supplyCrate_F") then {
 											if (_vehicleType != "Land_Camping_Light_F") then {
-												if (count attachedObjects _vehicle == 0) then {
-													if ((alive _vehicle) AND ({(alive _x) AND (!isPlayer _x)} count crew _vehicle == 0)) then {
-														if !(_vehicleType == "WeaponHolderSimulated") then {
-															_vehiclesToSave pushBackUnique [_vehicleType,getPosATLVisual _vehicle,getDir _vehicle];
-															_weapons = _weapons + weaponCargo _vehicle;
-															_magazines = _magazines + magazineCargo _vehicle;
-															_items = _items + itemCargo _vehicle;
-															if (count backpackCargo _vehicle > 0) then {
-																{
-																	_backpacks pushBack (_x call BIS_fnc_basicBackpack);
-																} forEach backpackCargo _vehicle;
+												if (_vehicleType != "Land_WoodenCrate_01_F") then {
+													if (count attachedObjects _vehicle == 0) then {
+														if ((alive _vehicle) AND ({(alive _x) AND (!isPlayer _x)} count crew _vehicle == 0)) then {
+															if !(_vehicleType == "WeaponHolderSimulated") then {
+																_vehiclesToSave pushBackUnique [_vehicleType,getPosATLVisual _vehicle,getDir _vehicle];
+																_weapons = _weapons + weaponCargo _vehicle;
+																_magazines = _magazines + magazineCargo _vehicle;
+																_items = _items + itemCargo _vehicle;
+																if (count backpackCargo _vehicle > 0) then {
+																	{
+																		_backpacks pushBack (_x call BIS_fnc_basicBackpack);
+																	} forEach backpackCargo _vehicle;
+															};
 														};
 													};
 												};
