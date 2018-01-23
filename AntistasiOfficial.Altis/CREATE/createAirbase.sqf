@@ -30,7 +30,7 @@ _busy = if (dateToNumber date > server getVariable _marker) then {false} else {t
 						_unit = ([_markerPos, 0, infCrew, _groupGunners] call bis_fnc_spawnvehicle) select 0;
 						_unit moveInGunner _vehicle;
 						_allVehicles pushBack _vehicle;
-						sleep 0.35;
+						sleep 0.1;
 					};
 
 					if 	((_buildingType == "Land_Cargo_HQ_V1_F") OR (_buildingType == "Land_Cargo_HQ_V2_F") OR (_buildingType == "Land_Cargo_HQ_V3_F")) exitWith {
@@ -40,7 +40,7 @@ _busy = if (dateToNumber date > server getVariable _marker) then {false} else {t
 						_unit = ([_markerPos, 0, infGunner, _groupGunners] call bis_fnc_spawnvehicle) select 0;
 						_unit moveInGunner _vehicle;
 						_allVehicles pushBack _vehicle;
-						sleep 0.35;
+						sleep 0.1;
 					};
 
 					if 	((_buildingType == "Land_Cargo_Patrol_V1_F") OR (_buildingType == "Land_Cargo_Patrol_V2_F") OR (_buildingType == "Land_Cargo_Patrol_V3_F")) exitWith {
@@ -51,7 +51,7 @@ _busy = if (dateToNumber date > server getVariable _marker) then {false} else {t
 						_unit = ([_markerPos, 0, infGunner, _groupGunners] call bis_fnc_spawnvehicle) select 0;
 						_unit moveInGunner _vehicle;
 						_allVehicles pushBack _vehicle;
-						sleep 0.35;
+						sleep 0.1;
 					};
 
 					//Create planes in specified locations
@@ -59,7 +59,7 @@ _busy = if (dateToNumber date > server getVariable _marker) then {false} else {t
 						_vehicle = createVehicle [selectRandom planes, position _building, [],0, "CAN_COLLIDE"];
 						_vehicle setDir (getDir _building);
 						_allVehicles pushBack _vehicle;
-						sleep 0.35;
+						sleep 0.1;
 					};
 					//Create heli in specified location
 					if ((_buildingType == "Land_HelipadRescue_F") AND (!_isFrontline)) exitWith {
@@ -69,7 +69,7 @@ _busy = if (dateToNumber date > server getVariable _marker) then {false} else {t
 						/*WiP: Engineers can consume their toolkit to unlock the vehicle.
 						_vehicle lock 3;
 						_vehicle addAction [localize "STR_ACT_TAKEFLAG", {if((_this select 1)(_this select 0) lock 0;},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (_this getUnitTrait 'engineer')"]; */
-						sleep 0.35;
+						sleep 0.1;
 					};
 
 					if 	(_buildingType in listbld) exitWith {
@@ -83,7 +83,7 @@ _busy = if (dateToNumber date > server getVariable _marker) then {false} else {t
 						_unit = ([_markerPos, 0, infGunner, _groupGunners] call bis_fnc_spawnvehicle) select 0;
 						_unit moveInGunner _vehicle;
 						_allVehicles pushBack _vehicle;
-						sleep 0.35;
+						sleep 0.1;
 					};
 				};
 		};
@@ -256,3 +256,11 @@ if ((spawner getVariable _marker) AND !(_marker in mrkFIA)) then {
 	deleteMarker _patrolMarker;
 	[_allGroups, _allSoldiers, _allVehicles] spawn AS_fnc_despawnUnits;
 	if !(isNull _observer) then {deleteVehicle _observer};
+
+//Save destroyed buildings
+{
+	if ((!alive _x) AND !(_x in destroyedBuildings)) then {
+		destroyedBuildings = destroyedBuildings + [position _x];
+		publicVariableServer "destroyedBuildings";
+	};
+} forEach _buildings;
