@@ -14,66 +14,69 @@ _reduced = [false, true] select (_marker in reducedGarrisons);
 _patrolMarker = [_marker] call AS_fnc_createPatrolMarker;
 _busy = if (dateToNumber date > server getVariable _marker) then {false} else {true};
 
-_buildings = nearestObjects [_markerPos, listMilBld, _size*1.5];
-_groupGunners = createGroup side_green;
+//Adding statics to garrison buildings
+	if(!_reduced) then {
+		_groupGunners = createGroup side_green;
+		_buildings = nearestObjects [_markerPos, listMilBld, _size*1.5];
+			for "_i" from 0 to (count _buildings) - 1 do {
+				_building = _buildings select _i;
+				_buildingType = typeOf _building;
 
-for "_i" from 0 to (count _buildings) - 1 do {
-	_building = _buildings select _i;
-	_buildingType = typeOf _building;
+				call {
+					//Stef defensive vehicle with gunner on.
+					if 	((_buildingType == "Land_HelipadCivil_F") and !(_reduced)) exitWith {
+						_vehicle = createVehicle [selectRandom vehDef, position _building, [],0, "CAN_COLLIDE"];
+						_vehicle setDir (getDir _building);
+						_unit = ([_markerPos, 0, infCrew, _groupGunners] call bis_fnc_spawnvehicle) select 0;
+						_unit moveInGunner _vehicle;
+						_allVehicles pushBack _vehicle;
+						sleep 1;
+					};
 
-	call {
-		if 	(_buildingType == "Land_HelipadCivil_F") exitWith {
-			_vehicle = createVehicle [selectRandom vehDef, position _building, [],0, "CAN_COLLIDE"];
-			_vehicle setDir (getDir _building);
-			_unit = ([_markerPos, 0, infCrew, _groupGunners] call bis_fnc_spawnvehicle) select 0;
-			_unit moveInGunner _vehicle;
-			_allVehicles pushBack _vehicle;
-			sleep 1;
-		};
+					if 	((_buildingType == "Land_Cargo_HQ_V1_F") OR (_buildingType == "Land_Cargo_HQ_V2_F") OR (_buildingType == "Land_Cargo_HQ_V3_F")) exitWith {
+						_vehicle = createVehicle [statAA, (_building buildingPos 8), [],0, "CAN_COLLIDE"];
+						_vehicle setPosATL [(getPos _building select 0),(getPos _building select 1),(getPosATL _vehicle select 2)];
+						_vehicle setDir (getDir _building);
+						_unit = ([_markerPos, 0, infGunner, _groupGunners] call bis_fnc_spawnvehicle) select 0;
+						_unit moveInGunner _vehicle;
+						_allVehicles pushBack _vehicle;
+						sleep 1;
+					};
 
-		if 	((_buildingType == "Land_Cargo_HQ_V1_F") OR (_buildingType == "Land_Cargo_HQ_V2_F") OR (_buildingType == "Land_Cargo_HQ_V3_F")) exitWith {
-			_vehicle = createVehicle [statAA, (_building buildingPos 8), [],0, "CAN_COLLIDE"];
-			_vehicle setPosATL [(getPos _building select 0),(getPos _building select 1),(getPosATL _vehicle select 2)];
-			_vehicle setDir (getDir _building);
-			_unit = ([_markerPos, 0, infGunner, _groupGunners] call bis_fnc_spawnvehicle) select 0;
-			_unit moveInGunner _vehicle;
-			_allVehicles pushBack _vehicle;
-			sleep 1;
-		};
+					if 	((_buildingType == "Land_Cargo_Patrol_V1_F") OR (_buildingType == "Land_Cargo_Patrol_V2_F") OR (_buildingType == "Land_Cargo_Patrol_V3_F")) exitWith {
+						_vehicle = createVehicle [statMGtower, (_building buildingPos 1), [], 0, "CAN_COLLIDE"];
+						_position = [getPosATL _vehicle, 2.5, (getDir _building) - 180] call BIS_Fnc_relPos;
+						_vehicle setPosATL _position;
+						_vehicle setDir (getDir _building) - 180;
+						_unit = ([_markerPos, 0, infGunner, _groupGunners] call bis_fnc_spawnvehicle) select 0;
+						_unit moveInGunner _vehicle;
+						_allVehicles pushBack _vehicle;
+						sleep 1;
+					};
 
-		if 	((_buildingType == "Land_Cargo_Patrol_V1_F") OR (_buildingType == "Land_Cargo_Patrol_V2_F") OR (_buildingType == "Land_Cargo_Patrol_V3_F")) exitWith {
-			_vehicle = createVehicle [statMGtower, (_building buildingPos 1), [], 0, "CAN_COLLIDE"];
-			_position = [getPosATL _vehicle, 2.5, (getDir _building) - 180] call BIS_Fnc_relPos;
-			_vehicle setPosATL _position;
-			_vehicle setDir (getDir _building) - 180;
-			_unit = ([_markerPos, 0, infGunner, _groupGunners] call bis_fnc_spawnvehicle) select 0;
-			_unit moveInGunner _vehicle;
-			_allVehicles pushBack _vehicle;
-			sleep 1;
-		};
-//Stef defensive vehicle with gunner on.
-		if ((_buildingType == "Land_HelipadSquare_F") AND (!_isFrontline)) exitWith {
-			_vehicle = createVehicle [selectRandom heli_unarmed, position _building, [],0, "CAN_COLLIDE"];
-			_vehicle setDir (getDir _building);
-			_allVehicles pushBack _vehicle;
-			sleep 1;
-		};
+					if ((_buildingType == "Land_HelipadSquare_F") AND (!_isFrontline)) exitWith {
+						_vehicle = createVehicle [selectRandom heli_unarmed, position _building, [],0, "CAN_COLLIDE"];
+						_vehicle setDir (getDir _building);
+						_allVehicles pushBack _vehicle;
+						sleep 1;
+					};
 
-		if 	(_buildingType in listbld) exitWith {
-			_vehicle = createVehicle [statMGtower, (_building buildingPos 13), [], 0, "CAN_COLLIDE"];
-			_unit = ([_markerPos, 0, infGunner, _groupGunners] call bis_fnc_spawnvehicle) select 0;
-			_unit moveInGunner _vehicle;
-			_allSoldiers = _allSoldiers + [_unit];
-			sleep 1;
-			_allVehicles = _allVehicles + [_vehicle];
-			_vehicle = createVehicle [statMGtower, (_building buildingPos 17), [], 0, "CAN_COLLIDE"];
-			_unit = ([_markerPos, 0, infGunner, _groupGunners] call bis_fnc_spawnvehicle) select 0;
-			_unit moveInGunner _vehicle;
-			_allVehicles pushBack _vehicle;
-			sleep 1;
+					if 	(_buildingType in listbld) exitWith {
+						_vehicle = createVehicle [statMGtower, (_building buildingPos 13), [], 0, "CAN_COLLIDE"];
+						_unit = ([_markerPos, 0, infGunner, _groupGunners] call bis_fnc_spawnvehicle) select 0;
+						_unit moveInGunner _vehicle;
+						_allSoldiers = _allSoldiers + [_unit];
+						sleep 1;
+						_allVehicles = _allVehicles + [_vehicle];
+						_vehicle = createVehicle [statMGtower, (_building buildingPos 17), [], 0, "CAN_COLLIDE"];
+						_unit = ([_markerPos, 0, infGunner, _groupGunners] call bis_fnc_spawnvehicle) select 0;
+						_unit moveInGunner _vehicle;
+						_allVehicles pushBack _vehicle;
+						sleep 1;
+					};
+				};
 		};
 	};
-};
 
 _flag = createVehicle [cFlag, _markerPos, [],0, "CAN_COLLIDE"];
 _flag allowDamage false;
@@ -214,7 +217,7 @@ if ((random 100 < (((server getVariable "prestigeNATO") + (server getVariable "p
 	[_group, _marker, "SAFE", "SPAWNED","NOFOLLOW", "NOVEH2","NOSHARE","DoRelax"] execVM "scripts\UPSMON.sqf";
 };
 
-waitUntil {sleep 1; !(spawner getVariable _marker) OR (({!(vehicle _x isKindOf "Air")} count ([_size,0,_markerPos,"BLUFORSpawn"] call distanceUnits)) > 3*count (allUnits select {((side _x == side_green) OR (side _x == side_red)) AND (_x distance _markerPos <= (_size max 300)) AND !(captive _x)}))};
+waitUntil {sleep 1; !(spawner getVariable _marker) OR (({!(vehicle _x isKindOf "Air")} count ([_size,0,_markerPos,"BLUFORSpawn"] call distanceUnits)) > 3*count (allUnits select {((side _x == side_green) OR (side _x == side_red)) AND (_x distance _markerPos <= (_size max 300)) AND !(captive _x) and (lifeState _x != "INCAPACITATED")}))};
 
 if ((spawner getVariable _marker) AND !(_marker in mrkFIA)) then{
 	[_flag] remoteExec ["mrkWIN",2];
