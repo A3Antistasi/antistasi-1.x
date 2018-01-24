@@ -244,8 +244,21 @@ _allVehicles pushBack _crate;
 
 diag_log format ["ANTISTASI_COUNTER: %1 spawned %2 and %3 vehicles",_marker,count _allsoldiers, count _allvehicles];
 
-//Counting units to determinate win/loss of ownership.
-waitUntil {sleep 1; !(spawner getVariable _marker) OR (({!(vehicle _x isKindOf "Air")} count ([_size,0,_markerPos,"BLUFORSpawn"] call distanceUnits)) > 3*count (allUnits select {((side _x == side_green) OR (side _x == side_red)) AND (_x distance _markerPos <= (_size max 300)) AND !(captive _x)}))};
+//Despawning conditions
+	waitUntil {sleep 1;
+		!(spawner getVariable _marker) OR
+
+		(({!(vehicle _x isKindOf "Air")}
+		 	count ([_size,0,_markerPos,"BLUFORSpawn"] call distanceUnits))
+			> 3*
+			count (allUnits select {(
+				(side _x == side_green) OR
+				(side _x == side_red)) AND
+				(_x distance _markerPos <= (_size max 300)) AND
+				!(captive _x) OR
+				(lifeState _x == "INCAPACITATED")})
+		)
+	};
 
 if ((spawner getVariable _marker) AND !(_marker in mrkFIA)) then {
 	[_flag] remoteExec ["mrkWIN",2];

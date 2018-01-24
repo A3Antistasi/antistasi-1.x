@@ -245,23 +245,31 @@ _allGroups pushBack _group;
 	};
 
 //Despawn conditions
-waitUntil {sleep 1; !(spawner getVariable _marker) OR (({!(vehicle _x isKindOf "Air")} count ([_size,0,_markerPos,"OPFORSpawn"] call distanceUnits)) > 2*(({alive _x} count _allSoldiers) + count ([_size,0,_markerPos,"BLUFORSpawn"] call distanceUnits)))};
+	waitUntil {sleep 1;
+		!(spawner getVariable _marker) OR
+		(
+		 	({!(vehicle _x isKindOf "Air")}
+		 	count ([_size,0,_markerPos,"OPFORSpawn"] call distanceUnits))
+		 	> 2*(({alive _x} count _allSoldiers) + count ([_size,0,_markerPos,"BLUFORSpawn"] call distanceUnits))
+		 )
+	};
 
-//Territory loose conditions
-if (spawner getVariable _marker) then {
-	if (_marker != "FIA_HQ") then {[_marker] remoteExec ["mrkLOOSE",2]};
-};
+	//Territory loose conditions
+		if (spawner getVariable _marker) then {
+			if (_marker != "FIA_HQ") then {[_marker] remoteExec ["mrkLOOSE",2]};
+		};
 
 
-if (count ([distanciaSPWN,0,_markerPos,"BLUFORSpawn"] call distanceUnits) < 1) then {
-	spawner setVariable [_marker,false,true];
-};
+		if (count ([distanciaSPWN,0,_markerPos,"BLUFORSpawn"] call distanceUnits) < 1) then {
+			spawner setVariable [_marker,false,true];
+		};
 
 
 waitUntil {sleep 1; !(spawner getVariable _marker)};
 
-{if ((!alive _x) AND !(_x in destroyedBuildings)) then {destroyedBuildings = destroyedBuildings + [position _x]; publicVariableServer "destroyedBuildings"}} forEach _buildings;
+	//Save destroyed buildings
+		{if ((!alive _x) AND !(_x in destroyedBuildings)) then {destroyedBuildings = destroyedBuildings + [position _x]; publicVariableServer "destroyedBuildings"}} forEach _buildings;
 
-[_allGroups + _guerGroups, _allSoldiers + _guerSoldiers, _allVehicles + _guerVehicles] spawn AS_fnc_despawnUnits; //AS_fnc_despawnUnits is waiting for blufor to leave, not opfor!! So they might spawn multiple times.
-
-if !(isNull _observer) then {deleteVehicle _observer};
+	//Despawn
+		[_allGroups + _guerGroups, _allSoldiers + _guerSoldiers, _allVehicles + _guerVehicles] spawn AS_fnc_despawnUnits; //AS_fnc_despawnUnits is waiting for blufor to leave, not opfor!! So they might spawn multiple times.
+		if !(isNull _observer) then {deleteVehicle _observer};

@@ -126,7 +126,7 @@ waitUntil {sleep 1;
 	(not (spawner getVariable _marcador)) or
 	(
 	({(not(vehicle _x isKindOf "Air")) and (alive _x) and (lifeState _x != "INCAPACITATED") and (!fleeing _x)}
-	count ([_size,0,_posicion,"OPFORSpawn"] call distanceUnits)) > 3*({(alive _x) and (lifeState _x != "INCAPACITATED")}
+	count ([_size,0,_posicion,"OPFORSpawn"] call distanceUnits)) > 3* ({(alive _x) and (lifeState _x != "INCAPACITATED")}
 	count ([_size,0,_posicion,"BLUFORSpawn"] call distanceUnits))
 	)
 }; //need to add check for unconscious
