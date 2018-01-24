@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Project name="Antistasi">
 	<Package name="Settings">
-		<Container name="AceSettings">
+		<!--<Container name="AceSettings">
 			<Key ID="STR_ACE_MEDICAL_LEVEL">
 				<Original>ACE: Medical Level</Original>
 				<Russian>ACE: Уровень медицины</Russian>
@@ -154,7 +154,7 @@
 				<Original>2</Original>
 				<Russian>Игроки и боты</Russian>
 			</Key>
-		</Container>
+		</Container>--><!-- not using need to delete -->
 		<Container name="Description_settings">
 			<Key ID="STR_DES_ATSAFC">
 				<Original>Antistasi: ability to start a fresh campaign</Original>
@@ -222,7 +222,7 @@
 			</Key>
 			<Key ID="STR_ACT_USEMED">
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\heal_ca.paa' /&gt; Use Medical Supplies</Original>
-				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\heal_ca.paa' /&gt; Лечиться</Russian>
+				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\heal_ca.paa' /&gt; Лечить</Russian>
 			</Key>
 			<Key ID="STR_ACT_RECRUITUNIT">
 				<Original>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\MPTable\infantry_ca.paa' /&gt; Unit Recruitment</Original>
@@ -256,7 +256,7 @@
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\takeFlag_ca.paa' /&gt; Take the Flag</Original>
 				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\takeFlag_ca.paa' /&gt; Захватить Флаг</Russian>
 			</Key>
-			<Key ID="STR_ACT_PERSGARAGE">
+			<Key ID="STR_ACT_PERSGARAGE"><!-- not use need to delete -->
 				<Original>&lt;img size='1.75' image='\A3\ui_f\data\GUI\rsc\rscdisplaysinglemission\source\backup\large_64x64\locked_ca.paa' /&gt; Personal Garage</Original>
 				<Russian>&lt;img size='1.75' image='\A3\ui_f\data\GUI\rsc\rscdisplaysinglemission\source\backup\large_64x64\locked_ca.paa' /&gt; Персональный Гараж</Russian>
 			</Key>
@@ -266,7 +266,7 @@
 			</Key>
 			<Key ID="STR_ACT_MOVEASSET">
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\VTOLVectoring_ca.paa' /&gt; Move this Asset</Original>
-				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\VTOLVectoring_ca.paa' /&gt; Переместить Объект</Russian>
+				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\VTOLVectoring_ca.paa' /&gt; Переместить</Russian>
 			</Key>
 			<Key ID="STR_ACT_CHANGEROLE">
 				<Original>&lt;img size='1.2' image='' /&gt; Change Class</Original>
@@ -274,11 +274,11 @@
 			</Key>
 			<Key ID="STR_ACT_REMOVEASSET">
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Revive\overlayIcons\f100_ca.paa' /&gt; Remove this Object</Original>
-				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Revive\overlayIcons\f100_ca.paa' /&gt; Удалить Объект</Russian>
+				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Revive\overlayIcons\f100_ca.paa' /&gt; Удалить</Russian>
 			</Key>
 			<Key ID="STR_ACT_DROPASSET">
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\VTOLVectoring_ca.paa' /&gt; Drop Here</Original>
-				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\VTOLVectoring_ca.paa' /&gt; Поставить Объект</Russian>
+				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\VTOLVectoring_ca.paa' /&gt; Поставить</Russian>
 			</Key>
 			<Key ID="STR_ACT_DEPLOYTOWROPES">
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\VehicleToggles\SlingLoadRopeIconOn_ca.paa' /&gt; Deploy Tow Ropes</Original>
@@ -302,11 +302,7 @@
 			</Key>
 			<Key ID="STR_ACT_JAMCSAT">
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\call_ca.paa' /&gt; Jam CSAT</Original>
-				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\call_ca.paa' /&gt; Глушить Противника</Russian>
-			</Key>
-			<Key ID="STR_ACT_JUNGLE">
-				<Original>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\SimpleTasks\types\use_ca.paa' /&gt; Clear Nearby Jungle</Original>
-				<Russian>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\SimpleTasks\types\use_ca.paa' /&gt; Очистить Близлежащие Джунгли</Russian><!-- не используется -->
+				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\call_ca.paa' /&gt; Включить Глушилку</Russian>
 			</Key>
 			<Key ID="STR_ACT_REST">
 				<Original>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\Cursors\wait_gs.paa' /&gt; Rest for 8 Hours</Original>
@@ -314,7 +310,7 @@
 			</Key>
 			<Key ID="STR_ACT_HQOPTIONS">
 				<Original>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\Ranks\colonel_gs.paa' /&gt; HQ Options</Original>
-				<Russian>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\Ranks\colonel_gs.paa' /&gt;  Возможности Базы</Russian>
+				<Russian>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\Ranks\colonel_gs.paa' /&gt;  Управление Штаба</Russian>
 			</Key>
 			<Key ID="STR_ACT_GAMEOPTIONS">
 				<Original>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\SimpleTasks\types\use_ca.paa' /&gt; Game Options</Original>
