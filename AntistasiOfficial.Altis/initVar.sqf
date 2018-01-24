@@ -238,6 +238,6 @@ publicVariable "reducedGarrisons";
 publicVariable "replaceFIA";
 publicVariable "static_playerSide";
 
-if (isMultiplayer) then {[[petros,"hint","Variables Init Completed"],"commsMP"] call BIS_fnc_MP;};
+if (isMultiplayer) then {[[petros,"hint",localize "STR_HINTS_INITVAR"],"commsMP"] call BIS_fnc_MP;};
 
 diag_log "InitVar.sqf: end";

@@ -25,4 +25,4 @@ _posHQ = getMarkerPos guer_respawn;
 
 publicVariable "reportedVehs";
 
-hint "All nearby units and vehicles have been healed or repaired. Near vehicles have been rearmed at full load and no longer in reported list.";
+hint localize "STR_HINTS_HNR_ALL";
