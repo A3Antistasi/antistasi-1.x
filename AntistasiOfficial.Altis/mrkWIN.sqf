@@ -13,7 +13,7 @@ if (_marcador in mrkFIA) exitWith {};
 _posicion = getMarkerPos _marcador;
 _size = [_marcador] call sizeMarker;
 
-if ((!isNull _jugador) and (captive _jugador)) exitWith {hint "You cannot Capture the Flag while in Undercover Mode"};
+if ((!isNull _jugador) and (captive _jugador)) exitWith {hint localize "STR_HINTS_MRKW_YCCTFWIUM"};
 
 //Reveal enemy units to player within a range
 	if (!isNull _jugador) then {
