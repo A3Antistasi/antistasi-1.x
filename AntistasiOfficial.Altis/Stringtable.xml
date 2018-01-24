@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Project name="Antistasi">
 	<Package name="Settings">
-		<Container name="AceSettings">
+		<!--<Container name="AceSettings">
 			<Key ID="STR_ACE_MEDICAL_LEVEL">
 				<Original>ACE: Medical Level</Original>
 				<Russian>ACE: Уровень медицины</Russian>
@@ -154,7 +154,7 @@
 				<Original>2</Original>
 				<Russian>Игроки и боты</Russian>
 			</Key>
-		</Container>
+		</Container>-->
 		<Container name="Description_settings">
 			<Key ID="STR_DES_ATSAFC">
 				<Original>Antistasi: ability to start a fresh campaign</Original>
