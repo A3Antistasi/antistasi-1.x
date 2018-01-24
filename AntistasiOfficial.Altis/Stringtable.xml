@@ -2105,6 +2105,331 @@
 				<Russian>Ваше снаряжение вызывает подозрение, вы больше не инкогнито.\n</Russian>
 			</Key>
 		</Container>
+		<Container name="Fast_Travel_Radio">
+		    <Key ID="STR_HINTS_FTR_YCSOGOTFT">
+			    <Original>You can select one group only to Fast Travel</Original>
+				<Russian>Вы можете выбрать только одну группу телепорта</Russian>
+			</Key>
+            <Key ID="STR_HINTS_FTR_OAGLCAFFT">
+			    <Original>Only a group leader can ask for Fast Travel</Original>
+				<Russian>Только руководитель группы может попросить телепорта</Russian>
+			</Key>	
+			<Key ID="STR_HINTS_FTR_YCFTWOPIYG">
+			    <Original>You cannot Fast Travel with other players in your group</Original>
+				<Russian>Вы не можете телепортироваться с другими игроками из вашей группе</Russian>
+			</Key>	
+			<Key ID="STR_HINTS_FTR_YCFTWYACAI">
+			    <Original>You cannot Fast Travel while you are controlling AI</Original>
+				<Russian>Вы не можете быстро путешествовать во время управления AI</Russian>
+			</Key>	
+			<Key ID="STR_HINTS_FTR_YCFTWENTG">
+			    <Original>You cannot Fast Travel with enemies near the group</Original>
+				<Russian>Вы не можете быстро путешествовать когда враги рядом с группой</Russian>
+			</Key>	
+			<Key ID="STR_HINTS_FTR_YCFTIYDHADIAY">
+			    <Original>You cannot Fast Travel if you don't have a driver in all your vehicles or your vehicles are damage and cannot move</Original>
+				<Russian>Вы не можете исполь телепорт, если у вас нет водителей на всех ваших транспортных средствах или ваши транспортные средства повреждены и не могут двигаться</Russian>
+			</Key>	
+			<Key ID="STR_HINTS_FTR_COTZYWTT">
+			    <Original>Click on the zone you want to travel</Original>
+				<Russian>Нажмите на зону, в которую вы хотите совершить путешествие</Russian>
+			</Key>	
+			<Key ID="STR_HINTS_FTR_YCFTTRNW">
+			    <Original>You cannot Fast Travel to roadblocks and watchposts</Original>
+				<Russian>Вы не можете телепортироваться на контрольно-пропускные пункты</Russian>
+			</Key>	
+			<Key ID="STR_HINTS_FTR_YCFTTAECZ">
+			    <Original>You cannot Fast Travel to an enemy controlled zone</Original>
+				<Russian>Вы не можете быстро путешествовать в зону, контролируемую врагом</Russian>
+			</Key>	
+			<Key ID="STR_HINTS_FTR_YCFTTC">
+			    <Original>You cannot Fast Travel to camps.</Original>
+				<Russian>Вы не можете быстро путешествовать в лагеря.</Russian>
+			</Key>	
+			<Key ID="STR_HINTS_FTR_YCFTTAAUAOWE">
+			    <Original>You cannot Fast Travel to an area under attack or with enemies in the surrounding</Original>
+				<Russian>Вы не можете быстро путешествовать в область, находящуюся под атакой, или в окружении врагов</Russian>
+			</Key>	
+			<Key ID="STR_HINTS_FTR_MG1TD">
+			    <Original>Moving group %1 to destination</Original>
+				<Russian>Перемещение группы %1 в пункт назначения</Russian>
+			</Key>	
+			<Key ID="STR_HINTS_FTR_G1ATD">
+			    <Original>Group %1 arrived to destination</Original>
+				<Russian>Группа %1 прибыла в пункт назначения</Russian>
+			</Key>	
+			<Key ID="STR_HINTS_FTR_YMCNMUYC">
+			    <Original>You must click near marker under your control</Original>
+				<Russian>Вы должны нажать маркер под вашим контролем</Russian> <!-- Редакт. -->
+			</Key>	 
+		</Container>
+		<Container name="FTRAVEL_DIALOG">
+		     <Key ID="STR_HINTS_FD_YNARIYITBA">
+			    <Original>You need a radio in your inventory to be able to give orders to other squads</Original>
+				<Russian>Вам нужно радио в вашем инвентаре, чтобы иметь возможность отдавать приказы другим отрядам</Russian>
+			</Key>
+			<Key ID="STR_HINTS_FD_COTPYWTETC">
+			    <Original>Click on the position you wish to establish the camp.</Original>
+				<Russian>Нажмите на позицию, в которой вы хотите создать лагерь.</Russian>
+			</Key>
+			<Key ID="STR_HINTS_FD_COTCTAAC">
+			    <Original>Click on the camp to abandon a camp.</Original>
+				<Russian>Нажмите на лагерь, чтобы бросить лагерь.</Russian>
+			</Key>
+			<Key ID="STR_HINTS_FD_COTCTRAC">
+			    <Original>Click on the camp to rename a camp.</Original>
+				<Russian>Нажмите на лагерь, чтобы переименовать лагерь.</Russian>
+			</Key>
+			<Key ID="STR_HINTS_FD_LITCTB">
+			    <Original>Location is too close to base</Original>
+				<Russian>Место слишком близко к базе</Russian>
+			</Key>
+			<Key ID="STR_HINTS_FD_NCTA">
+			    <Original>No camps to abandon.</Original>
+				<Russian>Нету лагерей которые можно бросить</Russian>  <!-- Редакт. -->
+			</Key>
+			<Key ID="STR_HINTS_FD_YCDACWEANI">
+			    <Original>You cannot delete a camp while enemies are near it.</Original>
+				<Russian> </Russian>
+			</Key>
+			<Key ID="STR_HINTS_FD_YCOSAMOFFC">
+			    <Original>You can only sustain a maximum of four camps.</Original>
+				<Russian>Вы не можете удалить лагерь, пока враги рядом с ним.</Russian>
+			</Key>
+			<Key ID="STR_HINTS_FD_CR">
+			    <Original>Camp renamed</Original>
+				<Russian>Лагерь переименован</Russian>
+			</Key>
+			<Key ID="STR_HINTS_FD_YLORTBTC">
+			    <Original>You lack of resources to build this camp. \n %1 HR and %2 € needed</Original>
+				<Russian>Вам не хватает ресурсов для создания этого лагеря. \ n %1 HR и %2 € необходимо</Russian>
+			</Key>
+		</Container>
+        <Container name="HEAL_AND_REPAIR">
+		    <Key ID="STR_HINTS_HNR_ALL">
+			    <Original>All nearby units and vehicles have been healed or repaired. Near vehicles have been rearmed at full load and no longer in reported list.</Original>
+				<Russian>Все соседние подразделения и транспортные средства были излечены или отремонтированы. Воздушные транспортные средства были перевооружены с полной нагрузкой и больше не указаны в списке.</Russian>
+			</Key>
+		</Container>	 
+		 <Container name="MOVE_HQ">
+		     <Key ID="STR_HINTS_MHQ_OCSHATTF">
+			    <Original>Only Commander Slowhand has access to this function</Original>
+				<Russian>Только Главнокомандующий имеет доступ к этой функции</Russian> <!-- Редакт. -->
+			</Key>
+			<Key ID="STR_HINTS_MHQ_YMFEYAIOTMTHQ">
+			    <Original>You must first empty your Ammobox in order to move the HQ</Original>
+				<Russian>Вы должны сначала опустошить свой ящик боеприпасов, чтобы переместить штаб</Russian>
+			</Key>
+			<Key ID="STR_HINTS_MHQ_MTAACNTVACNPTTNL">
+			    <Original>Move the Arsenal ammo crate and the Vehicle ammo crate and Petros to the new location</Original>
+				<Russian>Переместите ящик с боеприпасами «Арсенал» и ящик с боеприпасами для автомобилей и «Петроса» на новое место</Russian>
+			</Key>
+			<Key ID="STR_HINTS_MHQ_HQGWSHNHTE">
+			    <Original>HQ Garrison will stay here and hold the enemy</Original>
+				<Russian>Гарнизон штаба останется здесь и будет удерживать врага</Russian>
+			</Key>
+		</Container>
+		<Container name="MRK_WIN">
+		     <Key ID="STR_HINTS_MRKW_YCCTFWIUM">
+			    <Original>You cannot Capture the Flag while in Undercover Mode</Original>
+				<Russian>Вы не можете захватить флаг в режиме Инкогнито</Russian>
+			</Key>
+		</Container>
+		<Container name="NATO_DIALOG">
+		     <Key ID="STR_HINTS_NATOD_OCCAFNATOS">
+			    <Original>Only Commander can ask for NATO support</Original>
+				<Russian>Только командующий может попросить поддержку НАТО</Russian>
+			</Key>
+			<Key ID="STR_HINTS_NATOD_SIVLWOMOCFPS">
+			    <Original>Server is very loaded. \nWait one minute or change FPS settings in order to fulfill this request</Original>
+				<Russian>Сервер очень загружен. \nПодождите одну минуту или измените настройки FPS, чтобы выполнить этот запрос.</Russian>
+			</Key>
+			<Key ID="STR_HINTS_NATOD_NATOIABWTKOM">
+			    <Original>NATO is already busy with this kind of mission</Original>
+				<Russian>НАТО уже занята такой миссией</Russian>
+			</Key>
+			<Key ID="STR_HINTS_NATOD_YNARIYITBATGOTOS">
+			    <Original>You need a radio in your inventory to be able to give orders to other squads</Original>
+				<Russian>Вам нужно радио в вашем инвентаре, чтобы иметь возможность отдавать приказы другим отрядам</Russian>
+			</Key>
+			<Key ID="STR_HINTS_NATOD_YNYCALOBTPTA">
+			    <Original>You need to conquer at least one base to perform this action</Original>
+				<Russian>Чтобы выполнить это действие, вам нужно покорить хотя бы одну базу</Russian>
+			</Key>
+			<Key ID="STR_HINTS_NATOD_COTBOAYWNATOTA">
+			    <Original>Click on the base or airport you want NATO to attack</Original>
+				<Russian>Нажмите на базу или аэропорт, на которую НАТО совершит атаку</Russian>
+			</Key>
+			<Key ID="STR_HINTS_NATOD_COTBFWYWNATOTOTA">
+			    <Original>Click on the base from which you want NATO to attack</Original>
+				<Russian>Нажмите на базу, на которую НАТО совершит атаку</Russian>
+			</Key>
+			<Key ID="STR_HINTS_NATOD_COTSWYWTA">
+			    <Original>Click on the spot where you want the Ammodrop</Original>
+				<Russian>Нажмите на место, где вы хотите получить боеприпасы</Russian>
+			</Key>
+			<Key ID="STR_HINTS_NATOD_COTBFWYWAS">
+			    <Original>Click on the base from which you want Artillery Support</Original>
+				<Russian>Нажмите на базу,из которой вы хотите,чтобы совершилась артиллерийская поддержка</Russian>  <!-- Редакт. -->
+			</Key>
+			<Key ID="STR_HINTS_NATOD_COTAFWYWNATOTA">
+			    <Original>Click on the airport from which you want NATO to attack</Original>
+				<Russian>Нажмите на аэропорт, на который НАТО совершит атаку</Russian>
+			</Key>
+			<Key ID="STR_HINTS_NATOD_COTSWYWNATOTSARs">
+			    <Original>Click on the spot where you want NATO to setup a roadblock</Original>
+				<Russian>Нажмите на то место, где вы хотите, чтобы НАТО установила блокпост</Russian>
+			</Key>
+			<Key ID="STR_HINTS_NATOD_COTBOACFWYWNATOTDAQRF">
+			    <Original>Click on the base or airport/carrier from which you want NATO to dispatch a QRF</Original>
+				<Russian>Нажмите на базу или аэропорт / авианосец, из которых вы хотите, чтобы НАТО отправила QRF</Russian>
+			</Key>
+			<Key ID="STR_HINTS_NATOD_YIASEFEIDWRTCATI">
+			    <Original>You informed about supporting enemy faction emplacement, its destruction will reduce their concern about the island</Original>
+				<Russian>Вы сообщили о поддержке размещения вражеской фракции, ее уничтожение уменьшит их беспокойство по поводу острова</Russian>
+			</Key>
+			<Key ID="STR_HINTS_NATOD_WLOENATOSIOTPWTR">
+			    <Original>We lack of enough NATO Support in order to proceed with this request  (%1 needed)</Original>
+				<Russian>Нам недостаточно поддержки НАТО, чтобы запросить это (%1 необходимо)</Russian>
+			</Key>
+			<Key ID="STR_HINTS_NATOD_RBCOBPOR">
+			    <Original>Roadblocks can only be placed on roads.</Original>
+				<Russian>Дорожные блоки можно размещать только на дорогах.</Russian>
+			</Key>
+			<Key ID="STR_HINTS_NATOD_QRFDF1MTTFTQRF">
+			    <Original>QRF departing from %1. Mark the target for the QRF.</Original>
+				<Russian>QRF отклоняется от %1. Отметьте цель для QRF.</Russian>
+			</Key>
+			<Key ID="STR_HINTS_NATOD_NLCSATDQRFIRTL">
+			    <Original>No LCS available this decade, QRF is restricted to land.</Original>
+				<Russian>В этом десятилетии нет LCS, QRF ограничен землей.</Russian> <!-- Редакт. -->
+			</Key>
+			<Key ID="STR_HINTS_NATOD_QRFI">
+			    <Original>QRF inbound.</Original>
+				<Russian>QRF Прибывают</Russian>
+			</Key>
+			<Key ID="STR_HINTS_NATOD_YMCNAMM">
+			    <Original>You must click near a map marker</Original>
+				<Russian>Вы должны нажать возле маркера карты</Russian>
+			</Key>
+			<Key ID="STR_HINTS_NATOD_ASCOBOFB">
+			    <Original>Artillery support can only be obtained from bases.</Original>
+				<Russian>Артиллерийскую поддержку можно получить только с баз.</Russian>
+			</Key>
+			<Key ID="STR_HINTS_NATOD_YMCNAFB">
+			    <Original>You must click near a friendly base</Original>
+				<Russian>Вы должны нажать на дружественную базу</Russian>
+			</Key>
+			<Key ID="STR_HINTS_NATOD_COTACD">
+			    <Original>Click on the Armored Column destination</Original>
+				<Russian>Нажмите на пункт для Бронированная колонна</Russian>  <!-- Редакт. -->
+			</Key>
+			<Key ID="STR_HINTS_NATOD_YMCNAMMS">
+			    <Original>You must click near a map marker</Original>
+				<Russian>Вы должны щелкнуть маркер карты</Russian>
+			</Key>
+			<Key ID="STR_HINTS_NATOD_NATOWATKOZ">
+			    <Original>NATO won't attack this kind of zone.</Original>
+				<Russian>НАТО не будет атаковать эту зону.</Russian>
+			</Key>
+			<Key ID="NATO Attacks may be only ordered on AAF controlled zones">
+			    <Original>NATO Attacks may be only ordered on AAF controlled zones</Original>
+				<Russian>Атаки НАТО могут быть заказаны только в зонах, контролируемых AAF</Russian>
+			</Key>
+		</Container>
+	    <Container name="REBUILD_ASSETS">
+		     <Key ID="STR_HINTS_RA_YDNHEMTRAA">
+			    <Original>You do not have enough money to rebuild any Asset. You need 5.000 €</Original>
+				<Russian>У вас недостаточно средств для восстановления активов. Вам нужно 5.000 €</Russian>
+			</Key>
+			<Key ID="STR_HINTS_RA_COTZYWTR">
+			    <Original>Click on the zone you want to rebuild.</Original>
+				<Russian>Нажмите на зону, которую хотите перестроить.</Russian>
+			</Key>
+			<Key ID="STR_HINTS_RA_YMCNAMM">
+			    <Original>You must click near a map marker</Original>
+				<Russian>Вы должны нажать возле маркера карты</Russian>
+			</Key>
+			<Key ID="STR_HINTS_RA_YCRT">
+			    <Original>You cannot rebuild that</Original>
+				<Russian>Вы не можете восстановить это</Russian>
+			</Key>
+			<Key ID="STR_HINTS_RA_1REBUILTSS">
+			    <Original>%1 Rebuilt</Original>
+				<Russian>%1 Восстановлено</Russian>
+			</Key>
+		</Container>
+		<Container name="REINIT_Y">
+		     <Key ID="STR_HINTS_RY">
+			    <Original>Reinitialised:\n\nSpecial Keys\n\nStatistics Report</Original>
+				<Russian>Переинициализация:\n\Специальные клавиши\n\n Отчет о статистике</Russian>
+			</Key>
+		</Container>
+		<Container name="SERVER_AUTOSAVE">
+		     <Key ID="STR_HINTS_SERV_AUTO_SAVE">
+			    <Original>A critical failure has been detected in Antistasi. Please contact Admin  and ask for a diagnose + server restart. Apologies.</Original>
+				<Russian>В Antistasi обнаружен критический сбой. Пожалуйста, свяжитесь с администратором и попросите диагностировать + перезапуск сервера.Простите за неудобства.</Russian>
+			</Key>
+		</Container>
+		<Container name="SKIP_TIME">
+		     <Key ID="STR_HINTS_ST_OTCCOTR">
+			    <Original>Only the Commander can order to rest</Original>
+				<Russian>Только командующий может заказать отдых</Russian>
+			</Key>
+			<Key ID="STR_HINTS_ST_YCRWENOU">
+			    <Original>You cannot rest with enemies near our units</Original>
+				<Russian>Вы не можете отдыхать с врагами рядом с нашими подразделениями</Russian>
+			</Key>
+			<Key ID="STR_HINTS_ST_YCRWAAFOCSATIC">
+			    <Original>You cannot rest while AAF or CSAT is counterattacking</Original>
+				<Russian>Вы не можете отдыхать, когда AAF или CSAT контратакуют</Russian>
+			</Key>
+			<Key ID="STR_HINTS_ST_YCRWYHQIUA">
+			    <Original>You cannot rest while your HQ is under attack</Original>
+				<Russian>Вы не можете отдохнуть, пока ваш штаб находится под атакой</Russian>
+			</Key>
+			<Key ID="STR_HINTS_ST_APMBIA100MRFHQ">
+			    <Original>All player must be in a 100mts radius from HQ to be able to rest</Original>
+				<Russian>Все игроки должны находиться в радиусе 100 м от штаб-квартиры, чтобы иметь возможность отдохнуть</Russian>
+			</Key>
+		</Container>
+		<Container name="TELEPORT">
+		     <Key ID="STR_HINTS_TELEPORT">
+			    <Original>Click on the position you wish to teleport to.</Original>
+				<Russian>Нажмите на позицию, на которую вы хотите телепортироваться.</Russian>
+			</Key>
+		</Container>
+		<Container name="GARBAGE_CLEAR">
+		     <Key ID="STR_HINTS_GARBAGE_CLEAR">
+			    <Original>Deleting Garbage. Please wait</Original>
+				<Russian>Удаление мусора. пожалуйста, подождите</Russian>
+			</Key>
+		</Container>
+		<Container name="INIT_FUNCS">
+		     <Key ID="STR_HINTS_INITCUNCS">
+			    <Original>Functions Init Completed</Original>
+				<Russian>Functions Init Завершена</Russian>
+			</Key>
+		</Container>
+		<Container name="INIT_VAR">
+		     <Key ID="STR_HINTS_INITVAR">
+			    <Original>Variables Init Completed</Original>
+				<Russian>Переменные Init завершены</Russian>
+			</Key>
+		</Container>
+		<Container name="INIT_ZONES">
+		     <Key ID="empty">
+			    <Original>empty</Original>
+				<Russian>empty</Russian>
+			</Key>
+		</Container>
+		<Container name="MUSICA">
+		     <Key ID="STR_HINTS_MUSICA">
+			    <Original>The player is in this stance: %1</Original>
+				<Russian>Игрок находится в этой позиции: %1</Russian>
+				<Spanish>El jugador está en esta stance: %1</Spanish>
+			</Key>
+		</Container>
 	</Package>
 	<Package name="Dialogs">
 		<Container name="Dialogs">
