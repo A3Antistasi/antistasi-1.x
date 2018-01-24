@@ -30,7 +30,8 @@ _busy = if (dateToNumber date > server getVariable _marker) then {false} else {t
 						_unit = ([_markerPos, 0, infCrew, _groupGunners] call bis_fnc_spawnvehicle) select 0;
 						_unit moveInGunner _vehicle;
 						_allVehicles pushBack _vehicle;
-						sleep 1;
+						_allSoldiers pushback _unit;
+						sleep 0.1;
 					};
 
 					if 	((_buildingType == "Land_Cargo_HQ_V1_F") OR (_buildingType == "Land_Cargo_HQ_V2_F") OR (_buildingType == "Land_Cargo_HQ_V3_F")) exitWith {
@@ -40,7 +41,7 @@ _busy = if (dateToNumber date > server getVariable _marker) then {false} else {t
 						_unit = ([_markerPos, 0, infGunner, _groupGunners] call bis_fnc_spawnvehicle) select 0;
 						_unit moveInGunner _vehicle;
 						_allVehicles pushBack _vehicle;
-						sleep 1;
+						sleep 0.3;
 					};
 
 					if 	((_buildingType == "Land_Cargo_Patrol_V1_F") OR (_buildingType == "Land_Cargo_Patrol_V2_F") OR (_buildingType == "Land_Cargo_Patrol_V3_F")) exitWith {
@@ -51,14 +52,14 @@ _busy = if (dateToNumber date > server getVariable _marker) then {false} else {t
 						_unit = ([_markerPos, 0, infGunner, _groupGunners] call bis_fnc_spawnvehicle) select 0;
 						_unit moveInGunner _vehicle;
 						_allVehicles pushBack _vehicle;
-						sleep 1;
+						sleep 0.3;
 					};
 
 					if ((_buildingType == "Land_HelipadSquare_F") AND (!_isFrontline)) exitWith {
 						_vehicle = createVehicle [selectRandom heli_unarmed, position _building, [],0, "CAN_COLLIDE"];
 						_vehicle setDir (getDir _building);
 						_allVehicles pushBack _vehicle;
-						sleep 1;
+						sleep 0.1;
 					};
 
 					if 	(_buildingType in listbld) exitWith {
@@ -72,7 +73,7 @@ _busy = if (dateToNumber date > server getVariable _marker) then {false} else {t
 						_unit = ([_markerPos, 0, infGunner, _groupGunners] call bis_fnc_spawnvehicle) select 0;
 						_unit moveInGunner _vehicle;
 						_allVehicles pushBack _vehicle;
-						sleep 1;
+						sleep 0.2;
 					};
 				};
 		};
@@ -87,7 +88,7 @@ _crate = "I_supplyCrate_F" createVehicle _markerPos;
 _allVehicles pushBack _crate;
 
 //Create Mortars
-	_vehicleCount = 1 max (round (_size/30));
+	_vehicleCount = 1 max (round (_size/60));
 	if ( _vehicleCount > 0 ) then {
 		_spawnPos = [_markerPos, random (_size / 2),random 360] call BIS_fnc_relPos;
 		_currentCount = 0;
@@ -167,7 +168,7 @@ _allGroups pushBack _groupGunners;
 	_allGroups pushBack _group;
 	{_x setUnitPos "MIDDLE";} forEach units _group;
 
-//Create units
+//Create soldiers
 	_currentCount = 0;
 	if (_isFrontline) then {_vehicleCount = _vehicleCount * 1}; //removed the *2, frontline base should fancy just better defense instead of more units
 	while {(spawner getVariable _marker) AND (_currentCount < _vehicleCount)} do {
@@ -203,21 +204,32 @@ sleep 3;
 
 [_marker, _allSoldiers] spawn AS_fnc_garrisonMonitor;
 
-_observer = objNull;
-if ((random 100 < (((server getVariable "prestigeNATO") + (server getVariable "prestigeCSAT"))/10)) AND (spawner getVariable _marker)) then {
-	_spawnPos = [];
-	_group = createGroup civilian;
-	while {true} do {
-		_spawnPos = [_markerPos, round (random _size), random 360] call BIS_Fnc_relPos;
-		if !(surfaceIsWater _spawnPos) exitWith {};
+//Create journalist
+	_observer = objNull;
+	if ((random 100 < (((server getVariable "prestigeNATO") + (server getVariable "prestigeCSAT"))/10)) AND (spawner getVariable _marker)) then {
+		_spawnPos = [];
+		_group = createGroup civilian;
+		while {true} do {
+			_spawnPos = [_markerPos, round (random _size), random 360] call BIS_Fnc_relPos;
+			if !(surfaceIsWater _spawnPos) exitWith {};
+		};
+		_observer = _group createUnit [selectRandom CIV_journalists, _spawnPos, [],0, "NONE"];
+		[_observer] spawn CIVinit;
+		_allGroups pushBack _group;
+		[_group, _marker, "SAFE", "SPAWNED","NOFOLLOW", "NOVEH2","NOSHARE","DoRelax"] execVM "scripts\UPSMON.sqf";
 	};
-	_observer = _group createUnit [selectRandom CIV_journalists, _spawnPos, [],0, "NONE"];
-	[_observer] spawn CIVinit;
-	_allGroups pushBack _group;
-	[_group, _marker, "SAFE", "SPAWNED","NOFOLLOW", "NOVEH2","NOSHARE","DoRelax"] execVM "scripts\UPSMON.sqf";
-};
 
-waitUntil {sleep 1; !(spawner getVariable _marker) OR (({!(vehicle _x isKindOf "Air")} count ([_size,0,_markerPos,"BLUFORSpawn"] call distanceUnits)) > 3*count (allUnits select {((side _x == side_green) OR (side _x == side_red)) AND (_x distance _markerPos <= (_size max 300)) AND !(captive _x) and (lifeState _x != "INCAPACITATED")}))};
+
+//Despawn conditions
+waitUntil {sleep 1;
+	!(spawner getVariable _marker) OR
+	(({!(vehicle _x isKindOf "Air")} count ([_size,0,_markerPos,"BLUFORSpawn"] call distanceUnits)) > 3*
+		count (allUnits select {(
+			(side _x == side_green) OR
+			(side _x == side_red)) AND (_x distance _markerPos <= (_size max 300)) AND !(captive _x) and (lifeState _x != "INCAPACITATED")}
+		)
+	)
+};
 
 if ((spawner getVariable _marker) AND !(_marker in mrkFIA)) then{
 	[_flag] remoteExec ["mrkWIN",2];
@@ -225,6 +237,7 @@ if ((spawner getVariable _marker) AND !(_marker in mrkFIA)) then{
 
 waitUntil {sleep 1; !(spawner getVariable _marker)};
 
+//Save destroyed buildings after area cached out
 {
 	if ((!alive _x) AND !(_x in destroyedBuildings)) then {
 		destroyedBuildings = destroyedBuildings + [position _x];
@@ -232,6 +245,7 @@ waitUntil {sleep 1; !(spawner getVariable _marker)};
 	};
 } forEach _buildings;
 
+//Despawn
 deleteMarker _patrolMarker;
 [_allGroups, _allSoldiers, _allVehicles] spawn AS_fnc_despawnUnits;
 if !(isNull _observer) then {deleteVehicle _observer};

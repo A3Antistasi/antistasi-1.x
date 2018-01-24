@@ -322,15 +322,25 @@ diag_log format ["groups: %1; vehicles: %2; soldiers: %3", _allGroups, _allVehic
 //forcedSpawn pushBack _marker; //Sparker: force spawn a base under attack
 //publicVariable "forcedSpawn";
 
+//Retreat conditions
 waitUntil
 {
 	sleep 5;
 	(
-		({!(captive _x)} count _allSoldiers) < ({captive _x} count _allSoldiers)) OR
-		({alive _x} count _allSoldiers < (round ((count _allSoldiers)/3))) OR
+	 	//Operative soldiers < Downed soldiers !??!?!
+		({!(captive _x) and (lifeState _x != "INCAPACITATED")} count _allSoldiers) < ({(captive _x) and (lifeState _x = "INCAPACITATED")} count _allSoldiers)) OR
+
+		//Operative soldiers < 1/3 of All soldiers
+		({(alive _x) and (lifeState _x != "INCAPACITATED")} count _allSoldiers < (round ((count _allSoldiers)/3))) OR
+
+		//time is over
 		(time > _attackDuration) OR
+
+		//objective has been captured
 		(_marker in mrkAAF) OR
-		(2*count (allUnits select {(side _x == side_blue) AND (_x distance _markerPos <= 100)}) < count (allUnits select {((side _x == side_green) OR (side _x == side_red)) AND (_x distance _markerPos <= 100)})
+
+		//(Operative FIA within 100m) < (Operative AAF within 100m)
+		(2*count (allUnits select {(side _x == side_blue) AND (_x distance _markerPos <= 100) and (lifeState _x != "INCAPACITATED")}) < count (allUnits select {((side _x == side_green) OR (side _x == side_red)) AND (_x distance _markerPos <= 100) and (lifeState _x != "INCAPACITATED")})
 	)
 };
 

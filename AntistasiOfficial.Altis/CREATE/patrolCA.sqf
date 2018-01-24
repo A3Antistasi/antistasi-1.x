@@ -335,18 +335,31 @@ _roads = [];
 		} forEach _redVehicles;
 	};
 
+//Retreat conditions
+	if (_isMarker) then {
+		waitUntil {sleep 5;(
 
-if (_isMarker) then {
-	waitUntil {sleep 5; (({!(captive _x)} count _allSoldiers) < ({captive _x} count _allSoldiers)) OR ({alive _x} count _allSoldiers < (round ((count _allSoldiers)/3))) OR (_marker in mrkAAF) OR (time > _attackDuration)};
+			//
+			({!(captive _x)} count _allSoldiers) < ({captive _x} count _allSoldiers)) OR
 
-	smallCAmrk = smallCAmrk - [_marker];
-	publicVariable "smallCAmrk";
+			//
+			({(alive _x) and (lifeState _x != "INCAPACITATED")} count _allSoldiers < (round ((count _allSoldiers)/3))) OR
 
-	waitUntil {sleep 1; not (spawner getVariable _marker)};
-} else {
-	waitUntil {sleep 1; !([distanciaSPWN,1,_markerPos,"BLUFORSpawn"] call distanceUnits)};
-	smallCApos = smallCApos - [_marker];
-	publicVariable "smallCApos";
-};
+			//
+			(_marker in mrkAAF) OR
 
-[_allGroups + _redGroups, _allSoldiers + _redSoldiers, _allVehicles + _redVehicles] spawn AS_fnc_despawnUnits;
+			//
+			(time > _attackDuration)
+		};
+
+		smallCAmrk = smallCAmrk - [_marker];
+		publicVariable "smallCAmrk";
+
+		waitUntil {sleep 1; not (spawner getVariable _marker)};
+	} else {
+		waitUntil {sleep 1; !([distanciaSPWN,1,_markerPos,"BLUFORSpawn"] call distanceUnits)};
+		smallCApos = smallCApos - [_marker];
+		publicVariable "smallCApos";
+	};
+
+	[_allGroups + _redGroups, _allSoldiers + _redSoldiers, _allVehicles + _redVehicles] spawn AS_fnc_despawnUnits;
