@@ -80,6 +80,15 @@ Why having 120 paralell instances of spawn, for each soldier, with its waituntil
 /*from fn_despawnunits.sqf
 ###	I have to check this one still- actually i think here lies the reason of a duplication bug that show duplicated friendly garrison ###*/
 
+
+
+/*For below: Check warlords despawn.
+
+//Barbolani: I dont see sense on the below. Despawning of an attack has to check Blufors nearby, and those blufors have to be "BLUFORSpawn" because of not, some garrison will keep those units in map.
+//WOTP DESPAWNING (THE MOST PERFECT SYSTEM A HUMAN, IF YOU CAN CALL ME HUMAN, CAN DO):
+//CHECK VARIABLE NAMES, OF COURSE*/
+
+//CURRENT
 params [["_groups", []], ["_soldiers", []], ["_vehicles", []]];
 
 if (count _vehicles > 0) then {
@@ -96,13 +105,7 @@ if (count _vehicles > 0) then {
 		};
 	} forEach _vehicles;
 };
-/*For below: Check warlords despawn.
 
-//Barbolani: I dont see sense on the below. Despawning of an attack has to check Blufors nearby, and those blufors have to be "BLUFORSpawn" because of not, some garrison will keep those units in map.
-//WOTP DESPAWNING (THE MOST PERFECT SYSTEM A HUMAN, IF YOU CAN CALL ME HUMAN, CAN DO):
-//CHECK VARIABLE NAMES, OF COURSE*/
-
-//CURRENT
 if (count _soldiers > 0) then {
 	{
 		[_x] spawn {
@@ -118,43 +121,46 @@ if (count _groups > 0) then {
 	} forEach _groups;
 };
 
-//WOTP
-{
-_veh = _x;
-if (!([distanciaSPWN,1,_veh,"GREENFORSpawn"] call distanceUnits) and (({_x distance _veh <= distanciaSPWN} count (allPlayers - HCArray)) == 0)) then {deleteVehicle _x};
-} forEach _vehiculos;
-{
-_veh = _x;
-if (!([distanciaSPWN,1,_veh,"GREENFORSpawn"] call distanceUnits) and (({_x distance _veh <= distanciaSPWN} count (allPlayers - HCArray)) == 0)) then {deleteVehicle _x; _soldadosTotal = _soldadosTotal - [_x]};
-} forEach _soldadosTotal;
-{
-_veh = _x;
-if (!([distanciaSPWN,1,_veh,"GREENFORSpawn"] call distanceUnits) and (({_x distance _veh <= distanciaSPWN} count (allPlayers - HCArray)) == 0)) then {deleteVehicle _x; _pilotos = _pilotos - [_x]};
-} forEach _pilotos;
+// from WOTP and adapted
+params [["_groups", []], ["_soldiers", []], ["_vehicles", []]];
 
-if (count _soldadosTotal > 0) then
+//select 0
 	{
+		_veh = _x;
+		if (
+		    !([distanciaSPWN,1,_veh,"BLUFORSpawn"] call distanceUnits) and
+			(({_x distance _veh <= distanciaSPWN} count (allPlayers - (entities "HeadlessClient_F"))) == 0)
+		) then {deleteVehicle _x};
+	} forEach _vehicles;
+
+//select 1
 	{
-	[_x] spawn
+		_veh = _x;
+		if (
+		    !([distanciaSPWN,1,_veh,"BLUFORSpawn"] call distanceUnits) and
+			(({_x distance _veh <= distanciaSPWN} count (allPlayers - (entities "HeadlessClient_F"))) == 0)
+		) then {deleteVehicle _x; _soldiers = _soldiers - [_x]};
+	} forEach _soldiers;
+
+//select 2
+	if (count _groups > 0) then {
 		{
-		private ["_veh"];
-		_veh = _this select 0;
-		waitUntil {sleep 1; !([distanciaSPWN,1,_veh,"GREENFORSpawn"] call distanceUnits) and (({_x distance _veh <= distanciaSPWN} count (allPlayers - HCArray)) == 0)};
-		deleteVehicle _veh;
-		};
-	} forEach _soldadosTotal;
+			_x deleteGroupWhenEmpty true;
+		} forEach _groups;
 	};
 
-if (count _pilotos > 0) then
+
+if (count _soldiers > 0) then {
 	{
-	{
-	[_x] spawn
-		{
-		private ["_veh"];
-		_veh = _this select 0;
-		waitUntil {sleep 1; !([distanciaSPWN,1,_veh,"GREENFORSpawn"] call distanceUnits) and (({_x distance _veh <= distanciaSPWN} count (allPlayers - HCArray)) == 0)};
+		[_x] spawn {
+			private ["_veh"];
+			_veh = _this select 0;
+			waitUntil {sleep 1;
+				!([distanciaSPWN,1,_veh,"BLUFORSpawn"] call distanceUnits) and
+				( ({_x distance _veh <= distanciaSPWN} count (allPlayers - (entities "HeadlessClient_F"))) == 0)
+			};
 		deleteVehicle _veh;
 		};
-	} forEach _pilotos;
-	};
-{deleteGroup _x} forEach _grupos;
+	} forEach _soldiers;
+};
+
