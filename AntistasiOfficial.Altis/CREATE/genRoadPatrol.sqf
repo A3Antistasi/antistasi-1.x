@@ -7,13 +7,13 @@ _allGroups = [];
 _allSoldiers = [];
 
 //Stef 17/10 Remove speedboats when RHS is active
-_vehicleArray = vehPatrol + (if (activeAFRF) then {[]} else {vehPatrolBoat});
+_vehicleArray = vehPatrol + (if (activeAFRF) then {[]} else {vehPatrolBoat}) - heli_unarmed;
 
 while {true} do {
 	_vehicleType = selectRandom _vehicleArray;
 	call {
 		if (_vehicleType in heli_unarmed) exitWith {
-			//_arrayBases = aeropuertos - mrkFIA; Stef disabled heli patrol, better use QRF instead
+			_arrayBases = aeropuertos - mrkFIA; Stef disabled heli patrol, better use QRF instead
 		};
 		if (_vehicleType in vehPatrolBoat) exitWith {
 			_arrayBases = puertos - mrkFIA;
@@ -21,16 +21,16 @@ while {true} do {
 		_arrayBases = bases - mrkFIA;
 	};
 
-	if (_arraybases isEqualTo []) then {
+	if (_arrayBases isEqualTo []) then {
 		_vehicleArray = _vehicleArray - [_vehicleType];
 	} else {
 		while {true} do {
-			_base = [_arraybases,getMarkerPos guer_respawn] call BIS_fnc_nearestPosition;
+			_base = [_arrayBases,getMarkerPos guer_respawn] call BIS_fnc_nearestPosition;
 			if !(spawner getVariable _base) exitWith {};
-			if (spawner getVariable _base) then {_arraybases = _arraybases - [_base]};
-			if (_arraybases isEqualTo []) exitWith {};
+			if (spawner getVariable _base) then {_arrayBases = _arrayBases - [_base]};
+			if (_arrayBases isEqualTo []) exitWith {};
 		};
-		if (_arraybases isEqualTo []) then {_vehicleArray = _vehicleArray - [_vehicleType]};
+		if (_arrayBases isEqualTo []) then {_vehicleArray = _vehicleArray - [_vehicleType]};
 	};
 	if (_vehicleArray isEqualTo []) exitWith {};
 	if !(spawner getVariable _base) exitWith {};
@@ -144,4 +144,4 @@ while {alive _vehicle} do {
 
 AAFpatrols = AAFpatrols - 1; publicVariableServer "AAFpatrols";
 
-[_allGroups, _allSoldiers, _allVehicles] spawn AS_fnc_despawnUnits;
+[_allGroups, _allSoldiers, _allVehicles] spawn AS_fnc_despawnUnits; //This has to change, spawning a script for too many units it's performance draining
