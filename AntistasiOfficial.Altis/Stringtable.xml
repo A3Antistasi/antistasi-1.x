@@ -160,6 +160,14 @@
 				<Original>Antistasi: ability to start a fresh campaign</Original>
 				<Russian>Antistasi: возможность начать новую кампанию</Russian>
 			</Key>
+			<Key ID="STR_DES_ESWCMD">
+				<Original>Antistasi: enable Switch Commander</Original>
+				<Russian>Antistasi: enable Switch Commander</Russian>
+			</Key>
+			<Key ID="STR_DES_ESRMBR">
+				<Original>Antistasi: enable Server Membership</Original>
+				<Russian>Antistasi: enable Server Membership</Russian>
+			</Key>
 			<Key ID="STR_DES_USABJN">
 				<Original>Antistasi: use customized arsenal by Jeroen Not</Original>
 				<Russian>Antistasi: использовать изменённый арсенал</Russian>
@@ -172,6 +180,12 @@
 				<Original>Antistasi: only permanent members are eligible for commandership at start</Original>
 				<Russian>Antistasi: только постоянные участники могут командовать после старта</Russian>
 			</Key>
+			<Key ID="STR_DES_ENVCOMAI">
+				<Original>Antistasi: enable VCOM AI for server/headless client</Original>
+				<Russian>Antistasi: enable VCOM AI for server/headless client</Russian>
+			</Key>
+
+
 			<Key ID="STR_DES_ON">
 				<Original>On</Original>
 				<Russian>ВКЛ</Russian>
@@ -358,7 +372,7 @@
 			</Key>
 			<Key ID="STR_GENIDENT_CSAT">
 				<Original>CSAT</Original>
-				<Russian>CSAT</Russian>	
+				<Russian>CSAT</Russian>
 			</Key>
 			<Key ID="STR_GENIDENT_NATO">
 				<Original>NATO</Original>
@@ -2109,55 +2123,55 @@
             <Key ID="STR_HINTS_FTR_OAGLCAFFT">
 			    <Original>Only a group leader can ask for Fast Travel</Original>
 				<Russian>Только руководитель группы может попросить телепорта</Russian>
-			</Key>	
+			</Key>
 			<Key ID="STR_HINTS_FTR_YCFTWOPIYG">
 			    <Original>You cannot Fast Travel with other players in your group</Original>
 				<Russian>Вы не можете телепортироваться с другими игроками из вашей группе</Russian>
-			</Key>	
+			</Key>
 			<Key ID="STR_HINTS_FTR_YCFTWYACAI">
 			    <Original>You cannot Fast Travel while you are controlling AI</Original>
 				<Russian>Вы не можете быстро путешествовать во время управления AI</Russian>
-			</Key>	
+			</Key>
 			<Key ID="STR_HINTS_FTR_YCFTWENTG">
 			    <Original>You cannot Fast Travel with enemies near the group</Original>
 				<Russian>Вы не можете быстро путешествовать когда враги рядом с группой</Russian>
-			</Key>	
+			</Key>
 			<Key ID="STR_HINTS_FTR_YCFTIYDHADIAY">
 			    <Original>You cannot Fast Travel if you don't have a driver in all your vehicles or your vehicles are damage and cannot move</Original>
 				<Russian>Вы не можете исполь телепорт, если у вас нет водителей на всех ваших транспортных средствах или ваши транспортные средства повреждены и не могут двигаться</Russian>
-			</Key>	
+			</Key>
 			<Key ID="STR_HINTS_FTR_COTZYWTT">
 			    <Original>Click on the zone you want to travel</Original>
 				<Russian>Нажмите на зону, в которую вы хотите совершить путешествие</Russian>
-			</Key>	
+			</Key>
 			<Key ID="STR_HINTS_FTR_YCFTTRNW">
 			    <Original>You cannot Fast Travel to roadblocks and watchposts</Original>
 				<Russian>Вы не можете телепортироваться на контрольно-пропускные пункты</Russian>
-			</Key>	
+			</Key>
 			<Key ID="STR_HINTS_FTR_YCFTTAECZ">
 			    <Original>You cannot Fast Travel to an enemy controlled zone</Original>
 				<Russian>Вы не можете быстро путешествовать в зону, контролируемую врагом</Russian>
-			</Key>	
+			</Key>
 			<Key ID="STR_HINTS_FTR_YCFTTC">
 			    <Original>You cannot Fast Travel to camps.</Original>
 				<Russian>Вы не можете быстро путешествовать в лагеря.</Russian>
-			</Key>	
+			</Key>
 			<Key ID="STR_HINTS_FTR_YCFTTAAUAOWE">
 			    <Original>You cannot Fast Travel to an area under attack or with enemies in the surrounding</Original>
 				<Russian>Вы не можете быстро путешествовать в область, находящуюся под атакой, или в окружении врагов</Russian>
-			</Key>	
+			</Key>
 			<Key ID="STR_HINTS_FTR_MG1TD">
 			    <Original>Moving group %1 to destination</Original>
 				<Russian>Перемещение группы %1 в пункт назначения</Russian>
-			</Key>	
+			</Key>
 			<Key ID="STR_HINTS_FTR_G1ATD">
 			    <Original>Group %1 arrived to destination</Original>
 				<Russian>Группа %1 прибыла в пункт назначения</Russian>
-			</Key>	
+			</Key>
 			<Key ID="STR_HINTS_FTR_YMCNMUYC">
 			    <Original>You must click near marker under your control</Original>
 				<Russian>Вы должны нажать маркер под вашим контролем</Russian> <!-- Редакт. -->
-			</Key>	 
+			</Key>
 		</Container>
 		<Container name="FTRAVEL_DIALOG">
 		     <Key ID="STR_HINTS_FD_YNARIYITBA">
@@ -2206,7 +2220,7 @@
 			    <Original>All nearby units and vehicles have been healed or repaired. Near vehicles have been rearmed at full load and no longer in reported list.</Original>
 				<Russian>Все соседние подразделения и транспортные средства были излечены или отремонтированы. Воздушные транспортные средства были перевооружены с полной нагрузкой и больше не указаны в списке.</Russian>
 			</Key>
-		</Container>	 
+		</Container>
 		 <Container name="MOVE_HQ">
 		     <Key ID="STR_HINTS_MHQ_OCSHATTF">
 			    <Original>Only Commander Slowhand has access to this function</Original>
@@ -3565,7 +3579,7 @@
 					Очистка мусора: трупы и предметы на земле потребляют память, очистка их может затормозить игру на короткое время, но FPS должен улучшиться. (У некоторого мусора уже есть таймер автоматического удаления.)&lt;br/&gt;&lt;br/&gt;
 
 					FPS Ограничитель: Чем меньше порог, тем меньше спавн гражданских лиц. &lt;br/&gt;&lt;br/&gt;
-				</Russian> 
+				</Russian>
 					FPS Ограничитель: Чем меньше порог,тем меньше спавн гражданских лиц. &lt;br/&gt;&lt;br/&gt;
 		    </Key>
 			<Key ID="STR_BR_4GAMED">
@@ -3673,11 +3687,11 @@
 					Multiplayer notes:&lt;br/&gt;
 					- Parameters are accessible after selecting the mission in the role selection screen top right before the mission is started.&lt;br/&gt;
 					- The previous save is automatically loaded unless admin/host change Parameters enabling the fresh start&lt;br/&gt;
-					
+
 					Special keys:&lt;br/&gt;
 					US keyboard = press‘Y’, ‘shift+Y’, ‘Delete’, and ‘U’ to access vital functions, be sure to unbind those keys from your custom controls otherwise they won’t work.&lt;br/&gt;&lt;br/&gt;
 					German keyboard = press Z, shift+Z … instead.&lt;br/&gt;
-					
+
 					For more info and tips check categories on the left side.&lt;br/&gt;
                 </Original>
 				<Russian>
@@ -3690,11 +3704,11 @@
 					Мультиплеерные заметки:&lt;br/&gt;
 					- Параметры доступны после выбора миссии на экране выбора ролика справа перед началом миссии.&lt;br/&gt;
 					- Предыдущее сохранение автоматически загружается, если не изменятся параметры администратора / хоста. Параметры, позволяющие начать новый запуск&lt;br/&gt;
-					
+
 					Специальные клавиши:&lt;br/&gt;
 					Клавиатура США: нажмите «Y», «shift + Y», «Delete» и «U», чтобы получить доступ к жизненно важным функциям, обязательно отвяжите эти Кнопки от своих пользовательских элементов управления, иначе они не будут работать.&lt;br/&gt;&lt;br/&gt;
 					Немецкая клавиатура = нажмите Z,вместо shift+Z .&lt;br/&gt;
-					
+
 					Для получения дополнительной информации и советов проверьте категории с левой стороны.
 				</Russian>
 			</Key>
@@ -3753,7 +3767,7 @@
 
 					- Петрос: попросите миссию.&lt;br/&gt;&lt;br/&gt;
 
-					Расположение Базы обнаруживается Противником только в том случае, если вы раскрыли предателя и ему удается бежать на базу противника. Кроме того, минометный огонь - это простой способ получить местоположение противника. Ждите агрессивных врагов в обоих случаях.			
+					Расположение Базы обнаруживается Противником только в том случае, если вы раскрыли предателя и ему удается бежать на базу противника. Кроме того, минометный огонь - это простой способ получить местоположение противника. Ждите агрессивных врагов в обоих случаях.
 
 				</Russian>
 		    </Key>
@@ -3767,7 +3781,7 @@
 
 					-Commander: the current Commander. ‘None’ is displayed when membership is enabled and there isn’t any member online who is eligible to command. In this case, the following features will be frozen: economy per tick, main enemy response such as QRFs and Attacks and random mission spawns.&lt;br/&gt;&lt;br/&gt;
                     Press resign on Y (US-keyboard layout) menu when commander ‘none’ will check for a new commander.&lt;br/&gt;
-					
+
 					-Rank: affects the courage of your AI and how precisely they will execute orders. Progress rank by killing enemies and, more effectively, by completing missions. In multiplayer you can also donate your money to FIA to gain ranks.&lt;br/&gt;
 					Player Rank is saved automatically in multiplayer upon disconnect&lt;br/&gt;&lt;br/&gt;
 
@@ -4088,7 +4102,7 @@
 					Commander and server members can recruit AI at the Flag or add garrison to conquered objectives. Those guys starts with civilian clothes and their weapons correspond to a random choice between their class weapons present into the Arsenal, at this modding stage they don’t substract the weapon from it nor they require a threshold amount like it was with original Arsenal system. &lt;br/&gt;&lt;br/&gt;
 
 					However, in the current version they don’t subtract the weapon from the Arsenal nor do they require a threshold amount to unlock them (Antistasi 1.7.5 and before). &lt;br/&gt;&lt;br/&gt;
-					
+
 					Advancing Army XP level is the way to make them better both in fighting skill and clothing choices.&lt;br/&gt;&lt;br/&gt;
 
 					Commanding AI is Vanilla feature, check on BIS wiki to learn more about it. Hold fire, form line or file and regroup are very important expecially when driving in undercover truck with AI riding as passengers, if not told to hold fire they might blow up your sneaky actions.&lt;br/&gt;&lt;br/&gt;
@@ -4109,7 +4123,7 @@
 					Командир и члены сервера могут набирать ИИ на флаге или добавлять гарнизон к завоеванным целям. Эти парни начинают с гражданской одежды, и их оружие соответствует случайному выбору между их классовым оружием, присутствующим в Арсенале, на этой стадии моддинга они не выберают оружие из него, и они не требуют пороговой суммы, как это было с оригинальной системой Арсенала. &lt;br/&gt;&lt;br/&gt; <!-- Редакт. -->
 
 					Однако в текущей версии они не вычитают оружие из Арсенала и не требуют порогового количества, чтобы разблокировать их (Antistasi 1.7.5 и ранее). &lt;br/&gt;&lt;br/&gt;
-					
+
 					Повышение уровня армейской армии - это способ сделать их лучше как в борьбе с навыками, так и в выборе одежды.&lt;br/&gt;&lt;br/&gt;
 
 					Командующий ИИ - это функция Стандартна, проверьте вики BIS, чтобы узнать больше об этом. Удерживать огонь, формировать линию или калонну и перегруппироваться очень важно, когда вы едете в грузовике инкогнито с ИИ, едете как пассажиры, если не сказать их не стрелять, они могут раскрыть вас когда вы будете инкогнито. &lt;br/&gt;&lt;br/&gt; <!-- Редакт. -->
@@ -4158,10 +4172,10 @@
 				</Russian>
 			</Key>
 			<Key ID="STR_BR_AF7JAG">
-				<Original>Jeroen Arsenal Garage</Original> 
+				<Original>Jeroen Arsenal Garage</Original>
 				<Russian>Jeroen Арсенал\Гараж</Russian>
 			</Key>
-			<Key ID="STR_BR_AF_JAG"> 
+			<Key ID="STR_BR_AF_JAG">
 				<Original>
 					Accessing the Garage opens a custom interface which lets you select the vehicle on the left side, and interact with the vehicle on the right.&lt;br/&gt;&lt;br/&gt;
 
@@ -4177,7 +4191,7 @@
 					Доступ к гаражу открывает пользовательский интерфейс, который позволяет выбрать автомобиль с левой стороны а взаимодействовать с автомобилем справа.&lt;br/&gt;&lt;br/&gt;
 
 					Камера может быть сложной, поэтому размещайте ящик в открытом поле без препятствий вокруг, предварительный просмотр автомобиля будет появляться напротив вашей позиции на том же расстоянии, что и вы из ящика. Держитесь на некотором расстоянии от коробки, чтобы немного развернуть автомобиль. &lt;br/&gt;&lt;br/&gt;
-					
+
 					Транспортные средства могут быть отремонтированы по частям, включая стекло, через JAG, а также Корпус.&lt;br/&gt;&lt;br/&gt;
 
 					Сохраненные автомобили видны для всех в Гараже. Зеленые транспортные средства - ваши, белые - все, и красные транспортные средства заблокированы. Только владелец транспортного средства может разблокировать автомобиль.&lt;br/&gt;&lt;br/&gt;
@@ -4186,22 +4200,22 @@
 				</Russian><!-- Редакт. -->
 			</Key>
 			<Key ID="STR_BR_AF9JNSL">
-				<Original>Jeroen and Sparker Logistic</Original> 
+				<Original>Jeroen and Sparker Logistic</Original>
 				<Russian>Jeroen и Sparker Логистика</Russian>
 			</Key>
-			<Key ID="STR_BR_AF_JNSL"> 
+			<Key ID="STR_BR_AF_JNSL">
 				<Original>
 					Crates, ammoboxes and several others can be interacted and Load to vehicle, an animation will move the object into the vehicle locking up some seats if necessary.&lt;br/&gt;&lt;br/&gt;
 
                     Bring supplies, steal enemy ammobox, move Arsenal and Garage when relocating HQ thanks to this function without using any additional mod.&lt;br/&gt;&lt;br/&gt;
-				    
+
 					Wip
 				</Original>
 				<Russian>
 				    Ящики, боеприпасы и некоторые другие объекты с которыми можно взаимодействовать и загружать их в автомобиль, анимация будет перемещать объект в транспортное средство, блокируя некоторые сиденья, если это необходимо.&lt;br/&gt;&lt;br/&gt;
-					
+
 					Теперь возможен Перенос припасов, кража вражеских боеприпасов, перемещение Арсенал и Гаража при перемещении штаб-квартиры благодаря этой функции без использования какого-либо дополнительного мода.&lt;br/&gt;&lt;br/&gt;
-					
+
 					Работа в процессе
 				</Russian><!-- Редакт. -->
 			</Key>
@@ -4274,7 +4288,7 @@
 			<Key ID="STR_BR_AF_FS">
 				<Original>
 				Depending on controlled objectives, towns excluded, the enemy will build roadblocks and reinforce more outposts.&lt;br/&gt;
-                WiP	
+                WiP
 				</Original>
 				<Russian>
 				В зависимости от контролируемых целей, исключенных городов, противник будет строить блокпосты и укреплять больше форпостов.&lt;br/&gt;
@@ -4573,6 +4587,47 @@
 			<Key ID="STR_BR_8CNT">
 				<Original>8 Credits and Thanks</Original>
 				<Russian>8 Авторы И Благодарность</Russian>
+			<Key ID="STR_BR_8CNT_T">
+				<Original>Author: Barbolani&lt;br/&gt;
+					Coding since 1.2: Chris supervised by RickyTan and Kendo&lt;br/&gt;
+					Coding since 1.7.6: Jeroen and Sparker&lt;br/&gt;
+					Coding since 1.7.16: IrLED&lt;br/&gt;
+					Tweaking, fixing and supervising github commits since 1.7.12: Stef&lt;br/&gt;&lt;br/&gt;
+
+					Scripts:&lt;br/&gt;
+					UPSMon by Monsada, Kronzy and Cool=Azroul13 &lt;br/&gt;
+					Jeroen Arsenal System by Jeroen Not.&lt;br/&gt;
+					Jeroen Garage System by Jeroen Not.&lt;br/&gt;
+					Persistent Save by zooloo75.&lt;br/&gt;
+					Tags by Marker and Melbo.&lt;br/&gt;
+					Advanced Towing by duda&lt;br/&gt;
+					iniDIBI2 by code34&lt;br/&gt;
+					Vcom AI by Genesis92x&lt;br/&gt;&lt;br/&gt;
+
+					Briefing by Stef, Dethleffs, Fireman, everyone of the Official Community who add suggestions and corrections
+					IrLED: headlessclient balanced unit assignment, Vcom AI integration.&lt;br/&gt;
+					AlexTriada, VelvetNight and BeZZuBik41: Russian translate and Multilingual platform&lt;br/&gt;
+					nuker: For testing and ideas.&lt;br/&gt;
+					Ghost: For MP DS testing and teaching me how to run a DS.&lt;br/&gt;
+					Nirvana and CWW clan for testing.&lt;br/&gt;
+					LanCommi on dedi server testing.&lt;br/&gt;
+					neuron: lots of testing and help in steam page.&lt;br/&gt;
+					Gillaustio and Farooq for inspirational works on revive system.&lt;br/&gt;
+					Valtas: support, testing bug reports and building the first serious open Dedi for Antistasi.&lt;br/&gt;
+					Goon and jw custom: part of the code for the NAPALM script.&lt;br/&gt;
+					Larrow: very valuable scripting help in BIS forums.&lt;br/&gt;
+					Billw: lots of help on testing and bug detection.&lt;br/&gt;
+					tommytom73: HC testing.&lt;br/&gt;
+					Manko: earplug snippet.&lt;br/&gt;
+					harmdhast: help on some scripting.&lt;br/&gt;
+					DeathTouchWilly: first Official Antistasi Manual.&lt;br/&gt;
+					daveallen10: ACE Integration scripts.&lt;br/&gt;
+					RickyTan: tons of help and testing in the Official Servers, Head of Antistasi Official Community since March 2016 ‘till June 2017 and making the community more financially aware.&lt;br/&gt;
+					Toshi: Antistasi porting on other islands.&lt;br/&gt;
+					Kendo and Tuck for templates.&lt;br/&gt;
+					And all those players who spend their time on making comments, suggestions and reports on Steam and Antistasi Official Community.</Original>
+				<Russian>8 Авторы И Благодарность</Russian>
+
 			</Key>
 		</Container>
 	</Package>
