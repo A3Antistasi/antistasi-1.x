@@ -13,7 +13,7 @@ while {true} do {
 	_vehicleType = selectRandom _vehicleArray;
 	call {
 		if (_vehicleType in heli_unarmed) exitWith {
-			_arrayBases = aeropuertos - mrkFIA; Stef disabled heli patrol, better use QRF instead
+			_arrayBases = aeropuertos - mrkFIA; //Stef disabled heli patrol, better use QRF instead
 		};
 		if (_vehicleType in vehPatrolBoat) exitWith {
 			_arrayBases = puertos - mrkFIA;
