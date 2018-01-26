@@ -886,7 +886,8 @@
 				<Russian>Цена: 5 очков - Вертолёт сбросит на парашюте базовый комплект снаряжения в выбранное место.</Russian>
 			</Key>
 			<Key ID="STR_UI_ALLY_CAS_TEXT">
-				<Original>Авиаподдержка</Original>
+				<Original>CAS</Original>
+				<Russian>Авиаподдержка</Russian>
 			</Key>
 			<Key ID="STR_UI_ALLY_CAS_TT">
 				<Original>Price: 10 Points -- A Vic formation of CAS aircraft will be placed under your command.</Original>
