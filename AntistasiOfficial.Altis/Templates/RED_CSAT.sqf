@@ -1,5 +1,5 @@
 // (un-)armed transport helicopters
-opHeliTrans = 		["O_Heli_Light_02_unarmed_F","O_Heli_Transport_04_bench_F"];
+opHeliTrans = 		["O_Heli_Light_02_unarmed_F"]; //"O_Heli_Transport_04_bench_F" not working with fastrope, disable for now
 
 // helicopter that dismounts troops
 opHeliDismount = 	"O_Heli_Transport_04_bench_F"; // Mi-290 Taru (Bench)
@@ -20,7 +20,7 @@ opCASFW = 			["O_Plane_CAS_02_F"]; // To-199 Neophron (CAS)
 opUAVsmall = 		"O_UAV_01_F"; // Tayran AR-2
 
 // air force
-opAir = 			["O_Heli_Light_02_unarmed_F","O_Heli_Transport_04_bench_F","O_Heli_Attack_02_F","O_Plane_CAS_02_F","O_Heli_Light_02_F"];
+opAir = 			["O_Heli_Light_02_unarmed_F","O_Heli_Attack_02_F"]; //removed Taru and Plane
 
 // self-propelled anti air
 opSPAA = 			"O_APC_Tracked_02_AA_F";
