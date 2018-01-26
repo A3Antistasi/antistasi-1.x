@@ -520,7 +520,7 @@
 				<Original>ComSwitch Disabled</Original>
 				<Russian>Смена командира Выкл</Russian>
 			</Key>
-			<Key ID="STR_UI_SM_COM_1">
+			<Key ID=STR_UI_SM_COM_1>
 				<Original>ComSwitch Enabled</Original>
 				<Russian>Смена командира Вкл<</Russian>
 			</Key>
@@ -2460,9 +2460,6 @@
 				<Original>Move HQ to another Zone</Original>
 				<Russian>Перенос Базы</Russian>
 			</Key>
-			<Key ID="STR_D_INGAME_ML">
-				<Original>Ingame Member's List</Original>
-				<Russian>Список Участников сервера</Russian>
 			</Key>
 			<Key ID="STR_D_TRAIN_FIA">
 				<Original>Train FIA</Original>
@@ -3192,9 +3189,6 @@
 				<Original>Delete All</Original>
 				<Russian>Удалить Всё</Russian>
 			</Key>
-			<Key ID="STR_D_GAME_OP">
-				<Original>Game Options</Original>
-				<Russian>Настройки Игры</Russian>
 			</Key>
 			<Key ID="STR_D_CIVCON">
 				<Original>Civ Config</Original>
@@ -3217,9 +3211,6 @@
 				<Russian>Сохранение Прогресса</Russian>
 				<!-- Редакт. -->
 			</Key>
-			<Key ID="STR_D_MUS_ON_OFF">
-				<Original>Music ON/OFF</Original>
-				<Russian>Музыка ВКЛ/ВЫКЛ</Russian>
 			</Key>
 			<Key ID="STR_D_GAME_OP">
 				<Original>Ingame Member's List</Original>
@@ -4588,7 +4579,7 @@
 			<Key ID="STR_BR_8CNT">
 				<Original>8 Credits and Thanks</Original>
 				<Russian>8 Авторы И Благодарность</Russian>
-			<Key ID="STR_BR_8CNT_T">
+			<Key ID=STR_BR_8CNT_T>
 				<Original>Author: Barbolani&lt;br/&gt;
 					Coding since 1.2: Chris supervised by RickyTan and Kendo&lt;br/&gt;
 					Coding since 1.7.6: Jeroen and Sparker&lt;br/&gt;
