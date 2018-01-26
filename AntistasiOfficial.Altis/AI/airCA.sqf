@@ -1,4 +1,5 @@
 /*
+This script should send a jet to chase the FIA aircraft which is annoying AAF.
 0 = blufor aircraft
 */
 
