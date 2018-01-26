@@ -38,15 +38,8 @@ _task = ["AtaqueAAF",[side_blue,civilian],[format [localize "STR_TSK_CA_CREATE",
 misiones pushbackUnique "AtaqueAAF"; publicVariable "misiones";
 _attackDuration = time + 2400;
 
-//Adding caching dummy unit to keep the area spawned
-	_sawnergroup = createGroup east;
-	_spawner = _sawnergroup createUnit [selectrandom CIV_journalists, getmarkerpos _marker, [], 15,"None"];
-	_spawner setVariable ["OPFORSpawn",true,true];
-	_spawner setVariable ["BLUFORSpawn",true,true];
-	_spawner setcaptive true;
-	_spawner allowdamage false;
-	_spawner enableSimulation false;
-	hideObjectGlobal _spawner;
+//Adding caching area
+forcedSpawn = forcedSpawn + [_marker]; publicVariable "forcedSpawn";
 
 
 if !(_forceAirport == "") then {
@@ -375,7 +368,5 @@ sleep 30;
 waitUntil {sleep 1; !(spawner getVariable _marker)};
 
 [_allGroups + _redGroups, _allSoldiers + _redSoldiers, _allVehicles + _redVehicles] spawn AS_fnc_despawnUnits;
-deletevehicle _spanwer;
 
-forcedSpawn = forcedSpawn - [_marker]; //Sparker: remove force spawn a base under attack
-publicVariable "forcedSpawn";
+forcedSpawn = forcedSpawn - [_marker]; publicVariable "forcedSpawn";
