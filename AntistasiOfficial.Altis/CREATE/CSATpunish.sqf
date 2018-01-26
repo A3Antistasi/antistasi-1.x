@@ -128,11 +128,10 @@ _grupos pushBack _grupoCivil;
 [_grupoCivil, _mrkDestino, "AWARE","SPAWNED","NOVEH2"] execVM "scripts\UPSMON.sqf";
 
 _civilMax = {alive _x} count _civiles;
-hint format ["CSAT: _civilmax = %1",_civilMax]; //DEBUG
 _solMax = count _soldados;
 
 //Loop to make civis get killed at some point, could be done better by beeing sure CSAF find where they hide
-	[_grupoCivil,_soldados,_posdestino]  spawn {sleep 180; //15 min, can be balanced
+	[_grupoCivil,_soldados,_posdestino]  spawn {sleep 900; //15 min, can be tweaked on need
 		diag_log format ["CSAT: civilians: %1 enemies: %2",_this select 0,_this select 1];
 		{(_this select 0) reveal [_x,4]} foreach (_this select 1);
 		_wp7 = (_this select 0) addWaypoint [_this select 2, 1];
@@ -154,7 +153,6 @@ for "_i" from 0 to round random 2 do {
 	sleep 30;
 };
 
-{if ((surfaceIsWater position _x) and (vehicle _x == _x)) then {_x setDamage 1}} forEach _soldados;
 {if ((surfaceIsWater position _x) and (vehicle _x == _x)) then {_x setDamage 1}} forEach _soldados;
 
 waitUntil {sleep 5;
