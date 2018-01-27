@@ -4425,12 +4425,8 @@
 			<Key ID="STR_BR_8CNT">
 				<Original>8 Credits and Thanks</Original>
 				<Russian>8 Авторы И Благодарность</Russian>
-<<<<<<< HEAD
-			<Key ID=STR_BR_8CNT_T>
-=======
 			</Key>
 			<Key ID="STR_BR_8CNT_T">
->>>>>>> master
 				<Original>Author: Barbolani&lt;br/&gt;
 					Coding since 1.2: Chris supervised by RickyTan and Kendo&lt;br/&gt;
 					Coding since 1.7.6: Jeroen and Sparker&lt;br/&gt;
