@@ -147,4 +147,4 @@ for "_i" from 1 to _patrolCounter do {
 };
 
 waitUntil {sleep 1; !(spawner getVariable _marker)};
-[_allGroups, _allCivilians, _allVehicles] spawn AS_fnc_despawnUnitsNow; // this will make some distant car disappearing, it's ugly but might save performances
+[_allGroups, _allCivilians, _allVehicles] call AS_fnc_despawnUnitsNow; // this will make some distant car disappearing, it's ugly but might save performances

@@ -13,7 +13,6 @@ _airportpos = getmakerpos [_airport];
 _depart = [_airportpos select 0, _airportpos select 1,300];
 _jet = [_depart, 0,dogfight, side_green] call bis_fnc_spawnvehicle;
 _pilot = driver (_jet select 0);
-_pilot domove _targetpos;
 _pilot reveal _FIAaricraft;
 _pilot dotarget _FIAaricraft;
 

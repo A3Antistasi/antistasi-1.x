@@ -333,11 +333,10 @@ if ((random 100 < (((server getVariable "prestigeNATO") + (server getVariable "p
 	waitUntil {sleep 1;
 		!(spawner getVariable _marker) OR
 		(
-		 	({!(vehicle _x isKindOf "Air")}
+		 	({!(vehicle _x isKindOf "Air") AND (lifeState _x != "INCAPACITATED")}
 		 	count ([_size,0,_markerPos,"OPFORSpawn"] call distanceUnits))
-		 	> 3*
-		 	(({alive _x} count _allSoldiers) + count ([_size,0,_markerPos,"BLUFORSpawn"] call distanceUnits))
-		)
+		 	> 3*(({(alive _x) AND (lifeState _x != "INCAPACITATED")} count _allSoldiers) + count ([_size,0,_markerPos,"BLUFORSpawn"] call distanceUnits))
+		 )
 	};
 
 	//Loose condition
@@ -347,5 +346,5 @@ if ((random 100 < (((server getVariable "prestigeNATO") + (server getVariable "p
 	//Despawn
 		waitUntil {sleep 1; !(spawner getVariable _marker)};
 
-		[_allGroups + _guerGroups, _allSoldiers + _guerSoldiers, _allVehicles + _guerVehicles] spawn AS_fnc_despawnUnitsNow;
+		[_allGroups + _guerGroups, _allSoldiers + _guerSoldiers, _allVehicles + _guerVehicles] call AS_fnc_despawnUnitsNow;
 		if !(isNull _observer) then {deleteVehicle _observer};

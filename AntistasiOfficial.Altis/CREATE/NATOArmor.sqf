@@ -61,4 +61,4 @@ sleep 15;
 
 [0,_tsk] spawn borrarTask;
 
-[[_group], _allSoldiers, _allVehicles] spawn AS_fnc_despawnUnitsNow;
+[[_group], _allSoldiers, _allVehicles] call AS_fnc_despawnUnitsNow;

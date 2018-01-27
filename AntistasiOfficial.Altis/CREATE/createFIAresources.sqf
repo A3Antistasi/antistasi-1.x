@@ -118,15 +118,15 @@ if ((random 100 < (((server getVariable "prestigeNATO") + (server getVariable "p
 	[_group, _marker, "SAFE", "SPAWNED","NOFOLLOW", "NOVEH2","NOSHARE","DoRelax"] execVM "scripts\UPSMON.sqf";
 };
 
-waitUntil {sleep 1;
-	!(spawner getVariable _marker) OR
-	(
-	 	({not(vehicle _x isKindOf "Air")}
-	 	count ([_size,0,_markerPos,"OPFORSpawn"] call distanceUnits))
-	 	> 3*
-	 	(({alive _x} count _allSoldiers) + count ([_size,0,_markerPos,"BLUFORSpawn"] call distanceUnits))
-	)
-};
+//Despawn conditions
+	waitUntil {sleep 1;
+		!(spawner getVariable _marker) OR
+		(
+		 	({!(vehicle _x isKindOf "Air") AND (lifeState _x != "INCAPACITATED")}
+		 	count ([_size,0,_markerPos,"OPFORSpawn"] call distanceUnits))
+		 	> 3*(({(alive _x) AND (lifeState _x != "INCAPACITATED")} count _allSoldiers) + count ([_size,0,_markerPos,"BLUFORSpawn"] call distanceUnits))
+		 )
+	};
 
 if (spawner getVariable _marker) then {
 	[_marker] remoteExec ["mrkLOOSE",2];
@@ -134,5 +134,5 @@ if (spawner getVariable _marker) then {
 
 waitUntil {sleep 1; !(spawner getVariable _marker)};
 
-[_allGroups, _allSoldiers + _workers, _allVehicles] spawn AS_fnc_despawnUnitsNow;
+[_allGroups, _allSoldiers + _workers, _allVehicles] call AS_fnc_despawnUnitsNow;
 if !(isNull _observer) then {deleteVehicle _observer};

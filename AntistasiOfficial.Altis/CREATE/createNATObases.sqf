@@ -248,9 +248,9 @@ _allGroups pushBack _group;
 	waitUntil {sleep 1;
 		!(spawner getVariable _marker) OR
 		(
-		 	({!(vehicle _x isKindOf "Air")}
+		 	({!(vehicle _x isKindOf "Air") AND (lifeState _x != "INCAPACITATED")}
 		 	count ([_size,0,_markerPos,"OPFORSpawn"] call distanceUnits))
-		 	> 2*(({alive _x} count _allSoldiers) + count ([_size,0,_markerPos,"BLUFORSpawn"] call distanceUnits))
+		 	> 3*(({(alive _x) AND (lifeState _x != "INCAPACITATED")} count _allSoldiers) + count ([_size,0,_markerPos,"BLUFORSpawn"] call distanceUnits))
 		 )
 	};
 
@@ -259,7 +259,7 @@ _allGroups pushBack _group;
 			if (_marker != "FIA_HQ") then {[_marker] remoteExec ["mrkLOOSE",2]};
 		};
 
-
+		//Despawn
 		if (count ([distanciaSPWN,0,_markerPos,"BLUFORSpawn"] call distanceUnits) < 1) then {
 			spawner setVariable [_marker,false,true];
 		};
@@ -271,5 +271,5 @@ waitUntil {sleep 1; !(spawner getVariable _marker)};
 		{if ((!alive _x) AND !(_x in destroyedBuildings)) then {destroyedBuildings = destroyedBuildings + [position _x]; publicVariableServer "destroyedBuildings"}} forEach _buildings;
 
 	//Despawn
-		[_allGroups + _guerGroups, _allSoldiers + _guerSoldiers, _allVehicles + _guerVehicles] spawn AS_fnc_despawnUnitsNow; //AS_fnc_despawnUnits is waiting for blufor to leave, not opfor!! So they might spawn multiple times.
+		[_allGroups + _guerGroups, _allSoldiers + _guerSoldiers, _allVehicles + _guerVehicles] call AS_fnc_despawnUnitsNow; //AS_fnc_despawnUnits is waiting for blufor to leave, not opfor!! So they might spawn multiple times.
 		if !(isNull _observer) then {deleteVehicle _observer};

@@ -64,4 +64,4 @@ if ((({alive _x} count _allSoldiers == 0) OR ({fleeing _x} count _allSoldiers ==
 
 waitUntil {sleep 1; !(spawner getVariable _marker)};
 
-if(_marker in mrkAAF) then {[_allGroups, _allSoldiers, []] spawn AS_fnc_despawnUnits;} else {[_allGroups, _allSoldiers, []] spawn AS_fnc_despawnUnitsnow;};
+if(_marker in mrkAAF) then {[_allGroups, _allSoldiers, []] spawn AS_fnc_despawnUnits;} else {[_allGroups, _allSoldiers, []] call AS_fnc_despawnUnitsNow;};
