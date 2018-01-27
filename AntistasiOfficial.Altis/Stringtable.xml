@@ -1,160 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Project name="Antistasi">
 	<Package name="Settings">
-		<!--<Container name="AceSettings">
-			<Key ID="STR_ACE_MEDICAL_LEVEL">
-				<Original>ACE: Medical Level</Original>
-				<Russian>ACE: Уровень медицины</Russian>
-			</Key>
-			<Key ID="STR_ACE_ENABLE_TEAM_MANAGEMENT">
-				<Original>ACE: Enable Team Management</Original>
-				<Russian>ACE: Вкл. управление группами</Russian>
-			</Key>
-			<Key ID="STR_ACE_LAUNCHERS">
-				<Original>ACE: Launchers</Original>
-				<Russian>ACE: Пусковые установки</Russian>
-			</Key>
-			<Key ID="STR_ACE_HIDE_AI_GROUPS_ON_MAP">
-				<Original>ACE: Hide AI groups on map?</Original>
-				<Russian>ACE: Скрыть группы ИИ на карте?</Russian>
-			</Key>
-			<Key ID="STR_ACE_SHOW_PLAYER_NAMES_MAP">
-				<Original>ACE: Show player names map?</Original>
-				<Russian>ACE: Показывать имена игроков на карте?</Russian>
-			</Key>
-			<Key ID="STR_ACE_MAP_DEFAULT_CHANNEL">
-				<Original>ACE: Map default channel</Original>
-				<Russian>ACE: Канал карты по умолчанию</Russian>
-			</Key>
-			<Key ID="STR_ACE_LOCATIONS_BOOST_MEDICAL_TRAINING">
-				<Original>ACE: Locations boost medical training?</Original>
-				<Russian>ACE: Местонахождение повышает медицинские навыки?</Russian>
-			</Key>
-			<Key ID="STR_ACE_MEDICAL_E_REV">
-				<Original>ACE: Medical, enable revive?</Original>
-				<Russian>ACE: (Медицина) Разрешить воскрешение?</Russian>
-			</Key>
-			<Key ID="STR_ACE_MAN_RT">
-				<Original>ACE: Max revive time?</Original>
-				<Russian>ACE: Максимальное время нахождения без сознания?</Russian>
-			</Key>
-			<Key ID="STR_ACE_MEDICAL_CLEAN_ULD">
-				<Original>ACE: Medical, clean up litter delay?</Original>
-				<Russian>ACE: Убирать медицинский мусор через?</Russian>
-			</Key>
-			<Key ID="STR_ACE_FULL_HEAL_OEIRTM">
-				<Original>ACE: Full heal on epi injection restricted to medic?</Original>
-				<Russian>ACE: Только медики могут вкалывать эпинефрин и адреналин?</Russian>
-			</Key>
-			<Key ID="STR_ACE_MDAGR_MF">
-				<Original>ACE: MicroDAGR map fill</Original>
-				<Russian>ACE: Показывать миникарту в MicroDAGR</Russian>
-			</Key>
-			<Key ID="STR_ACE_HOW_MDCAER">
-				<Original>ACE: How much damage can an engineer repair?</Original>
-				<Russian>ACE: Сколько ущерба может восстановить инженер?</Russian>
-			</Key>
-			<Key ID="STR_ACE_FULL_RL">
-				<Original>ACE: Full repair locations?</Original>
-				<Russian>ACE: Где доступен полный ремонт?</Russian>
-			</Key>
-			<Key ID="STR_ACE_WHO_CPEAFR">
-				<Original>ACE: Who can perform a full repair?</Original>
-				<Russian>ACE: Кто может выполнить полный ремонт?</Russian>
-			</Key>
-			<Key ID="STR_ACE_ADVANCED_FATIQUE">
-				<Original>ACE: Advanced Fatigue</Original>
-				<Russian>ACE: Усовершенствованная усталость</Russian>
-			</Key>
-			<Key ID="STR_ACE_ADVANCED_FATIQUE_PF">
-				<Original>ACE: Advanced Fatigue performance factor</Original>
-				<Russian>ACE: Коэффициент зависимости усталости от скорости движения</Russian>
-			</Key>
-			<Key ID="STR_ACE_ADVANCED_FATIQUE_RF">
-				<Original>ACE: Advanced Fatigue recovery factor</Original>
-				<Russian>ACE: Коэффициент восстановления усталости</Russian>
-			</Key>
-			<Key ID="STR_ACE_ADVANCED_FATIQUE_TGF">
-				<Original>ACE: Advanced Fatigue terrain gradient factor</Original>
-				<Russian>ACE: Коэффициент зависимости усталости от наклона местности</Russian>
-			</Key>
-			<Key ID="STR_ACE_EXP_EOD">
-				<Original>ACE: Explosives explode on defusal?</Original>
-				<Russian>ACE: Взрывчатка взрывается при разминировании?</Russian>
-			</Key>
-			<Key ID="STR_ACE_AD_BAL">
-				<Original>ACE: Advanced ballistics?</Original>
-				<Russian>ACE: Продвинутая баллистика?</Russian>
-			</Key>
-			<Key ID="STR_ACE_DISABLE_AD_BIFA">
-				<Original>ACE: Disable Advanced Ballistics in full auto?</Original>
-				<Russian>ACE: Отключить продвинутую баллистику в режиме авто?</Russian>
-			</Key>
-			<Key ID="STR_ACE_AD_BSR">
-				<Original>ACE: Advanced ballistics simulation radius</Original>
-				<Russian>ACE: Радиус моделирования баллистики</Russian>
-			</Key>
-			<Key ID="STR_ACE_ML">
-				<Original>ACE: Map Illumination</Original>
-				<Russian>ACE: Освещение карты</Russian>
-			</Key>
-			<Key ID="STR_ACE_WHEEL_RRT">
-				<Original>ACE: Wheel repair requires toolkit</Original>
-				<Russian>ACE: Ремонт колес требует набора инструментов</Russian>
-			</Key>
-			<Key ID="STR_ACE_SELECT_BASIC">
-				<Original>Basic</Original>
-				<Russian>Основная</Russian>
-			</Key>
-			<Key ID="STR_ACE_SELECT_ADVANCED">
-				<Original>Advanced</Original>
-				<Russian>Продвинутая</Russian>
-			</Key>
-			<Key ID="STR_ACE_SELECT_HALF">
-				<Original>Half</Original>
-				<Russian>Половина</Russian>
-			</Key>
-			<Key ID="STR_ACE_SELECT_FULL">
-				<Original>Full</Original>
-				<Russian>Полная</Russian>
-			</Key>
-			<Key ID="STR_ACE_SELECT_ANYW">
-				<Original>Anywhere</Original>
-				<Russian>Везде</Russian>
-			</Key>
-			<Key ID="STR_ACE_SELECT_RF">
-				<Original>Repair Facility</Original>
-				<Russian>Ремонтный пункт</Russian>
-			</Key>
-			<Key ID="STR_ACE_SELECT_ANYB">
-				<Original>Anybody</Original>
-				<Russian>Любой</Russian>
-			</Key>
-			<Key ID="STR_ACE_SELECT_ENGS">
-				<Original>Engineers</Original>
-				<Russian>Инженер</Russian>
-			</Key>
-			<Key ID="STR_ACE_SELECT_NONE">
-				<Original>None</Original>
-				<Russian>Ничего</Russian>
-			</Key>
-			<Key ID="STR_ACE_SELECT_TOOL">
-				<Original>Toolkit</Original>
-				<Russian>Набор инструментов</Russian>
-			</Key>
-			<Key ID="STR_ACE_SELECT_NO">
-				<Original>0</Original>
-				<Russian>Никто</Russian>
-			</Key>
-			<Key ID="STR_ACE_SELECT_PLAYERS">
-				<Original>1</Original>
-				<Russian>Игроки</Russian>
-			</Key>
-			<Key ID="STR_ACE_SELECT_PLSANDBS">
-				<Original>2</Original>
-				<Russian>Игроки и боты</Russian>
-			</Key>
-		</Container>--><!-- not using need to delete -->
 		<Container name="Description_settings">
 			<Key ID="STR_DES_ATSAFC">
 				<Original>Antistasi: ability to start a fresh campaign</Original>
@@ -1839,7 +1685,7 @@
 			</Key>
 			<Key ID="STR_HINTS_GEN_STEAL_FAIL">
 				<Original>There are not enough funds for you to borrow anything.</Original>
-				<Russian>Недостаточно средств для вас, чтобы одолжить что-либо.</Russian><Редакт.>
+				<Russian>Недостаточно средств для вас, чтобы одолжить что-либо.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_GEN_STEAL_SUC">
 				<Original>You've taken 100€ from the general budget. Invest it wisely.</Original>
@@ -4579,7 +4425,12 @@
 			<Key ID="STR_BR_8CNT">
 				<Original>8 Credits and Thanks</Original>
 				<Russian>8 Авторы И Благодарность</Russian>
+<<<<<<< HEAD
 			<Key ID=STR_BR_8CNT_T>
+=======
+			</Key>
+			<Key ID="STR_BR_8CNT_T">
+>>>>>>> master
 				<Original>Author: Barbolani&lt;br/&gt;
 					Coding since 1.2: Chris supervised by RickyTan and Kendo&lt;br/&gt;
 					Coding since 1.7.6: Jeroen and Sparker&lt;br/&gt;
@@ -4619,7 +4470,6 @@
 					Kendo and Tuck for templates.&lt;br/&gt;
 					And all those players who spend their time on making comments, suggestions and reports on Steam and Antistasi Official Community.</Original>
 				<Russian>8 Авторы И Благодарность</Russian>
-
 			</Key>
 		</Container>
 	</Package>
