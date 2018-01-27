@@ -134,5 +134,5 @@ if (spawner getVariable _marker) then {
 
 waitUntil {sleep 1; !(spawner getVariable _marker)};
 
-[_allGroups, _allSoldiers + _workers, _allVehicles] spawn AS_fnc_despawnUnits;
+[_allGroups, _allSoldiers + _workers, _allVehicles] spawn AS_fnc_despawnUnitsNow;
 if !(isNull _observer) then {deleteVehicle _observer};

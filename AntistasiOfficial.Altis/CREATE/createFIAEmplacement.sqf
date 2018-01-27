@@ -79,4 +79,4 @@ if ({alive _x} count units _group == 0) then {
 
 waitUntil {sleep 1; !(spawner getVariable _marker) OR !(_marker in puestosFIA)};
 
-[_allGroups, _allSoldiers, _allVehicles] spawn AS_fnc_despawnUnits;
+[_allGroups, _allSoldiers, _allVehicles] spawn AS_fnc_despawnUnitsNow;

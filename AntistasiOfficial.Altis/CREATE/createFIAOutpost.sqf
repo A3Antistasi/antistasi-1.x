@@ -171,5 +171,5 @@ waitUntil {sleep 1; !(spawner getVariable _marker)};
 
 {if ((!alive _x) AND !(_x in destroyedBuildings)) then {destroyedBuildings = destroyedBuildings + [position _x]; publicVariableServer "destroyedBuildings"}} forEach _buildings;
 
-[_allGroups, _allSoldiers, _allVehicles] spawn AS_fnc_despawnUnits;
+[_allGroups, _allSoldiers, _allVehicles] spawn AS_fnc_despawnUnitsNow;
 if !(isNull _observer) then {deleteVehicle _observer};

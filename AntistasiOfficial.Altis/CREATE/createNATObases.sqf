@@ -271,5 +271,5 @@ waitUntil {sleep 1; !(spawner getVariable _marker)};
 		{if ((!alive _x) AND !(_x in destroyedBuildings)) then {destroyedBuildings = destroyedBuildings + [position _x]; publicVariableServer "destroyedBuildings"}} forEach _buildings;
 
 	//Despawn
-		[_allGroups + _guerGroups, _allSoldiers + _guerSoldiers, _allVehicles + _guerVehicles] spawn AS_fnc_despawnUnits; //AS_fnc_despawnUnits is waiting for blufor to leave, not opfor!! So they might spawn multiple times.
+		[_allGroups + _guerGroups, _allSoldiers + _guerSoldiers, _allVehicles + _guerVehicles] spawn AS_fnc_despawnUnitsNow; //AS_fnc_despawnUnits is waiting for blufor to leave, not opfor!! So they might spawn multiple times.
 		if !(isNull _observer) then {deleteVehicle _observer};
