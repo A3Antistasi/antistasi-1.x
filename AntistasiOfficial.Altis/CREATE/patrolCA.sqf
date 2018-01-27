@@ -28,7 +28,7 @@ if !(_forceBase == "") then {
 
 //Conditions to prevent the counterattack
 	//diag_fps
-		if (!(_forcedAttack) AND (diag_fps < minimoFPS)) exitWith {diag_log format ["Info: Small attack on %1 called off, low server FPS.", _marker]};
+		if (!(_forcedAttack) AND (count allunits > 200)) exitWith {diag_log format ["Info: Small attack on %1 called off, too many units.", _marker]};
 
 		_exit = false;
 	//another counterattack active in same zone (disabled)
