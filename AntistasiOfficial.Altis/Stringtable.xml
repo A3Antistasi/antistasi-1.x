@@ -522,7 +522,7 @@
 			</Key>
 			<Key ID=STR_UI_SM_COM_1>
 				<Original>ComSwitch Enabled</Original>
-				<Russian>Смена командира Вкл<</Russian>
+				<Russian>Смена командира Вкл</Russian>
 			</Key>
 			<Key ID="STR_UI_SM_COM_TT">
 				<Original>Automatic Commander Switching&lt;br/&gt;In regular intervals, the highest ranking player will be assigned the role of Commander.</Original>
