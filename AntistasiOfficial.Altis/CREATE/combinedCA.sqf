@@ -320,10 +320,7 @@ waitUntil
 {
 	sleep 5;
 	(
-	 	//Operative soldiers < Downed soldiers !??!?!
-		({!(captive _x) and (lifeState _x != "INCAPACITATED")} count _allSoldiers) < ({(captive _x) and (lifeState _x == "INCAPACITATED")} count _allSoldiers)) OR
-
-		//Operative soldiers < 1/3 of All soldiers
+	 	//Operative soldiers < 1/3 of All soldiers
 		({(alive _x) and (lifeState _x != "INCAPACITATED")} count _allSoldiers < (round ((count _allSoldiers)/3))) OR
 
 		//time is over
