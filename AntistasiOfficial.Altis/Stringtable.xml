@@ -1,160 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Project name="Antistasi">
 	<Package name="Settings">
-		<!--<Container name="AceSettings">
-			<Key ID="STR_ACE_MEDICAL_LEVEL">
-				<Original>ACE: Medical Level</Original>
-				<Russian>ACE: Уровень медицины</Russian>
-			</Key>
-			<Key ID="STR_ACE_ENABLE_TEAM_MANAGEMENT">
-				<Original>ACE: Enable Team Management</Original>
-				<Russian>ACE: Вкл. управление группами</Russian>
-			</Key>
-			<Key ID="STR_ACE_LAUNCHERS">
-				<Original>ACE: Launchers</Original>
-				<Russian>ACE: Пусковые установки</Russian>
-			</Key>
-			<Key ID="STR_ACE_HIDE_AI_GROUPS_ON_MAP">
-				<Original>ACE: Hide AI groups on map?</Original>
-				<Russian>ACE: Скрыть группы ИИ на карте?</Russian>
-			</Key>
-			<Key ID="STR_ACE_SHOW_PLAYER_NAMES_MAP">
-				<Original>ACE: Show player names map?</Original>
-				<Russian>ACE: Показывать имена игроков на карте?</Russian>
-			</Key>
-			<Key ID="STR_ACE_MAP_DEFAULT_CHANNEL">
-				<Original>ACE: Map default channel</Original>
-				<Russian>ACE: Канал карты по умолчанию</Russian>
-			</Key>
-			<Key ID="STR_ACE_LOCATIONS_BOOST_MEDICAL_TRAINING">
-				<Original>ACE: Locations boost medical training?</Original>
-				<Russian>ACE: Местонахождение повышает медицинские навыки?</Russian>
-			</Key>
-			<Key ID="STR_ACE_MEDICAL_E_REV">
-				<Original>ACE: Medical, enable revive?</Original>
-				<Russian>ACE: (Медицина) Разрешить воскрешение?</Russian>
-			</Key>
-			<Key ID="STR_ACE_MAN_RT">
-				<Original>ACE: Max revive time?</Original>
-				<Russian>ACE: Максимальное время нахождения без сознания?</Russian>
-			</Key>
-			<Key ID="STR_ACE_MEDICAL_CLEAN_ULD">
-				<Original>ACE: Medical, clean up litter delay?</Original>
-				<Russian>ACE: Убирать медицинский мусор через?</Russian>
-			</Key>
-			<Key ID="STR_ACE_FULL_HEAL_OEIRTM">
-				<Original>ACE: Full heal on epi injection restricted to medic?</Original>
-				<Russian>ACE: Только медики могут вкалывать эпинефрин и адреналин?</Russian>
-			</Key>
-			<Key ID="STR_ACE_MDAGR_MF">
-				<Original>ACE: MicroDAGR map fill</Original>
-				<Russian>ACE: Показывать миникарту в MicroDAGR</Russian>
-			</Key>
-			<Key ID="STR_ACE_HOW_MDCAER">
-				<Original>ACE: How much damage can an engineer repair?</Original>
-				<Russian>ACE: Сколько ущерба может восстановить инженер?</Russian>
-			</Key>
-			<Key ID="STR_ACE_FULL_RL">
-				<Original>ACE: Full repair locations?</Original>
-				<Russian>ACE: Где доступен полный ремонт?</Russian>
-			</Key>
-			<Key ID="STR_ACE_WHO_CPEAFR">
-				<Original>ACE: Who can perform a full repair?</Original>
-				<Russian>ACE: Кто может выполнить полный ремонт?</Russian>
-			</Key>
-			<Key ID="STR_ACE_ADVANCED_FATIQUE">
-				<Original>ACE: Advanced Fatigue</Original>
-				<Russian>ACE: Продвинутая усталость</Russian>
-			</Key>
-			<Key ID="STR_ACE_ADVANCED_FATIQUE_PF">
-				<Original>ACE: Advanced Fatigue performance factor</Original>
-				<Russian>ACE: Коэффициент зависимости усталости от скорости движения</Russian>
-			</Key>
-			<Key ID="STR_ACE_ADVANCED_FATIQUE_RF">
-				<Original>ACE: Advanced Fatigue recovery factor</Original>
-				<Russian>ACE: Коэффициент восстановления усталости</Russian>
-			</Key>
-			<Key ID="STR_ACE_ADVANCED_FATIQUE_TGF">
-				<Original>ACE: Advanced Fatigue terrain gradient factor</Original>
-				<Russian>ACE: Коэффициент зависимости усталости от наклона местности</Russian>
-			</Key>
-			<Key ID="STR_ACE_EXP_EOD">
-				<Original>ACE: Explosives explode on defusal?</Original>
-				<Russian>ACE: Взрывчатка взрывается при разминировании?</Russian>
-			</Key>
-			<Key ID="STR_ACE_AD_BAL">
-				<Original>ACE: Advanced ballistics?</Original>
-				<Russian>ACE: Продвинутая баллистика?</Russian>
-			</Key>
-			<Key ID="STR_ACE_DISABLE_AD_BIFA">
-				<Original>ACE: Disable Advanced Ballistics in full auto?</Original>
-				<Russian>ACE: Отключить продвинутую баллистику в режиме авто?</Russian>
-			</Key>
-			<Key ID="STR_ACE_AD_BSR">
-				<Original>ACE: Advanced ballistics simulation radius</Original>
-				<Russian>ACE: Радиус моделирования баллистики</Russian>
-			</Key>
-			<Key ID="STR_ACE_ML">
-				<Original>ACE: Map Illumination</Original>
-				<Russian>ACE: Освещение карты</Russian>
-			</Key>
-			<Key ID="STR_ACE_WHEEL_RRT">
-				<Original>ACE: Wheel repair requires toolkit</Original>
-				<Russian>ACE: Замена колес требует набора инструментов</Russian>
-			</Key>
-			<Key ID="STR_ACE_SELECT_BASIC">
-				<Original>Basic</Original>
-				<Russian>Основная</Russian>
-			</Key>
-			<Key ID="STR_ACE_SELECT_ADVANCED">
-				<Original>Advanced</Original>
-				<Russian>Продвинутая</Russian>
-			</Key>
-			<Key ID="STR_ACE_SELECT_HALF">
-				<Original>Half</Original>
-				<Russian>Половина</Russian>
-			</Key>
-			<Key ID="STR_ACE_SELECT_FULL">
-				<Original>Full</Original>
-				<Russian>Полная</Russian>
-			</Key>
-			<Key ID="STR_ACE_SELECT_ANYW">
-				<Original>Anywhere</Original>
-				<Russian>Везде</Russian>
-			</Key>
-			<Key ID="STR_ACE_SELECT_RF">
-				<Original>Repair Facility</Original>
-				<Russian>Ремонтный пункт</Russian>
-			</Key>
-			<Key ID="STR_ACE_SELECT_ANYB">
-				<Original>Anybody</Original>
-				<Russian>Любой</Russian>
-			</Key>
-			<Key ID="STR_ACE_SELECT_ENGS">
-				<Original>Engineers</Original>
-				<Russian>Инженер</Russian>
-			</Key>
-			<Key ID="STR_ACE_SELECT_NONE">
-				<Original>None</Original>
-				<Russian>Ничего</Russian>
-			</Key>
-			<Key ID="STR_ACE_SELECT_TOOL">
-				<Original>Toolkit</Original>
-				<Russian>Набор инструментов</Russian>
-			</Key>
-			<Key ID="STR_ACE_SELECT_NO">
-				<Original>0</Original>
-				<Russian>Никто</Russian>
-			</Key>
-			<Key ID="STR_ACE_SELECT_PLAYERS">
-				<Original>1</Original>
-				<Russian>Игроки</Russian>
-			</Key>
-			<Key ID="STR_ACE_SELECT_PLSANDBS">
-				<Original>2</Original>
-				<Russian>Игроки и боты</Russian>
-			</Key>
-		</Container>--><!-- not using need to delete -->
 		<Container name="Description_settings">
 			<Key ID="STR_DES_ATSAFC">
 				<Original>Antistasi: ability to start a fresh campaign</Original>
@@ -170,7 +16,7 @@
 			</Key>
 			<Key ID="STR_DES_USABJN">
 				<Original>Antistasi: use customized arsenal by Jeroen Not</Original>
-				<Russian>Antistasi: использовать изменённый арсенал</Russian>
+				<Russian>Antistasi: использовать изменённый Арсенал</Russian>
 			</Key>
 			<Key ID="STR_DES_PPFT">
 				<Original>Antistasi: punish people for teamkilling</Original>
@@ -188,11 +34,11 @@
 
 			<Key ID="STR_DES_ON">
 				<Original>On</Original>
-				<Russian>ВКЛ</Russian>
+				<Russian>Вкл</Russian>
 			</Key>
 			<Key ID="STR_DES_OFF">
 				<Original>OFF</Original>
-				<Russian>ВЫКЛ</Russian>
+				<Russian>Выкл</Russian>
 			</Key>
 		</Container>
 	</Package>
@@ -232,7 +78,7 @@
 			</Key>
 			<Key ID="STR_ACT_HEALREPAIR">
 				<Original>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\RscTitles\MPProgress\respawn_ca.paa' /&gt; Heal, Repair and Rearm</Original>
-				<Russian>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\RscTitles\MPProgress\respawn_ca.paa' /&gt; Лечить, чинить, перевооружить</Russian>
+				<Russian>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\RscTitles\MPProgress\respawn_ca.paa' /&gt; Лечить, чинить и перевооружить</Russian>
 			</Key>
 			<Key ID="STR_ACT_USEMED">
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\heal_ca.paa' /&gt; Use Medical Supplies</Original>
@@ -252,11 +98,11 @@
 			</Key>
 			<Key ID="STR_ACT_LOADAMMOBOX">
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\igui\cfg\VehicleToggles\VehicleCargoIconOn2_ca.paa' /&gt; Load Ammobox to Truck</Original>
-				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\igui\cfg\VehicleToggles\VehicleCargoIconOn2_ca.paa' /&gt; Загрузить боеприпасы в грузовик</Russian>
+				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\igui\cfg\VehicleToggles\VehicleCargoIconOn2_ca.paa' /&gt; Загрузить Ящик в грузовик</Russian>
 			</Key>
 			<Key ID="STR_ACT_UNLOADCARGO">
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\igui\cfg\VehicleToggles\VehicleCargoIconOn_ca.paa' /&gt; Unload Vehicle Cargo to Ammobox</Original>
-				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\igui\cfg\VehicleToggles\VehicleCargoIconOn_ca.paa' /&gt; Выгрузить боеприпасы в Арсенал</Russian>
+				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\igui\cfg\VehicleToggles\VehicleCargoIconOn_ca.paa' /&gt; Выгрузить боеприпасы в Ящик</Russian>
 			</Key>
 			<Key ID="STR_ACT_ARSENAL">
 				<Original>&lt;img size='1.75' image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceArsenal_ca.paa' /&gt; Arsenal</Original>
@@ -272,7 +118,7 @@
 			</Key>
 			<Key ID="STR_ACT_PERSGARAGE"><!-- not use need to delete -->
 				<Original>&lt;img size='1.75' image='\A3\ui_f\data\GUI\rsc\rscdisplaysinglemission\source\backup\large_64x64\locked_ca.paa' /&gt; Personal Garage</Original>
-				<Russian>&lt;img size='1.75' image='\A3\ui_f\data\GUI\rsc\rscdisplaysinglemission\source\backup\large_64x64\locked_ca.paa' /&gt; Персональный Гараж</Russian>
+				<Russian>&lt;img size='1.75' image='\A3\ui_f\data\GUI\rsc\rscdisplaysinglemission\source\backup\large_64x64\locked_ca.paa' /&gt; Персональный гараж</Russian>
 			</Key>
 			<Key ID="STR_ACT_REFUEL">
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\refuel_ca.paa' /&gt; Refuel Vehicle</Original>
@@ -324,7 +170,7 @@
 			</Key>
 			<Key ID="STR_ACT_HQOPTIONS">
 				<Original>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\Ranks\colonel_gs.paa' /&gt; HQ Options</Original>
-				<Russian>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\Ranks\colonel_gs.paa' /&gt;  Управление Штабом</Russian>
+				<Russian>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\Ranks\colonel_gs.paa' /&gt; Штаб</Russian>
 			</Key>
 			<Key ID="STR_ACT_GAMEOPTIONS">
 				<Original>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\SimpleTasks\types\use_ca.paa' /&gt; Game Options</Original>
@@ -380,11 +226,11 @@
 			</Key>
 			<Key ID="STR_GENIDENT_AFRF">
 				<Original>AFRF</Original>
-				<Russian>AFRF</Russian>
+				<Russian>Армия РФ</Russian>
 			</Key>
 			<Key ID="STR_GENIDENT_VMF">
 				<Original>VMF</Original>
-				<Russian>VMF</Russian>
+				<Russian>ВМФ РФ</Russian>
 			</Key>
 			<Key ID="STR_GENIDENT_USAF">
 				<Original>USAF</Original>
@@ -518,27 +364,27 @@
 			</Key>
 			<Key ID="STR_UI_SM_COM_0">
 				<Original>ComSwitch Disabled</Original>
-				<Russian>Смена командира Выкл</Russian>
+				<Russian>Смена Командира Выкл</Russian>
 			</Key>
 			<Key ID="STR_UI_SM_COM_1">
 				<Original>ComSwitch Enabled</Original>
-				<Russian>Смена командира Вкл<</Russian>
+				<Russian>Смена Командира Вкл<</Russian>
 			</Key>
 			<Key ID="STR_UI_SM_COM_TT">
 				<Original>Automatic Commander Switching&lt;br/&gt;In regular intervals, the highest ranking player will be assigned the role of Commander.</Original>
-				<Russian>Автосмена командира&lt;br/&gt;Через равный промежуток времени высокопоставленные члены отряда будут получать статус Командира.</Russian>
+				<Russian>Автосмена Командира&lt;br/&gt;Через равный промежуток времени члены отряда высокого ранга будут получать статус Командира.</Russian>
 			</Key>
 			<Key ID="STR_UI_SM_MEM_0">
 				<Original>Membership Enabled</Original>
-				<Russian>Членство на сервере включено</Russian>
+				<Russian>Членство на сервере Вкл.</Russian>
 			</Key>
 			<Key ID="STR_UI_SM_MEM_1">
 				<Original>Membership Disabled</Original>
-				<Russian>Членство на сервере выключено</Russian>
+				<Russian>Членство на сервере Выкл.</Russian>
 			</Key>
 			<Key ID="STR_UI_SM_MEM_TT">
 				<Original>Only players on the members list are eligible to become Commander, can access the arsenal inventory and have their rank saved.</Original>
-				<Russian>Только игроки из списка участников могут быть командирами, иметь доступ к Арсенал. Их ранг сохраняется.</Russian>
+				<Russian>Только игроки из списка участников могут быть Командирами, иметь доступ к Арсеналу. Их ранг сохраняется.</Russian>
 			</Key>
 			<Key ID="STR_UI_SM_LOAD_0">
 				<Original>Continuing Campaign</Original>
@@ -634,7 +480,7 @@
 			</Key>
 			<Key ID="STR_UI_BM_NAV2_TEXT">
 				<Original>Undercover</Original>
-				<Russian>Инкогнито</Russian>
+				<Russian>Скрытно</Russian>
 			</Key>
 			<Key ID="STR_UI_BM_NAV2_TT">
 				<Original>Look like a civilian and be ignored by enemies, don't get revealed!</Original>
@@ -642,19 +488,19 @@
 			</Key>
 			<Key ID="STR_UI_BM_NAV3_TEXT">
 				<Original>Vehicle Mgmt</Original>
-				<Russian>Упр. техникой</Russian>
+				<Russian>Техника</Russian>
 			</Key>
 			<Key ID="STR_UI_BM_NAV3_TT">
 				<Original>Garage and Lock/Unlock vehicles</Original>
-				<Russian>Гараж и закрыть/открыть технику</Russian>
+				<Russian>Поставить технику в гараж, закрыть/открыть, продать технику</Russian>
 			</Key>
 			<Key ID="STR_UI_BM_NAV4_TEXT">
 				<Original>AI Management</Original>
-				<Russian>Упр. ИИ</Russian>
+				<Russian>Контроль ИИ</Russian>
 			</Key>
 			<Key ID="STR_UI_BM_NAV4_TT">
 				<Original>Make your group benefit of Antistasi features</Original>
-				<Russian>Расширенные возможности Antistasi по управлению группами</Russian>
+				<Russian>Расширенные возможности Antistasi по управлению ИИ, отрядами ИИ</Russian>
 			</Key>
 			<Key ID="STR_UI_BM_NAV5_TEXT">
 				<Original>Player &amp; Money</Original>
@@ -715,7 +561,7 @@
 			</Key>
 			<Key ID="STR_UI_AIMGMT_DIS_TT">
 				<Original>Dismisses currently selected AI or group.</Original>
-				<Russian>Распускает выбранный ИИ или выбранную группу.</Russian>
+				<Russian>Выбрать ИИ или группу, отправить бойцов по домам.</Russian>
 			</Key>
 			<Key ID="STR_UI_AIMGMT_SCV_TEXT">
 				<Original>Scavenge</Original>
@@ -745,19 +591,19 @@
 		<Container name="Vehicle Management">
 			<Key ID="STR_UI_VEHMGMT_PGAR_TEXT">
 				<Original>Garage / Store inventory</Original>
-				<Russian>Гараж/Инвентарь</Russian>
+				<Russian>В Гараж</Russian>
 			</Key>
 			<Key ID="STR_UI_VEHMGMT_PGAR_TT">
 				<Original>Store the vehicle you are looking at and its inventory.</Original>
-				<Russian>Ставит в Гараж технику на которую Вы смотрите и её инвентарь.</Russian>
+				<Russian>Ставит в Гараж технику, на которую Вы смотрите и её инвентарь.</Russian>
 			</Key>
 			<Key ID="STR_UI_VEHMGMT_UNL_TEXT">
 				<Original>(Un)lock Vehicle</Original>
-				<Russian>(Открыть)Закрыть</Russian>
+				<Russian>Открыть/Закрыть</Russian>
 			</Key>
 			<Key ID="STR_UI_VEHMGMT_UNL_TT">
 				<Original>Lock or unlock the vehicle.</Original>
-				<Russian>Открывает или закрывает технику.</Russian>
+				<Russian>Открывает или закрывает технику на замок.</Russian>
 			</Key>
 			<Key ID="STR_UI_VEHMGMT_SELL_TEXT">
 				<Original>Sell Vehicle</Original>
@@ -821,7 +667,7 @@
 			</Key>
 			<Key ID="STR_UI_NAVCOM_INFO_TEXT">
 				<Original>Details</Original>
-				<Russian>Подробно</Russian>
+				<Russian>Сводка</Russian>
 			</Key>
 			<Key ID="STR_UI_NAVCOM_INFO_TT">
 				<Original>Display additional details about the current state of your forces (arms, vehicles, etc).</Original>
@@ -829,11 +675,11 @@
 			</Key>
 			<Key ID="STR_UI_NAVCOM_MAINT_TEXT">
 				<Original>Maintenance</Original>
-				<Russian>Обслуживание</Russian><!-- Редакт. тут надо посмотреть -->
+				<Russian>Сервис</Russian><!-- Редакт. тут надо посмотреть -->
 			</Key>
 			<Key ID="STR_UI_NAVCOM_MAINT_TT">
 				<Original>Additonal maintenance functions.</Original>
-				<Russian>Дополнительные функции обслуживания.</Russian><!-- Редакт. тут надо посмотреть -->
+				<Russian>Дополнительные функции для решения проблем.</Russian><!-- Редакт. тут надо посмотреть -->
 			</Key>
 		</Container>
 		<Container name="Ally_Menu">
@@ -859,7 +705,7 @@
 			</Key>
 			<Key ID="STR_UI_ALLY_ART_TT">
 				<Original>Price: 10 Points -- A deployed battery will be at your command at a base of your choice.</Original>
-				<Russian>Цена: 10 очков - Артиллерийская батарея на выбранной военной базе под вашим командованием.</Russian>
+				<Russian>Цена: 10 очков - Артиллерийская батарея на выбранной военной базе под Вашим командованием.</Russian>
 			</Key>
 			<Key ID="STR_UI_ALLY_RB_TEXT">
 				<Original>Roadblock</Original>
@@ -875,7 +721,7 @@
 			</Key>
 			<Key ID="STR_UI_ALLY_UAV_TT">
 				<Original>Price: 10 Points -- An armed UAV will be placed under your command.</Original>
-				<Russian>Цена: 10 очков - Ударный БПЛА под вашим командованием.</Russian>
+				<Russian>Цена: 10 очков - Ударный БПЛА под Вашим командованием.</Russian>
 			</Key>
 			<Key ID="STR_UI_ALLY_AMMO_TEXT">
 				<Original>Resupply</Original>
@@ -890,7 +736,7 @@
 			</Key>
 			<Key ID="STR_UI_ALLY_CAS_TT">
 				<Original>Price: 10 Points -- A Vic formation of CAS aircraft will be placed under your command.</Original>
-				<Russian>Цена: 10 очков - Звено авиаподдержки под вашим командованием.</Russian>
+				<Russian>Цена: 10 очков - Звено авиаподдержки под Вашим командованием.</Russian>
 			</Key>
 			<Key ID="STR_UI_ALLY_BOMB_TEXT">
 				<Original>Bomb Run</Original>
@@ -906,7 +752,7 @@
 			</Key>
 			<Key ID="STR_UI_ALLY_QRF_TT">
 				<Original>Price: 10 Points -- A QRF will be dispatched from the chosen base/airport.</Original>
-				<Russian>Цена: 10 очков - Группа быстрого реагирования отправится из базы/аэропорта в выбранное место.</Russian>
+				<Russian>Цена: 10 очков - Группа быстрого реагирования отправится из базы/авиабазы в выбранное место.</Russian>
 			</Key>
 			<Key ID="STR_UI_ALLY_RED_TEXT"><!--' Stef 30-08 '-->
 				<Original>Reduce Opfor support</Original>
@@ -994,11 +840,11 @@
 		<Container name="Squad Management Menu">
 			<Key ID="STR_UI_SM_ADDVEH_TEXT">
 				<Original>Add Vehicle</Original>
-				<Russian>Добавить транспорт</Russian>
+				<Russian>Закрепить транспорт</Russian>
 			</Key>
 			<Key ID="STR_UI_SM_ADDVEH_TT">
 				<Original>Look to the vehicle you want to assign to selected team</Original>
-				<Russian>Посмотрите на транспортное средство, которое хотите назначить выбранной группе</Russian>
+				<Russian>Посмотрите на транспортное средство, которое хотите закрепить за выбранной группой</Russian>
 			</Key>
 			<Key ID="STR_UI_SM_VEHSTATS_TEXT">
 				<Original>Vehicle Stats</Original>
@@ -1032,7 +878,7 @@
 			</Key>
 			<Key ID="STR_UI_EMP_BLDRB_TT">
 				<Original>Roadblock are effective against ground vehicle and some aircraft, if selecting outside roads build an Observation Post</Original>
-				<Russian>Развертывает Блокпост (БП) на дороге, вне дороги - Наблюдательный Пост (НП)</Russian>
+				<Russian>Развертывает Блокпост (БП) на дороге, вне дороги - наблюдательный пункт (НП)</Russian>
 			</Key>
 			<Key ID="STR_UI_EMP_DELRB_TEXT">
 				<Original>Remove Roadblock/OP</Original>
@@ -1048,7 +894,7 @@
 			</Key>
 			<Key ID="STR_UI_EMP_MNAP_TT">
 				<Original>Dangerous, it require mines in the arsenal, not tested yet with RHS and JAS</Original>
-				<Russian>Опасно, требует наличия ПП мин в арсеналеи еще не испытано с RHS и JAS</Russian>
+				<Russian>Опасно, требует наличия ПП мин в Арсенале, еще не испытано с RHS и JAS</Russian>
 			</Key>
 			<Key ID="STR_UI_EMP_MNAT_TEXT">
 				<Original>Deploy Minefield (AT)</Original>
@@ -1056,7 +902,7 @@
 			</Key>
 			<Key ID="STR_UI_EMP_MNAT_TT">
 				<Original>Dangerous, it require mines in the arsenal, not tested yet with RHS and JAS</Original>
-				<Russian>Опасно, требует наличия ПТ мин в арсенале</Russian>
+				<Russian>Опасно, требует наличия ПТ мин в Арсенале</Russian>
 			</Key>
 			<Key ID="STR_UI_EMP_CMPEST_TEXT">
 				<Original>Establish Camp</Original>
@@ -1132,11 +978,11 @@
 			</Key>
 			<Key ID="STR_UI_MAINT_PET_TT">
 				<Original>Terminate Petros' animation, move him next to the campfire at HQ.</Original>
-				<Russian>Прекращает анимацию Петроса и помещает его рядом с костром в Штабе</Russian>
+				<Russian>Прекращает анимацию Петроса и помещает его рядом с Костром в Штабе</Russian>
 			</Key>
 			<Key ID="STR_UI_MAINT_MOV_TEXT">
 				<Original>Move Statics/HQ Items</Original>
-				<Russian>Перем.ст.оруж./Пред.Штаба</Russian>
+				<Russian>Перемещение Предметов</Russian>
 			</Key>
 			<Key ID="STR_UI_MAINT_MOV_TT">
 				<Original>Reinitialize your ability to move statics and HQ assets.</Original>
@@ -1162,19 +1008,19 @@
 			</Key>
 			<Key ID="STR_UI_ADMIN_ADDMEM_TEXT">
 				<Original>Add Server Member</Original>
-				<Russian>Добавить в список сервера</Russian>
+				<Russian>Добавить в Список</Russian>
 			</Key>
 			<Key ID="STR_UI_ADMIN_ADDMEM_TT">
 				<Original>Look at a player, Members are eligible to be commander and can recruit AI</Original>
-				<Russian>Игроки из списка участников могут быть Командиром и нанимать ИИ. Выберите участника взглядом</Russian>
+				<Russian>Игроки из Списка участников могут быть Командиром и нанимать ИИ. Выберите участника взглядом</Russian>
 			</Key>
 			<Key ID="STR_UI_ADMIN_REMMEM_TEXT">
 				<Original>Remove S. Member</Original>
-				<Russian>Удалить из списка сервера</Russian>
+				<Russian>Удалить из Списка</Russian>
 			</Key>
 			<Key ID="STR_UI_ADMIN_REMMEM_TT">
 				<Original>Look at a player to remove him from the member list</Original>
-				<Russian>Взглядом выберите игрока для удалени его из списка членов сервера</Russian>
+				<Russian>Взглядом выберите игрока для удалени его из Списка членов сервера</Russian>
 			</Key>
 			<Key ID="STR_UI_ADMIN_GEARRES_TEXT">
 				<Original>Gear Reset</Original>
@@ -1182,7 +1028,7 @@
 			</Key>
 			<Key ID="STR_UI_ADMIN_GEARRES_TT">
 				<Original>No longer required/working, JAS is bulletproof.</Original>
-				<Russian>Не требуется, JAS арсенал работает как надо.</Russian>
+				<Russian>Не требуется, JAS Арсенал работает как надо.</Russian>
 			</Key>
 			<Key ID="STR_UI_ADMIN_TGLAXP_TEXT">
 				<Original>Army XP System</Original>
@@ -1190,7 +1036,7 @@
 			</Key>
 			<Key ID="STR_UI_ADMIN_TGLAXP_TT">
 				<Original>If disabled there won't be any gated progression nor the benefit like enhanced roadblocks</Original>
-				<Russian>Если Выкл., то не будет постепенного роста опыта войск и преимуществ, таких как усиленные Блокпосты</Russian>
+				<Russian>Если Выкл., то не будет постепенного роста опыта войск и соответствующих преимуществ, таких как усиленные блокпосты</Russian>
 			</Key>
 			<Key ID="STR_UI_ADMIN_TGLFT_TEXT">
 				<Original>Old Fast Travel</Original>
@@ -1226,11 +1072,11 @@
 			</Key>
 			<Key ID="STR_UI_ADMIN_FORCE1ST_TEXT">
 				<Original>Disable 3rd Person</Original>
-				<Russian>Выкл. вид от 3-го лица</Russian>
+				<Russian>Выкл. вид от 3го лица</Russian>
 			</Key>
 			<Key ID="STR_UI_ADMIN_FORCE1ST_TT">
 				<Original>The script is not optimized for Join in Progress, not all the player might retain the effect.</Original>
-				<Russian>Скрипт не оптимизирован, может подействовать не на всех Игроков.</Russian>
+				<Russian>Скрипт не оптимизирован, может подействовать не на всех игроков.</Russian>
 			</Key>
 		</Container>
 		<Container name="Sell">
@@ -1282,15 +1128,15 @@
 			</Key>
 			<Key ID="STR_UI_TOP_OVERT">
 				<Original>Overt</Original>
-				<Russian>&lt;t color='#D8480A'&gt;Раскрыт&lt;/t&gt;</Russian>
+				<Russian>&lt;t color='#D8480A'&gt;Открыто&lt;/t&gt;</Russian>
 			</Key>
 			<Key ID="STR_UI_TOP_OVERT2">
 				<Original>&lt;t color='#D8480A'&gt;Overt&lt;/t&gt;</Original>
-				<Russian>&lt;t color='#D8480A'&gt;Раскрыт&lt;/t&gt;</Russian>
+				<Russian>&lt;t color='#D8480A'&gt;Открыто&lt;/t&gt;</Russian>
 			</Key>
 			<Key ID="STR_UI_TOP_INCOGNITO">
 				<Original>&lt;t color='#1DA81D'&gt;Incognito&lt;/t&gt;</Original>
-				<Russian>&lt;t color='#1DA81D'&gt;Инкогнито&lt;/t&gt;</Russian>
+				<Russian>&lt;t color='#1DA81D'&gt;Скрытно&lt;/t&gt;</Russian>
 			</Key>
 		</Container>
 	</Package>
@@ -1342,7 +1188,7 @@
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_CONOPAA">
 				<Original>A CSAT %1 is disturbing our operations in the area. This heavily defended outpost has Mortar and UAV, from what our spies tell us. We advise the destruction of the Drone before engaging and elimination the majority of ground troops. If there is an AA tank, this is also a priorty target. The operation must be completed before %2:%3.</Original>
-				<Russian>Спецназ %1 срывает наши операции в этом районе. Шпионы выяснили, что опорный пункт спецназа хорошо защищён, имеет Миномёт и БПЛА. Мы советуем уничтожить БПЛА перед наземной атакой. Если у них есть зенитная установка - уничтожьте её в первую очередь. Задание должно быть выполнено до %2:%3.</Russian>
+				<Russian>Спецназ %1 срывает наши операции в этом районе. Шпионы выяснили, что опорный пункт спецназа хорошо защищён, имеет миномёт и БПЛА. Мы советуем уничтожить БПЛА перед наземной атакой. Если у них есть зенитная установка - уничтожьте её в первую очередь. Задание должно быть выполнено до %2:%3.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_CONPOWER">
 				<Original>Take the Power Plant</Original>
@@ -1454,7 +1300,7 @@
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_FNDEXP">
 				<Original>Black Market dealer Devin Connell has been spotted near %1. He's scheduled for a flight to Metavira or Arulco at %2:%3, so you better hurry up if you wish to acquire some of his fine products. From our recent meetings with him, he has agreed to meet with FIA overt soldiers only, apparently he doesnt like civilians all that much. </Original>
-				<Russian>Дилер черного рынка Девин Коннелл торгует оружием рядом с %1. У него в кармане билет на самолёт, улетающий в %2:%3, так что вам лучше поторопиться, если вы хотите приобрести что-то из его отличного товара. Судя по последним встречам с ним, он будет разговаривать только с солдатами АСН без прикрытия, по видимому, непонятных гражданских он не очень любит.</Russian>
+				<Russian>Дилер черного рынка Девин Коннелл торгует оружием рядом с %1. У него в кармане билет на самолёт, улетающий в %2:%3, так что вам лучше поторопиться, если Вы хотите приобрести что-то из его отличного товара. Судя по последним встречам с ним, он будет разговаривать только с солдатами АСН без прикрытия, по видимому, непонятных гражданских он не очень любит.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_FNDMIL">
 				<Original>Contact the Corrupt Officer</Original>
@@ -1462,7 +1308,7 @@
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_FNDMIL">
 				<Original>A disgruntled %4 officer is trying to leave Altis. His departure is scheduled for %2:%3. If you manage to get to him in time, you might be able to convince him to stay and support our case. He was spotted near %1 and has stated that he is willing to speak to us only on the condition that none of our agents are overt within that town. In other words, put on your sunday-best and meet him disguised. </Original>
-				<Russian>Недовольный %4 офицер, пытается покинуть Альтис. Его отъезд запланирован на %2:%3. Если вам удастся успеть добраться до него, вы могли бы убедить его остаться и поддержать нас. Его видели возле %1, он заявил, что готов говорить с нами, если ни один из наших агентов не будет обнаружен противником в районе места встречи. Другими словами, оденьте свой лучший воскресный костюм и встретьтесь с ним замаскированным.</Russian>
+				<Russian>Недовольный %4 офицер, пытается покинуть Альтис. Его отъезд запланирован на %2:%3. Если вам удастся успеть добраться до него, Вы могли бы убедить его остаться и поддержать нас. Его видели возле %1, он заявил, что готов говорить с нами, если ни один из наших агентов не будет обнаружен противником в районе места встречи. Другими словами, оденьте свой лучший воскресный костюм и встретьтесь с ним замаскированным.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_LOGAMMO">
 				<Original>Steal or Destroy Ammotruck</Original>
@@ -1650,7 +1496,7 @@
 			</Key>
 			<Key ID="STR_TSK_TD_BEMP_DEL_NR">
 				<Original>We currently have no roadblocks or watchposts.</Original>
-				<Russian>В настоящее время у нас нет блокпостов или наблюдательных постов.</Russian>
+				<Russian>В настоящее время у нас нет блокпостов или наблюдательных пунктов.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_BEMP_DEL_ENEMY">
 				<Original>You cannot delete an emplacement while there are enemies near it.</Original>
@@ -1658,7 +1504,7 @@
 			</Key>
 			<Key ID="STR_TSK_TD_BEMP_BLD_INFO">
 				<Original>Click on the position you wish to build the wachpost or roadblock. \n Remember: to build roadblocks, you must click exactly on a road map section.</Original>
-				<Russian>Кликните по позиции, где вы хотите построить наблюдательный пост или блокпост. \n Запомните: для создания БП нужно кликнуть точно на дороге на карте.</Russian>
+				<Russian>Кликните по позиции, где Вы хотите построить наблюдательный пункт или блокпост. \n Запомните: для создания БП нужно кликнуть точно на дороге на карте.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_BEMP_BLD_COST">
 				<Original>You lack of resources to build this emplacement. \n %1 HR and %2€ required.</Original>
@@ -1666,7 +1512,7 @@
 			</Key>
 			<Key ID="STR_TSK_TD_BEMP_DEL_INFO">
 				<Original>Click on the watchpost or roadblock you wish to delete.</Original>
-				<Russian>Нажмите на НП или БП, который вы хотите удалить.</Russian>
+				<Russian>Нажмите на БП/НП, который Вы хотите удалить.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_BEMP_DEL_NONE">
 				<Original>No emplacement nearby.</Original>
@@ -1714,7 +1560,7 @@
 		<Container name="MAP">
 			<Key ID="STR_HINTS_MAP_TEXT_1">
 				<Original>%6\n\nTotal pop: %1\nFIA Support: %2\nAAF Support: %3 \n\nDestroyed Cities: %4\n\nClick on the zone \n\n Current active units = %5 \n  With more than 175 AI their performances drops a lot!</Original>
-				<Russian>%6\n\nВсего населения: %1\nПоддерживают FIA:  %2\nПоддерживают противника:  %3 \n\nУничтоженных Городов: %4\n\nКликните по интересующей вас зоне \n\n Юнитов активно = %5 \n Если активно более 175 AI это сильно влияет на производительность!</Russian>
+				<Russian>%6\n\nВсего населения: %1\nПоддерживают FIA:  %2\nПоддерживают противника:  %3 \n\nУничтоженных Городов: %4\n\nКликните по интересующей Вас зоне \n\n Юнитов активно = %5 \n Если активно более 175 AI это сильно влияет на производительность!</Russian>
 			</Key>
 		</Container>
 		<Container name="HQ_Placement">
@@ -1770,7 +1616,7 @@
 			</Key>
 			<Key ID="STR_HINTS_SAVE_COM_2">
 				<Original>Vehicles outside of your garage will only be saved if they are within 50m of your HQ flag, with no AI inside.</Original>
-				<Russian>Техника вне вашего гаража будет сохранена только в том случае, если она находится в пределах 50м от флага Штаба, без ИИ внутри.</Russian>
+				<Russian>Техника вне Вашего гаража будет сохранена только в том случае, если она находится в пределах 50м от Флага Штаба, без ИИ внутри.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_SAVE_COM_3">
 				<Original>AI units and squads will not be saved, but you will be reimbursed.</Original>
@@ -1784,7 +1630,7 @@
 		<Container name="Commander">
 			<Key ID="STR_HINTS_COMMANDER_HQBUILDFAR">
 				<Original>You're building HQ 500m away from any road \n\n some FIA reinforcements might not be available.</Original>
-				<Russian>Вы установили Штаб в более чем 500м от дорог. Некоторые группы FIA будет невозможно использовать. </Russian>
+				<Russian>Вы установили Штаб более чем в 500м от дорог. Некоторые группы FIA будет невозможно использовать. </Russian>
 			</Key>
 			<Key ID="STR_HINTS_COMMANDER_HQRECRUITFAR">
 				<Original>HQ is further than 500m from any road, FIA reinforcements can't reach you!</Original>
@@ -1800,7 +1646,7 @@
 			</Key>
 			<Key ID="STR_HINTS_COMMANDER_RES">
 				<Original>You step down from being Commander. Others will take your place.</Original>
-				<Russian>Вы ушли в отставку с поста Командира. Другие займут ваше место.</Russian>
+				<Russian>Вы ушли в отставку с поста Командира. Другие займут Ваше место.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_COMMANDER_DEN">
 				<Original>You are no longer eligible to command our forces.</Original>
@@ -1818,7 +1664,7 @@
 			</Key>
 			<Key ID="STR_HINTS_GEN_DONATE_FIA">
 				<Original>You have donated 100€ to the cause. This will raise your status among FIA forces.</Original>
-				<Russian>Вы отдали 100€ в фонд. Это повышает ваш статус в FIA.</Russian>
+				<Russian>Вы отдали 100€ в фонд. Это повышает Ваш статус в FIA.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_GEN_DONATE_PLAYER_FAIL">
 				<Original>You must be looking at a player in order to donate money.</Original>
@@ -1874,7 +1720,7 @@
 			</Key>
 			<Key ID="STR_HINTS_GEN_INIT_NOTMEMBER_GEAR">
 				<Original>You are not on the members list of this Server.\n\nAsk the Commander in order to be allowed to access the HQ Ammobox.\n\nIn the meantime you may use the other box to store equipment and share it with others.\n\nArsenal Unlocking Requirements\nWeapons: %1\nBackpacks: %5\nMagazines/Usables: %2\nOptics: %3\nVests: %3\nOther Items: %4\nImported Items: %6</Original>
-				<Russian>Вы не находитесь в списке участников этого сервера.\n\nСпросите командира, чтобы получить доступ к Арсеналу Штаба.\n\nТем временем вы можете использовать другое место для хранения оборудования и совместного использования его с другими.\n\nТребования к разблокировке Арсенала\nОружие: %1\nРюкзаки: %5\nМагазины/Расходники: %2\nОптика: %3\nЖилеты: %3\nДругое: %4\nИмпортированные предметы: %6</Russian>
+				<Russian>Вы не находитесь в списке участников этого сервера.\n\nСпросите Командира, чтобы получить доступ к Арсеналу Штаба.\n\nТем временем Вы можете использовать другое место для хранения оборудования и совместного использования его с другими.\n\nТребования к разблокировке Арсенала\nОружие: %1\nРюкзаки: %5\nМагазины/Расходники: %2\nОптика: %3\nЖилеты: %3\nДругое: %4\nИмпортированные предметы: %6</Russian>
 			</Key>
 			<Key ID="STR_HINTS_GEN_INIT_MEMBER_GEAR">
 				<Original>Arsenal Unlocking Requirements\nWeapons: %1\nBackpacks: %5\nMagazines/Usables: %2\nOptics: %3\nVests: %3\nOther Items: %4\nImported Items: %6</Original>
@@ -1882,7 +1728,7 @@
 			</Key>
 			<Key ID="STR_HINTS_GEN_INIT_ADMIN_MEMBER">
 				<Original>You are not in the members list, but you have been added automatically due to your status as admin.</Original>
-				<Russian>Вы не находитесь в списке участников сервера, но вы были добавлены автоматически из-за вашего статуса администратора.</Russian>
+				<Russian>Вы не находитесь в списке участников сервера, но Вы были добавлены автоматически из-за Вашего статуса администратора.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_GEN_INIT_GUEST_WELCOME">
 				<Original>Welcome, %1. You are a guest on this server.</Original>
@@ -1894,7 +1740,7 @@
 			</Key>
 			<Key ID="STR_HINTS_GEN_EH_VEH_GROUP">
 				<Original>You cannot board another player's private vehicle if you are not in the same group.</Original>
-				<Russian>Вы не можете пользоваться личной техникой другого игрока, если вы не в одной группе с ним.</Russian>
+				<Russian>Вы не можете пользоваться личной техникой другого игрока, если Вы не в одной группе с ним.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_GEN_OPR_TEMP">
 				<Original>You died while remote-controlling AI.</Original>
@@ -1982,7 +1828,7 @@
 			</Key>
 			<Key ID="STR_HINTS_FT_TEMPAI">
 				<Original>You cannot fast-travel while you are controlling AI.</Original>
-				<Russian>Вы не можете телепортироваться, пока вы управляете ИИ.</Russian>
+				<Russian>Вы не можете телепортироваться, пока Вы управляете ИИ.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_FT_ENEMIES">
 				<Original>This group cannot fast-travel with enemies nearby.</Original>
@@ -1994,7 +1840,7 @@
 			</Key>
 			<Key ID="STR_HINTS_FT_DAMAGE">
 				<Original>You cannot fast-travel if one of your vehicles is damaged or doesn't have a driver.</Original>
-				<Russian>Вы не можете телепортироваться, если один из ваших автомобилей поврежден или у него нет водителя.</Russian>
+				<Russian>Вы не можете телепортироваться, если один из Ваших автомобилей поврежден или у него нет водителя.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_FT_MARKER">
 				<Original>You cannot fast-travel to an enemy-controlled zone.</Original>
@@ -2016,11 +1862,11 @@
 		<Container name="Undercover">
 			<Key ID="STR_HINTS_UND_SINGLEGROUP">
 				<Original>You cannot disguise yourself while you are controlling AI.</Original>
-				<Russian>Вы не можете быть инкогнито, когда управляете ИИ от первого лица.</Russian>
+				<Russian>Вы не можете быть «Скрытно», когда управляете ИИ от первого лица.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_UND_DISGUISED">
 				<Original>You are incognito already.</Original>
-				<Russian>Вы уже инкогнито.</Russian>
+				<Russian>Вы уже «Скрытно».</Russian>
 			</Key>
 			<Key ID="STR_HINTS_UND_NOTCIV">
 				<Original>You are not in a civilian vehicle.</Original>
@@ -2032,23 +1878,23 @@
 			</Key>
 			<Key ID="STR_HINTS_UND_REPORTED">
 				<Original>You have been reported in the last 30 minutes and cannot go incognito.</Original>
-				<Russian>Вы не можете быть инкогнито, Вас ищут.</Russian>
+				<Russian>Вы не можете быть «Скрытно», Вас ищут.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_UND_ENEMY_DIST">
 				<Original>You cannot become incognito with enemies less than %1m from you.</Original>
-				<Russian>Вы не можете быть инкогнито, противник ближе %1 м.</Russian>
+				<Russian>Вы не можете быть «Скрытно», противник ближе %1 м.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_UND_ENEMY_KNOW">
 				<Original>You cannot become incognito while enemies are still on the lookout for you nearby.</Original>
-				<Russian>Вы не можете быть инкогнито, Вас ищут.</Russian>
+				<Russian>Вы не можете быть «Скрытно», Вас ищут.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_UND_FAC_GRND">
 				<Original>You cannot become incognito near bases, outposts, or roadblocks.</Original>
-				<Russian>Вы не можете быть инкогнито вблизи баз, опорных пунктов или блокпостов.</Russian>
+				<Russian>Вы не можете быть «Скрытно» вблизи баз, опорных пунктов или блокпостов.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_UND_GEAR">
 				<Original>You cannot disguise yourself while wearing suspicious-looking gear.\n</Original>
-				<Russian>Вы не можете быть инкогнито, если на Вас одето подозрительное снаряжение.\n</Russian>
+				<Russian>Вы не можете быть «Скрытно», если на Вас одето подозрительное снаряжение.\n</Russian>
 			</Key>
 			<Key ID="STR_HINTS_UND_GEAR_PRIM">
 				<Original>%1\nPrimary Weapon: %2</Original>
@@ -2104,7 +1950,7 @@
 			</Key>
 			<Key ID="STR_HINTS_UND_CMP_WANTED">
 				<Original>You left your vehicle and you are still in the wanted list.</Original>
-				<Russian>Вы покинули свой транспорт, и Ввы все еще находитесь в розыске.</Russian>
+				<Russian>Вы покинули свой транспорт, и Вы все еще находитесь в розыске.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_UND_CMP_REPWAN">
 				<Original>You have been made, enemies are on the lookout for you!</Original>
@@ -2112,7 +1958,7 @@
 			</Key>
 			<Key ID="STR_HINTS_UND_CMP_GEAR">
 				<Original>Your gear is arousing suspicion, you are no longer incognito.\n</Original>
-				<Russian>Ваше снаряжение вызывает подозрение, Вы больше не инкогнито.\n</Russian>
+				<Russian>Ваше снаряжение вызывает подозрение, Вы больше не «Скрытно».\n</Russian>
 			</Key>
 		</Container>
 		<Container name="Fast_Travel_Radio">
@@ -2228,11 +2074,11 @@
 			</Key>
 			<Key ID="STR_HINTS_MHQ_YMFEYAIOTMTHQ">
 			    <Original>You must first empty your Ammobox in order to move the HQ</Original>
-				<Russian>Вы должны сначала опустошить ящик боеприпасов, чтобы переместить Штаб</Russian>
+				<Russian>Вы должны сначала опустошить Ящик Арсенала, чтобы переместить Штаб</Russian>
 			</Key>
 			<Key ID="STR_HINTS_MHQ_MTAACNTVACNPTTNL">
 			    <Original>Move the Arsenal ammo crate and the Vehicle ammo crate and Petros to the new location</Original>
-				<Russian>Переместите ящик с боеприпасами «Арсенал», ящик с боеприпасами для автомобилей и Петроса на новое место</Russian>
+				<Russian>Переместите Ящик Арсенала, Ящик лечения и восстановления транспорта и Петроса на новое место</Russian>
 			</Key>
 			<Key ID="STR_HINTS_MHQ_HQGWSHNHTE">
 			    <Original>HQ Garrison will stay here and hold the enemy</Original>
@@ -2242,13 +2088,13 @@
 		<Container name="MRK_WIN">
 		     <Key ID="STR_HINTS_MRKW_YCCTFWIUM">
 			    <Original>You cannot Capture the Flag while in Undercover Mode</Original>
-				<Russian>Вы не можете захватить флаг в режиме Инкогнито</Russian>
+				<Russian>Вы не можете захватить флаг в режиме «Скрытно»</Russian>
 			</Key>
 		</Container>
 		<Container name="NATO_DIALOG">
 		     <Key ID="STR_HINTS_NATOD_OCCAFNATOS">
 			    <Original>Only Commander can ask for NATO support</Original>
-				<Russian>Только командующий может попросить поддержку НАТО</Russian>
+				<Russian>Только Командир может запросить поддержку НАТО</Russian>
 			</Key>
 			<Key ID="STR_HINTS_NATOD_SIVLWOMOCFPS">
 			    <Original>Server is very loaded. \nWait one minute or change FPS settings in order to fulfill this request</Original>
@@ -2268,7 +2114,7 @@
 			</Key>
 			<Key ID="STR_HINTS_NATOD_COTBOAYWNATOTA">
 			    <Original>Click on the base or airport you want NATO to attack</Original>
-				<Russian>Укажите базу/аэропорт, которую будет атаковать НАТО</Russian>
+				<Russian>Укажите базу/авиабазу, которую будет атаковать НАТО</Russian>
 			</Key>
 			<Key ID="STR_HINTS_NATOD_COTBFWYWNATOTOTA">
 			    <Original>Click on the base from which you want NATO to attack</Original>
@@ -2284,7 +2130,7 @@
 			</Key>
 			<Key ID="STR_HINTS_NATOD_COTAFWYWNATOTA">
 			    <Original>Click on the airport from which you want NATO to attack</Original>
-				<Russian>Укажите аэропорт, на который НАТО совершит атаку</Russian>
+				<Russian>Укажите авиабазу, с которой НАТО совершит атаку</Russian>
 			</Key>
 			<Key ID="STR_HINTS_NATOD_COTSWYWNATOTSARs">
 			    <Original>Click on the spot where you want NATO to setup a roadblock</Original>
@@ -2292,7 +2138,7 @@
 			</Key>
 			<Key ID="STR_HINTS_NATOD_COTBOACFWYWNATOTDAQRF">
 			    <Original>Click on the base or airport/carrier from which you want NATO to dispatch a QRF</Original>
-				<Russian>Укажите базу/аэропорт/авианосец, откуда необходимо отправить ГБР НАТО</Russian>
+				<Russian>Укажите базу/авиабазу/авианосец, откуда необходимо отправить ГБР НАТО</Russian>
 			</Key>
 			<Key ID="STR_HINTS_NATOD_YIASEFEIDWRTCATI">
 			    <Original>You informed about supporting enemy faction emplacement, its destruction will reduce their concern about the island</Original>
@@ -2350,7 +2196,7 @@
 	    <Container name="REBUILD_ASSETS">
 		     <Key ID="STR_HINTS_RA_YDNHEMTRAA">
 			    <Original>You do not have enough money to rebuild any Asset. You need 5.000 €</Original>
-				<Russian>У вас недостаточно средств для восстановления активов. Вам нужно 5.000 €</Russian>
+				<Russian>У Вас недостаточно средств для восстановления активов. Вам нужно 5.000 €</Russian>
 			</Key>
 			<Key ID="STR_HINTS_RA_COTZYWTR">
 			    <Original>Click on the zone you want to rebuild.</Original>
@@ -2384,7 +2230,7 @@
 		<Container name="SKIP_TIME">
 		     <Key ID="STR_HINTS_ST_OTCCOTR">
 			    <Original>Only the Commander can order to rest</Original>
-				<Russian>Только командующий может заказать отдых</Russian>
+				<Russian>Только Командир может заказать отдых</Russian>
 			</Key>
 			<Key ID="STR_HINTS_ST_YCRWENOU">
 			    <Original>You cannot rest with enemies near our units</Original>
@@ -2406,7 +2252,7 @@
 		<Container name="TELEPORT">
 		     <Key ID="STR_HINTS_TELEPORT">
 			    <Original>Click on the position you wish to teleport to.</Original>
-				<Russian>Укажите позицию,куда Вы хотите телепортироваться.</Russian>
+				<Russian>Укажите позицию, куда Вы хотите телепортироваться.</Russian>
 			</Key>
 		</Container>
 		<Container name="GARBAGE_CLEAR">
@@ -2445,7 +2291,7 @@
 		<Container name="Dialogs">
 			<Key ID="STR_D_FIA_HQOCO">
 				<Original>FIA HQ Options - Commander Only</Original>
-				<Russian>Управление Штабом - только для Командира</Russian>
+				<Russian>Штаб - только для Командира</Russian>
 			</Key>
 			<Key ID="STR_D_GRAB_FP">
 				<Original>Grab 100 € from Pool</Original>
@@ -2606,7 +2452,7 @@
 			</Key>
 			<Key ID="STR_D_OPS_RB">
 				<Original>O.Post - Roadblock</Original>
-				<Russian>Н.Пост - БП</Russian>
+				<Russian>НП - БП</Russian>
 			</Key>
 			<Key ID="STR_D_BUI_MF">
 				<Original>Build Minefield</Original>
@@ -2614,7 +2460,7 @@
 			</Key>
 			<Key ID="STR_D_OPS_RB_DEL">
 				<Original>O.Post-Roadblock Delete</Original>
-				<Russian>Н.Пост-БП Удалить</Russian>
+				<Russian>НП - БП Удалить</Russian>
 			</Key>
 			<Key ID="STR_D_MANA_CAMP">
 				<Original>Manage Camps&quot;, &quot;Establish/Abandon Camps</Original>
@@ -2705,7 +2551,7 @@
 			</Key>
 			<Key ID="STR_D_GAR_MENU">
 				<Original>Garrison Menu</Original>
-				<Russian>Упр. гарнизонами</Russian>
+				<Russian>Управление гарнизонами</Russian>
 			</Key>
 			<Key ID="STR_D_RECR_GAR">
 				<Original>Recruit Garrison</Original>
@@ -2717,7 +2563,7 @@
 			</Key>
 			<Key ID="STR_D_GAR_REC_OP">
 				<Original>Garrison Recruitment Options</Original>
-				<Russian>Упр. гарнизонами</Russian>
+				<Russian>Нанять в гарнизон</Russian>
 			</Key>
 			<Key ID="STR_D_REC_MILI">
 				<Original>Recruit Militiaman</Original>
@@ -2852,7 +2698,7 @@
 			</Key>
 			<Key ID="STR_D_VHIL_MG">
 				<Original>Vehicle Manager</Original>
-				<Russian>Упр. техникой</Russian>
+				<Russian>Техника</Russian>
 			</Key>
 			<Key ID="STR_D_GAR_SEll_VEH">
 				<Original>Garage\Sell Vehicle</Original>
@@ -2860,7 +2706,7 @@
 			</Key>
 			<Key ID="STR_D_VEH_AND_SQ">
 				<Original>Vehicles and Squads</Original>
-				<Russian>Техника И отряды</Russian>
+				<Russian>Техника и отряды</Russian>
 			</Key>
 			<Key ID="STR_D_UN_VEH">
 				<Original>Unlock Vehicle</Original>
@@ -2936,7 +2782,7 @@
 			</Key>
 			<Key ID="STR_D_AI_MENEG">
 				<Original>AI Management</Original>
-				<Russian>Упр. ИИ</Russian>
+				<Russian>Контроль ИИ</Russian>
 			</Key>
 			<Key ID="STR_D_TE_AI_CON">
 				<Original>Temp. AI Control</Original>
@@ -3218,7 +3064,7 @@
 			</Key>
 			<Key ID="STR_D_MUS_ON_OFF">
 				<Original>Music ON/OFF</Original>
-				<Russian>Музыка ВКЛ/ВЫКЛ</Russian>
+				<Russian>Музыка Вкл/Выкл</Russian>
 			</Key>
 			<Key ID="STR_D_GAME_OP">
 				<Original>Ingame Member's List</Original>
@@ -3284,7 +3130,7 @@
 			</Key>
 			<Key ID="STR_D_FTOOF">
 				<Original>FT On/Off</Original>
-				<Russian>Быстр.перем. ВКЛ/ВЫКЛ</Russian>
+				<Russian>Быстр.перем. Вкл/Выкл</Russian>
 				<!-- Редакт. -->
 			</Key>
 			<Key ID="STR_D_TTOFTSOOF">
@@ -3302,7 +3148,7 @@
 			</Key>
 			<Key ID="STR_D_SMAEFGRUATA">
 				<Original>Simplified: members are exempt from gear-removal upon accessing the arsenal.</Original>
-				<Russian>Упрощенные: участники освобождаются от сброса снаряжения при доступе к арсеналу.</Russian>
+				<Russian>Упрощенные: участники освобождаются от сброса снаряжения при доступе к Арсеналу.</Russian>
 			</Key>
 			<Key ID="STR_D_TAXPS">
 				<Original>Toggle Army XP System</Original>
@@ -3432,11 +3278,11 @@
 			</Key>
 			<Key ID="STR_DH_SMEATPP">
 				<Original>Server Membership Enabled.\n\nAll the present players have been added to the Member's List.\n\nNon-members cannot use the HQ Ammobox and cannot be commanders, even with Switch Commander enabled.\n\nIf you load a session with this feature disabled, it will change to disabled.\n\nUse this option for Open Server Environments</Original>
-				<Russian>Список Участников Включён.\n\nВсе нынешние игроки были добавлены в список участников.\n\nНе Участники не могут использовать Арсенал и не могут стать Командиром\n\nЕсли вы загрузите сессию с отключенной функцией, она будет отключена.\n\nИспользуйте этот параметр для отрытого сервера</Russian>
+				<Russian>Список Участников Включён.\n\nВсе нынешние игроки были добавлены в список участников.\n\nНе Участники не могут использовать Арсенал и не могут стать Командиром\n\nЕсли Вы загрузите сессию с отключенной функцией, она будет отключена.\n\nИспользуйте этот параметр для отрытого сервера</Russian>
 			</Key>
 			<Key ID="STR_DH_EMDACUT">
 				<Original>Server Membership Disabled.\n\nAnyone can use the HQ Ammobox and become Commander (if Switch Commander is enabled).\n\nIf you load a session with this feature enabled, it will become enabled.\n\nUse this option for Private Server environments.</Original>
-				<Russian>Список Участинков Выключён\n\nЛюбой может использовать Арсенал и стать Командиром(если включен переключатель командира).\n\nЕсли вы загрузите сеанс с включенной функцией, она станет включенной.\n\nИспользуйте этот параметр для закрытых серверов</Russian>
+				<Russian>Список Участинков Выключён\n\nЛюбой может использовать Арсенал и стать Командиром(если включен переключатель Командира).\n\nЕсли Вы загрузите сеанс с включенной функцией, она станет включенной.\n\nИспользуйте этот параметр для закрытых серверов</Russian>
 			</Key>
 			<Key ID="STR_DH_IUA">
 				<Original>It's unlocked already.</Original>
@@ -3448,7 +3294,7 @@
 			</Key>
 			<Key ID="STR_DH_YMSFHCOSBNB">
 				<Original>You must select from HC or Squad Bars, not both</Original>
-				<Russian>Вы должны выбрать из панели командира или панели отрядов, а не оба</Russian>
+				<Russian>Вы должны выбрать из панели Командира или панели отрядов, а не оба</Russian>
 				<!-- Редакт. -->
 			</Key>
 			<Key ID="STR_DH_AHD">
@@ -3457,7 +3303,7 @@
 			</Key>
 			<Key ID="STR_DH_AHE">
 				<Original>Auto Heal enabled</Original>
-				<Russian>Автолечение ВКЛ.</Russian>
+				<Russian>Автолечение Вкл.</Russian>
 			</Key>
 			<Key ID="STR_DH_NUOSS">
 				<Original>No units or squads selected</Original>
@@ -3534,8 +3380,8 @@
 					You can check a3.antistasi.com for further information.
 				</Original>
 				<Russian>
-					В Antistasi можно получать удовольствие от игры как в оригинальной Arma 3, так и с установленными модами, главное чтобы они не влияли на поведение ИИ&lt;br/&gt;
-					Некоторые моды полностью интегрированы в Antistasi. При загрузке эти моды изменят противоборствующие стороны полностью - изменится транспорт, техника и снаряжение.&lt;br/&gt;
+					Antistasi можно проходить как на оригинальной Arma 3, так и с установленными модами, главное чтобы они не влияли на поведение ИИ.&lt;br/&gt;
+					Некоторые моды полностью интегрированы в Antistasi. При загрузке эти моды изменят противоборствующие стороны - изменится транспорт, техника и снаряжение.&lt;br/&gt;
 					На данный момент это: RHS: (AFRF,  USAF, GREF), TFAR И ACE3.&lt;br/&gt;&lt;br/&gt;
 
 					Настройки ACE задаются по умолчанию, однако их можно изменять на выделенном сервере, добавив класс в profile.arma3profile. Синхронизация частоты TFAR может быть установлена до запуска миссии в настройках аддонов проверьте github для получения дополнительной информации.&lt;br/&gt;&lt;br/&gt;
@@ -3543,7 +3389,7 @@
 					Элементы из этих модов также включены в игровой процесс - в снаряжение союзнической поддержки вооружением и содержимое ящиков с аммуницией на базах.&lt;br/&gt;
 					Оружие и снаряжение из других модов, возможно использовать только в случае если получится его купить у Безумного Ирландца (торговец оружием).&lt;br/&gt;&lt;br/&gt;
 
-					Безумный Ирландец - торговец оружием, известный как Девин, его можно найти запросив миссию "Безумный Ирландец" у Петроса. В его магазине вы можете приобрести в случайном порядке все предметы из установленных модов. Вы хотите играть со старым mp40 времен Второй мировой или с миниганом Хишника? У вас есть шанс купить его в магазине Безумного Ирландца! (Возврату не подлежит)&lt;br/&gt;&lt;br/&gt;
+					Безумный Ирландец - торговец оружием, известный как Девин, его можно найти запросив миссию "Безумный Ирландец" у Петроса. В его магазине Вы можете приобрести в случайном порядке все предметы из установленных модов. Вы хотите играть со старым mp40 времен Второй мировой или с миниганом Хишника? У Вас есть шанс купить его в магазине Безумного Ирландца! (Возврату не подлежит)&lt;br/&gt;&lt;br/&gt;
 
 					Официальный сервер сообщества Antistasi запускаетя с небольшим списком модов. Посетите сайт a3antistasi.com или сообщество Teamspeak, чтобы получить ссылку на steam сборку и скачайте их.&lt;br/&gt;&lt;br/&gt;
 
@@ -3555,7 +3401,7 @@
 		    </Key>
 			<Key ID="STR_BR_5ANTOPT">
 				<Original>5 Antistasi Options</Original>
-				<Russian>5 Antistasi Опции</Russian>
+				<Russian>5 Настройки Antistasi</Russian>
 			</Key>
 			<Key ID="STR_BR_5AO">
 				<Original>
@@ -3570,7 +3416,7 @@
 					FPS limiter: below the threshold civilians will minimally spawn. &lt;br/&gt;&lt;br/&gt;
 				</Original>
 				<Russian>
-					Взаимодействуя с физической картой в Штабе, Вы можете установить:&lt;br/&gt;&lt;br/&gt;
+					Взаимодействуя с Картой в Штабе, Вы можете установить:&lt;br/&gt;&lt;br/&gt;
 
 					Коэффициент появления гражданских: мы предлагаем значение от 1% до 10% (по умолчанию 5%);  Это количество ИИ, его увеличение снижает производительность. Имейте в виду, что значение менее 1% останавливает появление гражданских на машинах, поэтому не будет возможности получить транспорт бесплатно.&lt;br/&gt;&lt;br/&gt;
 
@@ -3580,7 +3426,7 @@
 
 					FPS Ограничитель: Чем меньше порог, тем меньше спавн (появление) гражданских лиц. &lt;br/&gt;&lt;br/&gt;
 				</Russian>
-					FPS Ограничитель: Чем меньше порог,тем меньше спавн гражданских лиц. &lt;br/&gt;&lt;br/&gt;
+					FPS Ограничитель: Чем меньше порог, тем меньше спавн гражданских лиц. &lt;br/&gt;&lt;br/&gt;
 		    </Key>
 			<Key ID="STR_BR_4GAMED">
 				<Original>4 Game difficulty</Original>
@@ -3597,18 +3443,18 @@
 					Important to note is that Arma 3 AI-skill level is also dependent on the game engine: if the PC / Server is overloaded many actions in queue will be cancelled and AI will perform badly.&lt;br/&gt;&lt;br/&gt;
 				</Original>
 				<Russian>
-					Antistasi устанавливает уникальные показатели «навыка» и «точности» для ИИ, которые увеличиваются вместе с ростом уровня Опыта Армии (Army XP) и зависят от ресурсов противника.&lt;br/&gt;
-					На эти параметры влияют параметры сложности игры ArmA 3, которые вы можете настроить (в одиночном режиме) из меню опций и на сервере при загрузке #Миссии. &lt;br/&gt;&lt;br/&gt;
+					Antistasi устанавливает уникальные показатели «умения» и «точности» для ИИ, которые увеличиваются в зависимости от уровня Опыта Армии (Army XP) и поведения противника.&lt;br/&gt;
+					На эти параметры влияют параметры сложности ArmA 3, которые Вы можете настроить (в одиночном режиме) из меню опций и на сервере при загрузке миссии. &lt;br/&gt;&lt;br/&gt;
 
-					«Умение» в первую очередь моделирует движение ИИ (защита флангов, поиск укрытия) &lt;br/&gt;
-					«Точность» - навык точной стрельбы - это основной параметр, который вы можете настроить, если хотите увеличить или уменьшить сложность игры. &lt;br/&gt;&lt;br/&gt;
+					«Умение» - моделирует поведение ИИ (защита флангов, поиск укрытия). &lt;br/&gt;
+					«Точность» - навык точной стрельбы - это основной параметр, который Вы можете настроить в меню ArmA 3, если хотите увеличить или уменьшить сложность игры. &lt;br/&gt;&lt;br/&gt;
 
-					Важно отметить, что уровень мастерства ИИ в Arma 3 также зависит от игрового движка: если компьютер/сервер перегружен, многие расчеты поведения ИИ будут отменены, и ИИ будет работать плохо.&lt;br/&gt;&lt;br/&gt;
+					Важно отметить, что уровень мастерства ИИ в Arma 3 также зависит от доступной выислительной мощности: если компьютер/сервер перегружен, многие расчеты поведения ИИ будут отключены/упрощены, и ИИ будет туповат.&lt;br/&gt;&lt;br/&gt;
 				</Russian>
 		    </Key>
 			<Key ID="STR_BR_3SSANDP">
 				<Original>3 Spawn system and Performance</Original>
-				<Russian>3 Система спавна И производительность</Russian>
+				<Russian>3 Система спавна, производительность</Russian>
 			</Key>
 			<Key ID="STR_BR_3SS">
 				<Original>
@@ -3640,7 +3486,7 @@
 		    </Key>
 			<Key ID="STR_BR_2SALORE">
 				<Original>2 Save Load Restart</Original>
-				<Russian>2 Сохранение,Загрузка,Рестарт</Russian>
+				<Russian>2 Сохранение, загрузка, рестарт</Russian>
 			</Key>
 			<Key ID="STR_BR_2SLR">
 				<Original>
@@ -3658,7 +3504,7 @@
 					To have multiple saves and keep your gear when disconnecting within 100m from HQ, run the mod inidbi2 by code34.
                 </Original>
 				<Russian>
-					Стандартное сохранение отключено, так как оно некорректно сохраняет миссию. Чтобы сохранить прогресс, командующий должен использовать физическую карту в Штабе. После загрузки Antistasi спрашивает, хотите ли вы загрузить предыдущую сессию.&lt;br/&gt;
+					Стандартное сохранение отключено, так как оно некорректно сохраняет миссию. Чтобы сохранить прогресс, Командир должен использовать Карту в Штабе. После загрузки Antistasi спрашивает, хотите ли Вы загрузить предыдущую сессию.&lt;br/&gt;
 					Если Вы обычный игрок, Ваше снаряжение, деньги и звание (ранг) будут автоматически сохранены после выхода.&lt;br/&gt;&lt;br/&gt;
 
 					Сохраненные данные сохраняются в документах/Arma 3/user.vars.Arma3Profile и сохраняются отдельно для каждого острова и соответствующих blufor и greenfor версиий. &lt;br/&gt;&lt;br/&gt;
@@ -3695,21 +3541,21 @@
 					For more info and tips check categories on the left side.&lt;br/&gt;
                 </Original>
 				<Russian>
-					Эта кампания является длительной миссией, которая имитирует партизанские бои в условиях неравной борьбы. Возможно что потребуется не одна неделя, чтобы закончить миссию, однако Вы получите удовольствие от игры, шаг за шагом развивая сопротивление и становясь сильнее.&lt;br/&gt;&lt;br/&gt;
+					Antistasi - это длительная кампания, которая имитирует ассиметричные условия партизанской войны. Возможно что потребуется не одна неделя, чтобы закончить кампанию, однако именно это и доставляет удовольствие от игры - маленькими шагами прийти к большой победе.&lt;br/&gt;&lt;br/&gt;
 
-					Существует несколько способов играть в «Antistasi», чтобы выполнить основную задачу.&lt;br/&gt;
+					Существует несколько способов играть в Antistasi, чтобы выполнить основную задачу.&lt;br/&gt;
 					Цель состоит в том, чтобы получить поддержку более 50% гражданского населения на острове. &lt;br/&gt;
 					Кампания будет проиграна, если CSAT разбомбит 8 городов. &lt;br/&gt;&lt;br/&gt;
 
-					Мультиплеерные заметки:&lt;br/&gt;
-					- Параметры доступны после выбора миссии на экране выбора ролика справа перед началом миссии.&lt;br/&gt;
-					- Предыдущее сохранение автоматически загружается, если не изменятся параметры администратора / хоста. Параметры, позволяющие начать новый запуск&lt;br/&gt;
+					Для мультиплеера:&lt;br/&gt;
+					- Параметры доступны после выбора миссии на экране выбора роли справа перед началом миссии.&lt;br/&gt;
+					- Предыдущее сохранение автоматически загружается, пока администратор/хост не изменит параметры и перезапустится.&lt;br/&gt;
 
 					Специальные клавиши:&lt;br/&gt;
-					Клавиатура США: нажмите «Y», «shift + Y», «Delete» и «U», чтобы получить доступ к нужным функциям, обязательно отвяжите эти кнопки от своих пользовательских элементов управления, иначе они не будут работать.&lt;br/&gt;&lt;br/&gt;
-					Немецкая клавиатура = нажмите Z,вместо shift+Z .&lt;br/&gt;
+					Клавиатура США: нажмите «Y», «shift + Y», «Delete» и «U», чтобы получить доступ к нужным функциям, обязательно отвяжите эти кнопки от своих пользовательских настроек управления, иначе они не будут работать.&lt;br/&gt;&lt;br/&gt;
+					Немецкая клавиатура = нажмите Z, вместо shift+Z .&lt;br/&gt;
 
-					Для получения дополнительной информации и советов проверьте категории с левой стороны.
+					Для получения дополнительной информации и советов просмотрите все категории с левой стороны.
 				</Russian>
 			</Key>
 			<Key ID="STR_BR_BT0">
@@ -3751,23 +3597,23 @@
 
 					Помните о том, что Транспортные средства для миссий появляются у Костра, купленный транспорт - у Флага, подкрепление - на самой близкой дороге, как и транспортные средства игроков/ИИ при телепорте.&lt;br/&gt;&lt;br/&gt;
 
-					Как сказано в разделе «Система Спавна», Petros сохранит область в 1 км в кэше, поэтому избегайте размещения Штаба, там где он будет кэшировать гражданские или городские патрули. (Даже на дружественной территории, чтобы сохранить игру.) Враги могут просто наткнуться на Петроса и убить его, пока вы находитесь далеко.&lt;br/&gt;&lt;br/&gt;
+					Как сказано в разделе «Система спавна», Петрос сохранит область в 1 км в кэше, поэтому избегайте размещения Штаба, там где он будет кэшировать гражданские или городские патрули. (Даже на дружественной территории, чтобы сохранить игру.) Враги могут просто наткнуться на Петроса и убить его, пока Вы находитесь далеко.&lt;br/&gt;&lt;br/&gt;
 
-					После того, как вы благополучно разместили свой новый Штаб, взаимодействуйте с Петросом, Флагом, Арсеналом, Костром и Ящиком «лечение и ремонт», чтобы узнать их функции и назначение.&lt;br/&gt;&lt;br/&gt;
+					После того, как Вы благополучно разместили свой новый Штаб, взаимодействуйте с Петросом, Флагом, Арсеналом, Костром и Ящиком лечения и восстановления транспорта, чтобы узнать их функции и назначение.&lt;br/&gt;&lt;br/&gt;
 
 					- Карта: редактируйте параметры Antistasi и сохраняйте игру, проверьте подробную информацию о городе/гарнизоне.&lt;br/&gt;&lt;br/&gt;
 
 					- Флаг: нанимайте бойцов, покупате транспортные средства и станковое оружие, управляйте Штабом.&lt;br/&gt;&lt;br/&gt;
 
-					- Костер: переместитесь во времени веред на 8 часов и отдохните. (Текущие миссии будут провалены. Вы не сможете перемотать время, когда идёт атака AAF. Страдайте ;)&lt;br/&gt;&lt;br/&gt;
+					- Костер: пропустите время вперед на 8 часов и отдохните (сон). Текущие незаконченные миссии будут провалены. Вы не сможете пропустить время, когда Вас атакуют. Боль;)&lt;br/&gt;&lt;br/&gt;
 
 					- Ящик Арсенала: храните захваченное снаряжение и редактируйте свою экипировку.&lt;br/&gt;&lt;br/&gt;
 
-					- Короб для лечения и восстановления: вылечить, восстановить себя и ИИ. Сбросьте статус "инконито" и смените номера на автомобилях, автоматически пополняйте боезапас техники и станковых орудий.&lt;br/&gt;&lt;br/&gt;
+					- Ящик лечения и восстановления транспорта: вылечить себя и ИИ, сбросить статус «Скрытно» и сменить номера на автомобилях, пополнение боезапаса техники и станковых орудий.&lt;br/&gt;&lt;br/&gt;
 
 					- Петрос: запросите миссию.&lt;br/&gt;&lt;br/&gt;
 
-					Расположение Штаба обнаруживается противником только в том случае, если вы раскрыли предателя и ему удается бежать на базу противника. Минометный огонь - это простой способ раскрыть свое местоположение противнику. Ждите ответных действий врага в обоих случаях.
+					Расположение Штаба обнаруживается противником только в том случае, если Вы раскрыли предателя и ему удается бежать на базу противника. Минометный огонь - это простой способ раскрыть свое местоположение противнику. Ждите ответных действий врага в обоих случаях.
 
 				</Russian>
 		    </Key>
@@ -3808,35 +3654,35 @@
 				<Russian>
 					В информационной строке отображаются информация о кампании, ресурсах и секретном статусе.&lt;br/&gt;&lt;br/&gt;
 
-					- Командир: текущий командир. Отображается «Нет», если членство включено, но нет ни одного члена онлайн, который имеет право на командование. В этом случае будут заморожены следующие функции: экономика, основное поведение врага в виде QRF, а также миссии атак и случайные миссии.&lt;br/&gt;&lt;br/&gt;
-                       Нажмите кнопку «Y»(расположение клавиатуры США), когда командующий «Отсутствует»,будет проведеня проверка на нового командира.&lt;br/&gt;
-					- Ранг: влияет на мужество Вашего ИИ и то, как именно они будут выполнять приказы. Ранг растёт от убийства врагов, но более эффективно от успешного завершения миссий. В мультиплеере можно жертвовать свои деньги FIA для повышения ранга.&lt;br/&gt;
-					В мультиплеере можно жертвовать свои деньги FIA для повышения ранга.&lt;br/&gt;&lt;br/&gt;
+					- Командир: текущий Командир. Отображается «Нет», если членство включено, но нет ни одного члена онлайн, который имеет право на командование. В этом случае будут заморожены следующие функции: экономика (начисление HR и денег), реакция врага в виде направления групп быстрого реагирования (ГБР), атаки противника и появление случайных миссий.&lt;br/&gt;&lt;br/&gt;
+                       Нажмите кнопку «Y»(раскладка клавиатуры США), когда Командир «Отсутствует», будет проведеня проверка на нового Командира.&lt;br/&gt;
+					- Ранг: влияет на отвагу Ваших ИИ и то, насколько эффективно они будут выполнять приказы. Ранг возрастает от убийства противников, но больший рост ранга обеспечивается успешным выполнением миссий.&lt;br/&gt;
+					В мультиплеере можно тратить свои деньги FIA для повышения ранга.&lt;br/&gt;&lt;br/&gt;
 
-					- HR: Людские ресурсы,используются для набора ИИ, добавления войск гарнизона на захваченных объектах, и только в одиночном режиме, 10% HR и 5% денег вычитаются каждый раз когда вы умираете. &lt;br/&gt;
-					Приобретайте HR, сопроводив беженцев или военнопленных на базу или контролируемые города и деревни&lt;br/&gt;
-					Игровой счётчик каждые 10 минут добавляют HR в зависимости от количества гражданских лиц, поддерживающих FIA.&lt;br/&gt;&lt;br/&gt;
+					- HR: ресурсы живой силы сопротивления, используются для набора ИИ, добавления войск гарнизона на захваченных объектах, и только в одиночном режиме, 10% HR и 5% денег вычитаются каждый раз когда Вы умираете. &lt;br/&gt;
+					Зарабатывайте очки HR, сопроводив беженцев или военнопленных на базу или контролируемые города и деревни&lt;br/&gt;
+					Игровой счётчик каждые 10 минут добавляет HR в зависимости от количества гражданских лиц, поддерживающих в текущий момент FIA.&lt;br/&gt;&lt;br/&gt;
 
-					- Деньги: в одиночном режиме доступно только «FIA деньги». На них можно покупать автомобили, набирать ИИ, добавлять гарнизоны и повышать уровень навыка Армии. &lt;br/&gt;
-					В мультиплеере учетные записи игроков и FIA разделяются; если вы умрете, вы потеряете процент вашей личной учетной записи.&lt;br/&gt;
+					- Деньги: в одиночном режиме доступно только «FIA деньги». На них можно покупать автомобили, военную технику, набирать ИИ, отряды ИИ, добавлять гарнизоны и повышать уровень навыка Армии с помощью тренировок. &lt;br/&gt;
+					В мультиплеере счета игроков и FIA разделяются; если Вы умрете, Вы потеряете часть своего личного счета.&lt;br/&gt;
 					Игровой Счётчик каждые 10 минут добавляют деньги на счет FIA в зависимости от контролируемых территорий.&lt;br/&gt;
 					Деньги игрока автоматически сохраняются в мультиплеере при отключении&lt;br/&gt;&lt;br/&gt;
 
-					- Поддержка Союзника: Командующий может вызвать дружественную фракцию, чтобы помочь в подавлении врага (дружеская фракция отличается в зависимости от мода / стандартного blufor / greenfor). Вкладка Дневника "Опции Командира и функции Antistasi" -> "поддержка". &lt;br/&gt;&lt;br/&gt;
+					- Поддержка Союзников: Командир может вызвать дружественную фракцию, чтобы помочь в подавлении врага (дружественная фракция отличается в зависимости от наличия установленных модов, например RHS, и модификации Antistasi - blufor/greenfor). Вкладка Справки «Опции Командира и функции Antistasi -> поддержка». &lt;br/&gt;&lt;br/&gt;
 
-					- Поддержка Врага: вражеская фракция (опять же, в зависимости от мода / Стандартного blufor/greenfor ) помощи врагу, и когда это значение будет очень высоким, враг начнет бомбардировать города. &lt;br/&gt;
-					После 8 разрушенных городов кампания будет провалена. Поддержка противника возрастает, когда Вы захватываете вражеские базы и аэропорты, также если Вы уничтожаете системы ПВО на высотах. &lt;br/&gt;&lt;br/&gt;
+					- Поддержка Врага: показатель, отражающий уровень агрессии на Вас вражеской фракции (которая опять же зависит от модов и модификации Antistasi blufor/greenfor ). Когда это значение будет очень высоким, враг начнет бомбить города. &lt;br/&gt;
+					После 8 разрушенных городов кампания будет провалена. Показатель поддержки противника растет, когда Вы захватываете вражеские базы и авиабазы, уничтожаете системы ПВО на высотах. &lt;br/&gt;&lt;br/&gt;
 
-					- Опыт Армии: индикатор уровня опыта Армии, проверьте раздел дневника для подробного объяснения, стрелки (>>>>) сообщают Вам, ккак близко вы находитесь к следующему уровню, и, если они красные, это означает, что Вы не соответствуете условиям для перехода на следующий уровень.&lt;br/&gt;&lt;br/&gt;
+					- Опыт Армии: индикатор уровня опыта Армии, проверьте раздел Справки для подробного объяснения, стрелки (>>>>) сообщают Вам, как близко Вынаходитесь к следующему уровню, и, если они красные, это означает, что Вы не соответствуете условиям для перехода на следующий уровень.&lt;br/&gt;&lt;br/&gt;
 
-					- Раскрыт/Инкогнито: индикатор Вашего тайного статуса, когда он отображает Инкогнито, враги будут думать, что Вы гражданский и будут игнорировать Вас. &lt;br/&gt;
-					Получите статус Инкогнито, выбрав его в меню Y или взяв гражданский автомобиль. Это возможно только в том случае, если Вы соответствуете всем условиям. &lt;br/&gt;
-					Проверьте более подробное объяснение в разделе дневника.
+					- Открыто/Скрытно: индикатор Вашего тайного статуса, когда он отображает «Скрытно», враги будут думать, что Вы гражданский и будут игнорировать Вас. &lt;br/&gt;
+					Получите статус «Скрытно», выбрав его в меню «Y» или взяв гражданский автомобиль. Это возможно только в том случае, если Вы соответствуете всем условиям. &lt;br/&gt;
+					Проверьте более подробное объяснение в разделе Справки.
 				</Russian>
 			</Key>
 			<Key ID="STR_BR_BT2YM">
 				<Original>Y menu</Original>
-				<Russian>Y меню</Russian>
+				<Russian>«Y» меню</Russian>
 			</Key>
 			<Key ID="STR_BR_BT_YM">
 				<Original>
@@ -3878,16 +3724,16 @@
 					However, Antistasi really shines if you play with friends, so join Antistasi Official Servers and make some new ones!
 				</Original>
 				<Russian>
-					«Арсенал» пуст, а денег недостаточно для выполнения первых миссий ...&lt;br/&gt;
-					Первая цель - заработать деньги и получить снаряжение. Запросите у Петроса о миссии и решите самостоятельно выполнять их или нет.&lt;br/&gt;
-					Миссии - это не главная цель игры, а просто возможности, которые иногда можно и игнорировать. Посмотрите на карту или пошлите разведчку вперед, потому что некоторые миссии могут быть просто невыполнимы с Вашим текущим уровнем. Используйте бинокли и оставайтесь "Инкогнито" для разведки. &lt;br/&gt;&lt;br/&gt;
+					Арсенал пуст, а денег недостаточно для выполнения первых миссий ...&lt;br/&gt;
+					Первая цель - заработать деньги и получить снаряжение. Запросите у Петроса миссию и подумайте выполнять ее или нет.&lt;br/&gt;
+					Миссии - это не главная цель игры, а просто дополнительные возможности, которые иногда можно и игнорировать. Изучите карту, осуществите предварительную разведку местности. Некоторые миссии могут быть просто невыполнимы с Вашим текущим уровнем. Используйте бинокль и оставайтесь «Скрытно» для эффективной разведки. &lt;br/&gt;&lt;br/&gt;
 
-					Миссии запускаются в пределах 4 км от Штаба. Не пробуйте пройти их в одиночку, собирайте друзей или нанимайте ИИ у Флага, они не так опытны. как солдаты вражеской армии, однако они могут быть полезны при грамотном их размещении, например для прикрытия огнём. Некоторые цели могут быть очень отдаленными или слишком рискованными для непосредственного доступа С Базы. В таких случаях Командир может создать лагерь, куда можно перемещаться, используя систему быстрого перемещения (телепорт).&lt;br/&gt;&lt;br/&gt;
+					Миссии запускаются в пределах 4 км от Штаба. Не пробуйте пройти их в одиночку, собирайте друзей или нанимайте ИИ у Флага, они не так опытны, как солдаты вражеской армии, однако они могут быть полезны при грамотном их размещении, например для прикрытия огнём. Некоторые цели могут быть очень отдаленными или слишком рискованными для выдвижения к ним непосредственно с места дисклокации Штаба. В таких случаях Командир может создать лагерь, куда можно перемещаться, используя систему быстрого перемещения (телепорт).&lt;br/&gt;&lt;br/&gt;
 
-					Захватите вражеское снаряжение, загрузите его в транспортное средство, вернитесь к Штабу, взаимодействуйте с Арсеналом, выберите «Передать груз в Арсенал», чтобы загрузить всю экипировку в ящик Арсенала. Для получения дополнительной информации см. раздел «Арсенал», «Инвентаризация и разблокировка» ниже.&lt;br/&gt;&lt;br/&gt;
+					Захватите вражеское снаряжение, загрузите его в транспортное средство, вернитесь к Штабу, взаимодействуйте с Арсеналом, выберите «Выгрузить боеприпасы в Ящик», чтобы загрузить всю экипировку в Ящик Арсенала. Для получения дополнительной информации см. раздел «Арсенал», «Инвентаризация и разблокировка» ниже.&lt;br/&gt;&lt;br/&gt;
 
 					Враги реагируют на Ваши действия, отправляя подкрепление или патрули, поэтому время их реакции различается в зависимости от расстояния до базы, вида используемого противником транспорта и возможности добраться к Вам. &lt;br/&gt;
-					Попытайтесь быстро устранить противника, если хотите, чтобы у вас была возможность грабежа и бегства. &lt;br/&gt;&lt;br/&gt;
+					Попытайтесь быстро устранить противника, если хотите, чтобы у Вас осталось время собрать трофеи и спокойно слинять до их прихода. &lt;br/&gt;&lt;br/&gt;
 
 					Игра в одиночку может быть тяжелой, если Вы не будете разведывать и изучать территорию. Попытайтесь нанять ИИ в помощь (1 или 2 бойца могут выполнять некоторую работу, они недостаточно опытны, чтобы эффективно убивать врагов, однако они могут обеспечить прикрытие огнем, если их грамотно расположить). Кроме того, ИИ будет стараться оказать Вам медпомощь если Вы будете ранены, и поблизости не будет врагов. &lt;br/&gt;&lt;br/&gt;
 
@@ -3896,7 +3742,7 @@
 		    </Key>
 			<Key ID="STR_BR_BT4JAS">
 				<Original>Jeroen Arsenal System</Original>
-				<Russian>Jeroen Система Арсенала</Russian>
+				<Russian>Арсенал JAS</Russian>
 			</Key>
 			<Key ID="STR_BR_BT_JAS">
 				<Original>
@@ -3923,32 +3769,32 @@
 					AI Gear (WiP): recruited AI spawn with gear available in the Arsenal depending on their class. This won’t reduce the actual amount of stored items.
 				</Original>
 				<Russian>
-					Система арсенала в Antistasi уникальна: загрузка предыдущей сессии удалит весь инвентарь внутри транспортных средств. Сохраняется только содержимое виртуального арсенала и инвентарь Ящика Арсенала. &lt;br/&gt;&lt;br/&gt;
+					Antistasi имеет собственную уникальную систему - Арсенал JAS. Загрузка предыдущей сессии удалит весь инвентарь внутри транспортных средств. Сохраняется только содержимое виртуального Арсенала и инвентарь Ящика Арсенала. &lt;br/&gt;&lt;br/&gt;
 
 					Вы можете использовать их следующим образом:&lt;br/&gt;
-					- Инвентарь Ящика Арсенала = временное хранение предметов. Функция для передачи «выгрузить из транспорта в Арсенал»,осуществляется именно в Ящик Арсенала. &lt;br/&gt;
-					- Виртуальный арсенал = постоянное хранение предметов. Переместите предметы из Ящика Арсенала в виртуальный Арсенал, нажав «To Crate» находясь внутри Виртуального Арсенала.&lt;br/&gt;&lt;br/&gt;
+					- Ящик Арсенала = временное хранение предметов. При передаче предметов из транспорта в Арсенал с помощью функции в меню взаимодействия «Выгрузить боеприпасы в Ящик», выгрузка осуществляется в Ящик Арсенала. &lt;br/&gt;
+					- Виртуальный Арсенал = постоянное хранение предметов. Переместите предметы из Ящика Арсенала в виртуальный Арсенал, нажав «To Crate» находясь внутри Виртуального Арсенала.&lt;br/&gt;&lt;br/&gt;
 
-					Открыв Арсенал, вы увидите модифицированный интерфейс Арсенала JAS. С левой стороны отображаются категории предметов. Красные категории указывают на категории, внутри которых еще нет предметов.&lt;br/&gt;&lt;br/&gt;
+					Открыв Арсенал, Вы увидите модифицированный интерфейс Арсенала JAS. С левой стороны отображаются категории предметов. Красные категории указывают на категории, внутри которых еще нет предметов.&lt;br/&gt;&lt;br/&gt;
 
-					Число между скобками перед каждым элементом - это фактическое количество предметов в «Арсенале».&lt;br/&gt;
-					То же самое касается магазинов (их количество показывается в штуках патронов), гранаты и другие боеприпасы и инвентраь, которые отображаются в правом окне.&lt;br/&gt;&lt;br/&gt;
+					Число между скобками перед каждым элементом - это фактическое количество предметов в Арсенале.&lt;br/&gt;
+					То же самое касается патронов (их количество показывается в штуках), гранат, других боеприпасов и предметов инвентря, которые отображаются в правом окне.&lt;br/&gt;&lt;br/&gt;
 
-					В отличие от предыдущих версий Antistasi, нет возможности разблокировать элемент, чтобы он был в неограниченном количестве. Все ограничено тем, что вы фактически захватываете и привозите в Штаб. .&lt;br/&gt;&lt;br/&gt;
+					В отличие от предыдущих версий Antistasi, сейчас отсутствует возможность разблокировать предмет (иметь его в неограниченном количестве). Все количество оружия, боеприпасов, предметов инвентаря строго ограничено тем, сколько Вы фактически захватили и привезли в Штаб.&lt;br/&gt;&lt;br/&gt;
 
 					Доступ к Арсеналу с места водителя транспортного средства позволяет добавлять предметы в автомобиль.&lt;br/&gt;&lt;br/&gt;
 
-					Пользовательские кнопки внизу:&lt;br/&gt;
+					В Арсенале пользовательские кнопки внизу:&lt;br/&gt;
 					- Default gear: добавляет вещи, которые вам всегда понадобятся в соответствии с классом.&lt;br/&gt;&lt;br/&gt;
 
 					- To Crate: перемещает все предметы из Ящика Арсенала в виртуальный Арсенал JAS.&lt;br/&gt;&lt;br/&gt;
 
-					ИИ Снаряжение (WiP): нанятый ИИ может пользоваться снаряжением, доступным в Арсенале, в зависимости от их класса. Это не уменьшит фактическое количество единиц предметов.
+					ИИ Снаряжение (WiP): нанятый ИИ может пользоваться снаряжением, доступным в Арсенале, в зависимости от их класса. Это не уменьшит количество единиц предметов.
 				</Russian>
 		    </Key>
 			<Key ID="STR_BR_BT5TA">
 				<Original>Town allegiance</Original>
-				<Russian>Уровень поддержки городами</Russian>
+				<Russian>Уровень поддержки населения</Russian>
 				<!-- Редакт. -->
 			</Key>
 			<Key ID="STR_BR_BT_TA">
@@ -3968,24 +3814,24 @@
 					Towns supporting the enemy will have enemy patrols around, and towns supporting your faction will have a small friendly patrol around.
 				</Original>
 				<Russian>
-					Гражданское население острова должно быть убеждено в том, что ваше дело является правильным. Это цель Антистаси. Когда вы строите поддержку в городе, враг пытается сделать то же самое.&lt;br/&gt;&lt;br/&gt;
+					Гражданское население острова должно быть убеждено в том, что Ваше дело правое. Это цель Antistasi. Когда Вы начинаете поддерживать город, враг пытается сделать то же самое.&lt;br/&gt;&lt;br/&gt;
 
-					В каждом городе есть множество жителей, которые могут поддерживать Вас, врага или быть нейтральными.&lt;br/&gt;
-					Вы можете проверить текущее значение поддержки города на карте что находится в Штабе, или когда находитесь в городе - в правом нижнем углу экрана.&lt;br/&gt;&lt;br/&gt;
+					В каждом городе есть множество жителей, которые могут поддерживать Вас, поддерживать врага или быть нейтральными.&lt;br/&gt;
+					Вы можете проверить текущее значение поддержки города на Карте в Штабе, или когда находитесь в городе - в правом нижнем углу экрана.&lt;br/&gt;&lt;br/&gt;
 
 					Увеличивайте поддержку города, уничтожая вражеских солдат, доставляя предметы снабжения, разбрасывая листовки, захватывая близлежащую электростанцию или устанавливая точку пропаганды. &lt;br/&gt;
 					Успех миссий увеличивает поддержку населения, но каждая миссия по-разному влияет на поддержку в разных городах.&lt;br/&gt;
 					Поддержка гражданских будет уменьшаться в случае гибели по Вашей вине гражданских лиц, если враг успешно осуществит миссию поддержки города или если в городе нет электричества.&lt;br/&gt;&lt;br/&gt;
 
 					Город будет хорошо себя чувствовать только в том случае, если он поддерживают фракцию, которая контролирует ближайшую электростанцию.&lt;br/&gt;
-					Если город поддерживает повстанцев, противник теряет поддержку населения, и Вы потеряете поддержку города со временем, если враг начнет контролировать ближайшую к городу электростанцию.&lt;br/&gt;.&lt;br/&gt;
+					Если город поддерживает повстанцев, противник теряет поддержку населения, но Вы можете потерять поддержку города со временем, если враг начнет контролировать ближайшую к городу электростанцию.&lt;br/&gt;.&lt;br/&gt;
 
-					В городах, поддерживающих врага, будут встречаться вражеские патрули, а в городах, поддерживающих Вашу фракцию, будут находиться Ваши патрули.
+					В городах, поддерживающих врага, будут встречаться вражеские патрули, а в городах, поддерживающих партизан, будут время от времени курсировать Ваши патрули.
 				</Russian>
 		    </Key>
 			<Key ID="STR_BR_BT6HT">
 				<Original>Holding territories</Original>
-				<Russian>Удерживание Территории</Russian>
+				<Russian>Удержание территории</Russian>
 			</Key>
 			<Key ID="STR_BR_BT_HT">
 				<Original>
@@ -3996,11 +3842,11 @@
 					The Commander can set up a roadblock from the Y menu. Roadblocks are very effective in taking out one or two enemy vehicles thanks to their AT capabilities and .50 cal machine guns.&lt;br/&gt;&lt;br/&gt;
 				</Original>
 				<Russian>
-					Каждый раз, когда вы захватываете или уничтожаете цели (базы/ОП/авиабазы), враг отправляет ГБР (группу быстрого реагирования) из ближайшей базы или аэропорта. Чтобы защитить зону нужно ожидать этого и защититься от этой первой атаки. &lt;br/&gt;
-					Враги будут проверять укомплектованность гарнизона и могут принять решение отправить патруль, чтобы вернуть его на случай, если гарнизон будет уничтожен.&lt;br/&gt;
-					Отправьтесь туда или отправьте патруль, чтобы проверить гарнизон, если он удален от Вас.&lt;br/&gt;
-					Вам нужны очки HR, чтобы иметь возможность комплектовать бойцами гарнизоны, увеличивать Уровень Опыта Армии, чтобы Ваши гарнизоны были достаточно боеспособны, могли противостоять атакам, когда серьезные силы врага нападают чтобы отбить цель. Также для этого можно пользоваться поддержкой НАТО.&lt;br/&gt;
-					Командующий может развернуть БП (Блокпост) из меню Y. Блокпосты очень эффективны для того, чтобы остановить/уничтожить одно-два вражеских транспортных средства, так как их бойцы обладают противотанковым (ПТ) оружием и крупнокалиберными пулемётами на технике.&lt;br/&gt;&lt;br/&gt;
+					Каждый раз, когда Вы захватываете или уничтожаете цели (базы/ОП/авиабазы), враг отправляет ГБР (группу быстрого реагирования) из ближайшей базы или авиабазы. Чтобы защитить зону нужно ожидать этого и защититься от этой первой атаки. &lt;br/&gt;
+					Враг будет проверять укомплектованность своих гарнизонов и может решить отправить патруль, чтобы отбить захваченный Вами объект.&lt;br/&gt;
+					Атакуйте сами или отправьте отряды, чтобы вернуть потерянный объект.&lt;br/&gt;
+					Именно поэтому Вам нужны очки HR - они дают возможность комплектовать бойцами гарнизоны, увеличивать Уровень Опыта Армии, повышать боеспособность гарнизонов, чтобы они могли противостоять атакам серьезных сил врага. Также для этого можно пользоваться поддержкой союзников.&lt;br/&gt;
+					Командир может развернуть БП (Блокпост) из меню «Y». Блокпосты очень эффективны для того, чтобы остановить/уничтожить одно-два вражеских транспортных средства, так как бойцы на блокпосту вооружены противотанковым (ПТ) оружием и крупнокалиберными пулемётами на автомобилях.&lt;br/&gt;&lt;br/&gt;
 				</Russian>
 			</Key>
 			<Key ID="STR_BR_BT7MI">
@@ -4026,26 +3872,26 @@
 					Note that requesting Propaganda on a town which has less than 12% FIA support will spawn a Leaflett Drop mission instead. The real propaganda spawns a custom propaganda truck.
 				</Original>
 				<Russian>
-					Миссии могут быть запрошены у Петроса, в качестве дополнительных миссий "Коррумпированный политик/Офицер", или они могут появляться спонтанно. &lt;br/&gt;
-					Большинство из них запланировано по времени, и их можно отслеживать, проверяя задачи на своей карте. В одно время может быть много разных активных миссий; это Ваш выбор, какие выполнять, а какие игнорировать.&lt;br/&gt;&lt;br/&gt;
+					Миссии могут быть запрошены у Петроса, как дополнительные миссии «Коррумпированный политик/Офицер», или они могут появляться спонтанно. &lt;br/&gt;
+					Большинство из них имеют ограничения по времени, это можно проверить, посмотрев в задачи на карте. Одновременно может быть активно несколько миссий, Вам решать какие выполнять, а какие игнорировать.&lt;br/&gt;&lt;br/&gt;
 
-					В Игре около 18 миссий, но некоторые миссии могут быть недоступны из-за местоположения Вашего Штаба (радиус 4 км), в зависимости от расстояния удаления до близлежайщих городов, деревень и баз разных типов.&lt;br/&gt;&lt;br/&gt;
+					В Игре около 18 миссий, но некоторые миссии могут быть недоступны в радиусе расположения Вашего Штаба (4 км), зависит от окружающих городов, деревень и баз разных типов.&lt;br/&gt;&lt;br/&gt;
 
-					Миссии различаются по сложности в зависимости от ближайших позиций противника (контрольно-пропускные пункты, минометные позиции и системы ПВО на высотах), снаряжения, которое у Вас есть, людских ресурсов и времени, которое вы потратите.&lt;br/&gt;
+					Миссии различаются по сложности в зависимости от ближайших позиций противника (блокпосты, опорные пункты, минометные позиции и системы ПВО на высотах), снаряжения, которое у Вас есть, ресурсов живой силы и времени, которое Вы потратите на их выполнение.&lt;br/&gt;
 					Все эти факторы следует учитывать при выборе одной миссии, а время выполнения может сильно различаться в зависимости от вариантов планирования.&lt;br/&gt;&lt;br/&gt;
 
 					Вы можете игнорировать миссии, но игнорирование следующих миссий будет иметь последствия:&lt;br/&gt;
-					Убейте предателя: Вы потеряете определенный процент денег и очков HR,а атаки на Ваши территории могут стать более частыми. &lt;br/&gt;
+					Убейте предателя: Вы потеряете определенный процент денег и очков HR, а атаки на Ваши территории могут стать более частыми. &lt;br/&gt;
 					Конвои поставки: города, которые успешно снабжены конвоем противника, увеличат поддержку населения в пользу противника.&lt;br/&gt;&lt;br/&gt;
 
-					Petros дает вам 1 миссию определенного типа,с интервалом 30 минут реального времени, поэтому пропустить время не поможет Вам быстрее выполнить еще одну миссию. С другой стороны, время миссии основано на внутриигровом времени, поэтому, если Вы пропустите время, когда миссии активны, они будут считаться проваленными.&lt;br/&gt;&lt;br/&gt;
+					Петрос дает вам 1 миссию определенного типа, с интервалом 30 минут реального времени, поэтому пропустить время (отдых у костра в Штабе) не поможет Вам быстрее выполнить еще одну миссию. С другой стороны, время миссии основано на внутриигровом времени, поэтому, если Вы пропустите время, когда миссии активны, они будут считаться проваленными.&lt;br/&gt;&lt;br/&gt;
 
-					Обратите внимание, что запрос миссии установки точки пропаганды в городе, который имеет поддержку FIA менее чем 12%, создаёт миссию Разброс листовок. При начале миссии установки точки пропаганды возле Штаба появится специальный грузовик.
+					Обратите внимание, что запрос миссии «Установка точки пропаганды» в городе, который имеет поддержку FIA менее чем 12%, создаёт миссию «Разброс листовок». При начале миссии «Установка точки пропаганды» возле Штаба появится специальный грузовик.
 				</Russian>
 		    </Key>
 			<Key ID="STR_BR_AF0">
 				<Original>Antistasi features</Original>
-				<Russian>Особенности Antistasi</Russian>
+				<Russian>Функции Antistasi</Russian>
 			</Key>
 			<Key ID="STR_BR_AF1CS">
 				<Original>Class System</Original>
@@ -4088,14 +3934,14 @@
 
 					Выбор Вами класса (специализации) важен так же, как и баланс ролей в Вашей группе. &lt;br/&gt;&lt;br/&gt;
 
-					В одиночном режиме можно взаимодействовать с ящиком Арсенала и изменять класс (специализацию) в любое время. Обратите внимание, что это не будет сохранено в прогрессе, поэтому при перезагрузке нужно снова изменить роль. &lt;br/&gt;&lt;br/&gt;
+					В одиночном режиме можно взаимодействовать с Ящиком Арсенала и изменять класс (специализацию) в любое время. Обратите внимание, что это не будет сохранено в прогрессе, поэтому при перезагрузке нужно снова изменить роль. &lt;br/&gt;&lt;br/&gt;
 
 					В мультиплеере Вы выбираете свой класс при входе в систему, и можно изменить его, выйдя из системы и снова зайдя.
 				</Russian>
 			</Key>
 			<Key ID="STR_BR_AF2AIME">
 		        <Original>AI Management / Enhancements</Original>
-				<Russian>Упр. ИИ / улучшение</Russian>
+				<Russian>Контроль ИИ</Russian>
 		    </Key>
 			<Key ID="STR_BR_AF_AIME">
 				<Original>
@@ -4120,30 +3966,30 @@
 					- Dismiss: send the unit back to HQ. Upon arrival their cost in money and HR is refunded.
 				</Original>
 				<Russian>
-					Командир и члены сервера могут набирать ИИ у Флага или нанимать гарнизон на завоеванных объектах. Они начинают с гражданской одежды, их оружие соответствует случайному выбору среди оружия, соответствующего их классу,которое имеется в наличии в Арсеналее. &lt;br/&gt;&lt;br/&gt; <!-- Редакт. -->
+					Командир и члены сервера могут набирать ИИ у Флага или нанимать гарнизон на завоеванных объектах. Они начинают с гражданской одежды, их оружие соответствует случайному выбору среди оружия, соответствующего их классу, которое имеется в наличии в Арсеналее. &lt;br/&gt;&lt;br/&gt; <!-- Редакт. -->
 
 					В текущей версии количество оружия в Арсенале не требуют порогового значения для разблокировки (Antistasi 1.7.5 и ранее). &lt;br/&gt;&lt;br/&gt;
 
 					С повышение уровня навыка армии повышается боеспособность Ваших отрядов, экипировка отрядов становится более профессиональной (бронежилеты, каски, форма)&lt;br/&gt;&lt;br/&gt;
 
-					Командующий ИИ - это функция стандартна, проверьте вики BIS, чтобы узнать больше об управлении отрядами. Удерживать огонь, формировать линию или калонну и перегруппироваться очень важно, когда Вы едете в грузовике инкогнито с ИИ, едете как пассажиры, если не сказать им не стрелять, то они могут раскрыть Вас. &lt;br/&gt;&lt;br/&gt; <!-- Редакт. -->
+					Командующий ИИ - это стандартная функция, проверьте wiki BIS, чтобы узнать больше об управлении отрядами. Вовремя приказать подавлять врага огнем, формировать линию или клонну, перегруппироваться - очень важно. Особенно когда Вы едете в грузовике «Скрытно» с ИИ, который едет как пассажир - если вовремя не запретить им открывать огонь, то они могут раскрыть Вас. &lt;br/&gt;&lt;br/&gt; <!-- Редакт. -->
 
 					Без радиостанций Вы не сможете контролировать ИИ, если Вы отдалитесь от них более чем на 500 метров, то потеряете контроль (они исчезнут из нижней панели и начнут двигаться в Вашем направлении). &lt;br/&gt;&lt;br/&gt;
 
-					Меню Y позволяет выбрать опции для выбранного дружественного ИИ: &lt;br/&gt;&lt;br/&gt;
+					Меню «Y» позволяет выбрать опции для выбранного дружественного ИИ: &lt;br/&gt;&lt;br/&gt;
 
 					- Автолечение: устанавливается для каждого нанятого ИИ, чтобы они могли лечить товарищей по команде и себя автоматически. &lt;br/&gt;&lt;br/&gt;
 
-					- Авто Перевооружение: дает команду ИИ обыскать убитых врагов на предмет более лучшего оружия и боеприпасов, пополнить свой боезапас и перевооружиться в соответствии с их классом.  &lt;br/&gt;&lt;br/&gt;
+					- Автоперевооружение: дает команду ИИ обыскать убитых врагов на предмет более лучшего оружия и боеприпасов, пополнить свой боезапас и перевооружиться в соответствии с их классом.  &lt;br/&gt;&lt;br/&gt;
 
-					- Временное управление ИИ: если Ваш статус не "Инкогнито", и поблизости нет врагов, Вы можете управлять ИИ, чтобы исправить некоторые проблемы (например когда они не могут найти дорогу и др.) или просто управлять их инвентарем. Вы потеряете контроль через 60 секунд или если ИИ погибнет. Вы можете получить доступ к арсеналу и экипировать их, как хотите. &lt;br/&gt;&lt;br/&gt;
+					- Временное управление ИИ: если Ваш статус не «Скрытно», и поблизости нет врагов, Вы можете управлять ИИ, чтобы исправить некоторые проблемы (например когда они не могут найти дорогу и др.) или просто управлять их инвентарем. Вы потеряете контроль через 60 секунд или если ИИ погибнет. Вы можете получить доступ к Арсеналу и экипировать их, как хотите. &lt;br/&gt;&lt;br/&gt;
 
 					- Распустить: отправить бойцов по домам. При этом возвращается их стоимость в деньгах и очки HR.
 				</Russian>
 			</Key>
 			<Key ID="STR_BR_AF3AXPNL">
 				<Original>Army Xp and Level</Original>
-				<Russian>Опыт Армии и Уровень</Russian>
+				<Russian>Уровень опыта Армии (Army Xp)</Russian>
 			</Key>
 			<Key ID="STR_BR_AF_AXPNL">
 				<Original>
@@ -4159,7 +4005,7 @@
 					3) XP cap at 20h for both FIA and personal, all vehicles can be stored, HR cap at 150, Camps 5, enhanced Roadblocks 10, enhanced Watchposts 6, one-off NATO boost +30.
 				</Original>
 				<Russian>
-					Опыт армии влияет на возможность FIA нанимать отряды, бойцов и гарнизоны. Увеличивайте опыт сражаясь, выполняя миссии и захватывая объекты.&lt;br/&gt;&lt;br/&gt;
+					Уровень опыта армии влияет на боеспособность нанимаемых FIA бойцов в отряды и гарнизоны. Увеличивайте опыт сражаясь, выполняя миссии и захватывая объекты.&lt;br/&gt;&lt;br/&gt;
 
 					Уровень навыка Армии:&lt;br/&gt;
 					0) Максимум опыта = 4, новобранцы носят гражданскую одежду, места в гараже = 10 FIA и 3 персональных, можно хранить только базовые транспортные средства и MRAP, максимум HR=50, количество бойцов: лагерь=2, обычные БП=2, обычные НП=2.&lt;br/&gt;&lt;br/&gt;
@@ -4173,7 +4019,7 @@
 			</Key>
 			<Key ID="STR_BR_AF7JAG">
 				<Original>Jeroen Arsenal Garage</Original>
-				<Russian>Jeroen Арсенал\Гараж</Russian>
+				<Russian>Гараж JAG</Russian>
 			</Key>
 			<Key ID="STR_BR_AF_JAG">
 				<Original>
@@ -4188,15 +4034,15 @@
 					Note: Static Weapons can be garaged like other vehicles and, found under their respective tab, can be attached to off-roads, trucks or other vehicles with a weapon hardpoint.
 				</Original>
 				<Russian>
-					Доступ к гаражу открывает пользовательский интерфейс, который позволяет выбрать автомобиль с левой стороны а взаимодействовать с автомобилем справа.&lt;br/&gt;&lt;br/&gt;
+					Доступ к гаражу открывает пользовательский интерфейс, который позволяет выбрать автомобиль (с левой стороны) и взаимодействовать с автомобилем (справа).&lt;br/&gt;&lt;br/&gt;
 
-					Старайтесь размещать ящик в открытом поле без препятствий вокруг, предварительный просмотр автомобиля будет появляться напротив вашей позиции на том же расстоянии, что и вы от ящика. Держитесь на некотором расстоянии от коробки. &lt;br/&gt;&lt;br/&gt;
+					Старайтесь размещать Ящик лечения и восстановления техники в открытом поле без препятствий вокруг, предварительный просмотр автомобиля будет появляться напротив Вашей позиции на том же расстоянии, что и Вы от Ящика. Держитесь на некотором расстоянии от него. &lt;br/&gt;&lt;br/&gt;
 
-					Транспортные средства могут быть отремонтированы по частям, включая стекла, через JAG, а также можно поменять внешний вид транспорта.&lt;br/&gt;&lt;br/&gt;
+					Транспортные средства могут быть отремонтированы по частям, включая стекла, через JAG, также можно поменять внешний вид транспорта.&lt;br/&gt;&lt;br/&gt;
 
 					Сохраненные автомобили видны для всех в Гараже. Зеленые транспортные средства - Ваши, белые - общие, красные транспортные средства заблокированы. Только владелец транспортного средства может разблокировать его.&lt;br/&gt;&lt;br/&gt;
 
-					Примечание. Станковое оружие можно сохранять, как и другой транспорт, и, находясь на соответствующей вкладке, может быть прикреплено к внедорожникам, грузовикам или другому транспорту, которое имеет возможность их установки.
+					Примечание. Станковое оружие можно сохранять, как и другой транспорт, и, находясь на соответствующей вкладке, его можно прикрепить к внедорожникам, грузовикам или другому транспорту, которое имеет возможность такого крепления.
 				</Russian><!-- Редакт. -->
 			</Key>
 			<Key ID="STR_BR_AF9JNSL">
@@ -4214,14 +4060,14 @@
 				<Russian>
 				    Ящики, боеприпасы и некоторые другие объекты, которые можно загружать в автомобиль могут блокировать посадочные места в транспорте - ящик с боеприпасами в грузовике заблокирует посадочные места в кузове.&lt;br/&gt;&lt;br/&gt;
 
-					Теперь возможен Перенос припасов, кража вражеских боеприпасов, перемещение Арсенала и Гаража при перемещении Штаба благодаря этой функции без использования какого-либо дополнительного мода.&lt;br/&gt;&lt;br/&gt;
+					Теперь возможен перенос припасов, кража вражеских боеприпасов, перемещение Арсенала и Гаража при перемещении Штаба благодаря этой функции без использования какого-либо дополнительного мода.&lt;br/&gt;&lt;br/&gt;
 
 					Работа в процессе
 				</Russian><!-- Редакт. -->
 			</Key>
 			<Key ID="STR_BR_AF4FT">
 				<Original>Fast Travel</Original>
-				<Russian>Быстрое путешествие</Russian>
+				<Russian>Быстрое перемещение</Russian>
 			</Key>
 			<Key ID="STR_BRAF_FT">
 				<Original>
@@ -4252,14 +4098,14 @@
 					Предупреждение: &lt;br/&gt;
 					- Каждое быстрое перемещение в лагерь могут засечь; враги отправят вертолет, отряды пехоты, которые будут быстро прибывать и атаковать лагерь. Перемещение в Штаб всегда безопасно.&lt;br/&gt;
 					- Избегайте быстрого перемещения транспортных средств при буксировке других транспортных средств, последние имеют высокую вероятность взрыва или исчезновения.&lt;br/&gt;
-					- Избегайте быстрого перемещения с помощью воздушных судов или лодок, опять же, из-за большой вероятности их взрыва в точке прибытия.&lt;br/&gt;
-					- В мультиплеере Вы не заметите, что другие игроки - телепортируются (если Вы все в машине, только у водителя будет черный экран быстрого перемещения).&lt;br/&gt;
-					- Убедитесь, что Вы не делаете это в одно и то же время и в том же месте, когда ведете транспортные средства, поскольку они, как Вы догадались, могут взорваться.
+					- Избегайте быстрого перемещения на воздушных судах или лодках, опять же, из-за большой вероятности их взрыва в точке прибытия.&lt;br/&gt;
+					- В мультиплеере Вы не заметите, что другие игроки телепортируются (если Вы все в машине, только у водителя будет черный экран быстрого перемещения).&lt;br/&gt;
+					- Убедитесь, что Вы не делаете это в одно и то же время и в то же самое место, когда ведете транспортные средства, поскольку они, как Вы догадались, могут взорваться.
 				</Russian>
 			</Key>
 			<Key ID="STR_BR_AF8JNES">
 				<Original>NATO and CSAT Support</Original>
-				<Russian>Дружеская и вражеская поддержка</Russian>
+				<Russian>Поддержка союзников и врага</Russian>
 			</Key>
 			<Key ID="STR_BR_AF_JNES">
 				<Original>
@@ -4272,12 +4118,12 @@
 					If Enemy support gets too high, the Enemy Faction starts bombarding towns. If they destroy 8 towns the campaign is lost.
 				</Original>
 				<Russian>
-					Поддержка дружественных фракций достигается за счет оказания помощи мирным жителям, захвата баз и ликвидации подразделений противника.&lt;br/&gt;
+					Поддержка союзников растет при оказании помощи мирным жителям, захвате баз и уничтожении подразделений противника.&lt;br/&gt;
 					Она уменьшается, когда гражданские лица страдают (убиты или недовольны отстутствием электроэнергии), или при гибели заключенных.&lt;br/&gt;
-					Командующий может использовать очки поддержки дружественных фракций для вызова действий поддержки (см. соответствующий раздел).&lt;br/&gt;&lt;br/&gt;
+					Командующий может использовать очки поддержки союзников для вызова действий поддержки (см. соответствующий раздел).&lt;br/&gt;&lt;br/&gt;
 
-					Очки поддержки вражеской фракции растут когда Вы захватываете их объекты (базы, авиабазы и др.).&lt;br/&gt;
-					Их можно уменьшить, попросив поддержку дружественной фракции и нанести урон военным объектам врага на Острове.&lt;br/&gt;
+					Очки поддержки вражеской фракции растут когда Вы захватываете объекты врага (базы, авиабазы и др.).&lt;br/&gt;
+					Они снижаются когда Вы или союзники сдают (оставляют) объекты врагу. Также вражеская поддержка может быть ослаблена с помощью дипломатии.&lt;br/&gt;
 					Если поддержка врага становится слишком высокой, вражеская фракция может начать бомбить города. Если они уничтожат 8 городов, кампания будет провалена.
 				</Russian>
 		    </Key>
@@ -4291,7 +4137,7 @@
                 WiP
 				</Original>
 				<Russian>
-				В зависимости от контролируемых объектов, за исключением, противник будет строить БП и разворачивать новые ОП (опорные пункты).&lt;br/&gt;
+				Зависит от контролируемых объектов, за исключением городов - противник будет строить БП и разворачивать новые ОП (опорные пункты).&lt;br/&gt;
                 Работа в процессе
 				</Russian>
 			</Key>
@@ -4312,20 +4158,20 @@
 					- Recruit AI.&lt;br/&gt;
 				</Original>
 				<Russian>
-					В многопользовательском режиме Администратор сервера может давать членство игрокам с помощью меню Y когда смотрит прямо на игрока.&lt;br/&gt;&lt;br/&gt;
+					В многопользовательском режиме Администратор сервера может давать членство (добавить в Список) игрокам с помощью меню «Y» когда смотрит на игрока.&lt;br/&gt;&lt;br/&gt;
 
-					Членство на сервере - лучший способ помешать случайным людям вмешиваться в кампанию Antistasi на открытом сервере, но позволяет людям по-прежнему наслаждаться Antistasi,заморозив некоторые опции;&lt;br/&gt;&lt;br/&gt;
+					Членство на сервере - лучший способ помешать случайным людям вмешиваться в кампанию Antistasi на открытом сервере, но позволяет людям по-прежнему наслаждаться Antistasi, заморозив некоторые опции;&lt;br/&gt;&lt;br/&gt;
 
-					Если ни один из участников не находится в режиме онлайн, слот командира будет пустым, так что начислений за отметку не будет, никакой контратаки врага и никакой случайной миссии не появятся.&lt;br/&gt;&lt;br/&gt;
+					Если ни один из участников не находится в режиме онлайн, слот Командира будет пустым, регулярные начисления денег остановятся, враг не будет атаковать, случайные миссии не появятся.&lt;br/&gt;&lt;br/&gt;
 
 					Права участников:&lt;br/&gt;
-					- Право быть командиром. &lt;br/&gt;
-					- Найм ИИ.&lt;br/&gt;
+					- Право быть Командиром. &lt;br/&gt;
+					- Нанимать ИИ.&lt;br/&gt;
 				</Russian>
 			</Key>
 			<Key ID="STR_BR_AF6U">
 				<Original>Undercover</Original>
-				<Russian>Инкогнито</Russian>
+				<Russian>Режим «Скрытно»</Russian>
 			</Key>
 			<Key ID="STR_BR_AF_U">
 				<Original>
@@ -4358,38 +4204,38 @@
 					Note: ‘being spotted’ doesn’t require line of sight, it’s a radius around enemy units.
 				</Original>
 				<Russian>
-					Когда режим "Инкогнито" активен, Вы видите слово «Инкогнито» зеленым цветом на верхней информационной панели, и враги не будут замечать Вас.&lt;br/&gt;&lt;br/&gt;
+					Когда режим «Скрытно» активен, Вы видите слово «Скрытно» зеленым цветом на верхней информационной панели, и враги не будут замечать Вас.&lt;br/&gt;&lt;br/&gt;
 
-					Условия, необходимые для того, чтобы активировать режим "Инкогнито":&lt;br/&gt;
-					- не быть замеченным за последние 30 минут. Ели враг Вас заметил за это время, используйте функцию Ящика восстановления техники "Лечить,чинить и перевооружить" в Штабе. Это позволит снова стать активным режиму "Инкогнито". Работает и при повторном использовании функции.&lt;br/&gt;<!-- Редакт. -->
+					Условия, необходимые для того, чтобы активировать режим «Скрытно»:&lt;br/&gt;
+					- не быть замеченным за последние 30 минут. Ели враг Вас заметил за это время, используйте функцию Ящика лечения и восстановления техники «Лечить, чинить и перевооружить» в Штабе. Это позволит снова стать активным режиму «Скрытно». Работает и при повторном использовании функции.&lt;br/&gt;<!-- Редакт. -->
 					- нет врагов в радиусе 350 м.&lt;br/&gt;
-					- необходимо быть в гражданской одежде и без военной экипировки. Всплывающий экран подсказки сверху справа отобразит, какие предметы не позволяют Вам использовать режим "Инкогнито" в данный момент.&lt;br/&gt;&lt;br/&gt;
+					- необходимо быть в гражданской одежде и без военной экипировки. Всплывающий экран подсказки сверху справа отобразит, какие предметы не позволяют Вам использовать режим «Скрытно» в данный момент.&lt;br/&gt;&lt;br/&gt;
 
-					Если Вы соответствуете требуемым условиям, режим "Инкогнито" будет активирован:&lt;br/&gt;
-					- при включении режима "ИнкогнитоЭ из Y меню.&lt;br/&gt;
-					- при посадке в "чистый" (не находящийся в розыске) гражданский автомобиль. В этом случае Вы даже можете иметь на себе военную экипировку.&lt;br/&gt;&lt;br/&gt;
+					Если Вы соответствуете требуемым условиям, режим «Скрытно» будет активирован:&lt;br/&gt;
+					- при включении режима «Скрытно» из «Y» меню.&lt;br/&gt;
+					- при посадке в «чистый» (не находящийся в розыске) гражданский автомобиль. В этом случае Вы даже можете иметь на себе военную экипировку.&lt;br/&gt;&lt;br/&gt;
 
-					Режим "Инкогнито" всегда будет выключаться в следующих случаях:&lt;br/&gt;
+					Режим «Скрытно» всегда будет выключаться в следующих случаях:&lt;br/&gt;
 					- в пределах ~ 150 м от Опорного пункта, Базы или Авиабазы .&lt;br/&gt;
 					- в пределах ~ 50 м от патруля с собакой.&lt;br/&gt;
 					- если Вас или члена Вашей команды заметили&lt;br/&gt;
 					- если Вас заметят при установке взрывчатых устройств.&lt;br/&gt;
 					- если заметят Вас в ремонтной машине.&lt;br/&gt;&lt;br/&gt;
 
-					При нахождении в транспорте режим "Инкогнито" отключится если:&lt;br/&gt;
+					При нахождении в транспорте режим «Скрытно» отключится если:&lt;br/&gt;
 					- Вы ведете транспорт вне дороги (~ 25 м от дороги).&lt;br/&gt;
 					- противник заметит что транспорт ведет вражеский боец за рулем.&lt;br/&gt;
-					- Вы выходите из транспорта и Ваша экипировка не соответствует условиям режима "Инкогнито" (военная одежда, оружие).&lt;br/&gt;
-					- если кто-то, кто находится не в режиме "Инкогнито" осуществит посадку в Ваш транспорт и это заметят враги, находящиеся неподалеку.&lt;br/&gt;
-					Когда Вы пешком, отключение режима "Инкогнито" возможно, когда:&lt;br/&gt;
-					- Вы подбираете/надеваете оружие/военную экипировку/снаряжение или снимаете Вашу гражданскую одежду (Вы не можете быть "Инкогнито" в трусах).&lt;br/&gt;&lt;br/&gt;
+					- Вы выходите из транспорта и Ваша экипировка не соответствует условиям режима «Скрытно» (военная одежда, оружие).&lt;br/&gt;
+					- если кто-то, кто находится не в режиме «Скрытно» осуществит посадку в Ваш транспорт и это заметят враги, находящиеся неподалеку.&lt;br/&gt;
+					Когда Вы пешком, отключение режима «Скрытно» возможно, когда:&lt;br/&gt;
+					- Вы подбираете/надеваете оружие/военную экипировку/снаряжение или снимаете Вашу гражданскую одежду (Вы не можете быть «Скрытно» в трусах).&lt;br/&gt;&lt;br/&gt;
 
 					Примечание: «быть замеченным врагом» не значит, что враг должен непосредственно Вас увидеть, игровой движок считает что Вы замечены при нахождении врага в определенном радиусе.
 				</Russian>
 			</Key>
 			<Key ID="STR_BR_CM0">
 				<Original>Commander Options</Original>
-				<Russian>Параметры Ком.</Russian>
+				<Russian>Командование</Russian>
 			</Key>
 			<Key ID="STR_BR_CM1MHQ">
 				<Original>Moving HQ</Original>
@@ -4406,10 +4252,10 @@
 					The game allows you to move your HQ to wherever, even inside an enemy base with enemies in the surrounding, it’s up to you to make the smart decision on where move it, see the website for hints on good HQ locations.
 				</Original>
 				<Russian>
-					Штаб может быть перемещен Командующим, для этого надо: &lt;br/&gt;
-					- подойдите к Флагу Штаба и в меню взаимодействия выберите «Управление Штабом» и нажмите «Переезд Штаба», &lt;br/&gt;
+					Штаб может быть перемещен Командиром, для этого надо: &lt;br/&gt;
+					- подойти к Флагу Штаба и в меню взаимодействия выберите «Штаб» и нажмите «Переезд Штаба», &lt;br/&gt;
 					- Петрос присоединится к команде Командира, после чего командуя им, переместите его в новое место, пешком или в качестве пассажира на транспортном средстве. &lt;br/&gt;
-					- Ящик Арсенала и ящик обслуживания транспорта должны быть погружены в грузовик, для чего надо подъехать к ним, и в меню взаимодействовия выбрать «загрузить Ящик в автомобиль»..&lt;br/&gt;
+					- Ящик Арсенала и Ящик лечения и восстановления транспорта должны быть погружены в грузовик, для чего надо подъехать к ним, и в меню взаимодействовия выбрать «загрузить Ящик в автомобиль»..&lt;br/&gt;
 					- добравшись до нужного места, выгрузите ящики, используя меню взаимодействия с Петросом выберите «Построить Штаб». &lt;br/&gt;&lt;br/&gt;
 
 					Игра позволяет перемещать Штаб куда угодно, даже внутри вражеской базы окруженной врагами, это Вам решать, хорошо подумайте о том, где наиболее тактически выгодно расположить Штаб, см. Веб-сайт для подсказок о хороших местоположениях Штаба.
@@ -4417,7 +4263,7 @@
 			</Key>
 			<Key ID="STR_BR_CM2FFS">
 				<Original>NATO Support</Original>
-				<Russian>Поддержка Друж. фракций</Russian>
+				<Russian>Поддержка союзников</Russian>
 			</Key>
 			<Key ID="STR_BR_CM_FFS">
 				<Original>
@@ -4447,9 +4293,9 @@
 					- QRF (xx points): Quick Reaction Forces; Small transport helicopters depart from Carrier or closest controlled Airport deploying troops at designated location.
 				</Original>
 				<Russian>
-					Командующий может вызвать поддержку Дружественной фракции, выбрав один из вариантов через меню Y (вкладка Командира). Возможность использования того или иного вида поддержки союзника зависит от значения (количества очков) поддержки. Каждый вид и его стоимость в очках поддержки описывается ниже.&lt;br/&gt;&lt;br/&gt;
+					Командир может вызвать поддержку Дружественной фракции, выбрав один из вариантов через меню «Y» (вкладка Командира). Возможность использования того или иного вида поддержки союзника зависит от значения (количества очков) поддержки. Каждый вид и его стоимость в очках поддержки описывается ниже.&lt;br/&gt;&lt;br/&gt;
 
-					Поддержка должна физически прибыть к указанной Вами цели, и они вступить в бой еще на пути к ней. Это важно помнить например при вызове поддержки, которая связана с авиацией, так как они могут быть уничтожены врагом так и не долетев до места назначения. Практически на каждой значимой высоте могут находиться вражеские системы ПВО.&lt;br/&gt;&lt;br/&gt;
+					Поддержка должна физически прибыть к указанной Вами цели, и они могут вступить в бой еще на пути к ней. Это важно помнить, например, при вызове поддержки, которая связана с авиацией, так как они могут быть уничтожены врагом так и не долетев до места назначения. Практически на каждой значимой высоте могут находиться вражеские системы ПВО.&lt;br/&gt;&lt;br/&gt;
 					По прошествии 30 минут отряды поддержки вернутся в места дислокации.&lt;br/&gt;
 					Вы не можете воспользоваться союзническими транспортными средствами и гаражом.&lt;br/&gt;&lt;br/&gt;
 
@@ -4459,17 +4305,17 @@
 
 					- Артиллерия: выберите контролируемую базу, выберите юнита из панели Командира и нажмите Shift + Y.&lt;br/&gt;&lt;br/&gt;
 
-					- Блокпост: выберите контролируемую базу, выберите точку на дороге, можно контролирейте их через меню Командира, чтобы отправить их на место для создания развертывания БП &lt;br/&gt;&lt;br/&gt;
+					- Блокпост: выберите контролируемую базу, выберите точку на дороге, можно контролировать через меню Командира, чтобы отправить их на место для развертывания БП &lt;br/&gt;&lt;br/&gt;
 
-					- БПЛА: вылетает с авианосца или ближайшего контролируемого аэропорта, можно контролировать через меню Командира, чтобы отправить его туда куда Вам нужно.&lt;br/&gt;&lt;br/&gt;
+					- БПЛА: беспилотник вылетает с авианосца или ближайшей контролируемой авиабазы, можно контролировать через меню Командира, чтобы отправить его туда куда Вам нужно.&lt;br/&gt;&lt;br/&gt;
 
-					-Поддержка боеприпасами: выберите приблизительное местоположение, в котором необходимо сбросить ящик с боеприпасами, можно контролировать через меню Командира», укажите место для сброса. После сброса ящик искать по синему дыму.&lt;br/&gt;&lt;br/&gt;
+					-Поддержка боеприпасами: выберите приблизительное местоположение, куда необходимо сбросить ящик с боеприпасами, можно контролировать через меню Командира, укажите место для сброса. После сброса ящик искать по синему дыму.&lt;br/&gt;&lt;br/&gt;
 
-					- CAS - Поддержка с воздуха: 3 вертолета отправляются с авианосца или ближайшего контролируемого аэропорта, можно контролировать их через меню «Командира», перемещая их туда, куда вы нужно.&lt;br/&gt;&lt;br/&gt;
+					- CAS - Поддержка с воздуха: 3 вертолета отправляются с авианосца или ближайшей контролируемой авиабазы, можно контролировать их через меню Командира, перемещая их туда, куда Вам нужно.&lt;br/&gt;&lt;br/&gt;
 
-					- Бомбардировка : выберите точки начала и конца направления бомбометания. Самолет отправится с авианосца или ближайшего контролируемого аэропорта, нельзя контролировать через меню Командира, эффективность использования приходит с опытом.&lt;br/&gt;&lt;br/&gt;
+					- Бомбардировка : выберите точки начала и конца направления бомбометания. Самолет отправится с авианосца или ближайшей контролируемой авиабазы, нельзя контролировать через меню Командира, эффективность использования приходит с опытом.&lt;br/&gt;&lt;br/&gt;
 
-					- ГБР: группа быстрого реагирования; малые транспортные вертолеты выдвигаются с авианосца или ближайшего контролируемого аэропорта, высаживает десант в указанное место.
+					- ГБР: группа быстрого реагирования; малые транспортные вертолеты выдвигаются с авианосца или ближайшей контролируемой авиабазы, высаживает десант в указанное место.
 				</Russian>
 			</Key>
 			<Key ID="STR_BR_CM3R">
@@ -4488,14 +4334,14 @@
 					Mortars have limited range and ammunition. They can be resupplied at HQ by the Heal, Repair and Rearm function.
 				</Original>
 				<Russian>
-					Командир может потратить очки HR на отряды FIA, их можно будет контролировать через панель Командира. На уровень этих бойцов влияет уровень Опыта Армии. После того, как они наняты, они будут нести службу до тех пор, пока не умрут, не будут распущены или не будет выхода из игры(в этом случае очки HR будут частично возвращены в зависимости от состояния здоровья Юнитов).&lt;br/&gt;&lt;br/&gt;
+					Командир может использовать очки HR для найма отрядов FIA, их можно будет контролировать через панель Командира. На уровень боеспособности отрядов влияет уровень Опыта Армии. После того, как отряды наняты, они будут нести службу до техдвижка пор, пока не погибнут, не будут распущены или не будет выхода из игры(в этом случае очки HR будут частично возвращены в зависимости от состояния здоровья Юнитов).&lt;br/&gt;&lt;br/&gt;
 
-					Вы можете напрямую управлять лидером каждой группы, выбирая команду в режиме Командира и используя функцию Временный контроль ИИ в меню Y.&lt;br/&gt;&lt;br/&gt;
+					Вы можете напрямую управлять лидером каждой группы, выбирая команду в режиме Командира и используя функцию Временный контроль ИИ в меню «Y».&lt;br/&gt;&lt;br/&gt;
 
 					* Если загружен Мод RHS, этот грузовик недоступен, и ничего не появится.&lt;br/&gt;
 					** Минометным командам нужно некоторое время на развертывание при команде на движения. После развертывания Вы увидите другой значок на карте, и только тогда они будут готовы к стрельбе.&lt;br/&gt;
 					Нажмите Shift + Y после выбора группы минометов и нажмите на карту, чтобы выбрать место для указания цели минометного удара.&lt;br/&gt;
-					Минометы имеют ограниченный диапазон и боеприпасы. Они могут быть перевооружены в Штабе используя функцию "Лечить, чинить и перевооружить" в меню взаимодействия с ящиком обслуживания техники.
+					Минометы имеют ограниченный диапазон и боеприпасы. Они могут быть перевооружены в Штабе используя функцию «Лечить, чинить и перевооружить» в меню взаимодействия с Ящиком лечения и восстановления техники.
 				</Russian>
 			</Key>
 			<Key ID="STR_BR_CM4G">
@@ -4515,11 +4361,11 @@
 					Note: Huge garrisons might lower game performance, please check relative section for more information.
 				</Original>
 				<Russian>
-					Командир может направить имеюшиеся очки HR на формирование гарнизона FIA на захваченном объекте или в Штабе. Уровень нанятых бойцов будет напрямую зависеть от уровня опыта армии. Они не могут контролироваться напрямую. &lt;br/&gt;&lt;br/&gt;
+					Командир может использовать имеюшиеся очки HR на формирование гарнизона FIA на захваченном объекте или в Штабе. Уровень нанятых бойцов будет напрямую зависеть от уровня опыта армии. Они не могут контролироваться напрямую. &lt;br/&gt;&lt;br/&gt;
 
-					В Вашем Штабе, подойжите к Флагу и выберите в меню взаимодействия -> Управление Штабом -> Нанять в Гарнизон. Выберите точку, на которой Вы хотите разместить гарнизон, и добавьте боевые единицы.&lt;br/&gt;&lt;br/&gt;
+					В Вашем Штабе, подойдите к Флагу и выберите в меню взаимодействия -> Штаб -> Нанять в Гарнизон. Выберите точку, на которой Вы хотите разместить гарнизон, и добавьте боевые единицы.&lt;br/&gt;&lt;br/&gt;
 
-					Добавление управляемого ИИ станкового оружия: соберите станковое оружие, наймите бойца - "Стрелок", и он будет управлять оружием. Информация о гарнизоне (просматриваемая на Карте в Штабе) отображает количество имеющихся станковых орудий.&lt;br/&gt;&lt;br/&gt;
+					Добавление управляемого ИИ станкового оружия: соберите станковое оружие, наймите бойца - «Стрелок», и он будет управлять оружием. Информация о гарнизоне (просматриваемая на Карте в Штабе) отображает количество имеющихся станковых орудий.&lt;br/&gt;&lt;br/&gt;
 
 					Гарнизонные минометные команды могут начать вести огонь на большое расстояние, поэтому будьте внимательны при выборе места их размещения, чтобы свести к минимуму дружественный огонь, жертвы среди гражданского населения и побочный ущерб. &lt;br/&gt;&lt;br/&gt;
 
@@ -4528,7 +4374,7 @@
 			</Key>
 			<Key ID="STR_BR_CM5E">
 				<Original>Emplacements</Original>
-				<Russian>Позиции</Russian>
+				<Russian>Позиции FIA</Russian>
 			</Key>
 			<Key ID="STR_BR_CM_E">
 				<Original>
@@ -4546,7 +4392,7 @@
 					Camo net occludes Petros and the camp from enemy aircraft, but might collapse or cause mission vehicles to explode upon spawn if placed too close to campfire, so be really careful.
 				</Original>
 				<Russian>
-					через меню Y, командир может управлять:&lt;br/&gt;&lt;br/&gt;
+					через меню «Y», Командир может управлять:&lt;br/&gt;&lt;br/&gt;
 
 					-БП (Блокпосты): размещенные на дорогах, будут защищать территорию, вооруженны пулемётом 0,50 калибра и РПГ - идеально подходят для остановки обычных патрулей противника и даже конвоев (когда они будут модернизированы до улучшенных БП - уровень армии>12).&lt;br/&gt;&lt;br/&gt;
 
@@ -4555,9 +4401,9 @@
 					-Лагеря: позволяют быстро перемещаться. В них есть ящики с некоторым снаряжением, также могут восстанавливать здоровье и заправлять топливо, но ремонт транспортных средств произведен быть не может.&lt;br/&gt;&lt;br/&gt;
 
 					-Фортификации Штаба: посмотрите и выберите что Вам нужно для обустройства и укрепления Штаба.&lt;br/&gt;
-					Фонарь для подсветки базы немного лучше, чем костер.&lt;br/&gt;
+					Фонарь для подсветки Штаба немного лучше, чем Костер.&lt;br/&gt;
 					Площадка для появления техники позволяет установить место для появления транспортных средств. Она выглядит как ведро.&lt;br/&gt;
-					Камо-сеть закрывает Петроса и лагерь от вражеских самолетов, но может упасть или задеть технику при ее появлении, от чего техника может взорваться на месте появления, если её поставить слишком близко к походному костру, поэтому будьте очень осторожны.
+					Камо-сеть закрывает Петроса и лагерь от вражеских самолетов, но может упасть или задеть технику при ее появлении, от чего техника может взорваться на месте появления, если её поставить слишком близко к Костру, поэтому будьте очень осторожны.
 				</Russian>
 			</Key>
 			<Key ID="STR_BR_CM6M">
@@ -4575,9 +4421,9 @@
 					- Reset HQ: reset HQ location around Petros’ position. Note: if Petros was moved inside a building by ACE cable tie, collision bugs will occur.
 				</Original>
 				<Russian>
-					Некоторые неприятные ситуации могут быть исправлены командиром или администратором, доступ к ним из меню Y.&lt;br/&gt;&lt;br/&gt;
+					Некоторые неприятные ситуации могут быть исправлены Командиром или администратором, доступ к ним из меню «Y».&lt;br/&gt;&lt;br/&gt;
 
-					- Сбросить позицию Петроса: исправить ошибку «слишком далеко от Штаба» при попытке переместить предметы возле Штаба.&lt;br/&gt;&lt;br/&gt;
+					- Сбросить позицию Петроса: исправить ошибку «слишком далеко от Штаба» при попытке переместить Предметы возле Штаба.&lt;br/&gt;&lt;br/&gt;
 
 					- Сброс станковых орудий: станковое оружие в районе Штаба можно перемещать, как и другие предметы, в течение ограниченного времени, если таймер истекает, используйте эту команду, чтобы сделать их подвижными снова.&lt;br/&gt;&lt;br/&gt;
 
@@ -4586,7 +4432,8 @@
 			</Key>
 			<Key ID="STR_BR_8CNT">
 				<Original>8 Credits and Thanks</Original>
-				<Russian>8 Авторы И Благодарность</Russian>
+				<Russian>8 Авторы и благодарности</Russian>
+			</Key>
 			<Key ID="STR_BR_8CNT_T">
 				<Original>Author: Barbolani&lt;br/&gt;
 					Coding since 1.2: Chris supervised by RickyTan and Kendo&lt;br/&gt;
@@ -4626,8 +4473,7 @@
 					Toshi: Antistasi porting on other islands.&lt;br/&gt;
 					Kendo and Tuck for templates.&lt;br/&gt;
 					And all those players who spend their time on making comments, suggestions and reports on Steam and Antistasi Official Community.</Original>
-				<Russian>8 Авторы И Благодарность</Russian>
-
+				<Russian>8 Авторы и благодарности</Russian>
 			</Key>
 		</Container>
 	</Package>
