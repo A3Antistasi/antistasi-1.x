@@ -321,7 +321,7 @@ waitUntil
 	sleep 5;
 	(
 	 	//Operative soldiers < 1/3 of All soldiers
-		({(alive _x) and (lifeState _x != "INCAPACITATED")} count _allSoldiers < (round ((count _allSoldiers)/3))) OR
+		( {((alive _x) and (lifeState _x != "INCAPACITATED"))} count _allSoldiers < (round ((count _allSoldiers)/3)) ) OR
 
 		//time is over
 		(time > _attackDuration) OR
@@ -330,7 +330,14 @@ waitUntil
 		(_marker in mrkAAF) OR
 
 		//(Operative FIA within 100m) < (Operative AAF within 100m)
-		(2*count (allUnits select {(side _x == side_blue) AND (_x distance _markerPos <= 100) and (lifeState _x != "INCAPACITATED")}) < count (allUnits select {((side _x == side_green) OR (side _x == side_red)) AND (_x distance _markerPos <= 100) and (lifeState _x != "INCAPACITATED")})
+		(2*count (allUnits select {(side _x == side_blue) AND (_x distance _markerPos <= 100) and (lifeState _x != "INCAPACITATED")})
+		) < count (
+			allUnits select {
+				((side _x == side_green) OR (side _x == side_red)) AND
+				(_x distance _markerPos <= 100) and
+				(lifeState _x != "INCAPACITATED")
+			}
+		)
 	)
 };
 
