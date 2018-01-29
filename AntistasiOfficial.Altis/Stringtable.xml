@@ -226,7 +226,7 @@
 			</Key>
 			<Key ID="STR_GENIDENT_AFRF">
 				<Original>AFRF</Original>
-				<Russian>Армия РФ</Russian>
+				<Russian>МО РФ</Russian>
 			</Key>
 			<Key ID="STR_GENIDENT_VMF">
 				<Original>VMF</Original>
@@ -748,11 +748,11 @@
 			</Key>
 			<Key ID="STR_UI_ALLY_QRF_TEXT">
 				<Original>QRF</Original>
-				<Russian>ГБР</Russian>
+				<Russian>ОБР</Russian>
 			</Key>
 			<Key ID="STR_UI_ALLY_QRF_TT">
 				<Original>Price: 10 Points -- A QRF will be dispatched from the chosen base/airport.</Original>
-				<Russian>Цена: 10 очков - Группа быстрого реагирования отправится из базы/авиабазы в выбранное место.</Russian>
+				<Russian>Цена: 10 очков - Отряд быстрого реагирования отправится из базы/авиабазы в выбранное место.</Russian>
 			</Key>
 			<Key ID="STR_UI_ALLY_RED_TEXT"><!--' Stef 30-08 '-->
 				<Original>Reduce Opfor support</Original>
@@ -886,11 +886,11 @@
 			</Key>
 			<Key ID="STR_UI_EMP_DELRB_TT">
 				<Original>Get HR refounded back if units are still operational</Original>
-				<Russian>Возврат очков HR, если бойцы в состоянии действовать</Russian>
+				<Russian>Возврат очков HR, если бойцы целы</Russian>
 			</Key>
 			<Key ID="STR_UI_EMP_MNAP_TEXT">
 				<Original>Deploy Minefield (AP)</Original>
-				<Russian>Минное поле ПП</Russian>
+				<Russian>Минное поле (ПП)</Russian>
 			</Key>
 			<Key ID="STR_UI_EMP_MNAP_TT">
 				<Original>Dangerous, it require mines in the arsenal, not tested yet with RHS and JAS</Original>
@@ -898,7 +898,7 @@
 			</Key>
 			<Key ID="STR_UI_EMP_MNAT_TEXT">
 				<Original>Deploy Minefield (AT)</Original>
-				<Russian>Минное поле ПТ</Russian>
+				<Russian>Минное поле (ПТ)</Russian>
 			</Key>
 			<Key ID="STR_UI_EMP_MNAT_TT">
 				<Original>Dangerous, it require mines in the arsenal, not tested yet with RHS and JAS</Original>
@@ -1244,7 +1244,7 @@
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_CVY_SUPPLY">
 				<Original>A truck with medical supplies is about to depart from %1 to %4 at %2:%3. Steal the truck and bring it to %4 . Let the people there know of the FIA's 'benevolence' .</Original>
-				<Russian>Конвой противника в %2:%3 отправляется из %1. Он перевозит медикаменты в %4. Захватите грузовик и сами привезите его в %4. Люди будут больше доверять АСН когда мы им помогаем, а не противник.</Russian>
+				<Russian>Конвой противника в %2:%3 отправляется из %1. Он перевозит медикаменты в %4. Захватите грузовик и сами привезите его в %4. Люди будут больше доверять FIA когда мы им помогаем, а не противник.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_CVY_HVT">
 				<Original>%1 HVT Convoy</Original>
@@ -1260,7 +1260,7 @@
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_DEFCAMP">
 				<Original>A QRF has just been spotted taking off from %2. Their initial heading suggests that %1 is their target. We have no choice, assume defensive positions</Original>
-				<Russian>Только что был замечен взлет десантного вертолёта из %2. Мы предполагаем, что их целью является %1. У нас нет выбора, займите оборонительные позиции.</Russian>
+				<Russian>Только что был замечен взлет десантного вертолёта ОБР из %2. Мы предполагаем, что их целью является %1. У нас нет выбора, займите оборонительные позиции.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_DESANTENNA">
 				<Original>Destroy Radio Tower</Original>
@@ -1280,7 +1280,7 @@
 			</Key>
 			<Key ID="STR_TSK_TD_DESVEHICLE">
 				<Original>Steal or Destroy Armor</Original>
-				<Russian>Украсть или уничтожить бронетехнику</Russian>
+				<Russian>Угнать или уничтожить бронетехнику</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_DESVEHICLE">
 				<Original>We know an %4 is stationed in %1. This is a good chance to steal or destroy it before it causes more damage. Do it before %2:%3.</Original>
@@ -1300,7 +1300,7 @@
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_FNDEXP">
 				<Original>Black Market dealer Devin Connell has been spotted near %1. He's scheduled for a flight to Metavira or Arulco at %2:%3, so you better hurry up if you wish to acquire some of his fine products. From our recent meetings with him, he has agreed to meet with FIA overt soldiers only, apparently he doesnt like civilians all that much. </Original>
-				<Russian>Дилер черного рынка Девин Коннелл торгует оружием рядом с %1. У него в кармане билет на самолёт, улетающий в %2:%3, так что Вам лучше поторопиться, если Вы хотите приобрести что-то из его отличного товара. Судя по последним встречам с ним, он будет разговаривать только с солдатами АСН без прикрытия, по видимому, непонятных гражданских он не очень любит.</Russian>
+				<Russian>Дилер черного рынка Девин Коннелл торгует оружием рядом с %1. У него в кармане билет на самолёт, улетающий в %2:%3, так что Вам лучше поторопиться, если Вы хотите приобрести что-то из его отличного товара. Судя по последним встречам с ним, он будет разговаривать только с солдатами FIA без прикрытия, по видимому, непонятных гражданских он не очень любит.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_FNDMIL">
 				<Original>Contact the Corrupt Officer</Original>
@@ -1312,7 +1312,7 @@
 			</Key>
 			<Key ID="STR_TSK_TD_LOGAMMO">
 				<Original>Steal or Destroy Ammotruck</Original>
-				<Russian>Украсть или уничтожить грузовик боеприпасов</Russian>
+				<Russian>Угнать или уничтожить грузовик боеприпасов</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_LOGAMMO">
 				<Original>We've spotted an enemy Ammotruck in an %1. This is a great opportunity to scavange some well-needed gear from the enemy. We have until  %2:%3.</Original>
@@ -1380,7 +1380,7 @@
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_PRPAMPHLET">
 				<Original>Supporters of our cause have been working hard to bring the population of %1 over to our side. Help these brave volunteers by delivering these leaflets to safe drop locations. Pick up will take place at %2:%3, so you better have them in place by then. This might be easier if you manage to remain undetected for as long as possible.</Original>
-				<Russian>Наши добровольцы стараются убедить население %1 стать нашими сторонниками. Помогите им, доставьте эти листовки по адресам, которуе они укажут. Ящики заберут в %2:%3, так что лучше их уже доставить к этому времени. Вам будет проще, если удастся остаться незамеченными как можно дольше.</Russian>
+				<Russian>Наши добровольцы стараются убедить население %1 стать нашими сторонниками. Помогите им, доставьте эти листовки по адресам, которые они укажут. Ящики заберут в %2:%3, так что лучше их уже доставить к этому времени. Вам будет проще, если удастся остаться незамеченными как можно дольше.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_PRPAMPHLET_FAIL">
 				<Original>You failed to provide leaflets for our volunteers in %1.</Original>
@@ -1436,7 +1436,7 @@
 			</Key>
 			<Key ID="STR_TSK_TD_DESfuel">
 				<Original>Steal or destroy Fuel Truck.</Original>
-				<Russian>Украсть или уничтожить Бензовоз.</Russian>
+				<Russian>Угнать или уничтожить Бензовоз.</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_DESfuel">
 				<Original>The enemy is taking fuel from the civilians to supply their war machine. The truck is leaving from %1 and will return there once it is full. We have a contact who will let us know when the truck is at the fuel station. Destroy the fuel truck or take its control.</Original>
@@ -2138,7 +2138,7 @@
 			</Key>
 			<Key ID="STR_HINTS_NATOD_COTBOACFWYWNATOTDAQRF">
 			    <Original>Click on the base or airport/carrier from which you want NATO to dispatch a QRF</Original>
-				<Russian>Укажите базу/авиабазу/авианосец, откуда необходимо отправить ГБР НАТО</Russian>
+				<Russian>Укажите базу/авиабазу/авианосец, откуда необходимо отправить ОБР НАТО</Russian>
 			</Key>
 			<Key ID="STR_HINTS_NATOD_YIASEFEIDWRTCATI">
 			    <Original>You informed about supporting enemy faction emplacement, its destruction will reduce their concern about the island</Original>
@@ -2154,7 +2154,7 @@
 			</Key>
 			<Key ID="STR_HINTS_NATOD_QRFDF1MTTFTQRF">
 			    <Original>QRF departing from %1. Mark the target for the QRF.</Original>
-				<Russian>ГБР отправляется из %1. Отметьте цель для ГБР.</Russian>
+				<Russian>ОБР отправляется из %1. Отметьте цель для ОБР.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_NATOD_NLCSATDQRFIRTL">
 			    <Original>No LCS available this decade, QRF is restricted to land.</Original>
@@ -2162,7 +2162,7 @@
 			</Key>
 			<Key ID="STR_HINTS_NATOD_QRFI">
 			    <Original>QRF inbound.</Original>
-				<Russian>ГБР прибывает</Russian>
+				<Russian>ОБР прибывает</Russian>
 			</Key>
 			<Key ID="STR_HINTS_NATOD_YMCNAMM">
 			    <Original>You must click near a map marker</Original>
@@ -2527,7 +2527,7 @@
 			</Key>
 			<Key ID="STR_D_NATO_QRF">
 				<Original>NATO QRF</Original>
-				<Russian>НАТО ГБР</Russian>
+				<Russian>НАТО ОБР</Russian>
 			</Key>
 			<Key ID="STR_D_NATO_UAV">
 				<Original>NATO UAV</Original>
@@ -3331,7 +3331,7 @@
 			</Key>
 			<Key ID="STR_DH_EFTSE">
 				<Original>Extended Fast Travel system enabled</Original>
-				<Russian>Расширенная система Быстрого перемещения Вкл.</Russian>
+				<Russian>Расширенная система быстрого перемещения Вкл.</Russian>
 			</Key>
 			<Key ID="STR_DH_EMD">
 				<Original>Easy Mode disabled</Original>
@@ -3654,7 +3654,7 @@
 				<Russian>
 					В информационной строке отображается информация о кампании, ресурсах и секретном статусе.&lt;br/&gt;&lt;br/&gt;
 
-					- Командир: текущий Командир. Отображается «Нет», если членство включено, но нет ни одного члена онлайн, который имеет право на командование. В этом случае будут заморожены следующие функции: экономика (начисление HR и денег), реакция врага в виде направления групп быстрого реагирования (ГБР), атаки противника и появление случайных миссий.&lt;br/&gt;&lt;br/&gt;
+					- Командир: текущий Командир. Отображается «Нет», если членство включено, но нет ни одного члена онлайн, который имеет право на командование. В этом случае будут заморожены следующие функции: экономика (начисление HR и денег), реакция врага в виде направления отрядов быстрого реагирования (ОБР), атаки противника и появление случайных миссий.&lt;br/&gt;&lt;br/&gt;
                        Нажмите кнопку «Y» (раскладка клавиатуры США), когда Командир «Отсутствует», будет проведеня проверка на нового Командира.&lt;br/&gt;
 					- Ранг: влияет на отвагу Ваших ИИ и то, насколько эффективно они будут выполнять приказы. Ранг возрастает от убийства противников, но больший рост ранга обеспечивается успешным выполнением миссий.&lt;br/&gt;
 					В мультиплеере можно тратить свои деньги FIA для повышения ранга.&lt;br/&gt;&lt;br/&gt;
@@ -3842,7 +3842,7 @@
 					The Commander can set up a roadblock from the Y menu. Roadblocks are very effective in taking out one or two enemy vehicles thanks to their AT capabilities and .50 cal machine guns.&lt;br/&gt;&lt;br/&gt;
 				</Original>
 				<Russian>
-					Каждый раз, когда Вы захватываете или уничтожаете цели (базы/ОП/авиабазы), враг отправляет ГБР (группу быстрого реагирования) из ближайшей базы или авиабазы. Чтобы защитить зону нужно ожидать этого и защититься от этой первой атаки. &lt;br/&gt;
+					Каждый раз, когда Вы захватываете или уничтожаете цели (базы/ОП/авиабазы), враг отправляет ОБР (отряд быстрого реагирования) из ближайшей базы или авиабазы. Чтобы защитить зону, нужно приготовиться и отразить эту первую атаку. &lt;br/&gt;
 					Враг будет проверять укомплектованность своих гарнизонов и может решить отправить патруль, чтобы отбить захваченный Вами объект.&lt;br/&gt;
 					Атакуйте сами или отправьте отряды, чтобы вернуть потерянный объект.&lt;br/&gt;
 					Именно поэтому Вам нужны очки HR - они дают возможность комплектовать бойцами гарнизоны, увеличивать уровень Опыта Армии, повышать боеспособность гарнизонов, чтобы они могли противостоять атакам серьезных сил врага. Также для этого можно пользоваться поддержкой союзников.&lt;br/&gt;
@@ -4315,7 +4315,7 @@
 
 					- Бомбардировка: выберите точки начала и конца направления бомбометания. Самолет отправится с авианосца или ближайшей контролируемой авиабазы, нельзя контролировать через меню Командира, эффективность использования приходит с опытом.&lt;br/&gt;&lt;br/&gt;
 
-					- ГБР: группа быстрого реагирования; малые транспортные вертолеты выдвигаются с авианосца или ближайшей контролируемой авиабазы, высаживает десант в указанное место.
+					- ОБР: отряд быстрого реагирования; малые транспортные вертолеты выдвигаются с авианосца или ближайшей контролируемой авиабазы, десант высаживается в указанное место.
 				</Russian>
 			</Key>
 			<Key ID="STR_BR_CM3R">
