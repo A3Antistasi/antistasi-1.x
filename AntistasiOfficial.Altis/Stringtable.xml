@@ -675,11 +675,11 @@
 			</Key>
 			<Key ID="STR_UI_NAVCOM_MAINT_TEXT">
 				<Original>Maintenance</Original>
-				<Russian>Сервис</Russian><!-- Редакт. тут надо посмотреть -->
+				<Russian>Сервис</Russian>
 			</Key>
 			<Key ID="STR_UI_NAVCOM_MAINT_TT">
 				<Original>Additonal maintenance functions.</Original>
-				<Russian>Дополнительные функции для решения проблем.</Russian><!-- Редакт. тут надо посмотреть -->
+				<Russian>Дополнительные функции для решения проблем.</Russian>
 			</Key>
 		</Container>
 		<Container name="Ally_Menu">
@@ -810,7 +810,7 @@
 			</Key>
 			<Key ID="STR_UI_SR_ATTR_TT">
 				<Original>HR= money=1300 - A truck with a static AT attached, might benefit of AI management section &quot;Static Autotarget&quot;</Original>
-				<Russian>HR= денег=1300 - Грузовик с противотанк. оружием, лучше включить «Автоприцел. станк. вооружения» в пункте меню «Упр. отрядами».</Russian>
+				<Russian>HR= денег=1300 - Грузовик с противотанк. оружием, лучше включить «Автоприцел. станк. оружия» в пункте меню «Упр. отрядами».</Russian>
 			</Key>
 			<Key ID="STR_UI_SR_SENTRY_TEXT">
 				<Original>Sentry</Original>
@@ -868,7 +868,7 @@
 			</Key>
 			<Key ID="STR_UI_SM_AUTOT_TT">
 				<Original>Static gun attached to vehicles can benefit by rotating for a better target acquisition</Original>
-				<Russian>Станковое оружие, установленное на транспортном средстве сможет поворачивается - для лучшего захвата цели</Russian>
+				<Russian>Станковое оружие на транспорте сможет поворачиваться - для лучшего контроля цели</Russian>
 			</Key>
 		</Container>
 		<Container name="Emplacement">
@@ -986,7 +986,7 @@
 			</Key>
 			<Key ID="STR_UI_MAINT_MOV_TT">
 				<Original>Reinitialize your ability to move statics and HQ assets.</Original>
-				<Russian>Перезапустить свою способность переносить станковое вооружение и Предметы Штаба.</Russian>
+				<Russian>Перезапустить свою способность переносить станковое оружие и Предметы Штаба.</Russian>
 			</Key>
 			<Key ID="STR_UI_MAINT_RES_TEXT">
 				<Original>Reset HQ</Original>
@@ -1684,7 +1684,7 @@
 			</Key>
 			<Key ID="STR_HINTS_GEN_STEAL_FAIL">
 				<Original>There are not enough funds for you to borrow anything.</Original>
-				<Russian>Недостаточно средств, чтобы Вы взяли что-либо.</Russian><Редакт.>
+				<Russian>Недостаточно средств, чтобы Вы взяли что-либо.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_GEN_STEAL_SUC">
 				<Original>You've taken 100€ from the general budget. Invest it wisely.</Original>
@@ -2158,7 +2158,7 @@
 			</Key>
 			<Key ID="STR_HINTS_NATOD_NLCSATDQRFIRTL">
 			    <Original>No LCS available this decade, QRF is restricted to land.</Original>
-				<Russian>В этом десятилетии нет LCS, QRF ограничен землей.</Russian> <!-- Редакт. ???????-->
+				<Russian>Десантные корабли недоступны, ОБР может действовать только на суше.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_NATOD_QRFI">
 			    <Original>QRF inbound.</Original>
@@ -2656,7 +2656,7 @@
 			</Key>
 			<Key ID="STR_D_SQ_VS">
 				<Original>Squad Vehicle Stats</Original>
-				<Russian>Отряд станк. оружия</Russian>
+				<Russian>Расчет станк. оружия</Russian>
 				<!-- Редакт. -->
 			</Key>
 			<Key ID="STR_D_MO_DISMO">
@@ -3130,7 +3130,7 @@
 			</Key>
 			<Key ID="STR_D_FTOOF">
 				<Original>FT On/Off</Original>
-				<Russian>Быстр.перем. Вкл/Выкл</Russian>
+				<Russian>Быстр.перемещение Вкл/Выкл</Russian>
 				<!-- Редакт. -->
 			</Key>
 			<Key ID="STR_D_TTOFTSOOF">
@@ -3966,7 +3966,7 @@
 					- Dismiss: send the unit back to HQ. Upon arrival their cost in money and HR is refunded.
 				</Original>
 				<Russian>
-					Командир и члены сервера могут нанимать бойцов у Флага или нанимать гарнизон на завоеванных объектах. Вначале они будут одеты в гражданскую одежду, оружие выдается случайным образом из оружия, соответствующего их классу, которое имеется в наличии в Арсеналее. &lt;br/&gt;&lt;br/&gt; <!-- Редакт. -->
+					Командир и члены сервера могут нанимать бойцов у Флага или нанимать гарнизон на завоеванных объектах. Вначале они будут одеты в гражданскую одежду, оружие выдается случайным образом из оружия, соответствующего их классу, которое имеется в наличии в Арсенале. &lt;br/&gt;&lt;br/&gt;
 
 					В текущей версии количество оружия в Арсенале не требуют порогового значения для разблокировки (Antistasi 1.7.5 и ранее). &lt;br/&gt;&lt;br/&gt;
 
