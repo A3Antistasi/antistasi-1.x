@@ -17,53 +17,54 @@ _buildings = nearestObjects [_markerPos, listMilBld, _size*1.5];
 _groupGunners = createGroup side_green;
 _allGroups pushBack _groupGunners;
 
-for "_i" from 0 to (count _buildings) - 1 do {
-	_building = _buildings select _i;
-	_type = typeOf _building;
+if!(_reduced) then {
+	for "_i" from 0 to (count _buildings) - 1 do {
+		_building = _buildings select _i;
+		_type = typeOf _building;
 
-	call {
-		if 	((_type == "Land_Cargo_HQ_V1_F") OR (_type == "Land_Cargo_HQ_V2_F") OR (_type == "Land_Cargo_HQ_V3_F")) exitWith {
-			_vehicle = createVehicle [statAA, (_building buildingPos 8), [],0, "CAN_COLLIDE"];
-			_vehicle setPosATL [(getPos _building select 0),(getPos _building select 1),(getPosATL _vehicle select 2)];
-			_vehicle setDir (getDir _building);
-			_vehicle disableTIEquipment true; //Stef disable thermal vision of static guns, AI won't use it and it's just unbalanced if player get it.
-			_unit = ([_markerPos, 0, infGunner, _groupGunners] call bis_fnc_spawnvehicle) select 0;
-			_unit moveInGunner _vehicle;
-			_allVehicles pushBack _vehicle;
-			sleep 1;
-		};
+		call {
+			if 	((_type == "Land_Cargo_HQ_V1_F") OR (_type == "Land_Cargo_HQ_V2_F") OR (_type == "Land_Cargo_HQ_V3_F")) exitWith {
+				_vehicle = createVehicle [statAA, (_building buildingPos 8), [],0, "CAN_COLLIDE"];
+				_vehicle setPosATL [(getPos _building select 0),(getPos _building select 1),(getPosATL _vehicle select 2)];
+				_vehicle setDir (getDir _building);
+				_vehicle disableTIEquipment true; //Stef disable thermal vision of static guns, AI won't use it and it's just unbalanced if player get it.
+				_unit = ([_markerPos, 0, infGunner, _groupGunners] call bis_fnc_spawnvehicle) select 0;
+				_unit moveInGunner _vehicle;
+				_allVehicles pushBack _vehicle;
+				sleep 1;
+			};
 
-		if 	((_type == "Land_Cargo_Patrol_V1_F") OR (_type == "Land_Cargo_Patrol_V2_F") OR (_type == "Land_Cargo_Patrol_V3_F")) exitWith {
-			_vehicle = createVehicle [statMGtower, (_building buildingPos 1), [], 0, "CAN_COLLIDE"];
-			_ang = (getDir _building) - 180;
-			_position = [getPosATL _vehicle, 2.5, _ang] call BIS_Fnc_relPos;
-			_vehicle setPosATL _position;
-			_vehicle setDir (getDir _building) - 180;
-			_vehicle disableTIEquipment true; //Stef disable thermal vision of static guns, AI won't use it and it's just unbalanced if player get it.
-			_unit = ([_markerPos, 0, infGunner, _groupGunners] call bis_fnc_spawnvehicle) select 0;
-			_unit moveInGunner _vehicle;
-			_allVehicles pushBack _vehicle;
-			sleep 1;
-		};
+			if 	((_type == "Land_Cargo_Patrol_V1_F") OR (_type == "Land_Cargo_Patrol_V2_F") OR (_type == "Land_Cargo_Patrol_V3_F")) exitWith {
+				_vehicle = createVehicle [statMGtower, (_building buildingPos 1), [], 0, "CAN_COLLIDE"];
+				_ang = (getDir _building) - 180;
+				_position = [getPosATL _vehicle, 2.5, _ang] call BIS_Fnc_relPos;
+				_vehicle setPosATL _position;
+				_vehicle setDir (getDir _building) - 180;
+				_vehicle disableTIEquipment true; //Stef disable thermal vision of static guns, AI won't use it and it's just unbalanced if player get it.
+				_unit = ([_markerPos, 0, infGunner, _groupGunners] call bis_fnc_spawnvehicle) select 0;
+				_unit moveInGunner _vehicle;
+				_allVehicles pushBack _vehicle;
+				sleep 1;
+			};
 
-		if 	(_type in listbld) exitWith {
-			_vehicle = createVehicle [statMGtower, (_building buildingPos 13), [], 0, "CAN_COLLIDE"];
-			_vehicle disableTIEquipment true;
-			_unit = ([_markerPos, 0, infGunner, _groupGunners] call bis_fnc_spawnvehicle) select 0;
-			_unit moveInGunner _vehicle;
-			_allSoldiers = _allSoldiers + [_unit];
-			sleep 1;
-			_allVehicles = _allVehicles + [_vehicle];
-			_vehicle = createVehicle [statMGtower, (_building buildingPos 17), [], 0, "CAN_COLLIDE"];
-			_vehicle disableTIEquipment true; //Stef disable thermal vision of static guns, AI won't use it and it's just unbalanced if player get it.
-			_unit = ([_markerPos, 0, infGunner, _groupGunners] call bis_fnc_spawnvehicle) select 0;
-			_unit moveInGunner _vehicle;
-			_allVehicles pushBack _vehicle;
-			sleep 1;
+			if 	(_type in listbld) exitWith {
+				_vehicle = createVehicle [statMGtower, (_building buildingPos 13), [], 0, "CAN_COLLIDE"];
+				_vehicle disableTIEquipment true;
+				_unit = ([_markerPos, 0, infGunner, _groupGunners] call bis_fnc_spawnvehicle) select 0;
+				_unit moveInGunner _vehicle;
+				_allSoldiers = _allSoldiers + [_unit];
+				sleep 1;
+				_allVehicles = _allVehicles + [_vehicle];
+				_vehicle = createVehicle [statMGtower, (_building buildingPos 17), [], 0, "CAN_COLLIDE"];
+				_vehicle disableTIEquipment true; //Stef disable thermal vision of static guns, AI won't use it and it's just unbalanced if player get it.
+				_unit = ([_markerPos, 0, infGunner, _groupGunners] call bis_fnc_spawnvehicle) select 0;
+				_unit moveInGunner _vehicle;
+				_allVehicles pushBack _vehicle;
+				sleep 1;
+			};
 		};
 	};
 };
-
 
 
 _flag = createVehicle [cFlag, _markerPos, [],0, "CAN_COLLIDE"];

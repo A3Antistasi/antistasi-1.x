@@ -1,4 +1,4 @@
-params ["_marker", ["_min", 2000],["_max", 5000]];
+params ["_marker", ["_min", 2000],["_max", 2500]];
 private ["_position", "_cities"];
 
 _position = getMarkerPos _marker;

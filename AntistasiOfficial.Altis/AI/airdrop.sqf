@@ -46,7 +46,7 @@ _engagepos = [_landpos, 1000, _randang] call BIS_Fnc_relPos;
 _engagepos = _landpos getPos [_distEng, _randang];
 {_x set [2,300]} forEach [_landPos,_exitPos,_engagePos];
 {_x setBehaviour "CARELESS"} forEach units _heli;
-_veh flyInHeight 300;
+_veh flyInHeight 100;
 _veh setCollisionLight false;
 
 _wp = _heli addWaypoint [_engagepos, 0];

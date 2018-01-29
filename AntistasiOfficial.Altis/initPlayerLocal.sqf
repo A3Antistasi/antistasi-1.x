@@ -221,6 +221,7 @@ INFO("Game is ready to initialize player");
 //Teleport to the guer_respawn marker
 waitUntil {!isNil "posHQ"};
 systemChat "Teleporting player to HQ";
+sleep 2;
 player setPos (posHQ getPos [8,random 360]);
 player setdir (player getdir petros);
 INFO("Player is moved to the camp");

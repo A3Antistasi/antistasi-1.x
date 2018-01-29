@@ -220,7 +220,7 @@ while {(spawner getVariable _marker) AND (_counter < _strength)} do {
 	_maxVehicles = 1 max (round ((_size/30)*_support));
 	_spawnPos = _markerPos;
 	_counter = 0;
-	while {(spawner getVariable _marker) AND (_counter < _maxVehicles)} do {
+	/*while {(spawner getVariable _marker) AND (_counter < _maxVehicles)} do {
 		if (diag_fps > minimoFPS) then {
 			_vehicleType = vehNATO call BIS_fnc_selectRandom;
 			if (_size > 40) then {_spawnPos = [_markerPos, 10, _size/2, 10, 0, 0.3, 0] call BIS_Fnc_findSafePos} else {_spawnPos = _spawnPos findEmptyPosition [10,60,_vehicleType]};
@@ -232,7 +232,7 @@ while {(spawner getVariable _marker) AND (_counter < _strength)} do {
 		};
 
 		_counter = _counter + 1;
-	};
+	};*/
 
 //NATO Garrison add to array
 	_gunnerGroup = createGroup side_blue;
@@ -329,14 +329,13 @@ if ((random 100 < (((server getVariable "prestigeNATO") + (server getVariable "p
 	[_group, _marker, "SAFE", "SPAWNED","NOFOLLOW", "NOVEH2","NOSHARE","DoRelax"] execVM "scripts\UPSMON.sqf";
 };
 
-//Despawn conditions
+//Despawn conditions FIA
 	waitUntil {sleep 1;
 		!(spawner getVariable _marker) OR
 		(
-		 	({!(vehicle _x isKindOf "Air")}
-		 	count ([_size,0,_markerPos,"OPFORSpawn"] call distanceUnits))
-		 	> 3*
-		 	(({alive _x} count _allSoldiers) + count ([_size,0,_markerPos,"BLUFORSpawn"] call distanceUnits))
+		 	( {!(vehicle _x isKindOf "Air") OR (lifeState _x != "INCAPACITATED")} count ([_size,0,_markerPos,"OPFORSpawn"] call distanceUnits)
+		 	) > 3*(
+		 	( {(alive _x) AND (lifeState _x != "INCAPACITATED")} count _allSoldiers) + count ([_size,0,_markerPos,"BLUFORSpawn"] call distanceUnits) )
 		)
 	};
 
@@ -347,5 +346,5 @@ if ((random 100 < (((server getVariable "prestigeNATO") + (server getVariable "p
 	//Despawn
 		waitUntil {sleep 1; !(spawner getVariable _marker)};
 
-		[_allGroups + _guerGroups, _allSoldiers + _guerSoldiers, _allVehicles + _guerVehicles] spawn AS_fnc_despawnUnitsNow;
+		[_allGroups + _guerGroups, _allSoldiers + _guerSoldiers, _allVehicles + _guerVehicles] call AS_fnc_despawnUnitsNow;
 		if !(isNull _observer) then {deleteVehicle _observer};

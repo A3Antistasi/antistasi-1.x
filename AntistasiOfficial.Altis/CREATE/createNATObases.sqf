@@ -22,8 +22,8 @@ _buildings = nearestObjects [_markerPos, listMilBld, _size*1.5];
 _group = createGroup side_blue;
 _allGroups pushBack _group;
 
-//NATO Garrison selection
-	/*for "_i" from 0 to (count _buildings) - 1 do {
+if((NATOgarrison getVariable [_marker,0]) == 2 ) then {
+	for "_i" from 0 to (count _buildings) - 1 do {
 		_building = _buildings select _i;
 		_buildingType = typeOf _building;
 
@@ -64,8 +64,8 @@ _allGroups pushBack _group;
 				sleep 1;
 			};
 		};
-	}; */
-
+	};
+};
 	_spawnPos = [_markerPos, 3,0] call BIS_fnc_relPos;
 	_flag = createVehicle [bluFlag, _spawnPos, [],0, "CAN_COLLIDE"];
 	_flag allowDamage false;
@@ -109,7 +109,7 @@ _allGroups pushBack _group;
 
 		_counter = _counter + 1;
 	};
-/*
+/*if((NATOgarrison getVariable [_marker,0]) == 1 ) then {
 	_groupType = [bluTeam, side_blue] call AS_fnc_pickGroup;
 	_group = [_markerPos, side_blue, _groupType] call BIS_Fnc_spawnGroup;
 	sleep 1;
@@ -139,7 +139,8 @@ _allGroups pushBack _group;
 		};
 
 		_counter = _counter + 1;
-	};*/
+	};
+};*/
 //NATO Garrison add to array
 	_gunnerGroup = createGroup side_blue;
 	_guerGroups pushBack _gunnerGroup;
@@ -244,14 +245,14 @@ _allGroups pushBack _group;
 		[_group, _marker, "SAFE", "SPAWNED","NOFOLLOW", "NOVEH2","NOSHARE","DoRelax"] execVM "scripts\UPSMON.sqf";
 	};
 
-//Despawn conditions
+//Despawn conditions FIA
 	waitUntil {sleep 1;
 		!(spawner getVariable _marker) OR
 		(
-		 	({!(vehicle _x isKindOf "Air")}
-		 	count ([_size,0,_markerPos,"OPFORSpawn"] call distanceUnits))
-		 	> 2*(({alive _x} count _allSoldiers) + count ([_size,0,_markerPos,"BLUFORSpawn"] call distanceUnits))
-		 )
+		 	( {!(vehicle _x isKindOf "Air") OR (lifeState _x != "INCAPACITATED")} count ([_size,0,_markerPos,"OPFORSpawn"] call distanceUnits)
+		 	) > 3*(
+		 	( {(alive _x) AND (lifeState _x != "INCAPACITATED")} count _allSoldiers) + count ([_size,0,_markerPos,"BLUFORSpawn"] call distanceUnits) )
+		)
 	};
 
 	//Territory loose conditions
@@ -259,7 +260,7 @@ _allGroups pushBack _group;
 			if (_marker != "FIA_HQ") then {[_marker] remoteExec ["mrkLOOSE",2]};
 		};
 
-
+		//Despawn
 		if (count ([distanciaSPWN,0,_markerPos,"BLUFORSpawn"] call distanceUnits) < 1) then {
 			spawner setVariable [_marker,false,true];
 		};
@@ -271,5 +272,5 @@ waitUntil {sleep 1; !(spawner getVariable _marker)};
 		{if ((!alive _x) AND !(_x in destroyedBuildings)) then {destroyedBuildings = destroyedBuildings + [position _x]; publicVariableServer "destroyedBuildings"}} forEach _buildings;
 
 	//Despawn
-		[_allGroups + _guerGroups, _allSoldiers + _guerSoldiers, _allVehicles + _guerVehicles] spawn AS_fnc_despawnUnits; //AS_fnc_despawnUnits is waiting for blufor to leave, not opfor!! So they might spawn multiple times.
+		[_allGroups + _guerGroups, _allSoldiers + _guerSoldiers, _allVehicles + _guerVehicles] call AS_fnc_despawnUnitsNow; //AS_fnc_despawnUnits is waiting for blufor to leave, not opfor!! So they might spawn multiple times.
 		if !(isNull _observer) then {deleteVehicle _observer};

@@ -28,7 +28,7 @@ if !(_forceBase == "") then {
 
 //Conditions to prevent the counterattack
 	//diag_fps
-		if (!(_forcedAttack) AND (diag_fps < minimoFPS)) exitWith {diag_log format ["Info: Small attack on %1 called off, low server FPS.", _marker]};
+		if (!(_forcedAttack) AND (count allunits > 200)) exitWith {diag_log format ["Info: Small attack on %1 called off, too many units.", _marker]};
 
 		_exit = false;
 	//another counterattack active in same zone (disabled)
@@ -112,6 +112,7 @@ _allGroups = [];
 _roads = [];
 
 //Smallcounterattack sent from base
+	//Find spawn position
 	if !(_base == "") then {
 		_airport = "";
 		_involveCSAT = false;
@@ -127,10 +128,10 @@ _roads = [];
 			_vehicleArray =+ (enemyMotorpool - vehPatrol -vehTank);
 			call {
 				if ((_threatEvaluation > 5) AND (count (enemyMotorpool arrayIntersect (vehTank + vehIFV)) > 0)) exitWith {
-					_vehicleArray = _vehicleArray - vehPatrol - vehTrucks;
+					_vehicleArray = _vehicleArray - vehTrucks - vehTank;
 				};
 				if ((_threatEvaluation > 3) AND (count (enemyMotorpool arrayIntersect (vehIFV + vehAPC)) > 0)) then {
-					_vehicleArray = _vehicleArray - vehTrucks;
+					_vehicleArray = _vehicleArray - vehTrucks - vehTank;
 				};
 			};
 
@@ -340,9 +341,6 @@ _roads = [];
 		waitUntil {sleep 5;(
 
 			//
-			({!(captive _x)} count _allSoldiers) < ({captive _x} count _allSoldiers)) OR
-
-			//
 			({(alive _x) and (lifeState _x != "INCAPACITATED")} count _allSoldiers < (round ((count _allSoldiers)/3))) OR
 
 			//
@@ -350,7 +348,8 @@ _roads = [];
 
 			//
 			(time > _attackDuration)
-		};
+		)
+	};
 
 		smallCAmrk = smallCAmrk - [_marker];
 		publicVariable "smallCAmrk";
