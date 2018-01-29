@@ -74,7 +74,7 @@ for "_i" from 1 to _cuenta do {
 					_wp0 = _grupoheli addWaypoint [_landpos, 0];
 					_wp0 setWaypointType "TR UNLOAD";
 					_wp0 setWaypointSpeed "FULL";
-					_wp0 setWaypointStatements ["true", "(vehicle this) land 'GET OUT'; [vehicle this] call smokeCoverAuto"];
+					_wp0 setWaypointStatements ["true", "(vehicle this) land 'GET OUT';"];
 					[_grupoheli,0] setWaypointBehaviour "CARELESS";
 					_wp3 = _grupo addWaypoint [_landpos, 0];
 					_wp3 setWaypointType "GETOUT";
@@ -106,7 +106,7 @@ for "_i" from 1 to _cuenta do {
 			_wp0 = _grupoheli addWaypoint [_landpos, 0];
 			_wp0 setWaypointType "TR UNLOAD";
 			_wp0 setWaypointSpeed "FULL";
-			_wp0 setWaypointStatements ["true", "(vehicle this) land 'GET OUT'; [vehicle this] call smokeCoverAuto"];
+			_wp0 setWaypointStatements ["true", "(vehicle this) land 'GET OUT';"];
 			[_grupoheli,0] setWaypointBehaviour "CARELESS";
 			_wp3 = _grupo addWaypoint [_landpos, 0];
 			_wp3 setWaypointType "GETOUT";
@@ -143,7 +143,7 @@ for "_i" from 1 to _cuenta do {
 				_wp0 = _grupoheli addWaypoint [_landpos, 0];
 				_wp0 setWaypointType "TR UNLOAD";
 				_wp0 setWaypointSpeed "FULL";
-				_wp0 setWaypointStatements ["true", "(vehicle this) land 'GET OUT'; [vehicle this] call smokeCoverAuto"];
+				_wp0 setWaypointStatements ["true", "(vehicle this) land 'GET OUT';"];
 				[_grupoheli,0] setWaypointBehaviour "CARELESS";
 				_wp3 = _grupo addWaypoint [_landpos, 0];
 				_wp3 setWaypointType "GETOUT";

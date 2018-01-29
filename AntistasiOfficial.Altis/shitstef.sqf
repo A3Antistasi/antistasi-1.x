@@ -168,3 +168,5 @@ if (count _soldiers > 0) then {
 
 //QRF
 	[_marker] spawn {sleep random [300,420,600]; [_this select 0] spawn patrolCA;};
+
+	[_marker] spawn {sleep random [300,420,600]; if ((player distance [_this select 0]) < 300) then {[_this select 0] spawn patrolCA;};};

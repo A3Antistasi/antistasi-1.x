@@ -97,13 +97,13 @@ if (_marker != "FIA_HQ") then {
 			_group = createGroup civilian;
 			_allGroups pushBack _group;
 			for "_i" from 1 to 8 do {
-				_unit = _group createUnit [selectRandom CIV_workers, _markerPos, [],0, "NONE"];
+				_unit = _group createUnit [selectRandom CIV_workers, _markerPos, [],15, "NONE"];
 				[_unit] spawn CIVinit;
 				_workers pushBack _unit;
 				sleep 0.5;
 			};
 			[_marker,_workers] spawn destroyCheck;
-			[_group, _marker, "SAFE", "SPAWNED","NOFOLLOW", "NOSHARE","DORELAX","NOVEH2"] execVM "scripts\UPSMON.sqf";
+			//[_group, _marker, "SAFE", "SPAWNED","NOFOLLOW", "NOSHARE","DORELAX","NOVEH2"] execVM "scripts\UPSMON.sqf";
 		};
 	};
 };
