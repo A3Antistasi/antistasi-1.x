@@ -22,8 +22,8 @@ _buildings = nearestObjects [_markerPos, listMilBld, _size*1.5];
 _group = createGroup side_blue;
 _allGroups pushBack _group;
 
-//NATO Garrison selection
-	/*for "_i" from 0 to (count _buildings) - 1 do {
+if((NATOgarrison getVariable [_marker,0]) == 2 ) then {
+	for "_i" from 0 to (count _buildings) - 1 do {
 		_building = _buildings select _i;
 		_buildingType = typeOf _building;
 
@@ -64,8 +64,8 @@ _allGroups pushBack _group;
 				sleep 1;
 			};
 		};
-	}; */
-
+	};
+};
 	_spawnPos = [_markerPos, 3,0] call BIS_fnc_relPos;
 	_flag = createVehicle [bluFlag, _spawnPos, [],0, "CAN_COLLIDE"];
 	_flag allowDamage false;
@@ -109,7 +109,7 @@ _allGroups pushBack _group;
 
 		_counter = _counter + 1;
 	};
-/*
+/*if((NATOgarrison getVariable [_marker,0]) == 1 ) then {
 	_groupType = [bluTeam, side_blue] call AS_fnc_pickGroup;
 	_group = [_markerPos, side_blue, _groupType] call BIS_Fnc_spawnGroup;
 	sleep 1;
@@ -139,7 +139,8 @@ _allGroups pushBack _group;
 		};
 
 		_counter = _counter + 1;
-	};*/
+	};
+};*/
 //NATO Garrison add to array
 	_gunnerGroup = createGroup side_blue;
 	_guerGroups pushBack _gunnerGroup;

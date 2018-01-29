@@ -220,7 +220,7 @@ while {(spawner getVariable _marker) AND (_counter < _strength)} do {
 	_maxVehicles = 1 max (round ((_size/30)*_support));
 	_spawnPos = _markerPos;
 	_counter = 0;
-	while {(spawner getVariable _marker) AND (_counter < _maxVehicles)} do {
+	/*while {(spawner getVariable _marker) AND (_counter < _maxVehicles)} do {
 		if (diag_fps > minimoFPS) then {
 			_vehicleType = vehNATO call BIS_fnc_selectRandom;
 			if (_size > 40) then {_spawnPos = [_markerPos, 10, _size/2, 10, 0, 0.3, 0] call BIS_Fnc_findSafePos} else {_spawnPos = _spawnPos findEmptyPosition [10,60,_vehicleType]};
@@ -232,7 +232,7 @@ while {(spawner getVariable _marker) AND (_counter < _strength)} do {
 		};
 
 		_counter = _counter + 1;
-	};
+	};*/
 
 //NATO Garrison add to array
 	_gunnerGroup = createGroup side_blue;
