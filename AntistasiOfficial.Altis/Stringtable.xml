@@ -8,11 +8,11 @@
 			</Key>
 			<Key ID="STR_DES_ESWCMD">
 				<Original>Antistasi: enable Switch Commander</Original>
-				<Russian>Antistasi: enable Switch Commander</Russian>
+				<Russian>Antistasi: включить Автоназначение Командира</Russian>
 			</Key>
 			<Key ID="STR_DES_ESRMBR">
 				<Original>Antistasi: enable Server Membership</Original>
-				<Russian>Antistasi: enable Server Membership</Russian>
+				<Russian>Antistasi: включить Список Игроков</Russian>
 			</Key>
 			<Key ID="STR_DES_USABJN">
 				<Original>Antistasi: use customized arsenal by Jeroen Not</Original>
@@ -28,10 +28,8 @@
 			</Key>
 			<Key ID="STR_DES_ENVCOMAI">
 				<Original>Antistasi: enable VCOM AI for server/headless client</Original>
-				<Russian>Antistasi: enable VCOM AI for server/headless client</Russian>
+				<Russian>Antistasi: включить VCOM AI</Russian>
 			</Key>
-
-
 			<Key ID="STR_DES_ON">
 				<Original>On</Original>
 				<Russian>ВКЛ</Russian>
@@ -62,7 +60,7 @@
 			</Key>
 			<Key ID="STR_ACT_LIBERATE">
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Liberate POW</Original>
-				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Освободить Военопленного</Russian>
+				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Освободить Военнопленного</Russian>
 			</Key>
 			<Key ID="STR_ACT_ORDERREFUGEE">
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Order refugee to follow</Original>
