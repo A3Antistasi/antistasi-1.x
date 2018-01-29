@@ -88,7 +88,7 @@ _grupo = [_posicion, side_green, _tipogrupo] call BIS_Fnc_spawnGroup;
 
 {_x assignAsCargo _veh; _x moveInCargo _veh; _soldados = _soldados + [_x]; [_x] join _grupoveh; [_x] spawn genInit} forEach units _grupo;
 deleteGroup _grupo;
-[_veh] spawn smokeCover;
+//[_veh] spawn smokeCover;
 
 _Vwp0 = _grupoVeh addWaypoint [_poscrash, 0];
 _Vwp0 setWaypointType "TR UNLOAD";

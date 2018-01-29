@@ -83,7 +83,7 @@ if (_vehicleType isKindOf "Car") then {
 		_soldier assignAsCargo _vehicle;
 		_soldier moveInCargo _vehicle;
 	};
-	[_vehicle] spawn smokeCover;
+	//[_vehicle] spawn smokeCover;
 };
 
 {

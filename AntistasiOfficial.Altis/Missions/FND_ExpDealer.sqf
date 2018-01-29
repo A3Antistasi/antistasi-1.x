@@ -126,7 +126,7 @@ if (random 8 < 1) then {
 	{_x assignAsCargo _veh; _x moveInCargo _veh; _soldados = _soldados + [_x]; [_x] spawn genInit} forEach units _grupo;
 	_grupos = _grupos + [_grupo];
 
-	[_veh] spawn smokeCover;
+	//[_veh] spawn smokeCover;
 
 	_Vwp0 = _grupoVeh addWaypoint [_posCmp, 0];
 	_Vwp0 setWaypointType "TR UNLOAD";

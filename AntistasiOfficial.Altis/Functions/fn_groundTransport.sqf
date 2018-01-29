@@ -61,7 +61,7 @@ if (_isArmed) then {
 	_wpV1_2 setWaypointType "SAD";
 	_wpV1_2 setWaypointBehaviour "COMBAT";
 
-	[_vehicle] spawn smokeCover;
+	//[_vehicle] spawn smokeCover;
 	_vehicle allowCrewInImmobile true;
 	[_vehicle,"APC"] spawn inmuneConvoy;
 };
