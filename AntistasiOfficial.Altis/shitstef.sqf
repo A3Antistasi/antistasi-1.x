@@ -37,7 +37,7 @@ if ((_marker in mrkAAF) or (
 
 
 
-//from Create(AAF).sqf (createbase.sqf createaereopuerto.sqf)
+//from Create(AAF).sqf (AAFcreateBase.sqf createaereopuerto.sqf)
 //### I'd make a function cause it's repeating in all the files ###
 
 
@@ -164,3 +164,7 @@ if (count _soldiers > 0) then {
 	} forEach _soldiers;
 };
 
+
+
+//QRF
+	[_marker] spawn {sleep random [300,420,600]; [_this select 0] spawn patrolCA;};

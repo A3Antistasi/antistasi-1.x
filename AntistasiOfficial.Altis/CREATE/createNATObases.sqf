@@ -244,14 +244,14 @@ _allGroups pushBack _group;
 		[_group, _marker, "SAFE", "SPAWNED","NOFOLLOW", "NOVEH2","NOSHARE","DoRelax"] execVM "scripts\UPSMON.sqf";
 	};
 
-//Despawn conditions
+//Despawn conditions FIA
 	waitUntil {sleep 1;
 		!(spawner getVariable _marker) OR
 		(
-		 	({!(vehicle _x isKindOf "Air") AND (lifeState _x != "INCAPACITATED")}
-		 	count ([_size,0,_markerPos,"OPFORSpawn"] call distanceUnits))
-		 	> 3*(({(alive _x) AND (lifeState _x != "INCAPACITATED")} count _allSoldiers) + count ([_size,0,_markerPos,"BLUFORSpawn"] call distanceUnits))
-		 )
+		 	( {!(vehicle _x isKindOf "Air") OR (lifeState _x != "INCAPACITATED")} count ([_size,0,_markerPos,"OPFORSpawn"] call distanceUnits)
+		 	) > 3*(
+		 	( {(alive _x) AND (lifeState _x != "INCAPACITATED")} count _allSoldiers) + count ([_size,0,_markerPos,"BLUFORSpawn"] call distanceUnits) )
+		)
 	};
 
 	//Territory loose conditions
