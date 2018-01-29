@@ -41,6 +41,7 @@ _busy = if (dateToNumber date > server getVariable _marker) then {false} else {t
 						_unit = ([_markerPos, 0, infGunner, _groupGunners] call bis_fnc_spawnvehicle) select 0;
 						_unit moveInGunner _vehicle;
 						_allVehicles pushBack _vehicle;
+						_allsoldiers pushBack _unit;
 						sleep 0.1;
 					};
 
@@ -52,6 +53,7 @@ _busy = if (dateToNumber date > server getVariable _marker) then {false} else {t
 						_unit = ([_markerPos, 0, infGunner, _groupGunners] call bis_fnc_spawnvehicle) select 0;
 						_unit moveInGunner _vehicle;
 						_allVehicles pushBack _vehicle;
+						_allsoldiers pushBack _unit;
 						sleep 0.1;
 					};
 
@@ -84,6 +86,7 @@ _busy = if (dateToNumber date > server getVariable _marker) then {false} else {t
 						_unit = ([_markerPos, 0, infGunner, _groupGunners] call bis_fnc_spawnvehicle) select 0;
 						_unit moveInGunner _vehicle;
 						_allVehicles pushBack _vehicle;
+						_allsoldiers pushBack _unit;
 						sleep 0.1;
 					};
 				};
