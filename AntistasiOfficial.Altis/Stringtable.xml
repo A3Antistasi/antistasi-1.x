@@ -300,11 +300,11 @@
 			</Key>
 			<Key ID="STR_GL_MAP_AP">
 				<Original>%1 Airport</Original>
-				<Russian>Авиабаза %1</Russian>
+				<Russian>А/база %1</Russian>
 			</Key>
 			<Key ID="STR_GL_MAP_MB">
 				<Original>%1 Base</Original>
-				<Russian>База %1</Russian>
+				<Russian>В/база %1</Russian>
 			</Key>
 			<Key ID="STR_GL_MAP_RS">
 				<Original>Resources</Original>
@@ -340,11 +340,11 @@
 			</Key>
 			<Key ID="STR_GL_MAP_MB1">
 				<Original>%2 Base: %1</Original>
-				<Russian>База %2: %1</Russian>
+				<Russian>В/база %2: %1</Russian>
 			</Key>
 			<Key ID="STR_GL_MAP_AP1">
 				<Original>%2 Airport: %1</Original>
-				<Russian>АБ %2: %1</Russian>
+				<Russian>А/база %2: %1</Russian>
 			</Key>
 		</Container>
 	</Package>
