@@ -8,11 +8,11 @@
 			</Key>
 			<Key ID="STR_DES_ESWCMD">
 				<Original>Antistasi: enable Switch Commander</Original>
-				<Russian>Antistasi: enable Switch Commander</Russian>
+				<Russian>Antistasi: Вкл. автоназначение Командира</Russian>
 			</Key>
 			<Key ID="STR_DES_ESRMBR">
 				<Original>Antistasi: enable Server Membership</Original>
-				<Russian>Antistasi: enable Server Membership</Russian>
+				<Russian>Antistasi: Вкл. список Участников на сервере</Russian>
 			</Key>
 			<Key ID="STR_DES_USABJN">
 				<Original>Antistasi: use customized arsenal by Jeroen Not</Original>
@@ -28,7 +28,7 @@
 			</Key>
 			<Key ID="STR_DES_ENVCOMAI">
 				<Original>Antistasi: enable VCOM AI for server/headless client</Original>
-				<Russian>Antistasi: enable VCOM AI for server/headless client</Russian>
+				<Russian>Antistasi: Вкл. VCOM AI</Russian>
 			</Key>
 
 
