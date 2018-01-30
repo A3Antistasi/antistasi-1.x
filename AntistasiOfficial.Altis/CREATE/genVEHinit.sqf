@@ -21,8 +21,8 @@ call {
 				if (activeBE) then {["des_arm"] remoteExec ["fnc_BE_XP", 2]};
 			}
 		}];
-		_vehicle addEventHandler ["HandleDamage",{_vehicle = _this select 0; if (!canFire _vehicle) then {//[_vehicle] call smokeCoverAuto}
-		}];
+		_vehicle addEventHandler ["HandleDamage",{_vehicle = _this select 0; if (!canFire _vehicle) then {//[_vehicle] call smokeCoverAuto
+		}}];
 	};
 
 	// tank
