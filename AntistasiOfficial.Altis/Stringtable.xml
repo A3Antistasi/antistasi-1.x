@@ -643,11 +643,11 @@
 			</Key>
 			<Key ID="STR_UI_NAVCOM_SQR_TEXT">
 				<Original>Recruit Squad</Original>
-				<Russian>Нанять отряд</Russian>
+				<Russian>Отряды</Russian>
 			</Key>
 			<Key ID="STR_UI_NAVCOM_SQR_TT">
 				<Original>Recruit squads to support your effort, including fireteams and mounted units.</Original>
-				<Russian>Открывает меню найма отрядов в FIA.</Russian>
+				<Russian>Открывает меню отрядов FIA.</Russian>
 			</Key>
 			<Key ID="STR_UI_NAVCOM_SQM_TEXT">
 				<Original>Squad Mgmt</Original>
