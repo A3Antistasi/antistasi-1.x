@@ -102,7 +102,7 @@
 			</Key>
 			<Key ID="STR_ACT_UNLOADCARGO">
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\igui\cfg\VehicleToggles\VehicleCargoIconOn_ca.paa' /&gt; Unload Vehicle Cargo to Ammobox</Original>
-				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\igui\cfg\VehicleToggles\VehicleCargoIconOn_ca.paa' /&gt; Выгрузить из транспорта в Ящик</Russian>
+				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\igui\cfg\VehicleToggles\VehicleCargoIconOn_ca.paa' /&gt; Выгрузить из техники в Ящик</Russian>
 			</Key>
 			<Key ID="STR_ACT_ARSENAL">
 				<Original>&lt;img size='1.75' image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceArsenal_ca.paa' /&gt; Arsenal</Original>
@@ -122,7 +122,7 @@
 			</Key>
 			<Key ID="STR_ACT_REFUEL">
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\refuel_ca.paa' /&gt; Refuel Vehicle</Original>
-				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\refuel_ca.paa' /&gt; Заправить транспорт</Russian>
+				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\refuel_ca.paa' /&gt; Заправить технику</Russian>
 			</Key>
 			<Key ID="STR_ACT_MOVEASSET">
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\VTOLVectoring_ca.paa' /&gt; Move this Asset</Original>
