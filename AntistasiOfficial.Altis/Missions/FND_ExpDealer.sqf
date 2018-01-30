@@ -137,7 +137,7 @@ if (random 8 < 1) then {
 };
 // END QRF
 
-waitUntil {sleep 1; (dateToNumber date > _fechalimnum) || !(alive Devin) || ({(side _x isEqualTo side_blue) && (_x distance Devin < 200)} count allPlayers > 0)};
+waitUntil {sleep 1; (dateToNumber date > _fechalimnum) || !(alive Devin) || ((Devin distance _posCmp) > 50) || ({(side _x isEqualTo side_blue) && (_x distance Devin < 200)} count allPlayers > 0)};
 
 {if (isPlayer _x) then {[petros,"hint","Don't ask Devin about the Holy Handgrenade of Antioch. Just don't."] remoteExec ["commsMP",_x]}} forEach ([200,0,Devin,"BLUFORSpawn"] call distanceUnits);
 
@@ -170,7 +170,7 @@ else {
 	_tsk = ["FND_E",[side_blue,civilian],[format [_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_site],_posCmp,"FAILED",5,true,true,"Find"] call BIS_fnc_setTask;
 };
 
-waitUntil {sleep 10; (dateToNumber date > _fechalimnum) || !(alive Devin)};
+waitUntil {sleep 10; (dateToNumber date > _fechalimnum) || !(alive Devin) || ((Devin distance _posCmp) > 50)};
 
 if (alive Devin) then {
 	Devin enableAI "ANIM";
@@ -185,6 +185,7 @@ else {
 server setVariable ["expActive", false, true];
 
 [1200,_tsk] spawn borrarTask;
+if((Devin distance _posCmp) > 50) then {Devin globalchat "Wait, what? I'm not going to be kidnapped by you twat, i'd rather EXPLOOOODE!"; sleep 5; _shell1 = "Sh_82mm_AMOS" createVehicle position Devin;_shell1 setVelocity [0,0,150]};
 sleep 30;
 deleteMarker "Devin";
 deleteMarker "DevPat";
