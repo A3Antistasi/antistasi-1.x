@@ -86,7 +86,7 @@
 			</Key>
 			<Key ID="STR_ACT_RECRUITUNIT">
 				<Original>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\MPTable\infantry_ca.paa' /&gt; Unit Recruitment</Original>
-				<Russian>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\MPTable\infantry_ca.paa' /&gt; Нанять бойцов</Russian>
+				<Russian>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\MPTable\infantry_ca.paa' /&gt; Набрать отряд</Russian>
 			</Key>
 			<Key ID="STR_ACT_RETURNCONTROL">
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\MPTable\infantry_ca.paa' /&gt; Return Control to AI</Original>
