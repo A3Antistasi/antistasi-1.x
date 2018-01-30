@@ -1073,7 +1073,7 @@ if (activeACE) then {
 		"ACE_salineIV_250",
 		"ACE_surgicalKit",
 		"ACE_tourniquet",
-		"ACE_adenosine"
+		"ACE_adenosine",
 		"ACE_atropine"
 	];
 
