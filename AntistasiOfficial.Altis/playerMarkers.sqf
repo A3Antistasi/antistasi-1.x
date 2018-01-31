@@ -2,7 +2,7 @@ private ["_players","_player","_mrk","_veh"];
 
 while {true} do
 {
-	waitUntil {sleep 2; (visibleMap or visibleGPS) and ([player] call hasRadio)};
+	waitUntil {sleep 0.5; (visibleMap or visibleGPS) and ([player] call hasRadio)};
 	_players = [];
 	_markers = [];
 	while {visibleMap or visibleGPS} do{
@@ -64,7 +64,7 @@ while {true} do
 		} forEach _players;
 
 
-		sleep 1;
+		sleep 5;
 
 	};//end while loop
 
