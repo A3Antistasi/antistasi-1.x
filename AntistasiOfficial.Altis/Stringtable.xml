@@ -24,7 +24,7 @@
 			</Key>
 			<Key ID="STR_DES_OPMAEFCAS">
 				<Original>Antistasi: only permanent members are eligible for commandership at start</Original>
-				<Russian>Antistasi: только постоянные Участники могут командовать после старта</Russian>
+				<Russian>Antistasi: только игроки из списка могут командовать после старта</Russian>
 			</Key>
 			<Key ID="STR_DES_ENVCOMAI">
 				<Original>Antistasi: enable VCOM AI for server/headless client</Original>
