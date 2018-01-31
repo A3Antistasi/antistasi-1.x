@@ -46,7 +46,7 @@ flag_savingServer = true;
 ["campaign_playerList",server getVariable ["campaign_playerList",[]]] call fn_saveData;
 
 //Sparker's War Statistics data
-["ws_grid", ws_grid] call fn_saveData;
+//["ws_grid", ws_grid] call fn_saveData;
 
 private ["_hr","_funds","_vehicle","_weapons","_magazines","_items","_backpacks","_containers","_backpack","_vehiclesToSave","_vehicleType","_supportOPFOR","_supportBLUFOR","_data","_garrison","_mines","_emplacements","_camps","_missionTypes","_objectsHQ","_addObjectsHQ"];
 

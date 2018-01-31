@@ -68,6 +68,6 @@ if ((side _killer == side_blue) || (captive _killer)) then {
 	} forEach units _grupo;
 
 	//Test the WarStatistics script. Sparker.
-	_posMuerto = getPos _muerto;
-	[ws_grid, _posMuerto select 0, _posMuerto select 1, 1] call ws_fnc_addValue;
+	//_posMuerto = getPos _muerto;
+	//[ws_grid, _posMuerto select 0, _posMuerto select 1, 1] call ws_fnc_addValue;
 };

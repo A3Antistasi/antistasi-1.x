@@ -59,7 +59,7 @@ unlockedRifles = unlockedweapons - gear_sidearms - gear_missileLaunchers - gear_
 ["jng_vehicleList"] call fn_loadData;
 
 //Sparker's War Statistics data
-["ws_grid"] call fn_loadData;
+//["ws_grid"] call fn_loadData;
 //===========================================================================
 
 
