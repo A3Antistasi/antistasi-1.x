@@ -11,7 +11,7 @@ guer_veh_engineer = "B_G_Offroad_01_repair_F";
 guer_veh_technical = "B_G_Offroad_01_armed_F";
 guer_veh_quad = "B_G_Quadbike_01_F"; // default transport for snipers
 guer_veh_offroad = "B_G_Offroad_01_F"; // default transport for teams
-guer_veh_dinghy = "B_G_Boat_Transport_01_F";
+guer_veh_dinghy = "C_Boat_Civil_01_F";
 
 guer_sol_AA = "B_G_Soldier_lite_F"; // AA trooper in player groups
 guer_sol_AM = "B_G_Soldier_A_F"; // playable, player-only

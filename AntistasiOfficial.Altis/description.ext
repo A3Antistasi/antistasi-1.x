@@ -4,10 +4,10 @@
 author="Barbolani";
 OnLoadName = "Antistasi - modified 1.7.19A9";
 OnLoadMission = "Be a Resistance Leader - Be a Hero";
-//loadScreen = "pic.paa";
+loadScreen = "pic.paa";
 
 overviewText = "Be the Resistance Leader. Fight against a superior enemy in technology, number, assets and vehicles. Use guerrilla tactics in a totally dynamic world, with around 18 sidemissions, everywhere, anytime, anything.";
-//overviewPicture = "pic.paa";
+overviewPicture = "pic.paa";
 
 allowFunctionsLog = 1;
 enableDebugConsole = 1;

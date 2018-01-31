@@ -170,3 +170,32 @@ if (count _soldiers > 0) then {
 	[_marker] spawn {sleep random [300,420,600]; [_this select 0] spawn patrolCA;};
 
 	[_marker] spawn {sleep random [300,420,600]; if ((player distance [_this select 0]) < 300) then {[_this select 0] spawn patrolCA;};};
+
+
+
+
+// Air reaction
+if (_vehicleType in heli_armed + opAir + opCASFW) exitWith {
+		_eh = _vehicle addEventHandler ["Fired", {
+			if (random 8 < 1) then { //maybe add spawn here
+				if(player in crew _vehicle) then {
+					_targetpos = position (_vehicle);
+					_airportpos = getmakerpos ["spawnCSAT"];
+					_depart = [_airportpos select 0, _airportpos select 1,300];
+					_jet = [_depart, 0,dogfight, side_green] call bis_fnc_spawnvehicle;
+					_pilot = driver (_jet select 0);
+					_pilot reveal [driver _vehicle,4];
+					_pilot dotarget _vehicle;
+
+				};
+			};
+		};
+	};
+
+_vehicle = vehicle player;
+_eh = _vehicle addEventHandler ["Fired", {
+    	if(player in crew _vehicle) then {
+     		systemchat "Eventhandler ecec"
+     	};
+   	}
+ ];

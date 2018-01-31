@@ -21,7 +21,7 @@ opUAVsmall = 		"O_UAV_01_F"; // Tayran AR-2
 
 // air force
 opAir = 			["O_Heli_Light_02_unarmed_F","O_Heli_Attack_02_F"]; //removed Taru and Plane
-
+dogfight =			["O_Plane_Fighter_02_Stealth_F"];
 // self-propelled anti air
 opSPAA = 			"O_APC_Tracked_02_AA_F";
 

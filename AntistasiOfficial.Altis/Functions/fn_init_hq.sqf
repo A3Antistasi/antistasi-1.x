@@ -131,7 +131,6 @@
 //cajaVeh
 	cajaVeh allowDamage false;
 	cajaVeh addAction [localize "str_act_healRepair", "healandrepair.sqf",nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"];
-	cajaVeh addAction [localize "str_act_moveAsset", "moveObject.sqf",nil,0,false,true,"","(_this == Slowhand)",5];
 	cajaVeh addAction [localize "str_act_buyVehicle",
 		{
 			nul = createDialog "vehicle_option"
@@ -144,7 +143,7 @@
 		"(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"
 	];
 	cajaVeh addAction [localize "STR_ACT_BUYB", "REINF\buyBoat.sqf",nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"];
-
+	cajaVeh addAction [localize "str_act_moveAsset", "moveObject.sqf",nil,0,false,true,"","(_this == Slowhand)",5];
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //campFire
 	fuego allowDamage false;

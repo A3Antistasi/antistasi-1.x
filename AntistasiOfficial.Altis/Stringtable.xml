@@ -129,8 +129,8 @@
 				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\VTOLVectoring_ca.paa' /&gt; Переместить</Russian>
 			</Key>
 			<Key ID="STR_ACT_CHANGEROLE">
-				<Original>&lt;img size='1.2' image='' /&gt; Change Class</Original>
-				<Russian>&lt;img size='1.2' image='' /&gt; Изменить Класс</Russian>
+				<Original>&lt;img size='1.2' image='A3\ui_f\data\GUI\Cfg\Ranks\private_gs.paa' /&gt; Change Class</Original>
+				<Russian>&lt;img size='1.2' image='A3\ui_f\data\GUI\Cfg\Ranks\private_gs.paa' /&gt; Изменить Класс</Russian>
 			</Key>
 			<Key ID="STR_ACT_REMOVEASSET">
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Revive\overlayIcons\f100_ca.paa' /&gt; Remove this Object</Original>
@@ -205,8 +205,8 @@
 				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Захват важной персоны</Russian>
 			</Key>
 			<Key ID="STR_ACT_BUYB">
-				<Original>Buy Boat</Original>
-				<Russian>Купить Лодку</Russian>
+				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\simpleTasks\types\boat_ca.paa' /&gt; Buy Boat</Original>
+				<Russian>&lt; img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\simpleTasks\types\boat_ca.paa' /&gt;Купить Лодку</Russian>
 			</Key>
 		</Container>
 	</Package>

@@ -21,6 +21,7 @@ opUAVsmall = 		"rhs_pchela1t_vvs"; // Tayran AR-2
 
 // air force
 opAir = 			["rhs_ka60_grey","rhs_mi28n_vvs"];
+dogfight = 			["rhs_mig29s_vvs"];
 
 // self-propelled anti air
 opSPAA = 			"rhs_zsu234_aa";

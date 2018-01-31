@@ -464,7 +464,10 @@ unlockedItems = [
 ];
 
 unlockedBackpacks = [
-	"rhs_assault_umbts"
+	"rhs_assault_umbts",
+	"rhs_assault_umbts_engineer",
+	"rhs_medic_bag"
+
 ];
 
 unlockedOptics = [];
