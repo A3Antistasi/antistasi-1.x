@@ -126,6 +126,8 @@ if (_isInfantry) then {
 };
 
 {[_x] call AS_fnc_initialiseFIAUnit} forEach units _group;
+{_x setvariable ["generated",true,true]} forEach units _group;
+
 leader _group setBehaviour "SAFE";
 Slowhand hcSetGroup [_group];
 _group setVariable ["isHCgroup", true, true];
