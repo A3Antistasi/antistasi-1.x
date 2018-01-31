@@ -8,7 +8,7 @@
 			</Key>
 			<Key ID="STR_DES_ESWCMD">
 				<Original>Antistasi: enable Switch Commander</Original>
-				<Russian>Antistasi: включить смена Командира</Russian>
+				<Russian>Antistasi: включить смену Командира</Russian>
 			</Key>
 			<Key ID="STR_DES_ESRMBR">
 				<Original>Antistasi: enable Server Membership</Original>
@@ -372,19 +372,19 @@
 			</Key>
 			<Key ID="STR_UI_SM_COM_TT">
 				<Original>Automatic Commander Switching&lt;br/&gt;In regular intervals, the highest ranking player will be assigned the role of Commander.</Original>
-				<Russian>Автосмена Командира&lt;br/&gt;Через равный промежуток времени члены отряда высокого ранга будут получать статус Командира.</Russian>
+				<Russian>Смена Командира&lt;br/&gt;Через равный промежуток времени члены отряда высокого ранга будут получать статус Командира.</Russian>
 			</Key>
 			<Key ID="STR_UI_SM_MEM_0">
 				<Original>Membership Enabled</Original>
-				<Russian>Членство на сервере Вкл.</Russian>
+				<Russian>Список игроков Вкл.</Russian>
 			</Key>
 			<Key ID="STR_UI_SM_MEM_1">
 				<Original>Membership Disabled</Original>
-				<Russian>Членство на сервере Выкл.</Russian>
+				<Russian>Список игроков Выкл.</Russian>
 			</Key>
 			<Key ID="STR_UI_SM_MEM_TT">
 				<Original>Only players on the members list are eligible to become Commander, can access the arsenal inventory and have their rank saved.</Original>
-				<Russian>Только игроки из списка Участников могут быть Командирами, иметь доступ к Арсеналу. Их ранг сохраняется.</Russian>
+				<Russian>Только игроки из списка игроков могут быть Командирами, иметь доступ к Арсеналу. Их ранг сохраняется.</Russian>
 			</Key>
 			<Key ID="STR_UI_SM_LOAD_0">
 				<Original>Continuing Campaign</Original>
@@ -1008,19 +1008,19 @@
 			</Key>
 			<Key ID="STR_UI_ADMIN_ADDMEM_TEXT">
 				<Original>Add Server Member</Original>
-				<Russian>Добавить в Список</Russian>
+				<Russian>Добавить в список</Russian>
 			</Key>
 			<Key ID="STR_UI_ADMIN_ADDMEM_TT">
 				<Original>Look at a player, Members are eligible to be commander and can recruit AI</Original>
-				<Russian>Игроки из Списка Участников могут быть Командиром и набирать отряды. Выберите Участника взглядом</Russian>
+				<Russian>Игроки из списка игроков могут быть Командиром и набирать отряды.</Russian>
 			</Key>
 			<Key ID="STR_UI_ADMIN_REMMEM_TEXT">
 				<Original>Remove S. Member</Original>
-				<Russian>Удалить из Списка</Russian>
+				<Russian>Удалить из списка</Russian>
 			</Key>
 			<Key ID="STR_UI_ADMIN_REMMEM_TT">
 				<Original>Look at a player to remove him from the member list</Original>
-				<Russian>Взглядом выберите игрока для удаления его из Списка членов сервера</Russian>
+				<Russian>Взглядом выберите игрока для удаления его из списка игроков сервера</Russian>
 			</Key>
 			<Key ID="STR_UI_ADMIN_GEARRES_TEXT">
 				<Original>Gear Reset</Original>
@@ -1044,7 +1044,7 @@
 			</Key>
 			<Key ID="STR_UI_ADMIN_TGLFT_TT">
 				<Original>Fastravel to all friendly locations, roadblocks included</Original>
-				<Russian>Быстрое перемещение во все дружественные точки, включая БП</Russian>
+				<Russian>Быстрое перемещение во все дружественные точки на карте</Russian>
 			</Key>
 			<Key ID="STR_UI_ADMIN_GARBAGE_TEXT">
 				<Original>Garbage Clean</Original>
