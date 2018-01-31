@@ -41,6 +41,7 @@ _busy = if (dateToNumber date > server getVariable _marker) then {false} else {t
 						_unit = ([_markerPos, 0, infGunner, _groupGunners] call bis_fnc_spawnvehicle) select 0;
 						_unit moveInGunner _vehicle;
 						_allVehicles pushBack _vehicle;
+						_allSoldiers pushback _unit;
 						sleep 0.3;
 					};
 
@@ -52,6 +53,7 @@ _busy = if (dateToNumber date > server getVariable _marker) then {false} else {t
 						_unit = ([_markerPos, 0, infGunner, _groupGunners] call bis_fnc_spawnvehicle) select 0;
 						_unit moveInGunner _vehicle;
 						_allVehicles pushBack _vehicle;
+						_allSoldiers pushback _unit;
 						sleep 0.3;
 					};
 
@@ -73,10 +75,11 @@ _busy = if (dateToNumber date > server getVariable _marker) then {false} else {t
 						_unit = ([_markerPos, 0, infGunner, _groupGunners] call bis_fnc_spawnvehicle) select 0;
 						_unit moveInGunner _vehicle;
 						_allVehicles pushBack _vehicle;
+						_allSoldiers pushback _unit;
 						sleep 0.2;
 					};
 				};
-		};
+			};
 	};
 
 _flag = createVehicle [cFlag, _markerPos, [],0, "CAN_COLLIDE"];
