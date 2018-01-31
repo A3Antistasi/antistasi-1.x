@@ -30,12 +30,21 @@ jnl_vehicleHardpoints = [
 		[1,		[0,-2.1,-0.81],					[9,10,11,12,13]]
 	]],
 
+     //AFRF Zamak open
+    ["rhsafrf\addons\rhs_kamaz\rhs_kamaz5350", [
+    	[0,		[-0.000671387,-1.31882,-0.81],	[2,3,4,5,6,7,8,9,10,11,12,13]],
+    	[1,		[0,0,-0.81],					[2,3,4,5,6,7,8]],
+		[1,		[0,-2.1,-0.81],					[9,10,11,12,13]]
+    ]],
+
+
     //RHS Gaz-66 truck
     ["\rhsafrf\addons\rhs_gaz66\rhs_gaz66.p3d", [
     	[0,		[0,-0.88974,-0.610707],		[]], //Weapon node
     	[1,		[0,-0.135376,-0.610707],	[]], //Cargo node
     	[1,		[0,-1.73634,-0.610707],		[]]
     ]],
+
 
     //RHS Ural-4320 truck
     ["\rhsafrf\addons\rhs_a2port_car\Ural\Ural_open2.p3d", [
