@@ -476,7 +476,7 @@
 			</Key>
 			<Key ID="STR_UI_BM_NAV1_TT">
 				<Original>Select Camp or HQ when no enemies nearby</Original>
-				<Russian>Выберите лагерь или Штаб когда рядом нет врага</Russian>
+				<Russian>Выберите лагерь или Штаб когда рядом нет противника</Russian>
 			</Key>
 			<Key ID="STR_UI_BM_NAV2_TEXT">
 				<Original>Undercover</Original>
