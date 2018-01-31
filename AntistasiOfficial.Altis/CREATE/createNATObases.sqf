@@ -22,7 +22,7 @@ _buildings = nearestObjects [_markerPos, listMilBld, _size*1.5];
 _group = createGroup side_blue;
 _allGroups pushBack _group;
 
-if((NATOgarrison getVariable [_marker,0]) == 2 ) then {
+/*
 	for "_i" from 0 to (count _buildings) - 1 do {
 		_building = _buildings select _i;
 		_buildingType = typeOf _building;
@@ -65,7 +65,7 @@ if((NATOgarrison getVariable [_marker,0]) == 2 ) then {
 			};
 		};
 	};
-};
+};*/
 	_spawnPos = [_markerPos, 3,0] call BIS_fnc_relPos;
 	_flag = createVehicle [bluFlag, _spawnPos, [],0, "CAN_COLLIDE"];
 	_flag allowDamage false;
@@ -74,6 +74,7 @@ if((NATOgarrison getVariable [_marker,0]) == 2 ) then {
 	[_flag,"vehicle"] remoteExec ["AS_fnc_addActionMP"];
 	//[_flag,"garage"] remoteExec ["AS_fnc_addActionMP"]; // Apex
 
+/*
 	_maxVehicles = 0; // Stef changed this to 0 "4 min (round ((_size / 30)*_support));"
 	if ( _maxVehicles > 0 ) then {
 		_spawnPos = [_markerPos, random (_size / 2),random 360] call BIS_fnc_relPos;
@@ -141,7 +142,8 @@ if((NATOgarrison getVariable [_marker,0]) == 2 ) then {
 		_counter = _counter + 1;
 	};
 };*/
-//NATO Garrison add to array
+
+//Create groups fro FIA garrison
 	_gunnerGroup = createGroup side_blue;
 	_guerGroups pushBack _gunnerGroup;
 	_garrison = garrison getVariable [_marker,[]];
@@ -249,7 +251,7 @@ if((NATOgarrison getVariable [_marker,0]) == 2 ) then {
 	waitUntil {sleep 1;
 		!(spawner getVariable _marker) OR
 		(
-		 	( {!(vehicle _x isKindOf "Air") OR (lifeState _x != "INCAPACITATED")} count ([_size,0,_markerPos,"OPFORSpawn"] call distanceUnits)
+		 	( ({!(vehicle _x isKindOf "Air") OR (lifeState _x != "INCAPACITATED")} count (([_size,0,_markerPos,"OPFORSpawn"] call distanceUnits)))-1
 		 	) > 3*(
 		 	( {(alive _x) AND (lifeState _x != "INCAPACITATED")} count _allSoldiers) + count ([_size,0,_markerPos,"BLUFORSpawn"] call distanceUnits) )
 		)

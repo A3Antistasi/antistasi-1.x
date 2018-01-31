@@ -4,8 +4,6 @@ private ["_origen"];
 
 _marcador = _this select 0;
 
-forcedSpawn = forcedSpawn + [_marcador]; publicVariable "forcedSpawn";
-sleep 5;
 _posicion = getMarkerPos (_marcador);
 
 _aeropuertos = aeropuertos - mrkAAF + ["spawnNATO"];
@@ -27,6 +25,17 @@ _tipoveh = "";
 _cuenta = 3;
 
 [-20,0] remoteExec ["prestige",2];
+
+_spawnergroup = createGroup east;
+_spawner = _spawnergroup createUnit [selectrandom CIV_journalists, getmarkerpos _marcador, [], 15,"None"];
+_spawner setVariable ["BLUFORSpawn",true,true];
+_spawner disableAI "ALL";
+_spawner allowdamage false;
+_spawner setcaptive true;
+_spawner enableSimulation false;
+hideObjectGlobal _spawner;
+_vehiculos pushBack _spawner;
+sleep 15;
 
 for "_i" from 1 to _cuenta do {
 	//Create and initialise aircraft
@@ -181,8 +190,6 @@ if ({alive _x} count _soldados < _solMax) then {
 	[-10,0] remoteExec ["prestige",2];
 };
 
-forcedSpawn = forcedSpawn - [_marcador]; publicVariable "forcedSpawn";
-sleep 15;
 
 //[_tsk,true] call BIS_fnc_deleteTask;
 [0,_tsk] spawn borrarTask;

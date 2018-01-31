@@ -39,8 +39,15 @@ misiones pushbackUnique "AtaqueAAF"; publicVariable "misiones";
 _attackDuration = time + 2400;
 
 //Adding caching area
-forcedSpawn = forcedSpawn + [_marker]; publicVariable "forcedSpawn";
-
+	_sawnergroup = createGroup east;
+	_spawner = _sawnergroup createUnit [selectrandom CIV_journalists, getmarkerpos _marker, [], 15,"None"];
+	_spawner setVariable ["OPFORSpawn",true,true];
+	_spawner setcaptive true;
+	_spawner allowdamage false;
+	_spawner enableSimulation false;
+	hideObjectGlobal _spawner;
+	_allSoldiers pushback _spawner;
+sleep 15;
 
 if !(_forceAirport == "") then {
 	_involveCSAT = false;
@@ -373,4 +380,4 @@ waitUntil {sleep 1; !(spawner getVariable _marker)};
 
 [_allGroups + _redGroups, _allSoldiers + _redSoldiers, _allVehicles + _redVehicles] spawn AS_fnc_despawnUnits;
 
-forcedSpawn = forcedSpawn - [_marker]; publicVariable "forcedSpawn";
+
