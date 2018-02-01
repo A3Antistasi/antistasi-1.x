@@ -35,6 +35,8 @@ _spawner setcaptive true;
 _spawner enableSimulation false;
 hideObjectGlobal _spawner;
 _vehiculos pushBack _spawner;
+_grupos pushBack _spawnergroup;
+
 sleep 15;
 
 for "_i" from 1 to _cuenta do {
@@ -207,4 +209,6 @@ if ({alive _x} count _soldados < _solMax) then {
 	waitUntil {sleep 1; {_x distance _vehiculo < distanciaSPWN/2} count (allPlayers - (entities "HeadlessClient_F")) == 0};
 	deleteVehicle _x
 } forEach _vehiculos;
+
+
 

@@ -39,14 +39,15 @@ misiones pushbackUnique "AtaqueAAF"; publicVariable "misiones";
 _attackDuration = time + 2400;
 
 //Adding caching area
-	_sawnergroup = createGroup east;
-	_spawner = _sawnergroup createUnit [selectrandom CIV_journalists, getmarkerpos _marker, [], 15,"None"];
+	_spawnergroup = createGroup east;
+	_spawner = _spawnergroup createUnit [selectrandom CIV_journalists, getmarkerpos _marker, [], 15,"None"];
 	_spawner setVariable ["OPFORSpawn",true,true];
 	_spawner setcaptive true;
 	_spawner allowdamage false;
 	_spawner enableSimulation false;
 	hideObjectGlobal _spawner;
 	_allSoldiers pushback _spawner;
+	_allGroups pushBack _spawnergroup;
 sleep 15;
 
 if !(_forceAirport == "") then {
