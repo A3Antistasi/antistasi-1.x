@@ -480,11 +480,11 @@
 			</Key>
 			<Key ID="STR_UI_BM_NAV2_TEXT">
 				<Original>Undercover</Original>
-				<Russian>Инкогнито</Russian>
+				<Russian>Маскировка</Russian>
 			</Key>
 			<Key ID="STR_UI_BM_NAV2_TT">
 				<Original>Look like a civilian and be ignored by enemies, don't get revealed!</Original>
-				<Russian>Вы выглядите как гражданский, и противник Вас не замечает</Russian>
+				<Russian>Вы будете выглядеть как гражданский, и противник не будет Вас замечать</Russian>
 			</Key>
 			<Key ID="STR_UI_BM_NAV3_TEXT">
 				<Original>Vehicle Mgmt</Original>
@@ -1136,7 +1136,7 @@
 			</Key>
 			<Key ID="STR_UI_TOP_INCOGNITO">
 				<Original>&lt;t color='#1DA81D'&gt;Incognito&lt;/t&gt;</Original>
-				<Russian>&lt;t color='#1DA81D'&gt;Инкогнито&lt;/t&gt;</Russian>
+				<Russian>&lt;t color='#1DA81D'&gt;Гражданский&lt;/t&gt;</Russian>
 			</Key>
 		</Container>
 	</Package>
@@ -1862,11 +1862,11 @@
 		<Container name="Undercover">
 			<Key ID="STR_HINTS_UND_SINGLEGROUP">
 				<Original>You cannot disguise yourself while you are controlling AI.</Original>
-				<Russian>Вы не можете быть «Инкогнито», когда управляете ИИ от первого лица.</Russian>
+				<Russian>Вы не можете быть в гражданском статусе, когда управляете ИИ от первого лица.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_UND_DISGUISED">
 				<Original>You are incognito already.</Original>
-				<Russian>Вы уже «Инкогнито».</Russian>
+				<Russian>Вы уже в гражданском статусе.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_UND_NOTCIV">
 				<Original>You are not in a civilian vehicle.</Original>
@@ -1878,23 +1878,23 @@
 			</Key>
 			<Key ID="STR_HINTS_UND_REPORTED">
 				<Original>You have been reported in the last 30 minutes and cannot go incognito.</Original>
-				<Russian>Вы не можете быть «Инкогнито», Вы попали в сводку в последние 30 минут.</Russian>
+				<Russian>Вы не можете быть в гражданском статусе, Вы попали в сводку в последние 30 минут.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_UND_ENEMY_DIST">
 				<Original>You cannot become incognito with enemies less than %1m from you.</Original>
-				<Russian>Вы не можете быть «Инкогнито», противник ближе %1 м.</Russian>
+				<Russian>Вы не можете быть в гражданском статусе, противник ближе %1 м.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_UND_ENEMY_KNOW">
 				<Original>You cannot become incognito while enemies are still on the lookout for you nearby.</Original>
-				<Russian>Вы не можете быть «Инкогнито», Вас ищут.</Russian>
+				<Russian>Вы не можете быть в гражданском статусе, Вас ищут.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_UND_FAC_GRND">
 				<Original>You cannot become incognito near bases, outposts, or roadblocks.</Original>
-				<Russian>Вы не можете быть «Инкогнито» вблизи баз, опорных пунктов или блокпостов.</Russian>
+				<Russian>Вы не можете быть в гражданском статусе вблизи баз, опорных пунктов или блокпостов.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_UND_GEAR">
 				<Original>You cannot disguise yourself while wearing suspicious-looking gear.\n</Original>
-				<Russian>Вы не можете быть «Инкогнито», если на Вас одето подозрительное снаряжение.\n</Russian>
+				<Russian>Вы не можете быть в гражданском статусе, если на Вас одето подозрительное снаряжение.\n</Russian>
 			</Key>
 			<Key ID="STR_HINTS_UND_GEAR_PRIM">
 				<Original>%1\nPrimary Weapon: %2</Original>
@@ -1958,7 +1958,7 @@
 			</Key>
 			<Key ID="STR_HINTS_UND_CMP_GEAR">
 				<Original>Your gear is arousing suspicion, you are no longer incognito.\n</Original>
-				<Russian>Ваше снаряжение вызывает подозрение, Вы больше не «Инкогнито».\n</Russian>
+				<Russian>Ваше снаряжение вызывает подозрение, Вы больше не в гражданском статусе.\n</Russian>
 			</Key>
 		</Container>
 		<Container name="Fast_Travel_Radio">
@@ -2088,7 +2088,7 @@
 		<Container name="MRK_WIN">
 		     <Key ID="STR_HINTS_MRKW_YCCTFWIUM">
 			    <Original>You cannot Capture the Flag while in Undercover Mode</Original>
-				<Russian>Вы не можете захватить флаг в режиме «Инкогнито»</Russian>
+				<Russian>Вы не можете захватить флаг в гражданском статусе</Russian>
 			</Key>
 		</Container>
 		<Container name="NATO_DIALOG">
@@ -3609,7 +3609,7 @@
 
 					- Ящик Арсенала: храните захваченное снаряжение и редактируйте свою экипировку.&lt;br/&gt;&lt;br/&gt;
 
-					- Ящик лечения и восстановления транспорта: вылечить себя и ИИ, сбросить статус «Инкогнито» и сменить номера на автомобилях, пополнение боезапаса техники и станковых орудий.&lt;br/&gt;&lt;br/&gt;
+					- Ящик лечения и восстановления транспорта: вылечить себя и ИИ, сбросить гражданский статус и сменить номера на автомобилях, пополнение боезапаса техники и станковых орудий.&lt;br/&gt;&lt;br/&gt;
 
 					- Петрос: запросите миссию.&lt;br/&gt;&lt;br/&gt;
 
