@@ -23,7 +23,7 @@ if (!isMultiPlayer) then {
     call compile preprocessFileLineNumbers "WarStatistics\initFunctions.sqf";
     call compile preprocessFileLineNumbers "WarStatistics\initVariablesServer.sqf";
     //call compile preprocessFileLineNumbers "WarStatistics\initRoadblocks2.sqf";
-    ws_grid = call ws_fnc_newGridArray;
+    //ws_grid = call ws_fnc_newGridArray;
     //(up to here)//
 	Slowhand = player; //Otherwise it might be undefined at further parts of code in this file!
     serverInitDone = true;

@@ -20,7 +20,7 @@ call compile preprocessFileLineNumbers "WarStatistics\initVariables.sqf";
 call compile preprocessFileLineNumbers "WarStatistics\initFunctions.sqf";
 call compile preprocessFileLineNumbers "WarStatistics\initVariablesServer.sqf";
 //call compile preprocessFileLineNumbers "WarStatistics\initRoadblocks2.sqf";
-ws_grid = call ws_fnc_newGridArray;
+//ws_grid = call ws_fnc_newGridArray;
 diag_log "Antistasi MP Server. WarStatistics init finished";
 //(up to here)//
 
