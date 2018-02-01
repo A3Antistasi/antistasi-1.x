@@ -23,7 +23,7 @@ if (_marker != "FIA_HQ") then {
 };
 
 _gunnerGroup = createGroup side_blue;
-_allGroups pushBack _gunnerGroup;
+
 _garrison = garrison getVariable [_marker,[]];
 _strength = count _garrison;
 _counter = 0;
@@ -53,10 +53,12 @@ while {(spawner getVariable _marker) AND (_counter < _strength)} do {
 			_static = _statics select 0;
 			if (typeOf _static == guer_stat_mortar) then {
 				_unit = _gunnerGroup createUnit [_unitType, _markerPos, [], 0, "NONE"];
+				_unit assignAsGunner _static;
 				_unit moveInGunner _static;
 				[_static] execVM "scripts\UPSMON\MON_artillery_add.sqf";
 			} else {
 				_unit = _gunnerGroup createUnit [_unitType, _markerPos, [], 0, "NONE"];
+				_unit assignAsGunner _static;
 				_unit moveInGunner _static;
 			};
 			_statics = _statics - [_static];
@@ -78,6 +80,8 @@ for "_i" from 0 to (count _allGroups) - 1 do {
 		[_group, _marker, "SAFE","SPAWNED","RANDOM","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 	};
 };
+
+_allGroups pushBack _gunnerGroup;
 
 {
 	[_x] spawn VEHinit;

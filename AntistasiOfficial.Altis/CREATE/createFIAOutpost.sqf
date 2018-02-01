@@ -15,7 +15,6 @@ _buildings = nearestObjects [_markerPos, listMilBld, _size*1.5];
 _statics = staticsToSave select {_x distance _markerPos < (_size max 50)};
 
 _groupGunners = createGroup side_blue; //side_green; //What the hell was this? Sparker.
-_allGroups pushBack _groupGunners;
 for "_i" from 0 to (count _buildings) - 1 do {
 	_building = _buildings select _i;
 	_type = typeOf _building;
@@ -23,8 +22,10 @@ for "_i" from 0 to (count _buildings) - 1 do {
 		if 	((_type == "Land_Cargo_HQ_V1_F") OR (_type == "Land_Cargo_HQ_V2_F") OR (_type == "Land_Cargo_HQ_V3_F")) exitWith {
 			_vehicle = createVehicle [guer_stat_AA, (_building buildingPos 8), [],0, "CAN_COLLIDE"];
 			_vehicle setPosATL [(getPos _building select 0),(getPos _building select 1),(getPosATL _vehicle select 2)];
+			_vehicle setCenterOfMass [(getCenterOfMass _vehicle) vectorAdd [0, 0, -1], 0];
 			_vehicle setDir (getDir _building);
 			_unit = _groupGunners createUnit [guer_sol_AR, _markerPos, [], 0, "NONE"];
+			_unit assignAsGunner _vehicle;
 			_unit moveInGunner _vehicle;
 			_allVehicles pushBack _vehicle;
 			sleep 1;
@@ -33,10 +34,12 @@ for "_i" from 0 to (count _buildings) - 1 do {
 		if 	((_type == "Land_Cargo_Patrol_V1_F") or (_type == "Land_Cargo_Patrol_V2_F") or (_type == "Land_Cargo_Patrol_V3_F")) exitWith {
 			_vehicle = createVehicle [guer_stat_MGH, (_building buildingPos 1), [], 0, "CAN_COLLIDE"];
 			_direction = (getDir _building) - 180;
+			_vehicle setCenterOfMass [(getCenterOfMass _vehicle) vectorAdd [0, 0, -1], 0];
 			_spawnPos = [getPosATL _vehicle, 2.5, _direction] call BIS_Fnc_relPos;
 			_vehicle setPosATL _spawnPos;
 			_vehicle setDir (getDir _building) - 180;
 			_unit = _groupGunners createUnit [guer_sol_AR, _markerPos, [], 0, "NONE"];
+			_unit assignAsGunner _vehicle;
 			_unit moveInGunner _vehicle;
 			_allVehicles pushBack _vehicle;
 			sleep 1;
@@ -44,12 +47,15 @@ for "_i" from 0 to (count _buildings) - 1 do {
 
 		if 	(_type in listbld) then {
 			_vehicle = createVehicle [guer_stat_MGH, (_building buildingPos 11), [], 0, "CAN_COLLIDE"];
+			_vehicle setCenterOfMass [(getCenterOfMass _vehicle) vectorAdd [0, 0, -1], 0];
 			_unit = _groupGunners createUnit [guer_sol_AR, _markerPos, [], 0, "NONE"];
 			_unit moveInGunner _vehicle;
 			_allVehicles pushBack _vehicle;
 			sleep 1;
 			_vehicle = createVehicle [guer_stat_MGH, (_building buildingPos 13), [], 0, "CAN_COLLIDE"];
+			_vehicle setCenterOfMass [(getCenterOfMass _vehicle) vectorAdd [0, 0, -1], 0];
 			_unit = _groupGunners createUnit [guer_sol_AR, _markerPos, [], 0, "NONE"];
+			_unit assignAsGunner _vehicle;
 			_unit moveInGunner _vehicle;
 			_allVehicles pushBack _vehicle;
 			sleep 1;
@@ -127,6 +133,8 @@ for "_i" from 0 to (count _allGroups) - 1 do {   //Stef 02/10 check here for ada
 		[_group, _marker, "SAFE","SPAWNED","RANDOM","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 	};
 };
+
+_allGroups pushBack _groupGunners;
 
 {
 	[_x] spawn VEHinit;

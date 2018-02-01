@@ -236,7 +236,7 @@ while {(spawner getVariable _marker) AND (_counter < _strength)} do {
 
 //NATO Garrison add to array
 	_gunnerGroup = createGroup side_blue;
-	_guerGroups pushBack _gunnerGroup;
+
 	_garrison = garrison getVariable [_marker,[]];
 	_strength = count _garrison;
 	_counter = 0;
@@ -291,6 +291,8 @@ for "_i" from 0 to (count _guerGroups) - 1 do {
 	[_group, _marker, "SAFE","SPAWNED","ORIGINAL","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 };
 
+_guerGroups pushBack _gunnerGroup;
+
 {
 	[_x] spawn VEHinit;
 } forEach _guerVehicles;
@@ -302,6 +304,7 @@ for "_i" from 0 to (count _guerGroups) - 1 do {
 		_allSoldiers pushBack _x;
 	} forEach units _group;
 } forEach _guerGroups; //_guerSoldiers;
+
 
 
 {

@@ -27,6 +27,7 @@ _busy = if (dateToNumber date > server getVariable _marker) then {false} else {t
 					if 	((_buildingType == "Land_HelipadCivil_F") and !(_reduced)) exitWith {
 						_vehicle = createVehicle [selectRandom vehDef, position _building, [],0, "CAN_COLLIDE"];
 						_vehicle setDir (getDir _building);
+						_vehicle setCenterOfMass [(getCenterOfMass _vehicle) vectorAdd [0, 0, -1], 0];
 						_unit = ([_markerPos, 0, infCrew, _groupGunners] call bis_fnc_spawnvehicle) select 0;
 						_unit moveInGunner _vehicle;
 						_allVehicles pushBack _vehicle;
@@ -38,6 +39,7 @@ _busy = if (dateToNumber date > server getVariable _marker) then {false} else {t
 						_vehicle = createVehicle [statAA, (_building buildingPos 8), [],0, "CAN_COLLIDE"];
 						_vehicle setPosATL [(getPos _building select 0),(getPos _building select 1),(getPosATL _vehicle select 2)];
 						_vehicle setDir (getDir _building);
+						_vehicle setCenterOfMass [(getCenterOfMass _vehicle) vectorAdd [0, 0, -1], 0];
 						_unit = ([_markerPos, 0, infGunner, _groupGunners] call bis_fnc_spawnvehicle) select 0;
 						_unit moveInGunner _vehicle;
 						_allVehicles pushBack _vehicle;
@@ -66,12 +68,14 @@ _busy = if (dateToNumber date > server getVariable _marker) then {false} else {t
 
 					if 	(_buildingType in listbld) exitWith {
 						_vehicle = createVehicle [statMGtower, (_building buildingPos 13), [], 0, "CAN_COLLIDE"];
+						_vehicle setCenterOfMass [(getCenterOfMass _vehicle) vectorAdd [0, 0, -1], 0];
 						_unit = ([_markerPos, 0, infGunner, _groupGunners] call bis_fnc_spawnvehicle) select 0;
 						_unit moveInGunner _vehicle;
 						_allSoldiers = _allSoldiers + [_unit];
 						sleep 1;
 						_allVehicles = _allVehicles + [_vehicle];
 						_vehicle = createVehicle [statMGtower, (_building buildingPos 17), [], 0, "CAN_COLLIDE"];
+						_vehicle setCenterOfMass [(getCenterOfMass _vehicle) vectorAdd [0, 0, -1], 0];
 						_unit = ([_markerPos, 0, infGunner, _groupGunners] call bis_fnc_spawnvehicle) select 0;
 						_unit moveInGunner _vehicle;
 						_allVehicles pushBack _vehicle;

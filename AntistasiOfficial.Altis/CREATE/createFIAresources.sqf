@@ -21,7 +21,7 @@ _allVehicles pushBack _flag;
 // Apex [_flag,"garage"] remoteExec ["AS_fnc_addActionMP"];
 
 _gunnerGroup = createGroup side_blue;
-_allGroups pushBack _gunnerGroup;
+
 _garrison = garrison getVariable [_marker,[]];
 _strength = count _garrison;
 _counter = 0;
@@ -76,6 +76,8 @@ for "_i" from 0 to (count _allGroups) - 1 do {
 		[_group, _marker, "SAFE","SPAWNED","RANDOM","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 	};
 };
+
+_allGroups pushBack _gunnerGroup;
 
 {
 	[_x] spawn VEHinit;

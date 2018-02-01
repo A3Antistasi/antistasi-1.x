@@ -267,7 +267,7 @@ fn_setData = {
 					publicVariable "enemyMotorpool"
 				};
 			};
-			if(_varName == 'time') exitWith {setDate _varValue; forceWeatherChange};
+			if(_varName == 'time') exitWith {setDate _varValue;};
 			if(_varName == 'resourcesAAF') exitWith {server setVariable ["resourcesAAF",_varValue,true]};
 			if(_varName == 'resourcesFIA') exitWith {server setVariable ["resourcesFIA",_varValue,true]};
 			if(_varName == 'destroyedBuildings') exitWith {
@@ -510,6 +510,7 @@ fn_setData = {
 					_veh = _tipoVeh createVehicle [0,0,0];
 					_veh setDir _dirVeh;
 					_veh setPosATL _posVeh;
+					_veh setCenterOfMass [(getCenterOfMass _veh) vectorAdd [0, 0, -1], 0];
 
 					if (_tipoVeh in (statics_allMGs + statics_allATs + statics_allAAs + statics_allMortars)) then {
 						staticsToSave pushBack _veh;

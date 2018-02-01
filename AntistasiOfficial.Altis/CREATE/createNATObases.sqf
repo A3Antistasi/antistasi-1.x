@@ -145,7 +145,7 @@ _allGroups pushBack _group;
 
 //Create groups fro FIA garrison
 	_gunnerGroup = createGroup side_blue;
-	_guerGroups pushBack _gunnerGroup;
+
 	_garrison = garrison getVariable [_marker,[]];
 	_strength = count _garrison;
 	_counter = 0;
@@ -198,6 +198,8 @@ _allGroups pushBack _group;
 		//[leader _group, _marker, "SAFE","SPAWNED","RANDOM","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf"; Stef 14/09 changed to RANDOMUP for smoother attack
 		[_group, _marker, "SAFE","SPAWNED", "ORIGINAL","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 	};
+
+_guerGroups pushBack _gunnerGroup;
 
 // Apex 22/9/17 21:12 UK Time
 	{[_x] spawn VEHinit;} forEach _guerVehicles;
