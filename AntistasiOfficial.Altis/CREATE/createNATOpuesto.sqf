@@ -64,7 +64,7 @@ else {
 sleep 1;
 
 _veh lock 3;
-
+_veh setCenterOfMass [(getCenterOfMass _veh) vectorAdd [0, 0, -1], 0];
 [_veh] spawn NATOVEHinit;
 _veh allowCrewInImmobile true;
 sleep 1;
