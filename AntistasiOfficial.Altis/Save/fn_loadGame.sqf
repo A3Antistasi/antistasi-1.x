@@ -5,6 +5,7 @@ petros allowdamage false;
 //ADD STATS THAT NEED TO BE LOADED HERE.
 
 //preinit
+["posHQ"] call fn_loadData; publicVariable "posHQ";
 ["campaign_playerList"] call fn_loadData;
 ["membersPool"] call fn_loadData; publicVariable "membersPool";
 flag_playerList = true;
@@ -180,7 +181,7 @@ publicVariable "markers";
 publicVariable "mrkAAF";
 publicVariable "mrkFIA";
 
-["posHQ"] call fn_loadData; publicVariable "posHQ";
+
 ["flag_chopForest"] call fn_loadData; publicVariable "flag_chopForest";
 ["objectsHQ"] call fn_loadData;
 ["addObjectsHQ"] call fn_loadData;
