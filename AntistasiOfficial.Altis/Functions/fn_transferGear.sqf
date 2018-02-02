@@ -5,6 +5,7 @@ params ["_originContainer","_targetContainer"];
 private ["_magazineCargo","_weaponsItemsCargo","_itemCargo","_backpackCargo","_containers","_item","_updated"];
 
 _weaponsItemsCargo = weaponsItemsCargo _originContainer;
+if (isnil "_weaponsItemsCargo") exitwith {};
 _magazineCargo = magazineCargo _originContainer;
 _itemCargo = itemCargo _originContainer;
 _backpackCargo = backpackCargo _originContainer;

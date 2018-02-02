@@ -13,11 +13,12 @@ _isFrontline = [_marker] call AS_fnc_isFrontline;
 _reduced = [false, true] select (_marker in reducedGarrisons);
 _patrolMarker = [_marker] call AS_fnc_createPatrolMarker;
 _busy = if (dateToNumber date > server getVariable _marker) then {false} else {true};
+_groupGunners = createGroup side_green;
+_buildings = nearestObjects [_markerPos, listMilBld, _size*1.5];
+
 
 //Adding statics to garrison buildings
 	if(!_reduced) then {
-		_groupGunners = createGroup side_green;
-		_buildings = nearestObjects [_markerPos, listMilBld, _size*1.5];
 			for "_i" from 0 to (count _buildings) - 1 do {
 				_building = _buildings select _i;
 				_buildingType = typeOf _building;

@@ -32,11 +32,7 @@ _task = ["PR",[side_blue,civilian],[format [_tskDesc,_targetName,numberToDate [2
 misiones pushBack _task; publicVariable "misiones";
 
 _spawnPosition = (getMarkerPos guer_respawn) findEmptyPosition [5,50,"C_Van_01_transport_F"];
-if !(count (server getVariable ["obj_vehiclePad",[]]) > 0) then {
-	if (count (_spawnPosition nearObjects ["AllVehicles",7]) > 0) then {
-		_spawnPosition = (server getVariable ["obj_vehiclePad",[]]);
-	};
-};
+sleep 1;
 
 _missionVehicle = "C_Van_01_transport_F" createVehicle _spawnPosition;
 _missionVehicle allowDamage false;

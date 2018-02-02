@@ -14,10 +14,12 @@ _reduced = [false, true] select (_marker in reducedGarrisons);
 _patrolMarker = [_marker] call AS_fnc_createPatrolMarker;
 _busy = if (dateToNumber date > server getVariable _marker) then {false} else {true};
 
+
+_groupGunners = createGroup side_green;
+_buildings = nearestObjects [_markerPos, listMilBld, _size*1.5];
+
 //Adding statics to garrison buildings
 	if(!_reduced) then {
-		_groupGunners = createGroup side_green;
-		_buildings = nearestObjects [_markerPos, listMilBld, _size*1.5];
 			for "_i" from 0 to (count _buildings) - 1 do {
 				_building = _buildings select _i;
 				_buildingType = typeOf _building;
@@ -148,9 +150,9 @@ _allGroups pushBack _groupGunners;
 //Initialize Vehicles
 {[_x] spawn genVEHinit} forEach _allVehicles;
 
-//Create 5 Patrols
+//Create 4 Patrols
 	_currentCount = 0;
-	while {(spawner getVariable _marker) AND (_currentCount < 6)} do {
+	while {(spawner getVariable _marker) AND (_currentCount < 5)} do {
 		while {true} do {
 			_spawnPos = [_markerPos, 150 + (random 350) ,random 360] call BIS_fnc_relPos;
 			if (!surfaceIsWater _spawnPos) exitWith {};
@@ -228,31 +230,31 @@ sleep 3;
 
 
 //Despawn conditions
-waitUntil {sleep 1;
-	!(spawner getVariable _marker) OR
-	(({!(vehicle _x isKindOf "Air")} count ([_size,0,_markerPos,"BLUFORSpawn"] call distanceUnits)) > 3*
-		count (allUnits select {(
-			(side _x == side_green) OR
-			(side _x == side_red)) AND (_x distance _markerPos <= (_size max 300)) AND !(captive _x) and (lifeState _x != "INCAPACITATED")}
+	waitUntil {sleep 1;
+		!(spawner getVariable _marker) OR
+		(
+		 	({!(vehicle _x isKindOf "Air")} count ([_size,0,_markerPos,"BLUFORSpawn"] call distanceUnits)
+		 	) > 3* count (
+		 		allUnits select {( (side _x == side_green) OR (side _x == side_red)) AND (_x distance _markerPos <= (_size max 300)) AND !(captive _x) and (lifeState _x != "INCAPACITATED")}
+			)
 		)
-	)
-};
-
-if ((spawner getVariable _marker) AND !(_marker in mrkFIA)) then{
-	[_flag] remoteExec ["mrkWIN",2];
-};
-
-waitUntil {sleep 1; !(spawner getVariable _marker)};
-
-//Save destroyed buildings after area cached out
-{
-	if ((!alive _x) AND !(_x in destroyedBuildings)) then {
-		destroyedBuildings = destroyedBuildings + [position _x];
-		publicVariableServer "destroyedBuildings";
 	};
-} forEach _buildings;
 
-//Despawn
-deleteMarker _patrolMarker;
-[_allGroups, _allSoldiers, _allVehicles] spawn AS_fnc_despawnUnits;
-if !(isNull _observer) then {deleteVehicle _observer};
+	if ((spawner getVariable _marker) AND !(_marker in mrkFIA)) then{
+		[_flag] remoteExec ["mrkWIN",2];
+	};
+
+	waitUntil {sleep 1; !(spawner getVariable _marker)};
+
+	//Save destroyed buildings
+	{
+		if ((!alive _x) AND !(_x in destroyedBuildings)) then {
+			destroyedBuildings = destroyedBuildings + [position _x];
+			publicVariableServer "destroyedBuildings";
+		};
+	} forEach _buildings;
+
+	//Despawn
+	deleteMarker _patrolMarker;
+	[_allGroups, _allSoldiers, _allVehicles] spawn AS_fnc_despawnUnits;
+	if !(isNull _observer) then {deleteVehicle _observer};
