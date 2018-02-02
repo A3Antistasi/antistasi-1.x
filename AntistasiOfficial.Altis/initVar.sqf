@@ -36,7 +36,7 @@ membership = !(isMultiplayer) OR {("AS_enableServerMember" call BIS_fnc_getParam
 commanderswitch = !(isMultiplayer) OR {("AS_enableSwitchComm" call BIS_fnc_getParamValue) != 0};
 
 status_templatesLoaded = false;
-activeJNA = (("AS_param_useJNA" call BIS_fnc_getParamValue) == 1);
+activeJNA = true; //It can't be disabled because of loss of compatibility
 if (activeJNA) then {
 	jna_dataList = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]];
 };
