@@ -334,14 +334,6 @@ class Params {
             typeName = "BOOL";
             force = 1;
     };
-    class AS_param_useJNA {
-        title = $STR_DES_USABJN;
-            values[] = {0,1};
-            texts[] = {$STR_DES_OFF,$STR_DES_ON};
-            default = 1;
-            typeName = "BOOL";
-            force = 1;
-    };
 	//added by Fireman 12/08/2017
 	class AS_param_tkPenalty {
         title = $STR_DES_PPFT;
