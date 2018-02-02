@@ -39,6 +39,8 @@ if !(count (server getVariable ["obj_vehiclePad",[]]) > 0) then {
 };
 
 _missionVehicle = "C_Van_01_transport_F" createVehicle _spawnPosition;
+_missionVehicle allowDamage false;
+[_missionVehicle] spawn {sleep 1; (_this select 0) allowDamage true;};
 
 _lockedseats = [2,3,4,5,6,7,8,9,10,11];
 {_missionVehicle lockcargo [_x, true]} foreach _lockedseats;
