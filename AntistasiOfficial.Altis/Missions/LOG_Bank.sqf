@@ -21,6 +21,10 @@ _mrkfin setMarkerShape "ICON";
 _pos = (getMarkerPos guer_respawn) findEmptyPosition [1,50,AS_misVehicleBox];
 
 _camion = AS_misVehicleBox createVehicle _pos;
+_camion allowDamage false;
+[_camion] spawn {sleep 1; (_this select 0) allowDamage true;};
+
+
 {_x reveal _camion} forEach (allPlayers - (entities "HeadlessClient_F"));
 [_camion] spawn vehInit;
 _camion setVariable ["destino",_nombredest,true];

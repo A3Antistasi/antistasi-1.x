@@ -218,7 +218,7 @@ if (_convoyType == "HVT") then {
 			{[_x] spawn genInit;_x assignAsCargo _veh;_x moveInCargo _veh; _units pushBack _x; [_x] join ((_vehData select 3) select 0)} forEach units _tempGroup;
 			deleteGroup _tempGroup;
 			if (_escortType != enemyMotorpoolDef) then {
-				[_veh] spawn smokeCover;
+				//[_veh] spawn smokeCover;
 			};
 		};
 
@@ -321,7 +321,7 @@ if !(_escortType in vehTank) then {
 	{[_x] spawn genInit;_x assignAsCargo _veh;_x moveInCargo _veh; _units pushBack _x; [_x] join ((_vehData select 3) select 0)} forEach units _tempGroup;
 	deleteGroup _tempGroup;
 	if (_escortType != enemyMotorpoolDef) then {
-		[_veh] spawn smokeCover;
+		//[_veh] spawn smokeCover;
 	};
 };
 

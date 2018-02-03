@@ -54,14 +54,14 @@ _wpV1_1 = _vehicleGroup addWaypoint [_dismountPosition, 0];
 _wpV1_1 setWaypointBehaviour "CARELESS";
 _wpV1_1 setWaypointSpeed "FULL";
 _wpV1_1 setWaypointType "TR UNLOAD";
-_wpV1_1 setWaypointStatements ["true", "(vehicle this) land 'GET OUT'; [vehicle this] call smokeCoverAuto"];
+_wpV1_1 setWaypointStatements ["true", "(vehicle this) land 'GET OUT';"];
 
 if (_isArmed) then {
 	_wpV1_2 = _vehicleGroup addWaypoint [_targetPosition, 1];
 	_wpV1_2 setWaypointType "SAD";
 	_wpV1_2 setWaypointBehaviour "COMBAT";
 
-	[_vehicle] spawn smokeCover;
+	//[_vehicle] spawn smokeCover;
 	_vehicle allowCrewInImmobile true;
 	[_vehicle,"APC"] spawn inmuneConvoy;
 };

@@ -4,8 +4,6 @@ private ["_origen"];
 
 _marcador = _this select 0;
 
-//forcedSpawn = forcedSpawn + [_marcador]; publicVariable "forcedSpawn";
-
 _posicion = getMarkerPos (_marcador);
 
 _aeropuertos = aeropuertos - mrkAAF + ["spawnNATO"];
@@ -36,8 +34,10 @@ _spawner allowdamage false;
 _spawner setcaptive true;
 _spawner enableSimulation false;
 hideObjectGlobal _spawner;
-_vehiculos = _vehiculos + [_spawner];
-//sleep 15;
+_vehiculos pushBack _spawner;
+_grupos pushBack _spawnergroup;
+
+sleep 15;
 
 for "_i" from 1 to _cuenta do {
 	//Create and initialise aircraft
@@ -85,7 +85,7 @@ for "_i" from 1 to _cuenta do {
 					_wp0 = _grupoheli addWaypoint [_landpos, 0];
 					_wp0 setWaypointType "TR UNLOAD";
 					_wp0 setWaypointSpeed "FULL";
-					_wp0 setWaypointStatements ["true", "(vehicle this) land 'GET OUT'; [vehicle this] call smokeCoverAuto"];
+					_wp0 setWaypointStatements ["true", "(vehicle this) land 'GET OUT';"];
 					[_grupoheli,0] setWaypointBehaviour "CARELESS";
 					_wp3 = _grupo addWaypoint [_landpos, 0];
 					_wp3 setWaypointType "GETOUT";
@@ -117,7 +117,7 @@ for "_i" from 1 to _cuenta do {
 			_wp0 = _grupoheli addWaypoint [_landpos, 0];
 			_wp0 setWaypointType "TR UNLOAD";
 			_wp0 setWaypointSpeed "FULL";
-			_wp0 setWaypointStatements ["true", "(vehicle this) land 'GET OUT'; [vehicle this] call smokeCoverAuto"];
+			_wp0 setWaypointStatements ["true", "(vehicle this) land 'GET OUT';"];
 			[_grupoheli,0] setWaypointBehaviour "CARELESS";
 			_wp3 = _grupo addWaypoint [_landpos, 0];
 			_wp3 setWaypointType "GETOUT";
@@ -154,7 +154,7 @@ for "_i" from 1 to _cuenta do {
 				_wp0 = _grupoheli addWaypoint [_landpos, 0];
 				_wp0 setWaypointType "TR UNLOAD";
 				_wp0 setWaypointSpeed "FULL";
-				_wp0 setWaypointStatements ["true", "(vehicle this) land 'GET OUT'; [vehicle this] call smokeCoverAuto"];
+				_wp0 setWaypointStatements ["true", "(vehicle this) land 'GET OUT';"];
 				[_grupoheli,0] setWaypointBehaviour "CARELESS";
 				_wp3 = _grupo addWaypoint [_landpos, 0];
 				_wp3 setWaypointType "GETOUT";
@@ -192,8 +192,6 @@ if ({alive _x} count _soldados < _solMax) then {
 	[-10,0] remoteExec ["prestige",2];
 };
 
-//forcedSpawn = forcedSpawn - [_marcador]; publicVariable "forcedSpawn";
-sleep 15;
 
 //[_tsk,true] call BIS_fnc_deleteTask;
 [0,_tsk] spawn borrarTask;
@@ -211,5 +209,6 @@ sleep 15;
 	waitUntil {sleep 1; {_x distance _vehiculo < distanciaSPWN/2} count (allPlayers - (entities "HeadlessClient_F")) == 0};
 	deleteVehicle _x
 } forEach _vehiculos;
+
 
 

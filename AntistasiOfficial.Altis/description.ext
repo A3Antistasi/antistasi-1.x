@@ -2,12 +2,12 @@
 #include "dialogs.hpp"
 
 author="Barbolani";
-OnLoadName = "Antistasi - modified 1.7.19";
+OnLoadName = "Antistasi - modified 1.7.19B3";
 OnLoadMission = "Be a Resistance Leader - Be a Hero";
-//loadScreen = "pic.paa";
+loadScreen = "pic.paa";
 
 overviewText = "Be the Resistance Leader. Fight against a superior enemy in technology, number, assets and vehicles. Use guerrilla tactics in a totally dynamic world, with around 18 sidemissions, everywhere, anytime, anything.";
-//overviewPicture = "pic.paa";
+overviewPicture = "pic.paa";
 
 allowFunctionsLog = 1;
 enableDebugConsole = 1;
@@ -328,14 +328,6 @@ class Params {
     };
     class AS_enableServerMember {
         title = $STR_DES_ESRMBR;
-            values[] = {0,1};
-            texts[] = {$STR_DES_OFF,$STR_DES_ON};
-            default = 1;
-            typeName = "BOOL";
-            force = 1;
-    };
-    class AS_param_useJNA {
-        title = $STR_DES_USABJN;
             values[] = {0,1};
             texts[] = {$STR_DES_OFF,$STR_DES_ON};
             default = 1;

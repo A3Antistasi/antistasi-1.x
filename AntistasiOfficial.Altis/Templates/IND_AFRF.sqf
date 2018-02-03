@@ -120,7 +120,7 @@ infAT =				["rhs_group_rus_vdv_infantry_section_AT"];
 // Statics to be used
 statMG = 			"rhs_DSHKM_ins";
 statAT = 			"rhs_Kornet_9M133_2_vdv"; // alternatives: rhs_Kornet_9M133_2_vdv, rhs_SPG9M_VDV, rhs_Metis_9k115_2_vdv
-statAA = 			"RHS_ZU23_VDV"; // alternatively: "rhs_Igla_AA_pod_vdv"
+statAA = 			"rhs_Igla_AA_pod_msv";
 statAA2 = 			"rhs_Igla_AA_pod_vdv";
 statMortar = 		"rhs_2b14_82mm_vdv";
 
@@ -464,7 +464,10 @@ unlockedItems = [
 ];
 
 unlockedBackpacks = [
-	"rhs_assault_umbts"
+	"rhs_assault_umbts",
+	"rhs_assault_umbts_engineer",
+	"rhs_medic_bag"
+
 ];
 
 unlockedOptics = [];

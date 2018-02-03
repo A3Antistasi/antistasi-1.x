@@ -33,21 +33,22 @@ _targetName = [_marker] call AS_fnc_localizar;
 _originMarker = [_base, _airport] select (_base == "");
 _originName = ([_base, _airport] select (_base == "")) call AS_fnc_localizar;
 
-_task = ["AtaqueAAF",[side_blue,civilian],[format [localize "STR_TSK_CA_CREATE",A3_Str_INDEP,_originName],format ["%1 Attack",A3_Str_INDEP],_originMarker],getMarkerPos _originMarker,"CREATED",10,true,true,"Defend"] call BIS_fnc_setTask;
+_task = ["AtaqueAAF",[side_blue,civilian],[format [localize "STR_TSK_TD_CA_CREATE",A3_Str_INDEP,_originName],format ["%1 Attack",A3_Str_INDEP],_originMarker],getMarkerPos _originMarker,"CREATED",10,true,true,"Defend"] call BIS_fnc_setTask;
 
 misiones pushbackUnique "AtaqueAAF"; publicVariable "misiones";
 _attackDuration = time + 2400;
 
-//Adding caching dummy unit to keep the area spawned
-	_sawnergroup = createGroup east;
-	_spawner = _sawnergroup createUnit [selectrandom CIV_journalists, getmarkerpos _marker, [], 15,"None"];
+//Adding caching area
+	_spawnergroup = createGroup east;
+	_spawner = _spawnergroup createUnit [selectrandom CIV_journalists, getmarkerpos _marker, [], 15,"None"];
 	_spawner setVariable ["OPFORSpawn",true,true];
-	_spawner setVariable ["BLUFORSpawn",true,true];
 	_spawner setcaptive true;
 	_spawner allowdamage false;
 	_spawner enableSimulation false;
 	hideObjectGlobal _spawner;
-
+	_allSoldiers pushback _spawner;
+	_allGroups pushBack _spawnergroup;
+sleep 15;
 
 if !(_forceAirport == "") then {
 	_involveCSAT = false;
@@ -118,7 +119,7 @@ if (_involveCSAT) then {
 	sleep 15;
 	};
 
-	_task = ["AtaqueAAF",[side_blue,civilian],[format [localize "STR_TSK_CA_CREATE_RED",A3_Str_INDEP,A3_Str_RED,_targetName,_originName],format ["%1/%2 Attack",A3_Str_INDEP,A3_Str_RED],_marker],getMarkerPos _marker,"CREATED",10,true,true,"Defend"] call BIS_fnc_setTask;
+	_task = ["AtaqueAAF",[side_blue,civilian],[format [localize "STR_TSK_TD_CA_CREATE_RED",A3_Str_INDEP,A3_Str_RED,_targetName,_originName],format ["%1/%2 Attack",A3_Str_INDEP,A3_Str_RED],_marker],getMarkerPos _marker,"CREATED",10,true,true,"Defend"] call BIS_fnc_setTask;
 	[["TaskSucceeded", ["", format [localize "STR_TSK_CA_TARGET",_targetName]]],"BIS_fnc_showNotification"] call BIS_fnc_MP;
 
 	[_marker] spawn {
@@ -322,15 +323,29 @@ diag_log format ["groups: %1; vehicles: %2; soldiers: %3", _allGroups, _allVehic
 //forcedSpawn pushBack _marker; //Sparker: force spawn a base under attack
 //publicVariable "forcedSpawn";
 
+//Retreat conditions
 waitUntil
 {
 	sleep 5;
 	(
-		({!(captive _x)} count _allSoldiers) < ({captive _x} count _allSoldiers)) OR
-		({alive _x} count _allSoldiers < (round ((count _allSoldiers)/3))) OR
+	 	//Operative soldiers < 1/3 of All soldiers
+		( {((alive _x) and (lifeState _x != "INCAPACITATED"))} count _allSoldiers < (round ((count _allSoldiers)/3)) ) OR
+
+		//time is over
 		(time > _attackDuration) OR
+
+		//objective has been captured
 		(_marker in mrkAAF) OR
-		(2*count (allUnits select {(side _x == side_blue) AND (_x distance _markerPos <= 100)}) < count (allUnits select {((side _x == side_green) OR (side _x == side_red)) AND (_x distance _markerPos <= 100)})
+
+		//(Operative FIA within 100m) < (Operative AAF within 100m)
+		(2*count (allUnits select {(side _x == side_blue) AND (_x distance _markerPos <= 100) and (lifeState _x != "INCAPACITATED")})
+		) < count (
+			allUnits select {
+				((side _x == side_green) OR (side _x == side_red)) AND
+				(_x distance _markerPos <= 100) and
+				(lifeState _x != "INCAPACITATED")
+			}
+		)
 	)
 };
 
@@ -340,18 +355,18 @@ if !(_marker in mrkAAF) then {
 	{if (isPlayer _x) then {[10,_x] call playerScoreAdd}} forEach ([500,0,_markerPos,"BLUFORSpawn"] call distanceUnits);
 	[5,Slowhand] call playerScoreAdd;
 	if !(_involveCSAT) then {
-		_task = ["AtaqueAAF",[side_blue,civilian],[format [localize "STR_TSK_CA_CREATE",A3_Str_INDEP,_originName],format ["%1 Attack",A3_Str_INDEP],_originMarker],getMarkerPos _originMarker,"SUCCEEDED",10,true,true,"Defend"] call BIS_fnc_setTask;
+		_task = ["AtaqueAAF",[side_blue,civilian],[format [localize "STR_TSK_TD_CA_CREATE",A3_Str_INDEP,_originName],format ["%1 Attack",A3_Str_INDEP],_originMarker],getMarkerPos _originMarker,"SUCCEEDED",10,true,true,"Defend"] call BIS_fnc_setTask;
 	} else {
-		_task = ["AtaqueAAF",[side_blue,civilian],[format [localize "STR_TSK_CA_CREATE_RED",A3_Str_INDEP,A3_Str_RED,_targetName,_originName],format ["%1/%2 Attack",A3_Str_INDEP,A3_Str_RED],_marker],getMarkerPos _marker,"SUCCEEDED",10,true,true,"Defend"] call BIS_fnc_setTask;
+		_task = ["AtaqueAAF",[side_blue,civilian],[format [localize "STR_TSK_TD_CA_CREATE_RED",A3_Str_INDEP,A3_Str_RED,_targetName,_originName],format ["%1/%2 Attack",A3_Str_INDEP,A3_Str_RED],_marker],getMarkerPos _marker,"SUCCEEDED",10,true,true,"Defend"] call BIS_fnc_setTask;
 	};
 	{_x doMove _originPosition} forEach _allSoldiers;
 	{_wpRTB = _x addWaypoint [_originPosition, 0]; _x setCurrentWaypoint _wpRTB} forEach _allGroups;
 } else {
 	[-10,Slowhand] call playerScoreAdd;
 	if (!_involveCSAT) then {
-		_task = ["AtaqueAAF",[side_blue,civilian],[format [localize "STR_TSK_CA_CREATE",A3_Str_INDEP,_originName],format ["%1 Attack",A3_Str_INDEP],_originMarker],getMarkerPos _originMarker,"FAILED",10,true,true,"Defend"] call BIS_fnc_setTask;
+		_task = ["AtaqueAAF",[side_blue,civilian],[format [localize "STR_TSK_TD_CA_CREATE",A3_Str_INDEP,_originName],format ["%1 Attack",A3_Str_INDEP],_originMarker],getMarkerPos _originMarker,"FAILED",10,true,true,"Defend"] call BIS_fnc_setTask;
 	} else {
-		_task = ["AtaqueAAF",[side_blue,civilian],[format [localize "STR_TSK_CA_CREATE_RED",A3_Str_INDEP,A3_Str_RED,_targetName,_originName],format ["%1/%2 Attack",A3_Str_INDEP,A3_Str_RED],_marker],getMarkerPos _marker,"FAILED",10,true,true,"Defend"] call BIS_fnc_setTask;
+		_task = ["AtaqueAAF",[side_blue,civilian],[format [localize "STR_TSK_TD_CA_CREATE_RED",A3_Str_INDEP,A3_Str_RED,_targetName,_originName],format ["%1/%2 Attack",A3_Str_INDEP,A3_Str_RED],_marker],getMarkerPos _marker,"FAILED",10,true,true,"Defend"] call BIS_fnc_setTask;
 	};
 };
 
@@ -365,7 +380,5 @@ sleep 30;
 waitUntil {sleep 1; !(spawner getVariable _marker)};
 
 [_allGroups + _redGroups, _allSoldiers + _redSoldiers, _allVehicles + _redVehicles] spawn AS_fnc_despawnUnits;
-deletevehicle _spanwer;
 
-forcedSpawn = forcedSpawn - [_marker]; //Sparker: remove force spawn a base under attack
-publicVariable "forcedSpawn";
+

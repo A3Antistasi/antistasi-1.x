@@ -6,7 +6,7 @@ diag_log "InitVar.sqf: start";
 //You do not have enough balls to make any modification and after making a Bug report because something is wrong. You don't wanna be there. Believe me.
 //Not commented lines cannot be changed.
 //Don't touch them.
-antistasiVersion = "v 1.7.19 -- modded";
+antistasiVersion = "v 1.7.19B3 -- modded";
 
 servidoresOficiales = ["Antistasi Official: Main","Antistasi Official: Hardcore", "Antistasi Official: USA"];//I'm going to remove this
 
@@ -36,7 +36,7 @@ membership = !(isMultiplayer) OR {("AS_enableServerMember" call BIS_fnc_getParam
 commanderswitch = !(isMultiplayer) OR {("AS_enableSwitchComm" call BIS_fnc_getParamValue) != 0};
 
 status_templatesLoaded = false;
-activeJNA = (("AS_param_useJNA" call BIS_fnc_getParamValue) == 1);
+activeJNA = true; //It can't be disabled because of loss of compatibility
 if (activeJNA) then {
 	jna_dataList = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]];
 };

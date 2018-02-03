@@ -40,6 +40,7 @@
 		</Container>
 	</Package>
 	<Package name="Actions">
+		<Container name="Actions">
 		<Key ID="STR_ACT_OFFERTOJOIN">
 			<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\talk_ca.paa' /&gt; Offer to Join</Original>
 			<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\talk_ca.paa' /&gt;Предложить присоединиться</Russian>
@@ -125,9 +126,9 @@
 			<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\VTOLVectoring_ca.paa' /&gt; Переместить</Russian>
 		</Key>
 		<Key ID="STR_ACT_CHANGEROLE">
-			<Original>&lt;img size='1.2' image='' /&gt; Change Class</Original>
-			<Russian>&lt;img size='1.2' image='' /&gt; Изменить класс</Russian>
-		</Key>
+				<Original>&lt;img size='1.2' image='A3\ui_f\data\GUI\Cfg\Ranks\private_gs.paa' /&gt; Change Class</Original>
+				<Russian>&lt;img size='1.2' image='A3\ui_f\data\GUI\Cfg\Ranks\private_gs.paa' /&gt; Изменить Класс</Russian>
+			</Key>
 		<Key ID="STR_ACT_REMOVEASSET">
 			<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Revive\overlayIcons\f100_ca.paa' /&gt; Remove this Object</Original>
 			<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Revive\overlayIcons\f100_ca.paa' /&gt; Удалить</Russian>
@@ -201,9 +202,10 @@
 			<Russian>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Захват важной персоны</Russian>
 		</Key>
 		<Key ID="STR_ACT_BUYB">
-			<Original>Buy Boat</Original>
-			<Russian>Купить лодку</Russian>
+				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\simpleTasks\types\boat_ca.paa' /&gt; Buy Boat</Original>
+				<Russian>&lt; img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\simpleTasks\types\boat_ca.paa' /&gt;Купить Лодку</Russian>
 		</Key>
+	</Container>
 	</Package>
 	<Package name="Identifiers">
 		<Key ID="STR_GENIDENT_AAF">
@@ -724,7 +726,8 @@
 				<Russian>Цена: 5 очков - Вертолёт сбросит на парашюте базовый комплект снаряжения в выбранное место.</Russian>
 			</Key>
 			<Key ID="STR_UI_ALLY_CAS_TEXT">
-				<Original>Авиаподдержка</Original>
+				<Original>CAS</Original>
+				<Russian>Авиаподдержка</Russian>
 			</Key>
 			<Key ID="STR_UI_ALLY_CAS_TT">
 				<Original>Price: 10 Points -- A Vic formation of CAS aircraft will be placed under your command.</Original>
@@ -3019,9 +3022,6 @@
 				<Original>Delete All</Original>
 				<Russian>Удалить всё</Russian>
 			</Key>
-			<Key ID="STR_D_GAME_OP">
-				<Original>Game Options</Original>
-				<Russian>Настройки игры</Russian>
 			</Key>
 			<Key ID="STR_D_CIVCON">
 				<Original>Civ Config</Original>
@@ -3043,6 +3043,7 @@
 				<Original>Persistent Save</Original>
 				<Russian>Сохранение игры</Russian>
 			</Key>
+
 			<Key ID="STR_D_MUS_ON_OFF">
 				<Original>Music ON/OFF</Original>
 				<Russian>Музыка Вкл/Выкл</Russian>

@@ -7,7 +7,7 @@ private ["_originPos","_targetPosition","_originName","_targetName","_endTime","
 
 #define duration 60
 
-_originPos = getMarkerPos _originMarker;
+_originPosition = getMarkerPos _originMarker;
 _targetPosition = getMarkerPos _targetMarker;
 
 _targetName = [_targetMarker] call AS_fnc_localizar;
@@ -26,19 +26,14 @@ _counter = round (_counter / 25);
 _group = createGroup side_blue;
 _group setVariable ["esNATO",true,true];
 
-_wp0 = _group addWaypoint [_targetPosition, 0];
-_wp0 setWaypointType "SAD";
-_wp0 setWaypointBehaviour "SAFE";
-_wp0 setWaypointSpeed "LIMITED";
-_wp0 setWaypointFormation "COLUMN";
-
-//_spawnpositionData = [_originPosition, _targetPosition] call AS_fnc_findSpawnSpots; //originPosition is unknown! Sparker.
-_spawnpositionData = [_originPos, _targetPosition] call AS_fnc_findSpawnSpots;
-_spawnPosition = _spawnpositionData select 0;
-_direction = _spawnpositionData select 1;
-
-
 for "_i" from 1 to _counter do {
+	_spawnpositionData = [_originPosition, _targetPosition] call AS_fnc_findSpawnSpots;
+	_spawnPosition = _spawnpositionData select 0;
+	private _spawnPosition_s = [_spawnPosition, 5, 20, 5, 0, 6, 0, [], _spawnPosition select [0, 2]] call BIS_fnc_findSafePos; //Sparker: otherwise vehicles spawn inside each other
+	_spawnPosition = +_spawnPosition_s;
+	_spawnPosition pushback 0.1; //Because findsafepos returns [x, y]
+	_direction = _spawnpositionData select 1;
+
 	_vehicleData = [_spawnPosition, _direction, selectRandom bluMBT, _group] call bis_fnc_spawnvehicle;
 	_vehicle = _vehicleData select 0;
 	[_vehicle] spawn NATOVEHinit;
@@ -47,8 +42,25 @@ for "_i" from 1 to _counter do {
 	{[_x] spawn NATOinitCA; _allSoldiers pushBack _x} forEach _vehicleCrew;
 	_allVehicles pushBack _vehicle;
 	_vehicle allowCrewInImmobile true;
-	sleep 15;
+	sleep 2;
 };
+
+_wp0 = _group addWaypoint [_targetPosition, 0];
+_wp0 setWaypointType "SAD";
+_wp0 setWaypointBehaviour "SAFE";
+_wp0 setWaypointSpeed "NORMAL";
+_wp0 setWaypointFormation "COLUMN";
+
+sleep 15;
+_spawnergroup = createGroup east;
+_spawner = _spawnergroup createUnit [selectrandom CIV_journalists, getmarkerpos _targetPosition, [], 15,"None"];
+_spawner setVariable ["BLUFORSpawn",true,true];
+_spawner disableAI "ALL";
+_spawner allowdamage false;
+_spawner setcaptive true;
+_spawner enableSimulation false;
+hideObjectGlobal _spawner;
+_allVehicles pushBack _spawner;
 
 waitUntil {sleep 10; (dateToNumber date > _endTime) OR ({alive _x} count _allSoldiers == 0) OR ({(alive _x)} count _allVehicles == 0)};
 
@@ -61,4 +73,4 @@ sleep 15;
 
 [0,_tsk] spawn borrarTask;
 
-[[_group], _allSoldiers, _allVehicles] spawn AS_fnc_despawnUnits;
+[[_group], _allSoldiers, _allVehicles] call AS_fnc_despawnUnitsNow;

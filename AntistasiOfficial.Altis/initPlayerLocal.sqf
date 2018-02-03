@@ -145,7 +145,7 @@ if (isMultiplayer) then {
 
 if (_isJip) then { waitUntil {scriptdone _introshot};
 		[] execVM "modBlacklist.sqf";
-		player setUnitRank "PRIVATE";
+		player setUnitRank "PRIVATE"; //we already load the rank in another place do we need this?
 		[true] execVM "reinitY.sqf";
 		// Add actions to flags
 		{
@@ -158,7 +158,6 @@ if (_isJip) then { waitUntil {scriptdone _introshot};
 					} else {
 						_x addAction [localize "STR_ACT_RECRUITUNIT", {nul=[] execVM "Dialogs\unit_recruit.sqf";},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"];
 						_x addAction [localize "STR_ACT_BUYVEHICLE", {createDialog "vehicle_option";},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"];
-						_x addAction [localize "STR_ACT_PERSGARAGE", {[true] spawn garage},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"];
 					};
 				};
 			};
@@ -221,6 +220,7 @@ INFO("Game is ready to initialize player");
 //Teleport to the guer_respawn marker
 waitUntil {!isNil "posHQ"};
 systemChat "Teleporting player to HQ";
+sleep 2;
 player setPos (posHQ getPos [8,random 360]);
 player setdir (player getdir petros);
 INFO("Player is moved to the camp");

@@ -19,7 +19,7 @@ _wp400 = _vehGroup addWaypoint [_dest, 0];
 _wp400 setWaypointBehaviour "CARELESS";
 _wp400 setWaypointSpeed "FULL";
 _wp400 setWaypointType "TR UNLOAD";
-_wp400 setWaypointStatements ["true", "(vehicle this) land 'GET OUT'; [vehicle this] call smokeCoverAuto"];
+_wp400 setWaypointStatements ["true", "(vehicle this) land 'GET OUT';"];
 _wp401 = _infGroup1 addWaypoint [_dest, 0];
 _wp401 setWaypointType "GETOUT";
 _wp401 synchronizeWaypoint [_wp400];

@@ -108,9 +108,11 @@ _size = [_marcador] call sizeMarker;
 		 	(alive _x) and
 		 	(lifeState _x != "INCAPACITATED")}
 		 	count ([_size,0,_posicion,"BLUFORSpawn"] call distanceUnits)) > 3*(
-		{(alive _x) and
+		  {	(alive _x) and
 			(lifeState _x != "INCAPACITATED") and
 			(!fleeing _x)}
-			count ([_size,0,_posicion,"OPFORSpawn"] call distanceUnits)))};
+			count ([_size,0,_posicion,"OPFORSpawn"] call distanceUnits))
+		)
+	};
 
 	if (spawner getVariable _marcador) then{[_bandera] spawn mrkWIN;};

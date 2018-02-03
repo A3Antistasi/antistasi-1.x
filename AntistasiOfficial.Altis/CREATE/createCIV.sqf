@@ -147,4 +147,5 @@ for "_i" from 1 to _patrolCounter do {
 };
 
 waitUntil {sleep 1; !(spawner getVariable _marker)};
-[_allGroups, _allCivilians, _allVehicles] spawn AS_fnc_despawnUnits;
+[_allGroups, _allCivilians] call AS_fnc_despawnUnitsNow;
+[[],[],_allVehicles] call AS_fnc_despawnUnits;

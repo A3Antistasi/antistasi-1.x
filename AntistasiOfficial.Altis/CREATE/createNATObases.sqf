@@ -22,8 +22,11 @@ _buildings = nearestObjects [_markerPos, listMilBld, _size*1.5];
 _group = createGroup side_blue;
 _allGroups pushBack _group;
 
-//NATO Garrison selection
-	/*for "_i" from 0 to (count _buildings) - 1 do {
+
+/* Disable NATO Garrison, wanna make NATO garrisoning a choice, not just by default.. untill capturing a base will be a real deal.
+//NATO Garrison
+	//Turrets
+	for "_i" from 0 to (count _buildings) - 1 do {
 		_building = _buildings select _i;
 		_buildingType = typeOf _building;
 
@@ -64,17 +67,9 @@ _allGroups pushBack _group;
 				sleep 1;
 			};
 		};
-	}; */
+	};
 
-	_spawnPos = [_markerPos, 3,0] call BIS_fnc_relPos;
-	_flag = createVehicle [bluFlag, _spawnPos, [],0, "CAN_COLLIDE"];
-	_flag allowDamage false;
-	_allVehicles pushBack _flag;
-	[_flag,"unit"] remoteExec ["AS_fnc_addActionMP"];
-	[_flag,"vehicle"] remoteExec ["AS_fnc_addActionMP"];
-	//[_flag,"garage"] remoteExec ["AS_fnc_addActionMP"]; // Apex
-
-	_maxVehicles = 0; // Stef changed this to 0 "4 min (round ((_size / 30)*_support));"
+	_maxVehicles = 4 min (round ((_size / 30)*_support));
 	if ( _maxVehicles > 0 ) then {
 		_spawnPos = [_markerPos, random (_size / 2),random 360] call BIS_fnc_relPos;
 		_counter = 0;
@@ -93,7 +88,7 @@ _allGroups pushBack _group;
 	{[_x] spawn NATOinit} forEach _allSoldiers;
 	{[_x] spawn NATOVEHinit} forEach _allVehicles;
 
-	_maxVehicles = 0 max (round ((_size/30)*_support)); //Stef 02/10 "max =" changed from 1 to 0 to prevent vehicle spawning
+	_maxVehicles = 1 max (round ((_size/30)*_support));
 	_spawnPos = _markerPos;
 	_counter = 0;
 	while {(spawner getVariable _marker) AND (_counter < _maxVehicles)} do {
@@ -109,11 +104,11 @@ _allGroups pushBack _group;
 
 		_counter = _counter + 1;
 	};
-/*
+
+	//Initialise NATO units
 	_groupType = [bluTeam, side_blue] call AS_fnc_pickGroup;
 	_group = [_markerPos, side_blue, _groupType] call BIS_Fnc_spawnGroup;
 	sleep 1;
-	//[leader _group, _marker, "SAFE", "RANDOMUP","SPAWNED", "NOVEH2", "NOFOLLOW"] execVM "scripts\UPSMON.sqf"; Stef 14/09 changed to ORIGINAL for smoother attack
 	[leader _group, _marker, "SAFE", "ORIGINAL","SPAWNED", "NOVEH2", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 	_allGroups pushBack _group;
 
@@ -129,18 +124,19 @@ _allGroups pushBack _group;
 			_group = [_spawnPos,side_blue, _groupType] call BIS_Fnc_spawnGroup;
 			sleep 1;
 			if (_counter == 0) then {
-				//[leader _group, _marker, "SAFE","SPAWNED","FORTIFY","NOVEH","NOFOLLOW"] execVM "scripts\UPSMON.sqf";   Stef 14/09 removed fortify for smoother attack
-				[leader _group, _marker, "SAFE","SPAWNED","NOVEH","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
-			}
-			else {
+				[leader _group, _marker, "SAFE","SPAWNED","FORTIFY","NOVEH","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
+			} else {
 				[leader _group, _marker, "SAFE","SPAWNED", "RANDOM","NOVEH", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 			};
 			_allGroups pushBack _group;
 		};
 
 		_counter = _counter + 1;
-	};*/
-//NATO Garrison add to array
+	};
+};
+*/
+
+//Create groups for FIA garrison
 	_gunnerGroup = createGroup side_blue;
 	_guerGroups pushBack _gunnerGroup;
 	_garrison = garrison getVariable [_marker,[]];
@@ -152,7 +148,6 @@ _allGroups pushBack _group;
 		if (isNull _group) then {
 			_group = createGroup side_blue;
 			_guerGroups pushBack _group; //Sparker.
-			//_guerGroups pushBack _group;
 			while {true} do {
 				_spawnPos = [_markerPos, random _size,random 360] call BIS_fnc_relPos;
 				if (!surfaceIsWater _spawnPos) exitWith {};
@@ -160,56 +155,50 @@ _allGroups pushBack _group;
 		};
 		_unitType = _garrison select _counter;
 		call {
-			if (_unitType == guer_sol_UN) exitWith {
-				_unit = _gunnerGroup createUnit [_unitType, _markerPos, [], 0, "NONE"];
-				_spawnPos = [_markerPos] call mortarPos;
-				_vehicle = guer_stat_mortar createVehicle _spawnPos;
-				_guerVehicles pushBack _vehicle;
-				[_vehicle] execVM "scripts\UPSMON\MON_artillery_add.sqf";
-				_unit assignAsGunner _vehicle;
-				_unit moveInGunner _vehicle;
-			};
-
+			//Mortar
+				if (_unitType == guer_sol_UN) exitWith {
+					_unit = _gunnerGroup createUnit [_unitType, _markerPos, [], 0, "NONE"];
+					_spawnPos = [_markerPos] call mortarPos;
+					_vehicle = guer_stat_mortar createVehicle _spawnPos;
+					_guerVehicles pushBack _vehicle;
+					[_vehicle] execVM "scripts\UPSMON\MON_artillery_add.sqf";
+					_unit assignAsGunner _vehicle;
+					_unit moveInGunner _vehicle;
+				};
+			//Man the statics placed by player
 			if ((_unitType == guer_sol_RFL) AND (count _statics > 0)) exitWith {
 				_static = _statics select 0;
 				if (typeOf _static == guer_stat_mortar) then {
 					_unit = _gunnerGroup createUnit [_unitType, _markerPos, [], 0, "NONE"];
+					_unit assignAsGunner _static;
 					_unit moveInGunner _static;
 					[_static] execVM "scripts\UPSMON\MON_artillery_add.sqf";
 				} else {
 					_unit = _gunnerGroup createUnit [_unitType, _markerPos, [], 0, "NONE"];
+					_unit assignAsGunner _static;
 					_unit moveInGunner _static;
 				};
 				_statics = _statics - [_static];
 			};
 
+			//Create the soldier assigned as garrison
 			_unit = _group createUnit [_unitType, _markerPos, [], 0, "NONE"];
 			if (_unitType == guer_sol_SL) then {_group selectLeader _unit};
 		};
 		_counter = _counter + 1;
+		//This should create several groups of 4 people, why?
 		if(count units _group == 4) then {_group = grpNull;};
 	};
 
 	for "_i" from 0 to (count _guerGroups) - 1 do {
 		_group = _guerGroups select _i;
-		//[leader _group, _marker, "SAFE","SPAWNED","RANDOM","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf"; Stef 14/09 changed to RANDOMUP for smoother attack
-		[_group, _marker, "SAFE","SPAWNED", "ORIGINAL","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
+		[_group, _marker, "COMBAT","SPAWNED", "ORIGINAL","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 	};
 
-// Apex 22/9/17 21:12 UK Time
+//Initialise vehicles
 	{[_x] spawn VEHinit;} forEach _guerVehicles;
 
-	////////////////////////////////
-	/* //You obviously wanted to loop through groups, not soldiers. Sparker.
-	{
-		_group = _x;
-		{
-			[_x] spawn AS_fnc_initialiseFIAGarrisonUnit;
-			_allSoldiers pushBack _x;
-		} forEach units _group;
-	} forEach _guerSoldiers;
-	*/
-
+//Initialise FIA soldiers
 	{
 		_group = _x;
 		{
@@ -217,8 +206,8 @@ _allGroups pushBack _group;
 			_guerSoldiers pushBack _x;
 		} forEach units _group;
 	} forEach _guerGroups;
-	/////////////////////////////////
 
+//Initialise NATO soldiers
 {
 	_group = _x;
 	{
@@ -226,9 +215,19 @@ _allGroups pushBack _group;
 	} forEach units _group;
 } forEach _allGroups;
 
+//Initialise NATO vehicles
 {
 	[_x] spawn NATOVEHinit;
 } forEach _allVehicles;
+
+//Flag
+	_spawnPos = [_markerPos, 3,0] call BIS_fnc_relPos;
+	_flag = createVehicle [bluFlag, _spawnPos, [],0, "CAN_COLLIDE"];
+	_flag allowDamage false;
+	_allVehicles pushBack _flag;
+	[_flag,"unit"] remoteExec ["AS_fnc_addActionMP"];
+	[_flag,"vehicle"] remoteExec ["AS_fnc_addActionMP"];
+
 //Add Journalist
 	_observer = objNull;
 	if ((random 100 < (((server getVariable "prestigeNATO") + (server getVariable "prestigeCSAT"))/10)) AND (spawner getVariable _marker)) then {
@@ -244,24 +243,32 @@ _allGroups pushBack _group;
 		[_group, _marker, "SAFE", "SPAWNED","NOFOLLOW", "NOVEH2","NOSHARE","DoRelax"] execVM "scripts\UPSMON.sqf";
 	};
 
-//Despawn conditions
-waitUntil {sleep 1; !(spawner getVariable _marker) OR (({!(vehicle _x isKindOf "Air")} count ([_size,0,_markerPos,"OPFORSpawn"] call distanceUnits)) > 2*(({alive _x} count _allSoldiers) + count ([_size,0,_markerPos,"BLUFORSpawn"] call distanceUnits)))};
+//Despawn conditions FIA
+	waitUntil {sleep 1;
+		!(spawner getVariable _marker) OR
+		(
+		 	( ({!(vehicle _x isKindOf "Air") OR (lifeState _x != "INCAPACITATED")} count (([_size,0,_markerPos,"OPFORSpawn"] call distanceUnits)))-1
+		 	) > 3*(
+		 	( {(alive _x) AND (lifeState _x != "INCAPACITATED")} count _allSoldiers) + count ([_size,0,_markerPos,"BLUFORSpawn"] call distanceUnits) )
+		)
+	};
 
-//Territory loose conditions
-if (spawner getVariable _marker) then {
-	if (_marker != "FIA_HQ") then {[_marker] remoteExec ["mrkLOOSE",2]};
-};
+	//Territory loose conditions
+		if (spawner getVariable _marker) then {
+			if (_marker != "FIA_HQ") then {[_marker] remoteExec ["mrkLOOSE",2]};
+		};
 
-
-if (count ([distanciaSPWN,0,_markerPos,"BLUFORSpawn"] call distanceUnits) < 1) then {
-	spawner setVariable [_marker,false,true];
-};
+		//Despawn
+		if (count ([distanciaSPWN,0,_markerPos,"BLUFORSpawn"] call distanceUnits) < 1) then {
+			spawner setVariable [_marker,false,true];
+		};
 
 
 waitUntil {sleep 1; !(spawner getVariable _marker)};
 
-{if ((!alive _x) AND !(_x in destroyedBuildings)) then {destroyedBuildings = destroyedBuildings + [position _x]; publicVariableServer "destroyedBuildings"}} forEach _buildings;
+	//Save destroyed buildings
+		{if ((!alive _x) AND !(_x in destroyedBuildings)) then {destroyedBuildings = destroyedBuildings + [position _x]; publicVariableServer "destroyedBuildings"}} forEach _buildings;
 
-[_allGroups + _guerGroups, _allSoldiers + _guerSoldiers, _allVehicles + _guerVehicles] spawn AS_fnc_despawnUnits; //AS_fnc_despawnUnits is waiting for blufor to leave, not opfor!! So they might spawn multiple times.
-
-if !(isNull _observer) then {deleteVehicle _observer};
+	//Despawn
+		[_allGroups + _guerGroups, _allSoldiers + _guerSoldiers, _allVehicles + _guerVehicles] call AS_fnc_despawnUnitsNow; //AS_fnc_despawnUnits is waiting for blufor to leave, not opfor!! So they might spawn multiple times.
+		if !(isNull _observer) then {deleteVehicle _observer};

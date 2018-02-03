@@ -58,6 +58,8 @@ if (count _airports > 0) then {_airport = [_airports, _targetPosition] call BIS_
 propTruck = "";
 _pos = (getMarkerPos guer_respawn) findEmptyPosition [10,50,"C_Truck_02_box_F"];
 propTruck = "C_Truck_02_box_F" createVehicle _pos;
+propTruck allowDamage false;
+[propTruck] spawn {sleep 1; (_this select 0) allowDamage true;};
 
 // spawn eye candy
 _grafArray = [];
