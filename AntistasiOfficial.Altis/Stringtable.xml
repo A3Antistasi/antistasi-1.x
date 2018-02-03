@@ -361,7 +361,7 @@
 				<Original>ComSwitch Disabled</Original>
 				<Russian>Смена Командира Выкл</Russian>
 			</Key>
-			<Key ID=STR_UI_SM_COM_1>
+			<Key ID="STR_UI_SM_COM_1">
 				<Original>ComSwitch Enabled</Original>
 				<Russian>Смена Командира Вкл</Russian>
 			</Key>
