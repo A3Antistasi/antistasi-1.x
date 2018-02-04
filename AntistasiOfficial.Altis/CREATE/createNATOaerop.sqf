@@ -19,14 +19,6 @@ _support = (server getVariable "prestigeNATO")/100;
 _buildings = nearestObjects [_markerPos, listMilBld, _size*1.5];
 _statics = staticsToSave select {_x distance _markerPos < (_size max 50)};
 
-//Flag
-	_spawnPos = [_markerPos, 3,0] call BIS_fnc_relPos;
-	_flag = createVehicle [bluFlag, _spawnPos, [],0, "CAN_COLLIDE"];
-	_flag allowDamage false;
-	_allVehicles pushBack _flag;
-	[_flag,"unit"] remoteExec ["AS_fnc_addActionMP"];
-	[_flag,"vehicle"] remoteExec ["AS_fnc_addActionMP"];
-
 /* Stef Disable NATO Garrison: it spawn too many units and it's generally too easy to capture bases
 //NATO Garrison
 	//Aircraft
@@ -236,6 +228,25 @@ for "_i" from 0 to (count _guerGroups) - 1 do {
 		_allGroups pushBack _group;
 		[_group, _marker, "SAFE", "SPAWNED","NOFOLLOW", "NOVEH2","NOSHARE","DoRelax"] execVM "scripts\UPSMON.sqf";
 	};
+
+//Flag
+	_spawnPos = [_markerPos, 3,0] call BIS_fnc_relPos;
+	_flag = createVehicle [bluFlag, _spawnPos, [],0, "CAN_COLLIDE"];
+	_flag allowDamage false;
+	_allVehicles pushBack _flag;
+	[_flag,"unit"] remoteExec ["AS_fnc_addActionMP"];
+	[_flag,"vehicle"] remoteExec ["AS_fnc_addActionMP"];
+	_flag addAction [localize "str_act_mapInfo",
+		{
+			nul = [] execVM "cityinfo.sqf";
+		},
+		nil,
+		0,
+		false,
+		true,
+		"",
+		"(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"
+	];
 
 //Despawn conditions FIA
 	waitUntil {sleep 1;

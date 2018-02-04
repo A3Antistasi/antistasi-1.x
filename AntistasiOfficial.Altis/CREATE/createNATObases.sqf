@@ -227,6 +227,17 @@ _allGroups pushBack _group;
 	_allVehicles pushBack _flag;
 	[_flag,"unit"] remoteExec ["AS_fnc_addActionMP"];
 	[_flag,"vehicle"] remoteExec ["AS_fnc_addActionMP"];
+	_flag addAction [localize "str_act_mapInfo",
+		{
+			nul = [] execVM "cityinfo.sqf";
+		},
+		nil,
+		0,
+		false,
+		true,
+		"",
+		"(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"
+	];
 
 //Add Journalist
 	_observer = objNull;

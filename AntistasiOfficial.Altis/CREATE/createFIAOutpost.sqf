@@ -167,6 +167,17 @@ _statics = staticsToSave select {_x distance _markerPos < (_size max 50)};
 	_allVehicles pushBack _flag;
 	[_flag,"unit"] remoteExec ["AS_fnc_addActionMP"];
 	[_flag,"vehicle"] remoteExec ["AS_fnc_addActionMP"];
+	_flag addAction [localize "str_act_mapInfo",
+		{
+			nul = [] execVM "cityinfo.sqf";
+		},
+		nil,
+		0,
+		false,
+		true,
+		"",
+		"(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"
+	];
 	if (_marker in puertos) then {
 		[_flag,"seaport"] remoteExec ["AS_fnc_addActionMP"];
 	};
