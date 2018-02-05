@@ -123,7 +123,7 @@ if (count _containers > 0) then {
 	};
 };
 
-if (isMultiplayer) then {
+/*if (isMultiplayer) then {
 	{
 		{
 			if ([_x] call BIS_fnc_baseWeapon in lockedWeapons) then {
@@ -149,7 +149,7 @@ if (isMultiplayer) then {
 	if (!(_backpack in unlockedBackpacks) AND (_backpack != "")) then {
 		_backpacks pushBack _backpack;
 	};
-};
+};*/
 
 _vehiclesToSave = [];
 {
