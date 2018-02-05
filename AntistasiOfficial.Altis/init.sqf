@@ -23,13 +23,9 @@ if (!isMultiPlayer) then {
     call compile preprocessFileLineNumbers "WarStatistics\initFunctions.sqf";
     call compile preprocessFileLineNumbers "WarStatistics\initVariablesServer.sqf";
     //call compile preprocessFileLineNumbers "WarStatistics\initRoadblocks2.sqf";
-    ws_grid = call ws_fnc_newGridArray;
+    //ws_grid = call ws_fnc_newGridArray;
     //(up to here)//
-
-    HCciviles = 2;
-    HCgarrisons = 2;
-    HCattack = 2;
-    hcArray = [HC1,HC2,HC3];
+	Slowhand = player; //Otherwise it might be undefined at further parts of code in this file!
     serverInitDone = true;
     diag_log "Antistasi SP. serverInitDone is true. Arsenal loaded";
     [] execVM "modBlacklist.sqf";
@@ -61,36 +57,27 @@ if(isServer) then {
     membersPool = []; publicVariable "membersPool";
 
     waitUntil {!isNil "serverID"};
-    //Loading members list anyway
-    //Loading membersPool from ext file
-    [] call compile preprocessFileLineNumbers "orgPlayers\mList.sqf";
-    //loading membersPool from profileNameSpace
-    ["membersPool"] call fn_loadData;
-
-    if (serverName in servidoresOficiales) then {
-        //[] execVM "orgPlayers\mList.sqf";
+        //Loading members list anyway
+        //Loading membersPool from ext file
+        [] call compile preprocessFileLineNumbers "orgPlayers\mList.sqf";
+        //loading membersPool from profileNameSpace
+        ["membersPool"] call fn_loadData;
         {
             if (([_x] call isMember) AND (isNull Slowhand)) then {
                 Slowhand = _x;
-                _x setRank "LIEUTENANT";
-                [_x,"LIEUTENANT"] remoteExec ["ranksMP"];
                 diag_log format ["init.sqf: selected commander from member list: %1", Slowhand];
             };
         } forEach playableUnits;
         publicVariable "Slowhand";
         diag_log format ["init.sqf: commander is: %1", Slowhand];
-        if (isNull Slowhand) then {
+
+        if(!freshstart) then {
+            diag_log "Antistasi. Autostarting last save";
             [] spawn AS_fnc_autoStart;
-            diag_log "Antistasi MP Server. Players are in, no members";
-        } else {
-            diag_log "Antistasi MP Server. Players are in, member detected";
         };
-    } else {
-        waitUntil {!isNil "Slowhand"};
-        waitUntil {isPlayer Slowhand};
-    };
+
     fpsCheck = [] execVM "fpsCheck.sqf";
-    [caja] call cajaAAF;
+    [caja] call cajaAAF; //Give few starting items
     if (activeJNA) then {
         ["complete"] call AS_fnc_JNA_pushLists;
     };

@@ -1073,7 +1073,8 @@ if (activeACE) then {
 		"ACE_salineIV_250",
 		"ACE_surgicalKit",
 		"ACE_tourniquet",
-		"ACE_adenosine"
+		"ACE_adenosine",
+		"ACE_atropine"
 	];
 
 };
@@ -1098,6 +1099,7 @@ AS_specialWeapons = [
 	"rhs_weap_M590_5RD",
 	"rhsusf_weap_MP7A2",
 	"rhs_weap_savz61",
+	"rhs_weap_savz61_folded",
 	"SMG_05_F",
 	"SMG_02_F",
 	"SMG_01_F"

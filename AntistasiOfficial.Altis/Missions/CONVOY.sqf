@@ -74,43 +74,43 @@ _originName = [_base] call AS_fnc_localizar;
 
 call {
 	if (_convoyType == "Municion") exitWith {
-		_tskTitle = localize "STR_TSK_CVY_AMMO";
-		_tskDesc = localize "STR_TSKDESC_CVY_AMMO";
+		_tskTitle = localize "STR_TSK_TD_CVY_AMMO";
+		_tskDesc = localize "STR_TSK_TD_DESC_CVY_AMMO";
 		_icon = "rearm";
 		_objectiveType = vehAmmo;
 	};
 
 	if (_convoyType == "Armor") exitWith {
-		_tskTitle = localize "STR_TSK_CVY_ARMOR";
-		_tskDesc = localize "STR_TSKDESC_CVY_ARMOR";
+		_tskTitle = localize "STR_TSK_TD_CVY_ARMOR";
+		_tskDesc = localize "STR_TSK_TD_DESC_CVY_ARMOR";
 		_icon = "Destroy";
 		_objectiveType = [selectRandom vehIFV, selectRandom vehTank] select ({(_x in vehTank)} count enemyMotorpool > 0);
 	};
 
 	if (_convoyType == "Prisoners") exitWith {
-		_tskTitle = localize "STR_TSK_CVY_PRIS";
-		_tskDesc = localize "STR_TSKDESC_CVY_PRIS";
+		_tskTitle = localize "STR_TSK_TD_CVY_PRIS";
+		_tskDesc = localize "STR_TSK_TD_DESC_CVY_PRIS";
 		_icon = "run";
 		_objectiveType = enemyMotorpoolDef;
 	};
 
 	if (_convoyType == "Money") exitWith {
-		_tskTitle = localize "STR_TSK_CVY_MONEY";
-		_tskDesc = localize "STR_TSKDESC_CVY_MONEY";
+		_tskTitle = localize "STR_TSK_TD_CVY_MONEY";
+		_tskDesc = localize "STR_TSK_TD_DESC_CVY_MONEY";
 		_icon = "move";
 		_objectiveType = AS_misVehicleBox;
 		};
 
 	if (_convoyType == "Supplies") exitWith {
-		_tskTitle = localize "STR_TSK_CVY_SUPPLY";
-		_tskDesc = localize "STR_TSKDESC_CVY_SUPPLY";
+		_tskTitle = localize "STR_TSK_TD_CVY_SUPPLY";
+		_tskDesc = localize "STR_TSK_TD_DESC_CVY_SUPPLY";
 		_icon = "heal";
 		_objectiveType = AS_misVehicleBox;
 		};
 
 	if (_convoyType == "HVT") exitWith {
-		_tskTitle = localize "STR_TSK_CVY_HVT";
-		_tskDesc = localize "STR_TSKDESC_CVY_HVT";
+		_tskTitle = localize "STR_TSK_TD_CVY_HVT";
+		_tskDesc = localize "STR_TSK_TD_DESC_CVY_HVT";
 		_icon = "Destroy";
 		_objectiveType = selectRandom standardMRAP;
 	};
@@ -218,7 +218,7 @@ if (_convoyType == "HVT") then {
 			{[_x] spawn genInit;_x assignAsCargo _veh;_x moveInCargo _veh; _units pushBack _x; [_x] join ((_vehData select 3) select 0)} forEach units _tempGroup;
 			deleteGroup _tempGroup;
 			if (_escortType != enemyMotorpoolDef) then {
-				[_veh] spawn smokeCover;
+				//[_veh] spawn smokeCover;
 			};
 		};
 
@@ -321,7 +321,7 @@ if !(_escortType in vehTank) then {
 	{[_x] spawn genInit;_x assignAsCargo _veh;_x moveInCargo _veh; _units pushBack _x; [_x] join ((_vehData select 3) select 0)} forEach units _tempGroup;
 	deleteGroup _tempGroup;
 	if (_escortType != enemyMotorpoolDef) then {
-		[_veh] spawn smokeCover;
+		//[_veh] spawn smokeCover;
 	};
 };
 
@@ -488,7 +488,7 @@ if (_convoyType == "Prisoners") then {
 			[0,10,_posbase] remoteExec ["AS_fnc_changeCitySupport",2];
 			[2*_counter,0] remoteExec ["prestige",2];
 			{[_x] join _groupPOW; [_x] orderGetin false} forEach _POWs;
-			{[_counter,_x] call playerScoreAdd} forEach (allPlayers - hcArray);
+			{[_counter,_x] call playerScoreAdd} forEach (allPlayers - (entities "HeadlessClient_F"));
 			[round (_counter/2),Slowhand] call playerScoreAdd;
 			// BE module
 			if (activeBE) then {
@@ -540,7 +540,7 @@ if (_convoyType == "Money") then {
 			[-20,0] remoteExec ["prestige",2];
 			[0,5000] remoteExec ["resourcesFIA",2];
 			[-1200] remoteExec ["AS_fnc_increaseAttackTimer",2];
-			{if (_x distance _vehObj < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - hcArray);
+			{if (_x distance _vehObj < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
 			[5,Slowhand] call playerScoreAdd;
 			// BE module
 			if (activeBE) then {
@@ -575,7 +575,7 @@ if (_convoyType == "Supplies") then {
 				_tskOutcome = "SUCCEEDED";
 				[5,0] remoteExec ["prestige",2];
 				[0,15,_destination] remoteExec ["AS_fnc_changeCitySupport",2];
-				{if (_x distance _vehObj < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - hcArray);
+				{if (_x distance _vehObj < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
 				[5,Slowhand] call playerScoreAdd;
 				// BE module
 				if (activeBE) then {

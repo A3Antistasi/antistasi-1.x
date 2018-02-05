@@ -1,7 +1,7 @@
 if (!isServer and hasInterface) exitWith {};
 
-_tskTitle = localize "Str_tsk_fndMil";
-_tskDesc = localize "Str_tskDesc_fndMil";
+_tskTitle = localize "STR_TSK_TD_fndMil";
+_tskDesc = localize "STR_TSK_TD_DESC_fndMil";
 
 private ["_mrk"];
 
@@ -30,6 +30,7 @@ _nombredest = [_site] call AS_fnc_localizar;
 _grpVul = createGroup side_blue;
 _grpDealer = createGroup Civilian;
 Nomad = _grpDealer createUnit [CIV_specialUnits select 1, [8173.79,25308.9,0.00156975], [], 0.9, "NONE"];
+Nomad setVariable ["VCOM_NOAI", true, true]; //No VCOM AI for Nomad
 sleep 2;
 Nomad setPos _posDealer;
 Nomad removeWeaponGlobal (primaryWeapon Nomad);

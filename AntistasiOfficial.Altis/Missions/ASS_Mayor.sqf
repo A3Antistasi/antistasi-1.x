@@ -4,8 +4,8 @@ if (!isServer and hasInterface) exitWith {};
 
 private ["_houses","_mayor"];
 
-_tskTitle = localize "Str_tsk_ASSMAYOR";
-_tskDesc = localize "Str_tskDesc_ASSMAYOR";
+_tskTitle = localize "STR_TSK_TD_ASSMAYOR";
+_tskDesc = localize "STR_TSK_TD_DESC_ASSMAYOR";
 
 _initialMarker = _this select 0;
 _source = _this select 1;

@@ -5,30 +5,45 @@ This is the developing version, many progress have been done since 1.7 however w
 
 
 
-The Author is Barbolani
+The Author is **Barbolani**
 
-After 1.2 Chris coded many changes under the supervision of RickyTan and Kendo with the contribution of Toshi and Tucks for porting and templates.
+After 1.2 *Chris* coded many changes under the supervision of *RickyTan* and *Kendo* with the contribution of *Toshi* and *Tucks* for porting and templates.
 
-After 1.7.6 Sparker and Jeroen continued because the 1.7 bugs weren't possible to be fixed unless changing a lot of the code. 
+After 1.7.6 *Sparker* and *Jeroen* continued because the 1.7 bugs weren't possible to be fixed unless changing a lot of the code. 
 
-Currently: Stef is supervising the project, looking for coders and github help to continue.
+Currently: *Stef* is supervising the project and coding some simple stuff, *IrLED* started coding major fixes and improvement since 1.7.17, he also organized the github environment.
+
+We're looking for more coders, every contribution is appreciated!
 
 
+Website: http://a3antistasi.enjin.com/
 
-Official website: http://www.a3antistasi.com/
+Server: steam://connect/85.190.158.136:29001
 
-Official guide: https://docs.google.com/document/d/1_XamnTWgVgy0jDinYSDhAWG_vKDa49ngl6fGi5XdPLQ/edit
+Teamspeak: **antistasi.enjinvoice.com**
+
+Guide: https://docs.google.com/document/d/1_XamnTWgVgy0jDinYSDhAWG_vKDa49ngl6fGi5XdPLQ/edit
 
 ---
 
 # Get release mission ready to play
 
-!! [CBA](http://steamcommunity.com/sharedfiles/filedetails/?id=450814997) Mod is required . You can remove that dependency in the SQM if you want. This is [how to remove it](https://github.com/A3Antistasi/antistasiofficial/issues/5)
-
 * [Visit release page](https://github.com/A3Antistasi/antistasiofficial/releases)
 * Download the .pbo
 * For singleplayer: drop it in \steamapps\common\Arma 3\Missions
 * For multiplayer: Arma 3\MPMissions
+
+---
+
+# Mods
+
+The mission has no dependencies, however it can detect the following mods.
+* **CBA**, **TFAR**, RHS-**AFRF**+**GREF**(replace AAF, CSAT), RHS-**USAF**(replace NATO), **ACE**, **inidibi2**(multiple saves).
+
+Client side mods, as long they don't affect AI, are generally ok. Here's some suggestions
+* Dusty retexture project, JSRS, Enhanced Movement, Blastcore
+
+This is our steam collection: http://steamcommunity.com/sharedfiles/filedetails/?id=1097454107
 
 ---
 
@@ -39,3 +54,4 @@ Official guide: https://docs.google.com/document/d/1_XamnTWgVgy0jDinYSDhAWG_vKDa
 In case you change world also rename the folder to .worldname.
 
 Example: rename "Antistasi NapfG.sqm" to "mission.sqm", copy paste into \AntistasiOfficial.Altis, rename that folder to AntistasiOfficial.Napf
+

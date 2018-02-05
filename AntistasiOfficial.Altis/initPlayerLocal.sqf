@@ -6,6 +6,7 @@ params ["_unit","_isJIP"];
 private ["_colorWest", "_colorEast","_introShot","_title","_nearestMarker"];
 
 waitUntil {!isNull player};
+call AS_fnc_initWorker;
 
 [] execVM "briefing.sqf";
 if (isMultiplayer) then {
@@ -44,8 +45,9 @@ if (isMultiplayer) then {
 
 _title = ["A3 - Antistasi","by Barbolani",antistasiVersion] spawn BIS_fnc_infoText;
 
+//Multiplayer start
 if (isMultiplayer) then {
-	player setVariable ["elegible",true,true];
+	player setVariable ["elegible",true,true]; //Why? so whoever start will be eligible to be commander?
 	musicON = false;
 	waitUntil {scriptdone _introshot};
 	disableUserInput true;
@@ -56,6 +58,7 @@ if (isMultiplayer) then {
 	diag_log "Antistasi MP Client. serverInitDone is public";
 	diag_log format ["Antistasi MP Client: JIP?: %1",_isJip];
 } else {
+//Singleplayer start
 	Slowhand = player;
 	(group player) setGroupId ["Slowhand","GroupColor4"];
 	player setIdentity "protagonista";
@@ -67,11 +70,17 @@ if (isMultiplayer) then {
 
 disableUserInput false;
 //Give default civilian gear
-player setUnitLoadout (getUnitLoadout (configFile >> "CfgVehicles" >> "C_man_polo_1_F"));
+removeAllContainers player;
+removeGoggles player;
+removeHeadgear player;
+removeAllAssignedItems player;
+removeAllWeapons player;
 player forceAddUniform (selectRandom civUniforms);
+player addWeapon "ItemMap";
 player addWeapon "ItemRadio";
-player addWeapon "ItemGPS";
 player addWeapon "Binocular";
+player addWeapon "ItemCompass";
+player addWeapon "ItemWatch";
 
 // In order: controller, TK counter, funds, spawn-trigger, rank, score, known by hostile AI
 player setVariable ["owner",player,true];
@@ -99,7 +108,7 @@ if (!activeACE) then {
 	if (!activeACEMedical) then {
 		[player] execVM "Revive\initRevive.sqf";
 	} else {
-		player setVariable ["ASunconscious",false,true];
+		[player, false] call AS_fnc_setUnconscious;
 	};
 
 	[] execVM "playerMarkers.sqf";
@@ -111,116 +120,112 @@ call AS_fnc_initPlayerEH;
 
 if (isMultiplayer) then {
 	["InitializePlayer", [player]] call BIS_fnc_dynamicGroups;//Exec on client
-	//["InitializeGroup", [player,WEST,true]] call BIS_fnc_dynamicGroups;
-	personalGarage = [];
+
+    if !([player] call isMember) then {
+        if (serverCommandAvailable "#logout") then {
+            membersPool pushBack (getPlayerUID player);
+            publicVariable "membersPool";
+            hint localize "STR_HINTS_INIT_ADMIN_MEMBER"
+        } else {
+            hint format [localize "STR_HINTS_INIT_GUEST_WELCOME", name player];
+        };
+    } else {
+        hint format [localize "STR_HINTS_INIT_MEMBER_RETURN", name player];
+    };
+
+    if ({[_x] call isMember} count playableUnits == 1) then {
+        [player] call stavrosInit;
+        [] remoteExec ["assignStavros",2];
+    };
+
 	if (!isNil "placementDone") then {
 		_isJip = true;
 	};
 };
 
-if (_isJip) then {
-	waitUntil {scriptdone _introshot};
-	[] execVM "modBlacklist.sqf";
-	player setUnitRank "PRIVATE";
-	[true] execVM "reinitY.sqf";
-	if !([player] call isMember) then {
-		if (serverCommandAvailable "#logout") then {
-			membersPool pushBack (getPlayerUID player);
-			publicVariable "membersPool";
-			hint localize "STR_HINTS_INIT_ADMIN_MEMBER"
-		} else {
-			hint format [localize "STR_HINTS_INIT_GUEST_WELCOME", name player];
-		};
-	} else {
-		hint format [localize "STR_HINTS_INIT_MEMBER_RETURN", name player];
+if (_isJip) then { waitUntil {scriptdone _introshot};
+		[] execVM "modBlacklist.sqf";
+		player setUnitRank "PRIVATE"; //we already load the rank in another place do we need this?
+		[true] execVM "reinitY.sqf";
+		// Add actions to flags
+		{
+			if (_x isKindOf "FlagCarrier") then {
+				_nearestMarker = [markers,getPos _x] call BIS_fnc_nearestPosition;
 
-		if (serverName in servidoresOficiales) then {
-			if ((count playableUnits == maxPlayers) AND (({[_x] call isMember} count playableUnits) < count membersPool)) then {
-				{
-					if !([_x] call isMember) exitWith {
-						["serverFull",false,1,false,false] remoteExec ["BIS_fnc_endMission",_x];
+				if (!(_nearestMarker in colinas) AND !(_nearestMarker in controles)) then {
+					if (_nearestMarker in mrkAAF) then {
+						_x addAction [localize "STR_ACT_TAKEFLAG", {[[_this select 0, _this select 1],"mrkWIN"] call BIS_fnc_MP;},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"];
+					} else {
+						_x addAction [localize "STR_ACT_RECRUITUNIT", {nul=[] execVM "Dialogs\unit_recruit.sqf";},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"];
+						_x addAction [localize "STR_ACT_BUYVEHICLE", {createDialog "vehicle_option";},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"];
 					};
-				} forEach playableUnits;
-			};
-		};
-
-		if ({[_x] call isMember} count playableUnits == 1) then {
-			[player] call stavrosInit;
-			[] remoteExec ["assignStavros",2];
-		};
-	};
-
-	// Add actions to flags
-	{
-		if (_x isKindOf "FlagCarrier") then {
-			_nearestMarker = [markers,getPos _x] call BIS_fnc_nearestPosition;
-
-			if (!(_nearestMarker in colinas) AND !(_nearestMarker in controles)) then {
-				if (_nearestMarker in mrkAAF) then {
-					_x addAction [localize "STR_ACT_TAKEFLAG", {[[_this select 0, _this select 1],"mrkWIN"] call BIS_fnc_MP;},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"];
-				} else {
-					_x addAction [localize "STR_ACT_RECRUITUNIT", {nul=[] execVM "Dialogs\unit_recruit.sqf";},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"];
-					_x addAction [localize "STR_ACT_BUYVEHICLE", {createDialog "vehicle_option";},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"];
-					_x addAction [localize "STR_ACT_PERSGARAGE", {[true] spawn garage},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"];
 				};
 			};
-		};
-	} forEach vehicles - [bandera,fuego,caja,cajaVeh];
+		} forEach vehicles - [bandera,fuego,caja,cajaVeh];
 
-	// Add actions to POWs
-	{
-		if (typeOf _x == guer_POW) then {
-			if (!isPlayer (leader group _x)) then {
-				_x addAction [localize "STR_ACT_ORDERREFUGEE", "AI\liberaterefugee.sqf",nil,0,false,true];
+		// Add actions to POWs
+		{
+			if (typeOf _x == guer_POW) then {
+				if (!isPlayer (leader group _x)) then {
+					_x addAction [localize "STR_ACT_ORDERREFUGEE", "AI\liberaterefugee.sqf",nil,0,false,true];
+				};
 			};
-		};
-	} forEach allUnits;
+		} forEach allUnits;
 
-	// If HQ is set up properly, add mission request action to Petros, otherwise add build HQ action
-	if (petros == leader group petros) then {
-		removeAllActions petros;
-		petros addAction [localize "STR_ACT_MISSIONREQUEST", {nul=CreateDialog "mission_menu";},nil,0,false,true];
-	} else {
-		removeAllActions petros;
-		petros addAction [localize "STR_ACT_BUILDHQ", {[] spawn buildHQ},nil,0,false,true];
+		// If HQ is set up properly, add mission request action to Petros, otherwise add build HQ action
+		if (petros == leader group petros) then {
+			removeAllActions petros;
+			petros addAction [localize "STR_ACT_MISSIONREQUEST", {nul=CreateDialog "mission_menu";},nil,0,false,true];
+		} else {
+			removeAllActions petros;
+			petros addAction [localize "STR_ACT_BUILDHQ", {[] spawn buildHQ},nil,0,false,true];
 		};
-
-	if ((player == Slowhand) AND (isNil "placementDone") AND (isMultiplayer)) then {
-		[] execVM "UI\startMenu.sqf";
-	};
-	diag_log "Antistasi MP Client. JIP client finished";
+		diag_log "Antistasi MP Client. JIP client finished";
 } else {
 	if (isNil "placementDone") then {
 		waitUntil {!isNil "Slowhand"};
-		if (player == Slowhand) then {
-		    if (isMultiplayer) then {
-		    	HC_comandante synchronizeObjectsAdd [player];
-				player synchronizeObjectsAdd [HC_comandante];
-				//if (!(serverName in servidoresOficiales) OR (enableRestart)) then { //Sparker did that to allow other servers to autoload
-				//if (enableRestart) then {
-					[] execVM "UI\startMenu.sqf";
-				//} else {
-				//	[] remoteExec ["AS_fnc_autoStart",2];
-				//};
-				diag_log "Antistasi MP Client. Client finished";
-		    } else {
-		    	membersPool = [];
-		    	[] execVM "Dialogs\firstLoad.sqf";
-		    };
-		};
+			if (player == Slowhand) then {
+			   	 if (isMultiplayer) then {
+			    	HC_comandante synchronizeObjectsAdd [player];
+					player synchronizeObjectsAdd [HC_comandante];
+					diag_log "Antistasi MP Client. Client finished";
+				} else {
+			    	membersPool = [];
+			    	[] execVM "Dialogs\firstLoad.sqf";
+			    };
+			};
 	};
 };
 
 waitUntil {scriptDone _title};
 
+if ((player == Slowhand) AND (isNil "placementDone") AND (isMultiplayer) AND (freshstart)) then {
+    systemChat "Commander freshstart menu";
+    [] execVM "UI\startMenu.sqf";
+};
+
 //Waiting for all game data loaded
-waitUntil {sleep 1; !isNil "placementDone";};
+while {isNil "placementDone"} do {
+    if (isMultiplayer) then {
+        if (freshstart) then {
+            systemChat format ["Game world is not initialized yet. Waiting for commander %1 to complete freshstart", Slowhand];
+        } else{
+            systemChat "Game world is not initialized yet. Waiting for autostart to complete";
+        };
+    };
+    sleep 10;
+};
+systemChat "Game world is READY";
 INFO("Game is ready to initialize player");
-//Teleport to the camp
-player setPos (fuego getPos [8,random 360]);
+//Teleport to the guer_respawn marker
+waitUntil {!isNil "posHQ"};
+systemChat "Teleporting player to HQ";
+sleep 2;
+player setPos (posHQ getPos [8,random 360]);
 player setdir (player getdir petros);
 INFO("Player is moved to the camp");
 //Called from unscheduled environment to load data at once
+systemChat "Restoring player stats";
 [player] remoteExecCall ["AS_fnc_loadPlayer",2];
 INFO("Player info loaded");
 
@@ -229,7 +234,7 @@ statistics = [] execVM "statistics.sqf";
 // Add respawn in SP if ACE is active
 if !(isMultiplayer) then {
 	if (activeACEMedical) then {
-		player setVariable ["ASunconscious",false,true];
+		[player, false] call AS_fnc_setUnconscious;
 		player setVariable ["ASrespawning",false];
 		player addEventHandler ["HandleDamage", {
 			if (player getVariable ["ACE_isUnconscious", false]) then {

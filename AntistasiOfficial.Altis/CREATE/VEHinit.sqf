@@ -50,7 +50,8 @@ call {
 					[-2,2,position (_this select 0)] remoteExec ["AS_fnc_changeCitySupport",2];
 					if (activeBE) then {["des_arm"] remoteExec ["fnc_BE_XP", 2]};
 				}];
-				_vehicle addEventHandler ["HandleDamage",{private ["_vehicle"]; _vehicle = _this select 0; if (_this select 1 == "") then {if ((_this select 2 > 0.9) and (!isNull driver _vehicle)) then {[_vehicle] call smokeCoverAuto}}}];
+				//_vehicle addEventHandler ["HandleDamage",{private ["_vehicle"]; _vehicle = _this select 0; if (_this select 1 == "") then {if ((_this select 2 > 0.9) and (!isNull driver _vehicle)) then {[_vehicle] call smokeCoverAuto}}}
+
 			};
 
 			if (_vehicleType in vehTank) then {
@@ -59,7 +60,9 @@ call {
 					[-5,5,position (_this select 0)] remoteExec ["AS_fnc_changeCitySupport",2];
 					if (activeBE) then {["des_arm"] remoteExec ["fnc_BE_XP", 2]};
 				}];
-				_vehicle addEventHandler ["HandleDamage",{private ["_vehicle"]; _vehicle = _this select 0; if (_this select 1 == "") then {if ((_this select 2 > 0.9) and (!isNull driver _vehicle)) then {[_vehicle] call smokeCoverAuto}}}];
+				//_vehicle addEventHandler ["HandleDamage",{private ["_vehicle"]; _vehicle = _this select 0; if (_this select 1 == "") then {if ((_this select 2 > 0.9) and (!isNull driver _vehicle)) then {[_vehicle] call smokeCoverAuto
+
+
 			};
 		};
 	};
@@ -109,13 +112,13 @@ call {
 					if !("DEF_HQ" in misiones) then {
 						_leader = leader (gunner _mortar);
 						if (!isPlayer _leader) then {
-							[] remoteExec ["ataqueHQ",HCattack];
+							[] remoteExec ["ataqueHQ", call AS_fnc_getNextWorker];
 						} else {
-							if ([_leader] call isMember) then {[] remoteExec ["ataqueHQ",HCattack]};
+							if ([_leader] call isMember) then {[] remoteExec ["ataqueHQ", call AS_fnc_getNextWorker]};
 						};
 					};
 				} else {
-					[position _mortar] remoteExec ["patrolCA",HCattack];
+					[position _mortar] remoteExec ["patrolCA", call AS_fnc_getNextWorker];
 				};
 			};
 		}];

@@ -4,8 +4,8 @@ if (!isServer and hasInterface) exitWith {};
 
 private ["_houses","_mayor"];
 
-_tskTitle = localize "Str_tsk_ASSMAYOR";
-_tskDesc = localize "Str_tskDesc_ASSMAYOR";
+_tskTitle = localize "STR_TSK_TD_ASSMAYOR";
+_tskDesc = localize "STR_TSK_TD_DESC_ASSMAYOR";
 
 _initialMarker = _this select 0;
 _source = _this select 1;
@@ -48,6 +48,7 @@ _mayor = ([_traitorPosition, 0, "C_man_1", _mayorGroup] call bis_fnc_spawnvehicl
  sleep 0.1;
 _mayor addGoggles "G_Tactical_Black";
 _mayor addHeadgear "H_Hat_checker";
+removeUniform _mayor;
 _mayor addUniform "U_NikosAgedBody";
 [_mayor] spawn {
 	params ["_subject"];

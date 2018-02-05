@@ -1,0 +1,4 @@
+Artillery check for friendlies and etc.
+
+This one ain't so easy. I like your rank based system for applying skill levels, but there's a major flaw with dynamic mods like ALiVE, or anyone who uses zeus.  Almost all units pop in as privates.. and thus are total losers.  Consider a way to define classes and the skills they would get?  Or maybe it would be easier to just assign them rank using the same method.  Another option... and the hardest one... Go the ACE 3 route and use 3den modules for everything.  Set skills in module, apply those skills to units based on class, or rank, or module sync.
+

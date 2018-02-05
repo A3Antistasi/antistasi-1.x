@@ -5,26 +5,26 @@ if (markerColor _mrkD != guer_marker_colour) then {_mrkD setMarkerColor guer_mar
 
 call {
 	if (_marker in puestos) exitWith {
-		_mrkD setMarkerText format ["%2 Outpost: %1", count (garrison getVariable _marker), A3_Str_PLAYER];
+		_mrkD setMarkerText format [localize "STR_GL_MAP_OP1", count (garrison getVariable _marker), A3_Str_PLAYER];
 	};
 	if (_marker in bases) exitWith {
-		_mrkD setMarkerText format ["%2 Base: %1", count (garrison getVariable _marker), A3_Str_BLUE];
+		_mrkD setMarkerText format [localize "STR_GL_MAP_MB1", count (garrison getVariable _marker), A3_Str_BLUE];
 		_mrkD setMarkerType guer_marker_type;
 	};
 	if (_marker in power) exitWith {
-		_mrkD setMarkerText format ["Power Plant: %1", count (garrison getVariable _marker)];
+		_mrkD setMarkerText format [localize "STR_GL_MAP_PP"+": %1", count (garrison getVariable _marker)];
 	};
 	if (_marker in recursos) exitWith {
-		_mrkD setMarkerText format ["Resource: %1", count (garrison getVariable _marker)];
+		_mrkD setMarkerText format [localize "STR_GL_MAP_RS"+": %1", count (garrison getVariable _marker)];
 	};
 	if (_marker in aeropuertos) exitWith {
-		_mrkD setMarkerText format ["%2 Airport: %1", count (garrison getVariable _marker), A3_Str_BLUE];
+		_mrkD setMarkerText format [localize "STR_GL_MAP_AP1", count (garrison getVariable _marker), A3_Str_BLUE];
 		_mrkD setMarkerType guer_marker_type;
 	};
 	if (_marker in fabricas) exitWith {
-		_mrkD setMarkerText format ["Factory: %1", count (garrison getVariable _marker)];
+		_mrkD setMarkerText format [localize "STR_GL_MAP_FAC"+": %1", count (garrison getVariable _marker)];
 	};
 	if (_marker in puertos) exitWith {
-		_mrkD setMarkerText format ["Sea Port: %1", count (garrison getVariable _marker)];
+		_mrkD setMarkerText format [localize "STR_GL_MAP_SP"+": %1", count (garrison getVariable _marker)];
 	};
 };

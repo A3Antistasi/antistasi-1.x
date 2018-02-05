@@ -1,11 +1,11 @@
 if (!isServer and hasInterface) exitWith{};
 
-_tskTitle = localize "Str_tsk_PRBrain";
-_tskDesc = localize "Str_tskDesc_PRBrain";
-_tskDesc_fail = localize "Str_tskDesc_PRBrain_fail";
-_tskDesc_fail2 = localize "Str_tskDesc_PRBrain_fail2";
-_tskDesc_hold = localize "Str_tskDesc_PRBrain_hold";
-_tskDesc_success = localize "Str_tskDesc_PRBrain_success";
+_tskTitle = localize "STR_TSK_TD_PRBrain";
+_tskDesc = localize "STR_TSK_TD_DESC_PRBrain";
+_tskDesc_fail = localize "STR_TSK_TD_DESC_PRBrain_fail";
+_tskDesc_fail2 = localize "STR_TSK_TD_DESC_PRBrain_fail2";
+_tskDesc_hold = localize "STR_TSK_TD_DESC_PRBrain_hold";
+_tskDesc_success = localize "STR_TSK_TD_DESC_PRBrain_success";
 
 /*
 parameters
@@ -58,6 +58,8 @@ if (count _airports > 0) then {_airport = [_airports, _targetPosition] call BIS_
 propTruck = "";
 _pos = (getMarkerPos guer_respawn) findEmptyPosition [10,50,"C_Truck_02_box_F"];
 propTruck = "C_Truck_02_box_F" createVehicle _pos;
+propTruck allowDamage false;
+[propTruck] spawn {sleep 1; (_this select 0) allowDamage true;};
 
 // spawn eye candy
 _grafArray = [];
@@ -83,7 +85,7 @@ _grafArray pushBack _graf4;
 
 // initialize mission vehicle
 [propTruck] spawn VEHinit;
-{_x reveal propTruck} forEach (allPlayers - hcArray);
+{_x reveal propTruck} forEach (allPlayers - (entities "HeadlessClient_F"));
 propTruck setVariable ["destino",_targetName,true];
 propTruck addEventHandler ["GetIn",
 	{
@@ -102,10 +104,10 @@ server setVariable ["BCactive", false, true];
 
 // dispatch a small QRF
 if !(_airport == "") then {
-	[_airport, _targetPosition, _targetMarker, _tiempolim, "transport", "small"] remoteExec ["enemyQRF",HCattack];
+	[_airport, _targetPosition, _targetMarker, _tiempolim, "transport", "small"] remoteExec ["enemyQRF", call AS_fnc_getNextWorker];
 }
 else {
-	[_base, _targetPosition, _targetMarker, _tiempolim, "transport", "small"] remoteExec ["enemyQRF",HCattack];
+	[_base, _targetPosition, _targetMarker, _tiempolim, "transport", "small"] remoteExec ["enemyQRF", call AS_fnc_getNextWorker];
 };
 
 // wait until the truck is in the target area or dead
@@ -246,7 +248,7 @@ while {(server getVariable "BCactive") && (alive propTruck) && ({(side _x isEqua
 	// alive, deployed, timer below maximum, blufor alive, no opfor/greenfor, conscious players within 250m
 	while {(server getVariable "BCactive") &&
 	(alive propTruck) &&
-	!({_x getVariable ["ASunconscious",false]} count ([300,0, propTruck,"BLUFORSpawn"] call distanceUnits) == count ([300,0, propTruck,"BLUFORSpawn"] call distanceUnits)) &&
+	!({[_x] call AS_fnc_isUnconscious} count ([300,0, propTruck,"BLUFORSpawn"] call distanceUnits) == count ([300,0, propTruck,"BLUFORSpawn"] call distanceUnits)) &&
 	({((side _x == side_green) || (side _x == side_red)) && (_x distance propTruck < 50)} count allUnits == 0)} do {
 
 		// activate the timer
@@ -316,7 +318,7 @@ if (_break) then {
 else {
 	_tsk = ["PR",[side_blue,civilian],[format [_tskDesc_success,_targetName,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_targetMarker],_targetPosition,"SUCCEEDED",5,true,true,"Heal"] call BIS_fnc_setTask;
 	[0,_prestige,_targetMarker] remoteExec ["AS_fnc_changeCitySupport",2];
-	{if (_x distance _targetPosition < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - hcArray);
+	{if (_x distance _targetPosition < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
 	[10,Slowhand] call playerScoreAdd;
 	// BE module
 	if (activeBE) then {

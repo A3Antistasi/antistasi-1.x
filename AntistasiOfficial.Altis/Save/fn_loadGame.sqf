@@ -5,6 +5,7 @@ petros allowdamage false;
 //ADD STATS THAT NEED TO BE LOADED HERE.
 
 //preinit
+["posHQ"] call fn_loadData; publicVariable "posHQ";
 ["campaign_playerList"] call fn_loadData;
 ["membersPool"] call fn_loadData; publicVariable "membersPool";
 flag_playerList = true;
@@ -59,7 +60,7 @@ unlockedRifles = unlockedweapons - gear_sidearms - gear_missileLaunchers - gear_
 ["jng_vehicleList"] call fn_loadData;
 
 //Sparker's War Statistics data
-["ws_grid"] call fn_loadData;
+//["ws_grid"] call fn_loadData;
 //===========================================================================
 
 
@@ -93,21 +94,21 @@ _markers = _markers + controles;
 			};
 
 			if (_x in aeropuertos) exitWith {
-				_mrkD setMarkerText format ["%2 Airport: %1",count (garrison getVariable _x), A3_Str_BLUE];
+				_mrkD setMarkerText format [localize "STR_GL_MAP_AP1",count (garrison getVariable _x), A3_Str_BLUE];
 				_mrkD setMarkerType guer_marker_type;
 				planesAAFmax = planesAAFmax - 1;
 			    helisAAFmax = helisAAFmax - 2;
 			};
 
 			if (_x in bases) exitWith {
-				_mrkD setMarkerText format ["%2 Base: %1",count (garrison getVariable _x), A3_Str_BLUE];
+				_mrkD setMarkerText format [localize "STR_GL_MAP_MB1",count (garrison getVariable _x), A3_Str_BLUE];
 				_mrkD setMarkerType guer_marker_type;
 				APCAAFmax = APCAAFmax - 2;
 		    	tanksAAFmax = tanksAAFmax - 1;
 			};
 
 			if (_x in puestos) exitWith {
-				_mrkD setMarkerText format ["%2 Outpost: %1",count (garrison getVariable _x), A3_Str_PLAYER];
+				_mrkD setMarkerText format [localize "STR_GL_MAP_OP1",count (garrison getVariable _x), A3_Str_PLAYER];
 			};
 
 			if (_x in ciudades) exitWith {
@@ -119,7 +120,7 @@ _markers = _markers + controles;
 			};
 
 			if ((_x in recursos) OR (_x in fabricas)) exitWith {
-				if (_x in recursos) then {_mrkD setMarkerText format ["Resource: %1",count (garrison getVariable _x)]} else {_mrkD setMarkerText format ["Factory: %1",count (garrison getVariable _x)]};
+				if (_x in recursos) then {_mrkD setMarkerText format [localize "STR_GL_MAP_RS"+": %1",count (garrison getVariable _x)]} else {_mrkD setMarkerText format [localize "STR_GL_MAP_FAC"+": %1",count (garrison getVariable _x)]};
 				_power = [power, getMarkerPos _x] call BIS_fnc_nearestPosition;
 				if (!(_power in mrkFIA) OR (_power in destroyedCities)) then {
 					[_x,false] spawn AS_fnc_adjustLamps;
@@ -128,11 +129,11 @@ _markers = _markers + controles;
 			};
 
 			if (_x in puertos) exitWith {
-				_mrkD setMarkerText format ["Sea Port: %1",count (garrison getVariable _x)];
+				_mrkD setMarkerText format [localize "STR_GL_MAP_SP"+": %1",count (garrison getVariable _x)];
 			};
 
 			if (_x in power) exitWith {
-				_mrkD setMarkerText format ["Power Plant: %1",count (garrison getVariable _x)];
+				_mrkD setMarkerText format [localize "STR_GL_MAP_PP"+": %1",count (garrison getVariable _x)];
 				if (_x in destroyedCities) then {[_x] call AS_fnc_destroyCity};
 			};
 		};
@@ -180,7 +181,7 @@ publicVariable "markers";
 publicVariable "mrkAAF";
 publicVariable "mrkFIA";
 
-["posHQ"] call fn_loadData; publicVariable "posHQ";
+
 ["flag_chopForest"] call fn_loadData; publicVariable "flag_chopForest";
 ["objectsHQ"] call fn_loadData;
 ["addObjectsHQ"] call fn_loadData;
@@ -215,10 +216,10 @@ smallCAmrk = [];
 	_base = [_x] call AS_fnc_findBaseForCA;
 	_radio = [_x] call AS_fnc_radioCheck;
 	if ((_base != "") AND (_radio) AND (_x in mrkFIA) AND !(_x in smallCAmrk)) then {
-		[_x] remoteExec ["patrolCA",HCattack];
+		[_x] remoteExec ["patrolCA", call AS_fnc_getNextWorker];
 		sleep 5;
 		smallCAmrk pushBackUnique _x;
-		[_x] remoteExec ["autoGarrison",HCattack];
+		[_x] remoteExec ["autoGarrison", call AS_fnc_getNextWorker];
 	};
 } forEach _tmpCAmrk;
 publicVariable "smallCAmrk";

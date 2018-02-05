@@ -102,9 +102,10 @@ for "_i" from 1 to _patrolCounter do {
 
 			_vehicleType = selectRandom CIV_vehicles;
 			_vehicle = _vehicleType createVehicle _p1;
+			[_vehicle, "", []] call bis_fnc_initVehicle;
 			_vehicle setDir _orientation;
 			if(activeACE) then {[_vehicle, 300] call ace_refuel_fnc_setFuel;} else {_vehicle setfuelcargo 0.1;};
-			_vehicle setfuel 0.05;
+			_vehicle setfuel ((random 45)+5)/100; //Random 5-50% fuel
 			_vehicle addEventHandler ["HandleDamage",{if (((_this select 1) find "wheel" != -1) and (_this select 4=="") and (!isPlayer driver (_this select 0))) then {0;} else {(_this select 2);};}];
 			_vehicle addEventHandler ["HandleDamage",           //STEF 01-09 civilian disembark on hit, thanks Barbolani
 					{
@@ -130,12 +131,14 @@ for "_i" from 1 to _patrolCounter do {
 			_wp_civ_1 = _group addWaypoint [getMarkerPos (_patrolCities select _counter),0];
 			_wp_civ_1 setWaypointType "MOVE";
 			_wp_civ_1 setWaypointSpeed "LIMITED";
-			_wp_civ_1 setWaypointTimeout [30, 45, 60];
+			_wp_civ_1 setWaypointTimeout [5, 7, 10];
 			_wp_civ_1 = _group addWaypoint [_markerPos,1];
 			_wp_civ_1 setWaypointType "MOVE";
-			_wp_civ_1 setWaypointTimeout [30, 45, 60];
+			_wp_civ_1 setWaypointSpeed "LIMITED";
+			_wp_civ_1 setWaypointTimeout [5, 7, 10];
 			_wp_civ_2 = _group addWaypoint [_markerPos,0];
 			_wp_civ_2 setWaypointType "CYCLE";
+			_wp_civ_2 setWaypointSpeed "LIMITED";
 			_wp_civ_2 synchronizeWaypoint [_wp_civ_1];
 		};
 		_counter = _counter + 1;
@@ -144,5 +147,5 @@ for "_i" from 1 to _patrolCounter do {
 };
 
 waitUntil {sleep 1; !(spawner getVariable _marker)};
-
-[_allGroups, _allCivilians, _allVehicles] spawn AS_fnc_despawnUnits;
+[_allGroups, _allCivilians] call AS_fnc_despawnUnitsNow;
+[[],[],_allVehicles] call AS_fnc_despawnUnits;

@@ -1,7 +1,7 @@
 if (!isServer and hasInterface) exitWith {};
 
 params ["_marker"];
-[localize "STR_TSK_RESPRISONERS",localize "STR_TSKDESC_RESPRISONERS",[],[]] params ["_taskTitle","_taskDesc","_POWs","_housePositions"];
+[localize "STR_TSK_TD_RESPRISONERS",localize "STR_TSK_TD_DESC_RESPRISONERS",[],[]] params ["_taskTitle","_taskDesc","_POWs","_housePositions"];
 
 private ["_markerPos","_duration","_endTime","_houses","_house","_townName","_task","_groupPOW","_count","_unit","_blacklistbld","_options","_tempPos"];
 
@@ -42,6 +42,7 @@ _groupPOW = createGroup side_blue;
 for "_i" from 0 to _count do
 	{
 	_unit = _groupPOW createUnit [guer_POW, (_housePositions select _i), [], 0, "NONE"];
+	_unit setVariable ["VCOM_NOAI", true, true]; //No VCOM AI for POW
 	_unit allowDamage false;
 	_unit setCaptive true;
 	_unit disableAI "MOVE";
@@ -97,7 +98,7 @@ if ({(alive _x) AND (_x distance getMarkerPos guer_respawn < 50)} count _POWs > 
 	[2*_count,100*_count] remoteExec ["resourcesFIA",2];
 	[0,10,_markerPos] remoteExec ["AS_fnc_changeCitySupport",2];
 	[_count,0] remoteExec ["prestige",2];
-	{if (_x distance getMarkerPos guer_respawn < 500) then {[_count,_x] call playerScoreAdd}} forEach (allPlayers - hcArray);
+	{if (_x distance getMarkerPos guer_respawn < 500) then {[_count,_x] call playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
 	[round (_count/2),Slowhand] call playerScoreAdd;
 	{[_x] join _groupPOW; [_x] orderGetin false} forEach _POWs;
 	// BE module

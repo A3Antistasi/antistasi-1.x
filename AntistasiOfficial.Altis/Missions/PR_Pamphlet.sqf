@@ -4,11 +4,11 @@ params ["_marker"];
 [3,[],[],[],[],[]] params ["_countBuildings","_targetBuildings","_allGroups","_allSoldiers","_allVehicles","_leafletCrates"];
 private ["_targetPosition","_targetName","_duration","_endTime","_task","_spawnPosition","_missionVehicle","_crate","_range","_allBuildings","_usableBuildings","_index","_perimeterBuildings","_currentBuilding","_lastBuilding","_bPositions","_groupType","_params","_group","_dog","_leaflets","_drop"];
 
-_tskTitle = localize "STR_TSK_PRPAMPHLET";
-_tskDesc = localize "STR_TSKDESC_PRPAMPHLET";
-_tskDesc_fail = localize "STR_TSKDESC_PRPAMPHLET_FAIL";
-_tskDesc_drop = localize "STR_TSKDESC_PRPAMPHLET_DROP";
-_tskDesc_success = localize "STR_TSKDESC_PRPAMPHLET_SUCCESS";
+_tskTitle = localize "STR_TSK_TD_PRPAMPHLET";
+_tskDesc = localize "STR_TSK_TD_DESC_PRPAMPHLET";
+_tskDesc_fail = localize "STR_TSK_TD_DESC_PRPAMPHLET_FAIL";
+_tskDesc_drop = localize "STR_TSK_TD_DESC_PRPAMPHLET_DROP";
+_tskDesc_success = localize "STR_TSK_TD_DESC_PRPAMPHLET_SUCCESS";
 
 _targetPosition = getMarkerPos _marker;
 _targetName = [_marker] call AS_fnc_localizar;
@@ -32,13 +32,11 @@ _task = ["PR",[side_blue,civilian],[format [_tskDesc,_targetName,numberToDate [2
 misiones pushBack _task; publicVariable "misiones";
 
 _spawnPosition = (getMarkerPos guer_respawn) findEmptyPosition [5,50,"C_Van_01_transport_F"];
-if !(count (server getVariable ["obj_vehiclePad",[]]) > 0) then {
-	if (count (_spawnPosition nearObjects ["AllVehicles",7]) > 0) then {
-		_spawnPosition = (server getVariable ["obj_vehiclePad",[]]);
-	};
-};
+sleep 1;
 
 _missionVehicle = "C_Van_01_transport_F" createVehicle _spawnPosition;
+_missionVehicle allowDamage false;
+[_missionVehicle] spawn {sleep 1; (_this select 0) allowDamage true;};
 
 _lockedseats = [2,3,4,5,6,7,8,9,10,11];
 {_missionVehicle lockcargo [_x, true]} foreach _lockedseats;
@@ -209,7 +207,7 @@ while {(alive _missionVehicle) AND (dateToNumber date < _endTime) AND (_currentD
 		};
 
 		// stop unloading when enemies get too close
-		while {(_counter < _deploymentTime) AND (alive _missionVehicle) AND !({_x getVariable ["ASunconscious",false]} count ([80,0,_missionVehicle,"BLUFORSpawn"] call distanceUnits) == count ([80,0,_missionVehicle,"BLUFORSpawn"] call distanceUnits)) AND ({((side _x == side_green) OR (side _x == side_red)) AND (_x distance _missionVehicle < 50)} count allUnits == 0) AND (dateToNumber date < _endTime) AND (server getVariable "pr_unloading_pamphlets")} do {
+		while {(_counter < _deploymentTime) AND (alive _missionVehicle) AND !({[_x] call AS_fnc_isUnconscious} count ([80,0,_missionVehicle,"BLUFORSpawn"] call distanceUnits) == count ([80,0,_missionVehicle,"BLUFORSpawn"] call distanceUnits)) AND ({((side _x == side_green) OR (side _x == side_red)) AND (_x distance _missionVehicle < 50)} count allUnits == 0) AND (dateToNumber date < _endTime) AND (server getVariable "pr_unloading_pamphlets")} do {
 
 			// spawn eye candy
 			if !(_unloading) then {
@@ -298,7 +296,7 @@ if (!(alive _missionVehicle) OR (dateToNumber date > _endTime)) then {
 	_task = ["PR",[side_blue,civilian], [format [_tskDesc_success,_targetName,numberToDate [2035,_endTime] select 3,numberToDate [2035,_endTime] select 4],_tskTitle,_marker],_targetPosition,"SUCCEEDED",5,true,true,"Heal"] call BIS_fnc_setTask;
 	[-15,5,_marker] remoteExec ["AS_fnc_changeCitySupport",2];
 	[5,0] remoteExec ["prestige",2];
-	{if (_x distance _targetPosition < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - hcArray);
+	{if (_x distance _targetPosition < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
 	[5,Slowhand] call playerScoreAdd;
 	// BE module
 	if (activeBE) then {

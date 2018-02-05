@@ -61,6 +61,7 @@ else
 	};
 
 [_unit] spawn AS_fnc_initialiseFIAUnit;
+_unit setvariable ["generated",true,true];
 
 if (_tipounidad == "Soldier_AA") then {
 	_aal = genAALaunchers select 0;

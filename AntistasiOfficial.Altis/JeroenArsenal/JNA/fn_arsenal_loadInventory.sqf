@@ -293,6 +293,9 @@ _backpackItems = _inventory select 2 select 1;
 
 //add containers
 _containers = [_uniform,_vest,_backpack];
+private _invCallArray = [{removeUniform player;player forceAddUniform _uniform;},//todo remove
+                      {removeVest player;player addVest _vest;},
+                      {removeBackpackGlobal player;player addBackpack _backpack;}];
 {
 	_item = _x;
 	if!(_item isEqualTo "")then{
@@ -305,29 +308,17 @@ _containers = [_uniform,_vest,_backpack];
 
 		call {
 			if ([_itemCounts select _index, _item] call jn_fnc_arsenal_itemCount == -1) exitWith {
-				call ([
-					{player forceAddUniform _uniform;},//todo remove
-					{player addVest _vest;},
-					{player addBackpack _backpack;}
-				] select _foreachindex);
+				call (_invCallArray select _foreachindex);
 			};
 
 			if ([_availableItems select _index, _item] call jn_fnc_arsenal_itemCount > 0) then {
-				call ([
-					{player forceAddUniform _uniform;},//todo remove
-					{player addVest _vest;},
-					{player addBackpack _backpack;}
-				] select _foreachindex);
+				call (_invCallArray select _foreachindex);
 				[_arrayTaken,_index,_item,_amount] call _addToArray;
 				[_availableItems,_index,_item,_amount] call _removeFromArray;
 			} else {
 				_oldItem = [_uniform_old,_vest_old,_backpack_old] select _foreachindex;
 				if !(_oldItem isEqualTo "") then {
-					call ([
-						{player forceAddUniform _uniform_old;}, //todo remove
-						{player addVest _vest_old;},
-						{player addBackpack _backpack_old;}
-					] select _foreachindex);
+					call (_invCallArray select _foreachindex);
 					_arrayReplaced = [_arrayReplaced,[_item,_oldItem]] call jn_fnc_arsenal_addToArray;
 					[_arrayTaken,_index,_oldItem,1] call _addToArray;
 				} else {

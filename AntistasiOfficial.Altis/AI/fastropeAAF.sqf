@@ -43,7 +43,7 @@ if (alive _veh) then
 		};
 	};
 */
-[_veh] call smokeCoverAuto;
+//[_veh] call smokeCoverAuto;
 
 {
 [_veh,_x] spawn

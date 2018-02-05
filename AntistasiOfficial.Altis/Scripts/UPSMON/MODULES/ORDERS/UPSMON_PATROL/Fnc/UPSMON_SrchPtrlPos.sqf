@@ -81,7 +81,7 @@ while {_scan} do
 			if (!("air" in _typeofgrp)) then
 			{
 				_nearRoads = _centerpos nearRoads _rangeX;
-				If (count _nearRoads > 0) then
+				If !(_nearRoads isEqualTo []) then
 				{
 					_nearRoads = _nearRoads call UPSMON_arrayShufflePlus;
 					{

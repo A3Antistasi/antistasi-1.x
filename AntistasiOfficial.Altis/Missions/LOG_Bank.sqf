@@ -1,7 +1,7 @@
 if (!isServer and hasInterface) exitWith {};
 
-_tskTitle = localize "Str_tsk_logBank";
-_tskDesc = localize "Str_tskDesc_logBank";
+_tskTitle = localize "STR_TSK_TD_logBank";
+_tskDesc = localize "STR_TSK_TD_DESC_logBank";
 
 _banco = _this select 0;
 
@@ -21,7 +21,11 @@ _mrkfin setMarkerShape "ICON";
 _pos = (getMarkerPos guer_respawn) findEmptyPosition [1,50,AS_misVehicleBox];
 
 _camion = AS_misVehicleBox createVehicle _pos;
-{_x reveal _camion} forEach (allPlayers - hcArray);
+_camion allowDamage false;
+[_camion] spawn {sleep 1; (_this select 0) allowDamage true;};
+
+
+{_x reveal _camion} forEach (allPlayers - (entities "HeadlessClient_F"));
 [_camion] spawn vehInit;
 _camion setVariable ["destino",_nombredest,true];
 _camion addEventHandler ["GetIn",
@@ -67,7 +71,7 @@ if ((dateToNumber date > _fechalimnum) or (!alive _camion)) then
 else
 	{
 	_cuenta = 120;//120
-	[_posicion] remoteExec ["patrolCA",HCattack];
+	[_posicion] remoteExec ["patrolCA", call AS_fnc_getNextWorker];
 	[10,-20,_marcador] remoteExec ["AS_fnc_changeCitySupport",2];
 	{_amigo = _x;
 	if (_amigo distance _camion < 300) then
@@ -110,7 +114,7 @@ if ((_camion distance _posbase < 50) and (dateToNumber date < _fechalimnum)) the
 	[0,5000] remoteExec ["resourcesFIA",2];
 	[-20,0] remoteExec ["prestige",2];
 	[1800] remoteExec ["AS_fnc_increaseAttackTimer",2];
-	{if (_x distance _camion < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - hcArray);
+	{if (_x distance _camion < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
 	[5,Slowhand] call playerScoreAdd;
 	// BE module
 	if (activeBE) then {

@@ -1,7 +1,7 @@
 if (!isServer and hasInterface) exitWith {};
 
-_tskTitle = localize "Str_tsk_DesHeli";
-_tskDesc = localize "Str_tskDesc_DesHeli";
+_tskTitle = localize "STR_TSK_TD_DesHeli";
+_tskDesc = localize "STR_TSK_TD_DESC_DesHeli";
 
 private ["_poscrash","_marcador","_posicion","_mrkfin","_tipoveh","_efecto","_heli","_vehiculos","_soldados","_grupos","_unit","_roads","_road","_vehicle","_veh","_tipogrupo","_tsk","_humo","_emitterArray"];
 
@@ -88,7 +88,7 @@ _grupo = [_posicion, side_green, _tipogrupo] call BIS_Fnc_spawnGroup;
 
 {_x assignAsCargo _veh; _x moveInCargo _veh; _soldados = _soldados + [_x]; [_x] join _grupoveh; [_x] spawn genInit} forEach units _grupo;
 deleteGroup _grupo;
-[_veh] spawn smokeCover;
+//[_veh] spawn smokeCover;
 
 _Vwp0 = _grupoVeh addWaypoint [_poscrash, 0];
 _Vwp0 setWaypointType "TR UNLOAD";
@@ -153,7 +153,7 @@ if (not alive _heli) then
 	[0,0] remoteExec ["prestige",2];
 	//[-3,3,_posicion] remoteExec ["AS_fnc_changeCitySupport",2];
 	[1200] remoteExec ["AS_fnc_increaseAttackTimer",2];
-	{if (_x distance _heli < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - hcArray);
+	{if (_x distance _heli < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
 	[5,Slowhand] call playerScoreAdd;
 	// BE module
 	if (activeBE) then {
