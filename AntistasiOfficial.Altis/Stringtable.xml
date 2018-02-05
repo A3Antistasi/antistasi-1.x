@@ -2065,7 +2065,7 @@
 		<Container name="MOVE_HQ">
 		     <Key ID="STR_HINTS_MHQ_OCSHATTF">
 			    <Original>Only Commander Slowhand has access to this function</Original>
-				<Russian>Только Командир-админ имеет доступ к этой функции</Russian> <!-- Редакт. -->
+				<Russian>Только Командир имеет доступ к этой функции</Russian> <!-- Редакт. -->
 			</Key>
 			<Key ID="STR_HINTS_MHQ_YMFEYAIOTMTHQ">
 			    <Original>You must first empty your Ammobox in order to move the HQ</Original>
