@@ -1,9 +1,9 @@
-//if (player != Slowhand) exitWith {hint "Only Commander can ask for NATO support"};
+//if (player != Slowhand) exitWith {hint localize "STR_HINTS_NATOD_OCCAFNATOS"};
 _tipo = _this select 0;
 
-if (!allowPlayerRecruit) exitWith {hint "Server is very loaded. \nWait one minute or change FPS settings in order to fulfill this request"};
-if (_tipo in misiones) exitWith {hint "NATO is already busy with this kind of mission"};
-if (!([player] call hasRadio)) exitWith {hint "You need a radio in your inventory to be able to give orders to other squads"};
+if (!allowPlayerRecruit) exitWith {hint localize "STR_HINTS_NATOD_SIVLWOMOCFPS"};
+if (_tipo in misiones) exitWith {hint localize "STR_HINTS_NATOD_NATOIABWTKOM"};
+if (!([player] call hasRadio)) exitWith {hint localize "STR_HINTS_NATOD_YNARIYITBATGOTOS"};
 
 // check if FIA controls a radio tower
 // /begin
@@ -30,7 +30,7 @@ if (_c < 1) exitWith {
 _bases = bases - mrkAAF;
 _aeropuertos = aeropuertos - mrkAAF;
 
-if (((_tipo == "NATOArty") or (_tipo == "NATOArmor") or (_tipo == "NATORoadblock")) and (count _bases == 0)) exitWith {hint "You need to conquer at least one base to perform this action"};
+if (((_tipo == "NATOArty") or (_tipo == "NATOArmor") or (_tipo == "NATORoadblock")) and (count _bases == 0)) exitWith {hint localize "STR_HINTS_NATOD_YNYCALOBTPTA"};
 
 _costeNATO = 5;
 _textoHint = "";
@@ -38,44 +38,44 @@ _textoHint = "";
 switch (_tipo) do {
 	case "NATOCA": {
 		_costeNATO = 20;
-		_textohint = "Click on the base or airport you want NATO to attack";
+		_textohint = localize "STR_HINTS_NATOD_COTBOAYWNATOTA";
 	};
 	case "NATOArmor": {
 		_costeNATO = 20;
-		_textohint = "Click on the base from which you want NATO to attack";
+		_textohint = localize "STR_HINTS_NATOD_COTBFWYWNATOTOTA";
 	};
 	case "NATOAmmo": {
 		_costeNATO = 5;
-		_textohint = "Click on the spot where you want the Ammodrop";
+		_textohint = localize "STR_HINTS_NATOD_COTSWYWTA";
 	};
 	case "NATOArty": {
 		_costeNATO = 10;
-		_textohint = "Click on the base from which you want Artillery Support";
+		_textohint = localize "STR_HINTS_NATOD_COTBFWYWAS";
 	};
 	case "NATOCAS": {
 		_costeNATO = 10;
-		_textohint = "Click on the airport from which you want NATO to attack";
+		_textohint = localize "STR_HINTS_NATOD_COTAFWYWNATOTA";
 	};
 	case "NATORoadblock": {
 		_costeNATO = 10;
-		_textohint = "Click on the spot where you want NATO to setup a roadblock";
+		_textohint = localize "STR_HINTS_NATOD_COTSWYWNATOTSAR";
 	};
 	case "NATOQRF": {
 		_costeNATO = 10;
-		_textohint = "Click on the base or airport/carrier from which you want NATO to dispatch a QRF";
+		_textohint = localize "STR_HINTS_NATOD_COTBOACFWYWNATOTDAQRF";
 	};
 	case "NATORED": {           //Stef 30-08 adding a way to reduce CSATprestige by spending NATO
 		_costeNATO = 100;
-		_textohint = "You informed about supporting enemy faction emplacement, its destruction will reduce their concern about the island";
+		_textohint = localize "STR_HINTS_NATOD_YIASEFEIDWRTCATI";
 	};
 };
 
 _NATOSupp = server getVariable "prestigeNATO";
 
-if (_NATOSupp < _costeNATO) exitWith {hint format ["We lack of enough NATO Support in order to proceed with this request (%1 needed)",_costeNATO]};
+if (_NATOSupp < _costeNATO) exitWith {hint format [localize "STR_HINTS_NATOD_WLOENATOSIOTPWTR",_costeNATO]};
 
-if (_tipo == "NATOCAS") exitWith {[] remoteExec [_tipo,HCattack]};
-if (_tipo == "NATOUAV") exitWith {[] remoteExec [_tipo,HCattack]};
+if (_tipo == "NATOCAS") exitWith {[] remoteExec [_tipo, call AS_fnc_getNextWorker]};
+if (_tipo == "NATOUAV") exitWith {[] remoteExec [_tipo, call AS_fnc_getNextWorker]};
 
 if (_tipo == "NATORED") exitWith {[-100,-10] remoteExec ["prestige",2];}; //Stef 30-08 added the support change, maybe add a sleep 5 minute to take effect to simulate jets moving to them.
 
@@ -105,11 +105,11 @@ _loc = "spawnNATO";
 // roadblocks, only allowed on roads
 if (_tipo == "NATORoadblock") exitWith {
 	_check = isOnRoad _posicionTel;
-	if !(_check) exitWith {hint "Roadblocks can only be placed on roads."};
-	[_posicionTel] remoteExec [_tipo,HCattack];
+	if !(_check) exitWith {hint localize "STR_HINTS_NATOD_RBCOBPOR"};
+	[_posicionTel] remoteExec [_tipo, call AS_fnc_getNextWorker];
 };
 
-if (_tipo == "NATOAmmo") exitWith {[_posiciontel,_NATOSupp] remoteExec [_tipo, HCattack]};
+if (_tipo == "NATOAmmo") exitWith {[_posiciontel,_NATOSupp] remoteExec [_tipo,  call AS_fnc_getNextWorker]};
 
 _sitio = [markers, _posicionTel] call BIS_Fnc_nearestPosition;
 
@@ -121,7 +121,7 @@ if (_tipo == "NATOQRF") exitWith {
 	};
 
 	posicionTel = [];
-	hint format ["QRF departing from %1. Mark the target for the QRF.",_sitioName];
+	hint format [localize "STR_HINTS_NATOD_QRFDF1MTTFTQRF",_sitioName];
 
 	openMap true;
 	onMapSingleClick "posicionTel = _pos;";
@@ -134,26 +134,26 @@ if (_tipo == "NATOQRF") exitWith {
 	_destino =+ posicionTel;
 	openMap false;
 
-	if (surfaceIsWater _destino) exitWith {hint "No LCS available this decade, QRF is restricted to land."};
-	hint "QRF inbound.";
-	[_loc,_destino] remoteExec ["NATOQRF",HCattack];
+	if (surfaceIsWater _destino) exitWith {hint localize "STR_HINTS_NATOD_NLCSATDQRFIRTL"};
+	hint localize "STR_HINTS_NATOD_QRFI";
+	[_loc,_destino] remoteExec ["NATOQRF", call AS_fnc_getNextWorker];
 };
 
-if (_posicionTel distance getMarkerPos _sitio > 50) exitWith {hint "You must click near a map marker"};
+if (_posicionTel distance getMarkerPos _sitio > 50) exitWith {hint localize "STR_HINTS_NATOD_YMCNAMM"};
 
 if (_tipo == "NATOArty") exitWith {
-	if (not(_sitio in _bases)) exitWith {hint "Artillery support can only be obtained from bases."};
-	[_sitio] remoteExec ["NATOArty", HCattack];
+	if (not(_sitio in _bases)) exitWith {hint localize "STR_HINTS_NATOD_ASCOBOFB"};
+	[_sitio] remoteExec ["NATOArty",  call AS_fnc_getNextWorker];
 };
 
 if (_tipo == "NATOArmor") then {
 	if (not(_sitio in _bases)) then {
 		_salir = true;
-		hint "You must click near a friendly base";
+		hint localize "STR_HINTS_NATOD_YMCNAFB";
 	}
 	else {
 		posicionTel = [];
-		hint "Click on the Armored Column destination";
+		hint localize "STR_HINTS_NATOD_COTACD";
 
 		openMap true;
 		onMapSingleClick "posicionTel = _pos;";
@@ -167,23 +167,23 @@ if (_tipo == "NATOArmor") then {
 		openMap false;
 		_destino = [markers, _posicionTel] call BIS_Fnc_nearestPosition;
 		if (_posicionTel distance getMarkerPos _destino > 50) then {
-			hint "You must click near a map marker";
+			hint localize "STR_HINTS_NATOD_YMCNAMM";
 			_salir = true
 		}
 		else {
-			[[_sitio,_destino], "CREATE\NATOArmor.sqf"] remoteExec ["execVM",HCattack];
+			[[_sitio,_destino], "CREATE\NATOArmor.sqf"] remoteExec ["execVM", call AS_fnc_getNextWorker];
 		};
 	};
 };
 
 if (_tipo == "NATOCA") then {
-	if ((_sitio in ciudades) or (_sitio in controles) or (_sitio in colinas)) then {_salir = true; hint "NATO won't attack this kind of zone."};
-	if (_sitio in mrkFIA) then {_salir = true; hint "NATO Attacks may be only ordered on AAF controlled zones"};
+	if ((_sitio in ciudades) or (_sitio in controles) or (_sitio in colinas)) then {_salir = true; hint localize "STR_HINTS_NATOD_NATOWATKOZ"};
+	if (_sitio in mrkFIA) then {_salir = true; hint localize "STR_HINTS_NATOD_NATOAMBOOOAAFCZ"};
 };
 
 if (_salir) exitWith {};
 
 if (_tipo == "NATOCA") then {
-	[_sitio] remoteExec [_tipo,HCattack];
+	[_sitio] remoteExec [_tipo, call AS_fnc_getNextWorker];
 };
 

@@ -126,7 +126,7 @@ while {true} do {
 			if !("CONVOY" in misiones) then {
 				_base = [_city] call AS_fnc_findBaseForConvoy;
 				if ((_base != "") AND (random 3 < 1)) then {
-					[_city,_base,"city"] remoteExec ["CONVOY",HCattack];
+					[_city,_base,"city"] remoteExec ["CONVOY", call AS_fnc_getNextWorker];
 				};
 			};
 		};
@@ -210,7 +210,7 @@ while {true} do {
 	server setVariable ["resourcesAAF",_resourcesAAF,true];
 	if (isMultiplayer) then {[] spawn assignStavros};
 	if (!("AtaqueAAF" in misiones) AND (random 100 < 50)) then {[] call missionRequestAUTO};
-	if (AAFpatrols < 3) then {[] remoteExec ["genRoadPatrol",hcAttack]};
+	if (AAFpatrols < 3) then {[] remoteExec ["genRoadPatrol", call AS_fnc_getNextWorker]};
 
 	/* Remove static auto rearm 28.07.2017 Sparker
 	{

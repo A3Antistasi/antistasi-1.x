@@ -30,7 +30,7 @@ _veh flyInHeight 15;
 
 waitUntil {sleep 1; (not alive _veh) or ((speed _veh < 1) and (speed _veh > -1))};
 
-[_veh] call smokeCoverAuto;
+//[_veh] call smokeCoverAuto;
 
 {
 [_veh,_x] spawn

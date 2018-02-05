@@ -1,13 +1,7 @@
-private ["_toDelete"];
-
-[[petros,"hint","Deleting Garbage. Please wait"],"commsMP"] call BIS_fnc_MP;
-
-_toDelete = nearestObjects [markerPos "base_4", ["WeaponHolderSimulated", "GroundWeaponHolder", "WeaponHolder"], 16000];
-for "_i" from 0 to ((count _toDelete) - 1) do
-{
-	deleteVehicle (_toDelete select _i);
-};
+[[petros,"hint", localize "STR_HINTS_GARBAGE_CLEAR"],"commsMP"] call BIS_fnc_MP;
 
 {deleteVehicle _x} forEach allDead;
+{deleteVehicle _x} forEach (allMissionObjects "WeaponHolder");
+{deleteVehicle _x} forEach (allMissionObjects "WeaponHolderSimulated");
 
 [[petros,"hint","Garbage deleted"],"commsMP"] call BIS_fnc_MP;

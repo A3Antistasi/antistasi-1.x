@@ -93,7 +93,18 @@ fn_setPlayerData = {
     TRACE_3("START fn_setPlayerData", _varName,_varValue,_player);
 	call {
 		if(_varName == 'loadout') exitWith {
-		    if(_varValue isEqualType []) then {_player setUnitLoadout _varValue;};
+		    if(_varValue isEqualType []) then {
+                [  _varValue,
+                    {
+                        removeBackpackGlobal player;
+                        removeVest player;
+                        removeUniform player;
+                        removeGoggles player;
+                        player setUnitLoadout _this;
+                        systemChat "Loadout restored";
+                    }
+                ] remoteExec ["call", _player];
+            };
 		};
 		if(_varName isEqualTo 'funds') exitWith {_player setVariable ["dinero",_varValue,true];};
 		if(_varName isEqualTo 'score') exitWith {_player setVariable ["score",_varValue,true];};
@@ -256,7 +267,7 @@ fn_setData = {
 					publicVariable "enemyMotorpool"
 				};
 			};
-			if(_varName == 'time') exitWith {setDate _varValue; forceWeatherChange};
+			if(_varName == 'time') exitWith {setDate _varValue;};
 			if(_varName == 'resourcesAAF') exitWith {server setVariable ["resourcesAAF",_varValue,true]};
 			if(_varName == 'resourcesFIA') exitWith {server setVariable ["resourcesFIA",_varValue,true]};
 			if(_varName == 'destroyedBuildings') exitWith {
@@ -499,6 +510,7 @@ fn_setData = {
 					_veh = _tipoVeh createVehicle [0,0,0];
 					_veh setDir _dirVeh;
 					_veh setPosATL _posVeh;
+					_veh setCenterOfMass [(getCenterOfMass _veh) vectorAdd [0, 0, -1], 0];
 
 					if (_tipoVeh in (statics_allMGs + statics_allATs + statics_allAAs + statics_allMortars)) then {
 						staticsToSave pushBack _veh;

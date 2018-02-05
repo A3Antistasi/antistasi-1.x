@@ -1,0 +1,14 @@
+Static Weapon Notes:
+
+So far Vanilla bags contain their proper "assembleInfo" information as seen below
+Here is the pathway example
+configfile >> "CfgVehicles" >> "B_GMG_01_high_weapon_F" >> "assembleInfo" >> "assembleTo"
+and then the result
+assembleTo = "B_GMG_01_high_F";
+
+RHS example
+configfile >> "CfgVehicles" >> "RHS_SPG9_Tripod_Bag" >> "assembleTo"
+assembleTo = "rhs_SPG9_INS";
+
+With this we should be able to dynamically pull the classnames of bags and assign them to units. This way they can dynamically use any appropriately modded static bag.
+There is also dissasembleTo[] = {}; to consider. This can be used to figure out what bag an AI unit should recieve.

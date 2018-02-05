@@ -37,7 +37,7 @@ _fire inflame true;
 waitUntil {sleep 5; !(spawner getVariable _marker) OR ({alive _x} count units _group == 0) OR !(_marker in campsFIA)};
 
 if ({alive _x} count units _group == 0) then {
-	["TaskFailed", ["", format [localize "STR_TSK_CAMP_DESTROYED", markerText _marker]]] remoteExec ["BIS_fnc_showNotification"];
+	["TaskFailed", ["", format [localize "STR_TSK_TD_CAMP_DESTROYED", markerText _marker]]] remoteExec ["BIS_fnc_showNotification"];
 	campsFIA = campsFIA - [_marker]; publicVariable "campsFIA";
 	campList = campList - [[_marker, markerText _marker]]; publicVariable "campList";
 	usedCN = usedCN - [markerText _marker]; publicVariable "usedCN";

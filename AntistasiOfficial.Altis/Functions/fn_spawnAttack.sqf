@@ -86,7 +86,7 @@ _scoreNeededAirBase = [0, 5] select (count (unlockedWeapons arrayIntersect genAA
 							if !(_objective in smallCAmrk) then {
 								//if (debug) then {hint format ["%1 Es facil para bases",_objective]; sleep 5};
 								_difficulty = _difficulty + 2;
-								[_objective,_base] remoteExec ["patrolCA", HCattack];
+								[_objective,_base] remoteExec ["patrolCA",  call AS_fnc_getNextWorker];
 								sleep 15;
 							};
 						};
@@ -104,7 +104,7 @@ _scoreNeededAirBase = [0, 5] select (count (unlockedWeapons arrayIntersect genAA
 							if !(_objective in smallCAmrk) then {
 								//if (debug) then {hint format ["%1 Es facil para aire",_objective]; sleep 5};
 								_difficulty = _difficulty + 1;
-								[_objective,_airport] remoteExec ["patrolCA",HCattack];
+								[_objective,_airport] remoteExec ["patrolCA", call AS_fnc_getNextWorker];
 								sleep 15;
 							};
 						};
@@ -141,7 +141,7 @@ if ((count _objectives > 0) and (_difficulty < 3)) then {
 	{
 		if((count allUnits) < 170) then //If there are not too many units on the map already, 17/08 Stef increased from 150 to 170
 		{
-			[_objective] remoteExec ["combinedCA",HCattack];
+			[_objective] remoteExec ["combinedCA", call AS_fnc_getNextWorker];
 		}
 		else
 		{
@@ -150,7 +150,7 @@ if ((count _objectives > 0) and (_difficulty < 3)) then {
 	}
 	else
 	{
-		[_objective] remoteExec ["CSATpunish",HCattack]
+		[_objective] remoteExec ["CSATpunish", call AS_fnc_getNextWorker]
 	};
 	cuentaCA = cuentaCA - 600; //experimental
 };
@@ -171,7 +171,7 @@ if !("CONVOY" in misiones) then {
 
 		if !(_objectives isEqualTo []) then {
 			_objective = selectRandom _objectives;
-			[(_objective select 0),(_objective select 1),"civ"] remoteExec ["CONVOY",HCattack];
+			[(_objective select 0),(_objective select 1),"civ"] remoteExec ["CONVOY", call AS_fnc_getNextWorker];
 		};
 	};
 };

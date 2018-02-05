@@ -1,7 +1,7 @@
 if (!isServer and hasInterface) exitWith {};
 
-_tskTitle = localize "Str_tsk_DesVehicle";
-_tskDesc = localize "Str_tskDesc_DesVehicle";
+_tskTitle = localize "STR_TSK_TD_DesVehicle";
+_tskDesc = localize "STR_TSK_TD_DESC_DesVehicle";
 
 private ["_marcador","_posicion","_fechalim","_fechalimnum","_nombredest","_tipoVeh","_texto","_camionCreado","_size","_pos","_veh","_grupo","_unit"];
 
@@ -70,7 +70,7 @@ if (spawner getVariable _marcador) then
 		[2,0] remoteExec ["prestige",2];
 		if (_tipoVeh == opSPAA) then {[0,0] remoteExec ["prestige",2]; [0,10,_posicion] remoteExec ["AS_fnc_changeCitySupport",2]} else {[0,5,_posicion] remoteExec ["AS_fnc_changeCitySupport",2]};
 		[1200] remoteExec ["AS_fnc_increaseAttackTimer",2];
-		{if (_x distance _veh < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - hcArray);
+		{if (_x distance _veh < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
 		[5,Slowhand] call playerScoreAdd;
 		// BE module
 		if (activeBE) then {

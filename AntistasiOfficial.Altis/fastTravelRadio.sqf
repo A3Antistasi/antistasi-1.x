@@ -4,16 +4,16 @@ _markers = markers + [guer_respawn] - campsFIA;
 
 _esHC = false;
 
-if (count hcSelected player > 1) exitWith {hint "You can select one group only to Fast Travel"};
+if (count hcSelected player > 1) exitWith {hint localize "STR_HINTS_FTR_YCSOGOTFT"};
 if (count hcSelected player == 1) then {_grupo = hcSelected player select 0; _esHC = true} else {_grupo = group player};
 
 _jefe = leader _grupo;
 
-if ((_jefe != player) and (!_esHC)) exitWith {hint "Only a group leader can ask for Fast Travel"};
+if ((_jefe != player) and (!_esHC)) exitWith {hint localize "STR_HINTS_FTR_OAGLCAFFT"};
 
-if (({isPlayer _x} count units _grupo > 1) and (!_esHC)) exitWith {hint "You cannot Fast Travel with other players in your group"};
+if (({isPlayer _x} count units _grupo > 1) and (!_esHC)) exitWith {hint localize "STR_HINTS_FTR_YCFTWOPIYG"};
 
-if (player != player getVariable ["owner",player]) exitWith {hint "You cannot Fast Travel while you are controlling AI"};
+if (player != player getVariable ["owner",player]) exitWith {hint localize "STR_HINTS_FTR_YCFTWYACAI"};
 
 _chequeo = false;
 {_enemigo = _x;
@@ -21,7 +21,7 @@ _chequeo = false;
 if (_chequeo) exitWith {};
 } forEach allUnits;
 
-if (_chequeo) exitWith {Hint "You cannot Fast Travel with enemies near the group"};
+if (_chequeo) exitWith {Hint localize "STR_HINTS_FTR_YCFTWENTG"};
 
 {if ((vehicle _x!= _x) and ((isNull (driver vehicle _x)) or (!canMove vehicle _x))) then
 	{
@@ -29,12 +29,12 @@ if (_chequeo) exitWith {Hint "You cannot Fast Travel with enemies near the group
 	}
 } forEach units _grupo;
 
-if (_chequeo) exitWith {Hint "You cannot Fast Travel if you don't have a driver in all your vehicles or your vehicles are damage and cannot move"};
+if (_chequeo) exitWith {Hint localize "STR_HINTS_FTR_YCFTIYDHADIAY"};
 
 posicionTel = [];
 
 if (_esHC) then {hcShowBar false};
-hint "Click on the zone you want to travel";
+hint localize "STR_HINTS_FTR_COTZYWTT";
 openMap true;
 onMapSingleClick "posicionTel = _pos;";
 
@@ -47,23 +47,23 @@ if (count _posicionTel > 0) then
 	{
 	_base = [_markers, _posicionTel] call BIS_Fnc_nearestPosition;
 
-	if (_base in mrkAAF) exitWith {hint "You cannot Fast Travel to an enemy controlled zone"; openMap [false,false]};
+	if (_base in mrkAAF) exitWith {hint localize "STR_HINTS_FTR_YCFTTAECZ"; openMap [false,false]};
 
 	//experimental
-	if (_base in campsFIA) exitWith {hint "You cannot Fast Travel to camps."; openMap [false,false]};
-	//if (_base in puestosFIA) exitWith {hint "You cannot Fast Travel to roadblocks and watchposts"; openMap [false,false]};
+	if (_base in campsFIA) exitWith {hint localize "STR_HINTS_FTR_YCFTTC"; openMap [false,false]};
+	//if (_base in puestosFIA) exitWith {hint localize "STR_HINTS_FTR_YCFTTRNW"; openMap [false,false]};
 
 	{
 		if (((side _x == side_red) or (side _x == side_green)) and (_x distance (getMarkerPos _base) < 500) and (not(captive _x))) then {_chequeo = true};
 	} forEach allUnits;
 
-	if (_chequeo) exitWith {Hint "You cannot Fast Travel to an area under attack or with enemies in the surrounding"; openMap [false,false]};
+	if (_chequeo) exitWith {Hint localize "STR_HINTS_FTR_YCFTTAAUAOWE"; openMap [false,false]};
 
 	if (_posicionTel distance getMarkerPos _base < 50) then
 		{
 		_posicion = [getMarkerPos _base, 10, random 360] call BIS_Fnc_relPos;
 		_distancia = round (((position _jefe) distance _posicion)/200);
-		if (!_esHC) then {disableUserInput true; cutText ["Fast traveling, please wait","BLACK",2]; sleep 2;} else {hcShowBar false;hcShowBar true;hint format ["Moving group %1 to destination",groupID _grupo]; sleep _distancia;};
+		if (!_esHC) then {disableUserInput true; cutText ["Fast traveling, please wait","BLACK",2]; sleep 2;} else {hcShowBar false;hcShowBar true;hint format [localize "STR_HINTS_FTR_MG1TD",groupID _grupo]; sleep _distancia;};
 		_forzado = false;
 		if (!isMultiplayer) then {if (not(_base in forcedSpawn)) then {_forzado = true; forcedSpawn = forcedSpawn + [_base]}};
 		if (!_esHC) then {sleep _distancia};
@@ -115,14 +115,14 @@ if (count _posicionTel > 0) then
 
 		//_unit hideObject false;
 		} forEach units _grupo;
-		if (!_esHC) then {disableUserInput false;cutText ["You arrived to destination","BLACK IN",3]} else {hint format ["Group %1 arrived to destination",groupID _grupo]};
+		if (!_esHC) then {disableUserInput false;cutText ["You arrived to destination","BLACK IN",3]} else {hint format [localize "STR_HINTS_FTR_G1ATD",groupID _grupo]};
 		if (_forzado) then {forcedSpawn = forcedSpawn - [_base]};
 		sleep 5;
 		{_x allowDamage true} forEach units _grupo;
 		}
 	else
 		{
-		Hint "You must click near marker under your control";
+		Hint localize "STR_HINTS_FTR_YMCNMUYC";
 		};
 	};
 openMap false;

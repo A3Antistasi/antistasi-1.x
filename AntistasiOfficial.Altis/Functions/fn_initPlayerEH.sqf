@@ -89,7 +89,7 @@ player addEventHandler ["GetInMan", {
 		_owner = _vehicle getVariable ["vehOwner",getPlayerUID player];
 		if (_owner != (getPlayerUID player)) then {
 			if ({getPlayerUID _x == _owner} count (units group player) == 0) then {
-				hint localize "STR_HINTS_EH_VEH_GROUP";
+				hint localize "STR_HINTS_GEN_EH_VEH_GROUP";
 				moveOut _unit;
 				_exit = true;
 			};
@@ -131,7 +131,7 @@ player addEventHandler ["GetOutMan",{
 // If Jeroen's arsenal isn't active, display unlock requirements
 if !(activeJNA) then {
 	caja addEventHandler ["ContainerOpened", {
-		hint format [localize "STR_HINTS_INIT_MEMBER_GEAR",
+		hint format [localize "STR_HINTS_GEN_INIT_MEMBER_GEAR",
 			["weapons"] call AS_fnc_getUnlockRequirement,
 			["magazines"] call AS_fnc_getUnlockRequirement,
 			["vests"] call AS_fnc_getUnlockRequirement,
@@ -210,7 +210,7 @@ if (isMultiplayer) then {
 			params ["_container","_player"];
 		    if !([_player] call isMember) then {
 		    	_player setPos position petros;
-				hint format [localize "STR_HINTS_INIT_NOTMEMBER_GEAR",
+				hint format [localize "STR_HINTS_GEN_INIT_NOTMEMBER_GEAR",
 					["weapons"] call AS_fnc_getUnlockRequirement,
 					["magazines"] call AS_fnc_getUnlockRequirement,
 					["vests"] call AS_fnc_getUnlockRequirement,
@@ -224,7 +224,7 @@ if (isMultiplayer) then {
 			if !([_this select 0] call isMember) then {
 				if ((_this select 1 == caja) OR ((_this select 0) distance caja < 3)) then {
 					_control = true;
-					hint format [localize "STR_HINTS_INIT_NOTMEMBER_GEAR",
+					hint format [localize "STR_HINTS_GEN_INIT_NOTMEMBER_GEAR",
 						["weapons"] call AS_fnc_getUnlockRequirement,
 						["magazines"] call AS_fnc_getUnlockRequirement,
 						["vests"] call AS_fnc_getUnlockRequirement,

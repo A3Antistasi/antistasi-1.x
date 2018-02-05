@@ -10,5 +10,5 @@ if (!isMultiplayer) then {
 	} foreach (nearestTerrainObjects [getMarkerPos guer_respawn,["tree","bush"],20])
 };
 
-hint localize "STR_HINTS_CLEARED_FOREST";
+hint localize "STR_HINTS_GEN_CLEARED_FOREST";
 flag_chopForest = true; publicVariable "flag_chopForest";

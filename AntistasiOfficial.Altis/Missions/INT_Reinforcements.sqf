@@ -9,8 +9,8 @@ private ["_posTarget", "_posBase", "_soldiers", "_groups", "_vehicles", "_endTim
 if ("INT" in misiones) exitWith {"Info: Reinforcement task killed, reinforcements task active already."};
 //if ((format ["INT_%1",_target]) in misiones) exitWith {format ["Info: Reinforcement task killed, %1 already receiving reinforcements.", _target]};
 
-_tskTitle = localize "STR_TSK_INTREINF";
-_tskDesc = localize "STR_TSKDESC_INTREINF";
+_tskTitle = localize "STR_TSK_TD_INTREINF";
+_tskDesc = localize "STR_TSK_TD_DESC_INTREINF";
 
 _posBase = getMarkerPos _base;
 _posTarget = getMarkerPos _target;

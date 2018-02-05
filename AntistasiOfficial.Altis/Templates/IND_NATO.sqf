@@ -441,7 +441,11 @@ unlockedItems = [
 ];
 
 unlockedBackpacks = [
-	"B_TacticalPack_blk"
+	"B_TacticalPack_blk",
+	"B_FieldPack_oli",
+	"B_FieldPack_blk",
+	"B_FieldPack_oucamo",
+	"B_FieldPack_cbr"
 ];
 
 unlockedOptics = [];

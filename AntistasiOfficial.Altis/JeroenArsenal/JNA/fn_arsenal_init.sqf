@@ -111,6 +111,11 @@ if(hasInterface)then{
 
         if(_type isEqualTo "arsenal")then{
             [clientOwner] remoteExecCall ["jn_fnc_arsenal_requestClose",2];
+			//Sparker: refresh the lists of ulocked weapons. Otherwise it is called only when you add gear through 'to cargo' button or through vehicles.
+			[] spawn {
+				sleep 3;
+				[unlockedWeapons,true] call AS_fnc_weaponsCheck;
+			};
         };
 
         if(_type isEqualTo "vehicleArsenal")then{

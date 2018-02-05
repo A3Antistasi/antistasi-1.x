@@ -142,7 +142,19 @@ class AS {
 		class addGearToCrate {};
 		class transferGear {};
 		class resetHQ {};
+		class isUnconscious {};
+		class setUnconscious {};
 	};
+
+    class headless {
+        file = "workers";
+        class initWorkerServer {};
+        class initWorker {};
+        class registerWorker {};
+        class unregisterWorker {};
+        class getNextWorker {};
+    };
+
 	class QRF {
 		file = "Functions";
 		class QRF_airCavalry {};

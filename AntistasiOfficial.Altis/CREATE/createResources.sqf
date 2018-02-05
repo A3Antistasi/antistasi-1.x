@@ -111,14 +111,28 @@ if !(_marker in destroyedCities) then {
 	};
 };
 
-waitUntil {sleep 1; !(spawner getVariable _marker) OR (({!(vehicle _x isKindOf "Air")} count ([_size,0,_markerPos,"BLUFORSpawn"] call distanceUnits)) > 3*count (allUnits select {((side _x == side_green) OR (side _x == side_red)) AND (_x distance _markerPos <= (_size max 200)) AND !(captive _x)}))};
+//Despawn conditions
+	waitUntil {sleep 1;
+		!(spawner getVariable _marker) OR
 
-if ((spawner getVariable _marker) AND !(_marker in mrkFIA)) then {
-	[_flag] remoteExec ["mrkWIN",2];
-};
+		(({!(vehicle _x isKindOf "Air") OR (lifeState _x == "INCAPACITATED")}
+		 	count ([_size,0,_markerPos,"BLUFORSpawn"] call distanceUnits))
+			> 3*
+			count (allUnits select {(
+				(side _x == side_green) OR
+				(side _x == side_red)) AND
+				(_x distance _markerPos <= (_size max 200)) AND
+				!(captive _x) OR
+				(lifeState _x == "INCAPACITATED")})
+		)
+	};
 
-waitUntil {sleep 1; !(spawner getVariable _marker)};
+	if ((spawner getVariable _marker) AND !(_marker in mrkFIA)) then {
+		[_flag] remoteExec ["mrkWIN",2];
+	};
 
-deleteMarker _patrolMarker;
-[_allGroups, _allSoldiers + _workers, _allVehicles] spawn AS_fnc_despawnUnits;
-if (!isNull _observer) then {deleteVehicle _observer};
+	waitUntil {sleep 1; !(spawner getVariable _marker)};
+
+	deleteMarker _patrolMarker;
+	[_allGroups, _allSoldiers + _workers, _allVehicles] spawn AS_fnc_despawnUnits;
+	if (!isNull _observer) then {deleteVehicle _observer};

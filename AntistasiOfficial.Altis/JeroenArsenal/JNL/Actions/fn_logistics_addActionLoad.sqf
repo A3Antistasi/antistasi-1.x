@@ -41,6 +41,10 @@ _loadActionID = _object addAction [
 		{
 			private _nodeID = [_nearestVehicle, _cargo] call jn_fnc_logistics_canLoad;
 			switch (_nodeID) do {
+				case -4:
+				{
+					hint 'Can not load cargo: passengers have occupied cargo space!';
+				};
 				case -3:
 				{
 					hint 'This vehicle can not carry this cargo!';

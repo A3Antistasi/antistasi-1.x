@@ -9,7 +9,7 @@ while {true} do
 
 		{
 			_player = _x getVariable ["owner",_x];
-			if ((not(_player in _players)) and (player != _player) and (side player isEqualTo side group _x)) then
+			if ((not(_player in _players)) and (player != _player) and (side player isEqualTo side group _x) or ((side player) == Civilian)) then
 			{
 				_players pushBack _player;
 				_mrk = createMarkerLocal [format ["%1",_player],position _player];
@@ -26,13 +26,13 @@ while {true} do
 			_player = _x;
 			_mrk = format ["%1",_player];
 			if (vehicle _player == _player) then{
-				if !(server getVariable ["hardMode", false]) then {_mrk setMarkerAlphaLocal 1};
+				if (server getVariable ["hardMode", false]) then {_mrk setMarkerAlphaLocal 0};
 				//_mrk setMarkerAlphaLocal 1; // <<-- normal mode
 				_mrk setMarkerPosLocal position _player;
 				_mrk setMarkerDirLocal getDir _player;
-				if ((_player getVariable ["ASunconscious",false]) || (_player getVariable ["ACE_isUnconscious",false])) then{
+				if ([_player] call AS_fnc_isUnconscious) then{
 					_mrk setMarkerTypeLocal "mil_join";
-					if (server getVariable ["hardMode", false]) then {_mrk setMarkerAlphaLocal 1};
+					if (server getVariable ["hardMode", false]) then {_mrk setMarkerAlphaLocal 0};
 					//_mrk setMarkerAlphaLocal 1; // <<-- hard mode
 					_mrk setMarkerTextLocal format ["%1 Injured",name _player];
 					_mrk setMarkerColorLocal "ColorPink";
@@ -64,7 +64,7 @@ while {true} do
 		} forEach _players;
 
 
-		sleep 1;
+		sleep 5;
 
 	};//end while loop
 

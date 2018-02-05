@@ -93,7 +93,7 @@ createNATObases = compile preProcessFileLineNumbers "CREATE\createNATObases.sqf"
 resourcesFIA = compile preProcessFileLineNumbers "resourcesFIA.sqf";
 prestige = compile preProcessFileLineNumbers "prestige.sqf";
 createCIV = compile preProcessFileLineNumbers "CREATE\createCIV.sqf";
-createFIArecursos = compile preProcessFileLineNumbers "CREATE\createFIArecursos.sqf";
+createFIAresources = compile preProcessFileLineNumbers "CREATE\createFIAresources.sqf";
 createFIAOutpost = compile preProcessFileLineNumbers "CREATE\createFIAOutpost.sqf";
 createFIApower = compile preProcessFileLineNumbers "CREATE\createFIApower.sqf";
 createNATOaerop = compile preProcessFileLineNumbers "CREATE\createNATOaerop.sqf";
@@ -102,6 +102,7 @@ addFIAsquadHC = compile preProcessFileLineNumbers "REINF\addFIAsquadHC.sqf";
 addFIAveh = compile preProcessFileLineNumbers "REINF\addFIAveh.sqf";
 FIAskillAdd = compile preProcessFileLineNumbers "REINF\FIAskillAdd.sqf";
 CSATinit = compile preProcessFileLineNumbers "CREATE\CSATinit.sqf";
+CSATtimetoreveal = compile preProcessFileLineNumbers "CREATE\CSATtimetoreveal.sqf";
 NATOinit = compile preProcessFileLineNumbers "CREATE\NATOinit.sqf";
 NATOinitCA = compile preProcessFileLineNumbers "CREATE\NATOinitCA.sqf";
 CIVinit = compile preProcessFileLineNumbers "CREATE\CIVinit.sqf";
@@ -205,4 +206,4 @@ call compile preprocessFileLineNumbers "Compositions\cmpMTN.sqf";
 call compile preprocessFileLineNumbers "Compositions\cmpOP.sqf";
 call compile preprocessFileLineNumbers "Compositions\artillery.sqf";
 
-if ((isMultiplayer) and (isServer)) then {[[petros,"hint","Functions Init Completed"],"commsMP"] call BIS_fnc_MP};
+if ((isMultiplayer) and (isServer)) then {[[petros,"hint",localize "STR_HINTS_INITCUNCS"],"commsMP"] call BIS_fnc_MP};

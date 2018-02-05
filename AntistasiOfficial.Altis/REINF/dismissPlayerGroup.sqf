@@ -46,7 +46,7 @@ if (_ai) then
 	_armas = [];
 
 	{_unit = _x;
-	if ((alive _unit) and (not(_x getVariable "ASunconscious"))) then
+	if ((alive _unit) and !([_x] call AS_fnc_isUnconscious)) then
 		{
 		_resourcesFIA = _resourcesFIA + (server getVariable (typeOf _unit));
 		_hr = _hr +1;

@@ -1,7 +1,7 @@
 if (!isServer and hasInterface) exitWith {};
 
-_tskTitle = localize "Str_tsk_ASSTraitor";
-_tskDesc = localize "Str_tskDesc_ASSTraitor";
+_tskTitle = localize "STR_TSK_TD_ASSTraitor";
+_tskDesc = localize "STR_TSK_TD_DESC_ASSTraitor";
 
 _initialMarker = _this select 0;
 _source = _this select 1;
@@ -38,6 +38,7 @@ _base = [_arraybases, _initialPosition] call BIS_Fnc_nearestPosition;
 _posBase = getMarkerPos _base;
 
 _traitor = ([_traitorPosition, 0, opI_OFF2, _traitorGroup] call bis_fnc_spawnvehicle) select 0;
+_traitor setVariable ["VCOM_NOAI", true, true]; //No VCOM AI for traitor
 [_traitor] spawn {
 	params ["_subject"];
 	_subject allowDamage false;
@@ -154,7 +155,7 @@ else
 			{
 			if (!("DEF_HQ" in misiones)) then
 				{
-				[] remoteExec ["ataqueHQ",HCattack];
+				[] remoteExec ["ataqueHQ", call AS_fnc_getNextWorker];
 				};
 			}
 		else
