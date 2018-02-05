@@ -357,6 +357,22 @@ class Params {
         typeName = "BOOL";
         force = 1;
     };
+    class AS_loadprofilesave {
+        title = $STR_DES_LOADPROFILESAVE;
+        values[] = {0,1};
+        texts[] = {$STR_DES_OFF,$STR_DES_ON};
+        default = 0;
+        typeName = "BOOL";
+        force = 1;
+    };
+    class AS_saveprofilesave {
+        title = $STR_DES_SAVEPROFILESAVE;
+        values[] = {0,1};
+        texts[] = {$STR_DES_OFF,$STR_DES_ON};
+        default = 0;
+        typeName = "BOOL";
+        force = 1;
+    };
     //#include "aceSettings.hpp" //TODO to be decommissioned
 };
 

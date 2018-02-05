@@ -29,6 +29,14 @@
 				<Original>Antistasi: enable VCOM AI for server/headless client</Original>
 				<Russian>Antistasi: включить VCOM AI</Russian>
 			</Key>
+			<Key ID="STR_DES_LOADPROFILESAVE">
+				<Original>INIDIBI2: Load the game from standard profile.vars == Export from standard Antistasi save</Original>
+				<Russian>INIDIBI2: Load the game from profile.vars</Russian>
+			</Key>
+			<Key ID="STR_DES_SAVEPROFILESAVE">
+				<Original>INIDIBI2: Save the game into standard profile.vars == Import from INIDIBI2 save</Original>
+				<Russian>INIDIBI2: Load the game from profile.vars</Russian>
+			</Key>
 			<Key ID="STR_DES_ON">
 				<Original>On</Original>
 				<Russian>Вкл</Russian>

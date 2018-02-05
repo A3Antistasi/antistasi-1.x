@@ -123,8 +123,12 @@ fn_saveData = {
 	if (_varName == "") exitWith {ERROR_2("Error in fn_saveData, no name --  name: %1; value: %2", _varname,_varValue)};
 	if (isNil "_varValue") exitWith {ERROR_2("Error in fn_saveData, no value --  name: %1; value: %2", _varname,_varValue)};
 	if(usingIniDb)then{
-		//["write", ["Game", _varName, _varValue]] call saveDB;
-		[saveDB, "Game", _varname, _varValue] call fn_saveDataINIDBI;
+		if ((['AS_saveprofilesave', 0] call BIS_fnc_getParamValue) == 1) then {
+			profileNameSpace setVariable [format ["%1_%2_S_%3",worldName,static_playerSide,_varname],_varValue];
+		} else {
+			//["write", ["Game", _varName, _varValue]] call saveDB;
+			[saveDB, "Game", _varname, _varValue] call fn_saveDataINIDBI;
+		}
 	}else{
 		profileNameSpace setVariable [format ["%1_%2_S_%3",worldName,static_playerSide,_varname],_varValue];
 	};
@@ -134,9 +138,14 @@ fn_loadData = {
 	params [["_varname","",[""]]];
 	if (_varName == "") exitWith {ERROR_1("Error in fn_loadData, no name -- name: %1", _varname)};
 
-	_varValue = if(usingIniDb)then{
-		//[saveDB, _varname,loadDB] call AS_FNC_loadDataINIDBI; //Not going to pre-compile it!
-		[loadDB, "Game", _varname, objNull] call fn_loadDataINIDBI;
+	_varValue =
+	if(usingIniDb)then{
+		if ((['AS_loadprofilesave', 0] call BIS_fnc_getParamValue) == 1) then {
+			profileNameSpace getVariable [(format ["%1_%2_S_%3",worldName,static_playerSide,_varname]),objNull];
+		} else {
+			//[saveDB, _varname,loadDB] call AS_FNC_loadDataINIDBI; //Not going to pre-compile it!
+			[loadDB, "Game", _varname, objNull] call fn_loadDataINIDBI;
+		}
 	}else{
 		profileNameSpace getVariable [(format ["%1_%2_S_%3",worldName,static_playerSide,_varname]),objNull];
 	};
