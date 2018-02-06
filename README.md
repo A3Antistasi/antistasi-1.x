@@ -11,7 +11,9 @@ After 1.2 *Chris* coded many changes under the supervision of *RickyTan* and *Ke
 
 After 1.7.6 *Sparker* and *Jeroen* continued because the 1.7 bugs weren't possible to be fixed unless changing a lot of the code. 
 
-Currently: *Stef* is supervising the project and coding some simple stuff, *IrLED* started coding major fixes and improvement since 1.7.17, he also organized the github environment.
+*Stef* started supervising since 1.7.17 with great help of *IrLED* who started the github project and coded major core fixes and improvement such as proportional distribution of AI to headlessclients,lightened spawned script etc.
+
+Currently: *Stef* is finishing stuff with precious *Sparker'* support getting ready for steam release. 
 
 We're looking for more coders, every contribution is appreciated!
 
