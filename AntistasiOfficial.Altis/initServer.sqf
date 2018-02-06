@@ -40,7 +40,7 @@ addMissionEventHandler ["HandleDisconnect",{_this call onPlayerDisconnect;false}
 Slowhand = objNull;
 maxPlayers = playableSlotsNumber west;
 
-[] execVM "serverAutosave.sqf";
+if ((['AS_autosave', 0] call BIS_fnc_getParamValue) == 1) then {[] execVM "serverAutosave.sqf";};
 publicVariable "Slowhand";
 publicVariable "maxPlayers";
 serverInitDone = true; publicVariable "serverInitDone";

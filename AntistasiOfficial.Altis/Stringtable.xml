@@ -29,6 +29,10 @@
 				<Original>Antistasi: enable VCOM AI for server/headless client</Original>
 				<Russian>Antistasi: включить VCOM AI</Russian>
 			</Key>
+			<Key ID="STR_DES_AUTOSAVE">
+				<Original>Autosave every 60 min</Original>
+				<Russian>Autosave every 60 min</Russian>
+			</Key>
 			<Key ID="STR_DES_LOADPROFILESAVE">
 				<Original>INIDIBI2: Load the game from standard profile.vars == Export from standard Antistasi save</Original>
 				<Russian>INIDIBI2: Load the game from profile.vars</Russian>
@@ -42,7 +46,7 @@
 				<Russian>Вкл</Russian>
 			</Key>
 			<Key ID="STR_DES_OFF">
-				<Original>OFF</Original>
+				<Original>Off</Original>
 				<Russian>Выкл</Russian>
 			</Key>
 		</Container>
@@ -3059,14 +3063,6 @@
 			<Key ID="STR_D_GAME_OP">
 				<Original>Ingame Member's List</Original>
 				<Russian>Список игроков</Russian>
-			</Key>
-			<Key ID="STR_D_MUS_ON_OFF">
-				<Original>Do you want to reset HQ?</Original>
-				<Russian>Вы хотите сбросить Штаб?</Russian>
-			</Key>
-			<Key ID="STR_D_INGAME_ML">
-				<Original>Maintenance Menu</Original>
-				<Russian>Меню Сервис</Russian>
 			</Key>
 			<Key ID="STR_D_DELC_DV_OGIMF">
 				<Original>Delete corpses, destroyed vehicles, on ground items, might freeze</Original>

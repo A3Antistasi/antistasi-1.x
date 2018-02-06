@@ -357,6 +357,14 @@ class Params {
         typeName = "BOOL";
         force = 1;
     };
+    class AS_autosave {
+        title = $STR_DES_AUTOSAVE;
+        values[] = {0,1};
+        texts[] = {$STR_DES_OFF,$STR_DES_ON};
+        default = 0;
+        typeName = "BOOL";
+        force = 1;
+    };
     class AS_loadprofilesave {
         title = $STR_DES_LOADPROFILESAVE;
         values[] = {0,1};
