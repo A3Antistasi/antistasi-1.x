@@ -57,3 +57,11 @@ In case you change world also rename the folder to .worldname.
 
 Example: rename "Antistasi NapfG.sqm" to "mission.sqm", copy paste into \AntistasiOfficial.Altis, rename that folder to AntistasiOfficial.Napf
 
+---
+
+# Modding Antistasi
+
+We look for coders and we'll credit you for your contributions indeed!
+However, if you wish to make your own modification, you can but **you must credit Barbolani** as Author.
+Consider the complexity of this mission and the high goal of persistency; Arma engine has important limitation so we can't do whatever we desire, there are always bollenecks here and there. 
+
