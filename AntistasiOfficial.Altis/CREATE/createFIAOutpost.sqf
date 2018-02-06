@@ -64,12 +64,12 @@ _statics = staticsToSave select {_x distance _markerPos < (_size max 50)};
 		};
 	};
 
-//Radiotower
+/*Jam  feature disabled untill jam will have a function in AirControl patch
 	_antenna = [antenas,_markerPos] call BIS_fnc_nearestPosition;
 	if (getPos _antenna distance _markerPos < 100) then {
 		[_flag,"jam"] remoteExec ["AS_fnc_addActionMP"];
 	};
-
+*/
 //Create groups for FIA Garrison
 	_garrison = garrison getVariable [_marker,[]];
 	_allGroups pushBack _groupGunners;
