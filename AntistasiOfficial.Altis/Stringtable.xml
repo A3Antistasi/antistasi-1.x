@@ -2269,7 +2269,7 @@
 			</Key>
 			<Key ID="STR_HINTS_GARB_DEL">
 				<Original>Garbage deleted</Original>
-				<Russian>Удаление мусора. Пожалуйста, ждите</Russian>
+				<Russian>Мусор удалён</Russian>
 			</Key>
 		</Container>
 		<Container name="INIT_FUNCS">
