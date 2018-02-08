@@ -116,7 +116,7 @@ call {
 	};
 };
 
-_tsk = ["CONVOY",[side_blue,civilian],[[_tskDesc,_originName,numberToDate [2035,_startTimeNumber] select 3,numberToDate [2035,_startTimeNumber] select 4,_destinationName],format [_tskTitle, A3_Str_INDEP],_destination],_posDestination,"CREATED",5,true,true,_icon] call BIS_fnc_setTask;
+_tsk = ["CONVOY",[side_blue,civilian],[[_tskDesc,_originName,numberToDate [2035,_startTimeNumber] select 3,numberToDate [2035,_startTimeNumber] select 4,_destinationName],[_tskTitle, A3_Str_INDEP],_destination],_posDestination,"CREATED",5,true,true,_icon] call BIS_fnc_setTask;
 
 misiones pushBack _tsk; publicVariable "misiones";
 
@@ -599,7 +599,7 @@ if (_convoyType == "Supplies") then {
 	publicVariable "reportedVehs";
 };
 
-_tsk = ["CONVOY",[side_blue,civilian],[[_tskDesc,_originName,numberToDate [2035,_startTimeNumber] select 3,numberToDate [2035,_startTimeNumber] select 4,_destinationName],format [_tskTitle, A3_Str_INDEP],_destination],_posDestination,_tskOutcome,5,true,true,_icon] call BIS_fnc_setTask;
+_tsk = ["CONVOY",[side_blue,civilian],[[_tskDesc,_originName,numberToDate [2035,_startTimeNumber] select 3,numberToDate [2035,_startTimeNumber] select 4,_destinationName],[_tskTitle, A3_Str_INDEP],_destination],_posDestination,_tskOutcome,5,true,true,_icon] call BIS_fnc_setTask;
 
 {
 	while {(count (waypoints _x)) > 0} do {
