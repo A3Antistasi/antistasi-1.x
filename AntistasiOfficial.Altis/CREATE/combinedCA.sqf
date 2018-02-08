@@ -42,12 +42,11 @@ _attackDuration = time + 2400;
 	_spawnergroup = createGroup east;
 	_spawner = _spawnergroup createUnit [selectrandom CIV_journalists, getmarkerpos _marker, [], 15,"None"];
 	_spawner setVariable ["OPFORSpawn",true,true];
-	_spawner setcaptive true;
+	_spawner disableAI "ALL";
 	_spawner allowdamage false;
+	_spawner setcaptive true;
 	_spawner enableSimulation false;
 	hideObjectGlobal _spawner;
-	_allSoldiers pushback _spawner;
-	_allGroups pushBack _spawnergroup;
 sleep 15;
 
 if !(_forceAirport == "") then {
@@ -381,4 +380,6 @@ waitUntil {sleep 1; !(spawner getVariable _marker)};
 
 [_allGroups + _redGroups, _allSoldiers + _redSoldiers, _allVehicles + _redVehicles] spawn AS_fnc_despawnUnits;
 
+deleteVehicle _spawner;
+deleteGroup _spawnergroup;
 

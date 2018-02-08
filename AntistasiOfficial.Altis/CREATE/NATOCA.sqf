@@ -34,8 +34,6 @@ _spawner allowdamage false;
 _spawner setcaptive true;
 _spawner enableSimulation false;
 hideObjectGlobal _spawner;
-_vehiculos pushBack _spawner;
-_grupos pushBack _spawnergroup;
 
 sleep 15;
 
@@ -210,5 +208,5 @@ if ({alive _x} count _soldados < _solMax) then {
 	deleteVehicle _x
 } forEach _vehiculos;
 
-
-
+deletevehicle _spawner;
+deleteGroup _spawnergroup;
