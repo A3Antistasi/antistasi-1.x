@@ -1,7 +1,7 @@
 if (!isServer and hasInterface) exitWith {};
 
-_tskTitle = localize "STR_TSK_TD_logSupply";
-_tskDesc = localize "STR_TSK_TD_DESC_logSupply";
+_tskTitle = "STR_TSK_TD_logSupply";
+_tskDesc = "STR_TSK_TD_DESC_logSupply";
 
 _marcador = _this select 0;
 _posicion = getMarkerPos _marcador;
@@ -11,7 +11,7 @@ _fechalim = [date select 0, date select 1, date select 2, date select 3, (date s
 _fechalimnum = dateToNumber _fechalim;
 _nombredest = [_marcador] call AS_fnc_localizar;
 
-_tsk = ["LOG",[side_blue,civilian],[format [_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_marcador],_posicion,"CREATED",5,true,true,"Heal"] call BIS_fnc_setTask;
+_tsk = ["LOG",[side_blue,civilian],[[_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_marcador],_posicion,"CREATED",5,true,true,"Heal"] call BIS_fnc_setTask;
 misiones pushBack _tsk; publicVariable "misiones";
 _pos = (getMarkerPos guer_respawn) findEmptyPosition [1,50,AS_misSupplyBox];
 
@@ -38,7 +38,7 @@ _sbox addAction ["Delivery infos",
 waitUntil {sleep 1; (not alive _sbox) or (dateToNumber date > _fechalimnum) or (_sbox distance _posicion < 40) and (isNull attachedTo _sbox)};
 
 if (dateToNumber date > _fechalimnum) then {
-	_tsk = ["LOG",[side_blue,civilian],[format [_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_marcador],_posicion,"FAILED",5,true,true,"Heal"] call BIS_fnc_setTask;
+	_tsk = ["LOG",[side_blue,civilian],[[_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_marcador],_posicion,"FAILED",5,true,true,"Heal"] call BIS_fnc_setTask;
 	[5,-5,_posicion] remoteExec ["AS_fnc_changeCitySupport",2];
 	[-10,Slowhand] call playerScoreAdd;
 } else {
@@ -103,7 +103,7 @@ if (dateToNumber date > _fechalimnum) then {
 
 	if (dateToNumber date < _fechalimnum) then {
 		[[petros,"hint","Supplies Delivered"],"commsMP"] call BIS_fnc_MP;
-		_tsk = ["LOG",[side_blue,civilian],[format [_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_marcador],_posicion,"SUCCEEDED",5,true,true,"Heal"] call BIS_fnc_setTask;
+		_tsk = ["LOG",[side_blue,civilian],[[_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_marcador],_posicion,"SUCCEEDED",5,true,true,"Heal"] call BIS_fnc_setTask;
 		[0,15,_marcador] remoteExec ["AS_fnc_changeCitySupport",2];
 		[5,0] remoteExec ["prestige",2];
 		{if (_x distance _posicion < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
@@ -115,7 +115,7 @@ if (dateToNumber date > _fechalimnum) then {
 		// BE module
 	}
 	else {
-		_tsk = ["LOG",[side_blue,civilian],[format [_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_marcador],_posicion,"FAILED",5,true,true,"Heal"] call BIS_fnc_setTask;
+		_tsk = ["LOG",[side_blue,civilian],[[_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_marcador],_posicion,"FAILED",5,true,true,"Heal"] call BIS_fnc_setTask;
 		[5,-5,_posicion] remoteExec ["AS_fnc_changeCitySupport",2];
 		[-10,Slowhand] call playerScoreAdd;
 	};

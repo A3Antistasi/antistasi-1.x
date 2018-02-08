@@ -74,49 +74,49 @@ _originName = [_base] call AS_fnc_localizar;
 
 call {
 	if (_convoyType == "Municion") exitWith {
-		_tskTitle = localize "STR_TSK_TD_CVY_AMMO";
-		_tskDesc = localize "STR_TSK_TD_DESC_CVY_AMMO";
+		_tskTitle = "STR_TSK_TD_CVY_AMMO";
+		_tskDesc = "STR_TSK_TD_DESC_CVY_AMMO";
 		_icon = "rearm";
 		_objectiveType = vehAmmo;
 	};
 
 	if (_convoyType == "Armor") exitWith {
-		_tskTitle = localize "STR_TSK_TD_CVY_ARMOR";
-		_tskDesc = localize "STR_TSK_TD_DESC_CVY_ARMOR";
+		_tskTitle = "STR_TSK_TD_CVY_ARMOR";
+		_tskDesc = "STR_TSK_TD_DESC_CVY_ARMOR";
 		_icon = "Destroy";
 		_objectiveType = [selectRandom vehIFV, selectRandom vehTank] select ({(_x in vehTank)} count enemyMotorpool > 0);
 	};
 
 	if (_convoyType == "Prisoners") exitWith {
-		_tskTitle = localize "STR_TSK_TD_CVY_PRIS";
-		_tskDesc = localize "STR_TSK_TD_DESC_CVY_PRIS";
+		_tskTitle = "STR_TSK_TD_CVY_PRIS";
+		_tskDesc = "STR_TSK_TD_DESC_CVY_PRIS";
 		_icon = "run";
 		_objectiveType = enemyMotorpoolDef;
 	};
 
 	if (_convoyType == "Money") exitWith {
-		_tskTitle = localize "STR_TSK_TD_CVY_MONEY";
-		_tskDesc = localize "STR_TSK_TD_DESC_CVY_MONEY";
+		_tskTitle = "STR_TSK_TD_CVY_MONEY";
+		_tskDesc = "STR_TSK_TD_DESC_CVY_MONEY";
 		_icon = "move";
 		_objectiveType = AS_misVehicleBox;
 		};
 
 	if (_convoyType == "Supplies") exitWith {
-		_tskTitle = localize "STR_TSK_TD_CVY_SUPPLY";
-		_tskDesc = localize "STR_TSK_TD_DESC_CVY_SUPPLY";
+		_tskTitle = "STR_TSK_TD_CVY_SUPPLY";
+		_tskDesc = "STR_TSK_TD_DESC_CVY_SUPPLY";
 		_icon = "heal";
 		_objectiveType = AS_misVehicleBox;
 		};
 
 	if (_convoyType == "HVT") exitWith {
-		_tskTitle = localize "STR_TSK_TD_CVY_HVT";
-		_tskDesc = localize "STR_TSK_TD_DESC_CVY_HVT";
+		_tskTitle = "STR_TSK_TD_CVY_HVT";
+		_tskDesc = "STR_TSK_TD_DESC_CVY_HVT";
 		_icon = "Destroy";
 		_objectiveType = selectRandom standardMRAP;
 	};
 };
 
-_tsk = ["CONVOY",[side_blue,civilian],[format [_tskDesc,_originName,numberToDate [2035,_startTimeNumber] select 3,numberToDate [2035,_startTimeNumber] select 4,_destinationName],format [_tskTitle, A3_Str_INDEP],_destination],_posDestination,"CREATED",5,true,true,_icon] call BIS_fnc_setTask;
+_tsk = ["CONVOY",[side_blue,civilian],[[_tskDesc,_originName,numberToDate [2035,_startTimeNumber] select 3,numberToDate [2035,_startTimeNumber] select 4,_destinationName],format [_tskTitle, A3_Str_INDEP],_destination],_posDestination,"CREATED",5,true,true,_icon] call BIS_fnc_setTask;
 
 misiones pushBack _tsk; publicVariable "misiones";
 
@@ -599,7 +599,7 @@ if (_convoyType == "Supplies") then {
 	publicVariable "reportedVehs";
 };
 
-_tsk = ["CONVOY",[side_blue,civilian],[format [_tskDesc,_originName,numberToDate [2035,_startTimeNumber] select 3,numberToDate [2035,_startTimeNumber] select 4,_destinationName],format [_tskTitle, A3_Str_INDEP],_destination],_posDestination,_tskOutcome,5,true,true,_icon] call BIS_fnc_setTask;
+_tsk = ["CONVOY",[side_blue,civilian],[[_tskDesc,_originName,numberToDate [2035,_startTimeNumber] select 3,numberToDate [2035,_startTimeNumber] select 4,_destinationName],format [_tskTitle, A3_Str_INDEP],_destination],_posDestination,_tskOutcome,5,true,true,_icon] call BIS_fnc_setTask;
 
 {
 	while {(count (waypoints _x)) > 0} do {

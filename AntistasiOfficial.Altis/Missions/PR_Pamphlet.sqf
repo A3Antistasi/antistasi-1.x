@@ -4,11 +4,11 @@ params ["_marker"];
 [3,[],[],[],[],[]] params ["_countBuildings","_targetBuildings","_allGroups","_allSoldiers","_allVehicles","_leafletCrates"];
 private ["_targetPosition","_targetName","_duration","_endTime","_task","_spawnPosition","_missionVehicle","_crate","_range","_allBuildings","_usableBuildings","_index","_perimeterBuildings","_currentBuilding","_lastBuilding","_bPositions","_groupType","_params","_group","_dog","_leaflets","_drop"];
 
-_tskTitle = localize "STR_TSK_TD_PRPAMPHLET";
-_tskDesc = localize "STR_TSK_TD_DESC_PRPAMPHLET";
-_tskDesc_fail = localize "STR_TSK_TD_DESC_PRPAMPHLET_FAIL";
-_tskDesc_drop = localize "STR_TSK_TD_DESC_PRPAMPHLET_DROP";
-_tskDesc_success = localize "STR_TSK_TD_DESC_PRPAMPHLET_SUCCESS";
+_tskTitle = "STR_TSK_TD_PRPAMPHLET";
+_tskDesc = "STR_TSK_TD_DESC_PRPAMPHLET";
+_tskDesc_fail = "STR_TSK_TD_DESC_PRPAMPHLET_FAIL";
+_tskDesc_drop = "STR_TSK_TD_DESC_PRPAMPHLET_DROP";
+_tskDesc_success = "STR_TSK_TD_DESC_PRPAMPHLET_SUCCESS";
 
 _targetPosition = getMarkerPos _marker;
 _targetName = [_marker] call AS_fnc_localizar;
@@ -28,7 +28,7 @@ _duration = 60;
 _endTime = [date select 0, date select 1, date select 2, date select 3, (date select 4) + _duration];
 _endTime = dateToNumber _endTime;
 
-_task = ["PR",[side_blue,civilian],[format [_tskDesc,_targetName,numberToDate [2035,_endTime] select 3,numberToDate [2035,_endTime] select 4],_tskTitle,_marker],_targetPosition,"CREATED",5,true,true,"Heal"] call BIS_fnc_setTask;
+_task = ["PR",[side_blue,civilian],[[_tskDesc,_targetName,numberToDate [2035,_endTime] select 3,numberToDate [2035,_endTime] select 4],_tskTitle,_marker],_targetPosition,"CREATED",5,true,true,"Heal"] call BIS_fnc_setTask;
 misiones pushBack _task; publicVariable "misiones";
 
 _spawnPosition = (getMarkerPos guer_respawn) findEmptyPosition [5,50,"C_Van_01_transport_F"];
@@ -133,7 +133,7 @@ waitUntil {sleep 1; !(alive _missionVehicle) OR (dateToNumber date > _endTime) O
 
 // vehicle destroyed or timer ran out
 if !(_missionVehicle distance _targetPosition < 550) exitWith {
-	_task = ["PR",[side_blue,civilian], [format [_tskDesc_fail, _targetName],_tskTitle,_marker],_targetPosition,"FAILED",5,true,true,"Heal"] call BIS_fnc_setTask;
+	_task = ["PR",[side_blue,civilian], [[_tskDesc_fail, _targetName],_tskTitle,_marker],_targetPosition,"FAILED",5,true,true,"Heal"] call BIS_fnc_setTask;
     [5,-5,_targetPosition] remoteExec ["AS_fnc_changeCitySupport",2];
 	[-10,Slowhand] call playerScoreAdd;
 
@@ -289,11 +289,11 @@ while {(alive _missionVehicle) AND (dateToNumber date < _endTime) AND (_currentD
 
 // fail if the truck is destroyed or the timer runs out
 if (!(alive _missionVehicle) OR (dateToNumber date > _endTime)) then {
-	_task = ["PR",[side_blue,civilian], [format [_tskDesc_fail, _targetName],_tskTitle,_marker],_targetPosition,"FAILED",5,true,true,"Heal"] call BIS_fnc_setTask;
+	_task = ["PR",[side_blue,civilian], [[_tskDesc_fail, _targetName],_tskTitle,_marker],_targetPosition,"FAILED",5,true,true,"Heal"] call BIS_fnc_setTask;
 	[0,-2,_marker] remoteExec ["AS_fnc_changeCitySupport",2];
 	[-10,Slowhand] call playerScoreAdd;
 } else {
-	_task = ["PR",[side_blue,civilian], [format [_tskDesc_success,_targetName,numberToDate [2035,_endTime] select 3,numberToDate [2035,_endTime] select 4],_tskTitle,_marker],_targetPosition,"SUCCEEDED",5,true,true,"Heal"] call BIS_fnc_setTask;
+	_task = ["PR",[side_blue,civilian], [[_tskDesc_success,_targetName,numberToDate [2035,_endTime] select 3,numberToDate [2035,_endTime] select 4],_tskTitle,_marker],_targetPosition,"SUCCEEDED",5,true,true,"Heal"] call BIS_fnc_setTask;
 	[-15,5,_marker] remoteExec ["AS_fnc_changeCitySupport",2];
 	[5,0] remoteExec ["prestige",2];
 	{if (_x distance _targetPosition < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
