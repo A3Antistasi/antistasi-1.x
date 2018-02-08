@@ -2,8 +2,8 @@ if (!isServer and hasInterface) exitWith {};
 
 private ["_Forest","_posHQ","_mrkOutpost","_distance"];
 
-_tskTitle = localize "STR_TSK_TD_ASFOREST";
-_tskDesc = localize "STR_TSK_TD_DESC_ASFOREST";
+_tskTitle = "STR_TSK_TD_ASFOREST";
+_tskDesc = "STR_TSK_TD_DESC_ASFOREST";
 
 _posHQ = getMarkerPos guer_respawn;
 
@@ -42,7 +42,7 @@ if (_source == "mil") then {
 
 _nombredest = [_mrkOutpost] call AS_fnc_localizar;
 
-_tsk = ["AS",[side_blue,civilian],[format [_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_mrkOutpost],_Forest,"CREATED",5,true,true,"Kill"] call BIS_fnc_setTask;
+_tsk = ["AS",[side_blue,civilian],[[_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_mrkOutpost],_Forest,"CREATED",5,true,true,"Kill"] call BIS_fnc_setTask;
 misiones pushBack _tsk; publicVariable "misiones";
 
 _tipoGrupo = [infSquad, side_green] call AS_fnc_pickGroup;
@@ -68,13 +68,13 @@ waitUntil  {sleep 5; ((!alive _target1) && (!alive _target2) && (!alive _target3
 
 if (dateToNumber date > _fechalimnum) then
 	{
-	_tsk = ["AS",[side_blue,civilian],[format [_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_mrkOutpost],_Forest,"FAILED",5,true,true,"Kill"] call BIS_fnc_setTask;
+	_tsk = ["AS",[side_blue,civilian],[[_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_mrkOutpost],_Forest,"FAILED",5,true,true,"Kill"] call BIS_fnc_setTask;
 	[-600] remoteExec ["AS_fnc_increaseAttackTimer",2];
 	[-10,Slowhand] call playerScoreAdd;
 	}
 else
 	{
-	_tsk = ["AS",[side_blue,civilian],[format [_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_mrkOutpost],_Forest,"SUCCEEDED",5,true,true,"Kill"] call BIS_fnc_setTask;
+	_tsk = ["AS",[side_blue,civilian],[[_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_mrkOutpost],_Forest,"SUCCEEDED",5,true,true,"Kill"] call BIS_fnc_setTask;
 	[0,500] remoteExec ["resourcesFIA",2];
 	[600] remoteExec ["AS_fnc_increaseAttackTimer",2];
 	{if (isPlayer _x) then {[10,_x] call playerScoreAdd}} forEach ([500,0,_Forest,"BLUFORSpawn"] call distanceUnits);

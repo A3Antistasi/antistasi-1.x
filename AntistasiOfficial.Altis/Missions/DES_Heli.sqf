@@ -1,7 +1,7 @@
 if (!isServer and hasInterface) exitWith {};
 
-_tskTitle = localize "STR_TSK_TD_DesHeli";
-_tskDesc = localize "STR_TSK_TD_DESC_DesHeli";
+_tskTitle = "STR_TSK_TD_DesHeli";
+_tskDesc = "STR_TSK_TD_DESC_DesHeli";
 
 private ["_poscrash","_marcador","_posicion","_mrkfin","_tipoveh","_efecto","_heli","_vehiculos","_soldados","_grupos","_unit","_roads","_road","_vehicle","_veh","_tipogrupo","_tsk","_humo","_emitterArray"];
 
@@ -37,7 +37,7 @@ _mrkfin setMarkerShape "ICON";
 
 _nombrebase = [_marcador] call AS_fnc_localizar;
 
-_tsk = ["DES",[side_blue,civilian],[format [_tskDesc,_nombrebase],_tskTitle,_mrkfin],_posCrashMrk,"CREATED",5,true,true,"Destroy"] call BIS_fnc_setTask;
+_tsk = ["DES",[side_blue,civilian],[[_tskDesc,_nombrebase],_tskTitle,_mrkfin],_posCrashMrk,"CREATED",5,true,true,"Destroy"] call BIS_fnc_setTask;
 misiones pushBack _tsk; publicVariable "misiones";
 _vehiculos = [];
 _soldados = [];
@@ -148,7 +148,7 @@ waitUntil {sleep 1; (not alive _heli) or (_vehT distance _posicion < 100) or (da
 
 if (not alive _heli) then
 	{
-	_tsk = ["DES",[side_blue,civilian],[format [_tskDesc,_nombrebase],_tskTitle,_mrkfin],_posCrashMrk,"SUCCEEDED",5,true,true,"Destroy"] call BIS_fnc_setTask;
+	_tsk = ["DES",[side_blue,civilian],[[_tskDesc,_nombrebase],_tskTitle,_mrkfin],_posCrashMrk,"SUCCEEDED",5,true,true,"Destroy"] call BIS_fnc_setTask;
 	[0,300] remoteExec ["resourcesFIA",2];
 	[0,0] remoteExec ["prestige",2];
 	//[-3,3,_posicion] remoteExec ["AS_fnc_changeCitySupport",2];
@@ -164,7 +164,7 @@ if (not alive _heli) then
 
 if ((dateToNumber date > _fechalimnum) or (_vehT distance _posicion < 100)) then
 	{
-	_tsk = ["DES",[side_blue,civilian],[format [_tskDesc,_nombrebase],_tskTitle,_mrkfin],_posCrashMrk,"FAILED",5,true,true,"Destroy"] call BIS_fnc_setTask;
+	_tsk = ["DES",[side_blue,civilian],[[_tskDesc,_nombrebase],_tskTitle,_mrkfin],_posCrashMrk,"FAILED",5,true,true,"Destroy"] call BIS_fnc_setTask;
 	//[3,0,_posicion] remoteExec ["AS_fnc_changeCitySupport",2];
 	[-600] remoteExec ["AS_fnc_increaseAttackTimer",2];
 	[-10,Slowhand] call playerScoreAdd;

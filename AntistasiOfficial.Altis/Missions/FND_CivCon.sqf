@@ -1,7 +1,7 @@
 if (!isServer and hasInterface) exitWith {};
 
-_tskTitle = localize "STR_TSK_TD_fndCiv";
-_tskDesc = localize "STR_TSK_TD_DESC_fndCiv";
+_tskTitle = "STR_TSK_TD_fndCiv";
+_tskDesc = "STR_TSK_TD_DESC_fndCiv";
 
 _site = _this select 0;
 _position = getMarkerPos _site;
@@ -52,7 +52,7 @@ _contact = false;
 
 _posTsk = (position _bldg) getPos [random 50, random 360];
 
-_tsk = ["FND_C",[side_blue,civilian],[format [_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4, A3_Str_INDEP],_tskTitle,_site],_posDealer,"CREATED",5,true,true,"Find"] call BIS_fnc_setTask;
+_tsk = ["FND_C",[side_blue,civilian],[[_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4, A3_Str_INDEP],_tskTitle,_site],_posDealer,"CREATED",5,true,true,"Find"] call BIS_fnc_setTask;
 misiones pushBack _tsk; publicVariable "misiones";
 
 waitUntil {sleep 1; (dateToNumber date > _fechalimnum) || (not alive Stranger) || ({(side _x isEqualTo civilian) && (_x distance Stranger < 500)} count allPlayers > 0)};
@@ -68,7 +68,7 @@ while {(dateToNumber date < _fechalimnum) && (alive Stranger) && (!_civActive)} 
 		while {({(side _x == side_blue) && (_x distance Stranger < 200)} count allPlayers < 1) && ({(side _x isEqualTo civilian) && (_x distance Stranger < 200)} count allPlayers > 0) && (dateToNumber date < _fechalimnum)} do {
 			scopeName "loop1";
 			if (!(_acc) && {(side _x isEqualTo civilian) && (_x distance Stranger < 5)} count allPlayers > 0) exitWith {
-				_tsk = ["FND_C",[side_blue,civilian],[format [_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4, A3_Str_INDEP],_tskTitle,_site],_posDealer,"ASSIGNED",5,true,true,"Find"] call BIS_fnc_setTask;
+				_tsk = ["FND_C",[side_blue,civilian],[[_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4, A3_Str_INDEP],_tskTitle,_site],_posDealer,"ASSIGNED",5,true,true,"Find"] call BIS_fnc_setTask;
 				_acc = true;
 				_contact = true;
 
@@ -98,11 +98,11 @@ if ((_contact) && (alive Stranger) && (_civActive)) then {
 	Stranger enableAI "MOVE";
 	Stranger stop false;
 	Stranger doMove getMarkerPos "resource_7";
-	_tsk = ["FND_C",[side_blue,civilian],[format [_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4, A3_Str_INDEP],_tskTitle,_site],_posDealer,"SUCCEEDED",5,true,true,"Find"] call BIS_fnc_setTask;
+	_tsk = ["FND_C",[side_blue,civilian],[[_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4, A3_Str_INDEP],_tskTitle,_site],_posDealer,"SUCCEEDED",5,true,true,"Find"] call BIS_fnc_setTask;
 		Stranger allowDamage false;
 }
 else {
-	_tsk = ["FND_C",[side_blue,civilian],[format [_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4, A3_Str_INDEP],_tskTitle,_site],_posDealer,"FAILED",5,true,true,"Find"] call BIS_fnc_setTask;
+	_tsk = ["FND_C",[side_blue,civilian],[[_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4, A3_Str_INDEP],_tskTitle,_site],_posDealer,"FAILED",5,true,true,"Find"] call BIS_fnc_setTask;
 	[[Stranger,"remove"],"AS_fnc_addActionMP"] call BIS_fnc_MP;
 	[Stranger] joinSilent grpNull;
 	[Stranger] joinSilent _grpVul;

@@ -1,7 +1,7 @@
 if (!isServer and hasInterface) exitWith {};
 
-_tskTitle = localize "STR_TSK_TD_DESfuel";
-_tskDesc  = localize "STR_TSK_TD_DESC_DESfuel";
+_tskTitle = "STR_TSK_TD_DESfuel";
+_tskDesc  = "STR_TSK_TD_DESC_DESfuel";
 
 private ["_posbase", "_mrkfin", "_mrkTarget", "_tipoveh", "_range", "_vehiculos", "_soldados", "_grupos", "_returntime", "_roads", "_road", "_vehicle", "_veh", "_TypeOfGroup", "_tsk", "_humo", "_emitterArray", "_poschurch", "_grupo", "_fuelstop", "_posfuelstop", "_fuelstops"];
 
@@ -65,7 +65,7 @@ _base	  = "";
 	// setting the mission
 
 	_nearestbase = [_base] call AS_fnc_localizar;
-	_tsk	     = ["DES", [side_blue, civilian], [format [_tskDesc, _nearestbase, numberToDate [2035, _TimeLeft] select 3, numberToDate [2035, _TimeLeft] select 4, A3_Str_INDEP], _tskTitle, _mrkfin], _fuelstop, "CREATED", 5, true, true, "Destroy"] call BIS_fnc_setTask;
+	_tsk	     = ["DES", [side_blue, civilian], [[_tskDesc, _nearestbase, numberToDate [2035, _TimeLeft] select 3, numberToDate [2035, _TimeLeft] select 4, A3_Str_INDEP], _tskTitle, _mrkfin], _fuelstop, "CREATED", 5, true, true, "Destroy"] call BIS_fnc_setTask;
 	misiones pushBack _tsk;
 	publicVariable "misiones";
 
@@ -115,27 +115,27 @@ _base	  = "";
 	};
 
 		if (dateToNumber date > _TimeLeft) then {
-			_tsk = ["DES", [side_blue, civilian], [format [_tskDesc, _nearestbase, numberToDate [2035, _TimeLeft] select 3, numberToDate [2035, _TimeLeft] select 4, A3_Str_INDEP], _tskTitle, _mrkfin], _fuelstop, "FAILED", 5, true, true, "Destroy"] call BIS_fnc_setTask;
+			_tsk = ["DES", [side_blue, civilian], [[_tskDesc, _nearestbase, numberToDate [2035, _TimeLeft] select 3, numberToDate [2035, _TimeLeft] select 4, A3_Str_INDEP], _tskTitle, _mrkfin], _fuelstop, "FAILED", 5, true, true, "Destroy"] call BIS_fnc_setTask;
 		};
 
 		if ({_x getVariable ["BLUFORSpawn",false]} count crew _veh > 0) then {
-			_tsk = ["DES", [side_blue, civilian], [format [_tskDesc, _nearestbase, numberToDate [2035, _TimeLeft] select 3, numberToDate [2035, _TimeLeft] select 4, A3_Str_INDEP], _tskTitle, _mrkfin], _fuelstop, "FAILED", 5, true, true, "Destroy"] call BIS_fnc_setTask;
+			_tsk = ["DES", [side_blue, civilian], [[_tskDesc, _nearestbase, numberToDate [2035, _TimeLeft] select 3, numberToDate [2035, _TimeLeft] select 4, A3_Str_INDEP], _tskTitle, _mrkfin], _fuelstop, "FAILED", 5, true, true, "Destroy"] call BIS_fnc_setTask;
 			[-5, 5, _InitialMarker] remoteExec ["AS_fnc_changeCitySupport", 2];
 		};
 
 		if (not alive _veh) then {
-			_tsk = ["DES", [side_blue, civilian], [format [_tskDesc, _nearestbase, numberToDate [2035, _TimeLeft] select 3, numberToDate [2035, _TimeLeft] select 4, A3_Str_INDEP], _tskTitle, _mrkfin], _fuelstop, "SUCCEEDED", 5, true, true, "Destroy"] call BIS_fnc_setTask;
+			_tsk = ["DES", [side_blue, civilian], [[_tskDesc, _nearestbase, numberToDate [2035, _TimeLeft] select 3, numberToDate [2035, _TimeLeft] select 4, A3_Str_INDEP], _tskTitle, _mrkfin], _fuelstop, "SUCCEEDED", 5, true, true, "Destroy"] call BIS_fnc_setTask;
 		};
 
 		if (_veh distance _posfuelstop < 40) then {
-			_tsk = ["DES", [side_blue, civilian], [format [_tskDesc, _nearestbase, numberToDate [2035, _TimeLeft] select 3, numberToDate [2035, _TimeLeft] select 4, A3_Str_INDEP], _tskTitle, _mrkfin], _veh, "CREATED", 5, true, true, "Destroy"] call BIS_fnc_setTask;
+			_tsk = ["DES", [side_blue, civilian], [[_tskDesc, _nearestbase, numberToDate [2035, _TimeLeft] select 3, numberToDate [2035, _TimeLeft] select 4, A3_Str_INDEP], _tskTitle, _mrkfin], _veh, "CREATED", 5, true, true, "Destroy"] call BIS_fnc_setTask;
 			hint "The fuel truck has arrived at the station.";
 			_returntime = (time + (1800 + (random 600)));
 			waitUntil {sleep 5;
 				(not alive _veh) or ({_x getVariable ["BLUFORSpawn",false]} count crew _veh > 0) or (dateToNumber date > _TimeLeft) or (time > _returntime)
 			};
 				if (not alive _veh) then {
-					_tsk = ["DES", [side_blue, civilian], [format [_tskDesc, _nearestbase, numberToDate [2035, _TimeLeft] select 3, numberToDate [2035, _TimeLeft] select 4, A3_Str_INDEP], _tskTitle, _mrkfin], _fuelstop, "SUCCEEDED", 5, true, true, "Destroy"] call BIS_fnc_setTask;
+					_tsk = ["DES", [side_blue, civilian], [[_tskDesc, _nearestbase, numberToDate [2035, _TimeLeft] select 3, numberToDate [2035, _TimeLeft] select 4, A3_Str_INDEP], _tskTitle, _mrkfin], _fuelstop, "SUCCEEDED", 5, true, true, "Destroy"] call BIS_fnc_setTask;
 					[-10, 10, _InitialMarker] remoteExec ["AS_fnc_changeCitySupport", 2];
 					[5, 0] remoteExec ["prestige", 2];
 					{if (_x distance _veh < 1500) then { [10, _x] call playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
@@ -145,11 +145,11 @@ _base	  = "";
 				};
 
 				if ({_x getVariable ["BLUFORSpawn",false]} count crew _veh > 0) then {
-					_tsk = ["DES", [side_blue, civilian], [format [_tskDesc, _nearestbase, numberToDate [2035, _TimeLeft] select 3, numberToDate [2035, _TimeLeft] select 4, A3_Str_INDEP], _tskTitle, _mrkfin], _fuelstop, "SUCCEEDED", 5, true, true, "Destroy"] call BIS_fnc_setTask;
+					_tsk = ["DES", [side_blue, civilian], [[_tskDesc, _nearestbase, numberToDate [2035, _TimeLeft] select 3, numberToDate [2035, _TimeLeft] select 4, A3_Str_INDEP], _tskTitle, _mrkfin], _fuelstop, "SUCCEEDED", 5, true, true, "Destroy"] call BIS_fnc_setTask;
 					[-5, 5, _InitialMarker] remoteExec ["AS_fnc_changeCitySupport", 2];
 				};
 
-				if (dateToNumber date > _TimeLeft) exitWith {_tsk = ["DES", [side_blue, civilian], [format [_tskDesc, _nearestbase, numberToDate [2035, _TimeLeft] select 3, numberToDate [2035, _TimeLeft] select 4, A3_Str_INDEP], _tskTitle, _mrkfin], _fuelstop, "FAILED", 5, true, true, "Destroy"] call BIS_fnc_setTask;
+				if (dateToNumber date > _TimeLeft) exitWith {_tsk = ["DES", [side_blue, civilian], [[_tskDesc, _nearestbase, numberToDate [2035, _TimeLeft] select 3, numberToDate [2035, _TimeLeft] select 4, A3_Str_INDEP], _tskTitle, _mrkfin], _fuelstop, "FAILED", 5, true, true, "Destroy"] call BIS_fnc_setTask;
 				};
 
 				if (time >= _returntime) then {
@@ -164,11 +164,11 @@ _base	  = "";
 				waitUntil {sleep 5;
 					((_veh distance _posbase) < 75) or (not alive _veh) or ({_x getVariable ["BLUFORSpawn",false]} count crew _veh > 0) or (dateToNumber date > _TimeLeft)
 				};
-					if (dateToNumber date > _TimeLeft) then {_tsk = ["DES", [side_blue, civilian], [format [_tskDesc, _nearestbase, numberToDate [2035, _TimeLeft] select 3, numberToDate [2035, _TimeLeft] select 4, A3_Str_INDEP], _tskTitle, _mrkfin], _fuelstop, "FAILED", 5, true, true, "Destroy"] call BIS_fnc_setTask;
+					if (dateToNumber date > _TimeLeft) then {_tsk = ["DES", [side_blue, civilian], [[_tskDesc, _nearestbase, numberToDate [2035, _TimeLeft] select 3, numberToDate [2035, _TimeLeft] select 4, A3_Str_INDEP], _tskTitle, _mrkfin], _fuelstop, "FAILED", 5, true, true, "Destroy"] call BIS_fnc_setTask;
 					};
 
 					if (not alive _veh) then {
-						_tsk = ["DES", [side_blue, civilian], [format [_tskDesc, _nearestbase, numberToDate [2035, _TimeLeft] select 3, numberToDate [2035, _TimeLeft] select 4, A3_Str_INDEP], _tskTitle, _mrkfin], _fuelstop, "SUCCEEDED", 5, true, true, "Destroy"] call BIS_fnc_setTask;
+						_tsk = ["DES", [side_blue, civilian], [[_tskDesc, _nearestbase, numberToDate [2035, _TimeLeft] select 3, numberToDate [2035, _TimeLeft] select 4, A3_Str_INDEP], _tskTitle, _mrkfin], _fuelstop, "SUCCEEDED", 5, true, true, "Destroy"] call BIS_fnc_setTask;
 						[-10, 10, _InitialMarker] remoteExec ["AS_fnc_changeCitySupport", 2];
 						{if (_x distance _veh < 1500) then { [10, _x] call playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
 						[5, Slowhand] call playerScoreAdd;
@@ -177,12 +177,12 @@ _base	  = "";
 					};
 
 					if ({_x getVariable ["BLUFORSpawn",false]} count crew _veh > 0) then {
-						_tsk = ["DES", [side_blue, civilian], [format [_tskDesc, _nearestbase, numberToDate [2035, _TimeLeft] select 3, numberToDate [2035, _TimeLeft] select 4, A3_Str_INDEP], _tskTitle, _mrkfin], _fuelstop, "SUCCEEDED", 5, true, true, "Destroy"] call BIS_fnc_setTask;
+						_tsk = ["DES", [side_blue, civilian], [[_tskDesc, _nearestbase, numberToDate [2035, _TimeLeft] select 3, numberToDate [2035, _TimeLeft] select 4, A3_Str_INDEP], _tskTitle, _mrkfin], _fuelstop, "SUCCEEDED", 5, true, true, "Destroy"] call BIS_fnc_setTask;
 						[-5, 5, _InitialMarker] remoteExec ["AS_fnc_changeCitySupport", 2];
 					};
 
 					if (_veh distance _posbase < 75) then{
-						_tsk = ["DES", [side_blue, civilian], [format [_tskDesc, _nearestbase, numberToDate [2035, _TimeLeft] select 3, numberToDate [2035, _TimeLeft] select 4, A3_Str_INDEP], _tskTitle, _mrkfin], _fuelstop, "FAILED", 5, true, true, "Destroy"] call BIS_fnc_setTask;
+						_tsk = ["DES", [side_blue, civilian], [[_tskDesc, _nearestbase, numberToDate [2035, _TimeLeft] select 3, numberToDate [2035, _TimeLeft] select 4, A3_Str_INDEP], _tskTitle, _mrkfin], _fuelstop, "FAILED", 5, true, true, "Destroy"] call BIS_fnc_setTask;
 						deleteVehicle _veh;
 						deleteGroup _grupo;
 					};

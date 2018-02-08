@@ -1255,7 +1255,7 @@
 			</Key>
 			<Key ID="STR_TSK_TD_CVY_HVT">
 				<Original>%1 HVT Convoy</Original>
-				<Russian>З%1 Конвой высокого ранга</Russian>
+				<Russian>%1 Конвой высокого ранга</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_DESC_CVY_HVT">
 				<Original>From what we know, a high-value target will travel from %1 to %4. His departure is scheduled for %2:%3. Seize the opportunity and take him out! We believe he will use a decoy to obscure his exact vehicle.</Original>
