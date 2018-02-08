@@ -34,6 +34,6 @@ while {true} do{
 };
 
 while {true} do{
-	[petros,"hint",localize "STR_HINTS_SERV_AUTO_SAVE"] remoteExec ["commsMP"];
+	[petros,"hint","STR_HINTS_SERV_AUTO_SAVE"] remoteExec ["commsMP"];
 	sleep 10;
 };

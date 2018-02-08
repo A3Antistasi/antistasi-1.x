@@ -53,7 +53,7 @@ _selectable = objNull;
 } forEach _potentials;
 
 if (!isNull _selectable) then {
-	if (_disconnected) then {_text = format [localize "STR_HINTS_COMMANDER_DIS", name _selectable]} else {_text = format [localize "STR_HINTS_COMMANDER_REP", name Slowhand, name _selectable]};
+	if (_disconnected) then {_text = format ["STR_HINTS_COMMANDER_DIS", name _selectable]} else {_text = format ["STR_HINTS_COMMANDER_REP", name Slowhand, name _selectable]};
 	[_selectable] call stavrosInit;
 	sleep 5;
 	[[petros,"hint",_text],"commsMP"] call BIS_fnc_MP;

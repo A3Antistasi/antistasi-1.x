@@ -310,4 +310,4 @@ pospepe = [];
 {pospepe = pospepe + getPos _x} forEach pepe;
 copytoclipboard str pospepe;
 */
-if (isMultiplayer) then {[[petros,"hint", localize "STR_INFO_INITZONES"],"commsMP"] call BIS_fnc_MP;}
+if (isMultiplayer) then {[[petros,"hint","STR_INFO_INITZONES"],"commsMP"] call BIS_fnc_MP;}
