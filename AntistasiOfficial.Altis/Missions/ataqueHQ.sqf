@@ -1,7 +1,7 @@
 if (!isServer and hasInterface) exitWith {};
 
-_tskTitle = localize "STR_TSK_TD_HQATTACK";
-_tskDesc = localize "STR_TSK_TD_DESC_HQATTACK";
+_tskTitle = "STR_TSK_TD_HQATTACK";
+_tskDesc = "STR_TSK_TD_DESC_HQATTACK";
 
 _posicion = getMarkerPos guer_respawn;
 

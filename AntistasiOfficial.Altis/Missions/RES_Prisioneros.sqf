@@ -1,7 +1,7 @@
 if (!isServer and hasInterface) exitWith {};
 
 params ["_marker"];
-[localize "STR_TSK_TD_RESPRISONERS",localize "STR_TSK_TD_DESC_RESPRISONERS",[],[]] params ["_taskTitle","_taskDesc","_POWs","_housePositions"];
+["STR_TSK_TD_RESPRISONERS","STR_TSK_TD_DESC_RESPRISONERS",[],[]] params ["_taskTitle","_taskDesc","_POWs","_housePositions"];
 
 private ["_markerPos","_duration","_endTime","_houses","_house","_townName","_task","_groupPOW","_count","_unit","_blacklistbld","_options","_tempPos"];
 
@@ -12,7 +12,7 @@ _endTime = dateToNumber _endTime;
 
 _townName = [_marker] call AS_fnc_localizar;
 
-_task = ["RES",[side_blue,civilian],[format [_taskDesc,_townName,numberToDate [2035,_endTime] select 3,numberToDate [2035,_endTime] select 4],_taskTitle,_marker],_markerPos,"CREATED",5,true,true,"run"] call BIS_fnc_setTask;
+_task = ["RES",[side_blue,civilian],[[_taskDesc,_townName,numberToDate [2035,_endTime] select 3,numberToDate [2035,_endTime] select 4],_taskTitle,_marker],_markerPos,"CREATED",5,true,true,"run"] call BIS_fnc_setTask;
 misiones pushBack _task; publicVariable "misiones";
 
 _blacklistbld = ["Land_Cargo_HQ_V1_F", "Land_Cargo_HQ_V2_F","Land_Cargo_HQ_V3_F","Land_Cargo_Tower_V1_F","Land_Cargo_Tower_V1_No1_F","Land_Cargo_Tower_V1_No2_F","Land_Cargo_Tower_V1_No3_F","Land_Cargo_Tower_V1_No4_F","Land_Cargo_Tower_V1_No5_F","Land_Cargo_Tower_V1_No6_F","Land_Cargo_Tower_V1_No7_F","Land_Cargo_Tower_V2_F","Land_Cargo_Patrol_V1_F","Land_Cargo_Patrol_V2_F","Land_Cargo_Patrol_V3_F"];
@@ -85,7 +85,7 @@ if (dateToNumber date > _endTime) then {
 waitUntil {sleep 1; ({alive _x} count _POWs == 0) OR ({(alive _x) AND (_x distance getMarkerPos guer_respawn < 50)} count _POWs > 0)};
 
 if ({alive _x} count _POWs == 0) then {
-	_task = ["RES",[side_blue,civilian],[format [_taskDesc,_townName,numberToDate [2035,_endTime] select 3,numberToDate [2035,_endTime] select 4],_taskTitle,_marker],_markerPos,"FAILED",5,true,true,"run"] call BIS_fnc_setTask;
+	_task = ["RES",[side_blue,civilian],[[_taskDesc,_townName,numberToDate [2035,_endTime] select 3,numberToDate [2035,_endTime] select 4],_taskTitle,_marker],_markerPos,"FAILED",5,true,true,"run"] call BIS_fnc_setTask;
 	{_x setCaptive false} forEach _POWs;
 	_count = 2 * (count _POWs);
 	[_count,0] remoteExec ["prestige",2];
@@ -93,7 +93,7 @@ if ({alive _x} count _POWs == 0) then {
 };
 
 if ({(alive _x) AND (_x distance getMarkerPos guer_respawn < 50)} count _POWs > 0) then {
-	_task = ["RES",[side_blue,civilian],[format [_taskDesc,_townName,numberToDate [2035,_endTime] select 3,numberToDate [2035,_endTime] select 4],_taskTitle,_marker],_markerPos,"SUCCEEDED",5,true,true,"run"] call BIS_fnc_setTask;
+	_task = ["RES",[side_blue,civilian],[[_taskDesc,_townName,numberToDate [2035,_endTime] select 3,numberToDate [2035,_endTime] select 4],_taskTitle,_marker],_markerPos,"SUCCEEDED",5,true,true,"run"] call BIS_fnc_setTask;
 	_count = {(alive _x) AND (_x distance getMarkerPos guer_respawn < 150)} count _POWs;
 	[2*_count,100*_count] remoteExec ["resourcesFIA",2];
 	[0,10,_markerPos] remoteExec ["AS_fnc_changeCitySupport",2];

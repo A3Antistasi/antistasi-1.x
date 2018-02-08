@@ -1,7 +1,7 @@
 if (!isServer and hasInterface) exitWith {};
 
 params ["_marker"];
-[localize "STR_TSK_TD_RESREFUGEES",localize "STR_TSK_TD_DESC_RESREFUGEES",[],[]] params ["_taskTitle","_taskDesc","_POWs","_housePositions"];
+["STR_TSK_TD_RESREFUGEES","STR_TSK_TD_DESC_RESREFUGEES",[],[]] params ["_taskTitle","_taskDesc","_POWs","_housePositions"];
 
 private ["_markerPos","_size","_houses","_house","_townName","_task","_groupPOW","_count","_unit"];
 
@@ -18,7 +18,7 @@ while {count _housePositions < 5} do {
 };
 
 
-_task = ["RES",[side_blue,civilian],[format [_taskDesc,_townName, A3_Str_INDEP],_taskTitle,_marker],getPos _house,"CREATED",5,true,true,"run"] call BIS_fnc_setTask;
+_task = ["RES",[side_blue,civilian],[[_taskDesc,_townName, A3_Str_INDEP],_taskTitle,_marker],getPos _house,"CREATED",5,true,true,"run"] call BIS_fnc_setTask;
 misiones pushBack _task; publicVariable "misiones";
 
 _groupPOW = createGroup side_blue;
@@ -62,13 +62,13 @@ sleep 30;
 waitUntil {sleep 1; ({alive _x} count _POWs == 0) OR ({(alive _x) AND (_x distance getMarkerPos guer_respawn < 50)} count _POWs > 0)};
 
 if ({alive _x} count _POWs == 0) then {
-	_task = ["RES",[side_blue,civilian],[format [_taskDesc,_marker, A3_Str_INDEP],_taskTitle,_townName],getPos _house,"FAILED",5,true,true,"run"] call BIS_fnc_setTask;
+	_task = ["RES",[side_blue,civilian],[[_taskDesc,_marker, A3_Str_INDEP],_taskTitle,_townName],getPos _house,"FAILED",5,true,true,"run"] call BIS_fnc_setTask;
 	_count = count _POWs;
 	[_count,0] remoteExec ["prestige",2];
 	[0,-15,_markerPos] remoteExec ["AS_fnc_changeCitySupport",2];
 	[-10,Slowhand] call playerScoreAdd;
 } else {
-	_task = ["RES",[side_blue,civilian],[format [_taskDesc,_marker, A3_Str_INDEP],_taskTitle,_townName],getPos _house,"SUCCEEDED",5,true,true,"run"] call BIS_fnc_setTask;
+	_task = ["RES",[side_blue,civilian],[[_taskDesc,_marker, A3_Str_INDEP],_taskTitle,_townName],getPos _house,"SUCCEEDED",5,true,true,"run"] call BIS_fnc_setTask;
 	_count = {(alive _x) and (_x distance getMarkerPos guer_respawn < 150)} count _POWs;
 	[_count,_count*100] remoteExec ["resourcesFIA",2];
 	[0,_count,_marker] remoteExec ["AS_fnc_changeCitySupport",2];

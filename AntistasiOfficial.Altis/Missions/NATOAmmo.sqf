@@ -1,7 +1,7 @@
 if (!isServer and hasInterface) exitWith{};
 
-_tskTitle = localize "STR_TSK_TD_NATOSupply"; _tskTitle = format [_tskTitle, A3_Str_BLUE];
-_tskDesc = localize "STR_TSK_TD_DESC_NATOSupply"; _tskDesc = format [_tskDesc, A3_Str_BLUE];
+_tskTitle = "STR_TSK_TD_NATOSupply";
+_tskDesc = "STR_TSK_TD_DESC_NATOSupply";
 
 _posicion = _this select 0;
 _NATOSupp = _this select 1;
@@ -13,7 +13,7 @@ _mrkfin setMarkerShape "ICON";
 _fechalim = [date select 0, date select 1, date select 2, date select 3, (date select 4) + 60];
 _fechalimnum = dateToNumber _fechalim;
 
-_tsk = ["NATOAmmo",[side_blue,civilian],[_tskDesc,_tskTitle,_mrkfin],_posicion,"CREATED",5,true,true,"rifle"] call BIS_fnc_setTask;
+_tsk = ["NATOAmmo",[side_blue,civilian],[[_tskDesc, A3_Str_BLUE],[_tskTitle, A3_Str_BLUE],_mrkfin],_posicion,"CREATED",5,true,true,"rifle"] call BIS_fnc_setTask;
 misiones pushBack _tsk; publicVariable "misiones";
 [-5,0] remoteExec ["prestige",2];
 
@@ -61,11 +61,11 @@ if (_heli distance _posicion < 300) then {
     private _pos = getPos _crate;
     _pos set [2, 0.5];
     _crate setPos _pos;
-    _tsk = ["NATOAmmo",[side_blue,civilian],[_tskDesc,_tskTitle,_mrkfin],_posicion,"SUCCEEDED",5,true,true,"rifle"] call BIS_fnc_setTask;
+    _tsk = ["NATOAmmo",[side_blue,civilian],[[_tskDesc, A3_Str_BLUE],[_tskTitle, A3_Str_BLUE],_mrkfin],_posicion,"SUCCEEDED",5,true,true,"rifle"] call BIS_fnc_setTask;
 	_humo = "SmokeShellBlue" createVehicle position _crate;
 	_vehiculos = _vehiculos + [_humo];
 } else {
-	_tsk = ["NATOAmmo",[side_blue,civilian],[_tskDesc,_tskTitle,_mrkfin],_posicion,"FAILED",5,true,true,"rifle"] call BIS_fnc_setTask;
+	_tsk = ["NATOAmmo",[side_blue,civilian],[[_tskDesc, A3_Str_BLUE],[_tskTitle, A3_Str_BLUE],_mrkfin],_posicion,"FAILED",5,true,true,"rifle"] call BIS_fnc_setTask;
 };
 
 sleep 15;
