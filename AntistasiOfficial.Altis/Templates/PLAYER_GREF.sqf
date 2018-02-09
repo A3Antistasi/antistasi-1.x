@@ -67,7 +67,7 @@ vfs = [
 	"rhsgref_ins_g_uaz_dshkm_chdkz",
 	"rhs_DSHKM_ins",
 	"rhs_2b14_82mm_msv",
-	"rhs_Metis_9k115_2_vdv",
+	"rhs_Kornet_9M133_2_vdv",
 	"rhsgref_ins_g_ZU23",
 	"rhsgref_ins_g_btr70",
 	"rhsgref_ins_g_gaz66_r142"

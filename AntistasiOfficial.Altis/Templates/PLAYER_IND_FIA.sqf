@@ -140,7 +140,7 @@ if (worldname == "Tanoa") then {
 		"I_G_Offroad_01_armed_F",
 		"rhs_DSHKM_ins",
 		"rhs_2b14_82mm_msv",
-		"rhs_Metis_9k115_2_vdv",
+		"rhs_Kornet_9M133_2_vdv",
 		"RHS_ZU23_VDV",
 		"rhs_bmd1_chdkz",
 		"rhs_gaz66_r142_vdv"

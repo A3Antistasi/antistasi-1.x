@@ -460,6 +460,10 @@ unlockedItems = [
 	"U_B_survival_uniform",
 	"U_OrestesBody",
 	"V_BandollierB_oli",
+	//GREF uniforms
+	"rhsgref_uniform_woodland_olive",
+	"rhsgref_uniform_altis_lizard_olive",
+	"rhsgref_uniform_flecktarn",
 	"G_Bandanna_khk"
 ];
 
