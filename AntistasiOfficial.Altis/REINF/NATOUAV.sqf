@@ -47,7 +47,7 @@ waitUntil {sleep 1; (dateToNumber date > _fechalimnum) or ({alive _x} count _veh
 
 if (dateToNumber date > _fechalimnum) then
 	{
-	[["TaskSucceeded", ["", format ["%1 UAV finished", A3_Str_BLUE]]],"BIS_fnc_showNotification"] call BIS_fnc_MP;
+	{["TaskSucceeded", ["", format ["%1 UAV finished", A3_Str_BLUE]]] call BIS_fnc_showNotification} remoteExec ["call", 0];
 	}
 else
 	{

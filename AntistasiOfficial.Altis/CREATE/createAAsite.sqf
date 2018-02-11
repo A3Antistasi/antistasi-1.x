@@ -97,7 +97,7 @@ if (_hasSPAA) then {
 	if ((({alive _x} count _allSoldiers < (_garrisonSize / 3)) OR ({fleeing _x} count _allSoldiers == {alive _x} count _allSoldiers)) AND !(alive _SPAA) AND ({alive _x} count units _groupGunners == 0)) then {
 		[-5,0,_posMarker] remoteExec ["AS_fnc_changeCitySupport",2];
 		[0,5] remoteExec ["prestige",2];
-		[["TaskSucceeded", ["", format [localize "STR_TSK_TD_AAWP_DESTROYED", A3_Str_RED]]],"BIS_fnc_showNotification"] call BIS_fnc_MP;
+		{["TaskSucceeded", ["", format [localize "STR_TSK_TD_AAWP_DESTROYED", A3_Str_RED]]] call BIS_fnc_showNotification} remoteExec ["call", 0];
 		_mrk = format ["Dum%1",_marker];
 		deleteMarker _mrk;
 		mrkAAF = mrkAAF - [_marker];
@@ -113,7 +113,7 @@ if (_hasSPAA) then {
 	if (({alive _x} count _allSoldiers < (_garrisonSize / 3)) OR ({fleeing _x} count _allSoldiers == {alive _x} count _allSoldiers)) then {
 		[-5,0,_posMarker] remoteExec ["AS_fnc_changeCitySupport",2];
 		[0,5] remoteExec ["prestige",2];
-		[["TaskSucceeded", ["", format [localize "STR_TSK_TD_AAWP_DESTROYED", A3_Str_RED]]],"BIS_fnc_showNotification"] call BIS_fnc_MP;
+		{["TaskSucceeded", ["", format [localize "STR_TSK_TD_AAWP_DESTROYED", A3_Str_RED]]] call BIS_fnc_showNotification} remoteExec ["call", 0];
 		_mrk = format ["Dum%1",_marker];
 		deleteMarker _mrk;
 		mrkAAF = mrkAAF - [_marker];
