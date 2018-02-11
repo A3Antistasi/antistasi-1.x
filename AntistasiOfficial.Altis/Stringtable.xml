@@ -2263,9 +2263,13 @@
 			</Key>
 		</Container>
 		<Container name="GARBAGE_CLEAR">
-		     <Key ID="STR_HINTS_GARBAGE_CLEAR">
-			    <Original>Deleting Garbage. Please wait</Original>
+			<Key ID="STR_HINTS_GARB_CLR">
+				<Original>Deleting Garbage. Please wait</Original>
 				<Russian>Удаление мусора. Пожалуйста, ждите</Russian>
+			</Key>
+			<Key ID="STR_HINTS_GARB_DEL">
+				<Original>Garbage deleted</Original>
+				<Russian>Мусор удалён</Russian>
 			</Key>
 		</Container>
 		<Container name="INIT_FUNCS">
