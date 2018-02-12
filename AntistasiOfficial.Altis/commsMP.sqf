@@ -56,7 +56,7 @@ if (_tipo == "status") exitWith {
 
 if (_tipo == "save") exitWith {
 	sleep 0.5;
-	"Progress Saved" hintC  ["You won't lose your stats in the event of a game update.","Vehicles outside of your garage will only be saved if they are within 50m of your HQ flag, with no AI inside.","AI units and squads will not be saved, but you will be reimbursed.","Static weapons need to be within 50m of a friendly flag, and they need to be assembled, otherwise they will not be saved."];
+	"Progress Saved" hintC  [localize "STR_HINTS_SAVE_COM_1", localize "STR_HINTS_SAVE_COM_2",localize "STR_HINTS_SAVE_COM_3",localize "STR_HINTS_SAVE_COM_4"];
 	hintC_arr_EH = findDisplay 72 displayAddEventHandler ["unload", {
 		0 = _this spawn {
 			_this select 0 displayRemoveEventHandler ["unload", hintC_arr_EH];
