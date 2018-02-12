@@ -204,6 +204,7 @@ _allGroups pushBack _group;
 		{
 			[_x, _marker] spawn AS_fnc_initialiseFIAGarrisonUnit; //Sparker added _marker to parameters
 			_guerSoldiers pushBack _x;
+			//_allSoldiers pushBack _x;
 		} forEach units _group;
 	} forEach _guerGroups;
 
@@ -260,7 +261,7 @@ _allGroups pushBack _group;
 		(
 		 	( ({!(vehicle _x isKindOf "Air") OR (lifeState _x != "INCAPACITATED")} count (([_size,0,_markerPos,"OPFORSpawn"] call distanceUnits)))-1
 		 	) > 3*(
-		 	( {(alive _x) AND (lifeState _x != "INCAPACITATED")} count _allSoldiers) + count ([_size,0,_markerPos,"BLUFORSpawn"] call distanceUnits) )
+		 	( {(alive _x) AND (lifeState _x != "INCAPACITATED")} count (_allSoldiers + _guerSoldiers)) + count ([_size,0,_markerPos,"BLUFORSpawn"] call distanceUnits) )
 		)
 	};
 
