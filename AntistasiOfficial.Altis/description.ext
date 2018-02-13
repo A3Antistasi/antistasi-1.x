@@ -2,7 +2,7 @@
 #include "dialogs.hpp"
 
 author="Barbolani";
-OnLoadName = "Antistasi - modified 1.7.19b6";
+OnLoadName = $STR_MISSION_NAME_EXT; //"Antistasi - modified 1.7.19b6";
 OnLoadMission = "Be a Resistance Leader - Be a Hero";
 loadScreen = "pic.paa";
 

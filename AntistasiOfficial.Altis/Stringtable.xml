@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?><Project name="Antistasi">
+	<Package name="MissionNames">
+		<Container name="MissionNames_0">
+			<Key ID="STR_MISSION_NAME_SQM">
+				<Original>[SP/CO] - Antistasi 1.7.19b6 Altis Blufor</Original>
+			</Key>
+			<Key ID="STR_MISSION_NAME_INITVAR_SQF">
+				<Original>v 1.7.19b6 -- modded</Original>
+			</Key>
+			<Key ID="STR_MISSION_NAME_EXT">
+				<Original>Antistasi - modified 1.7.19b6</Original>
+			</Key>
+		</Container>
+	</Package>
 	<Package name="Settings">
 		<Container name="Description_settings">
 			<Key ID="STR_DES_ATSAFC">
