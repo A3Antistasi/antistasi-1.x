@@ -1645,7 +1645,7 @@
 			</Key>
 			<Key ID="STR_HINTS_COMMANDER_DIS">
 				<Original>Player Commander disconnected or retired. %1 is our new leader. Greet him!</Original>
-				<Russian>Командир отключился или в отставке. Наш новый лидер - 1%.</Russian>
+				<Russian>Командир отключился или в отставке. Наш новый лидер - %1.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_COMMANDER_REP">
 				<Original>%2 replaced %1 as the leader of our forces. Greet him!</Original>

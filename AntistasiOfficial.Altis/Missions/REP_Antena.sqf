@@ -84,7 +84,7 @@ if (dateToNumber date > _endTime) then {
 		antenas = antenas - [_object];
 		antenasmuertas pushBack (getPos _object);
 		deleteMarker _mrk;
-		[["TaskSucceeded", ["", localize "STR_TSK_TD_RADIO_DESTROYED"]],"BIS_fnc_showNotification"] call BIS_fnc_MP;
+		{["TaskSucceeded", ["", localize "STR_TSK_TD_RADIO_DESTROYED"]] call BIS_fnc_showNotification} remoteExec ["call", 0];
 	}];
 };
 

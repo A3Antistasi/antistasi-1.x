@@ -118,8 +118,8 @@ if (_involveCSAT) then {
 	sleep 15;
 	};
 
-	_task = ["AtaqueAAF",[side_blue,civilian],[format [localize "STR_TSK_TD_CA_CREATE_RED",A3_Str_INDEP,A3_Str_RED,_targetName,_originName],format ["%1/%2 Attack",A3_Str_INDEP,A3_Str_RED],_marker],getMarkerPos _marker,"CREATED",10,true,true,"Defend"] call BIS_fnc_setTask;
-	[["TaskSucceeded", ["", format [localize "STR_TSK_CA_TARGET",_targetName]]],"BIS_fnc_showNotification"] call BIS_fnc_MP;
+	_task = ["AtaqueAAF",[side_blue,civilian],[["STR_TSK_TD_CA_CREATE_RED",A3_Str_INDEP,A3_Str_RED,_targetName,_originName],["%1/%2 Attack",A3_Str_INDEP,A3_Str_RED],_marker],getMarkerPos _marker,"CREATED",10,true,true,"Defend"] call BIS_fnc_setTask;
+	{["TaskSucceeded", ["", format [localize "STR_TSK_CA_TARGET",_targetName]]] call BIS_fnc_showNotification} remoteExec ["call", 0];
 
 	[_marker] spawn {
 		params ["_targetMarker"];
