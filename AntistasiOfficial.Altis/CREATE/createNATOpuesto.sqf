@@ -92,7 +92,7 @@ if ({alive _x} count units _grupo == 0) then {
 	markers = markers - [_marcador]; publicVariable "markers";
 	[5,-5,_posicion] remoteExec ["AS_fnc_changeCitySupport",2];
 	deleteMarker _marcador;
-	[["TaskFailed", ["", "Roadblock Lost"]],"BIS_fnc_showNotification"] call BIS_fnc_MP;
+	{["TaskFailed", ["", "Roadblock Lost"]] call BIS_fnc_showNotification} remoteExec ["call", 0];
 };
 
 waitUntil {sleep 1; (not(spawner getVariable _marcador)) or (not(_marcador in puestosNATO))};

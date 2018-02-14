@@ -284,7 +284,7 @@ if (count posAntenas > 0) then {
                 _mrk = [mrkAntenas, _antenna] call BIS_fnc_nearestPosition;
                 antenas = antenas - [_antenna]; antenasmuertas = antenasmuertas + [getPos _antenna]; deleteMarker _mrk;
                 if (activeBE) then {["cl_loc"] remoteExec ["fnc_BE_XP", 2]};
-                [["TaskSucceeded", ["", localize "STR_TSK_TD_RADIO_DESTROYED"]],"BIS_fnc_showNotification"] call BIS_fnc_MP;
+                {["TaskSucceeded", ["", localize "STR_TSK_TD_RADIO_DESTROYED"]] call BIS_fnc_showNotification} remoteExec ["call", 0];
             }];
         };
     };
@@ -310,4 +310,4 @@ pospepe = [];
 {pospepe = pospepe + getPos _x} forEach pepe;
 copytoclipboard str pospepe;
 */
-if (isMultiplayer) then {[[petros,"hint", localize "STR_INFO_INITZONES"],"commsMP"] call BIS_fnc_MP;}
+if (isMultiplayer) then {[[petros,"hint","STR_INFO_INITZONES"],"commsMP"] call BIS_fnc_MP;}

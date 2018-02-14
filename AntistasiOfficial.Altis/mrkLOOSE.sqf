@@ -39,17 +39,17 @@ _mrk setMarkerColor IND_marker_colour;
 		[10,-10,_posicion] remoteExec ["AS_fnc_changeCitySupport",2];
 		if (_marcador in puestos) then {
 			_mrk setMarkerText "AAF Outpost";
-			[["TaskFailed", ["", "Outpost Lost"]],"BIS_fnc_showNotification"] call BIS_fnc_MP;
+			{["TaskFailed", ["", "Outpost Lost"]] call BIS_fnc_showNotification} remoteExec ["call", 0];
 		};
 		if (_marcador in puertos) then {
 			_mrk setMarkerText "Sea Port";
-			[["TaskFailed", ["", "Sea Port Lost"]],"BIS_fnc_showNotification"] call BIS_fnc_MP;
+			{["TaskFailed", ["", "Sea Port Lost"]] call BIS_fnc_showNotification} remoteExec ["call", 0];
 		};
 	};
 	if (_marcador in power) then {
 		[0,0] remoteExec ["prestige",2];
 		_mrk setMarkerText "Power Plant";
-		[["TaskFailed", ["", "Powerplant Lost"]],"BIS_fnc_showNotification"] call BIS_fnc_MP;
+		{["TaskFailed", ["", "Powerplant Lost"]] call BIS_fnc_showNotification} remoteExec ["call", 0];
 		[_marcador] spawn AS_fnc_powerReorg;
 	};
 
@@ -58,10 +58,10 @@ _mrk setMarkerColor IND_marker_colour;
 		[0,0] remoteExec ["prestige",2];
 		if (_marcador in recursos) then {
 			_mrk setMarkerText "Resource";
-			[["TaskFailed", ["", "Resource Lost"]],"BIS_fnc_showNotification"] call BIS_fnc_MP;
+			{["TaskFailed", ["", "Resource Lost"]] call BIS_fnc_showNotification} remoteExec ["call", 0];
 		} else {
 			_mrk setMarkerText "Factory";
-			[["TaskFailed", ["", "Factory Lost"]],"BIS_fnc_showNotification"] call BIS_fnc_MP;
+			{["TaskFailed", ["", "Factory Lost"]] call BIS_fnc_showNotification} remoteExec ["call", 0];
 		};
 	};
 
@@ -72,12 +72,12 @@ _mrk setMarkerColor IND_marker_colour;
 		server setVariable [_marcador,dateToNumber date,true];
 		[_marcador,60] spawn AS_fnc_addTimeForIdle;
 		if (_marcador in bases) then {
-			[["TaskFailed", ["", "Base Lost"]],"BIS_fnc_showNotification"] call BIS_fnc_MP;
+			{["TaskFailed", ["", "Base Lost"]] call BIS_fnc_showNotification} remoteExec ["call", 0];
 			_mrk setMarkerText "AAF Base";
 			APCAAFmax = APCAAFmax + 2;
 	        tanksAAFmax = tanksAAFmax + 1;
 		} else {
-			[["TaskFailed", ["", "Airport Lost"]],"BIS_fnc_showNotification"] call BIS_fnc_MP;
+			{["TaskFailed", ["", "Airport Lost"]] call BIS_fnc_showNotification} remoteExec ["call", 0];
 			_mrk setMarkerText "AAF Airport";
 			server setVariable [_marcador,dateToNumber date,true];
 			planesAAFmax = planesAAFmax + 1;

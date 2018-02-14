@@ -78,7 +78,7 @@ publicVariable "reducedGarrisons";
 //Depending on marker type
 	if (_marcador in aeropuertos) then {
 		[0,10,_posicion] remoteExec ["AS_fnc_changeCitySupport",2];
-		[["TaskSucceeded", ["", "Airport Taken"]],"BIS_fnc_showNotification"] call BIS_fnc_MP;
+		{["TaskSucceeded", ["", "Airport Taken"]] call BIS_fnc_showNotification} remoteExec ["call", 0];
 		[5,8] remoteExec ["prestige",2];
 		planesAAFmax = planesAAFmax - 1;
 	    helisAAFmax = helisAAFmax - 2;
@@ -86,7 +86,7 @@ publicVariable "reducedGarrisons";
 	    };
 	if (_marcador in bases) then {
 		[0,10,_posicion] remoteExec ["AS_fnc_changeCitySupport",2];
-		[["TaskSucceeded", ["", "Base Taken"]],"BIS_fnc_showNotification"] call BIS_fnc_MP;
+		{["TaskSucceeded", ["", "Base Taken"]] call BIS_fnc_showNotification} remoteExec ["call", 0];
 		[5,8] remoteExec ["prestige",2];
 		APCAAFmax = APCAAFmax - 2;
 		tanksAAFmax = tanksAAFmax - 1;
@@ -98,30 +98,30 @@ publicVariable "reducedGarrisons";
 	};
 
 	if (_marcador in power) then {
-		[["TaskSucceeded", ["", "Powerplant Taken"]],"BIS_fnc_showNotification"] call BIS_fnc_MP;
+		{["TaskSucceeded", ["", "Powerplant Taken"]] call BIS_fnc_showNotification} remoteExec ["call", 0];
 		[0,0] remoteExec ["prestige",2];
 		if (activeBE) then {["con_ter"] remoteExec ["fnc_BE_XP", 2]};
 		[_marcador] call AS_fnc_powerReorg;
 	};
 	if (_marcador in puestos) then{
-		[["TaskSucceeded", ["", "Outpost Taken"]],"BIS_fnc_showNotification"] call BIS_fnc_MP;
+		{["TaskSucceeded", ["", "Outpost Taken"]] call BIS_fnc_showNotification} remoteExec ["call", 0];
 		if (activeBE) then {["con_ter"] remoteExec ["fnc_BE_XP", 2]};
 	};
 	if (_marcador in puertos) then {
-		[["TaskSucceeded", ["", "Seaport Taken"]],"BIS_fnc_showNotification"] call BIS_fnc_MP;
+		{["TaskSucceeded", ["", "Seaport Taken"]] call BIS_fnc_showNotification} remoteExec ["call", 0];
 		[0,0] remoteExec ["prestige",2];
 		if (activeBE) then {["con_ter"] remoteExec ["fnc_BE_XP", 2]};
 		[[_bandera,"seaport"],"AS_fnc_addActionMP"] call BIS_fnc_MP;
 	};
 	if ((_marcador in fabricas) or (_marcador in recursos)) then {
-		if (_marcador in fabricas) then {[["TaskSucceeded", ["", "Factory Taken"]],"BIS_fnc_showNotification"] call BIS_fnc_MP;};
-		if (_marcador in recursos) then {[["TaskSucceeded", ["", "Resource Taken"]],"BIS_fnc_showNotification"] call BIS_fnc_MP;};
+		if (_marcador in fabricas) then {{["TaskSucceeded", ["", "Factory Taken"]] call BIS_fnc_showNotification} remoteExec ["call", 0];};
+		if (_marcador in recursos) then {{["TaskSucceeded", ["", "Resource Taken"]] call BIS_fnc_showNotification} remoteExec ["call", 0];};
 		if (activeBE) then {["con_ter"] remoteExec ["fnc_BE_XP", 2]};
 		[0,0] remoteExec ["prestige",2];
 		_powerpl = [power, _posicion] call BIS_fnc_nearestPosition;
 		if (_powerpl in mrkAAF) then {
 			sleep 5;
-			[["TaskFailed", ["", "Resource out of Power"]],"BIS_fnc_showNotification"] call BIS_fnc_MP;
+			{["TaskFailed", ["", "Resource out of Power"]] call BIS_fnc_showNotification} remoteExec ["call", 0];
 			[_marcador, false] call AS_fnc_adjustLamps;
 		} else {
 			[_marcador, true] call AS_fnc_adjustLamps;

@@ -7,7 +7,7 @@ while {spawner getVariable _marker} do {
 		_name = [_marker] call AS_fnc_localizar;
 		destroyedCities pushBack _marker;
 		publicVariable "destroyedCities";
-		[["TaskFailed", ["", format ["%1 Destroyed",_name]]],"BIS_fnc_showNotification"] call BIS_fnc_MP;
+		{["TaskFailed", ["", format ["%1 Destroyed",_name]]] call BIS_fnc_showNotification} remoteExec ["call", 0];
 		if (_marker in power) then {[_marker] remoteExec ["AS_fnc_powerReorg",2]};
 	};
 

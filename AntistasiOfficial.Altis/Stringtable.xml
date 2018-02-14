@@ -1658,7 +1658,7 @@
 			</Key>
 			<Key ID="STR_HINTS_COMMANDER_DIS">
 				<Original>Player Commander disconnected or retired. %1 is our new leader. Greet him!</Original>
-				<Russian>Командир отключился или в отставке. Наш новый лидер - 1%.</Russian>
+				<Russian>Командир отключился или в отставке. Наш новый лидер - %1.</Russian>
 			</Key>
 			<Key ID="STR_HINTS_COMMANDER_REP">
 				<Original>%2 replaced %1 as the leader of our forces. Greet him!</Original>
@@ -2276,9 +2276,13 @@
 			</Key>
 		</Container>
 		<Container name="GARBAGE_CLEAR">
-		     <Key ID="STR_HINTS_GARBAGE_CLEAR">
-			    <Original>Deleting Garbage. Please wait</Original>
+			<Key ID="STR_HINTS_GARB_CLR">
+				<Original>Deleting Garbage. Please wait</Original>
 				<Russian>Удаление мусора. Пожалуйста, ждите</Russian>
+			</Key>
+			<Key ID="STR_HINTS_GARB_DEL">
+				<Original>Garbage deleted</Original>
+				<Russian>Мусор удалён</Russian>
 			</Key>
 		</Container>
 		<Container name="INIT_FUNCS">

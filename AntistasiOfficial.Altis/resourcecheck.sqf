@@ -110,7 +110,7 @@ while {true} do {
 		_hrFIA = _hrFIA + _cityIncomeHR;
 
 		if ((_supportEnemy < _supportFIA) AND (_city in mrkAAF)) then {
-			[["TaskSucceeded", ["", format ["%1 joined FIA",[_city, false] call AS_fnc_location]]],"BIS_fnc_showNotification"] call BIS_fnc_MP;
+			{["TaskSucceeded", ["", format ["%1 joined FIA",[_city, false] call AS_fnc_location]]] call BIS_fnc_showNotification} remoteExec ["call", 0];
 			mrkAAF = mrkAAF - [_city];
 			mrkFIA = mrkFIA + [_city];
 			if (activeBE) then {["con_cit"] remoteExec ["fnc_BE_XP", 2]};
@@ -132,7 +132,7 @@ while {true} do {
 		};
 
 		if ((_supportEnemy > _supportFIA) AND (_city in mrkFIA)) then {
-			[["TaskFailed", ["", format ["%1 joined AAF",[_city, false] call AS_fnc_location]]],"BIS_fnc_showNotification"] call BIS_fnc_MP;
+			{["TaskFailed", ["", format ["%1 joined AAF",[_city, false] call AS_fnc_location]]] call BIS_fnc_showNotification} remoteExec ["call", 0];
 			mrkAAF = mrkAAF + [_city];
 			mrkFIA = mrkFIA - [_city];
 			publicVariable "mrkAAF";
