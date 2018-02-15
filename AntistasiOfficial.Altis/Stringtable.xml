@@ -3042,7 +3042,6 @@
 				<Russian>БМД</Russian>
 				<Spanish>APC</Spanish>
 			</Key>
-			</Key>
 			<Key ID="STR_D_LOAD_PS">
 				<Original>Load previous session?</Original>
 				<Russian>Загрузить предыдущую сессию?</Russian>
