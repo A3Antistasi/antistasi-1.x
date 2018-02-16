@@ -2817,7 +2817,7 @@
 			</Key>
 		</Container>
 		<Container name="GARBAGE_CLEAR">
-		     <Key ID="STR_HINTS_GARBAGE_CLR">
+		     <Key ID="STR_HINTS_GARB_CLR">
 			    <Original>Deleting Garbage. Please wait</Original>
 				<Russian>Удаление мусора. Пожалуйста, ждите</Russian>
 			     	<Spanish>Borrando Basura. Por favor, espere</Spanish>
@@ -3818,11 +3818,6 @@
 				<Original>Ingame Member's List</Original>
 				<Russian>Список игроков</Russian>
 				<Spanish>Lista Miembros Jugando</Spanish>
-			</Key>
-			<Key ID="STR_D_INGAME_ML">
-				<Original>Maintenance Menu</Original>
-				<Russian>Меню Сервис</Russian>
-				<Spanish>Menú Mantenimiento</Spanish>
 			</Key>
 			<Key ID="STR_D_DELC_DV_OGIMF">
 				<Original>Delete corpses, destroyed vehicles, on ground items, might freeze</Original>
