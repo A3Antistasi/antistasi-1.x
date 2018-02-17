@@ -4,7 +4,7 @@ _killer = _this select 1;
 if (_muerto getVariable ["OPFORSpawn",false]) then {_muerto setVariable ["OPFORSpawn",nil,true]};
 [_muerto] spawn postmortem;
 
-if (activeACE) then {
+if (activeACEMedical) then {
 	if ((isNull _killer) || (_killer == _muerto)) then {
 		_killer = _muerto getVariable ["ace_medical_lastDamageSource", _killer];
 	};

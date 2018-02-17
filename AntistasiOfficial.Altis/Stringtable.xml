@@ -1194,6 +1194,15 @@
 				<Original>placeholder</Original>
 				<Russian>пусто</Russian>
 				<Spanish>marcador de posición</Spanish>
+			<Key ID="STR_UI_INFO_RESTARS_TEXT">
+				<Original>Ars. restr</Original>
+				<Russian>Arsenal restr</Russian>
+				<Spanish>Arsenal restr</Spanish>
+			</Key>
+			<Key ID="STR_UI_INFO_RESTARS_TT">
+				<Original>When enabled, non members can't pick items below a threshold</Original>
+				<Russian>When enabled, non members can't pick items below a threshold</Russian>
+				<Spanish>When enabled, non members can't pick items below a threshold</Spanish>
 			</Key>
 			<Key ID="STR_UI_INFO_AXPREST_TEXT">
 				<Original>Current Restrictions</Original>
