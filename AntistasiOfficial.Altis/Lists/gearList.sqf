@@ -1079,9 +1079,8 @@ if (activeACE) then {
 
 };
 
-aceadvmedical = [  //warning, changing anything here require to change it also at line 89 of \UI\defines\menu_commander.hpp
-	[
-		["ACE_bloodIV_500",-1],
+aceadvmedical = [
+
 		["ACE_elasticBandage",-1],
 		["ACE_bloodIV_250",-1],
 		["ACE_packingBandage",-1],
@@ -1097,7 +1096,7 @@ aceadvmedical = [  //warning, changing anything here require to change it also a
 		["ACE_adenosine",-1],
 		["ACE_atropine",-1],
 		["ACE_quikclot",-1]
-	]
+
 ];
 
 blockedWeapons = ["rhs_weap_svd","rhs_weap_rpg18","rhs_weap_strela","rhs_weap_svd_pso1","rhs_weap_pkp_pkas","rhs_weap_pkp_1p63","rhs_weap_pkp_1p29"];

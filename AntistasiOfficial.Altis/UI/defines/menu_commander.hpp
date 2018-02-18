@@ -89,28 +89,8 @@
 #define INFO_ACEMEDIC "if(ace_medical_level == 1) then {							\
 	{																				\
 		jna_datalist set [24,  (jna_dataList select 24) - _x] 						\
-	} foreach aceadvmedical 														\
-} else {								\
-(jna_dataList select 24) pushbackunique	\
-	[									\
-	 	['ACE_bloodIV_500',-1],			\
-	 	['ACE_elasticBandage',-1],		\
-	 	['ACE_bloodIV_250',-1],			\
-	 	['ACE_packingBandage',-1],		\
-	 	['ACE_personalAidKit',-1],		\
-	 	['ACE_plasmaIV',-1],			\
-	 	['ACE_plasmaIV_500',-1],		\
-	 	['ACE_plasmaIV_250',-1],		\
-	 	['ACE_salineIV',-1],			\
-	 	['ACE_salineIV_500',-1],		\
-	 	['ACE_salineIV_250',-1],		\
-	 	['ACE_surgicalKit',-1],			\
-	 	['ACE_tourniquet',-1],			\
-	 	['ACE_adenosine',-1],			\
-	 	['ACE_atropine',-1],			\
-	 	['ACE_quikclot',-1]				\
-	];									\
-}; closeDialog 0;"
+	} foreach [aceadvmedical] 														\
+} else { {(jna_dataList select 24) pushbackunique _x} foreach aceadvmedical;}; closeDialog 0;"
 
 #define INFO_AXP_RES "['restrictions'] remoteExecCall ['fnc_BE_broadcast', 2];"
 #define INFO_AXP_PRO "['progress'] remoteExecCall ['fnc_BE_broadcast', 2];"
