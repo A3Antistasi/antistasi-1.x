@@ -39,6 +39,7 @@ status_templatesLoaded = false;
 activeJNA = true; //It can't be disabled because of loss of compatibility
 if (activeJNA) then {
 	jna_dataList = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]];
+	server setVariable ["jna_mrestricted",false,true];
 };
 
 missionPath = [(str missionConfigFile), 0, -15] call BIS_fnc_trimString;

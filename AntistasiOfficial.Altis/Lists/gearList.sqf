@@ -1079,6 +1079,26 @@ if (activeACE) then {
 
 };
 
+aceadvmedical = [
+
+		["ACE_elasticBandage",-1],
+		["ACE_bloodIV_250",-1],
+		["ACE_packingBandage",-1],
+		["ACE_personalAidKit",-1],
+		["ACE_plasmaIV",-1],
+		["ACE_plasmaIV_500",-1],
+		["ACE_plasmaIV_250",-1],
+		["ACE_salineIV",-1],
+		["ACE_salineIV_500",-1],
+		["ACE_salineIV_250",-1],
+		["ACE_surgicalKit",-1],
+		["ACE_tourniquet",-1],
+		["ACE_adenosine",-1],
+		["ACE_atropine",-1],
+		["ACE_quikclot",-1]
+
+];
+
 blockedWeapons = ["rhs_weap_svd","rhs_weap_rpg18","rhs_weap_strela","rhs_weap_svd_pso1","rhs_weap_pkp_pkas","rhs_weap_pkp_1p63","rhs_weap_pkp_1p29"];
 
 gear_allMagazines = [];

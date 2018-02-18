@@ -88,7 +88,7 @@ petros addMPEventHandler ["mpkilled", {
 
                 waitUntil {sleep 6; isPlayer Slowhand};
                 waitUntil {sleep 3; alive Slowhand};
-                if (activeACE) then {
+                if (activeACEMedical) then {
                     Slowhand setVariable ["ACE_isUnconscious",false,true];
                     [Slowhand, Slowhand] call ace_medical_fnc_treatmentAdvanced_fullHeal;
                 };

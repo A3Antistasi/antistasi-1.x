@@ -8,7 +8,7 @@ _EHkilledIdx = _unit addEventHandler ["killed", {
 	params ["_victim","_killer"];
 	private ["_multiplicator"];
 
-	if (activeACE) then {
+	if (activeACEMedical) then {
 		if ((isNull _killer) OR (_killer == _victim)) then {
 			_killer = _victim getVariable ["ace_medical_lastDamageSource", _killer];
 		};

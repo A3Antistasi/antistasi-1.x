@@ -148,7 +148,7 @@ call {
 	if (_menu isEqualTo "com_info") exitWith {
 		_index = NAV_BTNS find (ctrlIDC _idc);
 		_display displayCtrl (LINES select _index) ctrlShow true;
-		[ACT_BTNS_M4, [INFO_AXP_RES], INFO_TEXTS, INFO_TTS] call _fnc_setup;
+		[ACT_BTNS_M4, [INFO_AXP_RES, INFO_MRESTR, INFO_ACEMEDIC], INFO_TEXTS, INFO_TTS] call _fnc_setup;
 	};
 
 	if (_menu isEqualTo "com_maint") exitWith {

@@ -37,7 +37,7 @@ _unit setVariable ["ASmedHelped",nil];
 _unit setVariable ["ASmedHelping",nil];
 _unit setDamage 0;
 _unit setVariable ["compromised",0];
-if (activeACE) then {
+if (activeACEMedical) then {
 	_unit setVariable ["ACE_isUnconscious",false,true];
 	[_unit, _unit] call ace_medical_fnc_treatmentAdvanced_fullHeal;
 };

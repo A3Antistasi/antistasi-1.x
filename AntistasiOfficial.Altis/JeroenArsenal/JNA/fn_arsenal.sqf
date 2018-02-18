@@ -2377,29 +2377,26 @@ switch _mode do {
         /////////////////////////////////////////////////////////////////////////////////
         // unifrom
         _itemsUnifrom = [];
-        if(activeACE)then{
+        if(activeACEMedical)then{
 
             //ACE Basic medical system
             if (ace_medical_level == 1) then{
                 _itemsUnifrom pushBack ["ACE_fieldDressing",10];
-                _itemsUnifrom pushBack ["ACE_morphine",6];
-                _itemsUnifrom pushBack ["ACE_epinephrine",3];
+                _itemsUnifrom pushBack ["ACE_morphine",3];
+                _itemsUnifrom pushBack ["ACE_epinephrine",2];
             };
 
             //ACE Advanced medical system
             if (ace_medical_level == 2) then{
-                _itemsUnifrom pushBack ["ACE_fieldDressing",4];
-                _itemsUnifrom pushBack ["ACE_elasticBandage",4];
-                _itemsUnifrom pushBack ["ACE_packingBandage",4];
-                _itemsUnifrom pushBack ["ACE_quikclot",4];
+                _itemsUnifrom pushBack ["ACE_elasticBandage",10];
                 _itemsUnifrom pushBack ["ACE_morphine",1];
                 _itemsUnifrom pushBack ["ACE_epinephrine",1];
-                _itemsUnifrom pushBack ["ACE_tourniquet",1];
+                _itemsUnifrom pushBack ["ACE_tourniquet",2];
             };
 
             _itemsUnifrom pushBack ["ACE_EarPlugs",1];
             _itemsUnifrom pushBack ["ACE_MapTools",1];
-            _itemsUnifrom pushBack ["ACE_CableTie",3];
+            _itemsUnifrom pushBack ["ACE_CableTie",2];
 
         }else{
             _itemsUnifrom pushBack ["FirstAidKit",4];
@@ -2430,7 +2427,7 @@ switch _mode do {
         _itemsBackpack = [];
 
         if(player getUnitTrait "Medic")then{
-            if(activeACE)then{
+            if(activeACEMedical)then{
                 if (ace_medical_level == 1) then{ //ACE Basic medical system
                     _itemsBackpack pushBack ["ACE_fieldDressing",20];
                     _itemsBackpack pushBack ["ACE_morphine",10];
@@ -2438,10 +2435,14 @@ switch _mode do {
                     _itemsBackpack pushBack ["ACE_bloodIV",6];
                 };
                 if (ace_medical_level == 2) then{ //ACE Advanced medical system
-                    _itemsBackpack pushBack ["ACE_elasticBandage",15];
-                    _itemsBackpack pushBack ["ACE_packingBandage",7];
-                    _itemsBackpack pushBack ["ACE_tourniquet",3];
-                    _itemsBackpack pushBack ["ACE_personalAidKit",1];
+                    _itemsBackpack pushBack ["ACE_elasticBandage",25];
+                    _itemsBackpack pushBack ["ACE_tourniquet",5];
+                    _itemsBackpack pushBack ["ACE_morphine",10];
+                    _itemsBackpack pushBack ["ACE_epinephrine",10];
+                    _itemsBackpack pushBack ["ACE_adenosine",5];
+                    _itemsBackpack pushBack ["ACE_salineIV_250",4];
+                    _itemsBackpack pushBack ["ACE_surgicalKit",1];
+                    _itemsBackpack pushBack ["ACE_personalAidKit",2];
                 };
             }else{
                 _itemsBackpack pushBack ["Medikit",1];

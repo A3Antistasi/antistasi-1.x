@@ -43,6 +43,34 @@ jnl_vehicleHardpoints = [
     ]],
 
 
+	//NATO HEMTT open
+	["\A3\soft_f_beta\Truck_01\Truck_01_transport_F.p3d",[
+		[1,	[0.0300293,-0.0808449,0.283923],	[1,16,8,9]],
+		[1,	[0.0256348,-2.99881,0.315941],		[3,4,10,11]],
+		[1,	[0.0249023,-1.56604,0.30022],		[5,6,12,13]]
+	]],
+
+	//NATO HEMTT closed
+	["\A3\soft_f_beta\Truck_01\Truck_01_transport_F.p3d",[
+		[1,	[0.0300293,-0.0808449,0.283923],	[1,16,8,9]],
+		[1,	[0.0256348,-2.99881,0.315941],		[3,4,10,11]],
+		[1,	[0.0249023,-1.56604,0.30022],		[5,6,12,13]]
+	]],
+
+	//CSAT Tempest open
+	["\A3\Soft_F_EPC\Truck_03\Truck_03_transport_F.p3d",[
+		[1,	[0.0541992,-0.788692,0.41213],		[1,7,6,9]],
+		[1,	[0.0561523,-2.33265,0.423543],		[2,3,8,12]],
+		[1,	[0.0625,-3.89461,0.435087],			[4,5,11,10]]
+	]],
+
+	//CSAT Tempest closed
+	["\A3\Soft_F_EPC\Truck_03\Truck_03_covered_F.p3d",[
+		[1,	[0.0541992,-0.788692,0.41213],		[1,7,6,9]],
+		[1,	[0.0561523,-2.33265,0.423543],		[2,3,8,12]],
+		[1,	[0.0625,-3.89461,0.435087],			[4,5,11,10]]
+	]],
+
     //RHS Gaz-66 truck
     ["\rhsafrf\addons\rhs_gaz66\rhs_gaz66.p3d", [
     	[0,		[0,-0.88974,-0.610707],		[]], //Weapon node
@@ -77,7 +105,13 @@ jnl_vehicleHardpoints = [
     //Civilian transport boat
     ["\A3\Boat_F_Exp\Boat_Transport_02\Boat_Transport_02_F.p3d", [
     	[1, [0,1.233,-0.72029],			[]]
-    ]]
+    ]],
+
+    //Tanoa boat
+	["\A3\Boat_F_Exp\Boat_Transport_02\Boat_Transport_02_F.p3d",[
+		[1,[-0.0615234,0.492443,0.322869],[5,6,2]]
+	]]
+
 ];
 
 //lock seats when cargo is added
