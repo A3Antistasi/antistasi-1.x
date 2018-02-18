@@ -1096,7 +1096,7 @@ aceadvmedical = [  //warning, changing anything here require to change it also a
 		["ACE_tourniquet",-1],
 		["ACE_adenosine",-1],
 		["ACE_atropine",-1],
-		["ACE_QuikClot",-1]
+		["ACE_quikclot",-1]
 	]
 ];
 
