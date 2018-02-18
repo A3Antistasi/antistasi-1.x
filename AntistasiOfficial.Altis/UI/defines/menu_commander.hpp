@@ -86,11 +86,13 @@
 	else {server setvariable [""jna_mrestricted"",true,true]; jna_minItemMember = [10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,500,20,20,20,10,500]; (_this select 0) ctrlSetTextColor [1,0,0,1]; systemchat 'Arsenal items below a threshold are restricted to non members'};"
 
 
-#define INFO_ACEMEDIC "if(ace_medical_level == 1) then {							\
-	{																				\
-		jna_datalist set [24,  (jna_dataList select 24) - _x] 						\
-	} foreach [aceadvmedical] 														\
-} else { {(jna_dataList select 24) pushbackunique _x} foreach aceadvmedical;}; closeDialog 0;"
+#define INFO_ACEMEDIC " if (activeACEMedical) {										\
+	if (ace_medical_level == 1) then {												\
+		{																			\
+			jna_datalist set [24,  (jna_dataList select 24) - _x] 					\
+		} foreach [aceadvmedical] 													\
+	} else { {(jna_dataList select 24) pushbackunique _x} foreach aceadvmedical}	\
+} else {systemchat 'No effect, ACE Medical not active'}; closeDialog 0;"
 
 #define INFO_AXP_RES "['restrictions'] remoteExecCall ['fnc_BE_broadcast', 2];"
 #define INFO_AXP_PRO "['progress'] remoteExecCall ['fnc_BE_broadcast', 2];"
