@@ -1194,6 +1194,7 @@
 				<Original>placeholder</Original>
 				<Russian>пусто</Russian>
 				<Spanish>marcador de posición</Spanish>
+			</Key>
 			<Key ID="STR_UI_INFO_MRESTR_TEXT">
 				<Original>Ars restr</Original>
 				<Russian>Arsenal restr</Russian>
