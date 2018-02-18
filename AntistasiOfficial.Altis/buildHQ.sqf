@@ -70,6 +70,6 @@ sleep 5;
 
 //Stef Check if road is found within 500m
 _arr1 = [(getMarkerPos guer_respawn), [ciudades, (getMarkerPos guer_respawn)] call BIS_fnc_nearestPosition] call AS_fnc_findRoadspot;
-if(_arr1 isequalto []) then {hint localize "STR_HINTS_COMMANDER_HQBUILDFAR"; comandante globalChat localize "STR_HINTS_COMMANDER_HQBUILDFAR"; comandante globalChat localize "STR_HINTS_HQFAR_BUILD"};
+if(_arr1 isequalto []) then {hint localize "STR_HINTS_COMMANDER_HQBUILDFAR"; petros globalChat localize "STR_HINTS_COMMANDER_HQBUILDFAR"; petros globalChat localize "STR_HINTS_HQFAR_BUILD"};
 
 //[] remoteExec ["petrosAnimation", 2];

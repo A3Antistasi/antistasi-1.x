@@ -1196,9 +1196,9 @@
 				<Spanish>marcador de posición</Spanish>
 			</Key>
 			<Key ID="STR_UI_INFO_MRESTR_TEXT">
-				<Original>Ars restr</Original>
-				<Russian>Arsenal restr</Russian>
-				<Spanish>Arsenal restr</Spanish>
+				<Original>Arsenal Membership</Original>
+				<Russian>Arsenal Membership</Russian>
+				<Spanish>Arsenal Membership</Spanish>
 			</Key>
 			<Key ID="STR_UI_INFO_MRESTR_TT">
 				<Original>When enabled, non members can't pick items below a threshold</Original>
@@ -1206,9 +1206,9 @@
 				<Spanish>When enabled, non members can't pick items below a threshold</Spanish>
 			</Key>
 			<Key ID="STR_UI_INFO_ACEMEDIC_TEXT">
-				<Original>ACE Medical</Original>
-				<Russian>ACE Medical</Russian>
-				<Spanish>ACE Medical</Spanish>
+				<Original>Arsenal ACE Medical</Original>
+				<Russian>Arsenal ACE Medical</Russian>
+				<Spanish>Arsenal ACE Medicall</Spanish>
 			</Key>
 			<Key ID="STR_UI_INFO_ACEMEDIC_TT">
 				<Original>Reset ACE items according to basic or advanced</Original>
