@@ -81,15 +81,42 @@
 
 // INFO MENU
 #define INFO_FIA "['status'] remoteExecCall ['AS_fnc_infoScreen', 2];"
-#define INFO_RESTARS "if(server getVariable [""jna_mrestricted"",false]) then {server setvariable [""jna_mrestricted"",flase,true]; jna_minItemMember = [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1];  (_this select 0) ctrlSetTextColor [0.18,0.545,0.341,1];} \
+
+#define INFO_MRESTR "if(server getVariable [""jna_mrestricted"",false]) then {server setvariable [""jna_mrestricted"",flase,true]; jna_minItemMember = [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1];  (_this select 0) ctrlSetTextColor [0.18,0.545,0.341,1];} \
 	else {server setvariable [""jna_mrestricted"",true,true]; jna_minItemMember = [10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,500,20,20,20,10,500]; (_this select 0) ctrlSetTextColor [1,0,0,1];};"
 
+
+#define INFO_ACEMEDIC "if(ace_medical_level == 1) then {							\
+	{																				\
+		jna_datalist set [24,  (jna_dataList select 24) - _x] 						\
+	} foreach aceadvmedical															\
+} else {								\
+(jna_dataList select 24) pushbackunique	\
+	[									\
+	 	['ACE_bloodIV_500',-1],			\
+	 	['ACE_elasticBandage',-1],		\
+	 	['ACE_bloodIV_250',-1],			\
+	 	['ACE_packingBandage',-1],		\
+	 	['ACE_personalAidKit',-1],		\
+	 	['ACE_plasmaIV',-1],			\
+	 	['ACE_plasmaIV_500',-1],		\
+	 	['ACE_plasmaIV_250',-1],		\
+	 	['ACE_salineIV',-1],			\
+	 	['ACE_salineIV_500',-1],		\
+	 	['ACE_salineIV_250',-1],		\
+	 	['ACE_surgicalKit',-1],			\
+	 	['ACE_tourniquet',-1],			\
+	 	['ACE_adenosine',-1],			\
+	 	['ACE_atropine',-1],			\
+	 	['ACE_QuikClot',-1]				\
+	]									\
+};"
 
 #define INFO_AXP_RES "['restrictions'] remoteExecCall ['fnc_BE_broadcast', 2];"
 #define INFO_AXP_PRO "['progress'] remoteExecCall ['fnc_BE_broadcast', 2];"
 
-#define INFO_TEXTS ["STR_UI_INFO_AXPREST_TEXT","STR_UI_INFO_RESTRARS_TEXT"]
-#define INFO_TTS ["STR_UI_INFO_AXPREST_TT","STR_UI_INFO_RESTRARS_TT"]
+#define INFO_TEXTS ["STR_UI_INFO_AXPREST_TEXT","STR_UI_INFO_MRESTR_TEXT","STR_UI_INFO_ACEMEDIC_TEXT"]
+#define INFO_TTS ["STR_UI_INFO_AXPREST_TT","STR_UI_INFO_MRESTR_TT","STR_UI_INFO_ACEMEDIC_TT"]
 /* original ones, i changed them because there 9are no working restrictions
 #define INFO_TEXTS ["STR_UI_INFO_FIA_TEXT", "STR_UI_INFO_AXPREST_TEXT", "STR_UI_INFO_AXPPRO_TEXT"]
 #define INFO_TTS ["STR_UI_INFO_FIA_TT", "STR_UI_INFO_AXPREST_TT", "STR_UI_INFO_AXPPRO_TT"] */

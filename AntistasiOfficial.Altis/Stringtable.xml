@@ -1194,15 +1194,25 @@
 				<Original>placeholder</Original>
 				<Russian>пусто</Russian>
 				<Spanish>marcador de posición</Spanish>
-			<Key ID="STR_UI_INFO_RESTARS_TEXT">
+			<Key ID="STR_UI_INFO_MRESTR_TEXT">
 				<Original>Ars. restr</Original>
 				<Russian>Arsenal restr</Russian>
 				<Spanish>Arsenal restr</Spanish>
 			</Key>
-			<Key ID="STR_UI_INFO_RESTARS_TT">
+			<Key ID="STR_UI_INFO_MRESTR_TT">
 				<Original>When enabled, non members can't pick items below a threshold</Original>
 				<Russian>When enabled, non members can't pick items below a threshold</Russian>
 				<Spanish>When enabled, non members can't pick items below a threshold</Spanish>
+			</Key>
+			<Key ID="STR_UI_INFO_ACEMEDIC_TEXT">
+				<Original>ACE Medical</Original>
+				<Russian>ACE Medical</Russian>
+				<Spanish>ACE Medical</Spanish>
+			</Key>
+			<Key ID="STR_UI_INFO_ACEMEDIC_TT">
+				<Original>Reset ACE items according to basic or advanced</Original>
+				<Russian>Reset ACE items according to basic or advanced</Russian>
+				<Spanish>Reset ACE items according to basic or advanced</Spanish>
 			</Key>
 			<Key ID="STR_UI_INFO_AXPREST_TEXT">
 				<Original>Current Restrictions</Original>
