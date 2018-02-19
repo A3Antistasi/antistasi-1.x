@@ -141,7 +141,7 @@ if (worldname == "Tanoa") then {
 		"rhs_DSHKM_ins",
 		"rhs_2b14_82mm_msv",
 		"rhs_Kornet_9M133_2_vdv",
-		"rhs_Igla_AA_pod_vdv",
+		"rhs_Igla_AA_pod_msv",
 		"rhs_bmd1_chdkz",
 		"rhs_gaz66_r142_vdv"
 	];
