@@ -127,9 +127,9 @@ _statics = staticsToSave select {_x distance _markerPos < (_size max 50)};
 	for "_i" from 0 to (count _allGroups) - 1 do {
 		_group = _allGroups select _i;
 		if (_i == 0) then { //specific teleport position for first group
-			[_group, _marker, "COMBAT","SPAWNED","ORIGINAL","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
+			[_group, _marker, "COMBAT","SPAWNED","ORIGINAL","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 		} else {
-			[_group, _marker, "COMBAT","SPAWNED","ORIGINAL","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
+			[_group, _marker, "COMBAT","SPAWNED","ORIGINAL","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 		};
 	};
 	//Groups excluded from UPS, actually the issue is that they wander around instead of staying in static.
