@@ -16,7 +16,7 @@ if (_tipo == "income") exitWith {
 	//playSound3D ["a3\sounds_f\sfx\beep_target.wss", player];
 	playSound "3DEN_notificationDefault";
 	//[_texto,0.8,0.5,5,0,0,2] spawn bis_fnc_dynamicText;
-	[localize _texto, [safeZoneX + (0.8 * safeZoneW), (0.2 * safeZoneW)], 0.5, 5, 0, 0, 2] spawn bis_fnc_dynamicText;
+	[_texto, [safeZoneX + (0.8 * safeZoneW), (0.2 * safeZoneW)], 0.5, 5, 0, 0, 2] spawn bis_fnc_dynamicText;
 	incomeRep = false;
 };
 
@@ -27,7 +27,7 @@ if (_tipo == "taxRep") exitWith {
 	playSound "3DEN_notificationDefault";
 	//playSound3D ["a3\sounds_f\sfx\beep_target.wss", player];
 	//[_texto,0.8,0.5,5,0,0,2] spawn bis_fnc_dynamicText;
-	[localize _texto, [safeZoneX + (0.8 * safeZoneW), (0.2 * safeZoneW)], 0.5, 5, 0, 0, 2] spawn bis_fnc_dynamicText;
+	[_texto, [safeZoneX + (0.8 * safeZoneW), (0.2 * safeZoneW)], 0.5, 5, 0, 0, 2] spawn bis_fnc_dynamicText;
 	sleep 10;
 	incomeRep = false;
 };
