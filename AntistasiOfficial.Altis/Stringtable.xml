@@ -78,213 +78,212 @@
 	</Package>
 	<Package name="Actions">
 		<Container name="Actions">
-		<Key ID="STR_ACT_OFFERTOJOIN">
-			<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\talk_ca.paa' /&gt; Offer to Join</Original>
-			<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\talk_ca.paa' /&gt;Предложить присоединиться</Russian>
-			<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\talk_ca.paa' /&gt; Ofrecer unirse</Spanish>
-		</Key>
-		<Key ID="STR_ACT_TALK">
-			<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\talk_ca.paa' /&gt; Talk</Original>
-			<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\talk_ca.paa' /&gt; Говорить</Russian>
-			<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\talk_ca.paa' /&gt; Hablar</Spanish>
-		</Key>
-		<Key ID="STR_ACT_BUY">
-			<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\talk_ca.paa' /&gt; Buy</Original>
-			<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\talk_ca.paa' /&gt; Купить</Russian>
-			<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\talk_ca.paa' /&gt; Comprar</Spanish>
-		</Key>
-		<Key ID="STR_ACT_INTERROGATE">
-			<Original>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Interrogate</Original>
-			<Russian>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Допросить</Russian>
-			<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Interrogar</Spanish>
-		</Key>
-		<Key ID="STR_ACT_LIBERATE">
-			<Original>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Liberate POW</Original>
-			<Russian>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Освободить в/пленного</Russian>
-			<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Liberar Prisionero</Spanish>
-		</Key>
-		<Key ID="STR_ACT_ORDERREFUGEE">
-			<Original>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Order refugee to follow</Original>
-			<Russian>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Приказать следовать за собой</Russian>
-			<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Ordenar seguirte</Spanish>
-		</Key>
-		<Key ID="STR_ACT_TOGGLEDEVICE">
-			<Original>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Turn Device On/Off</Original>
-			<Russian>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Репродуктор Вкл/Выкл</Russian>
-			<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Habilitar/Deshabilitar Dispositivo</Spanish>
-		</Key>
-		<Key ID="STR_ACT_MISSIONREQUEST">
-			<Original>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\attack_ca.paa' /&gt; Mission Request</Original>
-			<Russian>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\attack_ca.paa' /&gt; Взять задание</Russian>
-			<Spanish>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\attack_ca.paa' /&gt; Solicitar Misión</Spanish>
-		</Key>
-		<Key ID="STR_ACT_HEALREPAIR">
-			<Original>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\RscTitles\MPProgress\respawn_ca.paa' /&gt; Heal, Repair and Rearm</Original>
-			<Russian>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\RscTitles\MPProgress\respawn_ca.paa' /&gt; Лечить, чинить и перевооружить</Russian>
-			<Spanish>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\RscTitles\MPProgress\respawn_ca.paa' /&gt; Curar, Reparar y Rearmar</Spanish>
-		</Key>
-		<Key ID="STR_ACT_USEMED">
-			<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\heal_ca.paa' /&gt; Use Medical Supplies</Original>
-			<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\heal_ca.paa' /&gt; Лечить</Russian>
-			<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\heal_ca.paa' /&gt; Usar Suministros Médicos</Spanish>
-		</Key>
-		<Key ID="STR_ACT_RECRUITUNIT">
-			<Original>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\MPTable\infantry_ca.paa' /&gt; Unit Recruitment</Original>
-			<Russian>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\MPTable\infantry_ca.paa' /&gt; Набрать отряд</Russian>
-			<Spanish>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\MPTable\infantry_ca.paa' /&gt; Reclutar Unidad</Spanish>
-		</Key>
-		<Key ID="STR_ACT_RETURNCONTROL">
-			<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\MPTable\infantry_ca.paa' /&gt; Return Control to AI</Original>
-			<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\MPTable\infantry_ca.paa' /&gt; Вернуть управление ИИ</Russian>
-			<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\MPTable\infantry_ca.paa' /&gt; Devolver Control a la IA</Spanish>
-		</Key>
-		<Key ID="STR_ACT_BUYVEHICLE">
-			<Original>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\MPTable\soft_ca.paa' /&gt; Buy Vehicle</Original>
-			<Russian>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\MPTable\soft_ca.paa' /&gt; Купить технику</Russian>
-			<Spanish>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\MPTable\soft_ca.paa' /&gt; Comprar Vehículo</Spanish>
-		</Key>
-		<Key ID="STR_ACT_LOADAMMOBOX">
-			<Original>&lt;img size='1.2' image='\A3\ui_f\data\igui\cfg\VehicleToggles\VehicleCargoIconOn2_ca.paa' /&gt; Load Ammobox to Truck</Original>
-			<Russian>&lt;img size='1.2' image='\A3\ui_f\data\igui\cfg\VehicleToggles\VehicleCargoIconOn2_ca.paa' /&gt; Загрузить Ящик в грузовик</Russian>
-			<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\igui\cfg\VehicleToggles\VehicleCargoIconOn2_ca.paa' /&gt; Cargar Caja al Camión</Spanish>
-		</Key>
-		<Key ID="STR_ACT_UNLOADCARGO">
-			<Original>&lt;img size='1.2' image='\A3\ui_f\data\igui\cfg\VehicleToggles\VehicleCargoIconOn_ca.paa' /&gt; Unload Vehicle Cargo to Ammobox</Original>
-			<Russian>&lt;img size='1.2' image='\A3\ui_f\data\igui\cfg\VehicleToggles\VehicleCargoIconOn_ca.paa' /&gt; Выгрузить из техники в Ящик</Russian>
-			<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\igui\cfg\VehicleToggles\VehicleCargoIconOn_ca.paa' /&gt; Descargar Contenido Vehículo al Arsenal</Spanish>
-		</Key>
-		<Key ID="STR_ACT_ARSENAL">
-			<Original>&lt;img size='1.75' image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceArsenal_ca.paa' /&gt; Arsenal</Original>
-			<Russian>&lt;img size='1.75' image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceArsenal_ca.paa' /&gt; Арсенал</Russian>
-			<Spanish>&lt;img size='1.75' image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceArsenal_ca.paa' /&gt; Arsenal</Spanish>
-		</Key>
-		<Key ID="STR_ACT_GARAGE">
-			<Original>&lt;img size='1.75' image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceGarage_ca.paa' /&gt; Garage</Original>
-			<Russian>&lt;img size='1.75' image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceGarage_ca.paa' /&gt; Гараж</Russian>
-			<Spanish>&lt;img size='1.75' image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceGarage_ca.paa' /&gt; Garaje</Spanish>
-		</Key>
-		<Key ID="STR_ACT_TAKEFLAG">
-			<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\takeFlag_ca.paa' /&gt; Take the Flag</Original>
-			<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\takeFlag_ca.paa' /&gt; Захватить флаг</Russian>
-			<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\takeFlag_ca.paa' /&gt; Tomar la Bandera</Spanish>
-		</Key>
-		<Key ID="STR_ACT_PERSGARAGE"><!-- not use need to delete -->
-			<Original>&lt;img size='1.75' image='\A3\ui_f\data\GUI\rsc\rscdisplaysinglemission\source\backup\large_64x64\locked_ca.paa' /&gt; Personal Garage</Original>
-			<Russian>&lt;img size='1.75' image='\A3\ui_f\data\GUI\rsc\rscdisplaysinglemission\source\backup\large_64x64\locked_ca.paa' /&gt; Персональный гараж</Russian>
-			<Spanish>&lt;img size='1.75' image='\A3\ui_f\data\GUI\rsc\rscdisplaysinglemission\source\backup\large_64x64\locked_ca.paa' /&gt; Garaje Personal</Spanish>
-		</Key>
-		<Key ID="STR_ACT_REFUEL">
-			<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\refuel_ca.paa' /&gt; Refuel Vehicle</Original>
-			<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\refuel_ca.paa' /&gt; Заправить технику</Russian>
-			<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\refuel_ca.paa' /&gt; Repostar Vehículo</Spanish>
-		</Key>
-		<Key ID="STR_ACT_MOVEASSET">
-			<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\VTOLVectoring_ca.paa' /&gt; Move this Asset</Original>
-			<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\VTOLVectoring_ca.paa' /&gt; Переместить</Russian>
-			<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\VTOLVectoring_ca.paa' /&gt; Mover este Activo</Spanish>
-		</Key>
-		<Key ID="STR_ACT_CHANGEROLE">
+			<Key ID="STR_ACT_OFFERTOJOIN">
+				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\talk_ca.paa' /&gt; Offer to Join</Original>
+				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\talk_ca.paa' /&gt;Предложить присоединиться</Russian>
+				<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\talk_ca.paa' /&gt; Ofrecer unirse</Spanish>
+			</Key>
+			<Key ID="STR_ACT_TALK">
+				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\talk_ca.paa' /&gt; Talk</Original>
+				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\talk_ca.paa' /&gt; Говорить</Russian>
+				<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\talk_ca.paa' /&gt; Hablar</Spanish>
+			</Key>
+			<Key ID="STR_ACT_BUY">
+				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\talk_ca.paa' /&gt; Buy</Original>
+				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\talk_ca.paa' /&gt; Купить</Russian>
+				<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\talk_ca.paa' /&gt; Comprar</Spanish>
+			</Key>
+			<Key ID="STR_ACT_INTERROGATE">
+				<Original>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Interrogate</Original>
+				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Допросить</Russian>
+				<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Interrogar</Spanish>
+			</Key>
+			<Key ID="STR_ACT_LIBERATE">
+				<Original>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Liberate POW</Original>
+				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Освободить в/пленного</Russian>
+				<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Liberar Prisionero</Spanish>
+			</Key>
+			<Key ID="STR_ACT_ORDERREFUGEE">
+				<Original>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Order refugee to follow</Original>
+				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Приказать следовать за собой</Russian>
+				<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Ordenar seguirte</Spanish>
+			</Key>
+			<Key ID="STR_ACT_TOGGLEDEVICE">
+				<Original>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Turn Device On/Off</Original>
+				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Репродуктор Вкл/Выкл</Russian>
+				<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Habilitar/Deshabilitar Dispositivo</Spanish>
+			</Key>
+			<Key ID="STR_ACT_MISSIONREQUEST">
+				<Original>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\attack_ca.paa' /&gt; Mission Request</Original>
+				<Russian>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\attack_ca.paa' /&gt; Взять задание</Russian>
+				<Spanish>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\attack_ca.paa' /&gt; Solicitar Misión</Spanish>
+			</Key>
+			<Key ID="STR_ACT_HEALREPAIR">
+				<Original>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\RscTitles\MPProgress\respawn_ca.paa' /&gt; Heal, Repair and Rearm</Original>
+				<Russian>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\RscTitles\MPProgress\respawn_ca.paa' /&gt; Лечить, чинить и перевооружить</Russian>
+				<Spanish>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\RscTitles\MPProgress\respawn_ca.paa' /&gt; Curar, Reparar y Rearmar</Spanish>
+			</Key>
+			<Key ID="STR_ACT_USEMED">
+				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\heal_ca.paa' /&gt; Use Medical Supplies</Original>
+				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\heal_ca.paa' /&gt; Лечить</Russian>
+				<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\heal_ca.paa' /&gt; Usar Suministros Médicos</Spanish>
+			</Key>
+			<Key ID="STR_ACT_RECRUITUNIT">
+				<Original>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\MPTable\infantry_ca.paa' /&gt; Unit Recruitment</Original>
+				<Russian>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\MPTable\infantry_ca.paa' /&gt; Набрать отряд</Russian>
+				<Spanish>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\MPTable\infantry_ca.paa' /&gt; Reclutar Unidad</Spanish>
+			</Key>
+			<Key ID="STR_ACT_RETURNCONTROL">
+				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\MPTable\infantry_ca.paa' /&gt; Return Control to AI</Original>
+				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\MPTable\infantry_ca.paa' /&gt; Вернуть управление ИИ</Russian>
+				<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\MPTable\infantry_ca.paa' /&gt; Devolver Control a la IA</Spanish>
+			</Key>
+			<Key ID="STR_ACT_BUYVEHICLE">
+				<Original>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\MPTable\soft_ca.paa' /&gt; Buy Vehicle</Original>
+				<Russian>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\MPTable\soft_ca.paa' /&gt; Купить технику</Russian>
+				<Spanish>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\MPTable\soft_ca.paa' /&gt; Comprar Vehículo</Spanish>
+			</Key>
+			<Key ID="STR_ACT_LOADAMMOBOX">
+				<Original>&lt;img size='1.2' image='\A3\ui_f\data\igui\cfg\VehicleToggles\VehicleCargoIconOn2_ca.paa' /&gt; Load Ammobox to Truck</Original>
+				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\igui\cfg\VehicleToggles\VehicleCargoIconOn2_ca.paa' /&gt; Загрузить Ящик в грузовик</Russian>
+				<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\igui\cfg\VehicleToggles\VehicleCargoIconOn2_ca.paa' /&gt; Cargar Caja al Camión</Spanish>
+			</Key>
+			<Key ID="STR_ACT_UNLOADCARGO">
+				<Original>&lt;img size='1.2' image='\A3\ui_f\data\igui\cfg\VehicleToggles\VehicleCargoIconOn_ca.paa' /&gt; Unload Vehicle Cargo to Ammobox</Original>
+				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\igui\cfg\VehicleToggles\VehicleCargoIconOn_ca.paa' /&gt; Выгрузить из техники в Ящик</Russian>
+				<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\igui\cfg\VehicleToggles\VehicleCargoIconOn_ca.paa' /&gt; Descargar Contenido Vehículo al Arsenal</Spanish>
+			</Key>
+			<Key ID="STR_ACT_ARSENAL">
+				<Original>&lt;img size='1.75' image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceArsenal_ca.paa' /&gt; Arsenal</Original>
+				<Russian>&lt;img size='1.75' image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceArsenal_ca.paa' /&gt; Арсенал</Russian>
+				<Spanish>&lt;img size='1.75' image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceArsenal_ca.paa' /&gt; Arsenal</Spanish>
+			</Key>
+			<Key ID="STR_ACT_GARAGE">
+				<Original>&lt;img size='1.75' image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceGarage_ca.paa' /&gt; Garage</Original>
+				<Russian>&lt;img size='1.75' image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceGarage_ca.paa' /&gt; Гараж</Russian>
+				<Spanish>&lt;img size='1.75' image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceGarage_ca.paa' /&gt; Garaje</Spanish>
+			</Key>
+			<Key ID="STR_ACT_TAKEFLAG">
+				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\takeFlag_ca.paa' /&gt; Take the Flag</Original>
+				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\takeFlag_ca.paa' /&gt; Захватить флаг</Russian>
+				<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\takeFlag_ca.paa' /&gt; Tomar la Bandera</Spanish>
+			</Key>
+			<Key ID="STR_ACT_PERSGARAGE"><!-- not use need to delete -->
+				<Original>&lt;img size='1.75' image='\A3\ui_f\data\GUI\rsc\rscdisplaysinglemission\source\backup\large_64x64\locked_ca.paa' /&gt; Personal Garage</Original>
+				<Russian>&lt;img size='1.75' image='\A3\ui_f\data\GUI\rsc\rscdisplaysinglemission\source\backup\large_64x64\locked_ca.paa' /&gt; Персональный гараж</Russian>
+				<Spanish>&lt;img size='1.75' image='\A3\ui_f\data\GUI\rsc\rscdisplaysinglemission\source\backup\large_64x64\locked_ca.paa' /&gt; Garaje Personal</Spanish>
+			</Key>
+			<Key ID="STR_ACT_REFUEL">
+				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\refuel_ca.paa' /&gt; Refuel Vehicle</Original>
+				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\refuel_ca.paa' /&gt; Заправить технику</Russian>
+				<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\refuel_ca.paa' /&gt; Repostar Vehículo</Spanish>
+			</Key>
+			<Key ID="STR_ACT_MOVEASSET">
+				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\VTOLVectoring_ca.paa' /&gt; Move this Asset</Original>
+				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\VTOLVectoring_ca.paa' /&gt; Переместить</Russian>
+				<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\VTOLVectoring_ca.paa' /&gt; Mover este Activo</Spanish>
+			</Key>
+			<Key ID="STR_ACT_CHANGEROLE">
 				<Original>&lt;img size='1.2' image='A3\ui_f\data\GUI\Cfg\Ranks\private_gs.paa' /&gt; Change Class</Original>
 				<Russian>&lt;img size='1.2' image='A3\ui_f\data\GUI\Cfg\Ranks\private_gs.paa' /&gt; Изменить Класс</Russian>
 				<Spanish>&lt;img size='1.2' image='A3\ui_f\data\GUI\Cfg\Ranks\private_gs.paa' /&gt; Cambiar Clase</Spanish>
 			</Key>
-		<Key ID="STR_ACT_REMOVEASSET">
-			<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Revive\overlayIcons\f100_ca.paa' /&gt; Remove this Object</Original>
-			<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Revive\overlayIcons\f100_ca.paa' /&gt; Удалить</Russian>
-			<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Revive\overlayIcons\f100_ca.paa' /&gt; Quitar este Objeto</Spanish>
-		</Key>
-		<Key ID="STR_ACT_DROPASSET">
-			<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\VTOLVectoring_ca.paa' /&gt; Drop Here</Original>
-			<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\VTOLVectoring_ca.paa' /&gt; Поставить</Russian>
-			<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\VTOLVectoring_ca.paa' /&gt; Soltar Aquí</Spanish>
-		</Key>
-		<Key ID="STR_ACT_DEPLOYTOWROPES">
-			<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\VehicleToggles\SlingLoadRopeIconOn_ca.paa' /&gt; Deploy Tow Ropes</Original>
-			<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\VehicleToggles\SlingLoadRopeIconOn_ca.paa' /&gt; Достать трос</Russian>
-			<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\VehicleToggles\SlingLoadRopeIconOn_ca.paa' /&gt; Sacar Cuerdas Remolque</Spanish>
-		</Key>
-		<Key ID="STR_ACT_PUTAWAYTOWROPES">
-			<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\VehicleToggles\SlingLoadRopeIconOn_ca.paa' /&gt; Put Away Tow Ropes</Original>
-			<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\VehicleToggles\SlingLoadRopeIconOn_ca.paa' /&gt; Убрать трос</Russian>
-			<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\VehicleToggles\SlingLoadRopeIconOn_ca.paa' /&gt; Guardar Cuerdas Remolque</Spanish>
-		</Key>
-		<Key ID="STR_ACT_ATTACHTOWROPES">
-			<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\VehicleToggles\SlingLoadRopeIconOn2_ca.paa' /&gt; Attatch To Tow Ropes</Original>
-			<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\VehicleToggles\SlingLoadRopeIconOn2_ca.paa' /&gt; Прицепить к тросу</Russian>
-			<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\VehicleToggles\SlingLoadRopeIconOn2_ca.paa' /&gt; Enganchar Cuerdas Remolque</Spanish>
-		</Key>
-		<Key ID="STR_ACT_DROPTOWROPES">
-			<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\take_ca.paa' /&gt; Drop Ropes</Original>
-			<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\take_ca.paa' /&gt; Бросить трос</Russian>
-			<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\take_ca.paa' /&gt; Soltar Cuerdas</Spanish>
-		</Key>
-		<Key ID="STR_ACT_PICKUPTOWROPES">
-			<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\take_ca.paa' /&gt; Pick Up Ropes</Original>
-			<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\take_ca.paa' /&gt; Поднять трос</Russian>
-			<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\take_ca.paa' /&gt; Recoger Cuerdas</Spanish>
-		</Key>
-		<Key ID="STR_ACT_JAMCSAT">
-			<Original>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\call_ca.paa' /&gt; Jam CSAT</Original>
-			<Russian>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\call_ca.paa' /&gt; Включить глушилку</Russian>
-			<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\call_ca.paa' /&gt; Interferir CSAT</Spanish>
-		</Key>
-		<Key ID="STR_ACT_REST">
-			<Original>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\Cursors\wait_gs.paa' /&gt; Rest for 8 Hours</Original>
-			<Russian>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\Cursors\wait_gs.paa' /&gt; Отдыхать 8 часов</Russian>
-			<Spanish>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\Cursors\wait_gs.paa' /&gt; Descansar 8 Horas</Spanish>
-		</Key>
-		<Key ID="STR_ACT_HQOPTIONS">
-			<Original>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\Ranks\colonel_gs.paa' /&gt; HQ Options</Original>
-			<Russian>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\Ranks\colonel_gs.paa' /&gt; Штаб</Russian>
-			<Spanish>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\Ranks\colonel_gs.paa' /&gt; Opciones HQ</Spanish>
-		</Key>
-		<Key ID="STR_ACT_GAMEOPTIONS">
-			<Original>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\SimpleTasks\types\use_ca.paa' /&gt; Game Options</Original>
-			<Russian>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\SimpleTasks\types\use_ca.paa' /&gt; Игровые настройки</Russian>
-			<Spanish>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\SimpleTasks\types\use_ca.paa' /&gt; Opciones Juego</Spanish>
-		</Key>
-		<Key ID="STR_ACT_MAPINFO">
-			<Original>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\Hints\Map_ca.paa' /&gt; Map Info</Original>
-			<Russian>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\Hints\Map_ca.paa' /&gt; Информация на карте</Russian>
-			<Spanish>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\Hints\Map_ca.paa' /&gt; Info Mapa</Spanish>
-		</Key>
-		<Key ID="STR_ACT_BUILDPAD">
-			<Original>&lt;img size='1.75' image='\A3\ui_f\data\Map\markers\military\objective_ca.paa' /&gt; Build Vehicle Zone</Original>
-			<Russian>&lt;img size='1.75' image='\A3\ui_f\data\Map\markers\military\objective_ca.paa' /&gt; Создать площадку для техники</Russian>
-			<Spanish>&lt;img size='1.75' image='\A3\ui_f\data\Map\markers\military\objective_ca.paa' /&gt; Construir Zona Vehículos</Spanish>
-		</Key>
-		<Key ID="STR_ACT_BUILDHQ">
-			<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\takeFlag_ca.paa' /&gt; Build HQ</Original>
-			<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\takeFlag_ca.paa' /&gt; Построить Штаб</Russian>
-			<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\takeFlag_ca.paa' /&gt; Construir HQ</Spanish>
-		</Key>
-		<Key ID="STR_ACT_PAMPHLETS">
-			<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\cfg\simpletasks\types\documents_ca.paa' /&gt; Box 'o Pams</Original>
-			<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\cfg\simpletasks\types\documents_ca.paa' /&gt; Выгрузить листовки</Russian>
-			<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\cfg\simpletasks\types\documents_ca.paa' /&gt; Entregar Panfletos</Spanish>
-		</Key>
-		<Key ID="STR_ACT_TFAR">
-			<Original>&lt;img size='1.2' image='\A3\ui_f\data\Map\VehicleIcons\iconVirtual_ca.paa' /&gt; TFAR Radio Menu</Original>
-			<Russian>&lt;img size='1.2' image='\A3\ui_f\data\Map\VehicleIcons\iconVirtual_ca.paa' /&gt; TFAR меню радио</Russian>
-			<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\Map\VehicleIcons\iconVirtual_ca.paa' /&gt; Menú TFAR Radio</Spanish>
-		</Key>
-		<Key ID="STR_ACT_SELLMENU">
-			<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\HoldActions\holdAction_hack_ca.paa' /&gt; Bobby Ray's</Original>
-			<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\HoldActions\holdAction_hack_ca.paa' /&gt; Оружейная лавка</Russian>
-			<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\HoldActions\holdAction_hack_ca.paa' /&gt; Bobby Ray's</Spanish>
-		</Key>
-		<Key ID="STR_ACT_CAPTURE_HVT">
-			<Original>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Capture the HVT</Original>
-			<Russian>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Захват важной персоны</Russian>
-			<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Capturar HVT</Spanish>
-
-		</Key>
-		<Key ID="STR_ACT_BUYB">
+			<Key ID="STR_ACT_REMOVEASSET">
+				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Revive\overlayIcons\f100_ca.paa' /&gt; Remove this Object</Original>
+				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Revive\overlayIcons\f100_ca.paa' /&gt; Удалить</Russian>
+				<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Revive\overlayIcons\f100_ca.paa' /&gt; Quitar este Objeto</Spanish>
+			</Key>
+			<Key ID="STR_ACT_DROPASSET">
+				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\VTOLVectoring_ca.paa' /&gt; Drop Here</Original>
+				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\VTOLVectoring_ca.paa' /&gt; Поставить</Russian>
+				<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\VTOLVectoring_ca.paa' /&gt; Soltar Aquí</Spanish>
+			</Key>
+			<Key ID="STR_ACT_DEPLOYTOWROPES">
+				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\VehicleToggles\SlingLoadRopeIconOn_ca.paa' /&gt; Deploy Tow Ropes</Original>
+				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\VehicleToggles\SlingLoadRopeIconOn_ca.paa' /&gt; Достать трос</Russian>
+				<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\VehicleToggles\SlingLoadRopeIconOn_ca.paa' /&gt; Sacar Cuerdas Remolque</Spanish>
+			</Key>
+			<Key ID="STR_ACT_PUTAWAYTOWROPES">
+				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\VehicleToggles\SlingLoadRopeIconOn_ca.paa' /&gt; Put Away Tow Ropes</Original>
+				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\VehicleToggles\SlingLoadRopeIconOn_ca.paa' /&gt; Убрать трос</Russian>
+				<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\VehicleToggles\SlingLoadRopeIconOn_ca.paa' /&gt; Guardar Cuerdas Remolque</Spanish>
+			</Key>
+			<Key ID="STR_ACT_ATTACHTOWROPES">
+				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\VehicleToggles\SlingLoadRopeIconOn2_ca.paa' /&gt; Attatch To Tow Ropes</Original>
+				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\VehicleToggles\SlingLoadRopeIconOn2_ca.paa' /&gt; Прицепить к тросу</Russian>
+				<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\VehicleToggles\SlingLoadRopeIconOn2_ca.paa' /&gt; Enganchar Cuerdas Remolque</Spanish>
+			</Key>
+			<Key ID="STR_ACT_DROPTOWROPES">
+				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\take_ca.paa' /&gt; Drop Ropes</Original>
+				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\take_ca.paa' /&gt; Бросить трос</Russian>
+				<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\take_ca.paa' /&gt; Soltar Cuerdas</Spanish>
+			</Key>
+			<Key ID="STR_ACT_PICKUPTOWROPES">
+				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\take_ca.paa' /&gt; Pick Up Ropes</Original>
+				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\take_ca.paa' /&gt; Поднять трос</Russian>
+				<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\take_ca.paa' /&gt; Recoger Cuerdas</Spanish>
+			</Key>
+			<Key ID="STR_ACT_JAMCSAT">
+				<Original>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\call_ca.paa' /&gt; Jam CSAT</Original>
+				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\call_ca.paa' /&gt; Включить глушилку</Russian>
+				<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\call_ca.paa' /&gt; Interferir CSAT</Spanish>
+			</Key>
+			<Key ID="STR_ACT_REST">
+				<Original>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\Cursors\wait_gs.paa' /&gt; Rest for 8 Hours</Original>
+				<Russian>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\Cursors\wait_gs.paa' /&gt; Отдыхать 8 часов</Russian>
+				<Spanish>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\Cursors\wait_gs.paa' /&gt; Descansar 8 Horas</Spanish>
+			</Key>
+			<Key ID="STR_ACT_HQOPTIONS">
+				<Original>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\Ranks\colonel_gs.paa' /&gt; HQ Options</Original>
+				<Russian>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\Ranks\colonel_gs.paa' /&gt; Штаб</Russian>
+				<Spanish>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\Ranks\colonel_gs.paa' /&gt; Opciones HQ</Spanish>
+			</Key>
+			<Key ID="STR_ACT_GAMEOPTIONS">
+				<Original>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\SimpleTasks\types\use_ca.paa' /&gt; Game Options</Original>
+				<Russian>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\SimpleTasks\types\use_ca.paa' /&gt; Игровые настройки</Russian>
+				<Spanish>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\SimpleTasks\types\use_ca.paa' /&gt; Opciones Juego</Spanish>
+			</Key>
+			<Key ID="STR_ACT_MAPINFO">
+				<Original>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\Hints\Map_ca.paa' /&gt; Map Info</Original>
+				<Russian>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\Hints\Map_ca.paa' /&gt; Информация на карте</Russian>
+				<Spanish>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\Hints\Map_ca.paa' /&gt; Info Mapa</Spanish>
+			</Key>
+			<Key ID="STR_ACT_BUILDPAD">
+				<Original>&lt;img size='1.75' image='\A3\ui_f\data\Map\markers\military\objective_ca.paa' /&gt; Build Vehicle Zone</Original>
+				<Russian>&lt;img size='1.75' image='\A3\ui_f\data\Map\markers\military\objective_ca.paa' /&gt; Создать площадку для техники</Russian>
+				<Spanish>&lt;img size='1.75' image='\A3\ui_f\data\Map\markers\military\objective_ca.paa' /&gt; Construir Zona Vehículos</Spanish>
+			</Key>
+			<Key ID="STR_ACT_BUILDHQ">
+				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\takeFlag_ca.paa' /&gt; Build HQ</Original>
+				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\takeFlag_ca.paa' /&gt; Построить Штаб</Russian>
+				<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\takeFlag_ca.paa' /&gt; Construir HQ</Spanish>
+			</Key>
+			<Key ID="STR_ACT_PAMPHLETS">
+				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\cfg\simpletasks\types\documents_ca.paa' /&gt; Box 'o Pams</Original>
+				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\cfg\simpletasks\types\documents_ca.paa' /&gt; Выгрузить листовки</Russian>
+				<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\cfg\simpletasks\types\documents_ca.paa' /&gt; Entregar Panfletos</Spanish>
+			</Key>
+			<Key ID="STR_ACT_TFAR">
+				<Original>&lt;img size='1.2' image='\A3\ui_f\data\Map\VehicleIcons\iconVirtual_ca.paa' /&gt; TFAR Radio Menu</Original>
+				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\Map\VehicleIcons\iconVirtual_ca.paa' /&gt; TFAR меню радио</Russian>
+				<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\Map\VehicleIcons\iconVirtual_ca.paa' /&gt; Menú TFAR Radio</Spanish>
+			</Key>
+			<Key ID="STR_ACT_SELLMENU">
+				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\HoldActions\holdAction_hack_ca.paa' /&gt; Bobby Ray's</Original>
+				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\HoldActions\holdAction_hack_ca.paa' /&gt; Оружейная лавка</Russian>
+				<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\HoldActions\holdAction_hack_ca.paa' /&gt; Bobby Ray's</Spanish>
+			</Key>
+			<Key ID="STR_ACT_CAPTURE_HVT">
+				<Original>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Capture the HVT</Original>
+				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Захват важной персоны</Russian>
+				<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Capturar HVT</Spanish>
+			</Key>
+			<Key ID="STR_ACT_BUYB">
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\simpleTasks\types\boat_ca.paa' /&gt; Buy Boat</Original>
 				<Russian>&lt; img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\simpleTasks\types\boat_ca.paa' /&gt;Купить Лодку</Russian>
 				<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\simpleTasks\types\boat_ca.paa' /&gt; Comprar Bote</Spanish>
-		</Key>
-	</Container>
+			</Key>
+		</Container>
 	</Package>
 	<Package name="Identifiers">
 		<Key ID="STR_GENIDENT_AAF">
@@ -2474,401 +2473,401 @@
 			</Key>
 		</Container>
 		<Container name="Fast_Travel_Radio">
-		    <Key ID="STR_HINTS_FTR_YCSOGOTFT">
-			    <Original>You can select one group only to Fast Travel</Original>
+			<Key ID="STR_HINTS_FTR_YCSOGOTFT">
+				<Original>You can select one group only to Fast Travel</Original>
 				<Russian>Вы можете выбрать только одну группу для телепорта</Russian>
-			    	<Spanish>Sólo puedes seleccionar un grupo para hacer Viaje Rápido</Spanish>
+					<Spanish>Sólo puedes seleccionar un grupo para hacer Viaje Rápido</Spanish>
 			</Key>
-            <Key ID="STR_HINTS_FTR_OAGLCAFFT">
-			    <Original>Only a group leader can ask for Fast Travel</Original>
+			<Key ID="STR_HINTS_FTR_OAGLCAFFT">
+				<Original>Only a group leader can ask for Fast Travel</Original>
 				<Russian>Только руководитель группы может запросить телепорт</Russian>
-		    		<Spanish>Sólo el líder de grupo puede solicitar Viaje Rápido</Spanish>
+					<Spanish>Sólo el líder de grupo puede solicitar Viaje Rápido</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_FTR_YCFTWOPIYG">
-			    <Original>You cannot Fast Travel with other players in your group</Original>
+				<Original>You cannot Fast Travel with other players in your group</Original>
 				<Russian>Вы не можете телепортироваться когда в Вашей группе другие игроки</Russian>
 				<Spanish>No puedes hacer Viaje Rápido con otros jugadores en tu grupo</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_FTR_YCFTWYACAI">
-			    <Original>You cannot Fast Travel while you are controlling AI</Original>
+				<Original>You cannot Fast Travel while you are controlling AI</Original>
 				<Russian>Вы не можете быстро перемещаться во время управления AI</Russian>
 				<Spanish>No puedes hacer Viaje Rápido mientras controlas a la IA</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_FTR_YCFTWENTG">
-			    <Original>You cannot Fast Travel with enemies near the group</Original>
+				<Original>You cannot Fast Travel with enemies near the group</Original>
 				<Russian>Вы не можете быстро перемещаться когда противник рядом с группой</Russian>
 				<Spanish>No puedes hacer Viaje Rápido con enemigos cerca del grupo</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_FTR_YCFTIYDHADIAY">
-			    <Original>You cannot Fast Travel if you don't have a driver in all your vehicles or your vehicles are damage and cannot move</Original>
+				<Original>You cannot Fast Travel if you don't have a driver in all your vehicles or your vehicles are damage and cannot move</Original>
 				<Russian>Вы не можете использовать телепорт, если у Вас нет водителей на всех Ваших транспортных средствах или Ваши транспортные средства повреждены и не могут двигаться</Russian>
 				<Spanish>No puedes hacer Viaje Rápido si no hay conductor en todos tus vehículos o si están dañados y no pueden moverse</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_FTR_COTZYWTT">
-			    <Original>Click on the zone you want to travel</Original>
+				<Original>Click on the zone you want to travel</Original>
 				<Russian>Нажмите на зону, в которую Вы хотите переместиться</Russian>
 				<Spanish>Click en la zona a la que quieres viajar</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_FTR_YCFTTRNW">
-			    <Original>You cannot Fast Travel to roadblocks and watchposts</Original>
+				<Original>You cannot Fast Travel to roadblocks and watchposts</Original>
 				<Russian>Вы не можете телепортироваться на БП/НП</Russian>
 				<Spanish>No puedes hacer Viaje Rápido a controles ni puestos de observación</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_FTR_YCFTTAECZ">
-			    <Original>You cannot Fast Travel to an enemy controlled zone</Original>
+				<Original>You cannot Fast Travel to an enemy controlled zone</Original>
 				<Russian>Вы не можете быстро переместиться в зону, контролируемую противником</Russian>
 				<Spanish>No puedes hacer Viaje Rápido a zonas controladas por el enemigo</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_FTR_YCFTTC">
-			    <Original>You cannot Fast Travel to camps.</Original>
+				<Original>You cannot Fast Travel to camps.</Original>
 				<Russian>Вы не можете быстро переместиться в лагеря.</Russian>
 				<Spanish>No puedes hacer Viaje Rápido a campamentos</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_FTR_YCFTTAAUAOWE">
-			    <Original>You cannot Fast Travel to an area under attack or with enemies in the surrounding</Original>
+				<Original>You cannot Fast Travel to an area under attack or with enemies in the surrounding</Original>
 				<Russian>Вы не можете быстро переместиться в область, находящуюся под атакой, или в окружении врагов</Russian>
 				<Spanish>No puedes hacer Viaje Rápido a un área bajo ataque o con enemigos en los alrededores</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_FTR_MG1TD">
-			    <Original>Moving group %1 to destination</Original>
+				<Original>Moving group %1 to destination</Original>
 				<Russian>Перемещение группы %1 в пункт назначения</Russian>
 				<Spanish>Moviendo grupo %1 a destino</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_FTR_G1ATD">
-			    <Original>Group %1 arrived to destination</Original>
+				<Original>Group %1 arrived to destination</Original>
 				<Russian>Группа %1 прибыла в пункт назначения</Russian>
 				<Spanish>Grupo %1 ha llegado a su destino</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_FTR_YMCNMUYC">
-			    <Original>You must click near marker under your control</Original>
+				<Original>You must click near marker under your control</Original>
 				<Russian>Вы должны кликнуть возле зоны, находящейся под Вашим контролем</Russian>
 				<Spanish>Debes hacer click cerca de la marca bajo tu control</Spanish>
 			</Key>
 		</Container>
 		<Container name="FTRAVEL_DIALOG">
-		     <Key ID="STR_HINTS_FD_YNARIYITBA">
-			    <Original>You need a radio in your inventory to be able to give orders to other squads</Original>
+			<Key ID="STR_HINTS_FD_YNARIYITBA">
+				<Original>You need a radio in your inventory to be able to give orders to other squads</Original>
 				<Russian>Вам нужно иметь радиостанцию, чтобы иметь возможность отдавать приказы другим отрядам</Russian>
-			     	<Spanish>Necesitas una radio en tu inventario para dar ordenes a otros escuadrones</Spanish>
+				<Spanish>Necesitas una radio en tu inventario para dar ordenes a otros escuadrones</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_FD_COTPYWTETC">
-			    <Original>Click on the position you wish to establish the camp.</Original>
+				<Original>Click on the position you wish to establish the camp.</Original>
 				<Russian>Кликните на позицию где Вы хотите развернуть лагерь</Russian>
 				<Spanish>Click en la posición en la que deseas establecer el campamento</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_FD_COTCTAAC">
-			    <Original>Click on the camp to abandon a camp.</Original>
+				<Original>Click on the camp to abandon a camp.</Original>
 				<Russian>Кликните на лагерь, чтобы его свернуть</Russian>
 				<Spanish>Click en el campamento que quieres abandonar</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_FD_COTCTRAC">
-			    <Original>Click on the camp to rename a camp.</Original>
+				<Original>Click on the camp to rename a camp.</Original>
 				<Russian>Кликните на лагерь, чтобы его переименовать</Russian>
 				<Spanish>Click en el campamento para renombrarlo</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_FD_LITCTB">
-			    <Original>Location is too close to base</Original>
+				<Original>Location is too close to base</Original>
 				<Russian>Место слишком близко к базе</Russian>
 				<Spanish>La ubicación está cerca de la base</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_FD_NCTA">
-			    <Original>No camps to abandon.</Original>
+				<Original>No camps to abandon.</Original>
 				<Russian>Нет лагерей, которые можно свернуть</Russian>
 				<Spanish>No hay campamentos para abandonar</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_FD_YCDACWEANI">
-			    <Original>You cannot delete a camp while enemies are near it.</Original>
+				<Original>You cannot delete a camp while enemies are near it.</Original>
 				<Russian>Вы не можете свернуть лагерь пока противник находится рядом с ним</Russian>
 				<Spanish>No puedes borrar un campamento con enemigos cerca de él</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_FD_YCOSAMOFFC">
-			    <Original>You can only sustain a maximum of four camps.</Original>
+				<Original>You can only sustain a maximum of four camps.</Original>
 				<Russian>Вы можете развернуть максимум четыре лагеря</Russian>
 				<Spanish>Sólo puedes tener un máximo de cuatro campamentos</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_FD_CR">
-			    <Original>Camp renamed</Original>
+				<Original>Camp renamed</Original>
 				<Russian>Лагерь переименован</Russian>
 				<Spanish>Campamento renombrado</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_FD_YLORTBTC">
-			    <Original>You lack of resources to build this camp. \n %1 HR and %2 € needed</Original>
+				<Original>You lack of resources to build this camp. \n %1 HR and %2 € needed</Original>
 				<Russian>Вам не хватает ресурсов для создания этого лагеря. \ n %1 HR и %2 € необходимо</Russian>
 				<Spanish>Te faltan recursos para construir un campamento. \n necesitas %1 HR y %2 €</Spanish>
 			</Key>
 		</Container>
-        <Container name="HEAL_AND_REPAIR">
-		    <Key ID="STR_HINTS_HNR_ALL">
-			    <Original>All nearby units and vehicles have been healed or repaired. Near vehicles have been rearmed at full load and no longer in reported list.</Original>
+		<Container name="HEAL_AND_REPAIR">
+			<Key ID="STR_HINTS_HNR_ALL">
+				<Original>All nearby units and vehicles have been healed or repaired. Near vehicles have been rearmed at full load and no longer in reported list.</Original>
 				<Russian>Все находящиеся рядом бойцы и техника вылечены/отремонтированы. Техника перевооружена, заправлена и больше не находится в розыске.</Russian>
-			    	<Spanish>Todas las unidades y vehículos cercanos han sido curados o reparados. Los vehículos han sido rearmados al máximo y ya no están en la lista de buscados.</Spanish>
+				<Spanish>Todas las unidades y vehículos cercanos han sido curados o reparados. Los vehículos han sido rearmados al máximo y ya no están en la lista de buscados.</Spanish>
 			</Key>
 		</Container>
 		<Container name="MOVE_HQ">
-		     <Key ID="STR_HINTS_MHQ_OCSHATTF">
-			    <Original>Only Commander Slowhand has access to this function</Original>
-				<Russian>Только Командир имеет доступ к этой функции</Russian> <!-- Редакт. -->
-			     	<Spanish>Sólo el Comandante tiene acceso a esta función</Spanish>
+			<Key ID="STR_HINTS_MHQ_OCSHATTF">
+				<Original>Only Commander Slowhand has access to this function</Original>
+				<Russian>Только Командир имеет доступ к этой функции</Russian>
+				<Spanish>Sólo el Comandante tiene acceso a esta función</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_MHQ_YMFEYAIOTMTHQ">
-			    <Original>You must first empty your Ammobox in order to move the HQ</Original>
+				<Original>You must first empty your Ammobox in order to move the HQ</Original>
 				<Russian>Вы должны сначала опустошить Ящик Арсенала, чтобы переместить Штаб</Russian>
 				<Spanish>Primero debes vaciar la caja de munición para poder mover el HQ</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_MHQ_MTAACNTVACNPTTNL">
-			    <Original>Move the Arsenal ammo crate and the Vehicle ammo crate and Petros to the new location</Original>
+				<Original>Move the Arsenal ammo crate and the Vehicle ammo crate and Petros to the new location</Original>
 				<Russian>Переместите Петроса, Ящик лечения и восстановления транспорта и Ящик Арсенала на новое место</Russian>
 				<Spanish>Mueve la caja de Arsenal, la caja de Vehículo y a Petros a la nueva ubicación</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_MHQ_HQGWSHNHTE">
-			    <Original>HQ Garrison will stay here and hold the enemy</Original>
+				<Original>HQ Garrison will stay here and hold the enemy</Original>
 				<Russian>Гарнизон Штаба останется здесь и будет удерживать врага</Russian>
 				<Spanish>La Guarnición del HQ se quedará aquí y repelerá al enemigo</Spanish>
 			</Key>
 		</Container>
 		<Container name="MRK_WIN">
-		     <Key ID="STR_HINTS_MRKW_YCCTFWIUM">
-			    <Original>You cannot Capture the Flag while in Undercover Mode</Original>
+			<Key ID="STR_HINTS_MRKW_YCCTFWIUM">
+				<Original>You cannot Capture the Flag while in Undercover Mode</Original>
 				<Russian>Вы не можете захватить флаг в гражданском статусе</Russian>
-			     	<Spanish>No puedes Capturar la Bandera mientras estás en Modo Incógnito</Spanish>
+				<Spanish>No puedes Capturar la Bandera mientras estás en Modo Incógnito</Spanish>
 			</Key>
 		</Container>
 		<Container name="NATO_DIALOG">
-		     <Key ID="STR_HINTS_NATOD_OCCAFNATOS">
-			    <Original>Only Commander can ask for NATO support</Original>
+			<Key ID="STR_HINTS_NATOD_OCCAFNATOS">
+				<Original>Only Commander can ask for NATO support</Original>
 				<Russian>Только Командир может запросить поддержку союзников</Russian>
-			     	<Spanish>Sólo el Comandante puede solicitar apoyo a la OTAN</Spanish>
+				<Spanish>Sólo el Comandante puede solicitar apoyo a la OTAN</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_NATOD_SIVLWOMOCFPS">
-			    <Original>Server is very loaded. \nWait one minute or change FPS settings in order to fulfill this request</Original>
+				<Original>Server is very loaded. \nWait one minute or change FPS settings in order to fulfill this request</Original>
 				<Russian>Сервер очень загружен. \nПодождите одну минуту или измените настройки FPS, чтобы выполнить этот запрос.</Russian>
 				<Spanish>El servidor está muy cargado. \nEspera un minuto o cambia las opciones de FPS para solucionarlo</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_NATOD_NATOIABWTKOM">
-			    <Original>NATO is already busy with this kind of mission</Original>
+				<Original>NATO is already busy with this kind of mission</Original>
 				<Russian>Союзники уже выполняют такую миссию</Russian>
 				<Spanish>La OTAN ya está ocupada con este tipo de misión</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_NATOD_YNARIYITBATGOTOS">
-			    <Original>You need a radio in your inventory to be able to give orders to other squads</Original>
+				<Original>You need a radio in your inventory to be able to give orders to other squads</Original>
 				<Russian>Вы должны иметь радиостанцию, чтобы отдавать приказы другим отрядам</Russian>
 				<Spanish>Necesitas una radio en tu inventario para poder dar ordenes a otros escuadrones</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_NATOD_YNYCALOBTPTA">
-			    <Original>You need to conquer at least one base to perform this action</Original>
+				<Original>You need to conquer at least one base to perform this action</Original>
 				<Russian>Чтобы выполнить это действие, Вам нужно захватить хотя бы одну базу</Russian>
 				<Spanish>Necesitas al menos una base conquistada para realizar esta acción</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_NATOD_COTBOAYWNATOTA">
-			    <Original>Click on the base or airport you want NATO to attack</Original>
+				<Original>Click on the base or airport you want NATO to attack</Original>
 				<Russian>Укажите базу/авиабазу, которую будут атаковать союзники</Russian>
 				<Spanish>Click en la base o aeropuerto que quieres que la OTAN ataque</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_NATOD_COTBFWYWNATOTOTA">
-			    <Original>Click on the base from which you want NATO to attack</Original>
+				<Original>Click on the base from which you want NATO to attack</Original>
 				<Russian>Укажите базу, откуда союзники совершат атаку</Russian>
 				<Spanish>Click en la base desde donde quieres que la OTAN ataque</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_NATOD_COTSWYWTA">
-			    <Original>Click on the spot where you want the Ammodrop</Original>
+				<Original>Click on the spot where you want the Ammodrop</Original>
 				<Russian>Укажите место, куда необходимо сбросить боеприпасы</Russian>
 				<Spanish>Click en el punto donde quieres que lanzen los suministros</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_NATOD_COTBFWYWAS">
-			    <Original>Click on the base from which you want Artillery Support</Original>
+				<Original>Click on the base from which you want Artillery Support</Original>
 				<Russian>Укажите базу откуда будет произведена артиллерийская поддержка</Russian>
 				<Spanish>Click en la base desde la que quieres el Apoyo de Artillería</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_NATOD_COTAFWYWNATOTA">
-			    <Original>Click on the airport from which you want NATO to attack</Original>
+				<Original>Click on the airport from which you want NATO to attack</Original>
 				<Russian>Укажите авиабазу, с которой союзники совершат атаку</Russian>
 				<Spanish>Click en el aeropuerto desde el que quieres que la OTAN ataque</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_NATOD_COTSWYWNATOTSARs">
-			    <Original>Click on the spot where you want NATO to setup a roadblock</Original>
+				<Original>Click on the spot where you want NATO to setup a roadblock</Original>
 				<Russian>Укажите место, где необходимо установить союзный блокпост</Russian>
 				<Spanish>Click en el punto donde quieres que la OTAN monte un control</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_NATOD_COTBOACFWYWNATOTDAQRF">
-			    <Original>Click on the base or airport/carrier from which you want NATO to dispatch a QRF</Original>
+				<Original>Click on the base or airport/carrier from which you want NATO to dispatch a QRF</Original>
 				<Russian>Укажите базу/авиабазу/авианосец, откуда необходимо отправить ОБР союзников</Russian>
 				<Spanish>Click en la base o aeropuerto/portaaviones desde el que quieres que la OTAN envíe una equipo de respuesta rápida</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_NATOD_YIASEFEIDWRTCATI">
-			    <Original>You informed about supporting enemy faction emplacement, its destruction will reduce their concern about the island</Original>
+				<Original>You informed about supporting enemy faction emplacement, its destruction will reduce their concern about the island</Original>
 				<Russian>Вы сообщили о поддержке размещения вражеской фракции, ее уничтожение уменьшит их беспокойство по поводу острова</Russian>
 				<Spanish>Has sido informado de un emplazamiento que da apoyo a la facción enemiga, su destrucción reducirá la preocupación en la isla</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_NATOD_WLOENATOSIOTPWTR">
-			    <Original>We lack of enough NATO Support in order to proceed with this request  (%1 needed)</Original>
+				<Original>We lack of enough NATO Support in order to proceed with this request  (%1 needed)</Original>
 				<Russian>Нам недостаточно очков поддержки, чтобы запросить это (%1 необходимо)</Russian>
 				<Spanish>Carecemos del suficiente Apoyo de la OTAN para esta petición (necesitamos %1)</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_NATOD_RBCOBPOR">
-			    <Original>Roadblocks can only be placed on roads.</Original>
+				<Original>Roadblocks can only be placed on roads.</Original>
 				<Russian>Блокпост можно разместить только на дороге.</Russian>
 				<Spanish>Los controles sólo pueden colocarse en carreteras.</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_NATOD_QRFDF1MTTFTQRF">
-			    <Original>QRF departing from %1. Mark the target for the QRF.</Original>
+				<Original>QRF departing from %1. Mark the target for the QRF.</Original>
 				<Russian>ОБР отправляется из %1. Отметьте цель для ОБР.</Russian>
 				<Spanish>QFR saliendo de %1. Marque el objetivo en el mapa.</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_NATOD_NLCSATDQRFIRTL">
-			    <Original>No LCS available this decade, QRF is restricted to land.</Original>
+				<Original>No LCS available this decade, QRF is restricted to land.</Original>
 				<Russian>Десантные корабли недоступны, ОБР может действовать только на суше.</Russian>
 				<Spanish>No disponemos de embarcaciones, QFR restringido a tierra.</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_NATOD_QRFI">
-			    <Original>QRF inbound.</Original>
+				<Original>QRF inbound.</Original>
 				<Russian>ОБР на подходе</Russian>
 				<Spanish>QFR entrando</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_NATOD_YMCNAMM">
-			    <Original>You must click near a map marker</Original>
+				<Original>You must click near a map marker</Original>
 				<Russian>Вы должны нажать возле маркера карты</Russian>
 				<Spanish>Debes hacer click cerca de una marca del mapa</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_NATOD_ASCOBOFB">
-			    <Original>Artillery support can only be obtained from bases.</Original>
+				<Original>Artillery support can only be obtained from bases.</Original>
 				<Russian>Артиллерийскую поддержку можно получить только с баз.</Russian>
 				<Spanish>Apoyo de Artillería sólo disponible desde las bases.</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_NATOD_YMCNAFB">
-			    <Original>You must click near a friendly base</Original>
+				<Original>You must click near a friendly base</Original>
 				<Russian>Вы должны указать дружественную базу</Russian>
 				<Spanish>Debes hacer click cerca de una base aliada</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_NATOD_COTACD">
-			    <Original>Click on the Armored Column destination</Original>
+				<Original>Click on the Armored Column destination</Original>
 				<Russian>Укажите пункт назначения колонны бронетехники</Russian>
 				<Spanish>Click en el destino de la Columna de Blindados</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_NATOD_YMCNAMMS">
-			    <Original>You must click near a map marker</Original>
+				<Original>You must click near a map marker</Original>
 				<Russian>Вы должны кликнуть рядом с маркером на карте</Russian>
 				<Spanish>Debes hacer click cerca de una marca del mapa</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_NATOD_NATOWATKOZ">
-			    <Original>NATO won't attack this kind of zone.</Original>
+				<Original>NATO won't attack this kind of zone.</Original>
 				<Russian>Союзники не будут атаковать эту зону.</Russian>
 				<Spanish>La OTAN no atacará este tipo de zona.</Spanish>
 			</Key>
 			<Key ID="NATO Attacks may be only ordered on AAF controlled zones">
-			    <Original>NATO Attacks may be only ordered on AAF controlled zones</Original>
+				<Original>NATO Attacks may be only ordered on AAF controlled zones</Original>
 				<Russian>Атаки союзников могут осуществлены только на зоны, контролируемые противником</Russian>
 				<Spanish>Los ataques de la OTAN deben ordenarse únicamente a zonas controladas por las AAF</Spanish>
 			</Key>
 		</Container>
-	    <Container name="REBUILD_ASSETS">
-		     <Key ID="STR_HINTS_RA_YDNHEMTRAA">
-			    <Original>You do not have enough money to rebuild any Asset. You need 5.000 €</Original>
+		<Container name="REBUILD_ASSETS">
+			<Key ID="STR_HINTS_RA_YDNHEMTRAA">
+				<Original>You do not have enough money to rebuild any Asset. You need 5.000 €</Original>
 				<Russian>У Вас недостаточно средств для восстановления активов. Вам нужно 5.000 €</Russian>
-			     	<Spanish>No tienes suficiente dinero para reconstruir este activo. Necesitas 5.000 €</Spanish>
+				<Spanish>No tienes suficiente dinero para reconstruir este activo. Necesitas 5.000 €</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_RA_COTZYWTR">
-			    <Original>Click on the zone you want to rebuild.</Original>
+				<Original>Click on the zone you want to rebuild.</Original>
 				<Russian>Кликните на зону, которую хотите восстановить.</Russian>
 				<Spanish>Click en la zona que quieres reconstruir.</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_RA_YMCNAMM">
-			    <Original>You must click near a map marker</Original>
+				<Original>You must click near a map marker</Original>
 				<Russian>Вы должны кликнуть возле маркера на карте</Russian>
 				<Spanish>Debes hacer click cerca de una marca del mapa</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_RA_YCRT">
-			    <Original>You cannot rebuild that</Original>
+				<Original>You cannot rebuild that</Original>
 				<Russian>Вы не можете это восстановить</Russian>
 				<Spanish>No puedes reconstruir eso</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_RA_1REBUILTSS">
-			    <Original>%1 Rebuilt</Original>
+				<Original>%1 Rebuilt</Original>
 				<Russian>Зона %1 восстановлена</Russian>
 				<Spanish>%1 Reconstruido</Spanish>
 			</Key>
 		</Container>
 		<Container name="REINIT_Y">
-		     <Key ID="STR_HINTS_RY">
-			    <Original>Reinitialised:\n\nSpecial Keys\n\nStatistics Report</Original>
+			<Key ID="STR_HINTS_RY">
+				<Original>Reinitialised:\n\nSpecial Keys\n\nStatistics Report</Original>
 				<Russian>Переинициализировано:\n\Специальные клавиши\n\n Отчет о статистике</Russian>
-			     	<Spanish>Reinicializado:\n\nTeclas Especiales\n\nInforme Estadísticas</Spanish>
+				<Spanish>Reinicializado:\n\nTeclas Especiales\n\nInforme Estadísticas</Spanish>
 			</Key>
 		</Container>
 		<Container name="SERVER_AUTOSAVE">
-		     <Key ID="STR_HINTS_SERV_AUTO_SAVE">
-			    <Original>A critical failure has been detected in Antistasi. Please contact Admin and ask for a diagnose + server restart. Apologies.</Original>
+			<Key ID="STR_HINTS_SERV_AUTO_SAVE">
+				<Original>A critical failure has been detected in Antistasi. Please contact Admin and ask for a diagnose + server restart. Apologies.</Original>
 				<Russian>В Antistasi обнаружен критический сбой. Пожалуйста, свяжитесь с администратором и попросите диагностировать + перезапустить сервер. Простите за неудобство.</Russian>
-			     	<Spanish>Se ha detectado un fallo crítico en Antistasi. Por favor, contacte con el Admin y pregunte por un diagnóstico + reiniciar. Disculpas.</Spanish>
+				<Spanish>Se ha detectado un fallo crítico en Antistasi. Por favor, contacte con el Admin y pregunte por un diagnóstico + reiniciar. Disculpas.</Spanish>
 			</Key>
 		</Container>
 		<Container name="SKIP_TIME">
-		     <Key ID="STR_HINTS_ST_OTCCOTR">
-			    <Original>Only the Commander can order to rest</Original>
+			<Key ID="STR_HINTS_ST_OTCCOTR">
+				<Original>Only the Commander can order to rest</Original>
 				<Russian>Только Командир может отдать приказ отдыхать</Russian>
-			     	<Spanish>Sólo el Comandante puede ordenar descanso</Spanish>
+				<Spanish>Sólo el Comandante puede ordenar descanso</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_ST_YCRWENOU">
-			    <Original>You cannot rest with enemies near our units</Original>
+				<Original>You cannot rest with enemies near our units</Original>
 				<Russian>Вы не можете отдыхать когда противник находится рядом с Вашим отрядом</Russian>
 				<Spanish>No puedes descansar con enemigos cerca de nuestras unidades</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_ST_YCRWAAFOCSATIC">
-			    <Original>You cannot rest while AAF or CSAT is counterattacking</Original>
+				<Original>You cannot rest while AAF or CSAT is counterattacking</Original>
 				<Russian>Вы не можете отдыхать, когда AAF или CSAT контратакуют</Russian>
 				<Spanish>No puedes descansar mientras las AAF o el CSAT están contraatacando</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_ST_YCRWYHQIUA">
-			    <Original>You cannot rest while your HQ is under attack</Original>
+				<Original>You cannot rest while your HQ is under attack</Original>
 				<Russian>Вы не можете отдыхать, пока Штаб атакуют</Russian>
 				<Spanish>No puedes descansar mientras el HQ está bajo ataque</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_ST_APMBIA100MRFHQ">
-			    <Original>All player must be in a 100mts radius from HQ to be able to rest</Original>
+				<Original>All player must be in a 100mts radius from HQ to be able to rest</Original>
 				<Russian>Все игроки должны находиться в радиусе 100 м от Штаба, чтобы иметь возможность отдыхать</Russian>
 				<Spanish>Todos los jugadores deben estar en un radio de 100m del HQ para Descansar</Spanish>
 			</Key>
 		</Container>
 		<Container name="TELEPORT">
-		     <Key ID="STR_HINTS_TELEPORT">
-			    <Original>Click on the position you wish to teleport to.</Original>
+			<Key ID="STR_HINTS_TELEPORT">
+				<Original>Click on the position you wish to teleport to.</Original>
 				<Russian>Кликните по зоне, куда Вы хотите телепортироваться.</Russian>
-			     	<Spanish>Click en la posición a la que deseas ser teletransportado.</Spanish>
+				<Spanish>Click en la posición a la que deseas ser teletransportado.</Spanish>
 			</Key>
 		</Container>
 		<Container name="GARBAGE_CLEAR">
-		     <Key ID="STR_HINTS_GARB_CLR">
-			    <Original>Deleting Garbage. Please wait</Original>
+			<Key ID="STR_HINTS_GARB_CLR">
+				<Original>Deleting Garbage. Please wait</Original>
 				<Russian>Удаление мусора. Пожалуйста, ждите</Russian>
-			     	<Spanish>Borrando Basura. Por favor, espere</Spanish>
+				<Spanish>Borrando Basura. Por favor, espere</Spanish>
 			</Key>
-		     <Key ID="STR_HINTS_GARB_DEL">
- -				<Original>Garbage deleted</Original>
- -				<Russian>Мусор удалён</Russian>
- +			     	<Spanish>Basura borrada</Spanish>
+			<Key ID="STR_HINTS_GARB_DEL">
+				<Original>Garbage deleted</Original>
+				<Russian>Мусор удалён</Russian>
+				<Spanish>Basura borrada</Spanish>
   			</Key>
 		</Container>
 		<Container name="INIT_FUNCS">
-		     <Key ID="STR_HINTS_INITCUNCS">
-			    <Original>Functions Init Completed</Original>
-			    <Spanish>Funciones Iniciales Completadas</Spanish>
+			<Key ID="STR_HINTS_INITCUNCS">
+				<Original>Functions Init Completed</Original>
+				<Spanish>Funciones Iniciales Completadas</Spanish>
 			</Key>
 		</Container>
 		<Container name="INIT_VAR">
-		     <Key ID="STR_HINTS_INITVAR">
-			    <Original>Variables Init Completed</Original>
-			    <Spanish>Variables Iniciales Completadas</Spanish>
+			<Key ID="STR_HINTS_INITVAR">
+				<Original>Variables Init Completed</Original>
+				<Spanish>Variables Iniciales Completadas</Spanish>
 			</Key>
 		</Container>
 		<Container name="INIT_ZONES">
-		     <Key ID="empty">
-			    <Original>empty</Original>
+			<Key ID="empty">
+				<Original>empty</Original>
 				<Russian>пусто</Russian>
-			     	<Spanish>vacío</Spanish>
+				<Spanish>vacío</Spanish>
 			</Key>
 		</Container>
 		<Container name="MUSICA">
-		     <Key ID="STR_HINTS_MUSICA">
-			    <Original>The player is in this stance: %1</Original>
+			<Key ID="STR_HINTS_MUSICA">
+				<Original>The player is in this stance: %1</Original>
 				<Russian>Игрок находится в этой позиции: %1</Russian>
 				<Spanish>El jugador está en esta stance: %1</Spanish>
 			</Key>
@@ -4209,8 +4208,8 @@
 
 					Избегайте модов, которые влияют на ИИ, поскольку они могут нарушить работу механики Antistasi ИИ.&lt;br/&gt;
 					Вы можете посетить a3.antistasi.com для получения дополнительной информации.
-                </Russian>
-                <Spanish>Antistasi se puede disfrutar con la versión vanilla de ArmA 3, o con modificaciones compatibles, siempre y cuando no afecten a la IA.&lt;br/&gt;Algunos mods están completamente integrados en Antistasi; cuando se cargan, estos mods cambiarán las facciones enfrentadas, usará diferentes vehículos, equipo y mecánicas.	&lt;br/&gt;Por el momento son estos: RHS: (AFRF, USAF, GREF), TFAR y ACE3.&lt;br/&gt;	 &lt;br/&gt;
+				</Russian>
+				<Spanish>Antistasi se puede disfrutar con la versión vanilla de ArmA 3, o con modificaciones compatibles, siempre y cuando no afecten a la IA.&lt;br/&gt;Algunos mods están completamente integrados en Antistasi; cuando se cargan, estos mods cambiarán las facciones enfrentadas, usará diferentes vehículos, equipo y mecánicas.	&lt;br/&gt;Por el momento son estos: RHS: (AFRF, USAF, GREF), TFAR y ACE3.&lt;br/&gt;	 &lt;br/&gt;
 
 					Los ajustes de ACE están puestos por defecto, sin embargo, pueden cambiarse permanentemente en un servidor dedicado agregando una clase a profile.arma3profile, la sincronización de frecuencias en TFAR se puede establecer antes de comenzar la misión en configurar addons, mira en github para más información.&lt;br/&gt;&lt;br/&gt;
 
@@ -4224,8 +4223,8 @@
 
 					Evite los mods que controlan o afectan a la IA, esto rompería las mecánicas de la IA en Antistasi.&lt;br/&gt;
 					Puedes visitar a3.antistasi.com para más información.
-                </Spanish>
-		    </Key>
+				</Spanish>
+			</Key>
 			<Key ID="STR_BR_5ANTOPT">
 				<Original>5 Antistasi Options</Original>
 				<Russian>5 Настройки Antistasi</Russian>
@@ -4266,7 +4265,7 @@
 
 					Limitador FPS: por debajo del umbral, se generarán muy pocos civiles.&lt;br/&gt;&lt;br/&gt;
 				</Spanish>
-		    </Key>
+			</Key>
 			<Key ID="STR_BR_4GAMED">
 				<Original>4 Game difficulty</Original>
 				<Russian>4 Сложность игры</Russian>
@@ -4300,7 +4299,7 @@
 
 					Es importante tener en cuenta que el nivel de habilidad de la IA en Arma 3 depende del motor del juego: Si el PC / Servidor está sobrecargado de acciones en cola se cancelarán y la IA tendrá un mal rendimiento.&lt;br/&gt;&lt;br/&gt;
 				</Spanish>
-		    </Key>
+			</Key>
 			<Key ID="STR_BR_3SSANDP">
 				<Original>3 Spawn system and Performance</Original>
 				<Russian>3 Система спавна, производительность</Russian>
@@ -4319,7 +4318,7 @@
 					Also, try to place HQ and Camps outside the spawning radius of towns and emplacements so they won't be cached-in permanently.&lt;br/&gt;&lt;br/&gt;
 
 					Note that servers can add a Headless Client which will dramatically increase the handling of AI. There are 3 HC slots available AI will be assigned proportionally giving more priority to HC than the main server.
-                </Original>
+				</Original>
 				<Russian>
 					Петрос, игроки, контролируемые ИИ (также освобожденные беженцы, бойцы, отряды и подразделения НАТО/ВМФ) вызывают появление (спавн) врагов и гражданских лиц в радиусе 1 км - это радиус кеширования. Воздушный транспорт НАТО не вызывает спавна врагов, чтобы сохранить производительность. (В планах добавить возможность уничтожения самолета при полете над вражеской территорией) &lt;br/&gt;&lt;br/&gt;
 
@@ -4345,7 +4344,7 @@
 
 					Tenga en cuenta que los servidores pueden agregar un cliente headless que aumentará drásticamente el manejo de la inteligencia artificial. Hay 3 ranuras HC disponibles.
 				</Spanish>
-		    </Key>
+			</Key>
 			<Key ID="STR_BR_2SALORE">
 				<Original>2 Save Load Restart</Original>
 				<Russian>2 Сохранение, загрузка, рестарт</Russian>
@@ -4365,7 +4364,7 @@
 					- Arsenal items and Garage vehicles.&lt;br/&gt;
 					What isn’t saved: AI positions, items inside vehicle crates, recruited AI (part of their cost is refunded).&lt;br/&gt;
 					To have multiple saves and keep your gear when disconnecting within 100m from HQ, run the mod inidbi2 by code34.
-                </Original>
+				</Original>
 				<Russian>
 					Стандартное сохранение отключено, так как оно некорректно сохраняет миссию. Чтобы сохранить прогресс, Командир должен использовать Карту в Штабе. После загрузки Antistasi спрашивает, хотите ли Вы загрузить предыдущую сессию.&lt;br/&gt;
 					Если Вы обычный игрок, Ваше снаряжение, деньги и звание (ранг) будут автоматически сохранены после выхода.&lt;br/&gt;&lt;br/&gt;
@@ -4393,7 +4392,7 @@
 					- Objetos en Arsenal y vehículos del Garaje.&lt;br/&gt;
 					Qué NO se graba: posiciones de la IA, objetos dentro de vehículos, IA reclutada (parte de su coste es reembolsado).&lt;br/&gt; Para tener múltiples guardados y mantener tu equipo al desconectarte dentro de 100m desde el HQ, ejecuta el mod inidbi2 de code34.
 				</Spanish>
-		    </Key>
+			</Key>
 			<Key ID="STR_BR_1WELCOME">
 				<Original>1 Welcome</Original>
 				<Russian>1 Добро пожаловать</Russian>
@@ -4417,7 +4416,7 @@
 					German keyboard = press Z, shift+Z … instead.&lt;br/&gt;
 
 					For more info and tips check categories on the left side.&lt;br/&gt;
-                </Original>
+				</Original>
 				<Russian>
 					Antistasi - это длительная кампания-симулятор партизанской войны в неравных условиях. Возможно что потребуется не одна неделя, чтобы закончить кампанию, однако именно это и доставляет удовольствие от игры - маленькими шагами прийти к большой победе.&lt;br/&gt;&lt;br/&gt;
 
@@ -4537,7 +4536,7 @@
 
 					La ubicación de la sede se revela al CSAT sólo si un traidor logra huir a una base enemiga. Además, el fuego de mortero es una forma fácil de triangularla, espera asaltos agresivos en ambos casos.
 				</Spanish>
-		    </Key>
+			</Key>
 			<Key ID="STR_BR_BT1TIB">
 				<Original>Top Info Bar</Original>
 				<Russian>Верхняя панель информации</Russian>
@@ -4548,7 +4547,7 @@
 					The Info Bar displays campaign info, resources and undercover status.&lt;br/&gt;&lt;br/&gt;
 
 					-Commander: the current Commander. ‘None’ is displayed when membership is enabled and there isn’t any member online who is eligible to command. In this case, the following features will be frozen: economy per tick, main enemy response such as QRFs and Attacks and random mission spawns.&lt;br/&gt;&lt;br/&gt;
-                    Press resign on Y (US-keyboard layout) menu when commander ‘none’ will check for a new commander.&lt;br/&gt;
+					Press resign on Y (US-keyboard layout) menu when commander ‘none’ will check for a new commander.&lt;br/&gt;
 
 					-Rank: affects the courage of your AI and how precisely they will execute orders. Progress rank by killing enemies and, more effectively, by completing missions. In multiplayer you can also donate your money to FIA to gain ranks.&lt;br/&gt;
 					Player Rank is saved automatically in multiplayer upon disconnect&lt;br/&gt;&lt;br/&gt;
@@ -4577,7 +4576,7 @@
 					В информационной строке отображается информация о кампании, ресурсах и секретном статусе.&lt;br/&gt;&lt;br/&gt;
 
 					- Командир: текущий Командир. Отображается «Нет», если членство включено, но нет ни одного члена онлайн, который имеет право на командование. В этом случае будут заморожены следующие функции: экономика (начисление HR и денег), реакция врага в виде направления отрядов быстрого реагирования (ОБР), атаки противника и появление случайных миссий.&lt;br/&gt;&lt;br/&gt;
-                       Нажмите кнопку «Y» (раскладка клавиатуры США), когда Командир «Отсутствует», будет проведена проверка на нового Командира.&lt;br/&gt;
+					   Нажмите кнопку «Y» (раскладка клавиатуры США), когда Командир «Отсутствует», будет проведена проверка на нового Командира.&lt;br/&gt;
 					- Ранг: влияет на отвагу Ваших ИИ и то, насколько эффективно они будут выполнять приказы. Ранг возрастает от убийства противников, но больший рост ранга обеспечивается успешным выполнением миссий.&lt;br/&gt;
 					В мультиплеере можно тратить свои деньги FIA для повышения ранга.&lt;br/&gt;&lt;br/&gt;
 
@@ -4604,7 +4603,7 @@
 				<Spanish>La Barra de Información muestra detalles de la campaña, recursos y estado de Incógnito.&lt;br/&gt;&lt;br/&gt;
 
 					-Comandante: El Comandante actual. Se mostrará ‘Ninguno’ cuando la membresía esté activada y no haya ningún miembro online electo para el puesto. En este caso, las siguientes características se detendrán: economía por ronda, respuesta principal del enemigo, como QRF, ataques y generación de misiones aleatorias.&lt;br/&gt;&lt;br/&gt;
-                    Pulsa Renunciar en el menú Y (Teclado-US) cuando se muestre 'Ninguno' para buscar un nuevo Comandante.&lt;br/&gt;
+					Pulsa Renunciar en el menú Y (Teclado-US) cuando se muestre 'Ninguno' para buscar un nuevo Comandante.&lt;br/&gt;
 
 					-Rango: afecta el valor de tu IA y con qué efectividad ejecutarán las órdenes. Aumenta tu rango matando enemigos y, mas efectivo, completando misiones. En multijugador también puedes donar tu dinero a la FIA para ganar Rango.&lt;br/&gt;
 					El Rango del jugador se guarda automáticamente en multijugador al desconectar.&lt;br/&gt;&lt;br/&gt;
@@ -4713,7 +4712,7 @@
 
 					Sin embargo, Antistasi realmente brilla si juegas con amigos, ¡así que únete a Servidores Oficiales Antistasi o crea otros nuevos!
 				</Spanish>
-		    </Key>
+			</Key>
 			<Key ID="STR_BR_BT4JAS">
 				<Original>Jeroen Arsenal System</Original>
 				<Russian>Арсенал JAS</Russian>
@@ -4789,7 +4788,7 @@
 
 					Equipo IA (En Proceso): La IA reclutada usará el equipo disponible en el Arsenal dependiendo de su clase. Esto no reducirá la cantidad real de elementos almacenados.
 				</Spanish>
-		    </Key>
+			</Key>
 			<Key ID="STR_BR_BT5TA">
 				<Original>Town allegiance</Original>
 				<Russian>Уровень поддержки населения</Russian>
@@ -4841,7 +4840,7 @@
 
 					Las ciudades que apoyan al enemigo tendrán patrullas enemigas a su alrededor, y las ciudades que te apoyan tendrán una pequeña patrulla aliada en la zona.
 				</Spanish>
-		    </Key>
+			</Key>
 			<Key ID="STR_BR_BT6HT">
 				<Original>Holding territories</Original>
 				<Russian>Удержание территории</Russian>
@@ -4926,7 +4925,7 @@
 
 					Ten en cuenta que solicitar Propaganda en una ciudad que tiene menos del 12% de apoyo al FIA generará una misión de Entrega de Panfletos. La verdadera Propaganda genera un camión de propaganda con una estación.
 				</Spanish>
-		    </Key>
+			</Key>
 			<Key ID="STR_BR_AF0">
 				<Original>Antistasi features</Original>
 				<Russian>Функции Antistasi</Russian>
@@ -5000,10 +4999,10 @@
 				</Spanish>
 			</Key>
 			<Key ID="STR_BR_AF2AIME">
-		        <Original>AI Management / Enhancements</Original>
+				<Original>AI Management / Enhancements</Original>
 				<Russian>Контроль ИИ</Russian>
 				<Spanish>Administrar IA / Mejoras</Spanish>
-		    </Key>
+			</Key>
 			<Key ID="STR_BR_AF_AIME">
 				<Original>
 					Commander and server members can recruit AI at the Flag or add garrison to conquered objectives. Those guys starts with civilian clothes and their weapons correspond to a random choice between their class weapons present into the Arsenal, at this modding stage they don’t substract the weapon from it nor they require a threshold amount like it was with original Arsenal system. &lt;br/&gt;&lt;br/&gt;
@@ -5161,12 +5160,12 @@
 				<Original>
 					Crates, ammoboxes and several others can be interacted and Load to vehicle, an animation will move the object into the vehicle locking up some seats if necessary.&lt;br/&gt;&lt;br/&gt;
 
-                    Bring supplies, steal enemy ammobox, move Arsenal and Garage when relocating HQ thanks to this function without using any additional mod.&lt;br/&gt;&lt;br/&gt;
+					Bring supplies, steal enemy ammobox, move Arsenal and Garage when relocating HQ thanks to this function without using any additional mod.&lt;br/&gt;&lt;br/&gt;
 
 					Note that supplies have to be unloaded to properly start the delivery, boats can be loaded too.
 				</Original>
 				<Russian>
-				    Ящики, боеприпасы и некоторые другие объекты, которые можно загружать в автомобиль могут блокировать посадочные места в транспорте - ящик с боеприпасами в грузовике заблокирует посадочные места в кузове.&lt;br/&gt;&lt;br/&gt;
+					Ящики, боеприпасы и некоторые другие объекты, которые можно загружать в автомобиль могут блокировать посадочные места в транспорте - ящик с боеприпасами в грузовике заблокирует посадочные места в кузове.&lt;br/&gt;&lt;br/&gt;
 
 					Теперь возможен перенос припасов, кража вражеских боеприпасов, перемещение Арсенала и Гаража при перемещении Штаба благодаря этой функции без использования какого-либо дополнительного мода.&lt;br/&gt;&lt;br/&gt;
 
@@ -5175,7 +5174,7 @@
 				<Spanish>
 					Cajones, cajas de munición y algunas objetos más pueden cargarse en los vehículos, una animación moverá el objeto dentro del vehículo ocupando algunos asientos si es necesario.&lt;br/&gt;&lt;br/&gt;
 
-                    Gracias a esta función, podrás traer suministros, robar cajas de munición enemigas, mover el Arsenal y Garaje cuando reposicionemos el HQ sin necesidad de instalar ningún mod.&lt;br/&gt;&lt;br/&gt;
+					Gracias a esta función, podrás traer suministros, robar cajas de munición enemigas, mover el Arsenal y Garaje cuando reposicionemos el HQ sin necesidad de instalar ningún mod.&lt;br/&gt;&lt;br/&gt;
 
 					En proceso.
 				</Spanish>
@@ -5268,7 +5267,7 @@
 					Se puede reducir pidiendo a la facción aliada que asalte los emplazamientos militares enemigos lejos de Altis.&lt;br/&gt;
 					Si el apoyo enemigo es muy alto, su Facción de apoyo empezará a bombardear ciudades. Si destruyen 8 ciudades habrás perdido la campaña.
 				</Spanish>
-		    </Key>
+			</Key>
 			<Key ID="STR_BR_AF10FS">
 				<Original>Frontline system</Original>
 				<Russian>Система Передовой</Russian>
@@ -5277,15 +5276,15 @@
 			<Key ID="STR_BR_AF_FS">
 				<Original>
 				Depending on controlled objectives, towns excluded, the enemy will build roadblocks and reinforce more outposts.&lt;br/&gt;
-                WiP
+				WiP
 				</Original>
 				<Russian>
 				Зависит от контролируемых объектов, за исключением городов - противник будет строить БП и разворачивать новые ОП (опорные пункты).&lt;br/&gt;
-                Работа в процессе
+				Работа в процессе
 				</Russian>
 				<Spanish>
 					Dependiendo de los objetivos controlados, sin contar ciudades, el enemigo desplegará controles de carretera y reforzará más sus puestos avanzados.&lt;br/&gt;
-                En proceso.
+				En proceso.
 				</Spanish>
 			</Key>
 			<Key ID="STR_BR_AF5SM">
