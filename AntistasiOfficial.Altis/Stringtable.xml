@@ -1122,7 +1122,6 @@
 				<Russian>Возврат очков HR, если бойцы целы</Russian>
 				<Spanish>Recupera HR si las unidades siguen operativas.</Spanish>
 			</Key>
-			</Key>
 			<Key ID="STR_UI_EMP_MNAP_TEXT">
 				<Original>Deploy Minefield (AP)</Original>
 				<Russian>Минное поле (ПП)</Russian>
@@ -3801,7 +3800,6 @@
 				<Original>Delete All</Original>
 				<Russian>Удалить всё</Russian>
 				<Spanish>Borrar Todo</Spanish>
-			</Key>
 			</Key>
 			<Key ID="STR_D_CIVCON">
 				<Original>Civ Config</Original>
