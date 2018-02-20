@@ -2,13 +2,13 @@
 	<Package name="MissionNames">
 		<Container name="MissionNames_0">
 			<Key ID="STR_MISSION_NAME_SQM">
-				<Original>[SP/CO] - Antistasi 1.7.19b6 Altis Blufor</Original>
+				<Original>[SP/CO]- Antistasi 1.7.19B7 Altis Blufor</Original>
 			</Key>
 			<Key ID="STR_MISSION_NAME_INITVAR_SQF">
-				<Original>v 1.7.19b6 -- modded</Original>
+				<Original>v 1.7.19B7</Original>
 			</Key>
 			<Key ID="STR_MISSION_NAME_EXT">
-				<Original>Antistasi - modified 1.7.19b6</Original>
+				<Original>Antistasi 1.7.19B7</Original>
 			</Key>
 		</Container>
 	</Package>

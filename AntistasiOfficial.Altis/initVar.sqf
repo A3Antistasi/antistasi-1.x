@@ -6,9 +6,9 @@ diag_log "InitVar.sqf: start";
 //You do not have enough balls to make any modification and after making a Bug report because something is wrong. You don't wanna be there. Believe me.
 //Not commented lines cannot be changed.
 //Don't touch them.
-antistasiVersion = localize "STR_MISSION_NAME_INITVAR_SQF"; //"v 1.7.19b6 -- modded";
+antistasiVersion = localize "STR_MISSION_NAME_INITVAR_SQF";
 
-servidoresOficiales = ["Antistasi Official: Main","Antistasi Official: Hardcore", "Antistasi Official: USA"];//I'm going to remove this
+servidoresOficiales = ["Antistasi Official: Main","Antistasi Official: Hardcore", "Antistasi Official: USA"];//No longer effect
 
 debug = false;//debug variable, not useful for everything..
 
