@@ -32,6 +32,7 @@ if (_type != "delete") then {
 		if (_onRoad) then {
 			_permission = ["RB"] call fnc_BE_permission;
 			_text = "We cannot maintain any additional roadblocks.";
+
 		} else {
 			_permission = ["WP"] call fnc_BE_permission;
 			_text = "We cannot maintain any additional watchposts.";
@@ -64,11 +65,12 @@ if (_type != "delete") then {
 
 _resourcesFIA = server getVariable ["resourcesFIA",0];
 _hrFIA = server getVariable ["hr",0];
+if (_permission) then {
+	if (((_resourcesFIA < _cost) OR (_hrFIA < _hr)) AND (_type != "delete")) exitWith {hint format [localize "STR_TSK_TD_BEMP_BLD_COST",_hr,_cost]};
 
-if (((_resourcesFIA < _cost) OR (_hrFIA < _hr)) AND (_type != "delete")) exitWith {hint format [localize "STR_TSK_TD_BEMP_BLD_COST",_hr,_cost]};
+	if (_type != "delete") then {
+		[-_hr,-_cost] remoteExec ["resourcesFIA",2];
+	};
 
-if (_type != "delete") then {
-	[-_hr,-_cost] remoteExec ["resourcesFIA",2];
+	[_type,_position] remoteExec ["crearPuestosFIA",2];
 };
-
-[_type,_position] remoteExec ["crearPuestosFIA",2];
