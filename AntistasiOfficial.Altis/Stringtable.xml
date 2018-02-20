@@ -4179,7 +4179,7 @@
 					Some mods are fully integrated in Antistasi; when loaded, these mods will change the warring factions as a whole, complete with different vehicles, gear and mechanics.&lt;br/&gt;
 					At the moment, these are: RHS: (AFRF, USAF, GREF), TFAR and ACE3.&lt;br/&gt;&lt;br/&gt;
 
-					ACE settings are given by default however they can be changed permanently in dedicated server by adding class to profile.arma3profile, TFAR frequency syncronization can be set before starting the mission in configure addons check github for further informations.&lt;br/&gt;&lt;br/&gt;
+					ACE settings are given by default however they can be changed by server admin or singleplayer by pressing escape, config, addons options. There you can change even medical system mode, ACE view distance etc. &lt;br/&gt;&lt;br/&gt;
 
 					Items from these integrated mods are also included in Supply Drops and Ammoboxes.&lt;br/&gt;
 					Other mods, adding new weapons or other gear for instance, will only be available in game by buying them at the Sketchy Irishman.&lt;br/&gt;&lt;br/&gt;
@@ -4237,13 +4237,13 @@
 				<Original>
 					By interacting with the physical Map asset at HQ you can set:&lt;br/&gt;&lt;br/&gt;
 
-					Civilian spawn rate: we suggest a value between 1% and 10% (5% is default); they count as AI and as such, reduce performance. Keep in mind that below 1% no civilian vehicles will spawn, so no free transports.&lt;br/&gt;&lt;br/&gt;
+					Civilian spawn rate: we suggest a value between 1% and 10% (5% is default); they count as AI and as such, reduce performance. Keep in mind that civilian vehicles amount can't be controlled so far, maybe future updates.&lt;br/&gt;&lt;br/&gt;
 
-					Spawn distance: 1 km is optimal, higher values might let you long range snipe, but game performance might suffer. &lt;br/&gt;&lt;br/&gt;
+					Spawn distance: 1 km is optimal, higher values might let you long range snipe, but game performance will suffer. &lt;br/&gt;&lt;br/&gt;
 
-					Garbage clean: corpses and items on the ground consume memory, clearing these might freeze the game for a short while but FPS should improve. (Some garbage already has an auto-delete timer.)&lt;br/&gt;&lt;br/&gt;
+					Garbage clean: corpses and items on the ground consume memory, clearing these instantly will improve performances, consider people might dislike unexpected clean especially if they're looting. (Some garbage already has an auto-delete timer.)&lt;br/&gt;&lt;br/&gt;
 
-					FPS limiter: below the threshold civilians will minimally spawn. &lt;br/&gt;&lt;br/&gt;
+					FPS limiter: below the threshold civilians will minimally spawn. This function is not much reliable &lt;br/&gt;&lt;br/&gt;
 				</Original>
 				<Russian>
 					Взаимодействуя с Картой в Штабе, Вы можете установить:&lt;br/&gt;&lt;br/&gt;
@@ -4320,7 +4320,7 @@
 					Because of this, try to converge people to the same AO and avoid caching in too many enemies at once, as this will result in a poor game experience with low FPS or AI not reacting as they should.&lt;br/&gt;
 					Also, try to place HQ and Camps outside the spawning radius of towns and emplacements so they won't be cached-in permanently.&lt;br/&gt;&lt;br/&gt;
 
-					Note that servers can add a Headless Client which will dramatically increase the handling of AI. There are 3 HC slots available.
+					Note that servers can add a Headless Client which will dramatically increase the handling of AI. There are 3 HC slots available AI will be assigned proportionally giving more priority to HC than the main server.
                 </Original>
 				<Russian>
 					Петрос, игроки, контролируемые ИИ (также освобожденные беженцы, бойцы, отряды и подразделения НАТО/ВМФ) вызывают появление (спавн) врагов и гражданских лиц в радиусе 1 км - это радиус кеширования. Воздушный транспорт НАТО не вызывает спавна врагов, чтобы сохранить производительность. (В планах добавить возможность уничтожения самолета при полете над вражеской территорией) &lt;br/&gt;&lt;br/&gt;
@@ -4412,6 +4412,7 @@
 					Multiplayer notes:&lt;br/&gt;
 					- Parameters are accessible after selecting the mission in the role selection screen top right before the mission is started.&lt;br/&gt;
 					- The previous save is automatically loaded unless admin/host change Parameters enabling the fresh start&lt;br/&gt;
+					- Parameters are very important, check them out, there will be useful settings&lt;br/&gt;
 
 					Special keys:&lt;br/&gt;
 					US keyboard = press‘Y’, ‘shift+Y’, ‘Delete’, and ‘U’ to access vital functions, be sure to unbind those keys from your custom controls otherwise they won’t work.&lt;br/&gt;&lt;br/&gt;
@@ -4742,7 +4743,7 @@
 
 					- To Crate: Moves all the items in the Arsenal Crate to the JAS inventory.&lt;br/&gt;&lt;br/&gt;
 
-					AI Gear (WiP): recruited AI spawn with gear available in the Arsenal depending on their class. This won’t reduce the actual amount of stored items.
+					AI Gear: recruited AI spawn with gears available above a threshold in the Arsenal depending on their class. This won’t reduce the actual amount of stored items. Clothes depends on FIA Army Level.
 				</Original>
 				<Russian>
 					Antistasi имеет собственную уникальную систему - Арсенал JAS. Загрузка предыдущей сессии удалит весь инвентарь внутри транспортных средств. Сохраняется только содержимое виртуального Арсенала и инвентарь Ящика Арсенала. &lt;br/&gt;&lt;br/&gt;
@@ -5164,7 +5165,7 @@
 
                     Bring supplies, steal enemy ammobox, move Arsenal and Garage when relocating HQ thanks to this function without using any additional mod.&lt;br/&gt;&lt;br/&gt;
 
-					Wip
+					Note that supplies have to be unloaded to properly start the delivery, boats can be loaded too.
 				</Original>
 				<Russian>
 				    Ящики, боеприпасы и некоторые другие объекты, которые можно загружать в автомобиль могут блокировать посадочные места в транспорте - ящик с боеприпасами в грузовике заблокирует посадочные места в кузове.&lt;br/&gt;&lt;br/&gt;
@@ -5640,7 +5641,7 @@
 
 					- HQ fortifications: consider these cosmetics, as the HQ isn’t supposed to be a fortified position.&lt;br/&gt;
 					Lantern to illuminate the base a bit better than the Campfire.&lt;br/&gt;
-					Spawn pad lets you set a default spawn location for vehicles.&lt;br/&gt;
+					Helipad is just mark a place to land helicopters.&lt;br/&gt;
 					Camo net occludes Petros and the camp from enemy aircraft, but might collapse or cause mission vehicles to explode upon spawn if placed too close to campfire, so be really careful.
 				</Original>
 				<Russian>
@@ -5679,13 +5680,15 @@
 			</Key>
 			<Key ID="STR_BR_CM_M">
 				<Original>
-					Some sticky situations can be fixed by the commander or admin, access them from Y menu.&lt;br/&gt;&lt;br/&gt;
+					Some sticky situations can be fixed by the commander or admin, access them from Y menu, right side middle button (admin menu), Maintainance.&lt;br/&gt;&lt;br/&gt;
 
 					- Reset Petros Position: to fix the ‘too far from HQ’ bug when trying to move assets around the HQ.&lt;br/&gt;&lt;br/&gt;
 
 					- Reset Static positions: static weapons around HQ can be moved like other assets for a limited time, if the timer expires, use this command to make them movable again.&lt;br/&gt;&lt;br/&gt;
 
-					- Reset HQ: reset HQ location around Petros’ position. Note: if Petros was moved inside a building by ACE cable tie, collision bugs will occur.
+					- Reset HQ: reset HQ location around Petros’ position. Note: if Petros was moved inside a building by ACE cable tie, collision bugs will occur.&lt;br/&gt;&lt;br/&gt;
+
+					Also, Y menu, right side middle button (admin menu), Details let you restrict gear below a threshold for non members and, after changing ACE medical system, reinitalise the items.
 				</Original>
 				<Russian>
 					Некоторые неприятные ситуации могут быть исправлены Командиром или администратором: меню «Y» -> Меню Командира -> Сервис.&lt;br/&gt;&lt;br/&gt;
