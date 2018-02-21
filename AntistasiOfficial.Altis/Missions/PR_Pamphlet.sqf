@@ -182,7 +182,7 @@ while {(alive _missionVehicle) AND (dateToNumber date < _endTime) AND (_currentD
 	if !(_proceed) then {
 		_proceed = true;
 		_currentDrop = _targetBuildings select _currentDropCount;
-		_task = ["PR",[side_blue,civilian],[format [_tskDesc_drop,_targetName,numberToDate [2035,_endTime] select 3,numberToDate [2035,_endTime] select 4],_tskTitle,_marker], position _currentDrop,"ASSIGNED",5,true,true,"Heal"] call BIS_fnc_setTask;
+		_task = ["PR",[side_blue,civilian],[[_tskDesc_drop,_targetName,numberToDate [2035,_endTime] select 3,numberToDate [2035,_endTime] select 4],_tskTitle,_marker], position _currentDrop,"ASSIGNED",5,true,true,"Heal"] call BIS_fnc_setTask;
 
 		_patGroup = _allGroups select 0;
 		if (((leader _patGroup) distance2D (position _currentDrop)) > ((leader (_allGroups select 1)) distance2D (position _currentDrop))) then {

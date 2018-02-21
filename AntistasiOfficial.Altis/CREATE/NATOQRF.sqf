@@ -42,7 +42,7 @@ _tiempolim = 30;
 _fechalim = [date select 0, date select 1, date select 2, date select 3, (date select 4) + _tiempolim];
 _fechalimnum = dateToNumber _fechalim;
 
-_tsk = ["NATOQRF",[side_blue,civilian],[format ["Our Commander asked %3 for reinforcements near %1. Their troops will depart from %2.",_destName,_origName, A3_Str_BLUE],format ["%1 QRF", A3_Str_BLUE],_mrk],_dest,"CREATED",5,true,true,"Move"] call BIS_fnc_setTask;
+_tsk = ["NATOQRF",[side_blue,civilian],[["Our Commander asked %3 for reinforcements near %1. Their troops will depart from %2.",_destName,_origName, A3_Str_BLUE],["%1 QRF", A3_Str_BLUE],_mrk],_dest,"CREATED",5,true,true,"Move"] call BIS_fnc_setTask;
 misiones pushBackUnique _tsk; publicVariable "misiones";
 
 // cost: 10 NATO
@@ -202,10 +202,10 @@ else {
 waitUntil {sleep 10; (dateToNumber date > _fechalimnum) or ({alive _x} count _soldados == 0)};
 
 if (dateToNumber date > _fechalimnum) then {
-	_tsk = ["NATOQRF",[side_blue,civilian],[format ["Our Commander asked %3 for reinforcements near %1. Their troops will depart from %2",_destName,_origName, A3_Str_BLUE],format ["%1 QRF", A3_Str_BLUE],_mrk],_dest,"SUCCEEDED",5,true,true,"Move"] call BIS_fnc_setTask;
+	_tsk = ["NATOQRF",[side_blue,civilian],[["Our Commander asked %3 for reinforcements near %1. Their troops will depart from %2",_destName,_origName, A3_Str_BLUE],["%1 QRF", A3_Str_BLUE],_mrk],_dest,"SUCCEEDED",5,true,true,"Move"] call BIS_fnc_setTask;
 }
 else {
-	_tsk = ["NATOQRF",[side_blue,civilian],[format ["Our Commander asked %3 for reinforcements near %1. Their troops will depart from %2",_destName,_origName, A3_Str_BLUE],format ["%1 QRF", A3_Str_BLUE],_mrk],_dest,"FAILED",5,true,true,"Move"] call BIS_fnc_setTask;
+	_tsk = ["NATOQRF",[side_blue,civilian],[["Our Commander asked %3 for reinforcements near %1. Their troops will depart from %2",_destName,_origName, A3_Str_BLUE],["%1 QRF", A3_Str_BLUE],_mrk],_dest,"FAILED",5,true,true,"Move"] call BIS_fnc_setTask;
 	[-5,0] remoteExec ["prestige",2];
 };
 

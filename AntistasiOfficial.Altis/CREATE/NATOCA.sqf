@@ -16,7 +16,7 @@ _orig = getMarkerPos _origen;
 _nombredest = [_marcador] call AS_fnc_localizar;
 _nombreorig = "the NATO Carrier";
 if (_origen!= "spawnNATO") then {_nombreorig = [_origen] call AS_fnc_localizar};
-_tsk = ["NATOCA",[side_blue,civilian],[format ["Our Commander asked %3 for an attack on %1. Help them in order to have success in this operation. Their attack will depart from %2",_nombredest,_nombreorig, A3_Str_BLUE],format ["%1 Attack", A3_Str_BLUE],_marcador],_posicion,"CREATED",5,true,true,"Attack"] call BIS_fnc_setTask;
+_tsk = ["NATOCA",[side_blue,civilian],[["Our Commander asked %3 for an attack on %1. Help them in order to have success in this operation. Their attack will depart from %2",_nombredest,_nombreorig, A3_Str_BLUE],["%1 Attack", A3_Str_BLUE],_marcador],_posicion,"CREATED",5,true,true,"Attack"] call BIS_fnc_setTask;
 misiones pushBackUnique _tsk; publicVariable "misiones";
 _soldados = [];
 _vehiculos = [];
@@ -186,7 +186,7 @@ sleep 20;
 waitUntil {sleep 1; (_marcador in mrkFIA) or ({alive _x} count _soldados < _solMax)};
 
 if ({alive _x} count _soldados < _solMax) then {
-	_tsk = ["NATOCA",[side_blue,civilian],[format ["Our Commander asked %3 for an attack on %1. Help them in order to have success in this operation. Their attack will depart from %2",_nombredest,_nombreorig, A3_Str_BLUE],format ["%1 Attack", A3_Str_BLUE],_marcador],_posicion,"FAILED",5,true,true,"Attack"] call BIS_fnc_setTask;
+	_tsk = ["NATOCA",[side_blue,civilian],[["Our Commander asked %3 for an attack on %1. Help them in order to have success in this operation. Their attack will depart from %2",_nombredest,_nombreorig, A3_Str_BLUE],["%1 Attack", A3_Str_BLUE],_marcador],_posicion,"FAILED",5,true,true,"Attack"] call BIS_fnc_setTask;
 	[-10,0] remoteExec ["prestige",2];
 };
 
