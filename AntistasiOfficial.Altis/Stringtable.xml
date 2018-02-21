@@ -403,12 +403,12 @@
 			</Key>
 			<Key ID="STR_GL_MAP_RS">
 				<Original>Resources</Original>
-				<Russian>Ресурсы</Russian>
+				<Russian>Ресурс</Russian>
 				<Spanish>Recursos</Spanish>
 			</Key>
 			<Key ID="STR_GL_MAP_FAC">
 				<Original>Factory</Original>
-				<Russian>Завод</Russian>
+				<Russian>Фабрика</Russian>
 				<Spanish>Fábrica</Spanish>
 			</Key>
 			<Key ID="STR_GL_MAP_AA">
@@ -433,7 +433,7 @@
 			</Key>
 			<Key ID="STR_GL_MAP_RT">
 				<Original>Radio Tower</Original>
-				<Russian>Радиовышка</Russian>
+				<Russian>Р/вышка</Russian>
 				<Spanish>Torre de Radio</Spanish>
 			</Key>
 			<Key ID="STR_GL_MAP_OP1">
@@ -450,6 +450,18 @@
 				<Original>%2 Airport: %1</Original>
 				<Russian>А/база %2: %1</Russian>
 				<Spanish>Aeropuerto %2: %1</Spanish>
+			</Key>
+			<Key ID="STR_GL_AAFOP">
+				<Original>AAF Outpost</Original>
+				<Russian>ОП AAF</Russian>
+			</Key>
+			<Key ID="STR_GL_AAFBS">
+				<Original>AAF Base</Original>
+				<Russian>В/база AAF</Russian>
+			</Key>
+			<Key ID="STR_GL_AAFAB">
+				<Original>AAF Airport</Original>
+				<Russian>А/база AAF</Russian>
 			</Key>
 		</Container>
 	</Package>
@@ -1924,6 +1936,80 @@
 				<Original>No emplacement nearby.</Original>
 				<Russian>Поблизости нет места.</Russian>
 				<Spanish>No hay emplazamientos cercanos.</Spanish>
+			</Key>
+		</Container>
+	</Package>
+	<Package name="Notifications">
+		<Container name="Sucess">
+			<Key ID="STR_NTS_AIRPORT_TKN">
+				<Original>Airport Taken</Original>
+				<Russian>Авиабаза захвачена</Russian>
+			</Key>
+			<Key ID="STR_NTS_BASE_TKN">
+				<Original>Base Taken</Original>
+				<Russian>Военная база захвачена</Russian>
+			</Key>
+			<Key ID="STR_NTS_POWER_TKN">
+				<Original>Powerplant Taken</Original>
+				<Russian>Электростанция захвачена</Russian>
+			</Key>
+			<Key ID="STR_NTS_OP_TKN">
+				<Original>Outpost Taken</Original>
+				<Russian>Опорный пункт захвачен</Russian>
+			</Key>
+			<Key ID="STR_NTS_SEA_TKN">
+				<Original>Seaport Taken</Original>
+				<Russian>Порт захвачен</Russian>
+			</Key>
+			<Key ID="STR_NTS_FACT_TKN">
+				<Original>Factory Taken</Original>
+				<Russian>Фабрика захвачена</Russian>
+			</Key>
+			<Key ID="STR_NTS_RES_TKN">
+				<Original>Resource Taken</Original>
+				<Russian>Ресурс захвачен</Russian>
+			</Key>			
+		</Container>
+		<Container name="Failed">
+			<Key ID="STR_NTS_RES_OUT_POWER">
+				<Original>Resource out of Power</Original>
+				<Russian>Ресурс обесточен</Russian>
+			</Key>
+			<Key ID="STR_NTS_REB_AAF">
+				<Original>%1 rebuilt by AAF</Original>
+				<Russian>Противник восстановил %1</Russian>
+			</Key>
+			<Key ID="STR_NTS_DESTR">
+				<Original>%1 Destroyed</Original>
+				<Russian>%1 уничтожен</Russian>
+			</Key>
+			<Key ID="STR_NTS_OPLOST">
+				<Original>Outpost Lost</Original>
+				<Russian>Опорный пункт потерян</Russian>
+			</Key>
+			<Key ID="STR_NTS_SPLOST">
+				<Original>Sea Port Lost</Original>
+				<Russian>Порт потерян</Russian>
+			</Key>
+			<Key ID="STR_NTS_POWLOST">
+				<Original>Powerplant Lost</Original>
+				<Russian>Электростанция потеряна</Russian>
+			</Key>
+			<Key ID="STR_NTS_RESLOST">
+				<Original>Resource Lost</Original>
+				<Russian>Ресурс потерян</Russian>
+			</Key>
+			<Key ID="STR_NTS_FACLOST">
+				<Original>Factory Lost</Original>
+				<Russian>Фабрика потеряна</Russian>
+			</Key>
+			<Key ID="STR_NTS_BASELOST">
+				<Original>Base Lost</Original>
+				<Russian>Военная база потеряна</Russian>
+			</Key>
+			<Key ID="STR_NTS_ABLOST">
+				<Original>Airport Lost</Original>
+				<Russian>Авиабаза потеряна</Russian>
 			</Key>
 		</Container>
 	</Package>
