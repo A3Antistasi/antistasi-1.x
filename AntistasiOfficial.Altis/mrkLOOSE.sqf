@@ -38,18 +38,18 @@ _mrk setMarkerColor IND_marker_colour;
 	if ((not (_marcador in bases)) and (not (_marcador in aeropuertos))) then {
 		[10,-10,_posicion] remoteExec ["AS_fnc_changeCitySupport",2];
 		if (_marcador in puestos) then {
-			_mrk setMarkerText "AAF Outpost";
-			{["TaskFailed", ["", "Outpost Lost"]] call BIS_fnc_showNotification} remoteExec ["call", 0];
+			_mrk setMarkerText localize "STR_GL_AAFOP";
+			{["TaskFailed", ["", localize "STR_NTS_OPLOST"]] call BIS_fnc_showNotification} remoteExec ["call", 0];
 		};
 		if (_marcador in puertos) then {
-			_mrk setMarkerText "Sea Port";
-			{["TaskFailed", ["", "Sea Port Lost"]] call BIS_fnc_showNotification} remoteExec ["call", 0];
+			_mrk setMarkerText localize "STR_GL_MAP_SP";
+			{["TaskFailed", ["", localize "STR_NTS_SPLOST"]] call BIS_fnc_showNotification} remoteExec ["call", 0];
 		};
 	};
 	if (_marcador in power) then {
 		[0,0] remoteExec ["prestige",2];
-		_mrk setMarkerText "Power Plant";
-		{["TaskFailed", ["", "Powerplant Lost"]] call BIS_fnc_showNotification} remoteExec ["call", 0];
+		_mrk setMarkerText localize "STR_GL_MAP_PP";
+		{["TaskFailed", ["", localize "STR_NTS_POWLOST"]] call BIS_fnc_showNotification} remoteExec ["call", 0];
 		[_marcador] spawn AS_fnc_powerReorg;
 	};
 
@@ -57,11 +57,11 @@ _mrk setMarkerColor IND_marker_colour;
 		[0,-8,_posicion] remoteExec ["AS_fnc_changeCitySupport",2];
 		[0,0] remoteExec ["prestige",2];
 		if (_marcador in recursos) then {
-			_mrk setMarkerText "Resource";
-			{["TaskFailed", ["", "Resource Lost"]] call BIS_fnc_showNotification} remoteExec ["call", 0];
+			_mrk setMarkerText localize "STR_GL_MAP_RS";
+			{["TaskFailed", ["", localize "STR_NTS_RESLOST"]] call BIS_fnc_showNotification} remoteExec ["call", 0];
 		} else {
-			_mrk setMarkerText "Factory";
-			{["TaskFailed", ["", "Factory Lost"]] call BIS_fnc_showNotification} remoteExec ["call", 0];
+			_mrk setMarkerText localize "STR_GL_MAP_FAC";
+			{["TaskFailed", ["", localize "STR_NTS_FACLOST"]] call BIS_fnc_showNotification} remoteExec ["call", 0];
 		};
 	};
 
@@ -72,13 +72,13 @@ _mrk setMarkerColor IND_marker_colour;
 		server setVariable [_marcador,dateToNumber date,true];
 		[_marcador,60] spawn AS_fnc_addTimeForIdle;
 		if (_marcador in bases) then {
-			{["TaskFailed", ["", "Base Lost"]] call BIS_fnc_showNotification} remoteExec ["call", 0];
-			_mrk setMarkerText "AAF Base";
+			{["TaskFailed", ["", localize "STR_NTS_BASELOST"]] call BIS_fnc_showNotification} remoteExec ["call", 0];
+			_mrk setMarkerText localize "STR_GL_AAFBS";
 			APCAAFmax = APCAAFmax + 2;
 	        tanksAAFmax = tanksAAFmax + 1;
 		} else {
-			{["TaskFailed", ["", "Airport Lost"]] call BIS_fnc_showNotification} remoteExec ["call", 0];
-			_mrk setMarkerText "AAF Airport";
+			{["TaskFailed", ["", localize "STR_NTS_ABLOST"]] call BIS_fnc_showNotification} remoteExec ["call", 0];
+			_mrk setMarkerText localize "STR_GL_AAFAB";
 			server setVariable [_marcador,dateToNumber date,true];
 			planesAAFmax = planesAAFmax + 1;
 	        helisAAFmax = helisAAFmax + 2;
