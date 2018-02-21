@@ -13,7 +13,7 @@ _vehiculos = [];
 _civiles = [];
 
 _nombredest = [_mrkDestino] call AS_fnc_localizar;
-_tsk = ["AtaqueAAF",[side_blue,civilian],[format ["CSAT is making a punishment expedition to %1. They will kill everybody there. Defend the city at all costs",_nombredest],"CSAT Punishment",_mrkDestino],getMarkerPos _mrkDestino,"CREATED",10,true,true,"Defend"] call BIS_fnc_setTask;
+_tsk = ["AtaqueAAF",[side_blue,civilian],[["CSAT is making a punishment expedition to %1. They will kill everybody there. Defend the city at all costs",_nombredest],"CSAT Punishment",_mrkDestino],getMarkerPos _mrkDestino,"CREATED",10,true,true,"Defend"] call BIS_fnc_setTask;
 misiones pushBack _tsk; publicVariable "misiones";
 //Ataque de artillería
 [_mrkdestino] spawn artilleria;
@@ -167,14 +167,14 @@ waitUntil {sleep 5;
 
 		if ((({!(captive _x)} count _soldados) < ({captive _x} count _soldados)) or ({alive _x} count _soldados < round (_solMax / 3)) or (time > _tiempo)) then {
 			{_x doMove [0,0,0]} forEach _soldados;
-			_tsk = ["AtaqueAAF",[side_blue,civilian],[format ["CSAT is making a punishment expedition to %1. They will kill everybody there. Defend the city at all costs",_nombredest],"CSAT Punishment",_mrkDestino],getMarkerPos _mrkDestino,"SUCCEEDED",10,true,true,"Defend"] call BIS_fnc_setTask;
+			_tsk = ["AtaqueAAF",[side_blue,civilian],[["CSAT is making a punishment expedition to %1. They will kill everybody there. Defend the city at all costs",_nombredest],"CSAT Punishment",_mrkDestino],getMarkerPos _mrkDestino,"SUCCEEDED",10,true,true,"Defend"] call BIS_fnc_setTask;
 			[-5,20,_posdestino] remoteExec ["AS_fnc_changeCitySupport",2];
 			[10,0] remoteExec ["prestige",2];
 			{[-5,0,_x] remoteExec ["AS_fnc_changeCitySupport",2]} forEach ciudades;
 			{if (isPlayer _x) then {[10,_x] call playerScoreAdd}} forEach ([500,0,_posdestino,"BLUFORSpawn"] call distanceUnits);
 			[10,Slowhand] call playerScoreAdd;
 		} else {
-			_tsk = ["AtaqueAAF",[side_blue,civilian],[format ["CSAT is making a punishment expedition to %1. They will kill everybody there. Defend the city at all costs",_nombredest],"CSAT Punishment",_mrkDestino],getMarkerPos _mrkDestino,"FAILED",10,true,true,"Defend"] call BIS_fnc_setTask;
+			_tsk = ["AtaqueAAF",[side_blue,civilian],[["CSAT is making a punishment expedition to %1. They will kill everybody there. Defend the city at all costs",_nombredest],"CSAT Punishment",_mrkDestino],getMarkerPos _mrkDestino,"FAILED",10,true,true,"Defend"] call BIS_fnc_setTask;
 			[-5,-20,_posdestino] remoteExec ["AS_fnc_changeCitySupport",2];
 			{[0,-5,_x] remoteExec ["AS_fnc_changeCitySupport",2]} forEach ciudades;
 			destroyedCities = destroyedCities + [_mrkDestino];
