@@ -463,6 +463,18 @@
 				<Original>AAF Airport</Original>
 				<Russian>А/база AAF</Russian>
 			</Key>
+			<Key ID="STR_GL_FIARB">
+				<Original>FIA Roadblock</Original>
+				<Russian>БП FIA</Russian>
+			</Key>
+			<Key ID="STR_GL_FIAWP">
+				<Original>FIA Watchpost</Original>
+				<Russian>НП FIA</Russian>
+			</Key>
+			<Key ID="STR_GL_NATORB">
+				<Original>NATO Roadblock</Original>
+				<Russian>БП НАТО</Russian>
+			</Key>
 		</Container>
 	</Package>
 	<Package name="UI">
@@ -1852,6 +1864,22 @@
 				<Russian>Появились сведения о том, что из %1 в это место отправился патруль противника. В патруле будет группа спецназа, которая будет отрабатывать ведение боевых действий в лесу. Мы знаем, что они патрулируют примерно в 150 метрах от этого пункта. Следуйте туда и уничтожьте их. Сделайте это до %2:%3.</Russian>
 				<Spanish>Nos llegan informes sobre una patrulla que ha sido enviada desde %1 a esta ubicación. Habrá un equipo de op. especiales del CSAT en unas maniobras por el bosque. Sabemos que están patrullando un radio de 150 metros desde este punto. Ve allí y elimínalos. Hazlo antes de las %2:%3.</Spanish>
 			</Key>
+			<Key ID="STR_TSK_OPDEPLOY">
+				<Original>Post \ Roadblock Deploy</Original>
+				<Russian>Развернуть БП/НП</Russian>
+			</Key>
+			<Key ID="STR_TSK_DESC_OPDEPLOY">
+				<Original>We are sending a team to establish an Observation Post or Roadblock. Send and cover the team until reaches it's destination.</Original>
+				<Russian>Мы посылаем группу, чтобы развернуть блокпост или наблюдательный пост. Сопровождайте группу, пока она не достигнет места назначения.</Russian>
+			</Key>
+			<Key ID="STR_TSK_CAMPSET">
+				<Original>Camp Setup</Original>
+				<Russian>Развернуть лагерь</Russian>
+			</Key>
+			<Key ID="STR_TSK_DESC_CAMPSET">
+				<Original>We are sending a team to establish a camp. Send and cover the team until reaches it's destination.</Original>
+				<Russian>Мы посылаем группу, чтобы развернуть лагерь. Сопровождайте группу, пока она не достигнет места назначения.</Russian>
+			</Key>
 			<Key ID="STR_TSK_TD_RADIO_DESTROYED">
 				<Original>Radio Tower Destroyed</Original>
 				<Russian>Радиовышка разрушена</Russian>
@@ -1892,10 +1920,22 @@
 				<Russian>%1 подвергся нападению!</Russian>
 				<Spanish>%1 está bajo ataque!</Spanish>
 			</Key>
+			<Key ID="STR_TSK_NATO_ARMOR">
+				<Original>%1 Armor</Original>
+				<Russian>Броня %1</Russian>
+			</Key>
 			<Key ID="STR_TSK_TD_NATO_ARMOR">
 				<Original>Our Commander asked %5 for an armored column departing from %2 with destination %1. Provide whatever support you can. They are scheduled to leave the AO at %3:%4.</Original>
 				<Russian>Наш Командир попросил %5 организовать бронированную колонну, из %2 в %1. Предоставьте любую поддержку. Они планируют покинуть расположение в %3:%4.</Russian>
 				<Spanish>Nuestro comandante solicitó a %5 una columna de blindados que sale desde %2 con destino a %1. Proporcione todo el apoyo que pueda. Se espera su llega en la zona a las %3:%4.</Spanish>
+			</Key>
+			<Key ID="STR_TSK_ATTACK">
+				<Original>%1 Attack</Original>
+				<Russian>Атака %1</Russian>
+			</Key>
+			<Key ID="STR_TSK_DESC_ATTACK">
+				<Original>Our Commander asked %3 for an attack on %1. Help them in order to have success in this operation. Their attack will depart from %2</Original>
+				<Russian>Наш Командир запросил у %3 атаковать %1. Помогите им добиться успеха в этой операции. Их атака начнётся в %2</Russian>
 			</Key>
 			<Key ID="STR_TSK_TD_BEMP_RESTR">
 				<Original>We can only deploy\delete one emplacement at a time.</Original>
@@ -1968,7 +2008,11 @@
 			<Key ID="STR_NTS_RES_TKN">
 				<Original>Resource Taken</Original>
 				<Russian>Ресурс захвачен</Russian>
-			</Key>			
+			</Key>
+			<Key ID="STR_NTS_JOINFIA">
+				<Original>%1 joined FIA</Original>
+				<Russian>%1 перешел на сторону FIA</Russian>
+			</Key>
 		</Container>
 		<Container name="Failed">
 			<Key ID="STR_NTS_RES_OUT_POWER">
@@ -2010,6 +2054,18 @@
 			<Key ID="STR_NTS_ABLOST">
 				<Original>Airport Lost</Original>
 				<Russian>Авиабаза потеряна</Russian>
+			</Key>
+			<Key ID="STR_NTS_JOINAAF">
+				<Original>%1 перешел на сторону AAF</Original>
+				<Russian>%1 перешел на сторону AAF</Russian>
+			</Key>
+			<Key ID="STR_NTS_RBLOST">
+				<Original>Roadblock Lost</Original>
+				<Russian>Блокпост потерян</Russian>
+			</Key>
+			<Key ID="STR_NTS_WPLOST">
+				<Original>Watchpost Lost</Original>
+				<Russian>Наблюдательный пост потерян</Russian>
 			</Key>
 		</Container>
 	</Package>

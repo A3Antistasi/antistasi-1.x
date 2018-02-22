@@ -20,7 +20,7 @@ _fechalimnum = dateToNumber _fechalim;
 _nombreorig = [_origen] call AS_fnc_localizar;
 
 
-_texto = "NATO Roadblock";
+_texto = "STR_GL_NATORB";
 _tipoGrupo = [bluATTeam, side_blue] call AS_fnc_pickGroup;
 _tipoVeh = bluAPC select 0;
 
@@ -84,7 +84,7 @@ if ({(alive _x) and (_x distance _posicionTel < 10)} count units _grupo > 0) the
 
 	_mrk setMarkerType "flag_Spain";
 	//_mrk setMarkerColor "ColorBlue";
-	_mrk setMarkerText _texto;
+	_mrk setMarkerText localize _texto;
 
 
 	waitUntil {sleep 60; (dateToNumber date > _fechalimnum)};
