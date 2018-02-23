@@ -4353,7 +4353,7 @@
 				</Russian>
 				<Spanish>Antistasi se puede disfrutar con la versión vanilla de ArmA 3, o con modificaciones compatibles, siempre y cuando no afecten a la IA.&lt;br/&gt;Algunos mods están completamente integrados en Antistasi; cuando se cargan, estos mods cambiarán las facciones enfrentadas, usará diferentes vehículos, equipo y mecánicas.	&lt;br/&gt;Por el momento son estos: RHS: (AFRF, USAF, GREF), TFAR y ACE3.&lt;br/&gt;	 &lt;br/&gt;
 
-					Los ajustes de ACE están puestos por defecto, sin embargo, pueden cambiarse permanentemente en un servidor dedicado agregando una clase a profile.arma3profile, la sincronización de frecuencias en TFAR se puede establecer antes de comenzar la misión en configurar addons, mira en github para más información.&lt;br/&gt;&lt;br/&gt;
+					Los ajustes de ACE están puestos por defecto, sin embargo, pueden ser cambiados por el admin del servidor o en el modo un jugador pulsando la tecla Esc, entrando en configuración, opciones addons.Ahí puedes cambiar otras opciones como el modo del sistema médico, distancia de visión en ACE, etc.&lt;br/&gt;&lt;br/&gt;
 
 					Los objetos de los mods integrados se incluiran en las entregas de suministros y las cajas de munición.&lt;br/&gt;Otros mods, añaden nuevas armas o otros equipos por ejemplo, pero sólo estaran disponibles si se los comprar al Irlandés Loco.&lt;br/&gt;&lt;br/&gt;
 
@@ -4399,13 +4399,13 @@
 					FPS Ограничитель: Чем меньше порог, тем меньше спавн гражданских лиц. &lt;br/&gt;&lt;br/&gt;
 				<Spanish>Al interactuar con el Mapa físico del HQ puedes establecer:&lt;br/&gt;&lt;br/&gt;
 
-					Porcentaje Spawn de Civiles: aconsejamos un valor entre 1% y 10% (5% por defecto); cuentan como IA y como tal, aumenta el rendimiento. Ten en cuenta que por debajo de 1% no se generarán vehículos civiles, por lo que no tendrás transportes gratis.&lt;br/&gt;&lt;br/&gt;
+					Porcentaje Spawn de Civiles: aconsejamos un valor entre 1% y 10% (5% por defecto); cuentan como IA y como tal, aumenta el rendimiento. Ten en cuenta que la cantidad de vehículos civiles no puede controlarse de mommento, puede que en futuras actualizaciones.&lt;br/&gt;&lt;br/&gt;
 
 					Distancia Spawn: 1 km es lo optimo, valores mayores podrían permitirle disparar a larga distancia, pero el rendimiento del juego podría sufrir. &lt;br/&gt;&lt;br/&gt;
 
-					Limpiar Basura: los cadávares y objetos en el suelo consumen memoria, borrar estos podría ralentizar el juego un breve tiempo, pero los FPS deberían mejorar. (Algunos objetos ya tienen un temporizador de eliminación automática.)&lt;br/&gt;&lt;br/&gt;
+					Limpiar Basura: los cadávares y objetos en el suelo consumen memoria, limpiar es un proceso instantaneo que mejorará el rendimiento, ten en cuenta al resto de jugadores cuando lo uses, sobretodo si estaban saqueando. (Algunos objetos ya tienen un temporizador de eliminación automático.)&lt;br/&gt;&lt;br/&gt;
 
-					Limitador FPS: por debajo del umbral, se generarán muy pocos civiles.&lt;br/&gt;&lt;br/&gt;
+					Limitador FPS: por debajo del umbral, se generarán muy pocos civiles. Esta función no es demasiado fiable.&lt;br/&gt;&lt;br/&gt;
 				</Spanish>
 			</Key>
 			<Key ID="STR_BR_4GAMED">
@@ -4484,7 +4484,7 @@
 					Arma 3 está mal optimizado y puede provocar fallos en el juego con más de 150 IA desplegadas. &lt;br/&gt;Por eso, intenta unir a las personas en el mismo Área de Operaciones y evita almacenar en caché demasiados enemigos a la vez, ya que esto provocará una experiencia de juego pobre con niveles bajos de FPS o IA sin reaccionar como deberían.&lt;br/&gt;
 					Además, trata de ubicar el HQ y los campamentos fuera del radio de spawn de las ciudades y emplazamientos para que no se almacenen en caché de forma permanente.&lt;br/&gt;&lt;br/&gt;
 
-					Tenga en cuenta que los servidores pueden agregar un cliente headless que aumentará drásticamente el manejo de la inteligencia artificial. Hay 3 ranuras HC disponibles.
+					Tenga en cuenta que los servidores pueden agregar un cliente headless que aumentará drásticamente el manejo de la inteligencia artificial. Hay 3 ranuras HC disponibles que se le asignará proporcionalmente a la IA, dando mayor prioridad al HC que al servidor principal.
 				</Spanish>
 			</Key>
 			<Key ID="STR_BR_2SALORE">
@@ -4583,9 +4583,10 @@
 					El objetivo es ganar el apoyo de más del 50% de la población civil de la isla. &lt;br/&gt;
 					Pierdes la campaña si el CSAT destruye 8 ciudades por bombardeos. &lt;br/&gt;&lt;br/&gt;
 
-					Notas Multiplayer:&lt;br/&gt;
+					Notas Multijugador:&lt;br/&gt;
 					- Se puede acceder a los Parámetros después de seleccionar la misión en la pantalla de selección en el lado superior derecho antes de iniciar la misión.&lt;br/&gt;
 					- El guardado previo se cargará automáticamente a menos que el admin/host habilite en Parametros la opción de comenzar una campaña nueva&lt;br/&gt;
+					- Los parámetros son muy importantes, compruébalos para hacer la configuración más util.&lt;br/&gt;
 
 					Teclas Especiales:&lt;br/&gt;
 					Teclado US = pulsa ‘Y’, ‘shift+Y’, ‘Delete’, y ‘U’ para acceder a funciones vitales, asegúrese de desvincular esas teclas de sus controles personalizados, de lo contrario no funcionarán.&lt;br/&gt;&lt;br/&gt;
@@ -4928,7 +4929,7 @@
 
 					- A la Caja: Mueve todos los objetos de la Caja del Arsenal al invetario de JAS.&lt;br/&gt;&lt;br/&gt;
 
-					Equipo IA (En Proceso): La IA reclutada usará el equipo disponible en el Arsenal dependiendo de su clase. Esto no reducirá la cantidad real de elementos almacenados.
+					Equipo IA: La IA reclutada usará el equipamiento por encima del límite del Arsenal dependiendo de su clase. Esto no reducirá la cantidad real de elementos almacenados. La ropa dependerá del nivel del Ejército FIA.
 				</Spanish>
 			</Key>
 			<Key ID="STR_BR_BT5TA">
@@ -5318,7 +5319,7 @@
 
 					Gracias a esta función, podrás traer suministros, robar cajas de munición enemigas, mover el Arsenal y Garaje cuando reposicionemos el HQ sin necesidad de instalar ningún mod.&lt;br/&gt;&lt;br/&gt;
 
-					En proceso.
+					Ten en cuenta que los suministros deben descargarse para comenzar correctamente la entrega, también se pueden cargar los botes.
 				</Spanish>
 			</Key>
 			<Key ID="STR_BR_AF4FT">
@@ -5808,7 +5809,7 @@
 
 					- Fortificaciones del HQ: considerar esto como algo visual ,ya que no supone que el HQl sea una posición fortificada.&lt;br/&gt;
 					Una linterna para iluminar la base un poco mejor que la Hoguera.&lt;br/&gt;
-					Una marca de Generar que permite establecer la ubicación predeterminada para generar vehículos.&lt;br/&gt;
+					El helipuerto sólo marca el lugar de aterrizaje de los helicópteros.&lt;br/&gt;
 					La red de camuflaje oculta el campamento y a Petros de las aeronaves enemigas, pero podría colapsar o hacer que los vehículos de la misión exploten al aparecer si se coloca demasiado cerca de la hoguera, así que ten mucho cuidado.
 				</Spanish>
 			</Key>
@@ -5839,7 +5840,7 @@
 					- Сброс Штаба: сброс местоположения Штаба вокруг позиции Петроса. Примечание: если Петрос был перемещен внутри здания с помощью кабельной стяжки ACE, будут возникать ошибки столкновения.
 				</Russian>
 				<Spanish>
-					Algunas situaciones difíciles pueden ser arregladas por el comandante o el admin, accediendo desde el menú Y.&lt;br/&gt;&lt;br/&gt;
+					Algunas situaciones difíciles pueden ser arregladas por el comandante o el admin, accediendo desde el menú Y, botón central del lado derecho (menú administración), Mantenimiento.&lt;br/&gt;&lt;br/&gt;
 
 					- Reiniciar la posición de Petros: para arreglar el bug de ‘demasiado lejos del HQ’ cuando tratas de mover activos por el HQ.&lt;br/&gt;&lt;br/&gt;
 
