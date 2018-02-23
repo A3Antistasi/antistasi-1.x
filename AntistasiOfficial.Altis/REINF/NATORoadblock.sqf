@@ -20,7 +20,7 @@ _fechalimnum = dateToNumber _fechalim;
 _nombreorig = [_origen] call AS_fnc_localizar;
 
 
-_texto = "NATO Roadblock";
+_texto = "STR_GL_NATORB";
 _tipoGrupo = [bluATTeam, side_blue] call AS_fnc_pickGroup;
 _tipoVeh = bluAPC select 0;
 
@@ -29,7 +29,7 @@ _mrk = createMarker [format ["NATOPost%1", random 1000], _posicionTel];
 _mrk setMarkerShape "ICON";
 
 
-_tsk = ["NATORoadblock",[side_blue,civilian],[format ["%1 is dispatching a team to establish a Roadblock. Send and cover the team until reaches its destination.", A3_Str_BLUE],format ["%1 Roadblock Deployment", A3_Str_BLUE],_mrk],_posicionTel,"CREATED",5,true,true,"Move"] call BIS_fnc_setTask;
+_tsk = ["NATORoadblock",[side_blue,civilian],[["%1 is dispatching a team to establish a Roadblock. Send and cover the team until reaches its destination.", A3_Str_BLUE],["%1 Roadblock Deployment", A3_Str_BLUE],_mrk],_posicionTel,"CREATED",5,true,true,"Move"] call BIS_fnc_setTask;
 misiones pushBackUnique _tsk; publicVariable "misiones";
 _grupo = [_orig, side_blue, _tipoGrupo] call BIS_Fnc_spawnGroup;
 _grupo setGroupId ["Watch"];
@@ -80,11 +80,11 @@ if ({(alive _x) and (_x distance _posicionTel < 10)} count units _grupo > 0) the
 	puestosNATO = puestosNATO + [_mrk]; publicVariable "puestosNATO";
 	markers = markers + [_mrk]; publicVariable "markers";
 	spawner setVariable [_mrk,false,true];
-	_tsk = ["NATORoadblock",[side_blue,civilian],[format ["%3 successfully deployed a roadblock, They will hold their position until %1:%2.",numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4, A3_Str_BLUE],format ["%1 Roadblock Deployment", A3_Str_BLUE],_mrk],_posicionTel,"SUCCEEDED",5,true,true,"Move"] call BIS_fnc_setTask;
+	_tsk = ["NATORoadblock",[side_blue,civilian],[["%3 successfully deployed a roadblock, They will hold their position until %1:%2.",numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4, A3_Str_BLUE],["%1 Roadblock Deployment", A3_Str_BLUE],_mrk],_posicionTel,"SUCCEEDED",5,true,true,"Move"] call BIS_fnc_setTask;
 
 	_mrk setMarkerType "flag_Spain";
 	//_mrk setMarkerColor "ColorBlue";
-	_mrk setMarkerText _texto;
+	_mrk setMarkerText localize _texto;
 
 
 	waitUntil {sleep 60; (dateToNumber date > _fechalimnum)};
@@ -96,7 +96,7 @@ if ({(alive _x) and (_x distance _posicionTel < 10)} count units _grupo > 0) the
 	[0,_tsk] spawn borrarTask;
 }
 else {
-	_tsk = ["NATORoadblock",[side_blue,civilian],[format ["%1 is dispatching a team to establish an Observation Post or Roadblock. Send and cover the team until reaches it's destination.", A3_Str_BLUE],format ["%1 Roadblock Deployment", A3_Str_BLUE],_mrk],_posicionTel,"FAILED",5,true,true,"Move"] call BIS_fnc_setTask;
+	_tsk = ["NATORoadblock",[side_blue,civilian],[["%1 is dispatching a team to establish an Observation Post or Roadblock. Send and cover the team until reaches it's destination.", A3_Str_BLUE],["%1 Roadblock Deployment", A3_Str_BLUE],_mrk],_posicionTel,"FAILED",5,true,true,"Move"] call BIS_fnc_setTask;
 	sleep 3;
 	deleteMarker _mrk;
 

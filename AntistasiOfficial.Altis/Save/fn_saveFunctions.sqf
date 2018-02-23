@@ -356,10 +356,10 @@ fn_setData = {
 					_mrk setMarkerType "loc_bunker";
 					_mrk setMarkerColor "ColorYellow";
 					if (isOnRoad _x) then {
-						_mrk setMarkerText "FIA Roadblock";
+						_mrk setMarkerText localize "STR_GL_FIARB";
 						FIA_RB_list pushBackUnique _mrk;
 					} else {
-						_mrk setMarkerText "FIA Watchpost";
+						_mrk setMarkerText localize "STR_GL_FIAWP";
 						FIA_WP_list pushBackUnique _mrk;
 					};
 					spawner setVariable [_mrk,false,true];
