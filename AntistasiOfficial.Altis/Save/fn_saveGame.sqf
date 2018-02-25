@@ -311,6 +311,6 @@ _data = [];
 
 flag_savingServer = false;
 
-[petros,"save",[localize "STR_HINTS_SAVE_COM_1",localize "STR_HINTS_SAVE_COM_2",localize "STR_HINTS_SAVE_COM_3",localize "STR_HINTS_SAVE_COM_4"]] remoteExec ["commsMP",Slowhand];
+[petros,"save",""] remoteExec ["commsMP",Slowhand];
 INFO("Maintenance: game successfully saved.");
 LOG("END fn_saveGame");

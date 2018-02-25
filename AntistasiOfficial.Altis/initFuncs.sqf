@@ -206,4 +206,4 @@ call compile preprocessFileLineNumbers "Compositions\cmpMTN.sqf";
 call compile preprocessFileLineNumbers "Compositions\cmpOP.sqf";
 call compile preprocessFileLineNumbers "Compositions\artillery.sqf";
 
-if ((isMultiplayer) and (isServer)) then {[[petros,"hint",localize "STR_HINTS_INITCUNCS"],"commsMP"] call BIS_fnc_MP};
+if ((isMultiplayer) and (isServer)) then {[[petros,"locHint","STR_HINTS_INITCUNCS"],"commsMP"] call BIS_fnc_MP};

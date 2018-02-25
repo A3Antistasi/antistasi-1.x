@@ -2,13 +2,19 @@ if (!hasInterface) exitWith {};
 
 params ["_unit","_tipo","_texto"];
 
-if (_tipo == "sideChat") exitWith {_unit sideChat localize _texto;};
+if (_tipo == "sideChat") exitWith {_unit sideChat _texto;};
 
-if (_tipo == "hint") exitWith {hint localize _texto;};
+if (_tipo == "locSideChat") exitWith {_unit sideChat localize _texto;};
+
+if (_tipo == "hint") exitWith {hint _texto;};
+
+if (_tipo == "locHint") exitWith {hint localize _texto;};
 
 if (_tipo == "hintCS") exitWith {hintC _texto;}; //not using
 
-if (_tipo == "globalChat") exitWith {_unit globalChat localize _texto;};
+if (_tipo == "globalChat") exitWith {_unit globalChat _texto;};
+
+if (_tipo == "locGlobalChat") exitWith {_unit globalChat localize _texto;};
 
 if (_tipo == "income") exitWith {
 	waitUntil {sleep 0.2; !incomeRep};
