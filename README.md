@@ -13,6 +13,8 @@ After 1.7.6 *Sparker* and *Jeroen* continued because the 1.7 bugs weren't possib
 
 *Stef* started supervising since 1.7.17 with great help of *IrLED* who started the github project and coded major core fixes and improvement such as proportional distribution of AI to headlessclients,lightened spawned script etc.
 
+*Triada* adapted the mission for multi-language translation updating Stringtable.xml and harmonizing hints and task display. He translated, with support of Russian community, the mission to Russian. Also, *Nemesti* added the Spanish translation.
+
 Currently: *Stef* is finishing stuff with precious *Sparker'* support getting ready for steam release. 
 
 We're looking for more coders, every contribution is appreciated!
