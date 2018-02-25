@@ -1019,9 +1019,9 @@ class com_options
 	AS_FRAME_D(FRAME_H_6, $STR_D_OPMENU);
 	BTN_BACK("closeDialog 0; createDialog ""com_menu"";");
 
-	#define STR_COM_OPT_FT "if (server getVariable ""enableFTold"") then {server setVariable [""enableFTold"",false,true]; [[petros,""hint"",""STR_DH_FTLTCNHQ""],""commsMP""] call BIS_fnc_MP;} else {server setVariable [""enableFTold"",true,true]; [[petros,""hint"",""STR_DH_EFTSE""],""commsMP""] call BIS_fnc_MP;};"
-	#define STR_COM_OPT_INC "if (server getVariable ""easyMode"") then {server setVariable [""easyMode"",false,true]; [[petros,""hint"",""STR_DH_EMD.""],""commsMP""] call BIS_fnc_MP;} else {server setVariable [""easyMode"",true,true]; [[petros,""hint"",""STR_DH_FIAIPI""],""commsMP""] call BIS_fnc_MP;};"
-	#define STR_COM_OPT_ARS "if (server getVariable ""enableMemAcc"") then {server setVariable [""enableMemAcc"",false,true]; [[petros,""hint"",""STR_DH_AASTD""],""commsMP""] call BIS_fnc_MP;} else {server setVariable [""enableMemAcc"",true,true]; [[petros,""hint"",""STR_DH_MNGTKTG""],""commsMP""] call BIS_fnc_MP;};"
+	#define STR_COM_OPT_FT "if (server getVariable ""enableFTold"") then {server setVariable [""enableFTold"",false,true]; [[petros,""locHint"",""STR_DH_FTLTCNHQ""],""commsMP""] call BIS_fnc_MP;} else {server setVariable [""enableFTold"",true,true]; [[petros,""locHint"",""STR_DH_EFTSE""],""commsMP""] call BIS_fnc_MP;};"
+	#define STR_COM_OPT_INC "if (server getVariable ""easyMode"") then {server setVariable [""easyMode"",false,true]; [[petros,""locHint"",""STR_DH_EMD.""],""commsMP""] call BIS_fnc_MP;} else {server setVariable [""easyMode"",true,true]; [[petros,""locHint"",""STR_DH_FIAIPI""],""commsMP""] call BIS_fnc_MP;};"
+	#define STR_COM_OPT_ARS "if (server getVariable ""enableMemAcc"") then {server setVariable [""enableMemAcc"",false,true]; [[petros,""locHint"",""STR_DH_AASTD""],""commsMP""] call BIS_fnc_MP;} else {server setVariable [""enableMemAcc"",true,true]; [[petros,""locHint"",""STR_DH_MNGTKTG""],""commsMP""] call BIS_fnc_MP;};"
 	#define STR_COM_OPT_AXP "if (activeBE) then {activeBE = false} else {activeBE = true}; publicVariable ""activeBE""; hint format [""Current setting: %1"", [""off"", ""on""] select activeBE];"
 	#define STR_COM_OPT_WPP "if (server getVariable [""enableWpnProf"",false]) then {server setVariable [""enableWpnProf"",false,true]; [] remoteExec [""AS_fnc_resetSkills"", [0,-2] select isDedicated,true]} else {server setVariable [""enableWpnProf"",true,true]}; hint format [""Current setting: %1"", [""on"", ""off""] select (server getVariable [""enableWpnProf"",false])];"
 

@@ -2217,7 +2217,7 @@
 			</Key>
 			<Key ID="STR_HINTS_COMMANDER_REP">
 				<Original>%2 replaced %1 as the leader of our forces. Greet him!</Original>
-				<Russian>Вместо %1 наш новый лидер - 2%.</Russian>
+				<Russian>Вместо %1 наш новый лидер - %2.</Russian>
 				<Spanish>%2 reemplaza a %1 como líder de nuestras fuerzas. Saluden!</Spanish>
 			</Key>
 			<Key ID="STR_HINTS_COMMANDER_RES">
