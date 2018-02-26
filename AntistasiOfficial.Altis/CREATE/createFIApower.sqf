@@ -17,7 +17,7 @@ _statics = staticsToSave select {_x distance _markerPos < (_size max 50)};
 
 //Create groups for FIA Garrison
 	_gunnerGroup = createGroup side_blue;
-	_allGroups pushBack _gunnerGroup;
+
 	_garrison = garrison getVariable [_marker,[]];
 	_strength = count _garrison;
 	_counter = 0;
@@ -74,12 +74,13 @@ _statics = staticsToSave select {_x distance _markerPos < (_size max 50)};
 	for "_i" from 0 to (count _allGroups) - 1 do {
 		_group = _allGroups select _i;
 		if (_i == 0) then { //specific teleport position for first group
-			[_group, _marker, "COMBAT","SPAWNED","ORIGINAL","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
+			[_group, _marker, "COMBAT","SPAWNED","RANDOM","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 		} else {
-			[_group, _marker, "COMBAT","SPAWNED","ORIGINAL","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
+			[_group, _marker, "COMBAT","SPAWNED","RANDOMUP","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 		};
 	};
-//Groups excluded from UPS
+	_allGroups pushBack _gunnerGroup;
+	[_gunnerGroup, _marker, "COMBAT","SPAWNED","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 
 //Initialise vehicles
 {[_x] spawn VEHinit;} forEach _allVehicles;

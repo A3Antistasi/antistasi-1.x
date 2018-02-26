@@ -138,7 +138,6 @@ _allGroups pushBack _group;
 
 //Create groups for FIA garrison
 	_gunnerGroup = createGroup side_blue;
-	_guerGroups pushBack _gunnerGroup;
 	_garrison = garrison getVariable [_marker,[]];
 	_strength = count _garrison;
 	_counter = 0;
@@ -192,8 +191,11 @@ _allGroups pushBack _group;
 
 	for "_i" from 0 to (count _guerGroups) - 1 do {
 		_group = _guerGroups select _i;
-		[_group, _marker, "COMBAT","SPAWNED", "ORIGINAL","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
+		[_group, _marker, "COMBAT","SPAWNED", "RANDOMUP","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 	};
+
+	_guerGroups pushBack _gunnerGroup;
+	[_gunnerGroup, _marker, "COMBAT","SPAWNED","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 
 //Initialise vehicles
 	{[_x] spawn VEHinit;} forEach _guerVehicles;

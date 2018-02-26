@@ -16,7 +16,7 @@ _statics = staticsToSave select {_x distance _markerPos < (_size max 50)};
 
 //Add staticgun depending on the kind of building (this mechanic is poor, you have them for free and automatically, it give meaning into not destroying outpost buildings tho.)
 	_groupGunners = createGroup side_blue;
-	for "_i" from 0 to (count _buildings) - 1 do {
+	/*for "_i" from 0 to (count _buildings) - 1 do {
 		_building = _buildings select _i;
 		_type = typeOf _building;
 		call {
@@ -62,7 +62,7 @@ _statics = staticsToSave select {_x distance _markerPos < (_size max 50)};
 				sleep 1;
 			};
 		};
-	};
+	};*/ //Disabled, those are added out from no-where, in future this can become a sort of upgrade
 
 /*Jam  feature disabled untill jam will have a function in AirControl patch
 	_antenna = [antenas,_markerPos] call BIS_fnc_nearestPosition;
@@ -72,7 +72,6 @@ _statics = staticsToSave select {_x distance _markerPos < (_size max 50)};
 */
 //Create groups for FIA Garrison
 	_garrison = garrison getVariable [_marker,[]];
-	_allGroups pushBack _groupGunners;
 	_strength = count _garrison;
 	_counter = 0;
 	_group = grpNull;
@@ -127,12 +126,14 @@ _statics = staticsToSave select {_x distance _markerPos < (_size max 50)};
 	for "_i" from 0 to (count _allGroups) - 1 do {
 		_group = _allGroups select _i;
 		if (_i == 0) then { //specific teleport position for first group
-			[_group, _marker, "COMBAT","SPAWNED","ORIGINAL","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
+			[_group, _marker, "COMBAT","SPAWNED","RANDOM","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 		} else {
-			[_group, _marker, "COMBAT","SPAWNED","ORIGINAL","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
+			[_group, _marker, "COMBAT","SPAWNED","RANDOMUP","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 		};
 	};
 	//Groups excluded from UPS, actually the issue is that they wander around instead of staying in static.
+	_allGroups pushBack _groupGunners;
+	[_groupGunners, _marker, "COMBAT","SPAWNED","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 
 //Initialise vehicles
 	{[_x] spawn VEHinit;} forEach _allVehicles;

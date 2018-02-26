@@ -141,7 +141,6 @@ _statics = staticsToSave select {_x distance _markerPos < (_size max 50)};
 
 //Create groups for FIA garrison
 	_gunnerGroup = createGroup side_blue;
-	_guerGroups pushBack _gunnerGroup;
 	_group = createGroup side_blue;
 	_guerGroups pushBack _group;
 	_garrison = garrison getVariable [_marker,[]];
@@ -185,13 +184,20 @@ _statics = staticsToSave select {_x distance _markerPos < (_size max 50)};
 		if (count units _group == 4) then {_group = createGroup side_blue; _guerGroups pushBack _group;};
 	};
 
-for "_i" from 0 to (count _guerGroups) - 1 do {
-	_group = _guerGroups select _i;
-	[_group, _marker, "COMBAT","SPAWNED","ORIGINAL","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
-};
+	//UPSMON
+	for "_i" from 0 to (count _guerGroups) - 1 do {
+		_group = _guerGroups select _i;
+		[_group, _marker, "COMBAT","SPAWNED","RANDOMUP","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
+	};
+
+	_guerGroups pushBack _gunnerGroup;
+	[_gunnerGroup, _marker, "COMBAT","SPAWNED","ORIGINAL","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 
 //Initialise vehicles
 {[_x] spawn VEHinit;} forEach _guerVehicles;
+
+
+
 
 //Initialise FIA soldiers
 {
