@@ -264,7 +264,7 @@ if !(_airport == "") then {
 		_allVehicles pushBack _vehicle;
 
 		if !(_vehicleType in heli_unarmed) then {
-			[_vehicleGroup, _originPosition, _markerPos, 400, 60] spawn AS_fnc_QRF_loiter;
+			[_vehicleGroup, _originPosition, _markerPos, 400, 2400] spawn AS_fnc_QRF_loiter;
 			[_vehicle,"Air Attack"] spawn inmuneConvoy;
 		} else {
 			_seats = ([_vehicleType,true] call BIS_fnc_crewCount) - ([_vehicleType,false] call BIS_fnc_crewCount);
@@ -283,7 +283,7 @@ if !(_airport == "") then {
 				_helipad = createVehicle ["Land_HelipadEmpty_F", _dismountPosition, [], 0, "NONE"];
 				_allVehicles = _allVehicles + [_helipad];
 
-				[_vehicleGroup, _originPosition, _dismountPosition, _marker, _group, 60*60, "air"] spawn AS_fnc_QRF_dismountTroops;
+				[_vehicleGroup, _originPosition, _dismountPosition, _marker, _group, 2400, "air"] spawn AS_fnc_QRF_dismountTroops;
 				[_vehicle,"Air Transport"] spawn inmuneConvoy;
 			} else {
 				_groupType = [infSquad, side_green] call AS_fnc_pickGroup;
@@ -294,7 +294,7 @@ if !(_airport == "") then {
 				{_x assignAsCargo _vehicle;_x moveInCargo _vehicle} forEach units _groupTwo;
 				_allGroups pushBack _groupTwo;
 				_dismountPosition = [_markerPos, 150, 300, 10, 0, 0.3, 0] call BIS_Fnc_findSafePos;
-				[_vehicleGroup, _spawnPosition, _dismountPosition, _marker, [_group, _groupTwo], 60*60] spawn AS_fnc_QRF_fastrope;
+				[_vehicleGroup, _spawnPosition, _dismountPosition, _marker, [_group, _groupTwo], 2400] spawn AS_fnc_QRF_fastrope;
 			};
 		};
 
