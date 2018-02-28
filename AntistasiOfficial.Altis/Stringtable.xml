@@ -1148,22 +1148,22 @@
 			<Key ID="STR_UI_EMP_MNAP_TEXT">
 				<Original>Deploy Minefield (AP)</Original>
 				<Russian>Минное поле (ПП)</Russian>
-				<Spanish>Desplegar Campo de Minas (AP)</Spanish>
+				<Spanish>Desplegar Minas (AP)</Spanish>
 			</Key>
 			<Key ID="STR_UI_EMP_MNAP_TT">
 				<Original>Dangerous, it require mines in the arsenal, not tested yet with RHS and JAS</Original>
 				<Russian>Опасно, требует наличия противопехотных мин в Арсенале, еще не испытано с RHS и JAS</Russian>
-				<Spanish>Peligroso, requiere minas en el Arsenal, no se ha probado aún con RHS y JAS</Spanish>
+				<Spanish>Peligroso, requiere minas AP en el Arsenal, no se ha probado aún con RHS y JAS</Spanish>
 			</Key>
 			<Key ID="STR_UI_EMP_MNAT_TEXT">
 				<Original>Deploy Minefield (AT)</Original>
 				<Russian>Минное поле (ПТ)</Russian>
-				<Spanish>Desplegar Campo de Minas (AT)</Spanish>
+				<Spanish>Desplegar Minas (AT)</Spanish>
 			</Key>
 			<Key ID="STR_UI_EMP_MNAT_TT">
 				<Original>Dangerous, it require mines in the arsenal, not tested yet with RHS and JAS</Original>
 				<Russian>Опасно, требует наличия противотанковых мин в Арсенале</Russian>
-				<Spanish>Peligroso, requiere minas en el Arsenal, no se ha probado aún con RHS y JAS</Spanish>
+				<Spanish>Peligroso, requiere minas AT en el Arsenal, no se ha probado aún con RHS y JAS</Spanish>
 			</Key>
 			<Key ID="STR_UI_EMP_CMPEST_TEXT">
 				<Original>Establish Camp</Original>
