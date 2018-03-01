@@ -27,7 +27,10 @@
 #define ACT_AI_DISMISS "[] call AS_fnc_UI_clearMenu;; if (count groupselectedUnits player > 0) then {[groupselectedUnits player] execVM 'REINF\dismissPlayerGroup.sqf'} else { \
 	if (count (hcSelected player) > 0) then {[hcSelected player] execVM 'REINF\dismissSquad.sqf'}}; \
 	if ((count groupselectedUnits player == 0) and (count hcSelected player == 0)) then {hint 'No units or squads selected'}"
-#define ACT_AI_GARR "closeDialog 0;if (count groupselectedUnits player > 0) then {nul = [groupselectedUnits player] execVM ""REINF\addToGarrison.sqf""} else {if (count (hcSelected player) > 0) then {nul = [hcSelected player] execVM ""REINF\addToGarrison.sqf""}}; if ((count groupselectedUnits player == 0) and (count hcSelected player == 0)) then {hint ""No units or squads selected""}"
+#define ACT_AI_GARR "closeDialog 0;if (count groupselectedUnits player > 0) then {nul = [groupselectedUnits player] execVM 'REINF\addToGarrison.sqf' \
+	} else {if (count (hcSelected player) > 0) then { \
+		nul = [hcSelected player] execVM 'REINF\addToGarrison.sqf'}}; \
+	if ((count groupselectedUnits player == 0) and (count hcSelected player == 0)) then {hint 'No units or squads selected'}"
 
 // #define ACT_AI_SCAVENGE "[cursorTarget] spawn AS_fnc_startScavenging;"
 #define ACT_AI_SCAVENGE "hint 'Coming soon™'"
