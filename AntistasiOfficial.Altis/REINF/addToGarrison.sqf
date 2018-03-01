@@ -18,7 +18,7 @@ _cercano = [markers,_posicionTel] call BIS_fnc_nearestPosition;
 
 if !(_posicionTel inArea _cercano) exitWith {hint "You must click near a marked zone"};
 
-if (not(_cercano in mrkSDK)) exitWith {hint "That zone does not belong to Syndikat"};
+if (not(_cercano in mrkFIA)) exitWith {hint "That zone does not belong to Syndikat"};
 
 if ((_cercano in puestosFIA) and !(isOnRoad getMarkerPos _cercano)) exitWith {hint "You cannot manage garrisons on this kind of zone"};
 
