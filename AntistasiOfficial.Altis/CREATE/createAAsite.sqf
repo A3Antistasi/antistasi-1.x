@@ -78,7 +78,7 @@ _spawnGroup = {
 	_groupType = [_type, side_green] call AS_fnc_pickGroup;
 	_groupPatrol = [_posMarker, side_green, _groupType] call BIS_Fnc_spawnGroup;
 	sleep 1;
-	[_groupPatrol, _marker, "SAFE","SPAWNED","NOFOLLOW","NOVEH2"] execVM "scripts\UPSMON.sqf";
+	[_groupPatrol, _marker, "SAFE","SPAWNED","RANDOMUP","NOFOLLOW","NOVEH2"] execVM "scripts\UPSMON.sqf";
 	{[_x] spawn genInitBASES; _allSoldiers pushBack _x} forEach units _groupPatrol;
 	_allGroups pushBack _groupPatrol;
 };
