@@ -144,8 +144,8 @@ else
 				else
 					{
 					if (side _killer == muyMalos) then {[0,-0.25] remoteExec ["prestige",2]};
-					}; */
-				};
+					};
+				};*/
 			_muerto setVariable ["BLUFORSpawn",nil,true];
 			}];
 		};
