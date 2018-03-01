@@ -733,6 +733,16 @@
 				<Russian>ИИ ищет и подбирает снаряжение в соответствии со своим классом</Russian>
 				<Spanish>La IA recolectará lo que necesite según su clase</Spanish>
 			</Key>
+			<Key ID="STR_UI_AIMGMT_GARR_TEXT">
+				<Original>Add Garrison</Original>
+				<Russian>Добавить гарнизон</Russian>
+				<Spanish>Añadir guarnición</Spanish>
+			</Key>
+			<Key ID="STR_UI_AIMGMT_GARR_TT">
+				<Original>Selected units move and garrison selected marker</Original>
+				<Russian>Выбранные единицы перемещения и выбранный маркер гарнизона</Russian>
+				<Spanish>Las unidades seleccionadas se mueven y guardan el marcador seleccionado</Spanish>
+			</Key>
 			<Key ID="STR_UI_AIMGMT_DIS_TEXT">
 				<Original>Dismiss</Original>
 				<Russian>Распустить</Russian>

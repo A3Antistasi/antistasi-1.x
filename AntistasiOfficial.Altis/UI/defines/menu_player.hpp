@@ -27,16 +27,18 @@
 #define ACT_AI_DISMISS "[] call AS_fnc_UI_clearMenu;; if (count groupselectedUnits player > 0) then {[groupselectedUnits player] execVM 'REINF\dismissPlayerGroup.sqf'} else { \
 	if (count (hcSelected player) > 0) then {[hcSelected player] execVM 'REINF\dismissSquad.sqf'}}; \
 	if ((count groupselectedUnits player == 0) and (count hcSelected player == 0)) then {hint 'No units or squads selected'}"
+#define ACT_AI_GARR "closeDialog 0;if (count groupselectedUnits player > 0) then {nul = [groupselectedUnits player] execVM ""REINF\addToGarrison.sqf""} else {if (count (hcSelected player) > 0) then {nul = [hcSelected player] execVM ""REINF\addToGarrison.sqf""}}; if ((count groupselectedUnits player == 0) and (count hcSelected player == 0)) then {hint ""No units or squads selected""}"
+
 // #define ACT_AI_SCAVENGE "[cursorTarget] spawn AS_fnc_startScavenging;"
 #define ACT_AI_SCAVENGE "hint 'Coming soon™'"
 #define ACT_AI_STORE "[] spawn AS_fnc_storeAllGear;"
 #define ACT_AI_RESET "[] spawn AS_fnc_resetAIStatus;"
 
-#define AI_TEXTS_L ["STR_UI_AIMGMT_TEMP_TEXT", "STR_UI_AIMGMT_AH_TEXT", "STR_UI_AIMGMT_AR_TEXT"]
-#define AI_TEXTS_R ["STR_UI_AIMGMT_SCV_TEXT", "STR_UI_AIMGMT_STG_TEXT", "STR_UI_AIMGMT_RST_TEXT"]
+#define AI_TEXTS_L ["STR_UI_AIMGMT_TEMP_TEXT", "STR_UI_AIMGMT_AH_TEXT", "STR_UI_AIMGMT_AR_TEXT", "STR_UI_AIMGMT_GARR_TEXT"]
+#define AI_TEXTS_R ["STR_UI_AIMGMT_SCV_TEXT", "STR_UI_AIMGMT_STG_TEXT", "STR_UI_AIMGMT_RST_TEXT",]
 #define AI_TEXTS_M "STR_UI_AIMGMT_DIS_TEXT"
 
-#define AI_TOOLTIPS_L ["STR_UI_AIMGMT_TEMP_TT", "STR_UI_AIMGMT_AH_TT", "STR_UI_AIMGMT_AR_TT", "STR_UI_AIMGMT_DIS_TT"]
+#define AI_TOOLTIPS_L ["STR_UI_AIMGMT_TEMP_TT", "STR_UI_AIMGMT_AH_TT", "STR_UI_AIMGMT_AR_TT", "STR_UI_AIMGMT_DIS_TT", "STR_UI_AIMGMT_GARR_TT"]
 #define AI_TOOLTIPS_R ["STR_UI_AIMGMT_SCV_TT", "STR_UI_AIMGMT_STG_TT", "STR_UI_AIMGMT_RST_TT"]
 #define AI_TOOLTIPS_M "STR_UI_AIMGMT_DIS_TT"
 
