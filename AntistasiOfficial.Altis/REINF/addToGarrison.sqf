@@ -64,7 +64,7 @@ _garrison = [];
 _garrison = _garrison + (garrison getVariable [_cercano,[]]);
 {_garrison pushBack (typeOf _x)} forEach _unidades;
 garrison setVariable [_cercano,_garrison,true];
-[_cercano] call mrkUpdate;
+[_cercano] call  AS_fnc_markerUpdate;
 
 _noBorrar = false;
 
@@ -93,7 +93,7 @@ if (spawner getVariable _cercano != 2) then
 						};
 					garrison setVariable [_marcador,_garrison,true];
 					};
-				[_marcador] call mrkUpdate;
+				[_marcador] call AS_fnc_markerUpdate;
 				_muerto setVariable [_marcador,nil,true];
 				};
 			};
