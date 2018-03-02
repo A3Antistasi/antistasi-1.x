@@ -68,7 +68,7 @@ garrison setVariable [_cercano,_garrison,true];
 
 _noBorrar = false;
 
-if (spawner getVariable _cercano != 2) then
+if !(spawner getVariable _cercano) then
 	{
 	{deleteWaypoint _x} forEach waypoints _grupo;
 	_wp = _grupo addWaypoint [(getMarkerPos _cercano), 0];
@@ -100,7 +100,7 @@ if (spawner getVariable _cercano != 2) then
 		}];
 	} forEach _unidades;
 
-	waitUntil {sleep 1; (spawner getVariable _cercano == 2 or !(_cercano in mrkFIA))};
+	waitUntil {sleep 1; (spawner getVariable _cercano = true or !(_cercano in mrkFIA))};
 	if (!(_cercano in mrkFIA)) then {_noBorrar = true};
 	};
 
