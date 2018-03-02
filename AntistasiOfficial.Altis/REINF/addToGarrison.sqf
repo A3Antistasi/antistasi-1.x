@@ -100,7 +100,7 @@ if !(spawner getVariable _cercano) then
 		}];
 	} forEach _unidades;
 
-	waitUntil {sleep 1; (spawner getVariable _cercano = true or !(_cercano in mrkFIA))};
+	waitUntil {sleep 1; (spawner getVariable _cercano or !(_cercano in mrkFIA))};
 	if (!(_cercano in mrkFIA)) then {_noBorrar = true};
 	};
 
