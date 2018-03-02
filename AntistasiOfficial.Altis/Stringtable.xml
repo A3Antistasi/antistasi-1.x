@@ -1988,6 +1988,42 @@
 				<Spanish>No hay emplazamientos cercanos.</Spanish>
 			</Key>
 		</Container>
+	    <Container name="NATO">
+	    	<Key ID="STR_TSK_UAV_TITLE">
+	    		<Original>%1 UAV</Original>
+	    		<Russian>Ударный БПЛА %1</Russian>
+	    	</Key>
+			<Key ID="STR_TSK_UAV_DESC">
+				<Original>%4 is providing Air support from %1. They will be under our command until %2:%3.</Original>
+				<Russian>%4 обеспечивает авиаподдержку из %1. Он будет под нашим командованием до %2:%3</Russian>
+			</Key>
+	         <Key ID="STR_TSK_UAV_HINT">
+				<Original>%1 UAV will be available on HC module in a few seconds.</Original>
+				<Russian>Ударный БПЛА будет доступен для управления из панели командира через несколько секунд</Russian>
+			</Key>
+			<Key ID="STR_TSK_ARTY_TITLE">
+				<Original>%1 Artillery</Original>
+				<Russian>Артиллерия %1</Russian>
+			</Key>
+			<Key ID="STR_TSK_ARTY_DESC">
+				<Original>We have %4 Artillery support from %1. They will be under our command until %2:%3.</Original>
+				<Russian>У нас есть %4 артиллерийской поддержки от %1. Они будут под нашим командованием до %2:%3.</Russian>
+			</Key>
+		</Container>
+	    <Container name="Build">
+	    	<Key ID="STR_TSK_MINEFIELD_TITLE">
+	    		<Original>Minefield deploy</Original>
+	    		<Russian>Минирование</Russian>
+	    	</Key>
+			<Key ID="STR_TSK_MINEFIELD_DESC">
+				<Original>An Engineer Team has been deployed at your command with High Command Option. Once they reach the position, they will start to deploy %1 mines in the area. Cover them in the meantime.</Original>
+				<Russian>Команда инженеров выдвинулась по Вашей команде. Как только они достигнут позиции, они начнут закладку %1 мин в этом районе. Прикрывайте их тем временем.</Russian>
+			</Key>
+			<Key ID="STR_TSK_MINEFIELD_HINT">
+				<Original>Engineer Team deploying mines.</Original>
+				<Russian>Команда инженеров закладывает мины</Russian>
+			</Key>
+		</Container>
 	</Package>
 	<Package name="Notifications">
 		<Container name="Sucess">
@@ -2022,6 +2058,10 @@
 			<Key ID="STR_NTS_JOINFIA">
 				<Original>%1 joined FIA</Original>
 				<Russian>%1 перешел на сторону FIA</Russian>
+			</Key>
+			<Key ID="STR_NTS_UAV_FIN">
+				<Original>%1 UAV finished</Original>
+				<Russian>УБПЛА %1</Russian>
 			</Key>
 		</Container>
 		<Container name="Failed">
@@ -5989,3 +6029,4 @@
 		</Container>
 	</Package>
 </Project>
+

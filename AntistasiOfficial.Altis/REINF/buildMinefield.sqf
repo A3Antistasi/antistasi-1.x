@@ -52,7 +52,7 @@ _mrk setMarkerColor "ColorRed";
 _mrk setMarkerBrush "DiagGrid";
 _mrk setMarkerText _texto;
 
-_tsk = ["Mines",[side_blue,civilian],[["An Engineer Team has been deployed at your command with High Command Option. Once they reach the position, they will start to deploy %1 mines in the area. Cover them in the meantime.",_cantidad],"Minefield Deploy",_mrk],_posicionTel,"CREATED",5,true,true,"map"] call BIS_fnc_setTask;
+_tsk = ["Mines",[side_blue,civilian],[["STR_TSK_MINEFIELD_DESC",_cantidad],"STR_MINEFIELD_TITLE",_mrk],_posicionTel,"CREATED",5,true,true,"map"] call BIS_fnc_setTask;
 misiones pushBack _tsk; publicVariable "misiones";
 
 _grupo = createGroup side_blue;
@@ -99,7 +99,7 @@ if ((_camion distance _posicionTel < 50) and ({alive _x} count units _grupo > 0)
 		hint "";
 		};
 	Slowhand hcRemoveGroup _grupo;
-	[[petros,"hint","Engineer Team deploying mines."],"commsMP"] call BIS_fnc_MP;
+	[[petros,"locHint","STR_TSK_MINEFIELD_HINT"],"commsMP"] call BIS_fnc_MP;
 	[_grupo, _mrk, "SAFE","SPAWNED", "SHOWMARKER"] execVM "scripts\UPSMON.sqf";
 	sleep 30*_cantidad;
 	if ((alive _camion) and ({alive _x} count units _grupo > 0)) then
@@ -112,7 +112,7 @@ if ((_camion distance _posicionTel < 50) and ({alive _x} count units _grupo > 0)
 			_mina = createMine [_tipo,_posicionTel,[],100];
 			side_blue revealMine _mina;
 			};
-		_tsk = ["Mines",[side_blue,civilian],[["An Engineer Team has been deployed at your command with High Command Option. Once they reach the position, they will start to deploy %1 mines in the area. Cover them in the meantime.",_cantidad],"Minefield Deploy",_mrk],_posicionTel,"SUCCEEDED",5,true,true,"Map"] call BIS_fnc_setTask;
+		_tsk = ["Mines",[side_blue,civilian],[["STR_TSK_MINEFIELD_DESC",_cantidad],"STR_MINEFIELD_TITLE",_mrk],_posicionTel,"SUCCEEDED",5,true,true,"Map"] call BIS_fnc_setTask;
 		sleep 15;
 		//[_tsk,true] call BIS_fnc_deleteTask;
 		[0,_tsk] spawn borrarTask;
@@ -120,7 +120,7 @@ if ((_camion distance _posicionTel < 50) and ({alive _x} count units _grupo > 0)
 		}
 	else
 		{
-		_tsk = ["Mines",[side_blue,civilian],[["An Engineer Team has been deployed at your command with High Command Option. Once they reach the position, they will start to deploy %1 mines in the area. Cover them in the meantime.",_cantidad],"Minefield Deploy",_mrk],_posicionTel,"FAILED",5,true,true,"Map"] call BIS_fnc_setTask;
+		_tsk = ["Mines",[side_blue,civilian],[["STR_TSK_MINEFIELD_DESC",_cantidad],"STR_MINEFIELD_TITLE",_mrk],_posicionTel,"FAILED",5,true,true,"Map"] call BIS_fnc_setTask;
 		sleep 15;
 		Slowhand hcRemoveGroup _grupo;
 		//[_tsk,true] call BIS_fnc_deleteTask;
@@ -133,7 +133,7 @@ if ((_camion distance _posicionTel < 50) and ({alive _x} count units _grupo > 0)
 	}
 else
 	{
-	_tsk = ["Mines",[side_blue,civilian],[["An Engineer Team has been deployed at your command with High Command Option. Once they reach the position, they will start to deploy %1 mines in the area. Cover them in the meantime.",_cantidad],"Minefield Deploy",_mrk],_posicionTel,"FAILED",5,true,true,"Map"] call BIS_fnc_setTask;
+	_tsk = ["Mines",[side_blue,civilian],[["STR_TSK_MINEFIELD_DESC",_cantidad],"STR_MINEFIELD_TITLE",_mrk],_posicionTel,"FAILED",5,true,true,"Map"] call BIS_fnc_setTask;
 	sleep 15;
 	Slowhand hcRemoveGroup _grupo;
 	//[_tsk,true] call BIS_fnc_deleteTask;

@@ -15,7 +15,7 @@ _fechalimnum = dateToNumber _fechalim;
 
 _nombredest = [_marcador] call AS_fnc_localizar;
 
-_tsk = ["NATOArty",[west,civilian],[["We have %4 Artillery support from %1. They will be under our command until %2:%3.",_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4, A3_Str_BLUE],["%1 Artillery", A3_Str_BLUE],_marcador],_posicion,"CREATED",5,true,true,"target"] call BIS_fnc_setTask;
+_tsk = ["NATOArty",[west,civilian],[["STR_TSK_ARTY_DESC",_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4, A3_Str_BLUE],["STR_TSK_ARTY_TITLE", A3_Str_BLUE],_marcador],_posicion,"CREATED",5,true,true,"target"] call BIS_fnc_setTask;
 misiones pushBack _tsk; publicVariable "misiones";
 
 _size = [_marcador] call sizeMarker;
@@ -61,7 +61,7 @@ if ({alive _x} count _vehiculos == 0) then
 	{
 	[-5,0] remoteExec ["prestige",2];
 
-	_tsk = ["NATOArty",[west,civilian],[format ["We have %4 Artillery support from %1. They will be under our command until %2:%3.",_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4, A3_Str_BLUE],format ["%1 Artillery", A3_Str_BLUE],_marcador],_posicion,"FAILED",5,true,true,"target"] call BIS_fnc_setTask;
+	_tsk = ["NATOArty",[west,civilian],[["STR_TSK_ARTY_DESC",_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4, A3_Str_BLUE],["STR_TSK_ARTY_TITLE", A3_Str_BLUE],_marcador],_posicion,"FAILED",5,true,true,"target"] call BIS_fnc_setTask;
 	};
 
 //[_tsk,true] call BIS_fnc_deleteTask;
