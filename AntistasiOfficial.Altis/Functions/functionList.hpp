@@ -142,6 +142,8 @@ class AS {
 		class addGearToCrate {};
 		class transferGear {};
 		class resetHQ {};
+		class isUnconscious {};
+		class setUnconscious {};
 	};
 
     class headless {

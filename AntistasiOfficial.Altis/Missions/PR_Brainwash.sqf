@@ -1,11 +1,11 @@
 if (!isServer and hasInterface) exitWith{};
 
-_tskTitle = localize "Str_tsk_PRBrain";
-_tskDesc = localize "Str_tskDesc_PRBrain";
-_tskDesc_fail = localize "Str_tskDesc_PRBrain_fail";
-_tskDesc_fail2 = localize "Str_tskDesc_PRBrain_fail2";
-_tskDesc_hold = localize "Str_tskDesc_PRBrain_hold";
-_tskDesc_success = localize "Str_tskDesc_PRBrain_success";
+_tskTitle = "STR_TSK_TD_PRBrain";
+_tskDesc = "STR_TSK_TD_DESC_PRBrain";
+_tskDesc_fail = "STR_TSK_TD_DESC_PRBrain_fail";
+_tskDesc_fail2 = "STR_TSK_TD_DESC_PRBrain_fail2";
+_tskDesc_hold = "STR_TSK_TD_DESC_PRBrain_hold";
+_tskDesc_success = "STR_TSK_TD_DESC_PRBrain_success";
 
 /*
 parameters
@@ -20,7 +20,7 @@ _tiempolim = 60;
 _fechalim = [date select 0, date select 1, date select 2, date select 3, (date select 4) + _tiempolim];
 _fechalimnum = dateToNumber _fechalim;
 
-_tsk = ["PR",[side_blue,civilian],[format [_tskDesc,_targetName,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_targetMarker],_targetPosition,"CREATED",5,true,true,"Heal"] call BIS_fnc_setTask;
+_tsk = ["PR",[side_blue,civilian],[[_tskDesc,_targetName,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_targetMarker],_targetPosition,"CREATED",5,true,true,"Heal"] call BIS_fnc_setTask;
 misiones pushBack _tsk; publicVariable "misiones";
 
 
@@ -58,6 +58,8 @@ if (count _airports > 0) then {_airport = [_airports, _targetPosition] call BIS_
 propTruck = "";
 _pos = (getMarkerPos guer_respawn) findEmptyPosition [10,50,"C_Truck_02_box_F"];
 propTruck = "C_Truck_02_box_F" createVehicle _pos;
+propTruck allowDamage false;
+[propTruck] spawn {sleep 1; (_this select 0) allowDamage true;};
 
 // spawn eye candy
 _grafArray = [];
@@ -144,7 +146,7 @@ if !(server getVariable "BCactive") then {
 };
 
 if (_break) exitWith {
-	_tsk = ["PR",[side_blue,civilian],[format [_tskDesc_fail,_targetName,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_targetMarker],_targetPosition,"FAILED",5,true,true,"Heal"] call BIS_fnc_setTask;
+	_tsk = ["PR",[side_blue,civilian],[[_tskDesc_fail,_targetName,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_targetMarker],_targetPosition,"FAILED",5,true,true,"Heal"] call BIS_fnc_setTask;
 	[5,-5,_targetMarker] remoteExec ["AS_fnc_changeCitySupport",2];
 	[-10,Slowhand] call playerScoreAdd;
 
@@ -227,7 +229,7 @@ if (isMultiplayer) then {
 
 0 = [_targetMarker, 30, _timing, _comp] spawn attackWaves;
 
-_tsk = ["PR",[side_blue,civilian],[format [_tskDesc_hold,_targetName,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_targetMarker],propTruck,"ASSIGNED",5,true,true,"Heal"] call BIS_fnc_setTask;
+_tsk = ["PR",[side_blue,civilian],[[_tskDesc_hold,_targetName,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_targetMarker],propTruck,"ASSIGNED",5,true,true,"Heal"] call BIS_fnc_setTask;
 
 /*
 setup for the progress bar/timer
@@ -246,7 +248,7 @@ while {(server getVariable "BCactive") && (alive propTruck) && ({(side _x isEqua
 	// alive, deployed, timer below maximum, blufor alive, no opfor/greenfor, conscious players within 250m
 	while {(server getVariable "BCactive") &&
 	(alive propTruck) &&
-	!({_x getVariable ["ASunconscious",false]} count ([300,0, propTruck,"BLUFORSpawn"] call distanceUnits) == count ([300,0, propTruck,"BLUFORSpawn"] call distanceUnits)) &&
+	!({[_x] call AS_fnc_isUnconscious} count ([300,0, propTruck,"BLUFORSpawn"] call distanceUnits) == count ([300,0, propTruck,"BLUFORSpawn"] call distanceUnits)) &&
 	({((side _x == side_green) || (side _x == side_red)) && (_x distance propTruck < 50)} count allUnits == 0)} do {
 
 		// activate the timer
@@ -309,12 +311,12 @@ if (_break) then {
 
 // failure if you held out for less than 10 minutes
 if (_break) then {
-	_tsk = ["PR",[side_blue,civilian],[format [_tskDesc_fail2,_targetName,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_targetMarker],_targetPosition,"FAILED",5,true,true,"Heal"] call BIS_fnc_setTask;
+	_tsk = ["PR",[side_blue,civilian],[[_tskDesc_fail2,_targetName,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_targetMarker],_targetPosition,"FAILED",5,true,true,"Heal"] call BIS_fnc_setTask;
 	[5,-5,_targetMarker] remoteExec ["AS_fnc_changeCitySupport",2];
 	[-10,Slowhand] call playerScoreAdd;
 }
 else {
-	_tsk = ["PR",[side_blue,civilian],[format [_tskDesc_success,_targetName,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_targetMarker],_targetPosition,"SUCCEEDED",5,true,true,"Heal"] call BIS_fnc_setTask;
+	_tsk = ["PR",[side_blue,civilian],[[_tskDesc_success,_targetName,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_targetMarker],_targetPosition,"SUCCEEDED",5,true,true,"Heal"] call BIS_fnc_setTask;
 	[0,_prestige,_targetMarker] remoteExec ["AS_fnc_changeCitySupport",2];
 	{if (_x distance _targetPosition < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
 	[10,Slowhand] call playerScoreAdd;

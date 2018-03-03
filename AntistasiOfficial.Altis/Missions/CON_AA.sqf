@@ -1,7 +1,7 @@
 if (!isServer and hasInterface) exitWith {};
 
-_tskTitle = localize "Str_tsk_CONOPAA";
-_tskDesc = localize "Str_tskDesc_CONOPAA";
+_tskTitle = "STR_TSK_TD_CONOPAA";
+_tskDesc = "STR_TSK_TD_DESC_CONOPAA";
 
 private ["_marcador"];
 
@@ -20,14 +20,14 @@ _fechalimnum = dateToNumber _fechalim;
 
 _nombredest = [_marcador] call AS_fnc_localizar;
 
-_tsk = ["CON",[side_blue,civilian],[format [_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_marcador],_posicion,"CREATED",5,true,true,"Target"] call BIS_fnc_setTask;
+_tsk = ["CON",[side_blue,civilian],[[_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_marcador],_posicion,"CREATED",5,true,true,"Target"] call BIS_fnc_setTask;
 misiones pushBack _tsk; publicVariable "misiones";
 
 waitUntil {sleep 1; ((dateToNumber date > _fechalimnum) or (not(_marcador in mrkAAF)))};
 
 if (dateToNumber date > _fechalimnum) then
 	{
-	_tsk = ["CON",[side_blue,civilian],[format [_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_marcador],_posicion,"FAILED",5,true,true,"Target"] call BIS_fnc_setTask;
+	_tsk = ["CON",[side_blue,civilian],[[_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_marcador],_posicion,"FAILED",5,true,true,"Target"] call BIS_fnc_setTask;
 	[5,0,_posicion] remoteExec ["AS_fnc_changeCitySupport",2];
 	[-600] remoteExec ["AS_fnc_increaseAttackTimer",2];
 	[-10,Slowhand] call playerScoreAdd;
@@ -36,7 +36,7 @@ if (dateToNumber date > _fechalimnum) then
 if (not(_marcador in mrkAAF)) then
 	{
 	sleep 10;
-	_tsk = ["CON",[side_blue,civilian],[format [_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_marcador],_posicion,"SUCCEEDED",5,true,true,"Target"] call BIS_fnc_setTask;
+	_tsk = ["CON",[side_blue,civilian],[[_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_marcador],_posicion,"SUCCEEDED",5,true,true,"Target"] call BIS_fnc_setTask;
 	[0,200] remoteExec ["resourcesFIA",2];
 	[-5,0,_posicion] remoteExec ["AS_fnc_changeCitySupport",2];
 	[600] remoteExec ["AS_fnc_increaseAttackTimer",2];

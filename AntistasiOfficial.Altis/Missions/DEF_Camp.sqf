@@ -1,7 +1,7 @@
 if (!isServer and hasInterface) exitWith {};
 
-_tskTitle = localize "STR_TSK_DEFCAMP";
-_tskDesc = localize "STR_TSKDESC_DEFCAMP";
+_tskTitle = "STR_TSK_TD_DEFCAMP";
+_tskDesc = "STR_TSK_TD_DESC_DEFCAMP";
 
 if (server getVariable ["active_campQRF", false]) exitWith {};
 if (server getVariable ["blockCSAT", false]) exitWith {};
@@ -38,7 +38,7 @@ if (count _airports > 0) then {
 	_airportName = format ["the %1 carrier",A3_Str_RED];
 };
 
-_tsk = ["DEF_Camp",[side_blue,civilian],[format [_tskDesc, _campName, _airportName], format [_tskTitle, _campName],_targetMarker],_targetPosition,"CREATED",5,true,true,"Defend"] call BIS_fnc_setTask;
+_tsk = ["DEF_Camp",[side_blue,civilian],[[_tskDesc, _campName, _airportName],[_tskTitle, _campName],_targetMarker],_targetPosition,"CREATED",5,true,true,"Defend"] call BIS_fnc_setTask;
 misiones pushBack _tsk; publicVariable "misiones";
 
 if (isMultiplayer) then {
@@ -52,13 +52,13 @@ if (isMultiplayer) then {
 waitUntil {sleep 3; (server getVariable ["campQRF", false]) OR {!(_targetMarker in campsFIA)}};
 
 if (_targetMarker in campsFIA) then {
-	_tsk = ["DEF_Camp",[side_blue,civilian],[format [_tskDesc, _campName, _airportName], format [_tskTitle, _campName],_targetMarker],_targetPosition,"SUCCEEDED",5,true,true,"Defend"] call BIS_fnc_setTask;
+	_tsk = ["DEF_Camp",[side_blue,civilian],[[_tskDesc, _campName, _airportName],[_tskTitle, _campName],_targetMarker],_targetPosition,"SUCCEEDED",5,true,true,"Defend"] call BIS_fnc_setTask;
 	[0,0] remoteExec ["prestige",2];
 	[0,300] remoteExec ["resourcesFIA",2];
 	[5,Slowhand] call playerScoreAdd;
 	{if (isPlayer _x) then {[10,_x] call playerScoreAdd}} forEach ([500,0,_targetPosition,"BLUFORSpawn"] call distanceUnits);
 } else {
-	_tsk = ["DEF_Camp",[side_blue,civilian],[format [_tskDesc, _campName, _airportName], format [_tskTitle, _campName],_targetMarker],_targetPosition,"FAILED",5,true,true,"Defend"] call BIS_fnc_setTask;
+	_tsk = ["DEF_Camp",[side_blue,civilian],[[_tskDesc, _campName, _airportName],[_tskTitle, _campName],_targetMarker],_targetPosition,"FAILED",5,true,true,"Defend"] call BIS_fnc_setTask;
 };
 
 server setVariable ["campQRF", false, true];

@@ -1,7 +1,7 @@
 if (!isServer and hasInterface) exitWith {};
 
-_tskTitle = localize "Str_tsk_fndExp";
-_tskDesc = localize "Str_tskDesc_fndExp";
+_tskTitle = "STR_TSK_TD_fndExp";
+_tskDesc = "STR_TSK_TD_DESC_fndExp";
 
 _site = _this select 0;
 
@@ -53,7 +53,7 @@ _tiempolim = 60;
 _fechalim = [date select 0, date select 1, date select 2, date select 3, (date select 4) + _tiempolim];
 _fechalimnum = dateToNumber _fechalim;
 
-_tsk = ["FND_E",[side_blue,civilian],[format [_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_site],_posCmp,"CREATED",5,true,true,"Find"] call BIS_fnc_setTask;
+_tsk = ["FND_E",[side_blue,civilian],[[_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_site],_posCmp,"CREATED",5,true,true,"Find"] call BIS_fnc_setTask;
 misiones pushBack _tsk; publicVariable "misiones";
 
 _objs = [_posCmp, ([_posCmp,_p1] call BIS_fnc_DirTo), call (compile (preprocessFileLineNumbers "Compositions\cmpExp.sqf"))] call BIS_fnc_ObjectsMapper;
@@ -62,6 +62,7 @@ sleep 3;
 // Devin, as known from JA2 -- bow down to the masters at Sir-Tech!
 _groupDev = createGroup Civilian;
 Devin = _groupDev createUnit [CIV_specialUnits select 0, [8173.79,25308.9,0.00156975], [], 0.9, "NONE"];
+Devin setVariable ["VCOM_NOAI", true, true]; //No VCOM AI for Devin
 Devin allowDamage false;
 sleep 2;
 Devin setPos _posCmp;
@@ -125,7 +126,7 @@ if (random 8 < 1) then {
 	{_x assignAsCargo _veh; _x moveInCargo _veh; _soldados = _soldados + [_x]; [_x] spawn genInit} forEach units _grupo;
 	_grupos = _grupos + [_grupo];
 
-	[_veh] spawn smokeCover;
+	//[_veh] spawn smokeCover;
 
 	_Vwp0 = _grupoVeh addWaypoint [_posCmp, 0];
 	_Vwp0 setWaypointType "TR UNLOAD";
@@ -136,7 +137,7 @@ if (random 8 < 1) then {
 };
 // END QRF
 
-waitUntil {sleep 1; (dateToNumber date > _fechalimnum) || !(alive Devin) || ({(side _x isEqualTo side_blue) && (_x distance Devin < 200)} count allPlayers > 0)};
+waitUntil {sleep 1; (dateToNumber date > _fechalimnum) || !(alive Devin) || ((Devin distance _posCmp) > 50) || ({(side _x isEqualTo side_blue) && (_x distance Devin < 200)} count allPlayers > 0)};
 
 {if (isPlayer _x) then {[petros,"hint","Don't ask Devin about the Holy Handgrenade of Antioch. Just don't."] remoteExec ["commsMP",_x]}} forEach ([200,0,Devin,"BLUFORSpawn"] call distanceUnits);
 
@@ -149,7 +150,7 @@ if !(_qrf) then {
 waitUntil {sleep 1; (dateToNumber date > _fechalimnum) || !(alive Devin) || ({((side _x isEqualTo side_blue) || (side _x isEqualTo civilian)) && (_x distance Devin < 10)} count allPlayers > 0)};
 
 if ({((side _x isEqualTo side_blue) || (side _x isEqualTo civilian)) && (_x distance Devin < 10)} count allPlayers > 0) then {
-	_tsk = ["FND_E",[side_blue,civilian],[format [_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_site],_posCmp,"SUCCEEDED",5,true,true,"Find"] call BIS_fnc_setTask;
+	_tsk = ["FND_E",[side_blue,civilian],[[_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_site],_posCmp,"SUCCEEDED",5,true,true,"Find"] call BIS_fnc_setTask;
 	[[Devin,"buy_exp"],"AS_fnc_addActionMP"] call BIS_fnc_MP;
 	_mrkDev = createMarker ["Devin", _posCmp];
 	_mrkDev setMarkerShape "ICON";
@@ -166,10 +167,10 @@ if ({((side _x isEqualTo side_blue) || (side _x isEqualTo civilian)) && (_x dist
     [[line1],"DIRECT",0.15] execVM "createConv.sqf";
 }
 else {
-	_tsk = ["FND_E",[side_blue,civilian],[format [_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_site],_posCmp,"FAILED",5,true,true,"Find"] call BIS_fnc_setTask;
+	_tsk = ["FND_E",[side_blue,civilian],[[_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_site],_posCmp,"FAILED",5,true,true,"Find"] call BIS_fnc_setTask;
 };
 
-waitUntil {sleep 10; (dateToNumber date > _fechalimnum) || !(alive Devin)};
+waitUntil {sleep 10; (dateToNumber date > _fechalimnum) || !(alive Devin) || ((Devin distance _posCmp) > 50)};
 
 if (alive Devin) then {
 	Devin enableAI "ANIM";
@@ -184,6 +185,7 @@ else {
 server setVariable ["expActive", false, true];
 
 [1200,_tsk] spawn borrarTask;
+if((Devin distance _posCmp) > 50) then {Devin globalchat "Wait, what? I'm not going to be kidnapped by you twat, i'd rather EXPLOOOODE!"; sleep 5; _shell1 = "Sh_82mm_AMOS" createVehicle position Devin;_shell1 setVelocity [0,0,150]};
 sleep 30;
 deleteMarker "Devin";
 deleteMarker "DevPat";

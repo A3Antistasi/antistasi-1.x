@@ -39,7 +39,7 @@ if (isPlayer _unit) then {
 
 if (_part == "") then {
 	if (_dam >= 1) then {    //Stef 16/10 disable instadeath
-		if (!(_unit getVariable "ASunconscious")) then {
+		if !([_unit] call AS_fnc_isUnconscious) then {
 			moveOut _unit;
 			_dam = 0.9;
 			[_unit] spawn medUnconscious;

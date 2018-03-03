@@ -85,9 +85,8 @@ call {
 	if (_menu isEqualTo "ai_mgmt") exitWith {
 		_index = NAV_BTNS find (ctrlIDC _idc);
 		_display displayCtrl (LINES select _index) ctrlShow true;
-		[ACT_BTNS_L6, [ACT_AI_TEMPCTRL, ACT_AI_AUTOHEAL, ACT_AI_REARM], AI_TEXTS_L, AI_TOOLTIPS_L] call _fnc_setup;
-		[ACT_BTNS_R6, [ACT_AI_SCAVENGE, ACT_AI_STORE, ACT_AI_RESET], AI_TEXTS_R, AI_TOOLTIPS_R] call _fnc_setup;
-		[(ACT_BTNS_M6 select 3), ACT_AI_DISMISS, AI_TEXTS_M, AI_TOOLTIPS_M] call _fnc_setupSingle;
+		[ACT_BTNS_L6, [ACT_AI_TEMPCTRL, ACT_AI_AUTOHEAL, ACT_AI_REARM, ACT_AI_GARR], AI_TEXTS_L, AI_TOOLTIPS_L] call _fnc_setup;
+		[ACT_BTNS_R6, [ACT_AI_SCAVENGE, ACT_AI_STORE, ACT_AI_RESET, ACT_AI_DISMISS], AI_TEXTS_R, AI_TOOLTIPS_R] call _fnc_setup;
 		if (autoHeal) then {_display displayCtrl (ACT_BTNS_L6 select 1) ctrlSetTextColor MENU_TEXT_COLOR_TRUE_ARRAY} else {_display displayCtrl (ACT_BTNS_L6 select 1) ctrlSetTextColor MENU_TEXT_COLOR_FALSE_ARRAY};
 	};
 
@@ -148,7 +147,7 @@ call {
 	if (_menu isEqualTo "com_info") exitWith {
 		_index = NAV_BTNS find (ctrlIDC _idc);
 		_display displayCtrl (LINES select _index) ctrlShow true;
-		[ACT_BTNS_M4, [INFO_FIA, INFO_AXP_RES, INFO_AXP_PRO], INFO_TEXTS, INFO_TTS] call _fnc_setup;
+		[ACT_BTNS_M4, [INFO_AXP_RES, INFO_MRESTR, INFO_ACEMEDIC], INFO_TEXTS, INFO_TTS] call _fnc_setup;
 	};
 
 	if (_menu isEqualTo "com_maint") exitWith {

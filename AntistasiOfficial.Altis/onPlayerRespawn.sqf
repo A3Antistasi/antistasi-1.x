@@ -12,7 +12,7 @@ waitUntil {alive player};
 _owner = _oldUnit getVariable ["owner",_oldUnit];
 
 if (_owner != _oldUnit) exitWith {
-	hint localize "STR_HINTS_OPR_TEMP";
+	hint localize "STR_HINTS_GEN_OPR_TEMP";
 	selectPlayer _owner;
 	disableUserInput false;
 	deleteVehicle _newUnit;
@@ -58,10 +58,10 @@ if (!isPlayer (leader group player)) then {(group player) selectLeader player};
 call AS_fnc_initPlayerEH;
 
 if (!(isMultiplayer) AND (activeACEMedical)) then {
-	player setVariable ["ASunconscious",false,true];
+	[player, false] call AS_fnc_setUnconscious;
 	player setVariable ["ASrespawning",false];
 	player addEventHandler ["HandleDamage", {
-		if (player getVariable ["ACE_isUnconscious", false]) then {
+		if ([player] call AS_fnc_isUnconscious) then {
 			0 = [player] spawn ACErespawn;
 		};
 	}

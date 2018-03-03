@@ -6,10 +6,11 @@ params [["_type","LOG"],["_muted",false],["_manual",false]];
 [getMarkerPos guer_respawn,[],[],false] params ["_positionHQ","_options","_zones"];
 
 private ["_currentZone","_markerPos","_nearestZone","_gearCount","_threshold","_base","_data","_prestigeOPFOR","_prestigeBLUFOR"];
+_prestigeCSAT = server getVariable ["prestigeCSAT",0];
 
 if (_type in misiones) exitWith {
 	if (!_muted) then {
-		[petros,"globalChat",localize "STR_HINTS_MIS_TYPE_ACTIVE"] remoteExec ["commsMP",[0,-2] select isDedicated];
+		[petros,"locGlobalChat","STR_HINTS_MIS_TYPE_ACTIVE"] remoteExec ["commsMP",[0,-2] select isDedicated];
 	};
 };
 
@@ -38,8 +39,8 @@ call {
 
 		if (_options isEqualTo []) then {
 			if (!_muted) then {
-				[petros,"globalChat",localize "STR_HINTS_MIS_DES_NO_CHAT"] remoteExec ["commsMP",[0,-2] select isDedicated];
-				[petros,"hint",localize "STR_HINTS_MIS_DES_NO_HINT"] remoteExec ["commsMP",[0,-2] select isDedicated];
+				[petros,"locGlobalChat","STR_HINTS_MIS_DES_NO_CHAT"] remoteExec ["commsMP",[0,-2] select isDedicated];
+				[petros,"locHint","STR_HINTS_MIS_DES_NO_HINT"] remoteExec ["commsMP",[0,-2] select isDedicated];
 			};
 		} else {
 			_currentZone = selectRandom _options;
@@ -85,8 +86,8 @@ call {
 
 		if (_options isEqualTo []) then {
 			if (!_muted) then {
-				[petros,"globalChat",localize "STR_HINTS_MIS_LOG_NO_CHAT"] remoteExec ["commsMP",[0,-2] select isDedicated];
-				[petros,"hint",localize "STR_HINTS_MIS_LOG_NO_HINT"] remoteExec ["commsMP",[0,-2] select isDedicated];
+				[petros,"locGlobalChat","STR_HINTS_MIS_LOG_NO_CHAT"] remoteExec ["commsMP",[0,-2] select isDedicated];
+				[petros,"locHint","STR_HINTS_MIS_LOG_NO_HINT"] remoteExec ["commsMP",[0,-2] select isDedicated];
 			};
 		} else {
 			_currentZone = selectRandom _options;
@@ -127,8 +128,8 @@ call {
 
 		if (_options isEqualTo []) then {
 			if (!_muted) then {
-				[petros,"globalChat",localize "STR_HINTS_MIS_RES_NO_CHAT"] remoteExec ["commsMP",[0,-2] select isDedicated];
-				[petros,"hint",localize "STR_HINTS_MIS_RES_NO_HINT"] remoteExec ["commsMP",[0,-2] select isDedicated];
+				[petros,"locGlobalChat","STR_HINTS_MIS_RES_NO_CHAT"] remoteExec ["commsMP",[0,-2] select isDedicated];
+				[petros,"locHint","STR_HINTS_MIS_RES_NO_HINT"] remoteExec ["commsMP",[0,-2] select isDedicated];
 			};
 		} else {
 			_currentZone = selectRandom _options;
@@ -156,8 +157,8 @@ call {
 
 		if (_options isEqualTo []) then {
 			if (!_muted) then {
-				[petros,"globalChat",localize "STR_HINTS_MIS_FND_NO_CHAT"] remoteExec ["commsMP",[0,-2] select isDedicated];
-				[petros,"hint",localize "STR_HINTS_MIS_FND_NO_HINT"] remoteExec ["commsMP",[0,-2] select isDedicated];
+				[petros,"locGlobalChat","STR_HINTS_MIS_FND_NO_CHAT"] remoteExec ["commsMP",[0,-2] select isDedicated];
+				[petros,"locHint","STR_HINTS_MIS_FND_NO_HINT"] remoteExec ["commsMP",[0,-2] select isDedicated];
 			};
 		} else {
 			_currentZone = selectRandom _options;
@@ -185,8 +186,8 @@ call {
 
 		if (_options isEqualTo []) then {
 			if (!_muted) then {
-				[petros,"globalChat",localize "STR_HINTS_MIS_FND_NO_CHAT"] remoteExec ["commsMP",[0,-2] select isDedicated];
-				[petros,"hint",localize "STR_HINTS_MIS_FND_NO_HINT"] remoteExec ["commsMP",[0,-2] select isDedicated];
+				[petros,"locGlobalChat","STR_HINTS_MIS_FND_NO_CHAT"] remoteExec ["commsMP",[0,-2] select isDedicated];
+				[petros,"locHint","STR_HINTS_MIS_FND_NO_HINT"] remoteExec ["commsMP",[0,-2] select isDedicated];
 			};
 		} else {
 			_currentZone = selectRandom _options;
@@ -214,8 +215,8 @@ call {
 
 		if (_options isEqualTo []) then {
 			if (!_muted) then {
-				[petros,"globalChat",localize "STR_HINTS_MIS_FNDE_NO_CHAT"] remoteExec ["commsMP",[0,-2] select isDedicated];
-				[petros,"hint",localize "STR_HINTS_MIS_FNDE_NO_HINT"] remoteExec ["commsMP",[0,-2] select isDedicated];
+				[petros,"locGlobalChat","STR_HINTS_MIS_FNDE_NO_CHAT"] remoteExec ["commsMP",[0,-2] select isDedicated];
+				[petros,"locHint","STR_HINTS_MIS_FNDE_NO_HINT"] remoteExec ["commsMP",[0,-2] select isDedicated];
 			};
 		} else {
 			_currentZone = selectRandom _options;
@@ -238,8 +239,8 @@ call {
 
 		if (_options isEqualTo []) then {
 			if (!_muted) then {
-				[petros,"globalChat",localize "STR_HINTS_MIS_CVY_NO_CHAT"] remoteExec ["commsMP",[0,-2] select isDedicated];
-				[petros,"hint",localize "STR_HINTS_MIS_CVY_NO_HINT"] remoteExec ["commsMP",[0,-2] select isDedicated];
+				[petros,"locGlobalChat","STR_HINTS_MIS_CVY_NO_CHAT"] remoteExec ["commsMP",[0,-2] select isDedicated];
+				[petros,"locHint","STR_HINTS_MIS_CVY_NO_HINT"] remoteExec ["commsMP",[0,-2] select isDedicated];
 			};
 		} else {
 			_currentZone = selectRandom _options;
@@ -262,12 +263,12 @@ call {
 
 		if (_options isEqualTo []) then {
 			if (!_muted) then {
-				[petros,"globalChat",localize "STR_HINTS_MIS_ASS_NO_CHAT"] remoteExec ["commsMP",[0,-2] select isDedicated];
-				[petros,"hint",localize "STR_HINTS_MIS_ASS_NO_HINT"] remoteExec ["commsMP",[0,-2] select isDedicated];
+				[petros,"locGlobalChat","STR_HINTS_MIS_ASS_NO_CHAT"] remoteExec ["commsMP",[0,-2] select isDedicated];
+				[petros,"locHint","STR_HINTS_MIS_ASS_NO_HINT"] remoteExec ["commsMP",[0,-2] select isDedicated];
 			};
 		} else {
 			_currentZone = selectRandom _options;
-			[_currentZone, "civ"] remoteExec [(["ASS_Traidor","AS_forest"] select (_currentZone in puestos)), call AS_fnc_getNextWorker];
+			if((random 100 < _prestigeCSAT) and (_prestigeCSAT > 21)) then {[_currentZone, "civ"] remoteExec [(["ASS_Traidor","AS_forest"] select (_currentZone in puestos)), call AS_fnc_getNextWorker];} else {}
 		};
 	};
 
@@ -320,8 +321,8 @@ call {
 
 			if (_options isEqualTo []) then {
 				if (!_muted) then {
-					[petros,"globalChat",localize "STR_HINTS_MIS_PR_NO_CHAT"] remoteExec ["commsMP",[0,-2] select isDedicated];
-					[petros,"hint",localize "STR_HINTS_MIS_PR_NO_HINT"] remoteExec ["commsMP",[0,-2] select isDedicated];
+					[petros,"locGlobalChat","STR_HINTS_MIS_PR_NO_CHAT"] remoteExec ["commsMP",[0,-2] select isDedicated];
+					[petros,"locHint","STR_HINTS_MIS_PR_NO_HINT"] remoteExec ["commsMP",[0,-2] select isDedicated];
 				};
 			} else {
 				_currentZone = selectRandom _options;
@@ -332,5 +333,5 @@ call {
 };
 
 if ((count _options > 0) AND (!_muted)) then {
-	[petros,"globalChat",localize "STR_HINTS_MIS_GIVEN"] remoteExec ["commsMP",[0,-2] select isDedicated];
+	[petros,"locGlobalChat","STR_HINTS_MIS_GIVEN"] remoteExec ["commsMP",[0,-2] select isDedicated];
 };

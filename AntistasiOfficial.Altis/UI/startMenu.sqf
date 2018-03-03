@@ -8,7 +8,7 @@ A3AS_menu_escEH = (findDisplay 100) displayAddEventHandler ["KeyDown", "if ((_th
 	((findDisplay 100) displayCtrl _x) ctrlEnable false;
 } forEach [1301, 1302, 1303, 1304];
 
-if !(enableRestart) then {
+if !(freshstart) then {
 	((findDisplay 100) displayCtrl 2502) ctrlEnable false;
 };
 

@@ -71,7 +71,7 @@ waitUntil {sleep 1;(not alive _veh) or ({(_x knowsAbout _veh > 1.4) and (side _x
 
 if (!alive _veh) exitWith {};
 
-if (_enemigo) then {[["TaskSucceeded", ["", format ["%1 Spotted",_text]]],"BIS_fnc_showNotification"] call BIS_fnc_MP;};
+if (_enemigo) then {[_text,{["TaskSucceeded", ["", format ["%1 Spotted",_this]]] call BIS_fnc_showNotification}] remoteExec ["call", 0];};
 _mrkfin = createMarker [format ["%2%1", random 100,_text], position _veh];
 _mrkfin setMarkerShape "ICON";
 _mrkfin setMarkerType _tipo;

@@ -21,7 +21,7 @@ if (isNil "workerArray") then {//Called not on server (by mistake?), some PDA fu
     private _accuArray = [];
     {
         private _currOwn = _x;
-        _accuArray pushBack (({owner _x == _currOwn} count allUnits)* ([1,2] select (_currOwn == 2)));
+        _accuArray pushBack (({owner _x == _currOwn} count allUnits)* ([1,6] select (_currOwn == 2)));
     }forEach workerArray;
 
     //Select minimum

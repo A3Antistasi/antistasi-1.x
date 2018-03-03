@@ -1,7 +1,7 @@
 if (!isServer and hasInterface) exitWith {};
 
-_tskTitle = localize "Str_tsk_logAmmo";
-_tskDesc = localize "Str_tskDesc_logAmmo";
+_tskTitle = "STR_TSK_TD_logAmmo";
+_tskDesc = "STR_TSK_TD_DESC_logAmmo";
 
 private ["_pos","_camion","_camionCreado","_grupo","_grupo1","_mrk"];
 
@@ -14,7 +14,7 @@ _fechalimnum = dateToNumber _fechalim;
 
 _nombredest = [_marcador] call AS_fnc_localizar;
 
-_tsk = ["LOG",[side_blue,civilian],[format [_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_marcador],_posicion,"CREATED",5,true,true,"rearm"] call BIS_fnc_setTask;
+_tsk = ["LOG",[side_blue,civilian],[[_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_marcador],_posicion,"CREATED",5,true,true,"rearm"] call BIS_fnc_setTask;
 misiones pushBack _tsk; publicVariable "misiones";
 _camionCreado = false;
 
@@ -64,14 +64,14 @@ if (spawner getVariable _marcador) then
 
 	if (dateToNumber date > _fechalimnum) then
 		{
-		_tsk = ["LOG",[side_blue,civilian],[format [_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_marcador],_posicion,"FAILED",5,true,true,"rearm"] call BIS_fnc_setTask;
+		_tsk = ["LOG",[side_blue,civilian],[[_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_marcador],_posicion,"FAILED",5,true,true,"rearm"] call BIS_fnc_setTask;
 		[-1200] remoteExec ["AS_fnc_increaseAttackTimer",2];
 		[-10,Slowhand] call playerScoreAdd;
 		};
 	if ((not alive _camion) or ({_x getVariable ["BLUFORSpawn",false]} count crew _camion > 0)) then
 		{
 		[position _camion] spawn patrolCA;
-		_tsk = ["LOG",[side_blue,civilian],[format [_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_marcador],_posicion,"SUCCEEDED",5,true,true,"rearm"] call BIS_fnc_setTask;
+		_tsk = ["LOG",[side_blue,civilian],[[_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_marcador],_posicion,"SUCCEEDED",5,true,true,"rearm"] call BIS_fnc_setTask;
 		[0,300] remoteExec ["resourcesFIA",2];
 		[1200] remoteExec ["AS_fnc_increaseAttackTimer",2];
 		{if (_x distance _camion < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
@@ -85,7 +85,7 @@ if (spawner getVariable _marcador) then
 	}
 else
 	{
-	_tsk = ["LOG",[side_blue,civilian],[format [_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_marcador],_posicion,"FAILED",5,true,true,"rearm"] call BIS_fnc_setTask;
+	_tsk = ["LOG",[side_blue,civilian],[[_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_marcador],_posicion,"FAILED",5,true,true,"rearm"] call BIS_fnc_setTask;
 	[-1200] remoteExec ["AS_fnc_increaseAttackTimer",2];
 	[-10,Slowhand] call playerScoreAdd;
 	};

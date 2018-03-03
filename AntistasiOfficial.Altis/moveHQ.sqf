@@ -1,8 +1,8 @@
-if (player != Slowhand) exitWith {hint "Only Commander Slowhand has access to this function"};
+if (player != Slowhand) exitWith {hint localize "STR_HINTS_MHQ_OCSHATTF"};
 
-//if ((count weaponCargo caja >0) or (count magazineCargo caja >0) or (count itemCargo caja >0) or (count backpackCargo caja >0)) exitWith {hint "You must first empty your Ammobox in order to move the HQ"};
+//if ((count weaponCargo caja >0) or (count magazineCargo caja >0) or (count itemCargo caja >0) or (count backpackCargo caja >0)) exitWith {hint localize "STR_HINTS_MHQ_YMFEYAIOTMTHQ"};
 
-hint "Move the Arsenal ammo crate and the Vehicle ammo crate and Petros to the new location";
+hint localize "STR_HINTS_MHQ_MTAACNTVACNPTTNL";
 
 petros enableAI "MOVE";
 petros enableAI "AUTOTARGET";
@@ -49,7 +49,7 @@ if (count _garrison > 0) then
 	_hr = 0;
 	if ({(alive _x) and (!captive _x) and ((side _x == side_green) or (side _x == side_red)) and (_x distance _posicion < 500)} count allUnits > 0) then
 		{
-		hint "HQ Garrison will stay here and hold the enemy";
+		hint localize "STR_HINTS_MHQ_HQGWSHNHTE";
 		}
 	else
 		{

@@ -4,8 +4,8 @@ if (!isServer and hasInterface) exitWith {};
 
 private ["_houses","_mayor"];
 
-_tskTitle = localize "Str_tsk_ASSMAYOR";
-_tskDesc = localize "Str_tskDesc_ASSMAYOR";
+_tskTitle = "STR_TSK_TD_ASSMAYOR";
+_tskDesc = "STR_TSK_TD_DESC_ASSMAYOR";
 
 _initialMarker = _this select 0;
 _source = _this select 1;
@@ -48,6 +48,7 @@ _mayor = ([_traitorPosition, 0, "C_man_1", _mayorGroup] call bis_fnc_spawnvehicl
  sleep 0.1;
 _mayor addGoggles "G_Tactical_Black";
 _mayor addHeadgear "H_Hat_checker";
+removeUniform _mayor;
 _mayor addUniform "U_NikosAgedBody";
 [_mayor] spawn {
 	params ["_subject"];
@@ -72,7 +73,7 @@ if (_source == "civ") then {
 	server setVariable ["civActive", _val + 1, true];
 };
 
-_tsk = ["ASS",[side_blue,civilian],[format [_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_initialMarker],_mayor,"CREATED",5,true,true,"Kill"] call BIS_fnc_setTask;
+_tsk = ["ASS",[side_blue,civilian],[[_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_initialMarker],_mayor,"CREATED",5,true,true,"Kill"] call BIS_fnc_setTask;
 misiones pushBack _tsk; publicVariable "misiones";
 
 {[_x] spawn CSATinit; _x allowFleeing 0} forEach units _mayorGroup;
@@ -112,7 +113,7 @@ waitUntil {sleep 1; (dateToNumber date > _fechalimnum) or (not alive _mayor) or 
 if ({_mayor knowsAbout _x > 1.4} count ([500,0,_mayor,"BLUFORSpawn"] call distanceUnits) > 0) then
 	{
 	hint "The Mayor has been spooked, he will try to run for an enemy base for safety!";
-	_tsk = ["ASS",[side_blue,civilian],[format [_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_initialMarker],_mayor,"CREATED",5,true,true,"Kill"] call BIS_fnc_setTask;
+	_tsk = ["ASS",[side_blue,civilian],[[_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_initialMarker],_mayor,"CREATED",5,true,true,"Kill"] call BIS_fnc_setTask;
 	{_x enableAI "MOVE"} forEach units _mayorGroup;
 	_mayor assignAsDriver _veh;
 	[_mayor] orderGetin true;
@@ -128,7 +129,7 @@ waitUntil  {sleep 1; (dateToNumber date > _fechalimnum) or (not alive _mayor) or
 
 if (not alive _mayor) then
 	{
-	_tsk = ["ASS",[side_blue,civilian],[format [_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_initialMarker],_mayor,"FAILED",5,true,true,"Kill"] call BIS_fnc_setTask;
+	_tsk = ["ASS",[side_blue,civilian],[[_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_initialMarker],_mayor,"FAILED",5,true,true,"Kill"] call BIS_fnc_setTask;
 	[0,0] remoteExec ["prestige",2];
 	[10,-20,_initialPosition] remoteExec ["AS_fnc_changeCitySupport",2];
 	{
@@ -153,7 +154,7 @@ if (not alive _mayor) then
 
 if (_mayor distance getMarkerPos guer_respawn < 50) then
 	{
-	_tsk = ["ASS",[side_blue,civilian],[format [_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_initialMarker],_mayor,"SUCCEEDED",5,true,true,"Kill"] call BIS_fnc_setTask;
+	_tsk = ["ASS",[side_blue,civilian],[[_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_initialMarker],_mayor,"SUCCEEDED",5,true,true,"Kill"] call BIS_fnc_setTask;
 	[0,0] remoteExec ["prestige",2];
 	[0,300] remoteExec ["resourcesFIA",2];
 	[-10,20,_initialPosition] remoteExec ["AS_fnc_changeCitySupport",2];
@@ -182,7 +183,7 @@ if (_mayor distance getMarkerPos guer_respawn < 50) then
 
 else
 	{
-	_tsk = ["ASS",[side_blue,civilian],[format [_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_initialMarker],_mayor,"FAILED",5,true,true,"Kill"] call BIS_fnc_setTask;
+	_tsk = ["ASS",[side_blue,civilian],[[_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_initialMarker],_mayor,"FAILED",5,true,true,"Kill"] call BIS_fnc_setTask;
 	[-2,Slowhand] call playerScoreAdd;
 	[10,0,_initialPosition] remoteExec ["AS_fnc_changeCitySupport",2];
 	};

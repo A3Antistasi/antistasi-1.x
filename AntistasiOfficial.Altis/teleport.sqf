@@ -2,7 +2,7 @@
 
 openMap true;
 posicionTel = [];
-hint "Click on the position you wish to teleport to.";
+hint localize "STR_HINTS_TELEPORT";
 
 onMapSingleClick "posicionTel = _pos;";
 

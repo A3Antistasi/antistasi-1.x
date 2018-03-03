@@ -11,7 +11,7 @@ guer_veh_engineer = "B_G_Offroad_01_repair_F";
 guer_veh_technical = "I_G_Offroad_01_armed_F";
 guer_veh_quad = "I_G_Quadbike_01_F"; // default transport for snipers
 guer_veh_offroad = "I_G_Offroad_01_F"; // default transport for teams
-guer_veh_dinghy = "I_G_Boat_Transport_01_F";
+guer_veh_dinghy = "C_Boat_Civil_01_F";
 
 guer_sol_AA = "I_G_Soldier_lite_F"; // AA trooper in player groups
 guer_sol_AM = "I_G_Soldier_A_F"; // playable, player-only
@@ -140,8 +140,8 @@ if (worldname == "Tanoa") then {
 		"I_G_Offroad_01_armed_F",
 		"rhs_DSHKM_ins",
 		"rhs_2b14_82mm_msv",
-		"rhs_Metis_9k115_2_vdv",
-		"RHS_ZU23_VDV",
+		"rhs_Kornet_9M133_2_vdv",
+		"rhs_Igla_AA_pod_msv",
 		"rhs_bmd1_chdkz",
 		"rhs_gaz66_r142_vdv"
 	];

@@ -2,16 +2,20 @@
 #include "dialogs.hpp"
 
 author="Barbolani";
-OnLoadName = "Antistasi - modified 1.7.18";
+OnLoadName = $STR_MISSION_NAME_EXT;
 OnLoadMission = "Be a Resistance Leader - Be a Hero";
-//loadScreen = "pic.paa";
+loadScreen = "pic.paa";
 
 overviewText = "Be the Resistance Leader. Fight against a superior enemy in technology, number, assets and vehicles. Use guerrilla tactics in a totally dynamic world, with around 18 sidemissions, everywhere, anytime, anything.";
-//overviewPicture = "pic.paa";
+overviewPicture = "pic.paa";
 
 allowFunctionsLog = 1;
 enableDebugConsole = 1;
 //allowFunctionsRecompile = 1;
+
+//Load CBA settings if CBA is not attached in the editor
+/*Check it here: https://github.com/CBATeam/CBA_A3/wiki/CBA-Settings-System */
+cba_settings_hasSettingsFile = 1;
 
 respawn = "BASE";
 respawnDelay = 30;
@@ -45,7 +49,7 @@ class Header
 {
 gameType = COOP;
 minplayers=1;
-maxplayers=50;
+maxplayers=52;
 };
 
 class CfgSounds
@@ -307,37 +311,77 @@ class CfgDebriefing
 
 class Params {
     class AS_enableCampaignReset {
-        title = "Ability to start a fresh campaign";
+        title = $STR_DES_ATSAFC;
             values[] = {0,1};
-            texts[] = {"Off","On"};
+            texts[] = {$STR_DES_OFF,$STR_DES_ON};
             default = 0;
             typeName = "BOOL";
             force = 1;
     };
-    class AS_param_useJNA {
-        title = "Use customized arsenal by Jeroen Not";
+    class AS_enableSwitchComm {
+        title = $STR_DES_ESWCMD;
             values[] = {0,1};
-            texts[] = {"Off","On"};
+            texts[] = {$STR_DES_OFF,$STR_DES_ON};
+            default = 0;
+            typeName = "BOOL";
+            force = 1;
+    };
+    class AS_enableServerMember {
+        title = $STR_DES_ESRMBR;
+            values[] = {0,1};
+            texts[] = {$STR_DES_OFF,$STR_DES_ON};
             default = 1;
             typeName = "BOOL";
             force = 1;
     };
 	//added by Fireman 12/08/2017
 	class AS_param_tkPenalty {
-        title = "Punish people for teamkilling";
+        title = $STR_DES_PPFT;
             values[] = {0,1};
-            texts[] = {"Off","On"};
+            texts[] = {$STR_DES_OFF,$STR_DES_ON};
             default = 0;
             typeName = "BOOL";
             force = 1;
     };
     class AS_param_onlyPermanentMembers {
-        title = "Only permanent members are eligible for commandership at start";
-            values[] = {0,1};
-            texts[] = {"Off","On"};
-            default = 1;
+        title = $STR_DES_OPMAEFCAS;
+        values[] = {0,1};
+        texts[] = {$STR_DES_OFF,$STR_DES_ON};
+        default = 1;
     };
-    #include "aceSettings.hpp"
+    class AS_enableVCOM {
+        title = $STR_DES_ENVCOMAI;
+        values[] = {0,1};
+        texts[] = {$STR_DES_OFF,$STR_DES_ON};
+        default = 0;
+        typeName = "BOOL";
+        force = 1;
+    };
+    class AS_autosave {
+        title = $STR_DES_AUTOSAVE;
+        values[] = {0,1};
+        texts[] = {$STR_DES_OFF,$STR_DES_ON};
+        default = 0;
+        typeName = "BOOL";
+        force = 1;
+    };
+    class AS_loadprofilesave {
+        title = $STR_DES_LOADPROFILESAVE;
+        values[] = {0,1};
+        texts[] = {$STR_DES_OFF,$STR_DES_ON};
+        default = 0;
+        typeName = "BOOL";
+        force = 1;
+    };
+    class AS_saveprofilesave {
+        title = $STR_DES_SAVEPROFILESAVE;
+        values[] = {0,1};
+        texts[] = {$STR_DES_OFF,$STR_DES_ON};
+        default = 0;
+        typeName = "BOOL";
+        force = 1;
+    };
+    //#include "aceSettings.hpp" //TODO to be decommissioned
 };
 
 class CfgFunctions {

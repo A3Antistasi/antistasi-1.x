@@ -14,13 +14,14 @@ opHeliSD = 			"RHS_Mi8AMTSh_vvs"; // PO-30 Orca (Armed)
 opGunship = 		"rhs_mi28n_vvs"; // Mi-48 Kajman
 
 // CAS, fixed-wing
-opCASFW = 			["RHS_Su25SM_vvs", "RHS_T50_vvs_generic"]; // To-199 Neophron (CAS)
+opCASFW = 			["RHS_Su25SM_vvs","RHS_T50_vvs_generic"]; // To-199 Neophron (CAS)
 
 // small UAV (Darter, etc)
 opUAVsmall = 		"rhs_pchela1t_vvs"; // Tayran AR-2
 
 // air force
-opAir = 			["rhs_ka60_grey","RHS_Mi8AMTSh_FAB_vvs","rhs_mi28n_vvs","RHS_Su25SM_vvs","RHS_Mi24P_vvs"];
+opAir = 			["rhs_ka60_grey","rhs_mi28n_vvs"];
+dogfight = 			["rhs_mig29s_vvs"];
 
 // self-propelled anti air
 opSPAA = 			"rhs_zsu234_aa";

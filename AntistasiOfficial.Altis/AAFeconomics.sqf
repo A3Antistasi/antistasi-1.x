@@ -27,11 +27,12 @@ if (_resourcesAAF > 5000) then{
 			[-5,0] remoteExec ["prestige",2];
 			if (_destroyed in power) then {[_destroyed] call AS_fnc_powerReorg};
 			_nombre = [_destroyed] call AS_fnc_localizar;
-			[["TaskFailed", ["", format ["%1 rebuilt by AAF",_nombre]]],"BIS_fnc_showNotification"] call BIS_fnc_MP;
+			[_nombre,{["TaskFailed", ["", format [localize "STR_NTS_REB_AAF", _this]]] call BIS_fnc_showNotification}] remoteExec ["call", 0];
+
 			};
 		} forEach _destroyedCities;
 	} else {
-		if ((count antenasMuertas > 0) and (not("REP" in misiones))) then{
+		/*if ((count antenasMuertas > 0) and (not("REP" in misiones))) then{
 			{
 				if ((_resourcesAAF > 5000) and (not("REP" in misiones))) then{
 					_marcador = [markers, _x] call BIS_fnc_nearestPosition;
@@ -42,7 +43,7 @@ if (_resourcesAAF > 5000) then{
 					};
 				};
 			} forEach antenasMuertas;
-		};
+		}; */ //Stef disabled repair radiotower, the mission is buggy, reduntant and pointless
 	};
 };
 

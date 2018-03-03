@@ -1,10 +1,10 @@
 params ["_unit"];
 private ["_grupo","_grupos","_isLeader","_dummyGroup","_bleedOut","_suicide","_saveVolume","_ayuda","_isHelped","_texto","_isPlayer","_camTarget","_saveVolumeVoice"];
 
-if (_unit getVariable "ASunconscious") exitWith {};
+if ([_unit] call AS_fnc_isUnconscious) exitWith {};
 if (damage _unit < 0.9) exitWith {};
 if (!local _unit) exitWith {};
-_unit setVariable ["ASunconscious",true,true];
+[_unit, true] call AS_fnc_setUnconscious;
 _bleedOut = time + 300;
 _isPlayer = isPlayer _unit;
 if (_isPlayer) then {
@@ -63,7 +63,7 @@ if (_isPlayer) then {
 	if (isMultiplayer) then {[_unit,"heal"] remoteExec ["AS_fnc_addActionMP",0,_unit]};
 };
 
-while {(time < _bleedOut) and (damage _unit > 0.25) and (alive _unit) and (_unit getVariable "ASunconscious") and (!(_unit getVariable ["ASrespawning",false]))} do {
+while {(time < _bleedOut) and (damage _unit > 0.25) and (alive _unit) and ([_unit] call AS_fnc_isUnconscious) and (!(_unit getVariable ["ASrespawning",false]))} do {
 	if (random 10 < 1) then {playSound3D [(injuredSounds call BIS_fnc_selectRandom),_unit,false, getPosASL _unit, 1, 1, 50];};
 	if (_isPlayer) then {
 		_isHelped = _unit getVariable "ASmedHelped";
@@ -126,7 +126,7 @@ if (time > _bleedOut) exitWith {
 			_ayuda = [_unit] call askForHelp;
 			if (!isNull _ayuda) then{
 				_unit setdamage 0.2;
-				_unit setVariable ["ASunconscious",false,true];
+				[_unit, false] call AS_fnc_setUnconscious;
 				_unit playMoveNow "AmovPpneMstpSnonWnonDnon_healed";
 			}else{
 				[_unit] call respawn
@@ -134,7 +134,7 @@ if (time > _bleedOut) exitWith {
 		} else {
 			_unit setdamage 0.2;
 			_unit setUnconscious false;
-			_unit setVariable ["ASunconscious",false,true];
+			[_unit, false] call AS_fnc_setUnconscious;
 			_unit playMoveNow "AmovPpneMstpSnonWnonDnon_healed";
 		};
 	}else{
@@ -142,7 +142,7 @@ if (time > _bleedOut) exitWith {
 	};
 };
 
-if (_unit getVariable "ASunconscious") then {_unit setVariable ["ASunconscious",false,true]};
+if ([_unit] call AS_fnc_isUnconscious) then {[_unit, false] call AS_fnc_setUnconscious;};
 
 if (alive _unit) then {
 	_unit setUnconscious false;

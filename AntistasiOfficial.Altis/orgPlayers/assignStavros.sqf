@@ -53,8 +53,7 @@ _selectable = objNull;
 } forEach _potentials;
 
 if (!isNull _selectable) then {
-	if (_disconnected) then {_text = format [localize "STR_HINTS_COMMANDER_DIS", name _selectable]} else {_text = format [localize "STR_HINTS_COMMANDER_REP", name Slowhand, name _selectable]};
-	[_selectable] call stavrosInit;
+ 	[_selectable] call stavrosInit;
 	sleep 5;
-	[[petros,"hint",_text],"commsMP"] call BIS_fnc_MP;
+	[[name Slowhand, name _selectable, _disconnected],{_text ="", if (_this select 2) then {_text = format [localize "STR_HINTS_COMMANDER_DIS", _this select 1]} else {_text = format [localize "STR_HINTS_COMMANDER_REP", _this select 0, _this select 1]}; hint _text;}] remoteExec ["call",0];
 };

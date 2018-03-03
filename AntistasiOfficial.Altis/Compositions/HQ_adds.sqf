@@ -69,6 +69,8 @@ call {
 
 _item = _itemType createVehicle [0,0,0];
 _item setpos _spawnPos;
+_item allowdamage false;
+_item enablesimulation false;
 
 [_item,"moveObject"] remoteExec ["AS_fnc_addActionMP"];
 [_item,"removeObj"] remoteExec ["AS_fnc_addActionMP"];

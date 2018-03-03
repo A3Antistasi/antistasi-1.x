@@ -46,7 +46,7 @@ flag_savingServer = true;
 ["campaign_playerList",server getVariable ["campaign_playerList",[]]] call fn_saveData;
 
 //Sparker's War Statistics data
-["ws_grid", ws_grid] call fn_saveData;
+//["ws_grid", ws_grid] call fn_saveData;
 
 private ["_hr","_funds","_vehicle","_weapons","_magazines","_items","_backpacks","_containers","_backpack","_vehiclesToSave","_vehicleType","_supportOPFOR","_supportBLUFOR","_data","_garrison","_mines","_emplacements","_camps","_missionTypes","_objectsHQ","_addObjectsHQ"];
 
@@ -123,7 +123,7 @@ if (count _containers > 0) then {
 	};
 };
 
-if (isMultiplayer) then {
+/*if (isMultiplayer) then {
 	{
 		{
 			if ([_x] call BIS_fnc_baseWeapon in lockedWeapons) then {
@@ -149,7 +149,7 @@ if (isMultiplayer) then {
 	if (!(_backpack in unlockedBackpacks) AND (_backpack != "")) then {
 		_backpacks pushBack _backpack;
 	};
-};
+};*/
 
 _vehiclesToSave = [];
 {
@@ -178,17 +178,19 @@ _vehiclesToSave = [];
 								if (_vehicleType != AS_misSupplyBox) then {
 									if (_vehicleType != "I_supplyCrate_F") then {
 											if (_vehicleType != "Land_Camping_Light_F") then {
-												if (count attachedObjects _vehicle == 0) then {
-													if ((alive _vehicle) AND ({(alive _x) AND (!isPlayer _x)} count crew _vehicle == 0)) then {
-														if !(_vehicleType == "WeaponHolderSimulated") then {
-															_vehiclesToSave pushBackUnique [_vehicleType,getPosATLVisual _vehicle,getDir _vehicle];
-															_weapons = _weapons + weaponCargo _vehicle;
-															_magazines = _magazines + magazineCargo _vehicle;
-															_items = _items + itemCargo _vehicle;
-															if (count backpackCargo _vehicle > 0) then {
-																{
-																	_backpacks pushBack (_x call BIS_fnc_basicBackpack);
-																} forEach backpackCargo _vehicle;
+												if (_vehicleType != "Land_WoodenCrate_01_F") then {
+													if (count attachedObjects _vehicle == 0) then {
+														if ((alive _vehicle) AND ({(alive _x) AND (!isPlayer _x)} count crew _vehicle == 0)) then {
+															if !(_vehicleType == "WeaponHolderSimulated") then {
+																_vehiclesToSave pushBackUnique [_vehicleType,getPosATLVisual _vehicle,getDir _vehicle];
+																_weapons = _weapons + weaponCargo _vehicle;
+																_magazines = _magazines + magazineCargo _vehicle;
+																_items = _items + itemCargo _vehicle;
+																if (count backpackCargo _vehicle > 0) then {
+																	{
+																		_backpacks pushBack (_x call BIS_fnc_basicBackpack);
+																	} forEach backpackCargo _vehicle;
+															};
 														};
 													};
 												};
@@ -309,6 +311,6 @@ _data = [];
 
 flag_savingServer = false;
 
-[petros,"save",[localize "STR_HINTS_SAVE_COM_1",localize "STR_HINTS_SAVE_COM_2",localize "STR_HINTS_SAVE_COM_3",localize "STR_HINTS_SAVE_COM_4"]] remoteExec ["commsMP",Slowhand];
+[petros,"save",""] remoteExec ["commsMP",Slowhand];
 INFO("Maintenance: game successfully saved.");
 LOG("END fn_saveGame");

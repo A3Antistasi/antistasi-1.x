@@ -54,7 +54,7 @@ _mrk setMarkerShape "ICON";
 _fechalim = [date select 0, date select 1, date select 2, date select 3, (date select 4) + 60];
 _fechalimnum = dateToNumber _fechalim;
 
-_tsk = ["PuestosFIA",[side_blue,civilian],["We are sending a team to establish an Observation Post or Roadblock. Send and cover the team until reaches it's destination.","Post \ Roadblock Deploy",_mrk],_posicionTel,"CREATED",5,true,true,"Move"] call BIS_fnc_setTask;
+_tsk = ["PuestosFIA", [side_blue, civilian],["STR_TSK_DESC_OPDEPLOY", "STR_TSK_OPDEPLOY", _mrk],_posicionTel, "CREATED", 5, true, true, "Move"] call BIS_fnc_setTask;
 misiones pushBackUnique _tsk; publicVariable "misiones";
 _grupo = [getMarkerPos guer_respawn, side_blue, ([_tipogrupo, "guer"] call AS_fnc_pickGroup)] call BIS_Fnc_spawnGroup;
 _grupo setGroupId ["Watch"];
@@ -114,7 +114,7 @@ if ({(alive _x) and (_x distance _posicionTel < 10)} count units _grupo > 0) the
 		// BE module
 	};
 	spawner setVariable [_mrk,false,true];
-	_tsk = ["PuestosFIA",[side_blue,civilian],["We are sending a team to establish an Observation Post or Roadblock. Send and cover the team until reaches it's destination.","Post \ Roadblock Deploy",_mrk],_posicionTel,"SUCCEEDED",5,true,true,"Move"] call BIS_fnc_setTask;
+	_tsk = ["PuestosFIA", [side_blue, civilian],["STR_TSK_DESC_OPDEPLOY", "STR_TSK_OPDEPLOY", _mrk],_posicionTel, "SUCCEEDED", 5, true, true, "Move"] call BIS_fnc_setTask;
 	[-5,5,_posiciontel] remoteExec ["AS_fnc_changeCitySupport",2];
 	_mrk setMarkerType "loc_bunker";
 	_mrk setMarkerColor "ColorYellow";
@@ -122,7 +122,7 @@ if ({(alive _x) and (_x distance _posicionTel < 10)} count units _grupo > 0) the
 	}
 else
 	{
-	_tsk = ["PuestosFIA",[side_blue,civilian],["We are sending a team to establish an Observation Post or Roadblock. Send and cover the team until reaches it's destination.","Post \ Roadblock Deploy",_mrk],_posicionTel,"FAILED",5,true,true,"Move"] call BIS_fnc_setTask;
+	_tsk = ["PuestosFIA", [side_blue, civilian],["STR_TSK_DESC_OPDEPLOY", "STR_TSK_OPDEPLOY", _mrk],_posicionTel, "FAILED", 5, true, true, "Move"] call BIS_fnc_setTask;
 	sleep 3;
 	deleteMarker _mrk;
 	};

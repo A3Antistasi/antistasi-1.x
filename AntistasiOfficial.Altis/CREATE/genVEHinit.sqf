@@ -1,11 +1,12 @@
 params ["_vehicle"];
 private ["_vehicleType"];
 
-_vehicle setfuel 0.15;
-if(activeACE) then {[_vehicle, 4000] call ace_refuel_fnc_setFuel;} else {_vehicle setfuelcargo 0.6;};
+
 
 if ((_vehicle isKindOf "FlagCarrier") OR (_vehicle isKindOf "Building")) exitWith {};
 if (_vehicle isKindOf "ReammoBox_F") exitWith {[_vehicle] call cajaAAF};
+_vehicle setfuel 0.15;
+if(activeACE) then {[_vehicle, 4000] call ace_refuel_fnc_setFuel;} else {_vehicle setfuelcargo 0.6;};
 
 _vehicleType = typeOf _vehicle;
 
@@ -21,7 +22,7 @@ call {
 				if (activeBE) then {["des_arm"] remoteExec ["fnc_BE_XP", 2]};
 			}
 		}];
-		_vehicle addEventHandler ["HandleDamage",{_vehicle = _this select 0; if (!canFire _vehicle) then {[_vehicle] call smokeCoverAuto}}];
+		//_vehicle addEventHandler ["HandleDamage",{_vehicle = _this select 0; if (!canFire _vehicle) then {//[_vehicle] call smokeCoverAuto}}];
 	};
 
 	// tank
@@ -33,11 +34,12 @@ call {
 				if (activeBE) then {["des_arm"] remoteExec ["fnc_BE_XP", 2]};
 			}
 		}];
-		_vehicle addEventHandler ["HandleDamage",{_vehicle = _this select 0; if (!canFire _vehicle) then {[_vehicle] call smokeCoverAuto}}];
+		//_vehicle addEventHandler ["HandleDamage",{_vehicle = _this select 0; if (!canFire _vehicle) then {//[_vehicle] call smokeCoverAuto}}];
 	};
 
 	// plane or helicopter
 	if (_vehicleType in indAirForce) exitWith {
+		_vehicle setfuel 0.4;
 		_vehicle addEventHandler ["GetIn", {
 			_crewPos = _this select 1;
 			if (_crewPos == "driver") then {
@@ -47,18 +49,20 @@ call {
 					hint format ["AI is not capable of flying %1 vehicles.", A3_Str_INDEP];
 				};
 			};
-		_vehicle setfuel 0.3;
 		}];
 
 		if (_vehicleType in heli_unarmed) then {
 			_vehicle addEventHandler ["killed",{
 				[-4000] remoteExec ["resourcesAAF",2];
 				if (activeBE) then {["des_veh"] remoteExec ["fnc_BE_XP", 2]};
-			_vehicle setfuel 0.3;
 			}];
 		} else {
-			if (_vehicle isKindOf "Helicopter") then {_vehicle setfuel 0.3; _vehicle addEventHandler ["killed",{[_this select 0] call AS_fnc_AAFassets;[0,0] remoteExec ["prestige",2]; [-2,2,position (_this select 0)] remoteExec ["AS_fnc_changeCitySupport",2]}]};
-			if (_vehicle isKindOf "Plane") then {_vehicle addEventHandler ["killed",{[_this select 0] call AS_fnc_AAFassets; [0,0] remoteExec ["prestige",2]; [-5,5,position (_this select 0)] remoteExec ["AS_fnc_changeCitySupport",2]}]};
+			if (_vehicle isKindOf "Helicopter") then {
+					_vehicle addEventHandler ["killed",{[_this select 0] call AS_fnc_AAFassets;[0,0] remoteExec ["prestige",2]; [-2,2,position (_this select 0)] remoteExec ["AS_fnc_changeCitySupport",2]}]
+			};
+			if (_vehicle isKindOf "Plane") then {
+				_vehicle addEventHandler ["killed",{[_this select 0] call AS_fnc_AAFassets; [0,0] remoteExec ["prestige",2]; [-5,5,position (_this select 0)] remoteExec ["AS_fnc_changeCitySupport",2]}]
+			};
 		};
 	};
 

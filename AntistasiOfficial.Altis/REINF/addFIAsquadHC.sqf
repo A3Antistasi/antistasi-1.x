@@ -14,6 +14,9 @@ private ["_hr","_resourcesFIA","_spawnData","_roadPos","_direction","_spawnPos",
 
 if (_check) exitWith {Hint "You cannot Recruit Squads with enemies near your HQ"};
 
+_spawnData = [(getMarkerPos guer_respawn), [ciudades, (getMarkerPos guer_respawn)] call BIS_fnc_nearestPosition] call AS_fnc_findRoadspot;
+if(_spawnData isequalto []) exitwith {hint localize "STR_HINTS_COMMANDER_HQRECRUITFAR"; comandante globalChat localize "STR_HINTS_COMMANDER_HQRECRUITFAR";};
+
 _hr = server getVariable ["hr",0];
 _resourcesFIA = server getVariable ["resourcesFIA",0];
 
@@ -41,7 +44,7 @@ if (_resourcesFIA < _cost) exitWith {hint format ["You do not have enough money 
 
 [-_costHR, -_cost] remoteExec ["resourcesFIA",2];
 
-_spawnData = [(getMarkerPos guer_respawn), [ciudades, (getMarkerPos guer_respawn)] call BIS_fnc_nearestPosition] call AS_fnc_findRoadspot;
+
 _roadPos = _spawnData select 0;
 _direction = _spawnData select 1;
 
@@ -80,10 +83,15 @@ if (_isInfantry) then {
 
 		if ((activeGREF) AND (_groupCategory isEqualTo guer_stat_AT)) exitWith {
 			_spawnPos = _roadPos findEmptyPosition [1,50,guer_veh_technical_AT];
-			_vehicleData = [_spawnPos,_direction,guer_veh_technical_AT,side_blue] call bis_fnc_spawnvehicle;
-			_vehicle = _vehicleData select 0;
-			_group = _vehicleData select 2;
-			_group setVariable ["staticAutoT",false,true];
+			_vehicle = guer_veh_technical_AT createVehicle _spawnpos;
+			_vehicle setDir _direction;
+			_group = createGroup side_blue;
+			_unit = _group createUnit [guer_sol_UN, _roadPos, [],0,"NONE"];
+			_unit assignAsDriver _vehicle;
+			_unit moveInDriver _vehicle;
+			_unit = _group createUnit [guer_sol_UN, _roadPos, [],0,"NONE"];
+			_unit moveInGunner _vehicle;
+			_unit assignAsGunner _vehicle;
 			_group setGroupId [format ["M.AT-%1",{side (leader _x) == side_blue} count allGroups]];
 		};
 
@@ -118,6 +126,8 @@ if (_isInfantry) then {
 };
 
 {[_x] call AS_fnc_initialiseFIAUnit} forEach units _group;
+{_x setvariable ["generated",true,true]} forEach units _group;
+
 leader _group setBehaviour "SAFE";
 Slowhand hcSetGroup [_group];
 _group setVariable ["isHCgroup", true, true];

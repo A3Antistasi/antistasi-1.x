@@ -120,7 +120,7 @@ infAT =				["rhs_group_rus_vdv_infantry_section_AT"];
 // Statics to be used
 statMG = 			"rhs_DSHKM_ins";
 statAT = 			"rhs_Kornet_9M133_2_vdv"; // alternatives: rhs_Kornet_9M133_2_vdv, rhs_SPG9M_VDV, rhs_Metis_9k115_2_vdv
-statAA = 			"RHS_ZU23_VDV"; // alternatively: "rhs_Igla_AA_pod_vdv"
+statAA = 			"rhs_Igla_AA_pod_msv";
 statAA2 = 			"rhs_Igla_AA_pod_vdv";
 statMortar = 		"rhs_2b14_82mm_vdv";
 
@@ -359,7 +359,8 @@ if (activeGREF) then {
 	"rhs_weap_makarov_pm",
 	"rhs_weap_savz61",
 	"rhs_weap_kar98k",
-	"rhs_weap_m38"
+	"rhs_weap_m38",
+	"rhs_weap_savz61_folded"
 	];
 
 	unlockedRifles = [
@@ -459,11 +460,18 @@ unlockedItems = [
 	"U_B_survival_uniform",
 	"U_OrestesBody",
 	"V_BandollierB_oli",
+	//GREF uniforms
+	"rhsgref_uniform_woodland_olive",
+	"rhsgref_uniform_altis_lizard_olive",
+	"rhsgref_uniform_flecktarn",
 	"G_Bandanna_khk"
 ];
 
 unlockedBackpacks = [
-	"rhs_assault_umbts"
+	"rhs_assault_umbts",
+	"rhs_assault_umbts_engineer",
+	"rhs_medic_bag"
+
 ];
 
 unlockedOptics = [];

@@ -17,5 +17,7 @@ while { !({alive _x} count units _vehGroup == 0) && !({_x distance2D _dest > 200
 	sleep 5;
 };
 
-waitUntil {sleep 1; ({alive _x} count units _vehGroup == 0) || ({_x distance2D _dest > 200} count units _vehGroup == 0)};
-{deleteVehicle _x} forEach units _vehGroup + [vehicle leader _vehGroup]; deleteGroup _vehGroup;
+// Stef 31/01 this code caused the vehicle despawn after the driver was killed! or when player managed to fastravel.
+/*
+waitUntil {sleep 5; ({alive _x} count units _vehGroup == 0)};
+{deleteVehicle _x} forEach units _vehGroup + [vehicle leader _vehGroup]; deleteGroup _vehGroup; */

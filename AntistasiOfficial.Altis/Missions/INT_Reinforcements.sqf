@@ -9,8 +9,8 @@ private ["_posTarget", "_posBase", "_soldiers", "_groups", "_vehicles", "_endTim
 if ("INT" in misiones) exitWith {"Info: Reinforcement task killed, reinforcements task active already."};
 //if ((format ["INT_%1",_target]) in misiones) exitWith {format ["Info: Reinforcement task killed, %1 already receiving reinforcements.", _target]};
 
-_tskTitle = localize "STR_TSK_INTREINF";
-_tskDesc = localize "STR_TSKDESC_INTREINF";
+_tskTitle = "STR_TSK_TD_INTREINF";
+_tskDesc = "STR_TSK_TD_DESC_INTREINF";
 
 _posBase = getMarkerPos _base;
 _posTarget = getMarkerPos _target;
@@ -26,7 +26,7 @@ _targetName = [_target] call AS_fnc_localizar;
 _baseName = [_base] call AS_fnc_localizar;
 [_base, 15] spawn AS_fnc_addTimeForIdle;
 
-_tsk = ["INT",[side_blue,civilian],[format [_tskDesc, A3_Str_INDEP, _targetName, _baseName],format [_tskTitle, A3_Str_INDEP],_target],_posTarget,"CREATED",5,true,true,"Destroy"] call BIS_fnc_setTask;
+_tsk = ["INT",[side_blue,civilian],[[_tskDesc, A3_Str_INDEP, _targetName, _baseName],[_tskTitle, A3_Str_INDEP],_target],_posTarget,"CREATED",5,true,true,"Destroy"] call BIS_fnc_setTask;
 misiones pushBack _tsk; publicVariable "misiones";
 
 sleep (DELAY * 60);
@@ -50,11 +50,11 @@ waitUntil {
 };
 
 if ({_x distance _posTarget < 150} count _soldiers > 5) then {
-	_tsk = ["INT",[side_blue,civilian],[format [_tskDesc, A3_Str_INDEP, _targetName, _baseName],format [_tskTitle, A3_Str_INDEP],_target],_posTarget,"FAILED",5,true,true,"Destroy"] call BIS_fnc_setTask;
+	_tsk = ["INT",[side_blue,civilian],[[_tskDesc, A3_Str_INDEP, _targetName, _baseName],[_tskTitle, A3_Str_INDEP],_target],_posTarget,"FAILED",5,true,true,"Destroy"] call BIS_fnc_setTask;
 	[-10, Slowhand] call playerScoreAdd;
 	[5, 0, _posTarget] remoteExec ["AS_fnc_changeCitySupport", 2];
 } else {
-	_tsk = ["INT",[side_blue,civilian],[format [_tskDesc, A3_Str_INDEP, _targetName, _baseName],format [_tskTitle, A3_Str_INDEP],_target],_posTarget,"SUCCEEDED",5,true,true,"Destroy"] call BIS_fnc_setTask;
+	_tsk = ["INT",[side_blue,civilian],[[_tskDesc, A3_Str_INDEP, _targetName, _baseName],[_tskTitle, A3_Str_INDEP],_target],_posTarget,"SUCCEEDED",5,true,true,"Destroy"] call BIS_fnc_setTask;
 	[10, Slowhand] call playerScoreAdd;
 	[0, 5, _posTarget] remoteExec ["AS_fnc_changeCitySupport", 2];
 };

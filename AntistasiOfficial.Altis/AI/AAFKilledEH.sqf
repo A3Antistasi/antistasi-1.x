@@ -4,7 +4,7 @@ _killer = _this select 1;
 if (_muerto getVariable ["OPFORSpawn",false]) then {_muerto setVariable ["OPFORSpawn",nil,true]};
 [_muerto] spawn postmortem;
 
-if (activeACE) then {
+if (activeACEMedical) then {
 	if ((isNull _killer) || (_killer == _muerto)) then {
 		_killer = _muerto getVariable ["ace_medical_lastDamageSource", _killer];
 	};
@@ -68,6 +68,6 @@ if ((side _killer == side_blue) || (captive _killer)) then {
 	} forEach units _grupo;
 
 	//Test the WarStatistics script. Sparker.
-	_posMuerto = getPos _muerto;
-	[ws_grid, _posMuerto select 0, _posMuerto select 1, 1] call ws_fnc_addValue;
+	//_posMuerto = getPos _muerto;
+	//[ws_grid, _posMuerto select 0, _posMuerto select 1, 1] call ws_fnc_addValue;
 };

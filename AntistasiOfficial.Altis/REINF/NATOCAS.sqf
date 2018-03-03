@@ -15,7 +15,7 @@ _fechalimnum = dateToNumber _fechalim;
 _nombreorig = format ["the %1 Carrier", A3_Str_BLUE];
 if (_origen!= "spawnNATO") then {_nombreorig = [_origen] call AS_fnc_localizar};
 
-_tsk = ["NATOCAS",[side_blue,civilian],[format ["%4 is providing Air support from %1. They will be under our command until %2:%3.",_nombreorig,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4, A3_Str_BLUE],format ["%1 CAS", A3_Str_BLUE],_origen],_orig,"CREATED",5,true,true,"Attack"] call BIS_fnc_setTask;
+_tsk = ["NATOCAS",[side_blue,civilian],[["%4 is providing Air support from %1. They will be under our command until %2:%3.",_nombreorig,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4, A3_Str_BLUE],["%1 CAS", A3_Str_BLUE],_origen],_orig,"CREATED",5,true,true,"Attack"] call BIS_fnc_setTask;
 misiones pushBack _tsk; publicVariable "misiones";
 
 _tipoVeh = bluHeliArmed;
@@ -60,11 +60,11 @@ waitUntil {sleep 1; (dateToNumber date > _fechalimnum) or ({alive _x} count _veh
 
 if (dateToNumber date > _fechalimnum) then
 	{
-	[["TaskSucceeded", ["", format ["%1 CAS finished", A3_Str_BLUE]]],"BIS_fnc_showNotification"] call BIS_fnc_MP;
+	{["TaskSucceeded", ["", format ["%1 CAS finished", A3_Str_BLUE]]] call BIS_fnc_showNotification} remoteExec ["call", 0];
 	}
 else
 	{
-	_tsk = ["NATOCAS",[side_blue,civilian],[format ["%4 is providing Air support from %1. They will be under our command until %2:%3.",_nombreorig,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4, A3_Str_BLUE],format ["%1 CAS", A3_Str_BLUE],_origen],_orig,"FAILED",5,true,true,"Attack"] call BIS_fnc_setTask;
+	_tsk = ["NATOCAS",[side_blue,civilian],[["%4 is providing Air support from %1. They will be under our command until %2:%3.",_nombreorig,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4, A3_Str_BLUE],["%1 CAS", A3_Str_BLUE],_origen],_orig,"FAILED",5,true,true,"Attack"] call BIS_fnc_setTask;
 	[-5,0] remoteExec ["prestige",2];
 	};
 

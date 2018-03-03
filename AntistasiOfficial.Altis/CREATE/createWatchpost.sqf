@@ -85,7 +85,7 @@ if (count(allUnits select {
 	}) < 1)
 then {
 	[-5,0,_markerPos] remoteExec ["AS_fnc_changeCitySupport",2];
-	[["TaskSucceeded", ["", localize "STR_TSK_WP_DESTROYED"]],"BIS_fnc_showNotification"] call BIS_fnc_MP;
+	{["TaskSucceeded", ["", localize "STR_TSK_TD_WP_DESTROYED"]] call BIS_fnc_showNotification} remoteExec ["call", 0];
 	_mrk = format ["Dum%1",_marker];
 	deleteMarker _mrk;
 	mrkAAF = mrkAAF - [_marker];

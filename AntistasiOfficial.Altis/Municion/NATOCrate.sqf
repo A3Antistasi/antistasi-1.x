@@ -5,10 +5,7 @@ private ["_crate","_NATOSupp"];
 _crate = _this select 0;
 _NATOSupp = _this select 1;
 
-clearMagazineCargoGlobal _crate;
-clearWeaponCargoGlobal _crate;
-clearItemCargoGlobal _crate;
-clearBackpackCargoGlobal _crate;
+[_crate] call emptyCrate;
 
 //Standard Equipment (good for 5 people)
 			//										Weapon
@@ -20,7 +17,7 @@ clearBackpackCargoGlobal _crate;
 			_crate addWeaponCargoGlobal 		[bluATMissile		select 0,	5	];
 			_crate addItemCargoGlobal			["SmokeShellRed"			,	25	];
 			_crate addItemCargoGlobal			["SmokeShellGreen"			,	25	];
-			_crate addItemCargoGlobal			[bluAttachments 	select 0,	5	];	//flashlight
+			_crate addItemCargoGlobal			[bluAttachments 	select 0,	6	];	//flashlight
 				{_crate addItemCargoGlobal 		[_x							,	20	];	//Shells: Smoke and Flares Green and Red
 				} foreach bluGLsmoke;
 
@@ -43,7 +40,7 @@ clearBackpackCargoGlobal _crate;
 			_crate addItemCargoGlobal 			["ToolKit"					,	1	];
 			_crate addItemCargoGlobal 			["MineDetector"				,	1	];
 			if (activeTFAR) then {
-			_crate addBackpackCargoGlobal 		[lrRadio					, 	5	];
+			_crate addBackpackCargoGlobal 		[lrRadio					, 	3	];
 			};
 
 			//										From Tier 1
@@ -78,6 +75,8 @@ clearBackpackCargoGlobal _crate;
 			_crate addItemCargoGlobal			[bluScopes			select 1,	5	];
 			_crate addMagazineCargoGlobal 		[bluLMGAmmo 		select 0,	40	];
 			_crate addMagazineCargoGlobal 		[selectrandom bluRifleAmmo	,	50	]; // Extra ammo bonus
+			if (activeACE) then {
+			_crate addItemCargoGlobal 			[blunvg				select 0,	5	];};
 	}
 	else {
 	if (BE_currentStage == 2) then {
@@ -95,6 +94,8 @@ clearBackpackCargoGlobal _crate;
 			_crate addItemCargoGlobal			[bluScopes			select 1,	5	];
 			_crate addMagazineCargoGlobal 		[bluLMGAmmo 		select 0,	20	];
 			_crate addMagazineCargoGlobal 		[selectrandom bluRifleAmmo	,	25	]; // Extra ammo
+			if (activeACE) then {
+			_crate addItemCargoGlobal 			[blunvg				select 0,	2	];};
 	}
 	else {
 		if (BE_currentStage == 1) then {
@@ -110,6 +111,8 @@ clearBackpackCargoGlobal _crate;
 			_crate addWeaponCargoGlobal 		[bluLMG		 		select 0,	2	]; // LMG
 			_crate addItemCargoGlobal			[bluScopes			select 1,	2	];
 			_crate addMagazineCargoGlobal 		[bluLMGAmmo 		select 0,	8	];
+			if (activeACE) then {
+			_crate addItemCargoGlobal 			[blunvg				select 0,	1	];};
 		};
 	};
 };

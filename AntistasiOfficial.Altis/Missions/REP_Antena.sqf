@@ -1,7 +1,7 @@
 if (!isServer and hasInterface) exitWith {};
 
 params ["_marker","_posAntenna"];
-[localize "STR_TSK_REPANTENNA",localize "STR_TSKDESC_REPANTENNA",""] params ["_tskTitle","_tskDesc","_group"];
+["STR_TSK_TD_REPANTENNA","STR_TSK_TD_DESC_REPANTENNA",""] params ["_tskTitle","_tskDesc","_group"];
 
 private ["_duration","_endTime","_targetName","_task","_size","_position","_vehicle","_unit","_antenna","_resourcesAAF"];
 
@@ -10,7 +10,7 @@ _endTime = [date select 0, date select 1, date select 2, date select 3, (date se
 _endTime = dateToNumber _endTime;
 _targetName = [_marker] call AS_fnc_localizar;
 
-_task = ["REP",[side_blue,civilian],[format [_tskDesc,_targetName,numberToDate [2035,_endTime] select 3,numberToDate [2035,_endTime] select 4],_tskTitle,_marker],_posAntenna,"CREATED",5,true,true,"Destroy"] call BIS_fnc_setTask;
+_task = ["REP",[side_blue,civilian],[[_tskDesc,_targetName,numberToDate [2035,_endTime] select 3,numberToDate [2035,_endTime] select 4],_tskTitle,_marker],_posAntenna,"CREATED",5,true,true,"Destroy"] call BIS_fnc_setTask;
 misiones pushBack _task; publicVariable "misiones";
 
 waitUntil {sleep 1;(dateToNumber date > _endTime) OR (spawner getVariable _marker)};
@@ -37,7 +37,7 @@ if (spawner getVariable _marker) then {
 	waitUntil {sleep 1;(dateToNumber date > _endTime) OR !(alive _vehicle)};
 
 	if !(alive _vehicle) then {
-		_task = ["REP",[side_blue,civilian],[format [_tskDesc,_targetName,numberToDate [2035,_endTime] select 3,numberToDate [2035,_endTime] select 4, A3_Str_INDEP],_tskTitle,_marker],_posAntenna,"SUCCEEDED",5,true,true,"Destroy"] call BIS_fnc_setTask;
+		_task = ["REP",[side_blue,civilian],[[_tskDesc,_targetName,numberToDate [2035,_endTime] select 3,numberToDate [2035,_endTime] select 4, A3_Str_INDEP],_tskTitle,_marker],_posAntenna,"SUCCEEDED",5,true,true,"Destroy"] call BIS_fnc_setTask;
 		[2,0] remoteExec ["prestige",2];
 		[1200] remoteExec ["AS_fnc_increaseAttackTimer",2];
 		{if (_x distance _vehicle < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
@@ -47,7 +47,7 @@ if (spawner getVariable _marker) then {
 
 if (dateToNumber date > _endTime) then {
 	if (_marker in mrkFIA) then {
-		_task = ["REP",[side_blue,civilian],[format [_tskDesc,_targetName,numberToDate [2035,_endTime] select 3,numberToDate [2035,_endTime] select 4, A3_Str_INDEP],_tskTitle,_marker],_posAntenna,"SUCCEEDED",5,true,true,"Destroy"] call BIS_fnc_setTask;
+		_task = ["REP",[side_blue,civilian],[[_tskDesc,_targetName,numberToDate [2035,_endTime] select 3,numberToDate [2035,_endTime] select 4, A3_Str_INDEP],_tskTitle,_marker],_posAntenna,"SUCCEEDED",5,true,true,"Destroy"] call BIS_fnc_setTask;
 		[2,0] remoteExec ["prestige",2];
 		[1200] remoteExec ["AS_fnc_increaseAttackTimer",2];
 		{if (_x distance _vehicle < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
@@ -58,7 +58,7 @@ if (dateToNumber date > _endTime) then {
 		};
 		// BE module
 	} else {
-		_task = ["REP",[side_blue,civilian],[format [_tskDesc,_targetName,numberToDate [2035,_endTime] select 3,numberToDate [2035,_endTime] select 4, A3_Str_INDEP],_tskTitle,_marker],_posAntenna,"FAILED",5,true,true,"Destroy"] call BIS_fnc_setTask;
+		_task = ["REP",[side_blue,civilian],[[_tskDesc,_targetName,numberToDate [2035,_endTime] select 3,numberToDate [2035,_endTime] select 4, A3_Str_INDEP],_tskTitle,_marker],_posAntenna,"FAILED",5,true,true,"Destroy"] call BIS_fnc_setTask;
 		//[5,0,_posAntenna] remoteExec ["AS_fnc_changeCitySupport",2];
 		[-600] remoteExec ["AS_fnc_increaseAttackTimer",2];
 		[-10,Slowhand] call playerScoreAdd;
@@ -84,7 +84,7 @@ if (dateToNumber date > _endTime) then {
 		antenas = antenas - [_object];
 		antenasmuertas pushBack (getPos _object);
 		deleteMarker _mrk;
-		[["TaskSucceeded", ["", localize "STR_TSK_RADIO_DESTROYED"]],"BIS_fnc_showNotification"] call BIS_fnc_MP;
+		{["TaskSucceeded", ["", localize "STR_TSK_TD_RADIO_DESTROYED"]] call BIS_fnc_showNotification} remoteExec ["call", 0];
 	}];
 };
 

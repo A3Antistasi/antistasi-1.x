@@ -93,7 +93,18 @@ fn_setPlayerData = {
     TRACE_3("START fn_setPlayerData", _varName,_varValue,_player);
 	call {
 		if(_varName == 'loadout') exitWith {
-		    if(_varValue isEqualType []) then {_player setUnitLoadout _varValue;};
+		    if(_varValue isEqualType []) then {
+                [  _varValue,
+                    {
+                        removeBackpackGlobal player;
+                        removeVest player;
+                        removeUniform player;
+                        removeGoggles player;
+                        player setUnitLoadout _this;
+                        systemChat "Loadout restored";
+                    }
+                ] remoteExec ["call", _player];
+            };
 		};
 		if(_varName isEqualTo 'funds') exitWith {_player setVariable ["dinero",_varValue,true];};
 		if(_varName isEqualTo 'score') exitWith {_player setVariable ["score",_varValue,true];};
@@ -112,8 +123,12 @@ fn_saveData = {
 	if (_varName == "") exitWith {ERROR_2("Error in fn_saveData, no name --  name: %1; value: %2", _varname,_varValue)};
 	if (isNil "_varValue") exitWith {ERROR_2("Error in fn_saveData, no value --  name: %1; value: %2", _varname,_varValue)};
 	if(usingIniDb)then{
-		//["write", ["Game", _varName, _varValue]] call saveDB;
-		[saveDB, "Game", _varname, _varValue] call fn_saveDataINIDBI;
+		if ((['AS_saveprofilesave', 0] call BIS_fnc_getParamValue) == 1) then {
+			profileNameSpace setVariable [format ["%1_%2_S_%3",worldName,static_playerSide,_varname],_varValue];
+		} else {
+			//["write", ["Game", _varName, _varValue]] call saveDB;
+			[saveDB, "Game", _varname, _varValue] call fn_saveDataINIDBI;
+		}
 	}else{
 		profileNameSpace setVariable [format ["%1_%2_S_%3",worldName,static_playerSide,_varname],_varValue];
 	};
@@ -123,9 +138,14 @@ fn_loadData = {
 	params [["_varname","",[""]]];
 	if (_varName == "") exitWith {ERROR_1("Error in fn_loadData, no name -- name: %1", _varname)};
 
-	_varValue = if(usingIniDb)then{
-		//[saveDB, _varname,loadDB] call AS_FNC_loadDataINIDBI; //Not going to pre-compile it!
-		[loadDB, "Game", _varname, objNull] call fn_loadDataINIDBI;
+	_varValue =
+	if(usingIniDb)then{
+		if ((['AS_loadprofilesave', 0] call BIS_fnc_getParamValue) == 1) then {
+			profileNameSpace getVariable [(format ["%1_%2_S_%3",worldName,static_playerSide,_varname]),objNull];
+		} else {
+			//[saveDB, _varname,loadDB] call AS_FNC_loadDataINIDBI; //Not going to pre-compile it!
+			[loadDB, "Game", _varname, objNull] call fn_loadDataINIDBI;
+		}
 	}else{
 		profileNameSpace getVariable [(format ["%1_%2_S_%3",worldName,static_playerSide,_varname]),objNull];
 	};
@@ -256,7 +276,7 @@ fn_setData = {
 					publicVariable "enemyMotorpool"
 				};
 			};
-			if(_varName == 'time') exitWith {setDate _varValue; forceWeatherChange};
+			if(_varName == 'time') exitWith {setDate _varValue;};
 			if(_varName == 'resourcesAAF') exitWith {server setVariable ["resourcesAAF",_varValue,true]};
 			if(_varName == 'resourcesFIA') exitWith {server setVariable ["resourcesFIA",_varValue,true]};
 			if(_varName == 'destroyedBuildings') exitWith {
@@ -336,10 +356,10 @@ fn_setData = {
 					_mrk setMarkerType "loc_bunker";
 					_mrk setMarkerColor "ColorYellow";
 					if (isOnRoad _x) then {
-						_mrk setMarkerText "FIA Roadblock";
+						_mrk setMarkerText localize "STR_GL_FIARB";
 						FIA_RB_list pushBackUnique _mrk;
 					} else {
-						_mrk setMarkerText "FIA Watchpost";
+						_mrk setMarkerText localize "STR_GL_FIAWP";
 						FIA_WP_list pushBackUnique _mrk;
 					};
 					spawner setVariable [_mrk,false,true];
@@ -499,6 +519,7 @@ fn_setData = {
 					_veh = _tipoVeh createVehicle [0,0,0];
 					_veh setDir _dirVeh;
 					_veh setPosATL _posVeh;
+					_veh setCenterOfMass [(getCenterOfMass _veh) vectorAdd [0, 0, -1], 0];
 
 					if (_tipoVeh in (statics_allMGs + statics_allATs + statics_allAAs + statics_allMortars)) then {
 						staticsToSave pushBack _veh;

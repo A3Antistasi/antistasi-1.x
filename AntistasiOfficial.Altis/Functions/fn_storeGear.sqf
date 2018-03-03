@@ -6,7 +6,7 @@ private ["_timeOut"];
 _unit setVariable ["AS_cannotComply", true, true];
 
 if ((!alive _unit) or (isPlayer _unit) or (vehicle _unit != _unit) or (player != leader group player) or (captive _unit)) exitWith {};
-if (_unit getVariable ["ASunconscious", false]) exitWith {};
+if ([_unit] call AS_fnc_isUnconscious) exitWith {};
 if (_unit getVariable ["ASmedHelping", false]) exitWith {_unit groupChat "I cannot go salvaging right now, I'm busy treating someone's wounds."};
 if (_unit getVariable ["AS_storingGear", false] && !(_combined)) exitWith {diag_log "SG: unit already storing gear."};
 

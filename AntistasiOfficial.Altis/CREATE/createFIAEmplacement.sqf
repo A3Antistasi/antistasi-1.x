@@ -69,14 +69,14 @@ if ({alive _x} count units _group == 0) then {
 	deleteMarker _marker;
 	if (_onRoad) then {
 		FIA_RB_list = FIA_RB_list - [_marker]; publicVariable "FIA_RB_list";
-		[["TaskFailed", ["", "Roadblock Lost"]],"BIS_fnc_showNotification"] call BIS_fnc_MP;
+		{["TaskFailed", ["", localize "STR_NTS_RBLOST"]] call BIS_fnc_showNotification} remoteExec ["call", 0];
 	} else {
 		FIA_WP_list = FIA_WP_list - [_marker]; publicVariable "FIA_WP_list";
-		[["TaskFailed", ["", "Watchpost Lost"]],"BIS_fnc_showNotification"] call BIS_fnc_MP;
+		{["TaskFailed", ["", localize "STR_NTS_WPLOST"]] call BIS_fnc_showNotification} remoteExec ["call", 0];
 		deleteVehicle (nearestObjects [getMarkerPos _marker, [guer_rem_des], 50] select 0);
 	};
 };
 
 waitUntil {sleep 1; !(spawner getVariable _marker) OR !(_marker in puestosFIA)};
 
-[_allGroups, _allSoldiers, _allVehicles] spawn AS_fnc_despawnUnits;
+[_allGroups, _allSoldiers, _allVehicles] call AS_fnc_despawnUnitsNow;
