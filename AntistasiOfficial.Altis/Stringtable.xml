@@ -2,13 +2,13 @@
 	<Package name="MissionNames">
 		<Container name="MissionNames_0">
 			<Key ID="STR_MISSION_NAME_SQM">
-				<Original>[SP/CO]- Antistasi 1.7.19B8 Altis Blufor</Original>
+				<Original>[SP/CO]- Antistasi 1.8 Altis Blufor</Original>
 			</Key>
 			<Key ID="STR_MISSION_NAME_INITVAR_SQF">
-				<Original>v 1.7.19B8</Original>
+				<Original>v 1.8</Original>
 			</Key>
 			<Key ID="STR_MISSION_NAME_EXT">
-				<Original>Antistasi 1.7.19B8</Original>
+				<Original>Antistasi 1.8</Original>
 			</Key>
 		</Container>
 	</Package>
@@ -5215,6 +5215,8 @@
 					- Auto Ream: send AI to scavenge ammo and weapons from enemy bodies or resupply at crates according to their class.&lt;br/&gt;&lt;br/&gt;
 
 					- Remote control: if not undercover and no enemies nearby, lets you control the AI to fix some pathfinding issues or simply manage their inventory. You will lose control after 60 seconds or if the AI takes damage. You can access the arsenal and equip them how you wish to.&lt;br/&gt;&lt;br/&gt;
+
+					- Add Garrison: the AI will be assigned to the garrison, they walk to the place and become part of the garrison.&lt;br/&gt;&lt;br/&gt;
 
 					- Dismiss: send the unit back to HQ. Upon arrival their cost in money and HR is refunded.
 				</Original>
