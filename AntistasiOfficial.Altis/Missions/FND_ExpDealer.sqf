@@ -45,7 +45,7 @@ while {!(_break) && (count _roads > 0)} do {
 	};
 };
 
-if !(_break) exitWith {[[petros,"globalChat","Sorry, I wasn't paying attention. What was it you requested of me?"],"commsMP"] call BIS_fnc_MP;};
+if !(_break) exitWith {[[petros,"globalChat","STR_TSK_TD_CHAT_1"],"commsMP"] call BIS_fnc_MP;};
 
 server setVariable ["expActive", true, true];
 
@@ -139,7 +139,7 @@ if (random 8 < 1) then {
 
 waitUntil {sleep 1; (dateToNumber date > _fechalimnum) || !(alive Devin) || ((Devin distance _posCmp) > 50) || ({(side _x isEqualTo side_blue) && (_x distance Devin < 200)} count allPlayers > 0)};
 
-{if (isPlayer _x) then {[petros,"hint","Don't ask Devin about the Holy Handgrenade of Antioch. Just don't."] remoteExec ["commsMP",_x]}} forEach ([200,0,Devin,"BLUFORSpawn"] call distanceUnits);
+{if (isPlayer _x) then {[petros,"hint","STR_TSK_TD_CHAT_2"] remoteExec ["commsMP",_x]}} forEach ([200,0,Devin,"BLUFORSpawn"] call distanceUnits);
 
 // QRF, air-based
 //if (!(_qrf) && (random 8 < 1)) then {
@@ -163,7 +163,7 @@ if ({((side _x isEqualTo side_blue) || (side _x isEqualTo civilian)) && (_x dist
     _mrk setMarkerText "Devin";
     _mrk setMarkerAlpha 0;
     Devin allowDamage true;
-	line1 = ["Devin", "Top of the day to ya. Haven't made yer acquaintance."];
+	line1 = ["Devin", "STR_TSK_TD_CHAT_3"];
     [[line1],"DIRECT",0.15] execVM "createConv.sqf";
 }
 else {
@@ -185,7 +185,7 @@ else {
 server setVariable ["expActive", false, true];
 
 [1200,_tsk] spawn borrarTask;
-if((Devin distance _posCmp) > 50) then {Devin globalchat "Wait, what? I'm not going to be kidnapped by you twat, i'd rather EXPLOOOODE!"; sleep 5; _shell1 = "Sh_82mm_AMOS" createVehicle position Devin;_shell1 setVelocity [0,0,150]};
+if((Devin distance _posCmp) > 50) then {Devin globalchat "STR_TSK_TD_CHAT_4"; sleep 5; _shell1 = "Sh_82mm_AMOS" createVehicle position Devin;_shell1 setVelocity [0,0,150]};
 sleep 30;
 deleteMarker "Devin";
 deleteMarker "DevPat";
