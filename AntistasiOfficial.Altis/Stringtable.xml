@@ -2190,6 +2190,22 @@
 				<Russian>Пошёл ты!</Russian>
 				<Spanish>Que te jodan!</Spanish>
 			</Key>
+			<Key ID="STR_TSK_TD_CHAT_1">
+				<Original>Sorry, I wasn't paying attention. What was it you requested of me?</Original>
+				<Spanish>Lo siento, no estaba prestando atención. ¿Qué fue lo que me pediste?</Spanish>
+			</Key>
+			<Key ID="STR_TSK_TD_CHAT_2">
+				<Original>Don't ask Devin about the Holy Handgrenade of Antioch. Just don't.</Original>
+				<Spanish>No le preguntes a Devin sobre la Santa Granada de Antioquía. Simplemente no lo hagas.</Spanish>
+			</Key>
+			<Key ID="STR_TSK_TD_CHAT_3">
+				<Original>Top of the day to ya. Haven't made yer acquaintance.</Original>
+				<Spanish>Muy buenos días.No te había conocido.</Spanish>
+			</Key>
+			<Key ID="STR_TSK_TD_CHAT_4">
+				<Original>Wait, what? I'm not going to be kidnapped by you twat, i'd rather EXPLOOOODE!</Original>
+				<Spanish>Espera, qué? No voy a ser secuestrado por un idiota, preferiría EXPLOTAAAAR!</Spanish>
+			</Key>
 		</Container>
 	</Package>
 	<Package name="Hints">
