@@ -46,29 +46,37 @@
 #include "\A3\ui_f\hpp\defineDIKCodes.inc"
 #include "\A3\Ui_f\hpp\defineResinclDesign.inc"
 
+private ["_item","_return","_data"];
 params ["_item"];
-private ["_types","_return","_data"];
+
 _return = -1;
 
-INITTYPES
+private ["_weaponType","_weaponTypeCategory"];
+_weaponType = (_item call bis_fnc_itemType);
+_weaponTypeCategory = _weaponType select 0;
 
-(_item call bis_fnc_itemType) params ["_weaponTypeCategory", "_weaponTypeSpecific"];
+private ["_weaponTypeSpecific"];
+_weaponTypeSpecific = _weaponType select 1;
+//workaround for ACE bugs related to bis_fnc_itemType by Barbolani from WotP
+if (activeACEMedical) then {
+	if (_weaponTypeSpecific == "AccessoryBipod") then {
+		if (_item in aceAdvMedItems) then {_weaponTypeSpecific = "FirstAidKit"};
+	};
+};
+if (activeACE) then {
+	if (_weaponTypeSpecific == "AccessoryBipod") then {
+		if (_item in aceItems) then {_weaponTypeSpecific = "FirstAidKit"};
+	};
+};
+INITTYPES
 
 {
 	if (_weaponTypeSpecific in _x) exitwith {_return = _foreachindex;};
 } foreach _types;
 
-private _isParent={
-    params [["_checked", ""], ["_parent", ""]];
-    (format["configName(_x) isEqualTo '%1'", _checked] configClasses (configfile >> "CfgWeapons")) params ["_checkedConfig"];
-    if(isnil "_checkedConfig")exitWith{false};
-    _parent in ([_checkedConfig , true] call BIS_fnc_returnParents);
-};
-if([_item, "CBA_MiscItem"] call _isParent) then {_return = IDC_RSCDISPLAYARSENAL_TAB_CARGOMISC;};
 
 if(_return == -1)then{
 	private _data = (missionnamespace getvariable "bis_fnc_arsenal_data");
-	if (isNil "_data") exitWith {};
 	{
 		private _index = _x;
 		private _dataSet = _data select _index;
@@ -88,11 +96,7 @@ if(_return == -1)then{
 		IDC_RSCDISPLAYARSENAL_TAB_ITEMMUZZLE,
 		IDC_RSCDISPLAYARSENAL_TAB_ITEMBIPOD
 	];
-};
-
-//Assigning item to misc if no category was given
-if(_return == -1)then{
-    _return = IDC_RSCDISPLAYARSENAL_TAB_CARGOMISC;
+//if (_return == -1) then {diag_log format ["Index%1. Item:%2.Amount:%3",_item,1,1]};
 };
 
 _return;

@@ -2,13 +2,13 @@
 	<Package name="MissionNames">
 		<Container name="MissionNames_0">
 			<Key ID="STR_MISSION_NAME_SQM">
-				<Original>[SP/CO]- Antistasi 1.8 Altis Blufor</Original>
+				<Original>[SP/CO]- Antistasi 1.8.0 Altis Blufor</Original>
 			</Key>
 			<Key ID="STR_MISSION_NAME_INITVAR_SQF">
-				<Original>v 1.8</Original>
+				<Original>v 1.8.0</Original>
 			</Key>
 			<Key ID="STR_MISSION_NAME_EXT">
-				<Original>Antistasi 1.8</Original>
+				<Original>Antistasi 1.8.0</Original>
 			</Key>
 		</Container>
 	</Package>
@@ -1992,36 +1992,45 @@
 	    	<Key ID="STR_TSK_UAV_TITLE">
 	    		<Original>%1 UAV</Original>
 	    		<Russian>Ударный БПЛА %1</Russian>
+				<Spanish>Dron %1</Spanish>
+
 	    	</Key>
 			<Key ID="STR_TSK_UAV_DESC">
 				<Original>%4 is providing Air support from %1. They will be under our command until %2:%3.</Original>
 				<Russian>%4 обеспечивает авиаподдержку из %1. Он будет под нашим командованием до %2:%3</Russian>
+				<Spanish>%4 nos da apoyo aéreo desde %1. Estarán bajo nuestro mando hasta las %2:%3.</Spanish>
 			</Key>
 	         <Key ID="STR_TSK_UAV_HINT">
 				<Original>%1 UAV will be available on HC module in a few seconds.</Original>
 				<Russian>Ударный БПЛА будет доступен для управления из панели командира через несколько секунд</Russian>
+			 	<Spanish>El dron %1 estará disponible desde el módulo HC en unos segundos.</Spanish>
 			</Key>
 			<Key ID="STR_TSK_ARTY_TITLE">
 				<Original>%1 Artillery</Original>
 				<Russian>Артиллерия %1</Russian>
+				<Spanish>Artillería %1</Spanish>
 			</Key>
 			<Key ID="STR_TSK_ARTY_DESC">
 				<Original>We have %4 Artillery support from %1. They will be under our command until %2:%3.</Original>
 				<Russian>У нас есть %4 артиллерийской поддержки от %1. Они будут под нашим командованием до %2:%3.</Russian>
+				<Spanish>%4 nos da apoyo de artillería desde %1. Estarán bajo nuestro mando hasta las %2:%3.</Spanish>
 			</Key>
 		</Container>
 	    <Container name="Build">
 	    	<Key ID="STR_TSK_MINEFIELD_TITLE">
 	    		<Original>Minefield deploy</Original>
 	    		<Russian>Минирование</Russian>
+			<Spanish>Campo de minas desplegado</Spanish>
 	    	</Key>
 			<Key ID="STR_TSK_MINEFIELD_DESC">
 				<Original>An Engineer Team has been deployed at your command with High Command Option. Once they reach the position, they will start to deploy %1 mines in the area. Cover them in the meantime.</Original>
 				<Russian>Команда инженеров выдвинулась по Вашей команде. Как только они достигнут позиции, они начнут закладку %1 мин в этом районе. Прикрывайте их тем временем.</Russian>
+				<Spanish>Hemos desplegado un equipo de ingenieros y estarán bajo su mando desde las opciones de HC. Cuando lleguen a su posición, desplegarán minas %1 en el área. Cúbralos mientras tanto.</Spanish>
 			</Key>
 			<Key ID="STR_TSK_MINEFIELD_HINT">
 				<Original>Engineer Team deploying mines.</Original>
 				<Russian>Команда инженеров закладывает мины</Russian>
+				<Spanish>Equipo de ingenieros colocando minas.</Spanish>
 			</Key>
 		</Container>
 	</Package>
@@ -2030,92 +2039,114 @@
 			<Key ID="STR_NTS_AIRPORT_TKN">
 				<Original>Airport Taken</Original>
 				<Russian>Авиабаза захвачена</Russian>
+				<Spanish>Aeropuerto Capturado</Spanish>
 			</Key>
 			<Key ID="STR_NTS_BASE_TKN">
 				<Original>Base Taken</Original>
 				<Russian>Военная база захвачена</Russian>
+				<Spanish>Base Capturada</Spanish>
 			</Key>
 			<Key ID="STR_NTS_POWER_TKN">
 				<Original>Powerplant Taken</Original>
 				<Russian>Электростанция захвачена</Russian>
+				<Spanish>Central Eléctrica Capturada</Spanish>
 			</Key>
 			<Key ID="STR_NTS_OP_TKN">
 				<Original>Outpost Taken</Original>
 				<Russian>Опорный пункт захвачен</Russian>
+				<Spanish>Puesto Capturado</Spanish>
 			</Key>
 			<Key ID="STR_NTS_SEA_TKN">
 				<Original>Seaport Taken</Original>
 				<Russian>Порт захвачен</Russian>
+				<Spanish>Puerto Capturado</Spanish>
 			</Key>
 			<Key ID="STR_NTS_FACT_TKN">
 				<Original>Factory Taken</Original>
 				<Russian>Фабрика захвачена</Russian>
+				<Spanish>Fábrica Capturada</Spanish>
 			</Key>
 			<Key ID="STR_NTS_RES_TKN">
 				<Original>Resource Taken</Original>
 				<Russian>Ресурс захвачен</Russian>
+				<Spanish>Recursos Capturados</Spanish>
 			</Key>
 			<Key ID="STR_NTS_JOINFIA">
 				<Original>%1 joined FIA</Original>
 				<Russian>%1 перешел на сторону FIA</Russian>
+				<Spanish>%1 se unió al FIA</Spanish>
 			</Key>
 			<Key ID="STR_NTS_UAV_FIN">
 				<Original>%1 UAV finished</Original>
 				<Russian>УБПЛА %1</Russian>
+				<Spanish>Dron %1 vuelve a base</Spanish>
 			</Key>
 		</Container>
 		<Container name="Failed">
 			<Key ID="STR_NTS_RES_OUT_POWER">
 				<Original>Resource out of Power</Original>
 				<Russian>Ресурс обесточен</Russian>
+				<Spanish>Recursos sin energía</Spanish>
 			</Key>
 			<Key ID="STR_NTS_REB_AAF">
 				<Original>%1 rebuilt by AAF</Original>
 				<Russian>Противник восстановил %1</Russian>
+				<Spanish>%1 reconstruido por las AAF</Spanish>
 			</Key>
 			<Key ID="STR_NTS_DESTR">
 				<Original>%1 Destroyed</Original>
 				<Russian>%1 уничтожен</Russian>
+				<Spanish>%1 Destruido</Spanish>
 			</Key>
 			<Key ID="STR_NTS_OPLOST">
 				<Original>Outpost Lost</Original>
 				<Russian>Опорный пункт потерян</Russian>
+				<Spanish>Puesto Perdido</Spanish>
 			</Key>
 			<Key ID="STR_NTS_SPLOST">
 				<Original>Sea Port Lost</Original>
 				<Russian>Порт потерян</Russian>
+				<Spanish>Puerto Perdido</Spanish>
 			</Key>
 			<Key ID="STR_NTS_POWLOST">
 				<Original>Powerplant Lost</Original>
 				<Russian>Электростанция потеряна</Russian>
+				<Spanish>Central Eléctrica Perdida</Spanish>
 			</Key>
 			<Key ID="STR_NTS_RESLOST">
 				<Original>Resource Lost</Original>
 				<Russian>Ресурс потерян</Russian>
+				<Spanish>Recursos Perdidos</Spanish>
 			</Key>
 			<Key ID="STR_NTS_FACLOST">
 				<Original>Factory Lost</Original>
 				<Russian>Фабрика потеряна</Russian>
+				<Spanish>Fábrica Perdida</Spanish>
 			</Key>
 			<Key ID="STR_NTS_BASELOST">
 				<Original>Base Lost</Original>
 				<Russian>Военная база потеряна</Russian>
+				<Spanish>Base Perdida</Spanish>
 			</Key>
 			<Key ID="STR_NTS_ABLOST">
 				<Original>Airport Lost</Original>
 				<Russian>Авиабаза потеряна</Russian>
+				<Spanish>Aeropuerto Perdido</Spanish>
 			</Key>
 			<Key ID="STR_NTS_JOINAAF">
-				<Original>%1 перешел на сторону AAF</Original>
+				<Original>%1 switched to AAF</Original>
 				<Russian>%1 перешел на сторону AAF</Russian>
+				<Spanish>%1 ha cambiado al AAF</Spanish>
 			</Key>
 			<Key ID="STR_NTS_RBLOST">
 				<Original>Roadblock Lost</Original>
 				<Russian>Блокпост потерян</Russian>
+				<Spanish>Control Perdido</Spanish>
 			</Key>
 			<Key ID="STR_NTS_WPLOST">
 				<Original>Watchpost Lost</Original>
 				<Russian>Наблюдательный пост потерян</Russian>
+				<Spanish>Puesto Obs. Perdido</Spanish>
 			</Key>
 		</Container>
 	</Package>
@@ -2159,6 +2190,22 @@
 				<Original>Sod off!</Original>
 				<Russian>Пошёл ты!</Russian>
 				<Spanish>Que te jodan!</Spanish>
+			</Key>
+			<Key ID="STR_TSK_TD_CHAT_1">
+				<Original>Sorry, I wasn't paying attention. What was it you requested of me?</Original>
+				<Spanish>Lo siento, no estaba prestando atención. ¿Qué fue lo que me pediste?</Spanish>
+			</Key>
+			<Key ID="STR_TSK_TD_CHAT_2">
+				<Original>Don't ask Devin about the Holy Handgrenade of Antioch. Just don't.</Original>
+				<Spanish>No le preguntes a Devin sobre la Santa Granada de Antioquía. Simplemente no lo hagas.</Spanish>
+			</Key>
+			<Key ID="STR_TSK_TD_CHAT_3">
+				<Original>Top of the day to ya. Haven't made yer acquaintance.</Original>
+				<Spanish>Muy buenos días.No te había conocido.</Spanish>
+			</Key>
+			<Key ID="STR_TSK_TD_CHAT_4">
+				<Original>Wait, what? I'm not going to be kidnapped by you twat, i'd rather EXPLOOOODE!</Original>
+				<Spanish>Espera, qué? No voy a ser secuestrado por un idiota, preferiría EXPLOTAAAAR!</Spanish>
 			</Key>
 		</Container>
 	</Package>

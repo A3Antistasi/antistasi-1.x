@@ -14,7 +14,7 @@ _NATOSupp = _this select 1;
 			_crate addWeaponCargoGlobal 		[bluSmallWpn 		select 1,	5	];
 			_crate addMagazineCargoGlobal 		[bluSmallAmmo 		select 1,	25	];
 			_crate addWeaponCargoGlobal 		[bluAT		 		select 0,	5	];	//AT tube
-			_crate addWeaponCargoGlobal 		[bluATMissile		select 0,	5	];
+			_crate addItemCargoGlobal 			[bluATMissile		select 0,	5	];
 			_crate addItemCargoGlobal			["SmokeShellRed"			,	25	];
 			_crate addItemCargoGlobal			["SmokeShellGreen"			,	25	];
 			_crate addItemCargoGlobal			[bluAttachments 	select 0,	6	];	//flashlight

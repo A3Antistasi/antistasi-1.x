@@ -1059,7 +1059,6 @@ if (activeACE) then {
 		"ACE_epinephrine",
 		"ACE_morphine",
 		"ACE_bodyBag",
-		"ACE_fieldDressing",
 		"ACE_elasticBandage",
 		"ACE_quikclot",
 		"ACE_bloodIV_250",
