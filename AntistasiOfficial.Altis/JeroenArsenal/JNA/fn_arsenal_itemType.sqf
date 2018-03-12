@@ -58,13 +58,16 @@ _weaponTypeCategory = _weaponType select 0;
 private ["_weaponTypeSpecific"];
 _weaponTypeSpecific = _weaponType select 1;
 //workaround for ACE bugs related to bis_fnc_itemType by Barbolani from WotP
-if (activeACEMedical) then
-	{
-	if (_weaponTypeSpecific == "AccessoryBipod") then
-		{
-		if (_item in ["ACE_EarPlugs","ACE_RangeCard","ACE_Clacker","ACE_M26_Clacker","ACE_DeadManSwitch","ACE_DefusalKit","ACE_MapTools","ACE_Flashlight_MX991","ACE_Sandbag_empty","ACE_wirecutter","ACE_SpraypaintBlue","ACE_SpraypaintGreen","ACE_SpraypaintRed","ACE_SpraypaintBlack","ACE_RangeTable_82mm","ACE_EntrenchingTool","ACE_Cellphone","ACE_CableTie","ACE_SpottingScope","ACE_Tripod","ACE_atropine","ACE_fieldDressing","ACE_quikclot","ACE_bloodIV_250","ACE_bloodIV_500","ACE_bloodIV","ACE_epinephrine","ACE_morphine","ACE_personalAidKit","ACE_plasmaIV_250","ACE_salineIV","ACE_salineIV_500","ACE_plasmaIV_500","ACE_plasmaIV_250","ACE_salineIV_250","ACE_tourniquet","ACE_elasticBandage","ACE_packingBandage","ACE_bodyBag","ACE_Kestrel4500","ACE_ATragMX"]) then {_weaponTypeSpecific = "FirstAidKit"};
-		};
+if (activeACEMedical) then {
+	if (_weaponTypeSpecific == "AccessoryBipod") then {
+		if (_item in aceAdvMedItems) then {_weaponTypeSpecific = "FirstAidKit"};
 	};
+};
+if (activeACE) then {
+	if (_weaponTypeSpecific == "AccessoryBipod") then {
+		if (_item in aceItems) then {_weaponTypeSpecific = "FirstAidKit"};
+	};
+};
 INITTYPES
 
 {
