@@ -33,6 +33,7 @@ We're looking for more coders, every contribution is appreciated!
 * Download the .pbo
 * For singleplayer: drop it in \steamapps\common\Arma 3\Missions
 * For multiplayer: Arma 3\MPMissions
+* To setup a dedicated server you can find more info here: https://github.com/A3Antistasi/antistasiofficial/wiki/Dedicated-server-setup
 
 ---
 
