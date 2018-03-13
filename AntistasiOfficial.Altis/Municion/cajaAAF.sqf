@@ -173,13 +173,6 @@ call {
 				_crate additemCargoGlobal			["Chemlight_blue"				,	random 20	];
 			};
 
-		_rlist = genATLaunchers arrayIntersect unlockedWeapons;
-		if (count _rlist > 0) then {
-			_item = selectRandom (_rlist);
-			_crate addWeaponCargoGlobal [_item, 5];
-			_crate addMagazineCargoGlobal [getArray (configFile / "CfgWeapons" / _item / "magazines") select 0, 15];
-		};
-
 		if (indNVG in unlockedItems) then {
 			_crate addItemCargoGlobal [indNVG, 10];
 		};

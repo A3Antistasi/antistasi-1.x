@@ -434,7 +434,15 @@ unlockedItems = [
 	"U_B_survival_uniform",
 	"U_OrestesBody",
 	"V_BandollierB_oli",
-	"G_Bandanna_khk"
+	"G_Bandanna_khk",
+	"V_BandollierB_cbr",
+	"V_BandollierB_rgr",
+	"V_BandollierB_khk",
+	"U_C_HunterBody_grn",
+	"H_Watchcap_blk",
+	"H_Watchcap_cbr",
+	"H_Cap_headphones",
+	"H_ShemagOpen_tan"
 ];
 
 unlockedBackpacks = [
