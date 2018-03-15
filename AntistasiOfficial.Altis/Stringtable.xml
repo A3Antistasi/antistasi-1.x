@@ -51,7 +51,7 @@
 			</Key>
 			<Key ID="STR_DES_AUTOSAVE">
 				<Original>Autosave every 60 min</Original>
-				<Russian>Autosave every 60 min</Russian>
+				<Russian>Автосохранение каждые 60 минут</Russian>
 				<Spanish>Autoguardar cada 60 min</Spanish>
 			</Key>
 			<Key ID="STR_DES_LOADPROFILESAVE">
