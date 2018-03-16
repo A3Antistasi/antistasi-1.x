@@ -22,7 +22,9 @@ _civVehicles = CIV_vehicles + [civHeli] +
 		"C_Boat_Civil_01_rescue_F",	// Rescue Speedboat
 		"C_Boat_Civil_01_police_F",	// Police Speedboat
 		"C_Scooter_Transport_01_F",	// Jetski
-		"C_Boat_Transport_02_F"		// RHIB transport boat
+		"C_Boat_Transport_02_F",	// RHIB transport boat
+		"I_G_Quadbike_01_F",		//Quadbike indipendent
+   		"B_G_Quadbike_01_F"			//Quadbike blufor
 	];
 
 _fnc_compromiseVehicle = {
