@@ -108,8 +108,8 @@ private _attachItem = [];
 } forEach attachedObjects _vehicle;
 
 //fuel stef
-private _fuel = fuel _vehicle;
-private _fuelcargo = if(getfuelcargo _vehicle >=0) then {getfuelcargo _vehicle} else {[_vehicle] call ace_refuel_fnc_getFuel;};
+private _fuel = [fuel _vehicle];
+private _fuelcargo = if(getfuelcargo _vehicle >=0) then {[getfuelcargo _vehicle]} else {[[_vehicle] call ace_refuel_fnc_getFuel];};
 
 //set defaults
 private _beingChanged = "";
