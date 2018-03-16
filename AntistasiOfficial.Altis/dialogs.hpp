@@ -1,5 +1,5 @@
 //Game start
-class init_menu {
+class init_menu 		{
 	idd=-1;
 	movingenable=false;
 
@@ -14,7 +14,7 @@ class init_menu {
 	BTN_M(BTN_Y_2, -1, $STR_D_DONE, "", "if (!isNil ""switchCom"") then {closedialog 0; [] execVM ""Dialogs\membersMenu.sqf"";} else {hint localize ""STR_DH_SAOF""};");
 	};
 };
-class first_load {
+class first_load 		{
 	idd=-1;
 	movingenable=false;
 
@@ -30,7 +30,7 @@ class first_load {
 
 	};
 };
-class members_menu {
+class members_menu 		{
 	idd=-1;
 	movingenable=false;
 
@@ -46,7 +46,7 @@ class members_menu {
 
 	};
 };
-class boost_menu { // 390
+class boost_menu 		{ // 390
 	idd=-1;
 	movingenable=false;
 
@@ -438,9 +438,9 @@ class misCiv_menu 	{ // 400
 	AS_FRAME_D(FRAME_H_4, $STR_D_AV_MIS);
 	BTN_BACK(A_CLOSE);
 
-	#define STR_CIV_ASS "closeDialog 0; if (((getPlayerUID player) in membersPool) || (player == Slowhand)) then {[[""ASS""],""misReqCiv""] call BIS_fnc_MP} else {hint localize ""STR_DH_SDNTY""};"
-	#define STR_CIV_CVY "closeDialog 0; if (((getPlayerUID player) in membersPool) || (player == Slowhand)) then {[[""CONVOY""],""misReqCiv""] call BIS_fnc_MP} else {hint localize ""STR_DH_SDNTY""};"
-	#define STR_CIV_CON "closeDialog 0; if (((getPlayerUID player) in membersPool) || (player == Slowhand)) then {[[""CON""],""misReqCiv""] call BIS_fnc_MP} else {hint localize ""STR_DH_SDNTY""};"
+	#define STR_CIV_ASS "closeDialog 0; [[""ASS""],""misReqCiv""] call BIS_fnc_MP;"
+	#define STR_CIV_CVY "closeDialog 0; [[""CONVOY""],""misReqCiv""] call BIS_fnc_MP;"
+	#define STR_CIV_CON "closeDialog 0; [[""CON""],""misReqCiv""] call BIS_fnc_MP;"
 
 	BTN_L1(-1, $STR_D_ASSMI, "", STR_CIV_ASS);
 	BTN_R1(-1, $STR_D_CONAM, "", STR_CIV_CVY);
@@ -460,10 +460,10 @@ class misMil_menu 	{ // 410
 	AS_FRAME_D(FRAME_H_4, $STR_D_AV_MIS);
 	BTN_BACK(A_CLOSE);
 
-	#define STR_MIL_ASS "closeDialog 0; if (((getPlayerUID player) in membersPool) || (player == Slowhand)) then {[[""AS""],""misReqMil""] call BIS_fnc_MP} else {hint ""STR_DH_NDNTY""};"
-	#define STR_MIL_CVY "closeDialog 0; if (((getPlayerUID player) in membersPool) || (player == Slowhand)) then {[[""CONVOY""],""misReqMil""] call BIS_fnc_MP} else {hint ""STR_DH_NDNTY""};"
-	#define STR_MIL_CON "closeDialog 0; if (((getPlayerUID player) in membersPool) || (player == Slowhand)) then {[[""CON""],""misReqMil""] call BIS_fnc_MP} else {hint ""STR_DH_NDNTY""};"
-	#define STR_MIL_DES "closeDialog 0; if (((getPlayerUID player) in membersPool) || (player == Slowhand)) then {[[""DES""],""misReqMil""] call BIS_fnc_MP} else {hint ""STR_DH_NDNTY""};"
+	#define STR_MIL_ASS "closeDialog 0; [[""AS""],""misReqMil""] call BIS_fnc_MP;"
+	#define STR_MIL_CVY "closeDialog 0; [[""CONVOY""],""misReqMil""] call BIS_fnc_MP;"
+	#define STR_MIL_CON "closeDialog 0; [[""CON""],""misReqMil""] call BIS_fnc_MP;"
+	#define STR_MIL_DES "closeDialog 0; [[""DES""],""misReqMil""] call BIS_fnc_MP;"
 
 	BTN_L1(-1, $STR_D_ASSMI, "", STR_MIL_ASS);
 	BTN_L2(-1, $STR_D_CONAM, "", STR_MIL_CVY);
