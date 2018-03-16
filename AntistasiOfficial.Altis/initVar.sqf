@@ -131,21 +131,21 @@ server setVariable ["genAAlocked",true,true];
 
 {server setVariable [_x,400,true]} forEach [guer_stat_MGH,guer_veh_dinghy,guer_veh_engineer];
 {server setVariable [_x,800,true]} forEach [guer_stat_mortar,guer_stat_AT,guer_stat_AA];
-server setVariable [vfs select 0,300,true];
-server setVariable [vfs select 1,600,true];
-server setVariable [vfs select 2,6000,true];
-server setVariable [vfs select 3,50,true];
-server setVariable [vfs select 4,200,true];
-server setVariable [vfs select 5,450,true];
-server setVariable [vfs select 6,700,true];
-server setVariable [vfs select 7,400,true];
-server setVariable [vfs select 8,800,true];
-server setVariable [vfs select 9,800,true];
-server setVariable [vfs select 10,800,true];
+server setVariable [vfs select 0,300,true];		//Civi Offroad
+server setVariable [vfs select 1,600,true];		//Civi Truck
+server setVariable [vfs select 2,6000,true];	//Civi Helicopter
+server setVariable [vfs select 3,100,true];		//Light transport 6 spots
+server setVariable [vfs select 4,200,true];		//Unarmed Offroad
+server setVariable [vfs select 5,450,true];		//Military Truck
+server setVariable [vfs select 6,700,true];		//Armed Offroad
+server setVariable [vfs select 7,400,true];		//Static MG
+server setVariable [vfs select 8,800,true];		//Static Mortar
+server setVariable [vfs select 9,800,true];		//Static AT
+server setVariable [vfs select 10,800,true];	//Static AA
+server setVariable [vfs select 11,50,true];		//Civi Quadbike
 
 if (activeAFRF) then {
 	server setVariable [vfs select 2,6000,true];
-	server setVariable [vfs select 11,5000,true];
 	server setVariable [vfs select 12,600,true];
 	server setVariable [vehTruckAA, 800, true];
 };
@@ -168,7 +168,6 @@ server setVariable ["testMode",false,true];
 staticsToSave = []; publicVariable "staticsToSave";
 staticsData = []; publicVariable "staticsData";
 prestigeOPFOR = 50;//Initial % support for AAF on each city
-if (not cadetMode) then {prestigeOPFOR = 75};//if you play on vet, this is the number
 prestigeBLUFOR = 0;//Initial % FIA support on each city
 planesAAFmax = 0;
 helisAAFmax = 0;
