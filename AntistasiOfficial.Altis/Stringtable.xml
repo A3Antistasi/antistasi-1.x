@@ -3268,7 +3268,7 @@
 				<Russian>Внедорожник/Уаз</Russian>
 				<Spanish>Offroad/UAZ</Spanish>
 			</Key>
-			<Key ID="STR_D_BUY_TRU">
+			<Key ID="STR_D_BUY_TRUCK">
 				<Original>Truck</Original>
 				<Russian>Грузовик</Russian>
 				<Spanish>Camión</Spanish>
@@ -3278,7 +3278,7 @@
 				<Russian>Light Transport</Russian>
 				<Spanish>Light Transport</Spanish>
 			</Key>
-			<Key ID="STR_D_BUY_TRUC">
+			<Key ID="STR_D_BUY_ST_AT">
 				<Original>Static AT</Original>
 				<Russian>Станк. ПТУР</Russian>
 				<Spanish>AT Estático</Spanish>
@@ -3307,6 +3307,11 @@
 				<Original>APC</Original>
 				<Russian>БМД</Russian>
 				<Spanish>APC</Spanish>
+			</Key>
+			<Key ID="STR_D_BUY_MRAP">
+				<Original>MRAP</Original>
+				<Russian>MRAP</Russian>
+				<Spanish>MRAP</Spanish>
 			</Key>
 			<Key ID="STR_D_LOAD_PS">
 				<Original>Load previous session?</Original>
@@ -3697,11 +3702,6 @@
 				<Original>Offroad</Original>
 				<Russian>Внедорожник</Russian>
 				<Spanish>Offroad</Spanish>
-			</Key>
-			<Key ID="STR_D_TRUCK">
-				<Original>Truck</Original>
-				<Russian>Грузовик</Russian>
-				<Spanish>Camión</Spanish>
 			</Key>
 			<Key ID="STR_D_HELI">
 				<Original>Helicopter</Original>

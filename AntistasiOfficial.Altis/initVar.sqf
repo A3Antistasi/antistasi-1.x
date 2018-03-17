@@ -150,6 +150,18 @@ if (activeAFRF) then {
 	server setVariable [vehTruckAA, 800, true];
 };
 
+//Blu vehicle to purchase in base
+server setVariable [blubuyTruck,800,true];
+server setVariable [blubuyAPC,3500,true];
+server setVariable [blubuyMRAP,2000,true];
+server setVariable [blubuyHeli,3000,true];
+server setVariable [blubuyBoat,700,true];
+server setVariable [bluStatAA select 0,1200,true];
+server setVariable [bluStatAT select 0,1200,true];
+server setVariable [bluStatHMG select 0,600,true ];
+server setVariable [bluStatMortar select 0,800,true];
+if (activeAFRF) then {server setVariable [blubuyHumvee,2000,true];};
+
 server setVariable ["hr",8,true];//initial HR value
 server setVariable ["resourcesFIA",1000,true];//Initial FIA money pool value
 server setVariable ["resourcesAAF",0,true];//Initial AAF resources

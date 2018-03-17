@@ -272,8 +272,9 @@ class buy_vehicle			{
 
 	BTN_L1(104, $STR_D_BUY_LVEH, "", "closedialog 0; [vfs select 3] call addFIAveh");
 	BTN_L2(105, $STR_D_BUY_OR_UAZ, "", "closedialog 0; [vfs select 4] call addFIAveh");
-	BTN_L3(106, $STR_D_BUY_TRU, "", "closedialog 0; [vfs select 5] call addFIAveh");
-	BTN_L4(110, $STR_D_BUY_TRUC, "", "closedialog 0; [vfs select 9] call addFIAveh");
+	BTN_L3(106, $STR_D_BUY_TRUCK, "", "closedialog 0; [vfs select 5] call addFIAveh");
+	BTN_L4(110, $STR_D_BUY_ST_AT, "", "closedialog 0; [vfs select 9] call addFIAveh");
+
 
 	BTN_R1(107, $STR_D_BUY_ARM_OR, "", "closedialog 0; [vfs select 6] call addFIAveh");
 	BTN_R2(109, $STR_D_BUY_MOR, "", "closedialog 0; [vfs select 8] call addFIAveh");
@@ -294,7 +295,7 @@ class civ_vehicle 			{
 	BTN_BACK("closeDialog 0; createDialog ""vehicle_option"";");
 
 	BTN_L1(104, $STR_D_OFFR, "", "closeDialog 0; [vfs select 0] call addFIAveh;");
-	BTN_R1(105, $STR_D_TRUCK, "", "closeDialog 0; [vfs select 1] call addFIAveh;");
+	BTN_R1(105, $STR_D_BUY_TRUCK, "", "closeDialog 0; [vfs select 1] call addFIAveh;");
 	BTN_L2(106, $STR_D_HELI, "", "closeDialog 0; [vfs select 2] call addFIAveh;");
 	BTN_R2(107, $STR_D_BUY_QUA, "", "closedialog 0; [vfs select 11] call addFIAveh");
 
@@ -312,18 +313,17 @@ class buyNATO			{
 	AS_FRAME_D(FRAME_H_10, $STR_D_PUR_MIV);
 	BTN_BACK("closeDialog 0;");
 
-	BTN_L1(104, $STR_D_BUY_QUA, "", "closedialog 0; [vfs select 3] call addFIAveh");
-	BTN_L2(105, $STR_D_BUY_OR_UAZ, "", "closedialog 0; [vfs select 4] call addFIAveh");
-	BTN_L3(106, $STR_D_BUY_TRU, "", "closedialog 0; [vfs select 5] call addFIAveh");
-	BTN_L4(110, $STR_D_BUY_TRUC, "", "closedialog 0; [vfs select 9] call addFIAveh");
+	BTN_L1(104, $STR_D_BUY_TRUCK, "", "closedialog 0; [blubuyTruck] call addFIAveh");
+	BTN_L2(105, $STR_D_BUY_MRAP, "", "closedialog 0; [blubuyMRAP] call addFIAveh");
+	BTN_L3(106, $STR_D_BUY_APC, "", "closedialog 0; [blubuyAPC] call addFIAveh");
+	BTN_L4(110, $STR_D_HELI, "", "closedialog 0; [blubuyHeli] call addFIAveh");
 
-	BTN_R1(107, $STR_D_BUY_ARM_OR, "", "closedialog 0; [vfs select 6] call addFIAveh");
-	BTN_R2(109, $STR_D_BUY_MOR, "", "closedialog 0; [vfs select 8] call addFIAveh");
-	BTN_R3(108, $STR_D_BUY_MG, "", "closedialog 0; [vfs select 7] call addFIAveh");
-	BTN_R4(111, $STR_D_BUY_ST_AA, "", "closedialog 0; [vfs select 10] call addFIAveh");
-
-	BTN_M(BTN_Y_5, 112, $STR_D_BUY_APC, "", "if (activeAFRF) then {if (player == Slowhand) then {closeDialog 0; [vfs select 11] call addFIAveh;} else {hint localize ""STR_DH_OPCHATTF""};}else {hint localize ""STR_DH_RHSEFN""};");
-
+	/*  Static guns need special initialization i can't add them yet
+	BTN_R1(107, $STR_D_BUY_ST_AT, "", "closedialog 0; bluStatAT call addFIAveh");
+	BTN_R2(109, $STR_D_BUY_MOR, "", "closedialog 0; bluStatMortar call addFIAveh");
+	BTN_R3(108, $STR_D_BUY_MG, "", "closedialog 0; bluStatHMG call addFIAveh");
+	BTN_R4(111, $STR_D_BUY_ST_AA, "", "closedialog 0; bluStatAA call addFIAveh");
+	*/
 	};
 };
 

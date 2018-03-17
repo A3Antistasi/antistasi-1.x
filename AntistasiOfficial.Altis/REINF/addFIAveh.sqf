@@ -10,8 +10,8 @@ if (_chequeo) exitWith {Hint "You cannot buy vehicles with enemies nearby"};
 private ["_tipoVeh","_coste","_resourcesFIA","_marcador","_pos","_veh"];
 
 _tipoVeh = _this select 0;
-_milveh = vfs select [3,10];
-_milstatics = vfs select [7,4];
+_milveh = vfs select [3,9] + [blubuyTruck] + [blubuyAPC] + [blubuyMRAP] + [blubuyHeli] + [blubuyBoat];
+_milstatics = vfs select [7,4] + bluStatAA + bluStatAT + bluStatHMG + bluStatMortar;
 
 _coste = [_tipoVeh] call vehiclePrice;
 
@@ -31,11 +31,10 @@ if (_resourcesFIA < _coste) exitWith {hint format ["You do not have enough money
 _pos = position player findEmptyPosition [10,50,_tipoVeh];
 if (count _pos == 0) exitWith {hint "Not enough space to place this type of vehicle"};
 _veh = _tipoVeh createVehicle _pos;
+
 //If it's a quadbike, make it loadable with logistics script
-if (_tipoVeh == (vfs select 3)) then
-{
-	_veh call jn_fnc_logistics_addAction;
-};
+if (_tipoVeh == (vfs select 11)) then{_veh call jn_fnc_logistics_addAction;};
+
 if (!isMultiplayer) then
 	{
 	[0,(-1* _coste)] remoteExec ["resourcesFIA", 2];
