@@ -2208,18 +2208,22 @@
 			</Key>
 			<Key ID="STR_TSK_TD_CHAT_1">
 				<Original>Sorry, I wasn't paying attention. What was it you requested of me?</Original>
+				<Russian>Извините, я не обратил внимания. Вы что-то спросили?</Russian>
 				<Spanish>Lo siento, no estaba prestando atención. ¿Qué fue lo que me pediste?</Spanish>
 			</Key>
 			<Key ID="STR_TSK_TD_CHAT_2">
 				<Original>Don't ask Devin about the Holy Handgrenade of Antioch. Just don't.</Original>
+				<Russian>Не спрашивай Девина о Священной Руке Антиохии. Просто не спрашивай.</Russian>
 				<Spanish>No le preguntes a Devin sobre la Santa Granada de Antioquía. Simplemente no lo hagas.</Spanish>
 			</Key>
 			<Key ID="STR_TSK_TD_CHAT_3">
 				<Original>Top of the day to ya. Haven't made yer acquaintance.</Original>
+				<Russian>Добрый день. Я с вами ещё не знаком.</Russian>
 				<Spanish>Muy buenos días.No te había conocido.</Spanish>
 			</Key>
 			<Key ID="STR_TSK_TD_CHAT_4">
 				<Original>Wait, what? I'm not going to be kidnapped by you twat, i'd rather EXPLOOOODE!</Original>
+				<Russian>Чего, чего? Я не собираюсь тебя похищать, я бы предпочел БАБАААХ!</Russian>
 				<Spanish>Espera, qué? No voy a ser secuestrado por un idiota, preferiría EXPLOTAAAAR!</Spanish>
 			</Key>
 		</Container>
