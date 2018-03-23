@@ -1943,6 +1943,10 @@
 				<Original>%1 Attack</Original>
 				<Russian>Атака %1</Russian>
 			</Key>
+			<Key ID="STR_TSK_ATTACK12">
+				<Original>%1/%2 Attack</Original>
+				<Russian>Атака %1/%2</Russian>
+			</Key>
 			<Key ID="STR_TSK_DESC_ATTACK">
 				<Original>Our Commander asked %3 for an attack on %1. Help them in order to have success in this operation. Their attack will depart from %2</Original>
 				<Russian>Наш Командир запросил у %3 атаковать %1. Помогите им добиться успеха в этой операции. Их атака начнётся в %2</Russian>
@@ -1986,6 +1990,14 @@
 				<Original>No emplacement nearby.</Original>
 				<Russian>Поблизости нет места.</Russian>
 				<Spanish>No hay emplazamientos cercanos.</Spanish>
+			</Key>
+			<Key ID="STR_TSK_CSAT_PUNISH_TITLE">
+				<Original>CSAT Punishment</Original>
+				<Russian>Месть CSAT</Russian>
+			</Key>
+			<Key ID="STR_TSK_CSAT_PUNISH_DESC">
+				<Original>CSAT is making a punishment expedition to %1. They will kill everybody there. Defend the city at all costs</Original>
+				<Russian>CSAT проводит карательную экспедицию в %1. Они там всех убьют. Защитите город любой ценой!</Russian>
 			</Key>
 		</Container>
 	    <Container name="NATO">
