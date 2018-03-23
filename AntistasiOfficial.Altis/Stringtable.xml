@@ -2092,10 +2092,6 @@
 				<Russian>УБПЛА %1</Russian>
 				<Spanish>Dron %1 vuelve a base</Spanish>
 			</Key>
-			<Key ID="STR_NTS_UAV_FIN">
-				<Original>%1 UAV finished</Original>
-				<Russian>УБПЛА %1</Russian>
-			</Key>
 		</Container>
 		<Container name="Failed">
 			<Key ID="STR_NTS_RES_OUT_POWER">
