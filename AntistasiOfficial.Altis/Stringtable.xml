@@ -1992,7 +1992,7 @@
 	    	<Key ID="STR_TSK_UAV_TITLE">
 	    		<Original>%1 UAV</Original>
 	    		<Russian>Ударный БПЛА %1</Russian>
-			<Spanish>Dron %1</Spanish>
+				<Spanish>Dron %1</Spanish>
 	    	</Key>
 			<Key ID="STR_TSK_UAV_DESC">
 				<Original>%4 is providing Air support from %1. They will be under our command until %2:%3.</Original>
@@ -2019,7 +2019,7 @@
 	    	<Key ID="STR_TSK_MINEFIELD_TITLE">
 	    		<Original>Minefield deploy</Original>
 	    		<Russian>Минирование</Russian>
-			<Spanish>Campo de minas desplegado</Spanish>
+				<Spanish>Campo de minas desplegado</Spanish>
 	    	</Key>
 			<Key ID="STR_TSK_MINEFIELD_DESC">
 				<Original>An Engineer Team has been deployed at your command with High Command Option. Once they reach the position, they will start to deploy %1 mines in the area. Cover them in the meantime.</Original>
@@ -2079,6 +2079,10 @@
 				<Original>%1 UAV finished</Original>
 				<Russian>УБПЛА %1</Russian>
 				<Spanish>Dron %1 vuelve a base</Spanish>
+			</Key>
+			<Key ID="STR_NTS_UAV_FIN">
+				<Original>%1 UAV finished</Original>
+				<Russian>УБПЛА %1</Russian>
 			</Key>
 		</Container>
 		<Container name="Failed">
