@@ -23,7 +23,6 @@ _NATOSupp = _this select 1;
 				} foreach bluGLsmoke;
 
 			_crate addWeaponCargoGlobal 		[selectrandom bluGL			,	1	];
-			_crate addItemCargoGlobal			[blueGLAmmo			select 0,   5	];  //GL shells ammo
 			_crate addMagazineCargoGlobal 		[selectrandom bluRifleAmmo	,	5	];
 
 			//										Medical
@@ -47,10 +46,8 @@ _NATOSupp = _this select 1;
 
 			//										From Tier 1
 			if(BE_currentStage > 0) then {
-						_crate addWeaponCargoGlobal 		[selectrandom bluRifle		,	4	]; //changed with to without GL
+						_crate addWeaponCargoGlobal 		[selectrandom bluGL		,	4	]; // GL Weapon for night combat with flares
 						_crate addMagazineCargoGlobal 		[selectrandom bluRifleAmmo	,	35	];
-						_crate addItemCargoGlobal			[blueGLAmmo			select 0,	5	]; //Extra GL Shells
-						_crate addItemCargoGlobal			[blueGLAmmo			select 1,	5	]; //Extra GL Shells
 						_crate addItemCargoGlobal			[bluScopes			select 0,	4	];
 						_crate addItemCargoGlobal			[bluSuppressor		select 0,	5	]; // added to blueusaf
 						if (activeACE) then {
@@ -78,6 +75,8 @@ _NATOSupp = _this select 1;
 			_crate addWeaponCargoGlobal 		[bluLMG		 		select 0,	5	]; // LMG
 			_crate addItemCargoGlobal			[bluScopes			select 1,	5	];
 			_crate addMagazineCargoGlobal 		[bluLMGAmmo 		select 0,	40	];
+			_crate addItemCargoGlobal			[blueGLAmmo			select 0,	10	]; //Extra GL Shells
+			_crate addItemCargoGlobal			[blueGLAmmo			select 1,	10	]; //Extra GL Shells
 			_crate addMagazineCargoGlobal 		[selectrandom bluRifleAmmo	,	50	]; // Extra ammo bonus
 			if (activeACE) then {
 			_crate addItemCargoGlobal 			[blunvg				select 0,	5	];};
@@ -97,6 +96,8 @@ _NATOSupp = _this select 1;
 			_crate addWeaponCargoGlobal 		[bluLMG		 		select 0,	5	]; // LMG
 			_crate addItemCargoGlobal			[bluScopes			select 1,	5	];
 			_crate addMagazineCargoGlobal 		[bluLMGAmmo 		select 0,	20	];
+			_crate addItemCargoGlobal			[blueGLAmmo			select 0,	5	]; //Extra GL Shells
+			_crate addItemCargoGlobal			[blueGLAmmo			select 1,	5	]; //Extra GL Shells
 			_crate addMagazineCargoGlobal 		[selectrandom bluRifleAmmo	,	25	]; // Extra ammo
 			if (activeACE) then {
 			_crate addItemCargoGlobal 			[blunvg				select 0,	2	];};
