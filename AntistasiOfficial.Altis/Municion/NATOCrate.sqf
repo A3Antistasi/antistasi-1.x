@@ -14,6 +14,7 @@ _NATOSupp = _this select 1;
 			_crate addWeaponCargoGlobal 		[bluSmallWpn 		select 1,	5	];
 			_crate addMagazineCargoGlobal 		[bluSmallAmmo 		select 1,	25	];
 			_crate addWeaponCargoGlobal 		[bluAT		 		select 0,	5	];	//AT tube
+			_crate addItemCargoGlobal			[bluAttachments 	select 3,	5	];  //AT tube M136 sight 
 			_crate addItemCargoGlobal 			[bluATMissile		select 0,	5	];
 			_crate addItemCargoGlobal			["SmokeShellRed"			,	25	];
 			_crate addItemCargoGlobal			["SmokeShellGreen"			,	25	];
@@ -22,6 +23,7 @@ _NATOSupp = _this select 1;
 				} foreach bluGLsmoke;
 
 			_crate addWeaponCargoGlobal 		[selectrandom bluGL			,	1	];
+			_crate addItemCargoGlobal			[blueGLAmmo			select 0,   5	];  //GL shells ammo
 			_crate addMagazineCargoGlobal 		[selectrandom bluRifleAmmo	,	5	];
 
 			//										Medical
@@ -45,10 +47,12 @@ _NATOSupp = _this select 1;
 
 			//										From Tier 1
 			if(BE_currentStage > 0) then {
-						_crate addWeaponCargoGlobal 		[selectrandom bluGL			,	4	];
+						_crate addWeaponCargoGlobal 		[selectrandom bluRifle		,	4	]; //changed with to without GL
 						_crate addMagazineCargoGlobal 		[selectrandom bluRifleAmmo	,	35	];
+						_crate addItemCargoGlobal			[blueGLAmmo			select 0,	5	]; //Extra GL Shells
+						_crate addItemCargoGlobal			[blueGLAmmo			select 1,	5	]; //Extra GL Shells
 						_crate addItemCargoGlobal			[bluScopes			select 0,	4	];
-						//_crate addItemCargoGlobal			[bluSuppressor		select 0,	5	];  still missing in templates
+						_crate addItemCargoGlobal			[bluSuppressor		select 0,	5	]; // added to blueusaf
 						if (activeACE) then {
 						_crate addMagazineCargoGlobal 		["ACE_HuntIR_M203"			, 	3	];
 						_crate addItemCargoGlobal 			["ACE_HuntIR_monitor"		, 	1	];
