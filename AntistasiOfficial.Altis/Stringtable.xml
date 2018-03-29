@@ -3264,9 +3264,9 @@
 				<Spanish>Quad</Spanish>
 			</Key>
 			<Key ID="STR_D_BUY_OR_UAZ">
-				<Original>Offroad/UAZ</Original>
-				<Russian>Внедорожник/Уаз</Russian>
-				<Spanish>Offroad/UAZ</Spanish>
+				<Original>Offroad</Original>
+				<Russian>Внедорожник</Russian>
+				<Spanish>Offroad</Spanish>
 			</Key>
 			<Key ID="STR_D_BUY_TRUCK">
 				<Original>Truck</Original>

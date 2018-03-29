@@ -60,14 +60,14 @@ _buildings = nearestObjects [_markerPos, listMilBld, _size*1.5];
 						_allsoldiers pushBack _unit;
 						sleep 0.1;
 					};
-
+					/*
 					//Create planes in specified locations
 					if ((_buildingType == "Land_JumpTarget_F") AND (!_isFrontline)) exitWith {
 						_vehicle = createVehicle [selectRandom planes, position _building, [],0, "CAN_COLLIDE"];
 						_vehicle setDir (getDir _building);
 						_allVehicles pushBack _vehicle;
 						sleep 0.1;
-					};
+					};*/
 					//Create heli in specified location
 					if ((_buildingType == "Land_HelipadRescue_F") AND (!_isFrontline)) exitWith {
 						_vehicle = createVehicle [selectRandom heli_armed, position _building, [],0, "CAN_COLLIDE"];
