@@ -1,4 +1,4 @@
-params ["_vehicle"];
+params ["_vehicle","_buyNATO"];
 private ["_vehicleType","_eh","_mortar","_leader","_tempVehicle"];
 
 _vehicle setfuel 0.1;
@@ -17,21 +17,24 @@ if(_vehicle iskindof "thing") then {_vehicle call jn_fnc_logistics_addAction};
 
 _vehicleType = typeOf _vehicle;
 
+
 call {
-	if (_vehicleType in (vehNATO+planesNATO)) exitWith {
-		clearMagazineCargoGlobal _vehicle;
-		clearWeaponCargoGlobal _vehicle;
-		clearItemCargoGlobal _vehicle;
-		clearBackpackCargoGlobal _vehicle;
-		_vehicle lock 3;
-		_vehicle addEventHandler ["GetIn", {
-			_unit = _this select 2;
-			if ({isPlayer _x} count units group _unit > 0) then {moveOut _unit;};
-		}];
-		_vehicle addEventHandler ["killed",{
-			[-2,0] remoteExec ["prestige",2];
-			[2,-2,position (_this select 0)] remoteExec ["AS_fnc_changeCitySupport",2];
-		}];
+	if !(_buyNATO) then {
+		if (_vehicleType in (vehNATO+planesNATO)) exitWith {
+			clearMagazineCargoGlobal _vehicle;
+			clearWeaponCargoGlobal _vehicle;
+			clearItemCargoGlobal _vehicle;
+			clearBackpackCargoGlobal _vehicle;
+			_vehicle lock 3;
+			_vehicle addEventHandler ["GetIn", {
+				_unit = _this select 2;
+				if ({isPlayer _x} count units group _unit > 0) then {moveOut _unit;};
+			}];
+			_vehicle addEventHandler ["killed",{
+				[-2,0] remoteExec ["prestige",2];
+				[2,-2,position (_this select 0)] remoteExec ["AS_fnc_changeCitySupport",2];
+			}];
+		 };
 	};
 
 	if (_vehicleType in (vehTrucks+vehPatrol+vehSupply+enemyMotorpool+vehPatrolBoat)) exitWith {

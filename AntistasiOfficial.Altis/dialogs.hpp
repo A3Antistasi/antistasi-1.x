@@ -313,10 +313,10 @@ class buyNATO			{
 	AS_FRAME_D(FRAME_H_10, $STR_D_PUR_MIV);
 	BTN_BACK("closeDialog 0;");
 
-	BTN_L1(104, $STR_D_BUY_TRUCK, "", "closedialog 0; [blubuyTruck] call addFIAveh");
-	BTN_L2(105, $STR_D_BUY_MRAP, "", "closedialog 0; [blubuyMRAP] call addFIAveh");
-	BTN_L3(106, $STR_D_BUY_APC, "", "closedialog 0; [blubuyAPC] call addFIAveh");
-	BTN_L4(110, $STR_D_HELI, "", "closedialog 0; [blubuyHeli] call addFIAveh");
+	BTN_L1(104, $STR_D_BUY_TRUCK, "", "closedialog 0; [blubuyTruck,true] call addFIAveh");
+	BTN_L2(105, $STR_D_BUY_MRAP, "", "closedialog 0; [blubuyMRAP,true] call addFIAveh");
+	BTN_L3(106, $STR_D_BUY_APC, "", "closedialog 0; [blubuyAPC,true] call addFIAveh");
+	BTN_L4(110, $STR_D_HELI, "", "closedialog 0; [blubuyHeli,true] call addFIAveh");
 
 	/*  Static guns need special initialization i can't add them yet
 	BTN_R1(107, $STR_D_BUY_ST_AT, "", "closedialog 0; bluStatAT call addFIAveh");
