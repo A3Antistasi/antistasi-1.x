@@ -71,6 +71,7 @@
 	blubuyBoat = 			"B_Boat_Armed_01_minigun_F";
 //Special vehicle to buy (max 1)
 
+	blubuylist = [blubuyBoat,blubuyHeli,blubuyMRAP,blubuyAPC,blubuyTruck];
 
 //bluEquipment
 	bluSmallWpn = 	[					// select reference

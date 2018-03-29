@@ -1,4 +1,4 @@
-params ["_buyNATO"];
+params ["_tipoVeh"];
 if (player != player getVariable ["owner",player]) exitWith {hint "You cannot buy vehicles while you are controlling AI"};
 _chequeo = false;
 {
@@ -9,7 +9,6 @@ if (_chequeo) exitWith {Hint "You cannot buy vehicles with enemies nearby"};
 
 private ["_tipoVeh","_coste","_resourcesFIA","_marcador","_pos","_veh"];
 
-_tipoVeh = _this select 0;
 _milveh = vfs select [3,9] + [blubuyTruck] + [blubuyAPC] + [blubuyMRAP] + [blubuyHeli] + [blubuyBoat];
 _milstatics = vfs select [7,4] + bluStatAA + bluStatAT + bluStatHMG + bluStatMortar;
 
@@ -59,6 +58,9 @@ else
 			};
 		};
 	};
+
+if(_tipoVeh in blubuylist) then {_buyNATO = 1} else {_buyNATO = 0};
+if(_tipoVeh in blubuylist) then {systemchat "tipoVeh in blubuylist true"} else {"tipoVeh in blubuylist false"};
 [_veh,_buyNATO] spawn VEHinit;
 if (_tipoVeh in _milstatics) then {
 	_veh addAction [localize "STR_ACT_MOVEASSET", {[_this select 0,_this select 1,_this select 2,"static"] spawn AS_fnc_moveObject},nil,0,false,true,"","(_this == Slowhand)"];

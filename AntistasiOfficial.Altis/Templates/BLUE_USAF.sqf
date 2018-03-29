@@ -71,6 +71,7 @@
 //Special vehicle to buy (max 1)
 	blubuyHumvee = 			"rhsusf_m1025_d_m2";
 
+	blubuylist = [blubuyBoat,blubuyHeli,blubuyMRAP,blubuyAPC,blubuyTruck,blubuyHumvee];
 
 //bluEquipment
 	bluSmallWpn = 	[					// select reference
