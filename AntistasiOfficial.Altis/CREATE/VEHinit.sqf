@@ -1,3 +1,4 @@
+_buyNATO = false;
 params ["_vehicle","_buyNATO"];
 private ["_vehicleType","_eh","_mortar","_leader","_tempVehicle"];
 

@@ -174,7 +174,7 @@ _vehiclesToSave = [];
 				if !(_vehicle isKindOf "ReammoBox") then {
 					if !(_vehicle isKindOf "FlagCarrier") then {
 						if !(_vehicle isKindOf "Building") then {
-							if !(_vehicleType in (planesNATO+vehNATO)) then {
+							//if !(_vehicleType in (planesNATO+vehNATO)) then {
 								if (_vehicleType != AS_misSupplyBox) then {
 									if (_vehicleType != "I_supplyCrate_F") then {
 											if (_vehicleType != "Land_Camping_Light_F") then {
@@ -198,7 +198,7 @@ _vehiclesToSave = [];
 										};
 									};
 								};
-							};
+							//};
 						};
 					};
 				};

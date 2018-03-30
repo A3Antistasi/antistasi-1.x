@@ -109,7 +109,12 @@ private _attachItem = [];
 
 //fuel stef
 private _fuel = fuel _vehicle;
-private _fuelcargo = if(getfuelcargo _vehicle >=0) then {getfuelcargo _vehicle} else {[_vehicle] call ace_refuel_fnc_getFuel;};
+private _fuelcargo =
+	if(getfuelcargo _vehicle >=0) then {
+		getfuelcargo _vehicle
+	} else {
+		[_vehicle] call ace_refuel_fnc_getFuel;};
+	if !(_fuelcargo >-1) then {_fuelcargo = 0};
 
 //set defaults
 private _beingChanged = "";
