@@ -7,9 +7,9 @@ _chequeo = false;
 
 if (_chequeo) exitWith {Hint "You cannot buy vehicles with enemies nearby"};
 
-private ["_tipoVeh","_coste","_resourcesFIA","_marcador","_pos","_veh"];
+private ["_tipoVeh","_coste","_resourcesFIA","_marcador","_pos","_veh","_buyNATO"];
 
-_milveh = vfs select [3,9] + [blubuyTruck] + [blubuyAPC] + [blubuyMRAP] + [blubuyHeli] + [blubuyBoat];
+_milveh = vfs select [3,9] + blubuylist;
 _milstatics = vfs select [7,4] + bluStatAA + bluStatAT + bluStatHMG + bluStatMortar;
 
 _coste = [_tipoVeh] call vehiclePrice;
@@ -59,9 +59,9 @@ else
 		};
 	};
 
-if(_tipoVeh in blubuylist) then {_buyNATO = 1} else {_buyNATO = 0};
-if(_tipoVeh in blubuylist) then {systemchat "tipoVeh in blubuylist true"} else {"tipoVeh in blubuylist false"};
+if(_tipoVeh in blubuylist) then {_buyNATO = true;} else {_buyNATO = false;};
 [_veh,_buyNATO] spawn VEHinit;
+
 if (_tipoVeh in _milstatics) then {
 	_veh addAction [localize "STR_ACT_MOVEASSET", {[_this select 0,_this select 1,_this select 2,"static"] spawn AS_fnc_moveObject},nil,0,false,true,"","(_this == Slowhand)"];
 	[_veh, {_this setOwner 2; staticsToSave pushBackUnique _this; publicVariable "staticsToSave"}] remoteExec ["call", 2];
