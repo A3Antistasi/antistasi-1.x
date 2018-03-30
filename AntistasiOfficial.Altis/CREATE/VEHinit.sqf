@@ -17,10 +17,14 @@ if(_vehicle iskindof "thing") then {_vehicle call jn_fnc_logistics_addAction};
 
 _vehicleType = typeOf _vehicle;
 
-
 call {
-	if !(_buyNATO) then {
-		if (_vehicleType in (vehNATO+planesNATO)) exitWith {
+	if (_vehicleType in (vehNATO+planesNATO)) exitWith {
+		if (_buyNATO) then {
+			clearMagazineCargoGlobal _vehicle;
+			clearWeaponCargoGlobal _vehicle;
+			clearItemCargoGlobal _vehicle;
+			clearBackpackCargoGlobal _vehicle;
+		} else {
 			clearMagazineCargoGlobal _vehicle;
 			clearWeaponCargoGlobal _vehicle;
 			clearItemCargoGlobal _vehicle;
@@ -34,7 +38,7 @@ call {
 				[-2,0] remoteExec ["prestige",2];
 				[2,-2,position (_this select 0)] remoteExec ["AS_fnc_changeCitySupport",2];
 			}];
-		 };
+		};
 	};
 
 	if (_vehicleType in (vehTrucks+vehPatrol+vehSupply+enemyMotorpool+vehPatrolBoat)) exitWith {
