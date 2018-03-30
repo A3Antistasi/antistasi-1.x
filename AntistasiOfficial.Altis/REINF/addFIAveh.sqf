@@ -1,5 +1,5 @@
+params ["_tipoVeh"];
 if (player != player getVariable ["owner",player]) exitWith {hint "You cannot buy vehicles while you are controlling AI"};
-
 _chequeo = false;
 {
 	if (((side _x == side_red) or (side _x == side_green)) and (_x distance player < safeDistance_recruit) and (not(captive _x))) then {_chequeo = true};
@@ -7,11 +7,10 @@ _chequeo = false;
 
 if (_chequeo) exitWith {Hint "You cannot buy vehicles with enemies nearby"};
 
-private ["_tipoVeh","_coste","_resourcesFIA","_marcador","_pos","_veh"];
+private ["_tipoVeh","_coste","_resourcesFIA","_marcador","_pos","_veh","_buyNATO"];
 
-_tipoVeh = _this select 0;
-_milveh = vfs select [3,10];
-_milstatics = vfs select [7,4];
+_milveh = vfs select [3,9] + blubuylist;
+_milstatics = vfs select [7,4] + bluStatAA + bluStatAT + bluStatHMG + bluStatMortar;
 
 _coste = [_tipoVeh] call vehiclePrice;
 
@@ -31,11 +30,10 @@ if (_resourcesFIA < _coste) exitWith {hint format ["You do not have enough money
 _pos = position player findEmptyPosition [10,50,_tipoVeh];
 if (count _pos == 0) exitWith {hint "Not enough space to place this type of vehicle"};
 _veh = _tipoVeh createVehicle _pos;
+
 //If it's a quadbike, make it loadable with logistics script
-if (_tipoVeh == (vfs select 3)) then
-{
-	_veh call jn_fnc_logistics_addAction;
-};
+if (_tipoVeh == (vfs select 11)) then{_veh call jn_fnc_logistics_addAction;};
+
 if (!isMultiplayer) then
 	{
 	[0,(-1* _coste)] remoteExec ["resourcesFIA", 2];
@@ -60,7 +58,10 @@ else
 			};
 		};
 	};
-[_veh] spawn VEHinit;
+
+if(_tipoVeh in blubuylist) then {_buyNATO = true;} else {_buyNATO = false;};
+[_veh,_buyNATO] spawn VEHinit;
+
 if (_tipoVeh in _milstatics) then {
 	_veh addAction [localize "STR_ACT_MOVEASSET", {[_this select 0,_this select 1,_this select 2,"static"] spawn AS_fnc_moveObject},nil,0,false,true,"","(_this == Slowhand)"];
 	[_veh, {_this setOwner 2; staticsToSave pushBackUnique _this; publicVariable "staticsToSave"}] remoteExec ["call", 2];
