@@ -152,7 +152,7 @@ if (activeAFRF) then {
 
 //Blu vehicle to purchase in base
 server setVariable [blubuyTruck,1200,true];
-if(activeUSAF) then {server setVariable [blubuyAPC,5000,true];} else {server setVariable [blubuyAPC,3500,true];};
+if!(activeUSAF) then {server setVariable [blubuyAPC,5000,true];} else {server setVariable [blubuyAPC,3500,true];};
 server setVariable [blubuyMRAP,2000,true];
 server setVariable [blubuyHeli,3000,true];
 server setVariable [blubuyBoat,700,true];
