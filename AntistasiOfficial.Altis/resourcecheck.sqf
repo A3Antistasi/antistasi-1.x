@@ -6,7 +6,7 @@ scriptName "resourcecheck";
 
 if (isMultiplayer) then {waitUntil {!isNil "switchCom"}};
 
-private ["_incomeFIA","_incomeEnemy","_hrFIA","_popFIA","_popEnemy","_bonusFIA","_bonusEnemy","_city","_cityIncomeFIA","_cityIncomeEnemy","_cityIncomeHR","_data","_civilians","_supportFIA","_supportEnemy","_power","_coef","_mrkD","_base","_factory","_resource","_text","_updated","_resourcesAAF","_vehicle","_script"];
+private ["_incomeFIA","_incomeEnemy","_hrFIA","_popFIA","_popEnemy","_bonusFIA","_bonusEnemy","_city","_cityIncomeFIA","_cityIncomeEnemy","_cityIncomeHR","_data","_civilians","_supportFIA","_supportEnemy", "_supplyLevels","_power","_coef","_mrkD","_base","_factory","_resource","_text","_updated","_resourcesAAF","_vehicle","_script"];
 
 //Sparker's War Statistics variables
 private _ws_territory = call ws_fnc_newGridArray;	//Array for the sum of AAF(positive) and FIA(negative) territories
@@ -61,10 +61,11 @@ while {true} do {
 		_cityIncomeEnemy = 0;
 		_cityIncomeFIA = 0;
 		_cityIncomeHR = 0;
-		_data = server getVariable [_city,[0,0,1,1]];
+		_data = server getVariable [_city,[0,0,1,1,[]]];
 		_civilians = _data select 0;
 		_supportEnemy = _data select 2;
 		_supportFIA = _data select 3;
+		_supplyLevels = _data select 4;
 		_power = [_city] call AS_fnc_powerCheck;
 		_coef = [0.5,1] select _power;
 		_popFIA = _popFIA + (_civilians * (_supportFIA / 100));
@@ -103,6 +104,7 @@ while {true} do {
 					};
 				};
 			};
+			//TODO add supply usage! <=================================================================================
 		};
 
 		_incomeEnemy = _incomeEnemy + _cityIncomeEnemy;
