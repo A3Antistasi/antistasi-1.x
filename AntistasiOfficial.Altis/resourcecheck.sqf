@@ -157,9 +157,9 @@ while {true} do {
 	for "_i" from 0 to ((count _cityInRange) max 2) do 
 	{
 		_type = selectRandom _types;
-		_types = _types - _type;
+		_types = _types - [_type];
 		_currentCity = selectRandom _cityInRange;
-		_cityInRange = _cityInRange - _currentCity;
+		_cityInRange = _cityInRange - [_currentCity];
 		[_type, -1, _currentCity] spawn AS_fnc_changeCitySupply;
 	}
 
