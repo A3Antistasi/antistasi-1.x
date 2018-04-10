@@ -23,13 +23,27 @@ _currentLevel = _supplyLevels select _index;
 
 if(_delta > 0 && _currentLevel != 'GOOD') then
 {
-	if(_currentLevel == 'LOW') then {_currentLevel = 'GOOD'};
-	if(_currentLevel == 'CRITICAL') then {_currentLevel = 'LOW'};
+	if(_currentLevel == 'LOW') then 
+	{
+		_currentLevel = 'GOOD';
+		[0,5,_city] remoteExec ["AS_fnc_changeCitySupport",2];
+	};
+	if(_currentLevel == 'CRITICAL') then 
+	{
+		_currentLevel = 'LOW';
+		[0,15,_city] remoteExec ["AS_fnc_changeCitySupport",2];
+	};
 };
 if(_delta < 0 && _currentLevel != 'CRITICAL') then
 {
-	if(_currentLevel == 'GOOD') then {_currentLevel = 'LOW'};
-	if(_currentLevel == 'LOW') then {_currentLevel = 'CRITICAL'};
+	if(_currentLevel == 'GOOD') then 
+	{
+		_currentLevel = 'LOW';
+	};
+	if(_currentLevel == 'LOW') then 
+	{
+		_currentLevel = 'CRITICAL';
+	};
 };
 
 //Create new Array containing the new data
