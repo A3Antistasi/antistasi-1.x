@@ -81,7 +81,14 @@ call {
 		if (vehicle player in reportedVehs) exitWith {
 			_reason = localize "STR_HINTS_UND_REPORTED_CAR";
 		};
+		
+		//Player is sitting openly on a truck or else
+		if (vehicle player getCargoIndex != -1) exitWith {
+			_reason = "You are sitting openly (Need localize)";
+		};
 	};
+	
+	
 
 	// You are wearing compromising gear
 	call {
