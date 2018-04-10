@@ -122,6 +122,7 @@ class AS {
 		class getNearbyCities {};
 		class destroyCity {};
 		class changeCitySupport {};
+		class changeCitySupply {};
 		class deleteRoadblock {};
 		class createRoadblocks {};
 		class enemyArtillerySupport {};
