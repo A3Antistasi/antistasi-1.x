@@ -135,9 +135,9 @@ markers = power + bases + aeropuertos + recursos + fabricas + puestos + puertos 
         _dmrk setMarkerType "loc_Cross";
         _dmrk setMarkerColor IND_marker_colour;
 
-		_supplyLevelFood = 'GOOD';
-		_supplyLevelWater = 'GOOD';
-		_supplyLevelFuel = 'GOOD';
+		_supplyLevelFood = 'LOW';
+		_supplyLevelWater = 'LOW';
+		_supplyLevelFuel = 'LOW';
 		
         if (_nroads < _numVeh) then {_numVeh = _nroads};
         _info = [_numCiv, _numVeh, prestigeOPFOR,prestigeBLUFOR, [_supplyLevelFood, _supplyLevelWater, _supplyLevelFuel]];
