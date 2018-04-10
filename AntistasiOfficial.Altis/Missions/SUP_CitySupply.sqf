@@ -222,7 +222,8 @@ if (!(alive _missionVehicle) OR (dateToNumber date > _endTime)) then {
 	[-10,Slowhand] call playerScoreAdd;
 } else {
 	_task = ["SUP",[side_blue,civilian], [[_tskDesc_success,_targetName,numberToDate [2035,_endTime] select 3,numberToDate [2035,_endTime] select 4],_tskTitle,_marker],_targetPosition,"SUCCEEDED",5,true,true,"Heal"] call BIS_fnc_setTask;
-	[-15,5,_marker] remoteExec ["AS_fnc_changeCitySupport",2];
+	[_type, 1, _marker] remoteExec ["AS_fnc_changeCitySupply", 2];
+	//[-15,5,_marker] remoteExec ["AS_fnc_changeCitySupport",2];
 	[5,0] remoteExec ["prestige",2];
 	{if (_x distance _targetPosition < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
 	[5,Slowhand] call playerScoreAdd;
