@@ -35,46 +35,29 @@ _task = ["SUP",[side_blue,civilian],[[_tskDesc,_targetName,numberToDate [2035,_e
 misiones pushBack _task;
 publicVariable "misiones";
 
-_spawnPosition = (getMarkerPos guer_respawn) findEmptyPosition [5,50,"C_Van_01_transport_F"];
-sleep 1;
 
-_missionVehicle = "C_Van_01_transport_F" createVehicle _spawnPosition;
-_missionVehicle allowDamage false;
-[_missionVehicle] spawn {sleep 1; (_this select 0) allowDamage true;};
-
-_lockedseats = [2,3,4,5,6,7,8,9,10,11];
-{_missionVehicle lockcargo [_x, true]} foreach _lockedseats;
-
-//@Stef insert the name of the crates you want to use
-if(_type == "FOOD") then 
-{
-	_crate = "Land_WoodenCrate_01_F" createVehicle [0,0,0];
-};
+_crateType = "Land_PaperBox_01_open_boxes_F";
 if(_type == "WATER") then 
 {
-	_crate = "Land_WoodenCrate_01_F" createVehicle [0,0,0];
+	_crateType = "Land_PaperBox_01_open_water_F";
 };
 if(_type == "FUEL") then
 {
-	_crate = "Land_WoodenCrate_01_F" createVehicle [0,0,0];
+	_crateType = "CargoNet_01_barrels_F";
 };
-//Needs correct positioning
-_crate attachTo [_missionVehicle,[0,-2.5,-0.25]];
-_crate setDir (getDir _missionVehicle);
 
-[_missionVehicle] spawn VEHinit;
-{_x reveal _missionVehicle} forEach (allPlayers - entities "HeadlessClient_F");
-_missionVehicle setVariable ["tmp_targetName",_targetName,true];
-_missionVehicle addEventHandler ["GetIn", {
-	if (_this select 1 == "driver") then {
-		format ["This truck carries supplies for %1.",(_this select 0) getVariable ["tmp_targetName","Llandudno"]] remoteExec ["hint",_this select 2];
-	};
-}];
+_spawnPosition = (getMarkerPos guer_respawn) findEmptyPosition [5,50, _crateType];
+sleep 1;
+_crate = _crateType createVehicle _spawnPosition;
 
-_allVehicles pushBack _missionVehicle;
 
-[_missionVehicle,"Supply Vehicle"] spawn inmuneConvoy;
+_crate allowDamage false;
+[_crate] spawn {sleep 1; (_this select 0) allowDamage true;};
+//Spawned the crate in
 
+_crate call jn_fnc_logistics_addAction;
+
+//Problem: I need to know when the crate has been loaded and a link to the vehicle to set it as the mission vehicle
 
 _groupType = [infGarrisonSmall, side_green] call AS_fnc_pickGroup;
 _params = [_targetPosition, side_green, _groupType];
