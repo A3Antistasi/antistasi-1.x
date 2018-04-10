@@ -83,7 +83,9 @@ call {
 		};
 		
 		//Player is sitting openly on a truck or else
-		if (vehicle player getCargoIndex != -1) exitWith {
+		//https://github.com/A3Antistasi/antistasiofficial/blob/23c3a05f188035a7c4a8c014f02ebff7f3c7b97b/AntistasiOfficial.Altis/Templates/CIV_ALTIS.sqf
+		//https://community.bistudio.com/wiki/Arma_3_CfgVehicles_CIV
+		if (vehicle player getCargoIndex != -1 AND !(vehicle player in ["C_Hatchback_01_F", "C_Hatchback_01_sport_F", "C_SUV_01_F", "C_Van_01_fuel_F", "C_Van_01_box_F"])) exitWith {
 			//TODO Check which kind of vehicle,eg. cargo of an hatchback is ok
 			_reason = "You are sitting openly (Need localize)";
 		};
