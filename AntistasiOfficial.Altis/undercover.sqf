@@ -84,6 +84,7 @@ call {
 		
 		//Player is sitting openly on a truck or else
 		if (vehicle player getCargoIndex != -1) exitWith {
+			//TODO Check which kind of vehicle,eg. cargo of an hatchback is ok
 			_reason = "You are sitting openly (Need localize)";
 		};
 	};
