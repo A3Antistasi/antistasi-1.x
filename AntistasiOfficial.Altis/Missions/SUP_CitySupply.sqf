@@ -2,7 +2,7 @@ if (!isServer and hasInterface) exitWith {};
 
 params ["_marker", "_type"];
 //[3,[],[],[],[],[]] params ["_countBuildings","_targetBuildings","_allGroups","_allSoldiers","_allVehicles","_leafletCrates"];
-private ["_targetPosition","_targetName","_duration","_endTime","_task","_spawnPosition","_missionVehicle","_crate","_range","_allBuildings","_usableBuildings","_index","_perimeterBuildings","_currentBuilding","_lastBuilding","_bPositions","_groupType","_params","_group","_dog","_leaflets","_drop"];
+private ["_targetPosition","_targetName","_duration","_endTime","_task","_spawnPosition","_crate","_range","_allBuildings","_usableBuildings","_index","_perimeterBuildings","_currentBuilding","_lastBuilding","_bPositions","_groupType","_params","_group","_dog","_leaflets","_drop"];
 
 
 _tskTitle = "City Supplies";
@@ -31,7 +31,7 @@ _duration = 30;
 _endTime = [date select 0, date select 1, date select 2, date select 3, (date select 4) + _duration];
 _endTime = dateToNumber _endTime;
 
-_task = ["SUP",[side_blue,civilian],[[_tskDesc,_targetName,numberToDate [2035,_endTime] select 3,numberToDate [2035,_endTime] select 4],_tskTitle,_marker],_targetPosition,"CREATED",5,true,true,"Heal"] call BIS_fnc_setTask;
+_task = ["SUP",[side_blue,civilian],[[_tskDesc,_targetName,numberToDate [2035,_endTime] select 3,numberToDate [2035,_endTime] select 4],_tskTitle,_marker],_targetBuilding,"CREATED",5,true,true,"Heal"] call BIS_fnc_setTask;
 misiones pushBack _task;
 publicVariable "misiones";
 
@@ -57,8 +57,6 @@ _crate allowDamage false;
 
 _crate call jn_fnc_logistics_addAction;
 
-//Problem: I need to know when the crate has been loaded and a link to the vehicle to set it as the mission vehicle
-
 _groupType = [infGarrisonSmall, side_green] call AS_fnc_pickGroup;
 _params = [_targetPosition, side_green, _groupType];
 
@@ -79,21 +77,22 @@ for "_i" from 0 to 1 do {
 	} forEach units _group;
 } forEach _allGroups;
 
-// wait until the vehicle enters the target area
-waitUntil {sleep 1; !(alive _missionVehicle) OR (dateToNumber date > _endTime) OR (_missionVehicle distance _targetPosition < 500)};
+// wait until the crate arrives at the target building
+waitUntil {sleep 1; !(alive _crate) OR (dateToNumber date > _endTime) OR (_crate distance _targetBuilding < 25)};
 
 
 // vehicle destroyed or timer ran out
-if !(_missionVehicle distance _targetPosition < 550) exitWith {
-	_task = ["SUP",[side_blue,civilian], [[_tskDesc_fail, _targetName],_tskTitle,_marker],_targetPosition,"FAILED",5,true,true,"Heal"] call BIS_fnc_setTask;
+if !(_crate distance _targetBuilding < 30) exitWith {
+	_task = ["SUP",[side_blue,civilian], [[_tskDesc_fail, _targetName],_tskTitle,_marker],_targetBuilding,"FAILED",5,true,true,"Heal"] call BIS_fnc_setTask;
 	//@Stef penalities for failing the mission?
     [5,-5,_targetPosition] remoteExec ["AS_fnc_changeCitySupport",2];
 	[-10,Slowhand] call playerScoreAdd;
 
     [1200,_task] spawn borrarTask;
-	waitUntil {sleep 1; !([distanciaSPWN,1,_missionVehicle,"BLUFORSpawn"] call distanceUnits) OR ((_missionVehicle distance (getMarkerPos guer_respawn) < 60) AND (speed _missionVehicle < 1))};
-	if ((_missionVehicle distance (getMarkerPos guer_respawn) < 60) AND (speed _missionVehicle < 1)) then {
-		[_missionVehicle,true] call vaciar;
+	waitUntil {sleep 1; !([distanciaSPWN,1,_crate,"BLUFORSpawn"] call distanceUnits) OR (_crate distance (getMarkerPos guer_respawn) < 60)};
+	if (_crate distance (getMarkerPos guer_respawn) < 60) then 
+	{
+		[_crate,true] call vaciar;
 	};
 	[_allGroups, _allSoldiers, _allVehicles] spawn AS_fnc_despawnUnits;
 };
@@ -107,12 +106,11 @@ if !(_missionVehicle distance _targetPosition < 550) exitWith {
 
 	sup_unloading_supplies: active process
 */
-[false,false,90,0,""] params ["_timerRunning","_canUnload","_deploymentTime","_counter","_currentDrop"];
+[false,false,150,0,""] params ["_timerRunning","_canUnload","_deploymentTime","_counter","_currentDrop"];
 
-server setVariable ["sup_unloading_supplies", false, true];
 
-// truck alive, mission running, sites to go
-while {(alive _missionVehicle) AND (dateToNumber date < _endTime)} do {
+// crate alive and on place, defend it
+while {(alive _crate) AND (dateToNumber date < _endTime)} do {
 
 	// advance site, refresh task
 	_task = ["SUP",[side_blue,civilian],[[_tskDesc_drop,_targetName,numberToDate [2035,_endTime] select 3,numberToDate [2035,_endTime] select 4],_tskTitle,_marker], position _targetBuilding,"ASSIGNED",5,true,true,"Heal"] call BIS_fnc_setTask;
@@ -130,85 +128,69 @@ while {(alive _missionVehicle) AND (dateToNumber date < _endTime)} do {
 		};
 		
 	
-	// truck close enough to unload
-	while {(alive _missionVehicle) AND (dateToNumber date < _endTime) AND (_targetBuilding distance _missionVehicle < 20)} do {
+	while {(alive _crate) AND (dateToNumber date < _endTime) AND (_targetBuilding distance _crate < 25)} do {
 
-		// add unload action if truck is stationary
-		if (!(_canUnload) AND (speed _missionVehicle < 1)) then {
-			_canUnload = true;
-			[_missionVehicle,"unload_supplies"] remoteExec ["AS_fnc_addActionMP"];
-		};
+		// stop supplying when enemies get too close (100m)
+		while {(_counter < _deploymentTime) AND (alive _crate) AND !({[_x] call AS_fnc_isUnconscious} count ([80,0,_crate,"BLUFORSpawn"] call distanceUnits) == count ([80,0,_crate,"BLUFORSpawn"] call distanceUnits)) AND ({((side _x == side_green) OR (side _x == side_red)) AND (_x distance _crate < 100)} count allUnits == 0) AND (dateToNumber date < _endTime)} do {
 
-		// stop unloading when enemies get too close
-		while {(_counter < _deploymentTime) AND (alive _missionVehicle) AND !({[_x] call AS_fnc_isUnconscious} count ([80,0,_missionVehicle,"BLUFORSpawn"] call distanceUnits) == count ([80,0,_missionVehicle,"BLUFORSpawn"] call distanceUnits)) AND ({((side _x == side_green) OR (side _x == side_red)) AND (_x distance _missionVehicle < 50)} count allUnits == 0) AND (dateToNumber date < _endTime) AND (server getVariable "sup_unloading_supplies")} do {
-
-			// start a progress bar, remove crew from truck, lock the truck
+			// start a progress bar
 			if !(_timerRunning) then {
-				{if (isPlayer _x) then {[(_deploymentTime - _counter),false] remoteExec ["pBarMP",_x]; [_missionVehicle,true] remoteExec ["AS_fnc_lockVehicle",_x];}} forEach ([80,0,_missionVehicle,"BLUFORSpawn"] call distanceUnits);
-				_timerRunning = true;
-				[petros,"globalChat","Guard the truck!"] remoteExec ["commsMP"];
 				{
-					_x action ["eject", _missionVehicle];
-				} forEach (crew (_missionVehicle));
-				[_missionVehicle, true] remoteExec ["AS_fnc_lockVehicle", [0,-2] select isDedicated,true];
-				_missionVehicle lock 2;
-				_missionVehicle engineOn false;
-				_missionVehicle lockCargo false;
+					if (isPlayer _x) then 
+					{
+						[(_deploymentTime - _counter),false] remoteExec ["pBarMP",_x];
+						}
+				}forEach ([80,0,_crate,"BLUFORSpawn"] call distanceUnits);
+				_timerRunning = true;
+				[petros,"globalChat","Guard the crate!"] remoteExec ["commsMP"];
 			};
-
 			_counter = _counter + 1;
   			sleep 1;
 		};
 
 		// if unloading wasn't finished, reset
-		if ((_counter < _deploymentTime) AND (server getVariable "sup_unloading_supplies")) then {
+		if (_counter < _deploymentTime) then {
 			_counter = 0;
 			_timerRunning = false;
-			_missionVehicle lock 0;
-			[_missionVehicle, false] remoteExec ["AS_fnc_lockVehicle", [0,-2] select isDedicated,true];
-			{if (isPlayer _x) then {[0,true] remoteExec ["pBarMP",_x]}} forEach ([100,0,_missionVehicle,"BLUFORSpawn"] call distanceUnits);
+			{
+				if (isPlayer _x) then 
+				{
+					[0,true] remoteExec ["pBarMP",_x]
+				}
+			} forEach ([100,0,_crate,"BLUFORSpawn"] call distanceUnits);
 
-			if ((!([80,1,_missionVehicle,"BLUFORSpawn"] call distanceUnits) OR ({((side _x == side_green) OR (side _x == side_red)) AND (_x distance _missionVehicle < 50)} count allUnits != 0)) AND (alive _missionVehicle)) then {
-				{if (isPlayer _x) then {[petros,"hint","Stay near the truck, keep the perimeter clear of hostiles."] remoteExec ["commsMP",_x]}} forEach ([150,0,_missionVehicle,"BLUFORSpawn"] call distanceUnits);
+			if ((!([80,1,_crate,"BLUFORSpawn"] call distanceUnits) OR ({((side _x == side_green) OR (side _x == side_red)) AND (_x distance _crate < 100)} count allUnits != 0)) AND (alive _crate)) then {
+				{
+					if (isPlayer _x) then 
+					{
+						[petros,"hint","Stay near the crate, keep the perimeter clear of hostiles."] remoteExec ["commsMP",_x]
+					}
+				} forEach ([150,0,_crate,"BLUFORSpawn"] call distanceUnits);
 			};
 
-			waitUntil {sleep 1; (!alive _missionVehicle) OR (([80,1,_missionVehicle,"BLUFORSpawn"] call distanceUnits) AND ({((side _x == side_green) OR (side _x == side_red)) AND (_x distance _missionVehicle < 50)} count allUnits == 0)) OR (dateToNumber date > _endTime)};
+			waitUntil {sleep 1; (!alive _crate) OR (([80,1,_crate,"BLUFORSpawn"] call distanceUnits) AND ({((side _x == side_green) OR (side _x == side_red)) AND (_x distance _crate < 100)} count allUnits == 0)) OR (dateToNumber date > _endTime)};
 		};
 
 		// if unloading was finished, reset all respective flags, escape to the outer loop
-		if ((alive _missionVehicle) AND !(_counter < _deploymentTime)) exitWith {
-			_info = "";
-			server setVariable ["sup_unloading_supplies", false, true];
-			_canUnload = false;
-			[[_missionVehicle,"remove"],"AS_fnc_addActionMP"] call BIS_fnc_MP;
-			_counter = 0;
-			[_missionVehicle, false] remoteExec ["AS_fnc_lockVehicle", [0,-2] select isDedicated,true];
-			_missionVehicle lock 0;
-			_timerRunning = false;
-
+		if (!(_counter < _deploymentTime)) exitWith {
+			//You won this mission
 		};
 		sleep 1;
-	};
-
-	// remove unload action if truck isn't close enough to current site
-	if (_canUnload) then {
-		_canUnload = false;
-		[_missionVehicle,"remove"] remoteExec ["AS_fnc_addActionMP"];
 	};
 	sleep 1;
 };
 
 // fail if the truck is destroyed or the timer runs out
-if (!(alive _missionVehicle) OR (dateToNumber date > _endTime)) then {
-	_task = ["SUP",[side_blue,civilian], [[_tskDesc_fail, _targetName],_tskTitle,_marker],_targetPosition,"FAILED",5,true,true,"Heal"] call BIS_fnc_setTask;
+if (!(alive _crate) OR (dateToNumber date > _endTime)) then {
+	_task = ["SUP",[side_blue,civilian], [[_tskDesc_fail, _targetName],_tskTitle,_marker],_targetBuilding,"FAILED",5,true,true,"Heal"] call BIS_fnc_setTask;
 	[0,-2,_marker] remoteExec ["AS_fnc_changeCitySupport",2];
 	[-10,Slowhand] call playerScoreAdd;
 } else {
-	_task = ["SUP",[side_blue,civilian], [[_tskDesc_success,_targetName,numberToDate [2035,_endTime] select 3,numberToDate [2035,_endTime] select 4],_tskTitle,_marker],_targetPosition,"SUCCEEDED",5,true,true,"Heal"] call BIS_fnc_setTask;
+	_task = ["SUP",[side_blue,civilian], [[_tskDesc_success,_targetName,numberToDate [2035,_endTime] select 3,numberToDate [2035,_endTime] select 4],_tskTitle,_marker],_targetBuilding,"SUCCEEDED",5,true,true,"Heal"] call BIS_fnc_setTask;
 	[_type, 1, _marker] remoteExec ["AS_fnc_changeCitySupply", 2];
 	//[-15,5,_marker] remoteExec ["AS_fnc_changeCitySupport",2];
 	[5,0] remoteExec ["prestige",2];
-	{if (_x distance _targetPosition < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
+	{if (_x distance _targetBuilding < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
 	[5,Slowhand] call playerScoreAdd;
 	// BE module
 	if (activeBE) then {
@@ -218,12 +200,12 @@ if (!(alive _missionVehicle) OR (dateToNumber date > _endTime)) then {
 };
 
 [1200,_task] spawn borrarTask;
-waitUntil {sleep 1; (not([distanciaSPWN,1,_missionVehicle,"BLUFORSpawn"] call distanceUnits)) or ((_missionVehicle distance (getMarkerPos guer_respawn) < 60) && (speed _missionVehicle < 1))};
-if ((_missionVehicle distance (getMarkerPos guer_respawn) < 60) && (speed _missionVehicle < 1)) then {
-	[_missionVehicle,true] call vaciar;
-};
-{deleteVehicle _x} forEach _leafletCrates;
+waitUntil {sleep 1; (not([distanciaSPWN,1,_crate,"BLUFORSpawn"] call distanceUnits)) or (_crate distance (getMarkerPos guer_respawn) < 60)};
+if (_crate distance (getMarkerPos guer_respawn) < 60) then 
+	{
+		[_crate,true] call vaciar;
+	};
 sleep 1;
-deleteVehicle _missionVehicle;
+deleteVehicle _crate;
 
 [_allGroups, _allSoldiers, _allVehicles] spawn AS_fnc_despawnUnits;
