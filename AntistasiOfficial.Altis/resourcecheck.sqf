@@ -159,8 +159,8 @@ while {true} do {
 	{
 		if(Random 100 <= 85) then
 		{
-			_type = selectRandom _types;
 			_types = _types - [_type];
+			_type = selectRandom _types;
 			_currentCity = selectRandom _cityInRange;
 			_cityInRange = _cityInRange - [_currentCity];
 			[_type, -1, _currentCity] spawn AS_fnc_changeCitySupply;
