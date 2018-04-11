@@ -24,6 +24,11 @@ _civVehicles = CIV_vehicles + [civHeli] +
 		"C_Scooter_Transport_01_F",	// Jetski
 		"C_Boat_Transport_02_F"		// RHIB transport boat
 	];
+	
+
+//Define seats which are openly, so player cannot go incognito sitting on these	
+_civVehiclesWithOpenSeats = ["C_Offroad_01_F", "C_Van_01_transport_F", "C_Truck_02_transport_F"];
+_civVehicleOpenSeats = [[2,3,4,5], [3,4,5,6,7,8,9,10,11,12], [3,4,5,6,7,8,9,10,11,12,13,14,15,16]];
 
 _fnc_compromiseVehicle = {
 	params ["_player"];
@@ -83,10 +88,8 @@ call {
 		};
 		
 		//Player is sitting openly on a truck or else
-		//https://github.com/A3Antistasi/antistasiofficial/blob/23c3a05f188035a7c4a8c014f02ebff7f3c7b97b/AntistasiOfficial.Altis/Templates/CIV_ALTIS.sqf
-		//https://community.bistudio.com/wiki/Arma_3_CfgVehicles_CIV
-		if (vehicle player getCargoIndex != -1 AND !(vehicle player in ["C_Hatchback_01_F", "C_Hatchback_01_sport_F", "C_SUV_01_F", "C_Van_01_fuel_F", "C_Van_01_box_F"])) exitWith {
-			//TODO Check which kind of vehicle,eg. cargo of an hatchback is ok
+		if ((vehicle player in _civVehiclesWithOpenSeats) AND (vehicle player getCargoIndex in _civVehicleOpenSeats select (_civVehiclesWithOpenSeats find (vehicle player)))) exitWith 
+		{
 			_reason = "You are sitting openly (Need localize)";
 		};
 	};
