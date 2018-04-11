@@ -108,7 +108,7 @@ while {true} do {
 
 			if(getmarkerPos _city distance _positionHQ < 4000) then
 			{
-				_cityInRange = _cityInRange + _city;
+				_cityInRange pushbackunique _city;
 			}
 		};
 
