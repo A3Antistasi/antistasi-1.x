@@ -120,7 +120,7 @@ while {(alive _crate) AND (dateToNumber date < _endTime)} do {
 	{
 		_AAFBases = bases - mrkFIA;
 		_QRFBase = [_AAFBases,_targetBuilding] call BIS_fnc_nearestPosition;
-		[_airport, _targetBuilding, _targetMarker, 15, "transport", "small", "supplyMissionQRF"] remoteExec ["enemyQRF",  call AS_fnc_getNextWorker];
+		[_QRFBase, _targetBuilding, _targetMarker, 15, "transport", "small", "supplyMissionQRF"] remoteExec ["enemyQRF",  call AS_fnc_getNextWorker];
 	}
 	
 	while {(alive _crate) AND (dateToNumber date < _endTime) AND (_targetBuilding distance _crate < 25) AND (isNull attachedTo _crate)} do {
