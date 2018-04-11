@@ -106,7 +106,7 @@ while {true} do {
 				};
 			};
 
-			if(getPos _city distance _positionHQ < 4000) then
+			if(getmarkerPos _city distance _positionHQ < 4000) then
 			{
 				_cityInRange = _cityInRange + _city;
 			}
