@@ -5,7 +5,7 @@ Operate Undercover or raid along your fellows by recruiting AI and garrisons or 
 
 Website: http://a3antistasi.enjin.com/
 
-Server: steam://connect/85.190.158.136:29001
+Server: Antistasi Official Altis
 
 Teamspeak: **antistasi.enjinvoice.com**
 

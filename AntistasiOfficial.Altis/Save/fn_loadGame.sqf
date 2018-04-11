@@ -36,6 +36,7 @@ publicVariable "flag_playerList";
 ["time"] call fn_loadData;
 ["supportOPFOR"] call fn_loadData;
 ["supportBLUFOR"] call fn_loadData;
+["supplyLevels"] call fn_loadData;
 ["resourcesAAF"] call fn_loadData;
 ["resourcesFIA"] call fn_loadData;
 ["garrison"] call fn_loadData;

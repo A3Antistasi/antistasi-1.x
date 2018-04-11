@@ -1,12 +1,12 @@
 ﻿params [["_oneIteration", false]];
-
+[getMarkerPos guer_respawn,[],[],false] params ["_positionHQ","_options","_zones"];
 if (!isServer) exitWith{};
 
 scriptName "resourcecheck";
 
 if (isMultiplayer) then {waitUntil {!isNil "switchCom"}};
 
-private ["_incomeFIA","_incomeEnemy","_hrFIA","_popFIA","_popEnemy","_bonusFIA","_bonusEnemy","_city","_cityIncomeFIA","_cityIncomeEnemy","_cityIncomeHR","_data","_civilians","_supportFIA","_supportEnemy","_power","_coef","_mrkD","_base","_factory","_resource","_text","_updated","_resourcesAAF","_vehicle","_script"];
+private ["_incomeFIA","_incomeEnemy","_hrFIA","_popFIA","_popEnemy","_bonusFIA","_bonusEnemy", "_cityInRange" ,"_city","_cityIncomeFIA","_cityIncomeEnemy","_cityIncomeHR","_data","_civilians","_supportFIA","_supportEnemy", "_supplyLevels","_power","_coef","_mrkD","_base","_factory","_resource","_text","_updated","_resourcesAAF","_vehicle","_script"];
 
 //Sparker's War Statistics variables
 private _ws_territory = call ws_fnc_newGridArray;	//Array for the sum of AAF(positive) and FIA(negative) territories
@@ -55,16 +55,18 @@ while {true} do {
 	_popEnemy = 0;
 	_bonusEnemy = 1;
 	_bonusFIA = 1;
+	_cityInRange = [];
 
 	{
 		_city = _x;
 		_cityIncomeEnemy = 0;
 		_cityIncomeFIA = 0;
 		_cityIncomeHR = 0;
-		_data = server getVariable [_city,[0,0,1,1]];
+		_data = server getVariable [_city,[0,0,1,1,[]]];
 		_civilians = _data select 0;
 		_supportEnemy = _data select 2;
 		_supportFIA = _data select 3;
+		_supplyLevels = _data select 4;
 		_power = [_city] call AS_fnc_powerCheck;
 		_coef = [0.5,1] select _power;
 		_popFIA = _popFIA + (_civilians * (_supportFIA / 100));
@@ -103,6 +105,11 @@ while {true} do {
 					};
 				};
 			};
+			
+			if(getPos _city distance _positionHQ < 4000) then 
+			{
+				_cityInRange = _cityInRange + _city;
+			}
 		};
 
 		_incomeEnemy = _incomeEnemy + _cityIncomeEnemy;
@@ -145,6 +152,22 @@ while {true} do {
 			[_city,_power] spawn AS_fnc_adjustLamps;
 		};
 	} forEach ciudades;
+	
+	_types = ["FOOD", "WATER", "FUEL"]
+	//@Stef i have reduced the amount to maximum 2 missions per tick each with 85% chance
+	for "_i" from 0 to ((count _cityInRange) max 2) do 
+	{
+		if(Random 100 <= 85) then 
+		{
+			_type = selectRandom _types;
+			_types = _types - [_type];
+			_currentCity = selectRandom _cityInRange;
+			_cityInRange = _cityInRange - [_currentCity];
+			[_type, -1, _currentCity] spawn AS_fnc_changeCitySupply;
+			[_currentCity, _type] remoteExec ["SUP_CitySupply", call AS_fnc_getNextWorker];
+		}
+		
+	}
 
 	if ((_popFIA > _popEnemy) AND ("airport_3" in mrkFIA)) then {["end1",true,true,true,true] remoteExec ["BIS_fnc_endMission",0]};
 

@@ -1,5 +1,5 @@
 
-private ["_texto","_datos","_numCiv","_prestigeOPFOR","_prestigeBLUFOR","_power","_busy","_sitio","_posicionTel","_garrison"];
+private ["_texto","_datos","_numCiv","_prestigeOPFOR","_prestigeBLUFOR","_supplyLevels","_power","_busy","_sitio","_posicionTel","_garrison"];
 posicionTel = [];
 
 _popFIA = 0;
@@ -10,6 +10,7 @@ _datos = server getVariable _x;
 _numCiv = _datos select 0;
 _prestigeOPFOR = _datos select 2;
 _prestigeBLUFOR = _datos select 3;
+_supplyLevels = _datos select 4;
 _popFIA = _popFIA + (_numCiv * (_prestigeBLUFOR / 100));
 _popAAF = _popAAF + (_numCiv * (_prestigeOPFOR / 100));
 _pop = _pop + _numCiv;
@@ -44,9 +45,10 @@ while {visibleMap} do {
 			_numCiv = _datos select 0;
 			_prestigeOPFOR = _datos select 2;
 			_prestigeBLUFOR = _datos select 3;
+			_supplyLevels = _datos select 4;
 			_power = [_sitio] call AS_fnc_powercheck;
 			//_texto = format ["%1\n\nPop %2\nAAF Support: %3 %5\nFIA Support: %4 %5",[_sitio,false] call fn_location,_numCiv,_prestigeOPFOR,_prestigeBLUFOR,"%"];
-			_texto = format ["%1\n\nPop %2\nAAF Support: %3 %5\nFIA Support: %4 %5",[_sitio,false] call AS_fnc_location,_numCiv,_prestigeOPFOR,_prestigeBLUFOR,"%"];
+			_texto = format ["%1\n\nPop %2\nAAF Support: %3 %5\nFIA Support: %4 %5\nFood Supply: %6\nWater Supply: %7\nFuel Supply: %8",[_sitio,false] call AS_fnc_location,_numCiv,_prestigeOPFOR,_prestigeBLUFOR,"%",_supplyLevels select 0, _supplyLevels select 1, _supplyLevels select 2];
 			if (_power) then {_texto = format ["%1\nPowered",_texto]} else {_texto = format ["%1\nNot Powered",_texto]};
 			//if (_sitio in mrkAAF) then {if ([_sitio] call AS_fnc_radiocheck) then {_texto = format ["%1\nRadio Comms ON",_texto]} else {_texto = format ["%1\nRadio Comms OFF",_texto]}};
 		if (_sitio in destroyedCities) then {_texto = format ["%1\nDESTROYED",_texto]};
