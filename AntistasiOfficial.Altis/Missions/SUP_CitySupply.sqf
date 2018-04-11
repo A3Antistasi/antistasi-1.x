@@ -115,21 +115,13 @@ while {(alive _crate) AND (dateToNumber date < _endTime)} do {
 
 	waitUntil {sleep 1; (dateToNumber date > _endTime) OR (isNull attachedTo _crate) AND (_crate distance _targetBuilding > 25};
 	
-	/*
-	_patGroup = _allGroups select 0;
-	if (((leader _patGroup) distance2D (position _currentDrop)) > ((leader (_allGroups select 1)) distance2D (position _currentDrop))) then {
-		_patGroup = _allGroups select 1;
-	};
-	//And i thought this would be random bad luck ...
-	if (alive leader _patGroup) then {
-		_wp101 = _patGroup addWaypoint [position _currentDrop, 20];
-		_wp101 setWaypointType "SAD";
-		_wp101 setWaypointBehaviour "AWARE";
-		_patGroup setCombatMode "RED";
-		_patGroup setCurrentWaypoint _wp101;
-		};
-		//Replace with QRF @Stef any cool and short snippet to do that?
-	*/
+	//If crate in play 60% change of small transport QRF
+	if(random 100 > 40) then 
+	{
+		_AAFBases = bases - mrkFIA;
+		_QRFBase = [_AAFBases,_targetBuilding] call BIS_fnc_nearestPosition;
+		[_airport, _targetBuilding, _targetMarker, 15, "transport", "small", "supplyMissionQRF"] remoteExec ["enemyQRF",  call AS_fnc_getNextWorker];
+	}
 	
 	while {(alive _crate) AND (dateToNumber date < _endTime) AND (_targetBuilding distance _crate < 25) AND (isNull attachedTo _crate)} do {
 
