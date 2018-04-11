@@ -69,6 +69,8 @@ _task = ["SUP",[side_blue,civilian],[[_tskDesc,_targetName,numberToDate [2035,_e
 misiones pushBack _task;
 publicVariable "misiones";
 
+_allGroups = [];
+_allSoldiers = [];
 
 _groupType = [infSquad, side_green] call AS_fnc_pickGroup;
 _group = [_posSupply, side_green, _groupType] call BIS_Fnc_spawnGroup;

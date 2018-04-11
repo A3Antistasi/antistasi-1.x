@@ -6,7 +6,7 @@ scriptName "resourcecheck";
 
 if (isMultiplayer) then {waitUntil {!isNil "switchCom"}};
 
-private ["_incomeFIA","_incomeEnemy","_hrFIA","_popFIA","_popEnemy","_bonusFIA","_bonusEnemy", "_cityInRange" ,"_city","_cityIncomeFIA","_cityIncomeEnemy","_cityIncomeHR","_data","_civilians","_supportFIA","_supportEnemy", "_supplyLevels","_power","_coef","_mrkD","_base","_factory","_resource","_text","_updated","_resourcesAAF","_vehicle","_script"];
+private ["_incomeFIA","_incomeEnemy","_hrFIA","_popFIA","_popEnemy","_bonusFIA","_bonusEnemy", "_cityInRange" ,"_city","_cityIncomeFIA","_cityIncomeEnemy","_cityIncomeHR","_data","_civilians","_supportFIA","_supportEnemy", "_supplyLevels","_power","_coef","_mrkD","_base","_factory","_resource","_text","_updated","_resourcesAAF","_vehicle","_script","_types"];
 
 //Sparker's War Statistics variables
 private _ws_territory = call ws_fnc_newGridArray;	//Array for the sum of AAF(positive) and FIA(negative) territories
@@ -155,11 +155,12 @@ while {true} do {
 
 	_types = ["FOOD", "WATER", "FUEL"];
 	//@Stef i have reduced the amount to maximum 2 missions per tick each with 85% chance
-	for "_i" from 0 to ((count _cityInRange) max 2) do
+	for "_i" from 0 to ((count _cityInRange) min 2) do
 	{
 		if(Random 100 <= 85) then
 		{
 			_type = selectRandom _types;
+			diag_log format ["_type line 163 = %1",_type];
 			_types = _types - [_type];
 			_currentCity = selectRandom _cityInRange;
 			_cityInRange = _cityInRange - [_currentCity];

@@ -52,11 +52,11 @@ for "_i" from 0 to 2 do
 {
 	if(_i != _index) then
 	{
-		_newLevels = _newLevels + (_supplyLevels select _i);
+		_newLevels pushback (_supplyLevels select _i);
 	}
 	else
 	{
-		_newLevels = _newLevels + _currentLevel;
+		_newLevels pushback _currentLevel;
 	};
 };
 
