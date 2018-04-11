@@ -23,12 +23,12 @@ _currentLevel = _supplyLevels select _index;
 
 if(_delta > 0 && _currentLevel != 'GOOD') then
 {
-	if(_currentLevel == 'LOW') then 
+	if(_currentLevel == 'LOW') then
 	{
 		_currentLevel = 'GOOD';
 		[0,5,_city] remoteExec ["AS_fnc_changeCitySupport",2];
 	};
-	if(_currentLevel == 'CRITICAL') then 
+	if(_currentLevel == 'CRITICAL') then
 	{
 		_currentLevel = 'LOW';
 		[0,15,_city] remoteExec ["AS_fnc_changeCitySupport",2];
@@ -36,11 +36,11 @@ if(_delta > 0 && _currentLevel != 'GOOD') then
 };
 if(_delta < 0 && _currentLevel != 'CRITICAL') then
 {
-	if(_currentLevel == 'GOOD') then 
+	if(_currentLevel == 'GOOD') then
 	{
 		_currentLevel = 'LOW';
 	};
-	if(_currentLevel == 'LOW') then 
+	if(_currentLevel == 'LOW') then
 	{
 		_currentLevel = 'CRITICAL';
 	};
@@ -48,7 +48,7 @@ if(_delta < 0 && _currentLevel != 'CRITICAL') then
 
 //Create new Array containing the new data
 _newLevels = [];
-for "_i" from 0 to 2 do 
+for "_i" from 0 to 2 do
 {
 	if(_i != _index) then
 	{
@@ -58,7 +58,7 @@ for "_i" from 0 to 2 do
 	{
 		_newLevels = _newLevels + _currentLevel;
 	};
-}
+};
 
 //Prepare data for save
 _data = [_data select 0, _data select 1, _data select 2,_data select 3, _newLevels];
