@@ -113,7 +113,7 @@ call {
 		_reason = [localize "STR_HINTS_UND_GEAR"] call _fnc_displayGear;
 	};
 	
-	if (vehicle player != player AND !_break) exitWith {
+	if (vehicle player != player AND _break) exitWith {
 		//Player is sitting openly on a truck or else and the gears is compromising
 		if ((vehicle player in _civVehiclesWithOpenSeats) AND (vehicle player getCargoIndex in _civVehicleOpenSeats select (_civVehiclesWithOpenSeats find (vehicle player)))) exitWith 
 		{
