@@ -87,12 +87,7 @@ call {
 			_reason = localize "STR_HINTS_UND_REPORTED_CAR";
 		};
 		
-		//Player is sitting openly on a truck or else
-		if ((vehicle player in _civVehiclesWithOpenSeats) AND (vehicle player getCargoIndex in _civVehicleOpenSeats select (_civVehiclesWithOpenSeats find (vehicle player)))) exitWith 
-		{
-			_reason = "You are sitting openly (Need localize)";
-			[player] spawn _fnc_compromiseVehicle;
-		};
+		
 	};
 	
 	
@@ -116,6 +111,15 @@ call {
 
 	if (_break) exitWith {
 		_reason = [localize "STR_HINTS_UND_GEAR"] call _fnc_displayGear;
+	};
+	
+	if (vehicle player != player AND !_break) exitWith {
+		//Player is sitting openly on a truck or else and the gears is compromising
+		if ((vehicle player in _civVehiclesWithOpenSeats) AND (vehicle player getCargoIndex in _civVehicleOpenSeats select (_civVehiclesWithOpenSeats find (vehicle player)))) exitWith 
+		{
+			_reason = "You are sitting openly (Need localize)";
+			[player] spawn _fnc_compromiseVehicle;
+		};
 	};
 };
 
