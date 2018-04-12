@@ -114,16 +114,13 @@ _targetMarker setMarkerShape "ICON";
 _task = ["SUP",[side_blue,civilian], [[_tskDesc_drop, _targetName, numberToDate [2035,_endTime] select 3, numberToDate [2035,_endTime] select 4],_tskTitle,_targetMarker],_targetBuilding,"CREATED",5,true,true,"Heal"] call BIS_fnc_setTask;
 misiones pushBack _task;
 publicVariable "misiones";
+
 /*
 	_timerRunning: timer running
 	_deploymentTime: time it takes to unload the gear (seconds)
 	_counter: running timer
-	_currentDrop: current site
-	_canUnload: flag to control unloading action
-
-	sup_unloading_supplies: active process
 */
-[false,false,150,0,""] params ["_timerRunning","_canUnload","_deploymentTime","_counter","_currentDrop"];
+[false,150,0] params ["_timerRunning","_deploymentTime","_counter"];
 
 
 // crate alive and loaded
