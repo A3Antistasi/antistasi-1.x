@@ -1,15 +1,14 @@
 if (!isServer and hasInterface) exitWith {};
 
-diag_log "SUP_CitySupply executed";
 params ["_marker", "_type"];
-diag_log format ["SUP_CitySupply _marker = %1, _type = %2",_marker,_type];
+diag_log format ["SUP_CitySupply _marker = %1, _type = %2 called off",_marker,_type];
 //[3,[],[],[],[],[]] params ["_countBuildings","_targetBuildings","_allGroups","_allSoldiers","_allVehicles","_leafletCrates"];
 private ["_targetPosition","_targetName","_duration","_endTime","_task", "_posSupply", "_FIAMarkers", "_nFIAMarker","_spawnPosition","_crate", "_house", "_range","_allBuildings","_groupType","_params","_group","_dog","_leaflets","_drop"];
 
 
 _tskTitle = "City Supplies";
 _tskDesc = "Get it from the AAF and deliver it to %1 before %2:%3";
-_tskDesc_drop = "Now bring this supplies to %1";
+_tskDesc_drop = "Now bring this supplies to %1 before %2:%3";
 _tskDesc_fail = "You failed delivering a paket to %1, very impressive";
 _tskDesc_success = "You crazy little postman";
 
@@ -29,7 +28,7 @@ _targetBuilding = _targetPosition;
 _duration = 30;
 _endTime = [date select 0, date select 1, date select 2, date select 3, (date select 4) + _duration];
 _endTime = dateToNumber _endTime;
-
+/*
 _FIAMarkers = mrkFIA + campsFIA;
 
 while {true} do {
@@ -38,7 +37,7 @@ while {true} do {
 	_nFIAMarker = [_FIAMarkers,_posSupply] call BIS_fnc_nearestPosition;
 	if ((!surfaceIsWater _posSupply) && (_posSupply distance _posHQ < 4000) && (getMarkerPos _nFIAMarker distance _posSupply > 500)) exitWith {};
 };
-
+*/
 _houseType = "Land_i_Shed_Ind_F";
 _crateType = "Land_PaperBox_01_open_boxes_F";
 if(_type == "WATER") then
@@ -49,12 +48,14 @@ if(_type == "FUEL") then
 {
 	_crateType = "CargoNet_01_barrels_F";
 };
+_allSheds = nearestObjects [_targetPosition, [_houseType], 2000, true];
+if (count _allSheds == 0) exitWith
+{
+	diag_log format ["Supply mission not created, could not find %1 around %2", _houseType, _targetPosition];
+};
 
-_spawnPosition = _posSupply findEmptyPosition [5,50, _houseType];
-sleep 1;
-_house = _houseType createVehicle _spawnPosition;
-
-_spawnPosition = _posSupply findEmptyPosition [5,50, _crateType];
+_spawnPosition = _allSheds selectRandom;
+_spawnPosition = _spawnPosition findEmptyPosition [5,50, _crateType];
 sleep 1;
 _crate = _crateType createVehicle _spawnPosition;
 _crate allowDamage false;
@@ -62,14 +63,13 @@ _crate allowDamage false;
 _crate call jn_fnc_logistics_addAction;
 //Spawned the crate in
 
+/*
 _marker = createMarker [format ["REC%1", random 100], _posSupply];
-diag_log format ["SUP_CitySupply _posSupply = %1",_posSupply];
 _marker setMarkerShape "ICON";
 
-
 _task = ["SUP",[side_blue,civilian],[[_tskDesc,_targetName,numberToDate [2035,_endTime] select 3,numberToDate [2035,_endTime] select 4],_tskTitle,_marker],_posSupply,"CREATED",5,true,true,"Heal"] call BIS_fnc_setTask;
-misiones pushBack _task;
-publicVariable "misiones";
+
+*/
 
 _allGroups = [];
 _allSoldiers = [];
@@ -86,6 +86,8 @@ _allGroups pushBack _group;
 	} forEach units _group;
 } forEach _allGroups; //Should be only one by now so ok
 
+diag_log "SUP_CitySupply successful created";
+
 // wait until the player loads the crate
 waitUntil {sleep 1; (dateToNumber date > _endTime) OR !(isNull attachedTo _crate)};
 
@@ -93,17 +95,25 @@ waitUntil {sleep 1; (dateToNumber date > _endTime) OR !(isNull attachedTo _crate
 //if timer ran out
 if (dateToNumber date > _endTime) exitWith
 {
-	_task = ["SUP",[side_blue,civilian], [[_tskDesc_fail, _targetName],_tskTitle,_marker],_posSupply,"FAILED",5,true,true,"Heal"] call BIS_fnc_setTask;
-	//@Stef penalities for failing the mission?
-    [5,-5,_targetPosition] remoteExec ["AS_fnc_changeCitySupport",2];
-	[-10,Slowhand] call playerScoreAdd;
+	diag_log "SUP_CitySupply ended without the player even touching the crate";
 };
+
+if("SUP" in misiones) then
+{
+	{
+		if (isPlayer _x) then{
+			["You already have a mission of that kind, complete this first"] remoteExec ["hint",_this select 2];
+		}
+	} forEach ([100,0,_crate,"BLUFORSpawn"] call distanceUnits);
+	waitUntil{sleep 1;!("SUP" in misiones) OR (dateToNumber date > _endTime)};
+}
 
 _targetMarker = createMarker [format ["REC%1", random 100], _targetBuilding];
 _targetMarker setMarkerShape "ICON";
 
-_task = ["SUP",[side_blue,civilian], [[_tskDesc_drop, _targetName],_tskTitle,_targetMarker],_targetBuilding,"AUTOASSIGNED",5,true,true,"Heal"] call BIS_fnc_setTask;
-
+_task = ["SUP",[side_blue,civilian], [[_tskDesc_drop, _targetName, numberToDate [2035,_endTime] select 3, numberToDate [2035,_endTime] select 4],_tskTitle,_targetMarker],_targetBuilding,"CREATED",5,true,true,"Heal"] call BIS_fnc_setTask;
+misiones pushBack _task;
+publicVariable "misiones";
 /*
 	_timerRunning: timer running
 	_deploymentTime: time it takes to unload the gear (seconds)
@@ -121,14 +131,24 @@ while {(alive _crate) AND (dateToNumber date < _endTime)} do {
 
 	waitUntil {sleep 1; (dateToNumber date > _endTime) OR (isNull attachedTo _crate) AND (_crate distance _targetBuilding > 25)};
 
-	//If crate in play 60% change of small transport QRF
-	if(random 100 > 40) then
+	//Reveal all players in the surrounding of the crate to the enemies
 	{
-		_AAFBases = bases - mrkFIA;
-		_QRFBase = [_AAFBases,_targetBuilding] call BIS_fnc_nearestPosition;
-		[_QRFBase, _targetBuilding, _targetMarker, 15, "transport", "small", "supplyMissionQRF"] remoteExec ["enemyQRF",  call AS_fnc_getNextWorker];
-	};
+		_player = _x;
+		{
+			if ((side _x == side_green) and (_x distance _crate < distanciaSPWN)) then{
+				if (_x distance _crate < 300) then
+				{
+					_x doMove position _crate
+				} 	
+				else
+				{
+					_x reveal [_player,4]
+				};
+			};
+		} forEach allUnits;
+	} forEach ([300,0,_crate,"BLUFORSpawn"] call distanceUnits)
 
+	
 	while {(alive _crate) AND (dateToNumber date < _endTime) AND (_targetBuilding distance _crate < 25) AND (isNull attachedTo _crate)} do {
 
 		// stop supplying when enemies get too close (100m)
