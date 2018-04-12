@@ -439,11 +439,12 @@ fn_setData = {
 					_numVeh = _datos select 1;
 					_prestigeOPFOR = _datos select 2;
 					_prestigeBLUFOR = _varValue select _i;
-					_supplyLevels = datos select 4;
+					_supplyLevels = _datos select 4;
 					_datos = [_numCiv,_numVeh,_prestigeOPFOR,_prestigeBLUFOR, _supplyLevels];
 					server setVariable [_ciudad,_datos,true];
 				};
 			};
+			
 			if(_varName == 'supplyLevels') exitWith
 			{
 				for "_i" from 0 to (count ciudades) - 1 do {
@@ -457,8 +458,7 @@ fn_setData = {
 					_datos = [_numCiv,_numVeh,_prestigeOPFOR,_prestigeBLUFOR, _supplyLevels];
 					server setVariable [_ciudad,_datos,true];
 				};
-			}
-			
+			};
 			
 			if(_varname == 'idleBases') exitWith {
 				{
