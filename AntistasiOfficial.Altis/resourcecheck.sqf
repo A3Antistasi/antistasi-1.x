@@ -160,7 +160,7 @@ while {true} do {
 		diag_log format ["_type line 163 = %1",_type];
 		_currentCity = selectRandom _cityInRange;
 		[_type, -1, _currentCity] spawn AS_fnc_changeCitySupply;
-		[_currentCity, _type] remoteExec ["SUP_CitySupply", call AS_fnc_getNextWorker];
+		[_type] remoteExec ["SUP_CitySupply", call AS_fnc_getNextWorker];
 	}
 
 	if ((_popFIA > _popEnemy) AND ("airport_3" in mrkFIA)) then {["end1",true,true,true,true] remoteExec ["BIS_fnc_endMission",0]};
