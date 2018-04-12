@@ -1,6 +1,8 @@
 if (!isServer and hasInterface) exitWith {};
 
+diag_log "SUP_CitySupply executed";
 params ["_marker", "_type"];
+diag_log format ["SUP_CitySupply _marker = %1, _type = %2",_marker,_type];
 //[3,[],[],[],[],[]] params ["_countBuildings","_targetBuildings","_allGroups","_allSoldiers","_allVehicles","_leafletCrates"];
 private ["_targetPosition","_targetName","_duration","_endTime","_task", "_posSupply", "_FIAMarkers", "_nFIAMarker","_spawnPosition","_crate", "_house", "_range","_allBuildings","_groupType","_params","_group","_dog","_leaflets","_drop"];
 
@@ -21,7 +23,8 @@ _allBuildings = nearestObjects [_targetPosition, ["Building"], _range];
 if (count _allBuildings == 0) exitWith {};
 _targetBuilding = selectRandom _allBuildings; <= if house as dropoff point wanted use this
 */
-_targetBuilding = _targetPosition;  
+
+_targetBuilding = _targetPosition;
 
 _duration = 30;
 _endTime = [date select 0, date select 1, date select 2, date select 3, (date select 4) + _duration];
@@ -38,7 +41,7 @@ while {true} do {
 
 _houseType = "Land_i_Shed_Ind_F";
 _crateType = "Land_PaperBox_01_open_boxes_F";
-if(_type == "WATER") then 
+if(_type == "WATER") then
 {
 	_crateType = "Land_PaperBox_01_open_water_F";
 };
@@ -60,6 +63,7 @@ _crate call jn_fnc_logistics_addAction;
 //Spawned the crate in
 
 _marker = createMarker [format ["REC%1", random 100], _posSupply];
+diag_log format ["SUP_CitySupply _posSupply = %1",_posSupply];
 _marker setMarkerShape "ICON";
 
 
@@ -67,6 +71,8 @@ _task = ["SUP",[side_blue,civilian],[[_tskDesc,_targetName,numberToDate [2035,_e
 misiones pushBack _task;
 publicVariable "misiones";
 
+_allGroups = [];
+_allSoldiers = [];
 
 _groupType = [infSquad, side_green] call AS_fnc_pickGroup;
 _group = [_posSupply, side_green, _groupType] call BIS_Fnc_spawnGroup;
@@ -85,7 +91,7 @@ waitUntil {sleep 1; (dateToNumber date > _endTime) OR !(isNull attachedTo _crate
 
 
 //if timer ran out
-if (dateToNumber date > _endTime) exitWith 
+if (dateToNumber date > _endTime) exitWith
 {
 	_task = ["SUP",[side_blue,civilian], [[_tskDesc_fail, _targetName],_tskTitle,_marker],_posSupply,"FAILED",5,true,true,"Heal"] call BIS_fnc_setTask;
 	//@Stef penalities for failing the mission?
@@ -113,16 +119,16 @@ _task = ["SUP",[side_blue,civilian], [[_tskDesc_drop, _targetName],_tskTitle,_ta
 // crate alive and loaded
 while {(alive _crate) AND (dateToNumber date < _endTime)} do {
 
-	waitUntil {sleep 1; (dateToNumber date > _endTime) OR (isNull attachedTo _crate) AND (_crate distance _targetBuilding > 25};
-	
+	waitUntil {sleep 1; (dateToNumber date > _endTime) OR (isNull attachedTo _crate) AND (_crate distance _targetBuilding > 25)};
+
 	//If crate in play 60% change of small transport QRF
-	if(random 100 > 40) then 
+	if(random 100 > 40) then
 	{
 		_AAFBases = bases - mrkFIA;
 		_QRFBase = [_AAFBases,_targetBuilding] call BIS_fnc_nearestPosition;
 		[_QRFBase, _targetBuilding, _targetMarker, 15, "transport", "small", "supplyMissionQRF"] remoteExec ["enemyQRF",  call AS_fnc_getNextWorker];
-	}
-	
+	};
+
 	while {(alive _crate) AND (dateToNumber date < _endTime) AND (_targetBuilding distance _crate < 25) AND (isNull attachedTo _crate)} do {
 
 		// stop supplying when enemies get too close (100m)
@@ -131,7 +137,7 @@ while {(alive _crate) AND (dateToNumber date < _endTime)} do {
 			// start a progress bar
 			if !(_timerRunning) then {
 				{
-					if (isPlayer _x) then 
+					if (isPlayer _x) then
 					{
 						[(_deploymentTime - _counter),false] remoteExec ["pBarMP",_x];
 						}
@@ -148,7 +154,7 @@ while {(alive _crate) AND (dateToNumber date < _endTime)} do {
 			_counter = 0;
 			_timerRunning = false;
 			{
-				if (isPlayer _x) then 
+				if (isPlayer _x) then
 				{
 					[0,true] remoteExec ["pBarMP",_x]
 				}
@@ -156,7 +162,7 @@ while {(alive _crate) AND (dateToNumber date < _endTime)} do {
 
 			if ((!([80,1,_crate,"BLUFORSpawn"] call distanceUnits) OR ({((side _x == side_green) OR (side _x == side_red)) AND (_x distance _crate < 100)} count allUnits != 0)) AND (alive _crate)) then {
 				{
-					if (isPlayer _x) then 
+					if (isPlayer _x) then
 					{
 						[petros,"hint","Stay near the crate, keep the perimeter clear of hostiles."] remoteExec ["commsMP",_x]
 					}
@@ -195,7 +201,7 @@ if (!(alive _crate) OR (dateToNumber date > _endTime)) then {
 
 [1200,_task] spawn borrarTask;
 	waitUntil {sleep 1; !([distanciaSPWN,1,_crate,"BLUFORSpawn"] call distanceUnits) OR (_crate distance (getMarkerPos guer_respawn) < 60)};
-	if (_crate distance (getMarkerPos guer_respawn) < 60) then 
+	if (_crate distance (getMarkerPos guer_respawn) < 60) then
 	{
 		[_crate,true] call vaciar;
 	};
