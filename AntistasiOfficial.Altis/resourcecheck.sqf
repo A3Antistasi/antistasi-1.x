@@ -153,21 +153,15 @@ while {true} do {
 	} forEach ciudades;
 	
 	_types = ["FOOD", "WATER", "FUEL"];
-	//@Stef i have reduced the amount to maximum 2 missions per tick each with 85% chance
-	for "_i" from 0 to ((count _cityInRange) min 2) do
+	//if there is no current supply mission, with a chance of 85% add a new
+	if(!("SUP" in misiones) AND Random 100 <= 85) then
 	{
-		if(Random 100 <= 85) then
-		{
-			_type = selectRandom _types;
-			diag_log format ["_type line 163 = %1",_type];
-			_types = _types - [_type];
-			_currentCity = selectRandom _cityInRange;
-			_cityInRange = _cityInRange - [_currentCity];
-			[_type, -1, _currentCity] spawn AS_fnc_changeCitySupply;
-			[_currentCity, _type] remoteExec ["SUP_CitySupply", call AS_fnc_getNextWorker];
-		}
-
-	};
+		_type = selectRandom _types;
+		diag_log format ["_type line 163 = %1",_type];
+		_currentCity = selectRandom _cityInRange;
+		[_type, -1, _currentCity] spawn AS_fnc_changeCitySupply;
+		[_currentCity, _type] remoteExec ["SUP_CitySupply", call AS_fnc_getNextWorker];
+	}
 
 	if ((_popFIA > _popEnemy) AND ("airport_3" in mrkFIA)) then {["end1",true,true,true,true] remoteExec ["BIS_fnc_endMission",0]};
 
