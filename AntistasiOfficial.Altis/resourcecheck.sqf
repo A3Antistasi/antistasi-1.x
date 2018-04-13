@@ -153,13 +153,12 @@ while {true} do {
 	} forEach ciudades;
 	
 	_types = ["FOOD", "WATER", "FUEL"];
-	//if there is no current supply mission, with a chance of 85% add a new
-	if(!("SUP" in misiones) AND Random 100 <= 85) then
+	if(Random 100 <= 85) then
 	{
 		_type = selectRandom _types;
-		diag_log format ["_type line 163 = %1",_type];
 		_currentCity = selectRandom _cityInRange;
 		[_type, -1, _currentCity] spawn AS_fnc_changeCitySupply;
+		_type = selectRandom _types;
 		[_type] remoteExec ["SUP_CitySupply", call AS_fnc_getNextWorker];
 	}
 

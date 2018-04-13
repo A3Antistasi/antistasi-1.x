@@ -92,7 +92,13 @@ while {(alive _crate) AND (dateToNumber date < _endTime)} do {
 				};
 			};
 		} forEach allUnits;
-	} forEach ([300,0,_crate,"BLUFORSpawn"] call distanceUnits)
+	} forEach ([300,0,_crate,"BLUFORSpawn"] call distanceUnits);
+	
+	{ 
+	
+	//Send nearby civis to the crate
+    if ((side _x == civilian) and (_x distance _pos < 300)) then {_x doMove position _crate};
+	} forEach allUnits;
 
 	
 	while {(alive _crate) AND (dateToNumber date < _endTime) AND (isNull attachedTo _crate)} do {
