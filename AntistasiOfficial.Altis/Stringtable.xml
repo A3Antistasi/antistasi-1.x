@@ -15,64 +15,76 @@
 	<Package name="Settings">
 		<Container name="Description_settings">
 			<Key ID="STR_DES_ATSAFC">
-				<Original>Antistasi: ability to start a fresh campaign</Original>
-				<Russian>Antistasi: возможность начать новую кампанию</Russian>
-				<Spanish>Antistasi: empezar una nueva campaña</Spanish>
+                <Original>Antistasi: ability to start a fresh campaign</Original>
+                <Russian>Antistasi: возможность начать новую кампанию</Russian>
+                <Spanish>Antistasi: empezar una nueva campaña</Spanish>
+				<French>Antistasi: possibilité de commencer une nouvelle campagne</French>
 			</Key>
 			<Key ID="STR_DES_ESWCMD">
 				<Original>Antistasi: enable Switch Commander</Original>
 				<Russian>Antistasi: включить смену Командира</Russian>
 				<Spanish>Antistasi: activar cambio de Comandante</Spanish>
+                <French>Antistasi: activer le changement de commandant</French>
 			</Key>
 			<Key ID="STR_DES_ESRMBR">
 				<Original>Antistasi: enable Server Membership</Original>
 				<Russian>Antistasi: включить список игроков сервера</Russian>
 				<Spanish>Antistasi: activar membresía del Servidor</Spanish>
+                <French>Antistasi: activer la gestion des membres serveur</French>
 			</Key>
 			<Key ID="STR_DES_USABJN">
 				<Original>Antistasi: use customized arsenal by Jeroen Not</Original>
 				<Russian>Antistasi: использовать изменённый Арсенал</Russian>
 				<Spanish>Antistasi: usar arsenal personalizado por Jeroen Not</Spanish>
+                <French>Antistasi: utilise un arsenal customisé par Jeroen Not</French>
 			</Key>
 			<Key ID="STR_DES_PPFT">
 				<Original>Antistasi: punish people for teamkilling</Original>
 				<Russian>Antistasi: наказывать за убийство своих игроков</Russian>
 				<Spanish>Antistasi: castigo por matar compañeros de equipo</Spanish>
+                <French>Antistasi: punir les joueurs pour tir allié</French>
 			</Key>
 			<Key ID="STR_DES_OPMAEFCAS">
 				<Original>Antistasi: only permanent members are eligible for commandership at start</Original>
 				<Russian>Antistasi: только игроки из списка могут командовать после старта</Russian>
 				<Spanish>Antistasi: solo los miembros permanentes son electos como Comandante al inicio</Spanish>
+                <French>Antistasi: seul les membres permanents sont éligible au poste de commandant au début</French>
 			</Key>
 			<Key ID="STR_DES_ENVCOMAI">
 				<Original>Antistasi: enable VCOM AI for server/headless client</Original>
 				<Russian>Antistasi: включить VCOM AI</Russian>
 				<Spanish>Antistasi: activar VCOM IA en server/cliente headless</Spanish>
+                <French>Antistasi: active VCOM IA pour le serveur/headless client</French>
 			</Key>
 			<Key ID="STR_DES_AUTOSAVE">
 				<Original>Autosave every 60 min</Original>
 				<Russian>Автосохранение каждые 60 минут</Russian>
 				<Spanish>Autoguardar cada 60 min</Spanish>
+                <French>Sauvegarde automatique toutes les 60 min</French>
 			</Key>
 			<Key ID="STR_DES_LOADPROFILESAVE">
 				<Original>INIDIBI2: Load the game from standard profile.vars == Export from standard Antistasi save</Original>
 				<Russian>INIDIBI2: Load the game from profile.vars</Russian>
 				<Spanish>INIDIBI2: Cargar el juego desde profile.vars == Exportar desde Grabar de Antistasi</Spanish>
+                <French>INIDIBI2: Charge le jeu depuis un standard profile.vars == Export depuis standard Antistasi sauvegarde</French>
 			</Key>
 			<Key ID="STR_DES_SAVEPROFILESAVE">
 				<Original>INIDIBI2: Save the game into standard profile.vars == Import from INIDIBI2 save</Original>
 				<Russian>INIDIBI2: Load the game from profile.vars</Russian>
 				<Spanish>INIDIBI2: Grabar en profile.vars == Importar a Grabar de INIDIBI2</Spanish>
+                <French>INIDIBI2: Charge le jeu depuis un standard profile.vars == Export depuis standard Antistasi sauvegarde</French>
 			</Key>
 			<Key ID="STR_DES_ON">
 				<Original>On</Original>
 				<Russian>Вкл</Russian>
 				<Spanish>Si</Spanish>
+                <French>On</French>
 			</Key>
 			<Key ID="STR_DES_OFF">
 				<Original>Off</Original>
 				<Russian>Выкл</Russian>
 				<Spanish>No</Spanish>
+                <French>Off</French>
 			</Key>
 		</Container>
 	</Package>
@@ -82,36 +94,43 @@
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\talk_ca.paa' /&gt; Offer to Join</Original>
 				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\talk_ca.paa' /&gt;Предложить присоединиться</Russian>
 				<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\talk_ca.paa' /&gt; Ofrecer unirse</Spanish>
+                <French>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\talk_ca.paa' /&gt; Demande d'invitation</French>
 			</Key>
 			<Key ID="STR_ACT_TALK">
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\talk_ca.paa' /&gt; Talk</Original>
 				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\talk_ca.paa' /&gt; Говорить</Russian>
 				<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\talk_ca.paa' /&gt; Hablar</Spanish>
+                <French>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\talk_ca.paa' /&gt; Parler</French>
 			</Key>
 			<Key ID="STR_ACT_BUY">
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\talk_ca.paa' /&gt; Buy</Original>
 				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\talk_ca.paa' /&gt; Купить</Russian>
 				<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\talk_ca.paa' /&gt; Comprar</Spanish>
+                <French>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\talk_ca.paa' /&gt; Acheter</French>
 			</Key>
 			<Key ID="STR_ACT_INTERROGATE">
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Interrogate</Original>
 				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Допросить</Russian>
 				<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Interrogar</Spanish>
+                <French>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Interroger</French>
 			</Key>
 			<Key ID="STR_ACT_LIBERATE">
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Liberate POW</Original>
 				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Освободить в/пленного</Russian>
 				<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Liberar Prisionero</Spanish>
+                <French>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Libérer Prisonnier</French>
 			</Key>
 			<Key ID="STR_ACT_ORDERREFUGEE">
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Order refugee to follow</Original>
 				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Приказать следовать за собой</Russian>
 				<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Ordenar seguirte</Spanish>
+                <French>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Faire suivre les réfugiés</French>
 			</Key>
 			<Key ID="STR_ACT_TOGGLEDEVICE">
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Turn Device On/Off</Original>
 				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Репродуктор Вкл/Выкл</Russian>
 				<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Habilitar/Deshabilitar Dispositivo</Spanish>
+                <French>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Faire suivre les réfugiés</French>
 			</Key>
 			<Key ID="STR_ACT_MISSIONREQUEST">
 				<Original>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\attack_ca.paa' /&gt; Mission Request</Original>
