@@ -72,7 +72,7 @@
 				<Original>INIDIBI2: Save the game into standard profile.vars == Import from INIDIBI2 save</Original>
 				<Russian>INIDIBI2: Load the game from profile.vars</Russian>
 				<Spanish>INIDIBI2: Grabar en profile.vars == Importar a Grabar de INIDIBI2</Spanish>
-                <French>INIDIBI2: Charge le jeu depuis un standard profile.vars == Export depuis standard Antistasi sauvegarde</French>
+                <French>INIDIBI2: Sauvegarde le jeu depuis un standard profile.vars == Import depuis standard Antistasi sauvegarde</French>
 			</Key>
 			<Key ID="STR_DES_ON">
 				<Original>On</Original>
@@ -94,7 +94,7 @@
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\talk_ca.paa' /&gt; Offer to Join</Original>
 				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\talk_ca.paa' /&gt;Предложить присоединиться</Russian>
 				<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\talk_ca.paa' /&gt; Ofrecer unirse</Spanish>
-                <French>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\talk_ca.paa' /&gt; Demande d'invitation</French>
+                <French>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\talk_ca.paa' /&gt; Invité à rejoindre</French>
 			</Key>
 			<Key ID="STR_ACT_TALK">
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\talk_ca.paa' /&gt; Talk</Original>
@@ -130,27 +130,31 @@
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Turn Device On/Off</Original>
 				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Репродуктор Вкл/Выкл</Russian>
 				<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Habilitar/Deshabilitar Dispositivo</Spanish>
-                <French>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Faire suivre les réfugiés</French>
+                <French>&lt;img size='1.2' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\instructor_ca.paa' /&gt; Activer/Désactiver Dispositif</French>
 			</Key>
 			<Key ID="STR_ACT_MISSIONREQUEST">
 				<Original>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\attack_ca.paa' /&gt; Mission Request</Original>
 				<Russian>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\attack_ca.paa' /&gt; Взять задание</Russian>
 				<Spanish>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\attack_ca.paa' /&gt; Solicitar Misión</Spanish>
+                <French>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\CommunicationMenu\attack_ca.paa' /&gt; Demander Mission</French>
 			</Key>
 			<Key ID="STR_ACT_HEALREPAIR">
 				<Original>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\RscTitles\MPProgress\respawn_ca.paa' /&gt; Heal, Repair and Rearm</Original>
 				<Russian>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\RscTitles\MPProgress\respawn_ca.paa' /&gt; Лечить, чинить и перевооружить</Russian>
 				<Spanish>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\RscTitles\MPProgress\respawn_ca.paa' /&gt; Curar, Reparar y Rearmar</Spanish>
+                <French>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\RscTitles\MPProgress\respawn_ca.paa' /&gt; Soigner, Réparer et Réarmer</French>
 			</Key>
 			<Key ID="STR_ACT_USEMED">
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\heal_ca.paa' /&gt; Use Medical Supplies</Original>
 				<Russian>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\heal_ca.paa' /&gt; Лечить</Russian>
 				<Spanish>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\heal_ca.paa' /&gt; Usar Suministros Médicos</Spanish>
+                <French>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\Actions\heal_ca.paa' /&gt; Utiliser Matériel Médicale</French>
 			</Key>
 			<Key ID="STR_ACT_RECRUITUNIT">
 				<Original>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\MPTable\infantry_ca.paa' /&gt; Unit Recruitment</Original>
 				<Russian>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\MPTable\infantry_ca.paa' /&gt; Набрать отряд</Russian>
-				<Spanish>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\MPTable\infantry_ca.paa' /&gt; Reclutar Unidad</Spanish>
+                <Spanish>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\MPTable\infantry_ca.paa' /&gt; Reclutar Unidad</Spanish>
+				<Spanish>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\MPTable\infantry_ca.paa' /&gt; Recruter Unité</Spanish>
 			</Key>
 			<Key ID="STR_ACT_RETURNCONTROL">
 				<Original>&lt;img size='1.2' image='\A3\ui_f\data\IGUI\Cfg\MPTable\infantry_ca.paa' /&gt; Return Control to AI</Original>
