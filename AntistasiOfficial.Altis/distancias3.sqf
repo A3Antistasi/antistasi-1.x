@@ -1,3 +1,14 @@
+/*
+*	REWORK of the spawn system to integrate airplanes and helis
+*	The code is basically for WotP with adjustments, so all the credits go (as always) to Barbolani
+*
+*	Now featuring status flags of the current spawn state
+*	0 = Place is fully spawned in and active
+*	1 = Place has the minimal AA active, the rest is inactive
+*	2 = Place is completly not active
+*	3 = Place is not spawned in yet
+*/
+
 if !(isServer) exitWith {};
 
 debugperf = false;
@@ -37,16 +48,22 @@ while {true} do {
 
 	} forEach allUnits;
 
+//Nothing changed till here
 	{
 		private _marker = _x;
 		private _markerPos = getMarkerPos _marker;
 
-		if (_marker in mrkAAF) then {
-			if !(spawner getVariable _marker) then {
-				//check if a units is near the location or place needs to be forced to spawned in
-				if (({_x distance _markerPos < distanciaSPWN} count _allyUnits > 0) OR (_marker in forcedSpawn)) then {
-					spawner setVariable [_marker,true,true]; //Spawn the place
-					call {
+		if (_marker in mrkAAF) then 
+		{
+			if (spawner getVariable _marker == 3) then 
+			{
+				//check if a units or a plane is near the location or place needs to be forced to spawned in
+				if (({_x distance2D _markerPos < distanciaSPWN OR (_x typeOf "Air" AND _x distance2D _markerPos < 4000} count _allyUnits > 0) OR (_marker in forcedSpawn)) then 
+				{
+					spawner setVariable [_marker,2,true]; //Spawn the place
+					call 
+					{
+					//TODO spawn them in with simulation off!
 						if (_marker in _hills) exitWith {[_marker] remoteExec ["createWatchpost", call AS_fnc_getNextWorker]};
 						if (_marker in colinasAA) exitWith {[_marker] remoteExec ["createAAsite", call AS_fnc_getNextWorker]};
 						if (_marker in ciudades) exitWith {[_marker] remoteExec ["createCIV", call AS_fnc_getNextWorker]; [_marker] remoteExec ["createCity", call AS_fnc_getNextWorker]};
@@ -61,14 +78,54 @@ while {true} do {
 					};
 				};
 
-			} else { //If place was spawned in already
-				//units only despawn when you get back 50 meters from the point they spawned in.
-				if (({_x distance _markerPos < (distanciaSPWN+50)} count _allyUnits == 0) AND !(_marker in forcedSpawn)) then {
-					spawner setVariable [_marker,false,true];
+			}
+			else //If place was spawned in already
+			{ 
+				if (({_x distance _markerPos < (distanciaSPWN+50)} count _allyUnits == 0) AND !(_marker in forcedSpawn)) then
+				{
+					//Neither air nor infantry enemies in radius, deactivate marker
+					spawner setVariable [_marker,2,true];
+					if (isMUltiplayer) then
+					{
+						{if (_x getVariable ["marcador",""] == _marcador) then {if (vehicle _x == _x) then {_x enableSimulationGlobal false}}} forEach allUnits;
+					}
+					else
+					{
+						{if (_x getVariable ["marcador",""] == _marcador) then {if (vehicle _x == _x) then {_x enableSimulation false}}} forEach allUnits;
+					};
+				}
+				else
+				{
+					if({_x typeOf "Air" AND _distance2D _markerPos < 4000} count _allyUnits == 0) then
+					{
+						//Non Air Enemies nearby activate place
+						spawner setVariable [_marker, 0,true];
+						if (isMUltiplayer) then
+						{
+							{if (_x getVariable ["marcador",""] == _marcador) then {if (vehicle _x == _x) then {_x enableSimulationGlobal true}}} forEach allUnits;
+						}
+						else
+						{
+							{if (_x getVariable ["marcador",""] == _marcador) then {if (vehicle _x == _x) then {_x enableSimulation true}}} forEach allUnits;
+						};
+					}
+					else
+					{
+						//Enemy aircraft nearby spawn in AA troops
+						_spawner setVariable [_marker, 1, true];
+						if (isMUltiplayer) then
+						{
+							{if (_x getVariable ["marcador",""] == _marcador) then {if (vehicle _x == _x AND _x secondaryWeapon in genAALaunchers) then {_x enableSimulationGlobal true}}} forEach allUnits;
+						}
+						else
+						{
+							{if (_x getVariable ["marcador",""] == _marcador) then {if (vehicle _x == _x AND _x secondaryWeapon in genAALaunchers) then {_x enableSimulation true}}} forEach allUnits;
+						};
+					};
 				};
 			};
 		}else{
-			if !(spawner getVariable _marker) then {
+			if (spawner getVariable _marker == 3) then {
 				if (({_x distance _markerPos < distanciaSPWN} count _enemyUnits > 0) OR ({((_x getVariable ["owner",objNull]) == _x) AND (_x distance _markerPos < distanciaSPWN)} count _allyUnits > 0) OR (_marker in forcedSpawn)) then {
 					spawner setVariable [_marker,true,true];
 					if (_marker in ciudades) then {
@@ -89,8 +146,29 @@ while {true} do {
 				};
 			} else {
 				if ((({_x distance _markerPos < (distanciaSPWN+50)} count _enemyUnits == 0) AND ({((_x getVariable ["owner",objNull]) == _x) AND (_x distance _markerPos < distanciaSPWN)} count _allyUnits == 0)) AND !(_marker in forcedSpawn)) then {
-					spawner setVariable [_marker,false,true];
-				};
+					spawner setVariable [_marker,2,true];
+					if (isMUltiplayer) then
+					{
+						{if (_x getVariable ["marcador",""] == _marcador) then {if (vehicle _x == _x) then {_x enableSimulationGlobal false}}} forEach allUnits;
+					}
+					else
+					{
+						{if (_x getVariable ["marcador",""] == _marcador) then {if (vehicle _x == _x) then {_x enableSimulation false}}} forEach allUnits;
+					};
+				}
+				else
+				{
+					spawner setVariable [_marker,0,true]
+					if (isMUltiplayer) then
+					{
+						{if (_x getVariable ["marcador",""] == _marcador) then {if (vehicle _x == _x) then {_x enableSimulationGlobal true}}} forEach allUnits;
+					}
+					else
+					{
+						{if (_x getVariable ["marcador",""] == _marcador) then {if (vehicle _x == _x) then {_x enableSimulation true}}} forEach allUnits;
+					};
+				}
+				
 			};
 		};
 
