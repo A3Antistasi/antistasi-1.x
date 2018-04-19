@@ -63,9 +63,8 @@ while {true} do {
 					spawner setVariable [_marker,2,true]; //Spawn the place
 					call 
 					{
-					//TODO spawn them in with simulation off!
 						if (_marker in _hills) exitWith {[_marker] remoteExec ["createWatchpost", call AS_fnc_getNextWorker]};
-						if (_marker in colinasAA) exitWith {[_marker] remoteExec ["createAAsite", call AS_fnc_getNextWorker]};
+						if (_marker in colinasAA) exitWith {[_marker] remoteExec ["createAAsite", call AS_fnc_getNextWorker]}; //REWORK DONE
 						if (_marker in ciudades) exitWith {[_marker] remoteExec ["createCIV", call AS_fnc_getNextWorker]; [_marker] remoteExec ["createCity", call AS_fnc_getNextWorker]};
 						if (_marker in power) exitWith {[_marker] remoteExec ["createPower", call AS_fnc_getNextWorker]};
 						if (_marker in bases) exitWith {[_marker] remoteExec ["createBase", call AS_fnc_getNextWorker]};
@@ -75,6 +74,15 @@ while {true} do {
 						if ((_marker in recursos) OR (_marker in fabricas)) exitWith {[_marker] remoteExec ["createResources", call AS_fnc_getNextWorker]};
 						if ((_marker in puestos) OR (_marker in puertos)) exitWith {[_marker] remoteExec ["createOutpost", call AS_fnc_getNextWorker]};
 						//if ((_marker in artyEmplacements) AND (_marker in forcedSpawn)) exitWith {[_marker] remoteExec ["createArtillery", call AS_fnc_getNextWorker]};
+					};
+					//Deactivates the simulation on the freeshly spawned units (will be activated the next round, saves server performance
+					if (isMUltiplayer) then
+					{
+						{if (_x getVariable ["marcador",""] == _marcador) then {if (vehicle _x == _x) then {_x enableSimulationGlobal false}}} forEach allUnits;
+					}
+					else
+					{
+						{if (_x getVariable ["marcador",""] == _marcador) then {if (vehicle _x == _x) then {_x enableSimulation false}}} forEach allUnits;
 					};
 				};
 
