@@ -91,7 +91,7 @@ while {true} do {
 						if(!((_marker in _hills) OR (_marker in controles) OR (_marker in ciudades))) then {
 							spawner setVariable [_marker,2,true]; //Spawning AA in
 							_markerAlert = 2;
-							[_marker] remoteExec ["createAAdefense", call AS_fnc_getNextWorker]; Create an AA script !
+							[_marker] remoteExec ["createAAdefense", call AS_fnc_getNextWorker];
 
 						};
 						if({!(_x in _planeTargets)} count _allyPlanes > 0) then { //Enemy plane currently not under attack

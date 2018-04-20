@@ -10,10 +10,10 @@ _allGroups = [];
 _allSoldiers = [];
 _allVehicles = [];
 
-_groupType = [infAA, side_green] call AS_fnc_pickGroup;
+_groupType = [infAAdef, side_green] call AS_fnc_pickGroup;
 _groupAA = [_posMarker, side_green, _groupType] call BIS_Fnc_spawnGroup;
-sleep 1;
-[_groupAA, _marker, "SAFE","SPAWNED","NOFOLLOW","NOVEH2"] execVM "scripts\UPSMON.sqf";
+sleep 0.1;
+[_groupAA, _marker, "COMBAT","SPAWNED","NOFOLLOW","NOVEH2"] execVM "scripts\UPSMON.sqf";
 {[_x] spawn genInitBASES; _allSoldiers pushBack _x} forEach units _groupAA;
 _allGroups pushBack _groupAA;
 
@@ -22,4 +22,3 @@ _garrisonSize = count _allSoldiers;
 waitUntil {sleep 1; (spawner getVariable _marker == 4)};
 
 [_allGroups, _allSoldiers, _allVehicles] spawn AS_fnc_despawnUnits;
-{deleteVehicle _x} forEach _objs;
