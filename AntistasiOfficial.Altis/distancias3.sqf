@@ -26,17 +26,17 @@ while {true} do {
 
 	//Ally that can spawn in enemy
 	private _allyUnits = [];
-	
+
 	//Airplanes that trigger AA
 	private _allyPlanes = [];
 
 	//Enemy that can spawn in friendly
 	private _enemyUnits = [];
-	
+
 	//Airplanes that counter FIA airplanes
 	private _enemyPlanes = [];
 	private _planeTargets = [];
-	
+
 	//loop all units
 	{
 		_unit = _x;
@@ -51,30 +51,25 @@ while {true} do {
 		if(isNil "_sideEnemy")then{_sideEnemy = _x getVariable ["OPFORSpawn",false]};
 
 		//pushback units in list
-		if (_sideAlly) then 
+		if (_sideAlly) then
 		{
-			if(_veh isKindOf "Air") then 
-			{
+			if(_veh isKindOf "Air") then {
 				//Dont add pilot and crew, these would trigger the 1 km full spawn!!
 				_allyPlanes pushBack _veh;
-			}
-			else 
-			{
+			} else {
 				_allyUnits pushBack _x;
 			};
-			
+
 		};
-		if (_sideEnemy) then 
-		{
-			if(_veh isKindOf "Air") then 
-			{
+		if (_sideEnemy) then {
+			if(_veh isKindOf "Air") then {
 				_enemyPlanes pushBack _veh;
 			};
 			_enemyUnits pushBack _x;
 		};
 
 	} forEach allUnits;
-	
+
 	{
 		_target = _x getVariable ["target", ""];
 		_planeTargets pushBackUnique _target;
@@ -88,45 +83,44 @@ while {true} do {
 		if (_marker in mrkAAF) then {
 			if (_markerAlert == 4) then {
 				//check if a units is near the location or place needs to be forced to spawned in
-				_numberOfUnits = {_x distance2D _markerPos < distanciaSPWN} count _allyUnits
-				_numberOfPlanes = {_x distance2D _markerPos < distanciaSPWN * 4} count _allyPlanes
+				_numberOfUnits = {_x distance2D _markerPos < distanciaSPWN} count _allyUnits;
+				_numberOfPlanes = {_x distance2D _markerPos < distanciaSPWN * 4} count _allyPlanes;
 				if ((_numberOfUnits > 0) OR (_numberOfPlanes > 0) OR (_marker in forcedSpawn)) then {
-					
+
 					if(_numberOfPlanes > 0) then{
 						if(!((_marker in _hills) OR (_marker in controles) OR (_marker in ciudades))) then {
 							spawner setVariable [_marker,2,true]; //Spawning AA in
 							_markerAlert = 2;
 							//[_marker] remoteExec ["createAAdefense", call AS_fnc_getNextWorker]; Create an AA script !
-							
-						} 
-						if({!(_x in _planeTargets)} count _allyPlanes > 0) then
-						{ //Enemy plane currently not under attack
+
+						};
+						if({!(_x in _planeTargets)} count _allyPlanes > 0) then { //Enemy plane currently not under attack
 							_availableAirports = aeropuertos - mrkFIA;
 							_startAirport = nil;
-							while {_availableAirports count > 0} do 
-							{
+
+							while { (count _availableAirports) > 0} do {
+								//Stef - the line below is not possible to be executed: _availableAirports is an array, it require one marker per time... maybe a foreach loop?
 								_startAirport = [_marker, _availableAirports] BIS_fnc_nearestPosition;
 								_availableAirports = _availableAirports - _startAirport;
 								if ((spawner getVariable _startAirport) > 1) exitWith {};
-								_startAirport = nil
-							}
-							if(_startAirport != nil) then 
-							{
-								//Not sure if this is working like it should 
+								_startAirport = nil;
+							};
+							if(_startAirport != nil) then {
+								//Not sure if this is working like it should
 								_plane = { if(_x distance2D _markerPos < distanciaSPWN * 4) exitWith {_x};} forEach (_allyPlanes - _planeTargets);
 								_planeTargets pushBackUnique _plane;
 								//[_startAirport, _plane] remoteExec ["counterJet", call AS_fnc_getNextWorker]; Activate this once the jet counter script is finished
 							};
-							
-						}; 
+
+						};
 					};
-					
+
 					if(_numberOfUnits > 0) then{
-						if(_markerAlert == 2) then 
+						if(_markerAlert == 2) then
 						{
 							spawner setVariable [_marker,0,true]; //Spawning troops in
 						}
-						else 
+						else
 						{
 							spawner setVariable [_marker,1,true]; // spawning only garrison
 						};
@@ -151,14 +145,14 @@ while {true} do {
 				//units only despawn when you get back 50 meters from the point they spawned in.
 				if (({_x distance2D _markerPos < (distanciaSPWN+50)} count _allyUnits == 0) AND !(_marker in forcedSpawn)) then {
 					//No enemy infantry active
-					if(_markerAlert < 2) then 
+					if(_markerAlert < 2) then
 					{
 						//infantry at position active
-						if(_markerAlert == 0) then {_markerAlert = 2;} //Keep AA active} 
-						if(_markerAlert == 1) then {_markerAlert = 4;} //Despawn position};
+						if(_markerAlert == 0) then {_markerAlert = 2;}; //Keep AA active}
+						if(_markerAlert == 1) then {_markerAlert = 4;}; //Despawn position};
 					};
 				}
-				else 
+				else
 				{
 					//Enemy infantry active
 					if(_markerAlert == 2 AND ({_x distance2D _markerPos < distanciaSPWN} count _allyUnits > 0)) then {_markerAlert = 0};
@@ -171,7 +165,7 @@ while {true} do {
 					if(_markerAlert == 0) then {_markerAlert = 1;}; //Despawn only AA groups
 				}
 				else
-				{	
+				{
 					//Enemy Plane active
 					if(_markerAlert == 1 AND ({_x distance2D _markerPos < (distanciaSPWN * 4)} count _allyPlanes > 0)) then {_markerAlert = 0;};
 				};
