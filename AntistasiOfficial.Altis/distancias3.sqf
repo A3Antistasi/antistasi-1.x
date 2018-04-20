@@ -91,7 +91,7 @@ while {true} do {
 						if(!((_marker in _hills) OR (_marker in controles) OR (_marker in ciudades))) then {
 							spawner setVariable [_marker,2,true]; //Spawning AA in
 							_markerAlert = 2;
-							//[_marker] remoteExec ["createAAdefense", call AS_fnc_getNextWorker]; Create an AA script !
+							[_marker] remoteExec ["createAAdefense", call AS_fnc_getNextWorker]; Create an AA script !
 
 						};
 						if({!(_x in _planeTargets)} count _allyPlanes > 0) then { //Enemy plane currently not under attack
@@ -99,7 +99,6 @@ while {true} do {
 							_startAirport = nil;
 
 							while { (count _availableAirports) > 0} do {
-								//Stef - the line below is not possible to be executed: _availableAirports is an array, it require one marker per time... maybe a foreach loop?
 								_startAirport = [_marker] call AS_fnc_findAirportForCA;
 								_availableAirports = _availableAirports - [_startAirport];
 								if ((spawner getVariable _startAirport) > 1) exitWith {};
