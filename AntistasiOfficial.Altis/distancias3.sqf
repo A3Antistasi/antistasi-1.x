@@ -100,7 +100,7 @@ while {true} do {
 
 							while { (count _availableAirports) > 0} do {
 								//Stef - the line below is not possible to be executed: _availableAirports is an array, it require one marker per time... maybe a foreach loop?
-								_startAirport = [_marker, _availableAirports] BIS_fnc_nearestPosition;
+								_startAirport = [_marker] call AS_fnc_findAirportForCA;
 								_availableAirports = _availableAirports - _startAirport;
 								if ((spawner getVariable _startAirport) > 1) exitWith {};
 								_startAirport = nil;
@@ -145,36 +145,33 @@ while {true} do {
 				//units only despawn when you get back 50 meters from the point they spawned in.
 				if (({_x distance2D _markerPos < (distanciaSPWN+50)} count _allyUnits == 0) AND !(_marker in forcedSpawn)) then {
 					//No enemy infantry active
-					if(_markerAlert < 2) then
-					{
+					if(_markerAlert < 2) then {
 						//infantry at position active
 						if(_markerAlert == 0) then {_markerAlert = 2;}; //Keep AA active}
 						if(_markerAlert == 1) then {_markerAlert = 4;}; //Despawn position};
 					};
-				}
-				else
-				{
+				} else {
 					//Enemy infantry active
 					if(_markerAlert == 2 AND ({_x distance2D _markerPos < distanciaSPWN} count _allyUnits > 0)) then {_markerAlert = 0};
-				}
-				;
-				if (({_x distance2D _markerPos < (distanciaSPWN * 4 + 50)} count _allyPlanes == 0) then
-				{
+				};
+				if (({_x distance2D _markerPos < (distanciaSPWN * 4 + 50)} count _allyPlanes == 0)) then {
 					//No enemy planes active
 					if(_markerAlert == 2) then {_markerAlert = 4;}; //Despawn if only AA was active
 					if(_markerAlert == 0) then {_markerAlert = 1;}; //Despawn only AA groups
-				}
-				else
-				{
+				} else {
 					//Enemy Plane active
-					if(_markerAlert == 1 AND ({_x distance2D _markerPos < (distanciaSPWN * 4)} count _allyPlanes > 0)) then {_markerAlert = 0;};
+					if (
+						(_markerAlert == 1) AND
+						( {(_x distance2D _markerPos) < (distanciaSPWN * 4)} count _allyPlanes > 0)
+					) then {_markerAlert = 0;};
 				};
 				spawner setVariable [_marker, _markerAlert, true];
 			};
 		}else{
-			if !(spawner getVariable _marker) then {
+			//if !(spawner getVariable _marker) then {    <-- Stef - this was the previous sentence i hope i added the value correctly
+			if !(spawner getVariable _marker == 2) then {
 				if (({_x distance _markerPos < distanciaSPWN} count _enemyUnits > 0) OR ({((_x getVariable ["owner",objNull]) == _x) AND (_x distance _markerPos < distanciaSPWN)} count _allyUnits > 0) OR (_marker in forcedSpawn)) then {
-					spawner setVariable [_marker,true,true];
+					spawner setVariable [_marker,2,true];
 					if (_marker in ciudades) then {
 						if (({((_x getVariable ["owner",objNull]) == _x) AND (_x distance _markerPos < distanciaSPWN)} count _allyUnits > 0) OR (_marker in forcedSpawn)) then {[_marker] remoteExec ["createCIV",call AS_fnc_getNextWorker]};
 						[_marker] remoteExec ["createCity", call AS_fnc_getNextWorker]
@@ -193,7 +190,7 @@ while {true} do {
 				};
 			} else {
 				if ((({_x distance _markerPos < (distanciaSPWN+50)} count _enemyUnits == 0) AND ({((_x getVariable ["owner",objNull]) == _x) AND (_x distance _markerPos < distanciaSPWN)} count _allyUnits == 0)) AND !(_marker in forcedSpawn)) then {
-					spawner setVariable [_marker,false,true];
+					spawner setVariable [_marker,4,true];
 				};
 			};
 		};
