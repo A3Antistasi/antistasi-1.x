@@ -23,7 +23,7 @@ if(_type == "FUEL") then
 	_crateType = "CargoNet_01_barrels_F";
 };
 _allSheds = nearestObjects [_posHQ, [_houseType], 4000, true];
-slep 1;
+sleep 1;
 
 if (count _allSheds == 0) exitWith
 {
