@@ -38,7 +38,7 @@ if (_marker in mrkAAF) then {
 if (_size < 1) then {_size = 1};
 
 _counter = 0;
-while {(spawner getVariable _marker) AND (_counter < _size)} do {
+while {(spawner getVariable _marker < 2) AND (_counter < _size)} do {
 	_group = _groupParams call BIS_Fnc_spawnGroup;
 	if (_isHostile) then {
 		{[_x] spawn genInitBASES; _allSoldiers pushBack _x} forEach units _group;
@@ -56,12 +56,12 @@ while {(spawner getVariable _marker) AND (_counter < _size)} do {
 	_counter = _counter + 1;
 };
 
-waitUntil {sleep 1; !(spawner getVariable _marker) OR ({alive _x} count _allSoldiers == 0) OR ({fleeing _x} count _allSoldiers == {alive _x} count _allSoldiers)};
+waitUntil {sleep 1; (spawner getVariable _marker == 4) OR ({alive _x} count _allSoldiers == 0) OR ({fleeing _x} count _allSoldiers == {alive _x} count _allSoldiers)};
 
 if ((({alive _x} count _allSoldiers == 0) OR ({fleeing _x} count _allSoldiers == {alive _x} count _allSoldiers)) AND (_marker in mrkAAF)) then {
 	[_markerPos] remoteExec ["patrolCA", call AS_fnc_getNextWorker];
 };
 
-waitUntil {sleep 1; !(spawner getVariable _marker)};
+waitUntil {sleep 1; (spawner getVariable _marker == 4)};
 
 if(_marker in mrkAAF) then {[_allGroups, _allSoldiers, []] spawn AS_fnc_despawnUnits;} else {[_allGroups, _allSoldiers, []] call AS_fnc_despawnUnitsNow;};

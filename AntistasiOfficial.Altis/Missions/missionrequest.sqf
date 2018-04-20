@@ -28,7 +28,7 @@ call {
 
 				if (_markerPos distance _positionHQ < 4000) then {
 					if (_currentZone in markers) then {
-						if !(spawner getVariable _currentZone) then {_options pushBackUnique _currentZone};
+						if (spawner getVariable _currentZone == 4) then {_options pushBackUnique _currentZone};
 					} else {
 						_nearestZone = [markers, getPos _currentZone] call BIS_fnc_nearestPosition;
 						if (_nearestZone in mrkAAF) then {_options pushBackUnique _currentZone};
@@ -119,7 +119,7 @@ call {
 						_options pushBackUnique _currentZone;
 					};
 				} else {
-					if ((_markerPos distance _positionHQ < 4000) AND !(spawner getVariable _currentZone)) then {
+					if ((_markerPos distance _positionHQ < 4000) AND (spawner getVariable _currentZone == 4)) then {
 						_options pushBackUnique _currentZone;
 					};
 				};
@@ -255,7 +255,7 @@ call {
 			for "_i" from 0 to ((count _zones) - 1) do {
 				_currentZone = _zones select _i;
 				_markerPos = getMarkerPos _currentZone;
-				if ((_markerPos distance _positionHQ < 4000) AND !(spawner getVariable _currentZone)) then {
+				if ((_markerPos distance _positionHQ < 4000) AND (spawner getVariable _currentZone == 4)) then {
 					_options pushBackUnique _currentZone;
 				};
 			};

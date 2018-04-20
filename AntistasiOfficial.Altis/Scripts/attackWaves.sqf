@@ -45,7 +45,7 @@ _posBase = [];
 {
 	_base = _x;
 	_posBase = getMarkerPos _base;
-	if ((_targetLocation distance _posBase < 7500) and (_targetLocation distance _posBase > 1500) and (not (spawner getVariable _base))) then {_bases = _bases + [_base]}
+	if ((_targetLocation distance _posBase < 7500) and (_targetLocation distance _posBase > 1500) and ((spawner getVariable _base < 2)) then {_bases = _bases + [_base]}
 } forEach _basesAAF;
 if (count _bases > 0) then {_base = [_bases, _targetLocation] call BIS_fnc_nearestPosition; _posBase = getMarkerPos _base;} else {_base = ""};
 
@@ -58,7 +58,7 @@ _posAirport = [];
 {
 	_airport = _x;
 	_posAirport = getMarkerPos _airport;
-	if ((_targetLocation distance _posAirport < 7500) and (_targetLocation distance _posAirport > 1500) and (not (spawner getVariable _airport))) then {_airports = _airports + [_airport]}
+	if ((_targetLocation distance _posAirport < 7500) and (_targetLocation distance _posAirport > 1500) and (spawner getVariable _airport < 2)) then {_airports = _airports + [_airport]}
 } forEach _airportsAAF;
 if (count _airports > 0) then {_airport = [_airports, _targetLocation] call BIS_fnc_nearestPosition; _posAirport = getMarkerPos _airport;} else {_airport = ""};
 
