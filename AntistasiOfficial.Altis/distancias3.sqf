@@ -101,7 +101,7 @@ while {true} do {
 							while { (count _availableAirports) > 0} do {
 								//Stef - the line below is not possible to be executed: _availableAirports is an array, it require one marker per time... maybe a foreach loop?
 								_startAirport = [_marker] call AS_fnc_findAirportForCA;
-								_availableAirports = _availableAirports - _startAirport;
+								_availableAirports = _availableAirports - [_startAirport];
 								if ((spawner getVariable _startAirport) > 1) exitWith {};
 								_startAirport = nil;
 							};
