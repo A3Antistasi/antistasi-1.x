@@ -153,11 +153,11 @@ while {true} do {
 					//Deactivates the simulation on the freeshly spawned units (will be activated the next round, saves server performance
 					if (isMUltiplayer) then
 					{
-						{if (_x getVariable ["marcador",""] == _marcador) then {if (vehicle _x == _x) then {_x enableSimulationGlobal false}}} forEach allUnits;
+						{if (_x getVariable ["marcador",""] == _marker) then {if (vehicle _x == _x) then {_x enableSimulationGlobal false}}} forEach allUnits;
 					}
 					else
 					{
-						{if (_x getVariable ["marcador",""] == _marcador) then {if (vehicle _x == _x) then {_x enableSimulation false}}} forEach allUnits;
+						{if (_x getVariable ["marcador",""] == _marker) then {if (vehicle _x == _x) then {_x enableSimulation false}}} forEach allUnits;
 					};
 				};
 			} else { //If place was spawned in already
@@ -171,7 +171,7 @@ while {true} do {
 					};
 				} else {
 					//Enemy infantry active
-					if(_markerAlert == 2 AND ({_x distance2D _markerPos < distanciaSPWN} count _allyUnits > 0)) then 
+					if(_markerAlert == 2 AND ({_x distance2D _markerPos < distanciaSPWN} count _allyUnits > 0)) then
 					{
 						_markerAlert = 0;
 						call {
@@ -199,7 +199,7 @@ while {true} do {
 					if (
 						(_markerAlert == 1) AND
 						( {(_x distance2D _markerPos) < (distanciaSPWN * 4)} count _allyPlanes > 0)
-					) then 
+					) then
 					{
 						_markerAlert = 0;
 						call {
