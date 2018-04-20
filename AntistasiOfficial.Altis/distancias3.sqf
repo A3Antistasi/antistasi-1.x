@@ -99,7 +99,7 @@ while {true} do {
 							//[_marker] remoteExec ["createAAdefense", call AS_fnc_getNextWorker]; Create an AA script !
 							
 						} 
-						if({!(_x in _planeTargets) AND (_x distance2D _markerPos < distanciaSPWN * 4)} count _allyPlanes > 0) then
+						if({!(_x in _planeTargets)} count _allyPlanes > 0) then
 						{ //Enemy plane currently not under attack
 							_availableAirports = aeropuertos - mrkFIA;
 							_startAirport = nil;
