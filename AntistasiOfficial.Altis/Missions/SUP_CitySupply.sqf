@@ -31,7 +31,7 @@ if (count _allSheds == 0) exitWith
 };
 
 
-_spawnPosition = _allSheds selectRandom;
+_spawnPosition = position (selectRandom _allSheds);
 _spawnPosition = _spawnPosition findEmptyPosition [5,50, _crateType];
 sleep 1;
 _crate = _crateType createVehicle _spawnPosition;
