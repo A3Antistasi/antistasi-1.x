@@ -113,7 +113,7 @@ if ({(alive _x) and (_x distance _posicionTel < 10)} count units _grupo > 0) the
 		};
 		// BE module
 	};
-	spawner setVariable [_mrk,false,true];
+	spawner setVariable [_mrk,4,true];
 	_tsk = ["PuestosFIA", [side_blue, civilian],["STR_TSK_DESC_OPDEPLOY", "STR_TSK_OPDEPLOY", _mrk],_posicionTel, "SUCCEEDED", 5, true, true, "Move"] call BIS_fnc_setTask;
 	[-5,5,_posiciontel] remoteExec ["AS_fnc_changeCitySupport",2];
 	_mrk setMarkerType "loc_bunker";

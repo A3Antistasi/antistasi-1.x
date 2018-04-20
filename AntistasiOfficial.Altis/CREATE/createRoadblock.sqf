@@ -83,7 +83,7 @@ if (random 10 < 2.5) then {
 {[_x] spawn genInitBASES; _allSoldiers pushBack _x} forEach units _group;
 _allGroups pushBack _group;
 
-waitUntil {sleep 1; !(spawner getVariable _marker) or (count (allUnits select {((side _x == side_green) or (side _x == side_red)) and (_x distance _markerPos <= _size) AND !(captive _x)}) < 1)};
+waitUntil {sleep 1; (spawner getVariable _marker == 4) or (count (allUnits select {((side _x == side_green) or (side _x == side_red)) and (_x distance _markerPos <= _size) AND !(captive _x)}) < 1)};
 
 if (count (allUnits select {((side _x == side_green) or (side _x == side_red)) and (_x distance _markerPos <= _size)}) < 1) then {
 	[-5,0,_markerPos] remoteExec ["AS_fnc_changeCitySupport",2];
@@ -97,5 +97,5 @@ if (count (allUnits select {((side _x == side_green) or (side _x == side_red)) a
 	[_marker] spawn AS_fnc_respawnRoadblock;
 };
 
-waitUntil {sleep 1; !(spawner getVariable _marker)};
+waitUntil {sleep 1; (spawner getVariable _marker == 4)};
 [_allGroups, _allSoldiers, _allVehicles] spawn AS_fnc_despawnUnits;

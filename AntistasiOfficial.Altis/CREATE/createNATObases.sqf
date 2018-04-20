@@ -143,7 +143,7 @@ _allGroups pushBack _group;
 	_counter = 0;
     private _group = grpNull;
 //FIA Garrison selection
-	while {(spawner getVariable _marker) AND (_counter < _strength)} do {
+	while {(spawner getVariable _marker < 2) AND (_counter < _strength)} do {
 		if (isNull _group) then {
 			_group = createGroup side_blue;
 			_guerGroups pushBack _group; //Sparker.
@@ -244,7 +244,7 @@ _allGroups pushBack _group;
 
 //Add Journalist
 	_observer = objNull;
-	if ((random 100 < (((server getVariable "prestigeNATO") + (server getVariable "prestigeCSAT"))/10)) AND (spawner getVariable _marker)) then {
+	if ((random 100 < (((server getVariable "prestigeNATO") + (server getVariable "prestigeCSAT"))/10)) AND (spawner getVariable _marker < 2 )) then {
 		_spawnPos = [];
 		_group = createGroup civilian;
 		while {true} do {
@@ -259,7 +259,7 @@ _allGroups pushBack _group;
 
 //Despawn conditions FIA
 	waitUntil {sleep 1;
-		!(spawner getVariable _marker) OR
+		(spawner getVariable _marker == 4) OR
 		(
 		 	( ({!(vehicle _x isKindOf "Air") OR (lifeState _x != "INCAPACITATED")} count (([_size,0,_markerPos,"OPFORSpawn"] call distanceUnits)))-1
 		 	) > 3*(
@@ -268,17 +268,17 @@ _allGroups pushBack _group;
 	};
 
 	//Territory loose conditions
-		if (spawner getVariable _marker) then {
+		if (spawner getVariable _marker != 4) then {
 			if (_marker != "FIA_HQ") then {[_marker] remoteExec ["mrkLOOSE",2]};
 		};
 
 		//Despawn
 		if (count ([distanciaSPWN,0,_markerPos,"BLUFORSpawn"] call distanceUnits) < 1) then {
-			spawner setVariable [_marker,false,true];
+			spawner setVariable [_marker,4,true];
 		};
 
 
-waitUntil {sleep 1; !(spawner getVariable _marker)};
+waitUntil {sleep 1; (spawner getVariable _marker == 4)};
 
 	//Save destroyed buildings
 		{if ((!alive _x) AND !(_x in destroyedBuildings)) then {destroyedBuildings = destroyedBuildings + [position _x]; publicVariableServer "destroyedBuildings"}} forEach _buildings;

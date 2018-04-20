@@ -5,7 +5,7 @@ private ["_base", "_endTime"];
 
 if (_marker in mrkFIA) exitWith {diag_log format ["Reinforcement Timer: invalid zone: %1", _marker]};
 if !(_marker in reducedGarrisons) exitWith {diag_log format ["Reinforcement Timer: zone fully garrisoned: %1", _marker]};
-if !(spawner getVariable _marker) exitWith {diag_log format ["Reinforcement Timer: zone is inactive: %1", _marker]};
+if (spawner getVariable _marker == 4) exitWith {diag_log format ["Reinforcement Timer: zone is inactive: %1", _marker]};
 
 _base = [_marker] call AS_fnc_findBaseForCA;
 if (_base == "") exitWith {diag_log format ["Reinforcement Timer: no base found: %1", _marker]};
