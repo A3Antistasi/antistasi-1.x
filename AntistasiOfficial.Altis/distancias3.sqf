@@ -160,8 +160,7 @@ while {true} do {
 				} else {
 					//Enemy Plane active
 					if (
-						(_markerAlert == 1) AND
-						( {(_x distance2D _markerPos) < (distanciaSPWN * 4)} count _allyPlanes > 0)
+						(_markerAlert == 1)
 					) then {_markerAlert = 0;};
 				};
 				spawner setVariable [_marker, _markerAlert, true];
