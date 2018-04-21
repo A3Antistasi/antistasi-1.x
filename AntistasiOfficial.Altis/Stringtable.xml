@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><Project name="Antistasi">
+<?xml version="1.0" encoding="UTF-8"?>
+<Project name="Antistasi">
 	<Package name="MissionNames">
 		<Container name="MissionNames_0">
 			<Key ID="STR_MISSION_NAME_SQM">
