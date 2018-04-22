@@ -181,8 +181,8 @@ while {(spawner getVariable _marker < 2) AND (_currentStrength < _strength)} do 
 		_group = [_markerPos, side_green, _groupType] call BIS_Fnc_spawnGroup;
 		if (activeAFRF) then {_group = [_group, _markerPos] call AS_fnc_expandGroup};
 		sleep 1;
-		_patrolParams = [_group, _marker, "SAFE","SPAWNED","NOVEH2"]; //Stef removed "NOFOLLOW"
-		if (_currentStrength == 0) then {_patrolParams pushBack "FORTIFY"; _patrolParams pushBack "RANDOMUP"};
+		_patrolParams = [_group, _marker, "SAFE","SPAWNED","NOVEH2"];
+		//if (_currentStrength == 0) then {_patrolParams pushBack "FORTIFY"; _patrolParams pushBack "RANDOMUP"};
 		_patrolParams execVM "scripts\UPSMON.sqf";
 		_allGroups pushBack _group;
 		if (_currentStrength == 0) then {
