@@ -67,8 +67,9 @@ call {
 
 	// Close to an enemy facility
 	_base = [_milThreatGround,player] call BIS_fnc_nearestPosition;
-	_size = [_base] call sizeMarker;
-	if (player distance getMarkerPos _base < 300) exitWith {_reason = localize "STR_HINTS_UND_FAC_GRND"};
+	_revealdist = 100;
+	if (_base in puestos) then {_revealdist = 60} else {_revealdist = 300};
+	if (player distance getMarkerPos _base < _revealdist) exitWith {_reason = localize "STR_HINTS_UND_FAC_GRND"};
 
 	// Player is in a vehicle
 	if (vehicle player != player) exitWith {
