@@ -3,7 +3,7 @@ private ["_sizeZone", "_sizeGarrison", "_markerPosition", "_break"];
 
 if !(_marker in mrkAAF) exitWith {diag_log format ["Garrison monitor: invalid marker: %1", _marker]};
 if (_garrison isEqualTo []) exitWith {diag_log format ["Garrison monitor: invalid garrison: %1", _garrison]};
-if !(spawner getVariable _marker) exitWith {diag_log format ["Garrison monitor: zone is inactive: %1", _marker]};
+if (spawner getVariable _marker == 4) exitWith {diag_log format ["Garrison monitor: zone is inactive: %1", _marker]};
 
 sleep 15; // allow units to spawn in properly
 
@@ -12,7 +12,7 @@ _sizeGarrison = count _garrison;
 _markerPosition = getMarkerPos _marker;
 _break = false;
 
-while {(spawner getVariable _marker)} do {
+while {(spawner getVariable _marker < 2)} do {
 	if ( 3*({(alive _x) and !(captive _x) and (_x distance2d _markerPosition < 2*_sizeZone)} count _garrison) < (2* _sizeGarrison)) exitWith {
 		reducedGarrisons pushBackUnique _marker;
 		publicVariable "reducedGarrisons";

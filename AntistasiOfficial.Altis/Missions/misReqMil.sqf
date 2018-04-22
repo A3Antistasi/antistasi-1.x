@@ -40,7 +40,7 @@ if (_tipo == "AS") then {
 		for "_i" from 0 to ((count _sitios) - 1) do {
 			_sitio = _sitios select _i;
 			_pos = getMarkerPos _sitio;
-			if ((_pos distance _posbase < 4500) and (not(spawner getVariable _sitio))) then {_posibles = _posibles + [_sitio]};
+			if ((_pos distance _posbase < 4500) and (spawner getVariable _sitio == 4)) then {_posibles = _posibles + [_sitio]};
 		};
 	};
 	if (_posibles isEqualTo []) then {
@@ -83,7 +83,7 @@ if (_tipo == "DES") then {
 			if (_sitio in markers) then {_pos = getMarkerPos _sitio} else {_pos = getPos _sitio};
 			if (_pos distance _posbase < 4000) then {
 				if (_sitio in markers) then {
-					if (not(spawner getVariable _sitio)) then {_posibles = _posibles + [_sitio]};
+					if (spawner getVariable _sitio == 4) then {_posibles = _posibles + [_sitio]};
 				}
 				else {
 					_cercano = [markers, getPos _sitio] call BIS_fnc_nearestPosition;
