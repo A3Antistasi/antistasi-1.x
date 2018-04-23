@@ -152,7 +152,28 @@ while {true} do {
 					};
 				};
 			} else { //If place was spawned in already
-				//units only despawn when you get back 50 meters from the point they spawned in.
+				//Special rule for helos													 	 | The 100 has to be tested, not sure which values are ok, the higher the faster the garrision is spawning
+				//											 ^							  ^		 ^
+				if (({((_x distance2D _markerPos - 300) max 0.4) * ((speed _x - 100) max 0.4) < 100 AND !(_x in planesNATO)} count _allyPlanes != 0)) then 
+				{
+					_markerAlert = 0;
+						call {
+							//Optimization possible, but perhaps not really needed due to low calls
+							if (_marker in _hills) exitWith {[_marker] remoteExec ["createWatchpost", call AS_fnc_getNextWorker]};
+							if (_marker in colinasAA) exitWith {[_marker] remoteExec ["createAAsite", call AS_fnc_getNextWorker]};
+							if (_marker in ciudades) exitWith {[_marker] remoteExec ["createCIV", call AS_fnc_getNextWorker]; [_marker] remoteExec ["createCity", call AS_fnc_getNextWorker]};
+							if (_marker in power) exitWith {[_marker] remoteExec ["createPower", call AS_fnc_getNextWorker]};
+							if (_marker in bases) exitWith {[_marker] remoteExec ["createBase", call AS_fnc_getNextWorker]};
+							//if (_marker in controles) exitWith {[_marker] remoteExec ["createRoadblock", call AS_fnc_getNextWorker]};
+							if (_marker in controles) exitWith {[_marker] remoteExec ["createRoadblock2", call AS_fnc_getNextWorker]};
+							if (_marker in aeropuertos) exitWith {[_marker] remoteExec ["createAirbase", call AS_fnc_getNextWorker]};
+							if ((_marker in recursos) OR (_marker in fabricas)) exitWith {[_marker] remoteExec ["createResources", call AS_fnc_getNextWorker]};
+							if ((_marker in puestos) OR (_marker in puertos)) exitWith {[_marker] remoteExec ["createOutpost", call AS_fnc_getNextWorker]};
+							//if ((_marker in artyEmplacements) AND (_marker in forcedSpawn)) exitWith {[_marker] remoteExec ["createArtillery", call AS_fnc_getNextWorker]};
+						};
+				}
+				
+				
 				if (({_x distance2D _markerPos < (distanciaSPWN+50)} count _allyUnits == 0) AND !(_marker in forcedSpawn)) then {
 					//No enemy infantry active
 					if(_markerAlert < 2) then {
