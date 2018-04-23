@@ -1,14 +1,4 @@
 /*
-<<<<<<< HEAD
-*	REWORK of the spawn system to integrate airplanes and helis
-*	The code is basically for WotP with adjustments, so all the credits go (as always) to Barbolani
-*
-*	Now featuring status flags of the current spawn state
-*	0 = Place is fully spawned in and active
-*	1 = Place has the minimal AA active, the rest is inactive
-*	2 = Place is completly not active
-*	3 = Place is not spawned in yet
-=======
 Rework of spawn system
 
 Status flags:
@@ -17,8 +7,7 @@ Status flags:
 2 - AA alert, AA group spawn in
 3 - not alerted, cached in but not simulated (not used by now)
 4 - not cached in
-
->>>>>>> 4319c42f9ca06717c1d3daa21180a141d1782ea4
+5 - AA active but not needed anymore
 */
 
 if !(isServer) exitWith {};
@@ -27,6 +16,9 @@ debugperf = false;
 
 private _currentTime = time;
 private _hills = colinas - colinasAA;
+
+private _markerAASpawned = [];
+private _markerGarrisonSpawned = [];
 
 while {true} do {
 	sleep 1;
@@ -104,6 +96,7 @@ while {true} do {
 							spawner setVariable [_marker,2,true]; //Spawning AA in
 							_markerAlert = 2;
 							[_marker] remoteExec ["createAAdefense", call AS_fnc_getNextWorker];
+							_markerAASpawned pushBackUnique _marker;
 
 						};
 						if({!(_x in _planeTargets)} count _allyPlanes > 0) then { //Enemy plane currently not under attack
@@ -149,14 +142,17 @@ while {true} do {
 							if ((_marker in puestos) OR (_marker in puertos)) exitWith {[_marker] remoteExec ["createOutpost", call AS_fnc_getNextWorker]};
 							//if ((_marker in artyEmplacements) AND (_marker in forcedSpawn)) exitWith {[_marker] remoteExec ["createArtillery", call AS_fnc_getNextWorker]};
 						};
+						_markerGarrisonSpawned pushBackUnique _marker;
 					};
 				};
 			} else { //If place was spawned in already
 				//Special rule for helos													 	 | The 100 has to be tested, not sure which values are ok, the higher the faster the garrision is spawning
 				//										    ^						   ^     ^
-				if (({((_x distance2D _markerPos - 300) max 1) * ((speed _x - 100) max 1) < 100} count _allyPlanes != 0)) then 	
+				if ({((((_x distance2D _markerPos) - 300) max 1) * (((speed _x) - 100) max 1)) < 100} count _allyPlanes != 0) then 	
 				{
 					_markerAlert = 0;
+					if(!(_marker in _markerGarrisonSpawned)) then 
+					{
 						call {
 							//Optimization possible, but perhaps not really needed due to low calls
 							if (_marker in _hills) exitWith {[_marker] remoteExec ["createWatchpost", call AS_fnc_getNextWorker]};
@@ -171,9 +167,9 @@ while {true} do {
 							if ((_marker in puestos) OR (_marker in puertos)) exitWith {[_marker] remoteExec ["createOutpost", call AS_fnc_getNextWorker]};
 							//if ((_marker in artyEmplacements) AND (_marker in forcedSpawn)) exitWith {[_marker] remoteExec ["createArtillery", call AS_fnc_getNextWorker]};
 						};
+						_markerGarrisonSpawned pushBackUnique _marker;
+					};
 				};
-				
-				
 				if (({_x distance2D _markerPos < (distanciaSPWN+50)} count _allyUnits == 0) AND !(_marker in forcedSpawn)) then {
 					//No enemy infantry active
 					if(_markerAlert < 2) then {
@@ -186,20 +182,25 @@ while {true} do {
 					if(_markerAlert == 2 AND ({_x distance2D _markerPos < distanciaSPWN} count _allyUnits > 0)) then
 					{
 						_markerAlert = 0;
-						call {
-							//Optimization possible, but perhaps not really needed due to low calls
-							if (_marker in _hills) exitWith {[_marker] remoteExec ["createWatchpost", call AS_fnc_getNextWorker]};
-							if (_marker in colinasAA) exitWith {[_marker] remoteExec ["createAAsite", call AS_fnc_getNextWorker]};
-							if (_marker in ciudades) exitWith {[_marker] remoteExec ["createCIV", call AS_fnc_getNextWorker]; [_marker] remoteExec ["createCity", call AS_fnc_getNextWorker]};
-							if (_marker in power) exitWith {[_marker] remoteExec ["createPower", call AS_fnc_getNextWorker]};
-							if (_marker in bases) exitWith {[_marker] remoteExec ["createBase", call AS_fnc_getNextWorker]};
-							//if (_marker in controles) exitWith {[_marker] remoteExec ["createRoadblock", call AS_fnc_getNextWorker]};
-							if (_marker in controles) exitWith {[_marker] remoteExec ["createRoadblock2", call AS_fnc_getNextWorker]};
-							if (_marker in aeropuertos) exitWith {[_marker] remoteExec ["createAirbase", call AS_fnc_getNextWorker]};
-							if ((_marker in recursos) OR (_marker in fabricas)) exitWith {[_marker] remoteExec ["createResources", call AS_fnc_getNextWorker]};
-							if ((_marker in puestos) OR (_marker in puertos)) exitWith {[_marker] remoteExec ["createOutpost", call AS_fnc_getNextWorker]};
-							//if ((_marker in artyEmplacements) AND (_marker in forcedSpawn)) exitWith {[_marker] remoteExec ["createArtillery", call AS_fnc_getNextWorker]};
+						if(!(_marker in _markerGarrisonSpawned)) then 
+						{
+							call {
+								//Optimization possible, but perhaps not really needed due to low calls
+								if (_marker in _hills) exitWith {[_marker] remoteExec ["createWatchpost", call AS_fnc_getNextWorker]};
+								if (_marker in colinasAA) exitWith {[_marker] remoteExec ["createAAsite", call AS_fnc_getNextWorker]};
+								if (_marker in ciudades) exitWith {[_marker] remoteExec ["createCIV", call AS_fnc_getNextWorker]; [_marker] remoteExec ["createCity", call AS_fnc_getNextWorker]};
+								if (_marker in power) exitWith {[_marker] remoteExec ["createPower", call AS_fnc_getNextWorker]};
+								if (_marker in bases) exitWith {[_marker] remoteExec ["createBase", call AS_fnc_getNextWorker]};
+								//if (_marker in controles) exitWith {[_marker] remoteExec ["createRoadblock", call AS_fnc_getNextWorker]};
+								if (_marker in controles) exitWith {[_marker] remoteExec ["createRoadblock2", call AS_fnc_getNextWorker]};
+								if (_marker in aeropuertos) exitWith {[_marker] remoteExec ["createAirbase", call AS_fnc_getNextWorker]};
+								if ((_marker in recursos) OR (_marker in fabricas)) exitWith {[_marker] remoteExec ["createResources", call AS_fnc_getNextWorker]};
+								if ((_marker in puestos) OR (_marker in puertos)) exitWith {[_marker] remoteExec ["createOutpost", call AS_fnc_getNextWorker]};
+								//if ((_marker in artyEmplacements) AND (_marker in forcedSpawn)) exitWith {[_marker] remoteExec ["createArtillery", call AS_fnc_getNextWorker]};
+							};
+							_markerGarrisonSpawned pushBackUnique _marker;
 						};
+						
 					};
 				};
 				if (({_x distance2D _markerPos < (distanciaSPWN * 4 + 50)} count _allyPlanes == 0)) then {
@@ -213,13 +214,15 @@ while {true} do {
 					) then
 					{
 						_markerAlert = 0;
-						if(!((_marker in _hills) OR (_marker in controles) OR (_marker in ciudades))) then 
+						if(!((_marker in _hills) OR (_marker in controles) OR (_marker in ciudades) OR (_marker in _markerAASpawned)) then 
 						{
 							[_marker] remoteExec ["createAAdefense", call AS_fnc_getNextWorker];
+							_markerAASpawned pushBackUnique _marker;
 						}
 					};
 					
 				};
+				if(_markerAlert == 4) then {_markerAASpawned = _markerAASpawned - _marker; _markerGarrisonSpawned = _markerGarrisonSpawned - _marker;};
 				spawner setVariable [_marker, _markerAlert, true];
 			};
 		}else{
