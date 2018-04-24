@@ -28,16 +28,19 @@ _allGroups pushBack _groupAA;
 if(_spawnSPAA) then
 {
 	_spawnPos = (getMarkerPos _marker) findEmptyPosition [0,25,opSPAA];
-	_sleep 1;
-	_SPAA = createVehicle [opSPAA, _spawnPos, [], 0, "CAN_COLLIDE"];
-	_groupCrew = createGroup side_red;
-	_unit = ([_posMarker, 0, opI_CREW, _groupCrew] call bis_fnc_spawnvehicle) select 0;
-	_unit moveInGunner _SPAA;
-	_unit = ([_posMarker, 0, opI_CREW, _groupCrew] call bis_fnc_spawnvehicle) select 0;
-	_unit moveInCommander _SPAA;
-	_SPAA lock 2;
-	_allGroups pushBack _groupCrew;
-	{[_x] spawn CSATinit; _allSoldiers pushBack _x} forEach units _groupCrew;
+	if (isnil _spawnPos) then {
+		_SPAA = createVehicle [opSPAA, _spawnPos, [], 0, "CAN_COLLIDE"];
+		_groupCrew = createGroup side_red;
+		_unit = ([_posMarker, 0, opI_CREW, _groupCrew] call bis_fnc_spawnvehicle) select 0;
+		_unit moveInGunner _SPAA;
+		_unit = ([_posMarker, 0, opI_CREW, _groupCrew] call bis_fnc_spawnvehicle) select 0;
+		_unit moveInCommander _SPAA;
+		_SPAA lock 2;
+		_allGroups pushBack _groupCrew;
+		{[_x] spawn CSATinit; _allSoldiers pushBack _x} forEach units _groupCrew;
+	} else {
+
+	};
 };
 
 _garrisonSize = count _allSoldiers;
