@@ -28,8 +28,8 @@ _SPAA = nil;
 if(_spawnSPAA) then
 {
 	_spawnPos = (getMarkerPos _marker) findEmptyPosition [0,25,opSPAA];
-	if (isnil _spawnPos) then {
-		_SPAA = createVehicle [opSPAA, _spawnPos, [], 0, "CAN_COLLIDE"];
+	if !(count _spawnPos == 0) then {
+		_SPAA = createVehicle [opSPAA, _spawnPos, [], 0, "CAN_COLLIDE"];   //there is a variable error here, syntax it's correct i tested it.
 		_groupCrew = createGroup side_red;
 		_unit = ([_posMarker, 0, opI_CREW, _groupCrew] call bis_fnc_spawnvehicle) select 0;
 		_unit moveInGunner _SPAA;
@@ -56,10 +56,10 @@ while{spawner getVariable _marker != 4} do
 		if(_spawnSPAA) then
 		{
 			waitUntil{sleep 1; ((spawner getVariable _marker == 4) OR (spawner getVariable _marker == 0))};
-			if(spawner getVariable _marker == 0) then 
+			if(spawner getVariable _marker == 0) then
 			{
 				_spawnSPAA = false;
-				if(isNil _SPAA) then 
+				if(isNil _SPAA) then
 				{
 					{_allSoldiers = _allSoldiers - [_x]; deleteVehicle _x;} forEach units _groupCrew;
 					_groupCrew = nil;
@@ -78,7 +78,7 @@ while{spawner getVariable _marker != 4} do
 		else
 		{
 			waitUntil{sleep 1; ((spawner getVariable _marker == 4) OR (spawner getVariable _marker != 0))};
-			if(spawner getVariable _marker != 0) then 
+			if(spawner getVariable _marker != 0) then
 			{
 				_spawnSPAA = true; /*Spawn tigris */
 				_spawnPos = (getMarkerPos _marker) findEmptyPosition [0,25,opSPAA];
