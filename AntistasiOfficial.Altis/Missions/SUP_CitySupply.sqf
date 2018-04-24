@@ -73,9 +73,9 @@ diag_log "SUP_CitySupply successful created";
 while {(alive _crate) AND (dateToNumber date < _endTime)} do {
 
 	// wait until the player loads the crate or have the loaded crate in a city
-	waitUntil {sleep 1; (dateToNumber date > _endTime) OR !(isNull attachedTo _crate) OR !({_crate distance _x < 25} count ciudades == 0)};
+	waitUntil {sleep 1; (dateToNumber date > _endTime) OR !(isNull attachedTo _crate) OR !({position _crate distance [_x] < 25} count ciudades == 0)};
 	//wait until the player has the crate unloaded in a city
-	waitUntil {sleep 1; (dateToNumber date > _endTime) OR (isNull attachedTo _crate) AND !({_crate distance _x < 25} count ciudades == 0)};
+	waitUntil {sleep 1; (dateToNumber date > _endTime) OR (isNull attachedTo _crate) AND !({position _crate distance [_x] < 25} count ciudades == 0)};
 	_currentCity = [ciudades, getPos _crate] call BIS_fnc_nearestPosition;
 	//Reveal all players in the surrounding of the crate to the enemies
 	{
@@ -85,7 +85,7 @@ while {(alive _crate) AND (dateToNumber date < _endTime)} do {
 				if (_x distance _crate < 300) then
 				{
 					_x doMove position _crate
-				} 	
+				}
 				else
 				{
 					_x reveal [_player,4]
@@ -93,14 +93,14 @@ while {(alive _crate) AND (dateToNumber date < _endTime)} do {
 			};
 		} forEach allUnits;
 	} forEach ([300,0,_crate,"BLUFORSpawn"] call distanceUnits);
-	
-	{ 
-	
+
+	{
+
 	//Send nearby civis to the crate
     if ((side _x == civilian) and (_x distance _pos < 300)) then {_x doMove position _crate};
 	} forEach allUnits;
 
-	
+
 	while {(alive _crate) AND (dateToNumber date < _endTime) AND (isNull attachedTo _crate)} do {
 
 		// stop supplying when enemies get too close (100m)
@@ -165,7 +165,7 @@ if ((alive _crate) AND (dateToNumber date < _endTime)) then {
 	// BE module
 };
 
-waitUntil {sleep 1; !([distanciaSPWN,1,_crate,"BLUFORSpawn"] call distanceUnits) OR (_crate distance (getMarkerPos guer_respawn) < 60)};
+waitUntil {sleep 1; !([distanciaSPWN,1,_crate,"BLUFORSpawn"] call distanceUnits) OR (position _crate distance (getMarkerPos guer_respawn) < 60)};
 if (_crate distance (getMarkerPos guer_respawn) < 60) then
 {
 	[_crate,true] call vaciar;
