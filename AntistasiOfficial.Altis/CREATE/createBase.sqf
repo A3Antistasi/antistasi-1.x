@@ -181,12 +181,19 @@ _allGroups pushBack _groupGunners;
 	_currentCount = 0;
 	if (_isFrontline) then {_vehicleCount = _vehicleCount * 1}; //removed the *2, frontline base should fancy just better defense instead of more units
 	while {(spawner getVariable _marker < 2) AND (_currentCount < _vehicleCount)} do {
-		_groupType = [infSquad, side_green] call AS_fnc_pickGroup;
-		_group = [_markerpos, side_green, _groupType] call BIS_Fnc_spawnGroup;
-		sleep 0.1;
-		[_group, _marker, "SAFE","SPAWNED", "RANDOM", "NOVEH", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
-		_allGroups pushBack _group;
-		sleep 0.1;
+		if (diag_fps > minimoFPS) then {
+			while {true} do {
+				_spawnPos = [_markerPos, 15 + (random _size),random 360] call BIS_fnc_relPos;
+				if (!surfaceIsWater _spawnPos) exitWith {};
+			};
+			_groupType = [infSquad, side_green] call AS_fnc_pickGroup;
+			_group = [_spawnPos, side_green, _groupType] call BIS_Fnc_spawnGroup;
+			//if (activeAFRF) then {_group = [_group, _markerPos] call AS_fnc_expandGroup}; No need for bigger groups in base creation
+			sleep 1.5;
+			[_group, _marker, "SAFE","SPAWNED", "NOVEH", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
+			_allGroups pushBack _group;
+		};
+		sleep 1.5;
 		_currentCount = _currentCount + 1;
 	};
 
@@ -224,7 +231,7 @@ sleep 3;
 
 //Despawn conditions
 	waitUntil {sleep 1;
-		(spawner getVariable _marker == 4) OR
+		(spawner getVariable _marker > 1) OR
 		(
 		 	({!(vehicle _x isKindOf "Air")} count ([_size,0,_markerPos,"BLUFORSpawn"] call distanceUnits)
 		 	) > 3* count (
@@ -233,11 +240,11 @@ sleep 3;
 		)
 	};
 
-	if ((spawner getVariable _marker != 4) AND !(_marker in mrkFIA)) then{
+	if ((spawner getVariable _marker < 2) AND !(_marker in mrkFIA)) then{
 		[_flag] remoteExec ["mrkWIN",2];
 	};
 
-	waitUntil {sleep 1; (spawner getVariable _marker == 4)};
+	waitUntil {sleep 1; (spawner getVariable _marker > 1)};
 
 	//Save destroyed buildings
 	{
