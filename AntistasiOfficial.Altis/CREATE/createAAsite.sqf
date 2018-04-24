@@ -17,6 +17,9 @@ _cmpInfo = [_marker] call AS_fnc_selectCMPData;
 _posCmp = _cmpInfo select 0;
 _cmp = _cmpInfo select 1;
 
+
+if(spawner getVariable _marker == 0) then {sleep 2;}; //This should give the AA defense enough time to despawn their SPAA if active
+
 _objs = [_posCmp, 0, _cmp] call BIS_fnc_ObjectsMapper;
 
 {
@@ -31,6 +34,8 @@ _objs = [_posCmp, 0, _cmp] call BIS_fnc_ObjectsMapper;
 } forEach _objs;
 
 _objs = _objs - [_truck];
+
+
 
 if (_hasSPAA) then {
 	_groupCrew = createGroup side_red;

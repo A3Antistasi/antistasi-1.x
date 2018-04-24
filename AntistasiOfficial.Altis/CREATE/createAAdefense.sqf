@@ -16,7 +16,6 @@ if(_marker in colinasAA) then {_isHilltop = true;};
 if(_isHilltop AND spawner getVariable _marker != 0) then {_spawnSPAA = true;};
 
 
-
 _groupType = [infAAdef, side_green] call AS_fnc_pickGroup;
 _groupAA = [_posMarker, side_green, _groupType] call BIS_Fnc_spawnGroup;
 sleep 0.1;
@@ -24,9 +23,12 @@ sleep 0.1;
 {[_x] spawn genInitBASES; _allSoldiers pushBack _x} forEach units _groupAA;
 _allGroups pushBack _groupAA;
 
+
+
 if(_spawnSPAA) then
 {
-	_spawnPos = (getMarkerPos _marker) findEmptyPosition [0,25,opSPAA]; //How is the AA vehicle called insccript?
+	_spawnPos = (getMarkerPos _marker) findEmptyPosition [0,25,opSPAA];
+	_sleep 1;
 	_SPAA = createVehicle [opSPAA, _spawnPos, [], 0, "CAN_COLLIDE"];
 	_groupCrew = createGroup side_red;
 	_unit = ([_posMarker, 0, opI_CREW, _groupCrew] call bis_fnc_spawnvehicle) select 0;
