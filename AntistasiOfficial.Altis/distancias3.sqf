@@ -147,7 +147,7 @@ while {true} do {
 				};
 			} else { //If place was spawned in already
 				//Special rule for helos													 	 | The 100 has to be tested, not sure which values are ok, the higher the faster the garrision is spawning
-				//										    ^						   ^     ^
+				//										     ^						       ^     ^
 				if ({((((_x distance2D _markerPos) - 300) max 1) * (((speed _x) - 100) max 1)) < 100} count _allyPlanes != 0) then 	
 				{
 					_markerAlert = 0;
