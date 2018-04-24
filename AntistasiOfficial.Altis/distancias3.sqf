@@ -148,12 +148,13 @@ while {true} do {
 			} else { //If place was spawned in already
 				//Special rule for helos													 	 | The 100 has to be tested, not sure which values are ok, the higher the faster the garrision is spawning
 				//										     ^						       ^     ^
-				if ((({((((_x distance2D _markerPos) - 300) max 1) * (((speed _x) - 100) max 1)) < 100} count _allyPlanes != 0) 
-						OR ({_x distance2D _markerPos < (distanciaSPWN)} count _allyUnits != 0)) OR (_marker in forcedSpawn)) then 	
+				if (({((((_x distance2D _markerPos) - 300) max 1) * (((speed _x) - 100) max 1)) < 100} count _allyPlanes != 0) 
+						OR ({_x distance2D _markerPos < (distanciaSPWN)} count _allyUnits != 0) OR (_marker in forcedSpawn)) then 	
 				{
 					if(_markerAlert == 2) then {_markerAlert = 0;};
 					if(!(_marker in _markerGarrisonSpawned)) then 
 					{
+						spawner setVariable [_marker, _markerAlert, true];
 						call {
 							//Optimization possible, but perhaps not really needed due to low calls
 							if (_marker in _hills) exitWith {[_marker] remoteExec ["createWatchpost", call AS_fnc_getNextWorker]};
@@ -169,6 +170,7 @@ while {true} do {
 							//if ((_marker in artyEmplacements) AND (_marker in forcedSpawn)) exitWith {[_marker] remoteExec ["createArtillery", call AS_fnc_getNextWorker]};
 						};
 						_markerGarrisonSpawned pushBackUnique _marker;
+						spawner setVariable [_marker, _markerAlert, true];
 					};
 				}
 				else 
