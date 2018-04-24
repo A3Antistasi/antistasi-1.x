@@ -11,7 +11,9 @@ _allSoldiers = [];
 _allVehicles = [];
 
 _spawnSPAA = false;
-if(_marker in colinasAA AND spawner getVariable _marker != 0) then {_spawnSPAA = true;};
+_isHilltop = false;
+if(_marker in colinasAA) then {_isHilltop = true;}; 
+if(_isHilltop AND spawner getVariable _marker != 0) then {_spawnSPAA = true;};
 
 
 
@@ -40,17 +42,19 @@ _garrisonSize = count _allSoldiers;
 
 while{spawner getVariable _marker != 4} do 
 {
-	if(_spawnSPAA) then 
+	if(_isHilltop) then 
 	{
-		waitUntil{sleep 1; ((spawner getVariable _marker == 4) OR (spawner getVariable _marker == 0))};
-		if(spawner getVariable _marker == 0) then {_spawnSPAA = false; /*Despawn tigris */};
-	}
-	else 
-	{
-		waitUntil{sleep 1; ((spawner getVariable _marker == 4) OR (spawner getVariable _marker != 0))};
-		if(spawner getVariable _marker != 0) then {_spawnSPAA = true; /*Despawn tigris */};
-	}
+		if(_spawnSPAA) then 
+		{
+			waitUntil{sleep 1; ((spawner getVariable _marker == 4) OR (spawner getVariable _marker == 0))};
+			if(spawner getVariable _marker == 0) then {_spawnSPAA = false; /*Despawn tigris */};
+		}
+		else 
+		{
+			waitUntil{sleep 1; ((spawner getVariable _marker == 4) OR (spawner getVariable _marker != 0))};
+			if(spawner getVariable _marker != 0) then {_spawnSPAA = true; /*Despawn tigris */};
+		}
+	};
 	sleep 1;
-	
 }
 [_allGroups, _allSoldiers, _allVehicles] spawn AS_fnc_despawnUnits;
