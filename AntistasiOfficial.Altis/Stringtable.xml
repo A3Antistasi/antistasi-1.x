@@ -1231,22 +1231,22 @@
 			<Key ID="STR_UI_INFO_MRESTR_TEXT">
 				<Original>Arsenal Membership</Original>
 				<Russian>Arsenal Membership</Russian>
-				<Spanish>Arsenal Membership</Spanish>
+				<Spanish>Arsenal de Membresía</Spanish>
 			</Key>
 			<Key ID="STR_UI_INFO_MRESTR_TT">
 				<Original>When enabled, non members can't pick items below a threshold</Original>
 				<Russian>When enabled, non members can't pick items below a threshold</Russian>
-				<Spanish>When enabled, non members can't pick items below a threshold</Spanish>
+				<Spanish>Cuando está habilitado, los que no sean miembros no pueden coger elementos por debajo del umbral</Spanish>
 			</Key>
 			<Key ID="STR_UI_INFO_ACEMEDIC_TEXT">
 				<Original>Arsenal ACE Medical</Original>
 				<Russian>Arsenal ACE Medical</Russian>
-				<Spanish>Arsenal ACE Medicall</Spanish>
+				<Spanish>Arsenal Médico ACE</Spanish>
 			</Key>
 			<Key ID="STR_UI_INFO_ACEMEDIC_TT">
 				<Original>Reset ACE items according to basic or advanced</Original>
 				<Russian>Reset ACE items according to basic or advanced</Russian>
-				<Spanish>Reset ACE items according to basic or advanced</Spanish>
+				<Spanish>Reinicia los objetos de ACE de básico o avanzado</Spanish>
 			</Key>
 			<Key ID="STR_UI_INFO_AXPREST_TEXT">
 				<Original>Current Restrictions</Original>
@@ -1878,18 +1878,22 @@
 			<Key ID="STR_TSK_OPDEPLOY">
 				<Original>Post \ Roadblock Deploy</Original>
 				<Russian>Развернуть БП/НП</Russian>
+				<Spanish>Puesto/Control Desplegado</Spanish>
 			</Key>
 			<Key ID="STR_TSK_DESC_OPDEPLOY">
 				<Original>We are sending a team to establish an Observation Post or Roadblock. Send and cover the team until reaches it's destination.</Original>
 				<Russian>Мы посылаем группу, чтобы развернуть блокпост или наблюдательный пост. Сопровождайте группу, пока она не достигнет места назначения.</Russian>
+				<Spanish>Hemos enviado un equipo para establecer un puesto de observación o un control. Envía y cubre al equipo hasta que llegue al destino.</Spanish>
 			</Key>
 			<Key ID="STR_TSK_CAMPSET">
 				<Original>Camp Setup</Original>
 				<Russian>Развернуть лагерь</Russian>
+				<Spanish>Montar Campamento</Spanish>
 			</Key>
 			<Key ID="STR_TSK_DESC_CAMPSET">
 				<Original>We are sending a team to establish a camp. Send and cover the team until reaches it's destination.</Original>
 				<Russian>Мы посылаем группу, чтобы развернуть лагерь. Сопровождайте группу, пока она не достигнет места назначения.</Russian>
+				<Spanish>Hemos enviado un equipo para montar un campamento. Envía y cubre al equipo hasta que llegue al destino.</Spanish>
 			</Key>
 			<Key ID="STR_TSK_TD_RADIO_DESTROYED">
 				<Original>Radio Tower Destroyed</Original>
@@ -3362,7 +3366,7 @@
 			<Key ID="STR_D_LOG_MI">
 				<Original>Logistics Mission</Original>
 				<Russian>Снабжение</Russian>
-				<Spanish>Misión Logísitca</Spanish>
+				<Spanish>Misión Logística</Spanish>
 			</Key>
 			<Key ID="STR_D_DES_MI">
 				<Original>Destroy Mission</Original>
