@@ -148,11 +148,11 @@ while {true} do {
 			} else { //If place was spawned in already
 				//Special rule for helos													 	 | The 100 has to be tested, not sure which values are ok, the higher the faster the garrision is spawning
 				//										     ^						       ^     ^
-				if (({((((_x distance2D _markerPos) - 300) max 1) * (((speed _x) - 100) max 1)) < 100} count _allyPlanes != 0) 
-						OR ({_x distance2D _markerPos < (distanciaSPWN)} count _allyUnits != 0) OR (_marker in forcedSpawn)) then 	
+				if (({((((_x distance2D _markerPos) - 300) max 1) * (((speed _x) - 100) max 1)) < 100} count _allyPlanes != 0)
+						OR ({_x distance2D _markerPos < (distanciaSPWN)} count _allyUnits != 0) OR (_marker in forcedSpawn)) then
 				{
 					if(_markerAlert == 2) then {_markerAlert = 0;};
-					if(!(_marker in _markerGarrisonSpawned)) then 
+					if(!(_marker in _markerGarrisonSpawned)) then
 					{
 						spawner setVariable [_marker, _markerAlert, true];
 						call {
@@ -173,7 +173,7 @@ while {true} do {
 						spawner setVariable [_marker, _markerAlert, true];
 					};
 				}
-				else 
+				else
 				{
 					if ({_x distance2D _markerPos < (distanciaSPWN+50)} count _allyUnits == 0) then {
 					//No enemy infantry active //Despawn the current garrision
@@ -184,7 +184,7 @@ while {true} do {
 					};
 				};
 				};
-				
+
 				if (({_x distance2D _markerPos < (distanciaSPWN * 4 + 50)} count _allyPlanes == 0)) then {
 					//No enemy planes active
 					if(_markerAlert == 2) then {_markerAlert = 4;}; //Despawn if only AA was active
@@ -196,15 +196,15 @@ while {true} do {
 					) then
 					{
 						_markerAlert = 0;
-						if(!((_marker in _hills) OR (_marker in controles) OR (_marker in ciudades) OR (_marker in _markerAASpawned)) then 
+						if (! ((_marker in _hills) OR (_marker in controles) OR (_marker in ciudades) OR (_marker in _markerAASpawned))) then
 						{
 							[_marker] remoteExec ["createAAdefense", call AS_fnc_getNextWorker];
 							_markerAASpawned pushBackUnique _marker;
-						}
+						};
 					};
-					
+
 				};
-				if(_markerAlert == 4) then {_markerAASpawned = _markerAASpawned - _marker; _markerGarrisonSpawned = _markerGarrisonSpawned - _marker;};
+				if(_markerAlert == 4) then {_markerAASpawned = _markerAASpawned - [_marker]; _markerGarrisonSpawned = _markerGarrisonSpawned - [_marker];};
 				spawner setVariable [_marker, _markerAlert, true];
 			};
 		}else{
