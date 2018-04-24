@@ -10,11 +10,11 @@ _allGroups = [];
 _allSoldiers = [];
 _allVehicles = [];
 
+
 _spawnSPAA = false;
 _isHilltop = false;
 if(_marker in colinasAA) then {_isHilltop = true;};
 if(_isHilltop AND spawner getVariable _marker != 0) then {_spawnSPAA = true;};
-
 
 _groupType = [infAAdef, side_green] call AS_fnc_pickGroup;
 _groupAA = [_posMarker, side_green, _groupType] call BIS_Fnc_spawnGroup;
@@ -22,7 +22,6 @@ sleep 0.1;
 [_groupAA, _marker, "COMBAT","SPAWNED","NOFOLLOW","NOVEH2"] execVM "scripts\UPSMON.sqf";
 {[_x] spawn genInitBASES; _allSoldiers pushBack _x} forEach units _groupAA;
 _allGroups pushBack _groupAA;
-
 
 _SPAA = nil;
 if(_spawnSPAA) then

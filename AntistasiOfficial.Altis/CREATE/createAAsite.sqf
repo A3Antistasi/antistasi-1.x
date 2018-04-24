@@ -101,6 +101,7 @@ _spawnGroup = {
 _garrisonSize = count _allSoldiers;
 
 if (_hasSPAA) then {
+
 	waitUntil {sleep 1; (spawner getVariable _marker > 1) OR ((({alive _x} count _allSoldiers < (_garrisonSize / 3)) OR ({fleeing _x} count _allSoldiers == {alive _x} count _allSoldiers)) AND !(alive _SPAA) AND ({alive _x} count units _groupGunners == 0))};
 	if ((({alive _x} count _allSoldiers < (_garrisonSize / 3)) OR ({fleeing _x} count _allSoldiers == {alive _x} count _allSoldiers)) AND !(alive _SPAA) AND ({alive _x} count units _groupGunners == 0)) then {
 		[-5,0,_posMarker] remoteExec ["AS_fnc_changeCitySupport",2];
@@ -131,6 +132,7 @@ if (_hasSPAA) then {
 		if (activeBE) then {["cl_loc"] remoteExec ["fnc_BE_XP", 2]};
 	};
 };
+
 waitUntil {sleep 1; (spawner getVariable _marker > 1)};
 
 [_allGroups, _allSoldiers, _allVehicles] spawn AS_fnc_despawnUnits;

@@ -77,6 +77,7 @@ _crate = "I_supplyCrate_F" createVehicle _markerPos;
 _allVehicles pushBack _crate;
 sleep 0.5;
 
+//Spawn seapatrol else watchman, mortar+rb
 if (_marker in puertos) then {
 	if !(activeAFRF) then {    //17/10 Stef removing speedboats from RHS
         _position = [_markerPos,_size,_size*3,25,2,0,0] call BIS_Fnc_findSafePos;
@@ -163,9 +164,10 @@ if !(count _position == 0) then {
 	sleep 1;
 };
 
-_strength = 1 max (round (_size/50));
-_currentStrength = 0;
-if (_isFrontline) then {_strength = _strength * 1}; //Stef 27/10 disabled the frontline unit increase untill AI caps is better handled
+//Spawn Infantry
+	_strength = 1 + (1 max (round (_size/50)));
+	_currentStrength = 0;
+	if (_isFrontline) then {_strength = _strength * 1}; //Stef 27/10 disabled the frontline unit increase untill AI caps is better handled
 
 if (_marker in puestosAA) then {
 	_groupType = [infAA, side_green] call AS_fnc_pickGroup;
@@ -179,18 +181,30 @@ while {(spawner getVariable _marker < 2) AND (_currentStrength < _strength)} do 
 	if ((_currentStrength == 0)) then {   //Stef removed FPS check, useless for MP, maybe add some extra checks if singleplayer
 		_groupType = [infSquad, side_green] call AS_fnc_pickGroup;
 		_group = [_markerPos, side_green, _groupType] call BIS_Fnc_spawnGroup;
-		if (activeAFRF) then {_group = [_group, _markerPos] call AS_fnc_expandGroup};
+		[_group, _marker, "SAFE","SPAWNED","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
+		_allGroups pushBack _group;
 		sleep 1;
-		_patrolParams = [_group, _marker, "SAFE","SPAWNED","NOVEH2"]; //Stef removed "NOFOLLOW"
-		if (_currentStrength == 0) then {_patrolParams pushBack "FORTIFY"; _patrolParams pushBack "RANDOMUP"};
+	};
+
+	while {(spawner getVariable _marker < 2) AND (_currentStrength < _strength)} do {
+		if(_currentStrength == 0) then {
+			_groupType = [infGarrisonSmall, side_green] call AS_fnc_pickGroup;
+		} else {
+			_groupType = [infSquad, side_green] call AS_fnc_pickGroup;
+		};
+		_group = [_markerPos, side_green, _groupType] call BIS_Fnc_spawnGroup;
+		//if (activeAFRF) then {_group = [_group, _markerPos] call AS_fnc_expandGroup};
+		sleep 0.5;
+		if(_currentStrength == 0) then {
+			_patrolParams = [_group, _marker, "SAFE","SPAWNED","RANDOMUP","NOFOLLOW","NOVEH2"];
+		} else {
+			_patrolParams = [_group, _marker, "SAFE","SPAWNED","RANDOM","NOFOLLOW","NOVEH2"];
+		};
+		//if (_currentStrength == 0) then {_patrolParams pushBack "FORTIFY"; _patrolParams pushBack "RANDOMUP"};
 		_patrolParams execVM "scripts\UPSMON.sqf";
 		_allGroups pushBack _group;
-		if (_currentStrength == 0) then {
-			{_x setUnitPos "MIDDLE"} forEach units _group;
-		};
+		_currentStrength = _currentStrength + 1;
 	};
-	_currentStrength = _currentStrength + 1;
-};
 
 if (_marker in puertos) then {
 	_crate addItemCargo ["V_RebreatherIA",round random 5];

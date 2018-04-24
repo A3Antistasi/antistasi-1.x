@@ -6,7 +6,7 @@ if (captive player) exitWith {hint localize "STR_HINTS_UND_DISGUISED"};
 private ["_milThreatGround","_milThreatAir","_civVehicles","_size","_compromised","_base","_size","_vehicle","_vehicleType","_break"];
 
 //_milThreatGround = (bases + puestos + controles) arrayIntersect mrkAAF; //Sparker: allow players to go through roadblocks undercover
-_milThreatGround = (bases + puestos) arrayIntersect mrkAAF;
+_milThreatGround = (bases + puestos + aeropuertos) arrayIntersect mrkAAF;
 _milThreatAir = (bases + aeropuertos + puestos + colinas) arrayIntersect mrkAAF;
 _compromised = player getVariable ["compromised",dateToNumber date];
 
@@ -67,8 +67,9 @@ call {
 
 	// Close to an enemy facility
 	_base = [_milThreatGround,player] call BIS_fnc_nearestPosition;
-	_size = [_base] call sizeMarker;
-	if (player distance getMarkerPos _base < (_size*2)) exitWith {_reason = localize "STR_HINTS_UND_FAC_GRND"};
+	_revealdist = 100;
+	if (_base in puestos) then {_revealdist = 60} else {_revealdist = 300};
+	if (player distance getMarkerPos _base < _revealdist) exitWith {_reason = localize "STR_HINTS_UND_FAC_GRND"};
 
 	// Player is in a vehicle
 	if (vehicle player != player) exitWith {
