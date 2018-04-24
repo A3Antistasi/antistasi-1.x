@@ -12,7 +12,7 @@ _allVehicles = [];
 
 _spawnSPAA = false;
 _isHilltop = false;
-if(_marker in colinasAA) then {_isHilltop = true;}; 
+if(_marker in colinasAA) then {_isHilltop = true;};
 if(_isHilltop AND spawner getVariable _marker != 0) then {_spawnSPAA = true;};
 
 
@@ -24,7 +24,7 @@ sleep 0.1;
 {[_x] spawn genInitBASES; _allSoldiers pushBack _x} forEach units _groupAA;
 _allGroups pushBack _groupAA;
 
-if(_spawnSPAA) then 
+if(_spawnSPAA) then
 {
 	_spawnPos = (getMarkerPos _marker) findEmptyPosition [0,25,opSPAA]; //How is the AA vehicle called insccript?
 	_SPAA = createVehicle [opSPAA, _spawnPos, [], 0, "CAN_COLLIDE"];
@@ -40,21 +40,22 @@ if(_spawnSPAA) then
 
 _garrisonSize = count _allSoldiers;
 
-while{spawner getVariable _marker != 4} do 
+while{spawner getVariable _marker != 4} do
 {
-	if(_isHilltop) then 
+	if(_isHilltop) then
 	{
-		if(_spawnSPAA) then 
+		if(_spawnSPAA) then
 		{
 			waitUntil{sleep 1; ((spawner getVariable _marker == 4) OR (spawner getVariable _marker == 0))};
 			if(spawner getVariable _marker == 0) then {_spawnSPAA = false; /*Despawn tigris */};
 		}
-		else 
+		else
 		{
 			waitUntil{sleep 1; ((spawner getVariable _marker == 4) OR (spawner getVariable _marker != 0))};
 			if(spawner getVariable _marker != 0) then {_spawnSPAA = true; /*Despawn tigris */};
 		}
 	};
 	sleep 1;
-}
+};
+
 [_allGroups, _allSoldiers, _allVehicles] spawn AS_fnc_despawnUnits;
