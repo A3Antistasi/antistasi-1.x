@@ -92,7 +92,7 @@ while {true} do {
 				if ((_numberOfUnits > 0) OR (_numberOfPlanes > 0) OR (_marker in forcedSpawn)) then {
 
 					if(_numberOfPlanes > 0) then{
-						if(!((_marker in _hills) OR (_marker in controles) OR (_marker in ciudades))) then {
+						if(!((_marker in _hills) OR (_marker in controles) OR (_marker in ciudades) OR (_marker in recursos) OR (_marker in fabricas) OR (_marker in power))) then {
 							spawner setVariable [_marker,2,true]; //Spawning AA in
 							_markerAlert = 2;
 							[_marker] remoteExec ["createAAdefense", call AS_fnc_getNextWorker];
