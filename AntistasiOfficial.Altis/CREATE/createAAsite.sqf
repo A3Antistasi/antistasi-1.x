@@ -96,7 +96,7 @@ _spawnGroup = {
 _garrisonSize = count _allSoldiers;
 
 if (_hasSPAA) then {
-	waitUntil {sleep 1; (spawner getVariable _marker == 4) OR ((({alive _x} count _allSoldiers < (_garrisonSize / 3)) OR ({fleeing _x} count _allSoldiers == {alive _x} count _allSoldiers)) AND !(alive _SPAA) AND ({alive _x} count units _groupGunners == 0))};
+	waitUntil {sleep 1; (spawner getVariable _marker > 1) OR ((({alive _x} count _allSoldiers < (_garrisonSize / 3)) OR ({fleeing _x} count _allSoldiers == {alive _x} count _allSoldiers)) AND !(alive _SPAA) AND ({alive _x} count units _groupGunners == 0))};
 	if ((({alive _x} count _allSoldiers < (_garrisonSize / 3)) OR ({fleeing _x} count _allSoldiers == {alive _x} count _allSoldiers)) AND !(alive _SPAA) AND ({alive _x} count units _groupGunners == 0)) then {
 		[-5,0,_posMarker] remoteExec ["AS_fnc_changeCitySupport",2];
 		[0,5] remoteExec ["prestige",2];
@@ -111,7 +111,7 @@ if (_hasSPAA) then {
 		if (activeBE) then {["cl_loc"] remoteExec ["fnc_BE_XP", 2]};
 	};
 } else {
-	waitUntil {sleep 1; (spawner getVariable _marker == 4) OR ((count (allUnits select {((side _x == side_green) OR (side _x == side_red)) AND (_x distance _posMarker <= (_size max 100)) AND !(captive _x)}) == 0) AND ({alive _x} count units _groupGunners == 0))};
+	waitUntil {sleep 1; (spawner getVariable _marker > 1) OR ((count (allUnits select {((side _x == side_green) OR (side _x == side_red)) AND (_x distance _posMarker <= (_size max 100)) AND !(captive _x)}) == 0) AND ({alive _x} count units _groupGunners == 0))};
 	if (({alive _x} count _allSoldiers < (_garrisonSize / 3)) OR ({fleeing _x} count _allSoldiers == {alive _x} count _allSoldiers)) then {
 		[-5,0,_posMarker] remoteExec ["AS_fnc_changeCitySupport",2];
 		[0,5] remoteExec ["prestige",2];
@@ -126,7 +126,7 @@ if (_hasSPAA) then {
 		if (activeBE) then {["cl_loc"] remoteExec ["fnc_BE_XP", 2]};
 	};
 };
-waitUntil {sleep 1; (spawner getVariable _marker == 4)};
+waitUntil {sleep 1; (spawner getVariable _marker > 1)};
 
 [_allGroups, _allSoldiers, _allVehicles] spawn AS_fnc_despawnUnits;
 {deleteVehicle _x} forEach _objs;
