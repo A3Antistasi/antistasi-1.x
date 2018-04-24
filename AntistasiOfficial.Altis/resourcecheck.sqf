@@ -152,15 +152,20 @@ while {true} do {
 		};
 	} forEach ciudades;
 	
-	_types = ["FOOD", "WATER", "FUEL"];
-	if(Random 100 <= 85) then
 	{
-		_type = selectRandom _types;
-		_currentCity = selectRandom _cityInRange;
-		[_type, -1, _currentCity] spawn AS_fnc_changeCitySupply;
-		_type = selectRandom _types;
-		[_type] remoteExec ["SUP_CitySupply", call AS_fnc_getNextWorker];
-	};
+		_currentCity = _x;
+		_types = _currentCity AS_fnc_getHighSupplies;
+		if (count _types != 0) then 
+		{
+			_type = selectRandom _types;
+			[_type, -1, _currentCity] spawn AS_fnc_changeCitySupply;
+			_type = selectRandom _types;
+			[_type] remoteExec ["SUP_CitySupply", call AS_fnc_getNextWorker];
+			exitWith {};
+			//This should abort the loop, if not look here
+		};
+		
+	} forEach _cityInRange;
 
 	if ((_popFIA > _popEnemy) AND ("airport_3" in mrkFIA)) then {["end1",true,true,true,true] remoteExec ["BIS_fnc_endMission",0]};
 
