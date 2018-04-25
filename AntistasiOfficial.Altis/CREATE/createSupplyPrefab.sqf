@@ -47,7 +47,7 @@ if(_create) then
 	mrkSupplyCrates = mrkSupplyCrates pushBackUnique _marker;
 	publicVariable "mrkSupplyCrates";
 	
-	[_spawnPosition, _crateType] remoteExec ["createSupplyBox", AS_fnc_getNextWorker];
+	[_spawnPosition, _crateType, _marker] remoteExec ["createSupplyBox", AS_fnc_getNextWorker];
 };
 if(!_create) then {_spawnPosition = getMarkerPos marker;};
 
@@ -68,9 +68,9 @@ _allGroups pushBack _group;
 } forEach _allGroups;
 
 //waitUntil {sleep 1; spawner getVariable _marker > 1}; //Activate when merged with new spawn system
-waitUntil {sleep 1; !(spawner getVariable _marker)};
+waitUntil {sleep 1; !(spawner getVariable _marker) OR !(_marker in mrkSupplyCrates)};
 
-if(nearestObjects [_spawnPosition, ["Land_PaperBox_01_open_boxes_F", "Land_PaperBox_01_open_water_F", "CargoNet_01_barrels_F"], 300, true] count != 0) then 
+if((_marker in mrkSupplyCrates) AND (nearestObjects [_spawnPosition, ["Land_PaperBox_01_open_boxes_F", "Land_PaperBox_01_open_water_F", "CargoNet_01_barrels_F"], 300, true] count != 0)) then 
 {
 	//FIA has taken the Supply Box, not in range any more
 	spawner setVariable [_marker, nil, true];

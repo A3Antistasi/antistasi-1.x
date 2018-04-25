@@ -4,6 +4,9 @@ if (player != Slowhand) exitWith {hint localize "STR_HINTS_MHQ_OCSHATTF"};
 
 hint localize "STR_HINTS_MHQ_MTAACNTVACNPTTNL";
 
+mrkSupplyCrates = [];
+publicVariable "mrkSupplyCrates";
+
 petros enableAI "MOVE";
 petros enableAI "AUTOTARGET";
 petros forceSpeed -1;

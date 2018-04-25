@@ -168,7 +168,7 @@ while {true} do {
 				exitWith {};
 				//This should abort the loop, if not look here
 			};
-	};
+		};
 	};
 	
 
