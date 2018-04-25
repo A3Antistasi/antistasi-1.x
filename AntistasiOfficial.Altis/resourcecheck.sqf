@@ -152,6 +152,7 @@ while {true} do {
 		};
 	} forEach ciudades;
 	
+	for "_i" from 0 to 4 do
 	{
 		_currentCity = _x;
 		_types = [_currentCity, "GOOD"] spawn AS_fnc_getHighSupplies;
@@ -164,8 +165,7 @@ while {true} do {
 			exitWith {};
 			//This should abort the loop, if not look here
 		};
-		
-	} forEach _cityInRange;
+	};
 
 	if ((_popFIA > _popEnemy) AND ("airport_3" in mrkFIA)) then {["end1",true,true,true,true] remoteExec ["BIS_fnc_endMission",0]};
 
