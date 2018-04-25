@@ -156,7 +156,7 @@ while {true} do {
 	{
 		for "_i" from 0 to 4 do
 		{
-			_currentCity = _x;
+			_currentCity = selectRandom _cityInRange;
 			_types = [_currentCity, "GOOD"] spawn AS_fnc_getHighSupplies;
 			if(random 100 < 10) then {_types = [_currentCity, "LOW"] spawn AS_fnc_getHighSupplies};
 			if (count _types != 0) then 
