@@ -46,18 +46,6 @@ if(_create) then
 };
 
 
-/*
-CODE FOR CRATE
-_spawnPosition = position (selectRandom _allSheds);
-_spawnPosition = _spawnPosition findEmptyPosition [5,50, _crateType];
-sleep 1;
-_crate = _crateType createVehicle _spawnPosition;
-_crate allowDamage false;
-[_crate] spawn {sleep 1; (_this select 0) allowDamage true;};
-_crate call jn_fnc_logistics_addAction;
-//Spawned the crate in
-*/
-
 _allGroups = [];
 _allSoldiers = [];
 
