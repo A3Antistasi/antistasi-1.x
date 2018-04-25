@@ -7,7 +7,15 @@ _crate allowDamage false;
 [_crate] spawn {sleep 1; (_this select 0) allowDamage true;};
 _crate call jn_fnc_logistics_addAction;
 
-// crate alive and loaded
+
+/*
+	_timerRunning: timer running
+	_deploymentTime: time it takes to unload the gear (seconds)
+	_counter: running timer
+*/
+
+[false,150,0] params ["_timerRunning","_deploymentTime","_counter"];
+
 while {alive _crate} do {
 
 	// wait until the player loads the crate or have the loaded crate in a city

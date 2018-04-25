@@ -57,6 +57,7 @@ while {true} do {
 						if (_marker in aeropuertos) exitWith {[_marker] remoteExec ["createAirbase", call AS_fnc_getNextWorker]};
 						if ((_marker in recursos) OR (_marker in fabricas)) exitWith {[_marker] remoteExec ["createResources", call AS_fnc_getNextWorker]};
 						if ((_marker in puestos) OR (_marker in puertos)) exitWith {[_marker] remoteExec ["createOutpost", call AS_fnc_getNextWorker]};
+						if (_marker in mrkSupplyCrates) exitWith {[_marker] remoteExec ["createSupplyPrefab", call AS_fnc_getNextWorker]};
 						//if ((_marker in artyEmplacements) AND (_marker in forcedSpawn)) exitWith {[_marker] remoteExec ["createArtillery", call AS_fnc_getNextWorker]};
 					};
 				};
@@ -94,6 +95,6 @@ while {true} do {
 			};
 		};
 
-	} forEach markers;
+	} forEach (markers + mrkSupplyCrates);
 
 };

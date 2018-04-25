@@ -18,6 +18,7 @@ publicVariable "flag_playerList";
 ["emplacements"] call fn_loadData; publicVariable "puestosFIA"; publicVariable "FIA_RB_list"; publicVariable "FIA_WP_list";
 ["mrkFIA"] call fn_loadData; mrkFIA = mrkFIA + puestosFIA; publicVariable "mrkFIA"; if (isMultiplayer) then {sleep 5};
 ["mrkAAF"] call fn_loadData;
+["mrkSupplyCrates"] call fn_loadData; publicVariable "mrkSupplyCrates";
 ["destroyedCities"] call fn_loadData; publicVariable "destroyedCities";
 ["mines"] call fn_loadData;
 ["cuentaCA"] call fn_loadData; publicVariable "cuentaCA";

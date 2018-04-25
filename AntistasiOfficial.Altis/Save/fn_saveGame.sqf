@@ -16,6 +16,7 @@ flag_savingServer = true;
 ["antenas", antenasmuertas] call fn_saveData;
 ["mrkAAF", mrkAAF - controles] call fn_saveData;
 ["mrkFIA", mrkFIA - puestosFIA - controles] call fn_saveData;
+["mrkSupplyCrates", mrkSupplyCrates] call fn_saveData;
 ["posHQ", server getVariable ["posHQ", getMarkerPos guer_respawn]] call fn_saveData;
 ["prestigeNATO", server getVariable ["prestigeNATO",0]] call fn_saveData;
 ["prestigeCSAT", server getVariable ["prestigeCSAT",0]] call fn_saveData;
