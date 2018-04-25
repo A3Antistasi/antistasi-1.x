@@ -151,8 +151,8 @@ while {true} do {
 			[_city,_power] spawn AS_fnc_adjustLamps;
 		};
 	} forEach ciudades;
-	
-	if(count mrkSupplyCrates < 6) then 
+
+	if(count mrkSupplyCrates < 6) then
 	{
 		_cityDecreased = false;
 		for "_i" from 0 to 4 do
@@ -160,7 +160,8 @@ while {true} do {
 			_currentCity = selectRandom _cityInRange;
 			_types = [_currentCity, "GOOD"] spawn AS_fnc_getHighSupplies;
 			if(random 100 < 10) then {_types = [_currentCity, "LOW"] spawn AS_fnc_getHighSupplies};
-			if (count _types != 0 AND _cityDecreased) then 
+			systemchat format ["_types = %1",_types]; //Stef count _types doesn't work
+			if (((count _types) != 0) AND _cityDecreased) then
 			{
 				_cityDecreased = true;
 				_type = selectRandom _types;
@@ -170,7 +171,7 @@ while {true} do {
 			};
 		};
 	};
-	
+
 
 	if ((_popFIA > _popEnemy) AND ("airport_3" in mrkFIA)) then {["end1",true,true,true,true] remoteExec ["BIS_fnc_endMission",0]};
 
