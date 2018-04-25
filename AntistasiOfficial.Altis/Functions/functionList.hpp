@@ -123,6 +123,7 @@ class AS {
 		class destroyCity {};
 		class changeCitySupport {};
 		class changeCitySupply {};
+		class getHighSupplies {};
 		class deleteRoadblock {};
 		class createRoadblocks {};
 		class enemyArtillerySupport {};

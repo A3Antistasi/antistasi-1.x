@@ -154,7 +154,7 @@ while {true} do {
 	
 	{
 		_currentCity = _x;
-		_types = _currentCity AS_fnc_getHighSupplies;
+		_types = [_currentCity, "GOOD"] spawn AS_fnc_getHighSupplies;
 		if (count _types != 0) then 
 		{
 			_type = selectRandom _types;
