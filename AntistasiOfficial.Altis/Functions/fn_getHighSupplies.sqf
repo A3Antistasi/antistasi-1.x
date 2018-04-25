@@ -15,7 +15,7 @@ for "_i" from 0 to 2 do
 {
 	_level = _supplyLevels select _i;
 	_indexLevel = _tiers find _level;
-	if(_indexLevel >= _indexThreshold) then {_result = _result pushBackUnique _tiers select _i};
+	if(_indexLevel >= _indexThreshold) then {_result pushBackUnique (_tiers select _i)};
 };
 
 _result
