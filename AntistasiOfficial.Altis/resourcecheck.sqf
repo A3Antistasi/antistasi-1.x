@@ -154,19 +154,19 @@ while {true} do {
 	
 	if(count mrkSupplyCrates < 6) then 
 	{
+		_cityDecreased = false;
 		for "_i" from 0 to 4 do
 		{
 			_currentCity = selectRandom _cityInRange;
 			_types = [_currentCity, "GOOD"] spawn AS_fnc_getHighSupplies;
 			if(random 100 < 10) then {_types = [_currentCity, "LOW"] spawn AS_fnc_getHighSupplies};
-			if (count _types != 0) then 
+			if (count _types != 0 AND _cityDecreased) then 
 			{
+				_cityDecreased = true;
 				_type = selectRandom _types;
 				[_type, -1, _currentCity] spawn AS_fnc_changeCitySupply;
 				_type = selectRandom _types;
 				[_currentCity, true, _type] remoteExec ["createSupplyPrefab", call AS_fnc_getNextWorker];
-				exitWith {};
-				//This should abort the loop, if not look here
 			};
 		};
 	};
