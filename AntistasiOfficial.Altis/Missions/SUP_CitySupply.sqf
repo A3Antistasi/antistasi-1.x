@@ -37,11 +37,17 @@ if(_create) then
 	};
 	
 	if(_spawnPosition == nil) then {diag_log "No suitable position found around HQ for a supply crate";};
+	
+	// Create Marker and add it to the supply list
+	//MARKER CREATION HERE
+	
+	//[_spawnPosition, _crateType] remoteExec ["CrateFunctions.sqf", AS_fnc_getNextWorker];
+	//Create the needed script
 };
 
 
-
-
+/*
+CODE FOR CRATE
 _spawnPosition = position (selectRandom _allSheds);
 _spawnPosition = _spawnPosition findEmptyPosition [5,50, _crateType];
 sleep 1;
@@ -50,7 +56,7 @@ _crate allowDamage false;
 [_crate] spawn {sleep 1; (_this select 0) allowDamage true;};
 _crate call jn_fnc_logistics_addAction;
 //Spawned the crate in
-
+*/
 
 _allGroups = [];
 _allSoldiers = [];
@@ -62,21 +68,28 @@ _allGroups pushBack _group;
 {
 	_group = _x;
 	{
-		[_x] spawn genInit; //Or genInitBASES ?? Where is the difference between them?
+		[_x] spawn genInit;
 		_allSoldiers pushBack _x;
 	} forEach units _group;
-} forEach _allGroups; //Should be only one by now so ok
+} forEach _allGroups;
 
-diag_log "SUP_CitySupply successful created";
+waitUntil {sleep 1; spawner getVariable _marker > 1};
+
+if(nearestObjects [_spawnPosition, ["Land_PaperBox_01_open_boxes_F", "Land_PaperBox_01_open_water_F", "CargoNet_01_barrels_F"], 300, true] count != 0) then 
+{
+	//Delete supply marker
+};
+
+{deleteVehicle _x} forEach _allSoldiers;
+{deleteGroup _x} forEach _allGroups;
 
 
-
-
+/* EVERYTHING BELOW IS CODE FOR THE CRATE NOT THE "MISSION" ITSELF
 /*
 	_timerRunning: timer running
 	_deploymentTime: time it takes to unload the gear (seconds)
 	_counter: running timer
-*/
+
 [false,150,0] params ["_timerRunning","_deploymentTime","_counter"];
 
 
@@ -177,9 +190,9 @@ if ((alive _crate) AND (dateToNumber date < _endTime)) then {
 };
 
 waitUntil {sleep 1; !([distanciaSPWN,1,_crate,"BLUFORSpawn"] call distanceUnits) OR (_crate distance (getMarkerPos guer_respawn) < 60)};
+/*
 if (_crate distance (getMarkerPos guer_respawn) < 60) then
 {
 	[_crate,true] call vaciar;
 };
-{deleteVehicle _x} forEach _allSoldiers;
-{deleteGroup _x} forEach _allGroups;
+*/
