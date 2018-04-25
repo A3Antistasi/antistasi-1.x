@@ -78,7 +78,6 @@ RES_Refugiados = compile preProcessFileLineNumbers "Missions\RES_Refugiados.sqf"
 LOG_Bank = compile preProcessFileLineNumbers "Missions\LOG_Bank.sqf";
 LOG_Suministros = compile preProcessFileLineNumbers "Missions\LOG_Suministros.sqf";
 LOG_Ammo = compile preProcessFileLineNumbers "Missions\LOG_Ammo.sqf";
-SUP_CitySupply = compile preProcessFileLineNumbers "Missions\SUP_CitySupply.sqf";
 DES_Vehicle = compile preProcessFileLineNumbers "Missions\DES_Vehicle.sqf";
 DES_Heli = compile preProcessFileLineNumbers "Missions\DES_Heli.sqf";
 DES_Antena = compile preProcessFileLineNumbers "Missions\DES_Antena.sqf";
