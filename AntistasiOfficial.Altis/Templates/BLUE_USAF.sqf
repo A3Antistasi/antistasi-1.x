@@ -154,7 +154,7 @@
 
 	bluAttachments = [
 		"rhsusf_acc_anpeq15_light", //anpeq with laser + flashlight
-		"rhsusf_acc_nt4_black"		//Higer tier only (suppressor category?)
+		"rhsusf_acc_nt4_black"		//Higher tier only (suppressor category?)
 	];
 
 	bluSuppressor = [
