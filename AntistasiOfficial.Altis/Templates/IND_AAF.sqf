@@ -109,6 +109,7 @@ infTeam = 			["HAF_InfTeam_AA","HAF_InfTeam_AT","HAF_InfTeam","HAF_InfTeam","HAF
 infSquad = 			["HAF_InfSquad","HAF_InfSquad_Weapons"];
 infAA =				["HAF_InfTeam_AA"];
 infAT =				["HAF_InfTeam_AT"];
+infAAdef =			["I_Soldier_AA_F"];
 
 // Statics to be used
 statMG = 			"I_HMG_01_high_F";

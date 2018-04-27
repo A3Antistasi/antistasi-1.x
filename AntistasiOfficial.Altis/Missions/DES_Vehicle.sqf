@@ -32,9 +32,9 @@ _tsk = ["DES",[side_blue,civilian],[[_tskDesc,_nombredest,numberToDate [2035,_fe
 misiones pushBack _tsk; publicVariable "misiones";
 _camionCreado = false;
 
-waitUntil {sleep 1;(dateToNumber date > _fechalimnum) or (spawner getVariable _marcador)};
+waitUntil {sleep 1;(dateToNumber date > _fechalimnum) or (spawner getVariable _marcador != 4)};
 
-if (spawner getVariable _marcador) then
+if (spawner getVariable _marcador != 4) then
 	{
 	_camionCreado = true;
 	_size = [_marcador] call sizeMarker;
@@ -96,7 +96,7 @@ if (_source == "mil") then {
 	server setVariable ["milActive", _val - 1, true];
 };
 
-waitUntil {sleep 1; not (spawner getVariable _marcador)};
+waitUntil {sleep 1; (spawner getVariable _marcador == 4)};
 
 if (_camionCreado) then
 	{
