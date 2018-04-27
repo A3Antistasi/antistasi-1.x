@@ -18,7 +18,7 @@ if (_resourcesAAF > 5000) then{
 	if (count _destroyedCities > 0) then{
 		{
 		_destroyed = _x;
-		if ((_resourcesAAF > 5000) and (spawner getVariable _destroyed == 4)) then
+		if ((_resourcesAAF > 5000) and (not(spawner getVariable _destroyed))) then
 			{
 			_resourcesAAF = _resourcesAAF - 5000;
 			destroyedCities = destroyedCities - [_destroyed];

@@ -25,7 +25,7 @@ _base	  = "";
 {
 	_base	 = _x;
 	_posbase = getMarkerPos _base;
-	if ((_posicion distance _posbase < 7500)and (_posicion distance _posbase > 1500) and (spawner getVariable _base < 2)) then {_bases = _bases + [_base]}
+	if ((_posicion distance _posbase < 7500)and (_posicion distance _posbase > 1500) and (not (spawner getVariable _base))) then {_bases = _bases + [_base]}
 		} forEach _basesAAF;
 	if (count _bases > 0) then {_base = [_bases, _posicion] call BIS_fnc_nearestPosition;
 		} else                                                                               {_base = ""};

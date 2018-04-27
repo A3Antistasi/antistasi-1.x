@@ -103,7 +103,7 @@ _size = [_marcador] call sizeMarker;
 
 //Reverting the owership in case of player manage to capture back.
 	waitUntil {sleep 1;
-		(spawner getVariable _marcador == 4) or
+		(not (spawner getVariable _marcador)) or
 		(({	(not(vehicle _x isKindOf "Air")) and
 		 	(alive _x) and
 		 	(lifeState _x != "INCAPACITATED")}
@@ -115,4 +115,4 @@ _size = [_marcador] call sizeMarker;
 		)
 	};
 
-	if (spawner getVariable _marcador != 4) then{[_bandera] spawn mrkWIN;};
+	if (spawner getVariable _marcador) then{[_bandera] spawn mrkWIN;};

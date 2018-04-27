@@ -79,7 +79,7 @@ if ({(alive _x) and (_x distance _posicionTel < 10)} count units _grupo > 0) the
 
 	puestosNATO = puestosNATO + [_mrk]; publicVariable "puestosNATO";
 	markers = markers + [_mrk]; publicVariable "markers";
-	spawner setVariable [_mrk,4,true];
+	spawner setVariable [_mrk,false,true];
 	_tsk = ["NATORoadblock",[side_blue,civilian],[["%3 successfully deployed a roadblock, They will hold their position until %1:%2.",numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4, A3_Str_BLUE],["%1 Roadblock Deployment", A3_Str_BLUE],_mrk],_posicionTel,"SUCCEEDED",5,true,true,"Move"] call BIS_fnc_setTask;
 
 	_mrk setMarkerType "flag_Spain";

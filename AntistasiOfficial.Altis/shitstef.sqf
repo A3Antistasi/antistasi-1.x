@@ -43,7 +43,7 @@ if ((_marker in mrkAAF) or (
 
 //Despawning conditions for AAF marker
   waitUntil {sleep 1;
-      (spawner getVariable _marker == 4) OR
+      !(spawner getVariable _marker) OR
 			(
       	({!(vehicle _x isKindOf "Air")}
         count ([_size,0,_markerPos,"BLUFORSpawn"] call distanceUnits))
@@ -63,7 +63,7 @@ if ((_marker in mrkAAF) or (
 
 
 waitUntil {sleep 1;
-	(spawner getVariable _marker == 4) OR
+	!(spawner getVariable _marker) OR
 	(
 	 	({not(vehicle _x isKindOf "Air")}
 	 	count ([_size,0,_markerPos,"OPFORSpawn"] call distanceUnits))

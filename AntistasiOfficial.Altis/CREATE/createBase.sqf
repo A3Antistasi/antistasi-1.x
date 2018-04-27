@@ -101,7 +101,7 @@ _allVehicles pushBack _crate;
 	if ( _vehicleCount > 0 ) then {
 		_spawnPos = [_markerPos, random (_size / 2),random 360] call BIS_fnc_relPos;
 		_currentCount = 0;
-		while {(spawner getVariable _marker < 2) AND (_currentCount < _vehicleCount)} do {
+		while {(spawner getVariable _marker) AND (_currentCount < _vehicleCount)} do {
 			_spawnPos = [_markerPos] call mortarPos;
 			_vehicle = statMortar createVehicle _spawnPos;
 			[_vehicle] execVM "scripts\UPSMON\MON_artillery_add.sqf";
@@ -113,7 +113,7 @@ _allVehicles pushBack _crate;
 		};
 	};
 //Create Frontline Bunker
-	if ((spawner getVariable _marker < 2) AND (_isFrontline)) then {
+	if ((spawner getVariable _marker) AND (_isFrontline)) then {
 		_roads = _markerPos nearRoads _size;
 		if (count _roads != 0) then {
 			_data = [_markerPos, _roads, statAT] call AS_fnc_spawnBunker;
@@ -134,7 +134,7 @@ _allGroups pushBack _groupGunners;
 		//_vehicleCount = 1 max (round (_size/30)); Stef increased the size = less vehicle
 		_spawnPos = _markerPos;
 		_currentCount = 0;
-		while {(spawner getVariable _marker < 2) AND (_currentCount < _vehicleCount)} do {
+		while {(spawner getVariable _marker) AND (_currentCount < _vehicleCount)} do {
 			if (diag_fps > minimoFPS) then {
 				_vehicleType = selectRandom _spawnpool;
 				_spawnPos = [_spawnPos findEmptyPosition [10,60,_vehicleType], [_markerPos, 10, _size/2, 10, 0, 0.3, 0] call BIS_Fnc_findSafePos] select (_size > 40);
@@ -152,7 +152,7 @@ _allGroups pushBack _groupGunners;
 
 //Create 4 Patrols
 	_currentCount = 0;
-	while {(spawner getVariable _marker < 2) AND (_currentCount < 5)} do {
+	while {(spawner getVariable _marker) AND (_currentCount < 5)} do {
 		while {true} do {
 			_spawnPos = [_markerPos, 150 + (random 350) ,random 360] call BIS_fnc_relPos;
 			if (!surfaceIsWater _spawnPos) exitWith {};
@@ -180,6 +180,7 @@ _allGroups pushBack _groupGunners;
 //Create soldiers
 	_currentCount = 0;
 	if (_isFrontline) then {_vehicleCount = _vehicleCount * 1}; //removed the *2, frontline base should fancy just better defense instead of more units
+<<<<<<< HEAD
 	while {(spawner getVariable _marker < 2) AND (_currentCount < _vehicleCount)} do {
 		_groupType = [infSquad, side_green] call AS_fnc_pickGroup;
 		_group = [_markerpos, side_green, _groupType] call BIS_Fnc_spawnGroup;
@@ -187,6 +188,22 @@ _allGroups pushBack _groupGunners;
 		[_group, _marker, "SAFE","SPAWNED", "RANDOM", "NOVEH", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 		_allGroups pushBack _group;
 		sleep 0.1;
+=======
+	while {(spawner getVariable _marker) AND (_currentCount < _vehicleCount)} do {
+		if (diag_fps > minimoFPS) then {
+			while {true} do {
+				_spawnPos = [_markerPos, 15 + (random _size),random 360] call BIS_fnc_relPos;
+				if (!surfaceIsWater _spawnPos) exitWith {};
+			};
+			_groupType = [infSquad, side_green] call AS_fnc_pickGroup;
+			_group = [_spawnPos, side_green, _groupType] call BIS_Fnc_spawnGroup;
+			//if (activeAFRF) then {_group = [_group, _markerPos] call AS_fnc_expandGroup}; No need for bigger groups in base creation
+			sleep 1.5;
+			[_group, _marker, "SAFE","SPAWNED", "NOVEH", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
+			_allGroups pushBack _group;
+		};
+		sleep 1.5;
+>>>>>>> parent of 4f54fde... Air control 1st step (#317)
 		_currentCount = _currentCount + 1;
 	};
 
@@ -208,7 +225,7 @@ sleep 3;
 
 //Create journalist
 	_observer = objNull;
-	if ((random 100 < (((server getVariable "prestigeNATO") + (server getVariable "prestigeCSAT"))/10)) AND (spawner getVariable _marker < 2)) then {
+	if ((random 100 < (((server getVariable "prestigeNATO") + (server getVariable "prestigeCSAT"))/10)) AND (spawner getVariable _marker)) then {
 		_spawnPos = [];
 		_group = createGroup civilian;
 		while {true} do {
@@ -224,7 +241,7 @@ sleep 3;
 
 //Despawn conditions
 	waitUntil {sleep 1;
-		(spawner getVariable _marker == 4) OR
+		!(spawner getVariable _marker) OR
 		(
 		 	({!(vehicle _x isKindOf "Air")} count ([_size,0,_markerPos,"BLUFORSpawn"] call distanceUnits)
 		 	) > 3* count (
@@ -233,11 +250,11 @@ sleep 3;
 		)
 	};
 
-	if ((spawner getVariable _marker != 4) AND !(_marker in mrkFIA)) then{
+	if ((spawner getVariable _marker) AND !(_marker in mrkFIA)) then{
 		[_flag] remoteExec ["mrkWIN",2];
 	};
 
-	waitUntil {sleep 1; (spawner getVariable _marker == 4)};
+	waitUntil {sleep 1; !(spawner getVariable _marker)};
 
 	//Save destroyed buildings
 	{

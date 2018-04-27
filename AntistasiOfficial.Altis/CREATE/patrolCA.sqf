@@ -354,7 +354,7 @@ _roads = [];
 		smallCAmrk = smallCAmrk - [_marker];
 		publicVariable "smallCAmrk";
 
-		waitUntil {sleep 1; (spawner getVariable _marker == 4)};
+		waitUntil {sleep 1; not (spawner getVariable _marker)};
 	} else {
 		waitUntil {sleep 1; !([distanciaSPWN,1,_markerPos,"BLUFORSpawn"] call distanceUnits)};
 		smallCApos = smallCApos - [_marker];

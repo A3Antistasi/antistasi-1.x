@@ -39,7 +39,7 @@ if (_tipo == "ASS") then {
 		for "_i" from 0 to ((count _sitios) - 1) do {
 			_sitio = _sitios select _i;
 			_pos = getMarkerPos _sitio;
-			if ((_pos distance _posbase < 4000) and (spawner getVariable _sitio == 4)) then {_posibles = _posibles + [_sitio]};
+			if ((_pos distance _posbase < 4000) and (not(spawner getVariable _sitio))) then {_posibles = _posibles + [_sitio]};
 		};
 	};
 	if (_posibles isEqualTo []) then {

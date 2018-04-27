@@ -207,7 +207,7 @@ waitUntil {sleep 5;
 	} forEach _vehiculos;
 	{deleteGroup _x} forEach _grupos;
 
-	waitUntil {sleep 1; (spawner getVariable _mrkDestino == 4)};
+	waitUntil {sleep 1; not (spawner getVariable _mrkDestino)};
 
 	{deleteVehicle _x} forEach _civiles;
 	deleteGroup _grupoCivil;

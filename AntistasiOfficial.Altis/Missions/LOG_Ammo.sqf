@@ -18,9 +18,9 @@ _tsk = ["LOG",[side_blue,civilian],[[_tskDesc,_nombredest,numberToDate [2035,_fe
 misiones pushBack _tsk; publicVariable "misiones";
 _camionCreado = false;
 
-waitUntil {sleep 1;(dateToNumber date > _fechalimnum) or (spawner getVariable _marcador < 2)};
+waitUntil {sleep 1;(dateToNumber date > _fechalimnum) or (spawner getVariable _marcador)};
 
-if (spawner getVariable _marcador < 2) then
+if (spawner getVariable _marcador) then
 	{
 	sleep 10;
 	_size = [_marcador] call sizeMarker;

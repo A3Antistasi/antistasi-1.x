@@ -362,7 +362,7 @@ fn_setData = {
 						_mrk setMarkerText localize "STR_GL_FIAWP";
 						FIA_WP_list pushBackUnique _mrk;
 					};
-					spawner setVariable [_mrk,4,true];
+					spawner setVariable [_mrk,false,true];
 					puestosFIA pushBack _mrk;
 				} forEach _varValue;
 			};
@@ -376,7 +376,7 @@ fn_setData = {
 						_txt = _x select 1;
 						_mrk setMarkerText _txt;
 						usedCN pushBackUnique _txt;
-						spawner setVariable [_mrk,4,true];
+						spawner setVariable [_mrk,false,true];
 						campList pushBack [_mrk, _txt];
 						campsFIA pushBack _mrk;
 					} forEach _varValue;

@@ -100,7 +100,7 @@ _buildings = nearestObjects [_markerPos, listMilBld, _size*1.5];
 	};
 
 //Create bunker if it is frontline
-	if ((spawner getVariable _marker < 2) AND (_isFrontline)) then {
+	if ((spawner getVariable _marker) AND (_isFrontline)) then {
 		_roads = _markerPos nearRoads _size;
 		if (count _roads != 0) then {
 			_data = [_markerPos, _roads, statAT] call AS_fnc_spawnBunker;
@@ -114,7 +114,7 @@ _buildings = nearestObjects [_markerPos, listMilBld, _size*1.5];
 
 //Create Mortars
 	_currentCount = 0;
-	while {(spawner getVariable _marker < 2) AND (_currentCount < 4)} do {
+	while {(spawner getVariable _marker) AND (_currentCount < 4)} do {
 		while {true} do {
 			_spawnPos = [_markerPos, 150 + (random 350) ,random 360] call BIS_fnc_relPos;
 			if (!surfaceIsWater _spawnPos) exitWith {};
@@ -171,7 +171,7 @@ _allVehicles pushBack _crate;
 	_arrayVeh = vehPatrol + vehSupply + enemyMotorpool - [heli_default];
 	_vehicleCount = round (_size/45);
 	_currentCount = 0;
-	while {(spawner getVariable _marker < 2) AND (_currentCount < _vehicleCount)} do {
+	while {(spawner getVariable _marker) AND (_currentCount < _vehicleCount)} do {
 		if (diag_fps > minimoFPS) then {
 			_vehicleType = _arrayVeh call BIS_fnc_selectRandom;
 			_position = [_markerPos, 10, _size/2, 10, 0, 0.3, 0] call BIS_Fnc_findSafePos;
@@ -194,7 +194,7 @@ _allVehicles pushBack _crate;
 	_currentCount = 0;
 	//if (_isFrontline) then {_vehicleCount = _vehicleCount * 2}; frontline in airport is draining too many possible slots, better add vehicles
 	//_vehicleCount = round(0.3*_vehicleCount); //Lower the amount of infantry squads
-	while {(spawner getVariable _marker < 2) AND (_currentCount < _vehicleCount)} do {
+	while {(spawner getVariable _marker) AND (_currentCount < _vehicleCount)} do {
 		if (diag_fps > minimoFPS) then {
 			while {true} do {
 				_spawnPos = [_markerPos, 15 + (random _size),random 360] call BIS_fnc_relPos;
@@ -238,7 +238,7 @@ _allVehicles pushBack _crate;
 
 //Adding Press Reporter
 	_observer = objNull;
-	if ((random 100 < (((server getVariable "prestigeNATO") + (server getVariable "prestigeCSAT"))/10)) AND (spawner getVariable _marker < 2)) then {
+	if ((random 100 < (((server getVariable "prestigeNATO") + (server getVariable "prestigeCSAT"))/10)) AND (spawner getVariable _marker)) then {
 		_spawnPos = [];
 		_group = createGroup civilian;
 		while {true} do {
@@ -255,7 +255,7 @@ diag_log format ["ANTISTASI_COUNTER: %1 spawned %2 and %3 vehicles",_marker,coun
 
 //Despawning conditions
 	waitUntil {sleep 1;
-		(spawner getVariable _marker == 4) OR
+		!(spawner getVariable _marker) OR
 
 		(({!(vehicle _x isKindOf "Air")}
 		 	count ([_size,0,_markerPos,"BLUFORSpawn"] call distanceUnits))
@@ -269,12 +269,12 @@ diag_log format ["ANTISTASI_COUNTER: %1 spawned %2 and %3 vehicles",_marker,coun
 		)
 	};
 
-if ((spawner getVariable _marker != 4) AND !(_marker in mrkFIA)) then {
+if ((spawner getVariable _marker) AND !(_marker in mrkFIA)) then {
 	[_flag] remoteExec ["mrkWIN",2];
 };
 
 //Despawning
-	waitUntil {sleep 1; (spawner getVariable _marker == 4)};
+	waitUntil {sleep 1; !(spawner getVariable _marker)};
 
 	deleteMarker _patrolMarker;
 	[_allGroups, _allSoldiers, _allVehicles] spawn AS_fnc_despawnUnits;

@@ -193,7 +193,7 @@ _marcador = [markers,_posicionTel] call BIS_fnc_nearestPosition;
 _size = [_marcador] call sizeMarker;
 _forzado = false;
 
-if ((not(_marcador in forcedSpawn)) and (_posicionTel distance (getMarkerPos _marcador) < _size) and (spawner getVariable _marcador == 4)) then
+if ((not(_marcador in forcedSpawn)) and (_posicionTel distance (getMarkerPos _marcador) < _size) and (not(spawner getVariable _marcador))) then
 	{
 	_forzado = true;
 	forcedSpawn pushBack _marcador;

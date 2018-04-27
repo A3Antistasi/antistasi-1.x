@@ -26,14 +26,14 @@ while {true} do {
 	} else {
 		while {true} do {
 			_base = [_arrayBases,getMarkerPos guer_respawn] call BIS_fnc_nearestPosition;
-			if (spawner getVariable _base == 4) exitWith {};
-			if (spawner getVariable _base < 2) then {_arrayBases = _arrayBases - [_base]};
+			if !(spawner getVariable _base) exitWith {};
+			if (spawner getVariable _base) then {_arrayBases = _arrayBases - [_base]};
 			if (_arrayBases isEqualTo []) exitWith {};
 		};
 		if (_arrayBases isEqualTo []) then {_vehicleArray = _vehicleArray - [_vehicleType]};
 	};
 	if (_vehicleArray isEqualTo []) exitWith {};
-	if (spawner getVariable _base == 4) exitWith {};
+	if !(spawner getVariable _base) exitWith {};
 };
 
 if (_vehicleArray isEqualTo []) exitWith {};

@@ -3,7 +3,7 @@ if (!isServer and hasInterface) exitWith {false};
 params ["_marker","_base"];
 private ["_basePos","_markerPos","_targetDir","_direction","_counter","_distance","_position","_nearestZone","_size","_road","_mine"];
 
-if (spawner getVariable _base < 2) exitWith {false};
+if (spawner getVariable _base) exitWith {false};
 
 _basePos = getMarkerPos _base;
 _markerPos = getMarkerPos _marker;
@@ -18,7 +18,7 @@ while {_counter < 37} do {
 	_position = [_basePos, _distance, _direction] call BIS_Fnc_relPos;
 	if (!surfaceIsWater _position) then {
 		_nearestZone = [markers,_position] call BIS_fnc_nearestPosition;
-		if (spawner getVariable _nearestZone == 4) then {
+		if !(spawner getVariable _nearestZone) then {
 			_size = [_nearestZone] call sizeMarker;
 			if ((_position distance (getMarkerPos _nearestZone)) > (_size + 100)) then {
 				_road = [_position,101] call BIS_fnc_nearestRoad;

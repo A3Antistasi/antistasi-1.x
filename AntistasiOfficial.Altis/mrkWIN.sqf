@@ -134,7 +134,7 @@ publicVariable "reducedGarrisons";
 [_marcador] remoteExec ["autoGarrison", call AS_fnc_getNextWorker];
 
 waitUntil {sleep 1;
-	(spawner getVariable _marcador == 4) or
+	(not (spawner getVariable _marcador)) or
 	(
 	({(not(vehicle _x isKindOf "Air")) and (alive _x) and (lifeState _x != "INCAPACITATED") and (!fleeing _x)}
 	count ([_size,0,_posicion,"OPFORSpawn"] call distanceUnits)) > 3* ({(alive _x) and (lifeState _x != "INCAPACITATED")}
@@ -142,6 +142,6 @@ waitUntil {sleep 1;
 	)
 }; //need to add check for unconscious
 
-if (spawner getVariable _marcador != 4) then {
+if (spawner getVariable _marcador) then {
 	[_marcador] spawn mrkLOOSE;
 };

@@ -34,7 +34,7 @@ if ((typename _shorecheck) == "ARRAY") then {[[_fire,"seaport"],"AS_fnc_addActio
 sleep 10;
 _fire inflame true;
 
-waitUntil {sleep 5; (spawner getVariable _marker == 4) OR ({alive _x} count units _group == 0) OR !(_marker in campsFIA)};
+waitUntil {sleep 5; !(spawner getVariable _marker) OR ({alive _x} count units _group == 0) OR !(_marker in campsFIA)};
 
 if ({alive _x} count units _group == 0) then {
 	[_marker,{["TaskFailed", ["", format [localize "STR_TSK_TD_CAMP_DESTROYED", markerText _this]]] call BIS_fnc_showNotification}] remoteExec ["call", 0];
@@ -45,7 +45,7 @@ if ({alive _x} count units _group == 0) then {
 	deleteMarker _marker;
 };
 
-waitUntil {sleep 5; (spawner getVariable _marker == 4) OR !(_marker in campsFIA)};
+waitUntil {sleep 5; !(spawner getVariable _marker) OR !(_marker in campsFIA)};
 
 {deleteVehicle _x} forEach units _group;
 deleteGroup _group;

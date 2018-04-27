@@ -10,7 +10,7 @@ _base = "";
 	_base = _x;
 	_posBase = getMarkerPos _base;
 	_busy = [true, false] select (dateToNumber date > server getVariable _base);
-	if ((_position distance _posBase < 7500) and (_position distance _posBase > 1500) and (spawner getVariable _base > 1) and !(_busy)) then {
+	if ((_position distance _posBase < 7500) and (_position distance _posBase > 1500) and !(spawner getVariable _base) and !(_busy)) then {
 		if (worldName == "Tanoa") then {
 			if ([_posBase, _position] call AS_fnc_IslandCheck) then {_bases pushBack _base};
 		} else {

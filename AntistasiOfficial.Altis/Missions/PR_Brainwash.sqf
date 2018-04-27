@@ -31,7 +31,7 @@ _base = "";
 {
 	_base = _x;
 	_posBase = getMarkerPos _base;
-	if ((_targetPosition distance _posBase < 7500) and (_targetPosition distance _posBase > 1500) and (spawner getVariable _base < 2)) then {
+	if ((_targetPosition distance _posBase < 7500) and (_targetPosition distance _posBase > 1500) and !(spawner getVariable _base)) then {
 		if (worldName == "Tanoa") then {
 			if ([_posBase, _targetPosition] call AS_fnc_IslandCheck) then {_bases pushBack _base};
 		} else {
@@ -50,7 +50,7 @@ _posAirport = [];
 {
 	_airport = _x;
 	_posAirport = getMarkerPos _airport;
-	if ((_targetPosition distance _posAirport < 7500) and (_targetPosition distance _posAirport > 1500) and (spawner getVariable _airport < 2)) then {_airports = _airports + [_airport]}
+	if ((_targetPosition distance _posAirport < 7500) and (_targetPosition distance _posAirport > 1500) and (not (spawner getVariable _airport))) then {_airports = _airports + [_airport]}
 } forEach _airportsAAF;
 if (count _airports > 0) then {_airport = [_airports, _targetPosition] call BIS_fnc_nearestPosition; _posAirport = getMarkerPos _airport;} else {_airport = ""};
 

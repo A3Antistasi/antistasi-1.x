@@ -27,7 +27,7 @@ _airportsAAF = aeropuertos - mrkFIA;
 {
 	_airport = _x;
 	_posAirport = getMarkerPos _airport;
-	if ((_targetPosition distance _posAirport < 10000) and (_targetPosition distance _posAirport > 1500) and (spawner getVariable _airport == 4)) then {_airports = _airports + [_airport]}
+	if ((_targetPosition distance _posAirport < 10000) and (_targetPosition distance _posAirport > 1500) and (not (spawner getVariable _airport))) then {_airports = _airports + [_airport]}
 } forEach _airportsAAF;
 if (count _airports > 0) then {
 	_airport = [_airports, _targetPosition] call BIS_fnc_nearestPosition;

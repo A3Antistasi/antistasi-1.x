@@ -32,7 +32,7 @@ if (_tipo == "rem") then
 	if (count _garrison == 0) exitWith {hint "The place has no garrisoned troops to remove"; CreateDialog "garrison_menu";};
 	_coste = 0;
 	_hr = 0;
-	if (spawner getVariable _cercano < 2) then
+	if (spawner getVariable _cercano) then
 		{
 		if ({(alive _x) and (!captive _x) and ((side _x == side_green) or (side _x == side_red)) and (_x distance _posicion < safeDistance_garrison)} count allUnits > 0) then
 			{
@@ -73,7 +73,7 @@ if (_tipo == "rem") then
 	}
 else
 	{
-	if (spawner getVariable _cercano < 2) then
+	if (spawner getVariable _cercano) then
 		{
 		if ({(alive _x) and (!captive _x) and ((side _x == side_green) or (side _x == side_red)) and (_x distance _posicion < safeDistance_garrison)} count allUnits > 0) exitWith {hint "You cannot add soldiers to this garrison while there are enemies nearby"; CreateDialog "garrison_menu"};
 		};
