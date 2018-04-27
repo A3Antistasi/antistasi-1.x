@@ -29,7 +29,7 @@ _heli setVariable ["BLUFORSpawn",false];
 _heliCrew = _helifn select 1;
 _grupoHeli = _helifn select 2;
 {[_x] spawn NATOinitCA} forEach _heliCrew;
-[_heli] spawn NATOVEHinit;
+//[_heli] spawn NATOVEHinit; //This was causing the _heli to automatically despawn as it appeared, so I commented it out. Not very important for this helicopter anyway. Sparker.
 _vehiculos = _vehiculos + [_heli];
 _heli setPosATL [getPosATL _heli select 0, getPosATL _heli select 1, 1000];
 _heli disableAI "TARGET";

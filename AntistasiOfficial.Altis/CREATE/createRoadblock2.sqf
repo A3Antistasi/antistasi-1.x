@@ -87,8 +87,7 @@ _allVehicles = _objects;
 {[_x] spawn genVEHinit} forEach _allVehicles;
 
 
-
-waitUntil {sleep 1; (spawner getVariable _marker > 1) or (count (allUnits select {((side _x == side_green) or (side _x == side_red)) and (_x distance _markerPos <= _size) AND !(captive _x)}) < 1)};
+waitUntil {sleep 1; (spawner getVariable _marker != 4) or (count (allUnits select {((side _x == side_green) or (side _x == side_red)) and (_x distance _markerPos <= _size) AND !(captive _x)}) < 1)};
 
 private _removeMarker = false;
 
@@ -99,7 +98,7 @@ if (count (allUnits select {((side _x == side_green) or (side _x == side_red)) a
 	[_markerPos] remoteExec ["patrolCA", call AS_fnc_getNextWorker];
 };
 
-waitUntil {sleep 1; (spawner getVariable _marker > 1)};
+waitUntil {sleep 1; (spawner getVariable _marker == 4)};
 [_allGroups, _allSoldiers, _allVehicles] spawn AS_fnc_despawnUnits;
 
 if(_removeMarker) then //Remove the roadblock completely
