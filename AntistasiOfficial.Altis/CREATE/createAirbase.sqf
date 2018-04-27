@@ -255,8 +255,8 @@ diag_log format ["ANTISTASI_COUNTER: %1 spawned %2 and %3 vehicles",_marker,coun
 
 //Despawning conditions
 	waitUntil {sleep 1;
-		(spawner getVariable _marker == 4) OR
 
+		(spawner getVariable _marker > 1) OR
 		(({!(vehicle _x isKindOf "Air")}
 		 	count ([_size,0,_markerPos,"BLUFORSpawn"] call distanceUnits))
 			> 3*
@@ -269,12 +269,13 @@ diag_log format ["ANTISTASI_COUNTER: %1 spawned %2 and %3 vehicles",_marker,coun
 		)
 	};
 
-if ((spawner getVariable _marker != 4) AND !(_marker in mrkFIA)) then {
+
+if ((spawner getVariable _marker < 2) AND !(_marker in mrkFIA)) then {
 	[_flag] remoteExec ["mrkWIN",2];
 };
 
 //Despawning
-	waitUntil {sleep 1; (spawner getVariable _marker == 4)};
+	waitUntil {sleep 1; (spawner getVariable _marker > 1)};
 
 	deleteMarker _patrolMarker;
 	[_allGroups, _allSoldiers, _allVehicles] spawn AS_fnc_despawnUnits;

@@ -113,7 +113,7 @@ if !(_marker in destroyedCities) then {
 
 //Despawn conditions
 	waitUntil {sleep 1;
-		(spawner getVariable _marker == 4) OR
+		(spawner getVariable _marker > 1) OR
 
 		(({!(vehicle _x isKindOf "Air") OR (lifeState _x == "INCAPACITATED")}
 		 	count ([_size,0,_markerPos,"BLUFORSpawn"] call distanceUnits))
@@ -127,11 +127,11 @@ if !(_marker in destroyedCities) then {
 		)
 	};
 
-	if ((spawner getVariable _marker != 4) AND !(_marker in mrkFIA)) then {
+	if ((spawner getVariable _marker < 2) AND !(_marker in mrkFIA)) then {
 		[_flag] remoteExec ["mrkWIN",2];
 	};
 
-	waitUntil {sleep 1; (spawner getVariable _marker == 4)};
+	waitUntil {sleep 1; (spawner getVariable _marker > 1)};
 
 	deleteMarker _patrolMarker;
 	[_allGroups, _allSoldiers + _workers, _allVehicles] spawn AS_fnc_despawnUnits;

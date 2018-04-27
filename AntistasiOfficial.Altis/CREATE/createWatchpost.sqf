@@ -71,7 +71,7 @@ _group allowFleeing 0;
 //Wait until there is no enemy units nearby
 waitUntil {
 	sleep 1;
-	(spawner getVariable _marker == 4) or
+	(spawner getVariable _marker > 1) or
 	(count (allUnits select {
 		((side _x == side_green) or (side _x == side_red)) and (_x distance _markerPos <= (_size max 200)) AND
 		!(captive _x)
@@ -96,6 +96,6 @@ then {
 	if (activeBE) then {["cl_loc"] remoteExec ["fnc_BE_XP", 2]};
 };
 
-waitUntil {sleep 1; (spawner getVariable _marker) == 4};
+waitUntil {sleep 1; (spawner getVariable _marker) > 1};
 deleteMarker _patrolMarker;
 [_allGroups, _allSoldiers, _allVehicles] spawn AS_fnc_despawnUnits;

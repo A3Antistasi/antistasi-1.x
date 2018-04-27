@@ -169,8 +169,17 @@ if !(count _position == 0) then {
 	_currentStrength = 0;
 	if (_isFrontline) then {_strength = _strength * 1}; //Stef 27/10 disabled the frontline unit increase untill AI caps is better handled
 
-	if (_marker in puestosAA) then {
-		_groupType = [infAA, side_green] call AS_fnc_pickGroup;
+if (_marker in puestosAA) then {
+	_groupType = [infAA, side_green] call AS_fnc_pickGroup;
+	_group = [_markerPos, side_green, _groupType] call BIS_Fnc_spawnGroup;
+	[_group, _marker, "SAFE","SPAWNED","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
+	_allGroups pushBack _group;
+	sleep 1;
+};
+
+while {(spawner getVariable _marker < 2) AND (_currentStrength < _strength)} do {
+	if ((_currentStrength == 0)) then {   //Stef removed FPS check, useless for MP, maybe add some extra checks if singleplayer
+		_groupType = [infSquad, side_green] call AS_fnc_pickGroup;
 		_group = [_markerPos, side_green, _groupType] call BIS_Fnc_spawnGroup;
 		[_group, _marker, "SAFE","SPAWNED","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 		_allGroups pushBack _group;
@@ -237,7 +246,7 @@ if ((random 100 < (((server getVariable "prestigeNATO") + (server getVariable "p
 
 //Despawn Conditions
 	waitUntil {sleep 1;
-		(spawner getVariable _marker == 4) OR
+		(spawner getVariable _marker > 1) OR
 		(({!(vehicle _x isKindOf "Air")}
 		 	count ([_size,0,_markerPos,"BLUFORSpawn"] call distanceUnits))
 			> 3*
@@ -249,11 +258,11 @@ if ((random 100 < (((server getVariable "prestigeNATO") + (server getVariable "p
 		)
 	};
 
-if ((spawner getVariable _marker != 4) AND !(_marker in mrkFIA)) then {
+if ((spawner getVariable _marker < 2) AND !(_marker in mrkFIA)) then {
 	[_flag] remoteExec ["mrkWIN",2];
 };
 
-waitUntil {sleep 1; (spawner getVariable _marker == 4)};
+waitUntil {sleep 1; (spawner getVariable _marker > 1)};
 
 {
 	if ((!alive _x) AND !(_x in destroyedBuildings)) then {
