@@ -18,11 +18,6 @@ if(_isHilltop AND spawner getVariable _marker != 0) then {_spawnSPAA = true;};
 
 _groupType = [infAAdef, side_green] call AS_fnc_pickGroup;
 _groupAA = [_posMarker, side_green, _groupType] call BIS_Fnc_spawnGroup;
-{ //Stef, Dick Cheany said that they take time before using the rocket, they aim with rifle first, so maybe we remove weapons and leave them the launcher only.
-	removeAllWeapons _x
-	_x addMagazineGlobal AArocket; //STILL WiP.. not evens ure if this is the good way
-	_x addweaponglobal AA;
-	} foreach (units _groupAA);
 sleep 0.1;
 [_groupAA, _marker, "COMBAT","SPAWNED","NOFOLLOW","NOVEH2"] execVM "scripts\UPSMON.sqf";
 {[_x] spawn genInitBASES; _allSoldiers pushBack _x} forEach units _groupAA;
