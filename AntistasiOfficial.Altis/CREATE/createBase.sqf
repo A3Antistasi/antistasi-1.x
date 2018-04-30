@@ -3,16 +3,17 @@ if (!isServer and hasInterface) exitWith {};
 params ["_marker"];
 private ["_markerPos","_size","_isFrontline","_reduced","_allVehicles","_allGroups","_allSoldiers","_patrolMarker","_currentStrength","_spawnPos","_groupType","_group","_dog","_flag","_currentCount","_patrolParams","_crate","_unit","_busy","_buildings","_building","_buildingType","_vehicle","_vehicleCount","_groupGunners","_roads","_data","_vehicleType","_spawnpool","_observer"];
 
-_allVehicles = [];
-_allGroups = [];
-_allSoldiers = [];
+//Initialize place
+	_allVehicles = [];
+	_allGroups = [];
+	_allSoldiers = [];
 
-_markerPos = getMarkerPos (_marker);
-_size = [_marker] call sizeMarker;
-_isFrontline = [_marker] call AS_fnc_isFrontline;
-_reduced = [false, true] select (_marker in reducedGarrisons);
-_patrolMarker = [_marker] call AS_fnc_createPatrolMarker;
-_busy = if (dateToNumber date > server getVariable _marker) then {false} else {true};
+	_markerPos = getMarkerPos (_marker);
+	_size = [_marker] call sizeMarker;
+	_isFrontline = [_marker] call AS_fnc_isFrontline;
+	_reduced = [false, true] select (_marker in reducedGarrisons);
+	_patrolMarker = [_marker] call AS_fnc_createPatrolMarker;
+	_busy = if (dateToNumber date > server getVariable _marker) then {false} else {true};
 
 
 _groupGunners = createGroup side_green;
@@ -88,6 +89,7 @@ _buildings = nearestObjects [_markerPos, listMilBld, _size*1.5];
 			};
 	};
 
+//Create flag
 _flag = createVehicle [cFlag, _markerPos, [],0, "CAN_COLLIDE"];
 _flag allowDamage false;
 [_flag,"take"] remoteExec ["AS_fnc_addActionMP"];

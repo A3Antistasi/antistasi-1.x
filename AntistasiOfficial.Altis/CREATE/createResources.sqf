@@ -3,113 +3,126 @@ if (!isServer and hasInterface) exitWith {};
 params ["_marker"];
 private ["_markerPos","_size","_isFrontline","_reduced","_allVehicles","_allGroups","_allSoldiers","_workers","_patrolMarker","_currentStrength","_spawnPos","_groupType","_group","_dog","_flag","_truck","_maxStrength","_patrolParams","_observer","_unit"];
 
-_allVehicles = [];
-_allGroups = [];
-_allSoldiers = [];
+//Initialise place
+	_allVehicles = [];
+	_allGroups = [];
+	_allSoldiers = [];
 
-_markerPos = getMarkerPos (_marker);
-_size = [_marker] call sizeMarker;
-_isFrontline = [_marker] call AS_fnc_isFrontline;
-_reduced = [false, true] select (_marker in reducedGarrisons);
-_patrolMarker = [_marker] call AS_fnc_createPatrolMarker;
+	_markerPos = getMarkerPos (_marker);
+	_size = [_marker] call sizeMarker;
+	_isFrontline = [_marker] call AS_fnc_isFrontline;
+	_reduced = [false, true] select (_marker in reducedGarrisons);
+	_patrolMarker = [_marker] call AS_fnc_createPatrolMarker;
 
-_workers = [];
+	_workers = [];
 
-_currentStrength = 0;
-while {(spawner getVariable _marker < 2) AND (_currentStrength < 2)} do {
-	while {true} do {
-		_spawnPos = [_markerPos, 150 + (random 350) ,random 360] call BIS_fnc_relPos;
-		if !(surfaceIsWater _spawnPos) exitWith {};
+//Create Patrols
+	_currentStrength = 0;
+	while {(spawner getVariable _marker < 2) AND (_currentStrength < 2)} do {
+		while {true} do {
+			_spawnPos = [_markerPos, 150 + (random 350) ,random 360] call BIS_fnc_relPos;
+			if !(surfaceIsWater _spawnPos) exitWith {};
+		};
+		_groupType = [infPatrol, side_green] call AS_fnc_pickGroup;
+		_group = [_spawnPos, side_green, _groupType] call BIS_Fnc_spawnGroup;
+		if (_reduced) then {[_group] call AS_fnc_adjustGroupSize};
+		sleep 1;
+		if (random 10 < 2.5) then {
+			_dog = _group createUnit ["Fin_random_F",_spawnPos,[],0,"FORM"];
+			[_dog] spawn guardDog;
+		};
+		[_group, _patrolMarker, "SAFE","SPAWNED", "NOVEH2"] execVM "scripts\UPSMON.sqf";
+		_allGroups pushBack _group;
+		_currentStrength = _currentStrength +1;
 	};
-	_groupType = [infPatrol, side_green] call AS_fnc_pickGroup;
-	_group = [_spawnPos, side_green, _groupType] call BIS_Fnc_spawnGroup;
-	if (_reduced) then {[_group] call AS_fnc_adjustGroupSize};
+
+//Create Flag
+	_flag = createVehicle [cFlag, _markerPos, [],0, "CAN_COLLIDE"];
+	_flag allowDamage false;
+	[_flag,"take"] remoteExec ["AS_fnc_addActionMP"];
+	_allVehicles pushBack _flag;
+
+	_spawnPos = _markerPos findEmptyPosition [10,_size*1.5,enemyMotorpoolDef];
+	_truck = createVehicle [selectRandom vehTrucks, _spawnPos, [], 0, "NONE"];
+	_truck setDir random 360;
+	_allVehicles pushBack _truck;
 	sleep 1;
-	if (random 10 < 2.5) then {
-		_dog = _group createUnit ["Fin_random_F",_spawnPos,[],0,"FORM"];
-		[_dog] spawn guardDog;
-	};
-	[_group, _patrolMarker, "SAFE","SPAWNED", "NOVEH2"] execVM "scripts\UPSMON.sqf";
-	_allGroups pushBack _group;
-	_currentStrength = _currentStrength +1;
-};
 
-_flag = createVehicle [cFlag, _markerPos, [],0, "CAN_COLLIDE"];
-_flag allowDamage false;
-[_flag,"take"] remoteExec ["AS_fnc_addActionMP"];
-_allVehicles pushBack _flag;
+//Create infantry
+	_maxStrength = 1 + (1 max (round (_size/50)));
+	_spawnPos = [];
+	_groupType = "";
+	_currentStrength = 0;
+	if (_isFrontline) then {_maxStrength = _maxStrength + 1};
 
-_spawnPos = _markerPos findEmptyPosition [10,_size*1.5,enemyMotorpoolDef];
-_truck = createVehicle [selectRandom vehTrucks, _spawnPos, [], 0, "NONE"];
-_truck setDir random 360;
-_allVehicles pushBack _truck;
-sleep 1;
+	while {(spawner getVariable _marker < 2) AND (_currentStrength < _maxStrength)} do {
+		if (_currentStrength == 0) then {
+			_groupType = [infPatrol, side_green] call AS_fnc_pickGroup;
+			_group = [_markerPos, side_green, _groupType] call BIS_Fnc_spawnGroup;
+		} else {
+			_groupType = [infSquad, side_green] call AS_fnc_pickGroup;
+			_group = [_markerPos, side_green, _groupType] call BIS_Fnc_spawnGroup;
+		};
 
-_maxStrength = 1 max (round (_size/50));
-_spawnPos = [];
-_groupType = "";
-_currentStrength = 0;
-if (_isFrontline) then {_maxStrength = _maxStrength * 2};
-while {(spawner getVariable _marker < 2) AND (_currentStrength < _maxStrength)} do {
-	if ((diag_fps > minimoFPS) OR (_currentStrength == 0)) then {
-		_groupType = [infSquad, side_green] call AS_fnc_pickGroup;
-		_group = [_markerPos, side_green, _groupType] call BIS_Fnc_spawnGroup;
 		if (_reduced) then {[_group] call AS_fnc_adjustGroupSize};
 		_patrolParams = [_group, _marker, "SAFE","SPAWNED","NOVEH2","NOFOLLOW"];
+
 		if (_currentStrength == 0) then {_patrolParams pushBack "FORTIFY"};
 		_patrolParams execVM "scripts\UPSMON.sqf";
 		_allGroups pushBack _group;
+		_currentStrength = _currentStrength + 1;
 	};
-	_currentStrength = _currentStrength + 1;
-};
 
-_observer = objNull;
-if ((random 100 < (((server getVariable "prestigeNATO") + (server getVariable "prestigeCSAT"))/10)) AND (spawner getVariable _marker < 2)) then {
-	_spawnPos = [];
-	_group = createGroup civilian;
-	while {true} do {
-		_spawnPos = [_markerPos, round (random _size), random 360] call BIS_Fnc_relPos;
-		if !(surfaceIsWater _spawnPos) exitWith {};
+//Create journalist
+	_observer = objNull;
+	if ((random 100 < (((server getVariable "prestigeNATO") + (server getVariable "prestigeCSAT"))/10)) AND (spawner getVariable _marker < 2)) then {
+		_spawnPos = [];
+		_group = createGroup civilian;
+		while {true} do {
+			_spawnPos = [_markerPos, round (random _size), random 360] call BIS_Fnc_relPos;
+			if !(surfaceIsWater _spawnPos) exitWith {};
+		};
+		_observer = _group createUnit [selectRandom CIV_journalists, _spawnPos, [],0, "NONE"];
+		[_observer] spawn CIVinit;
+		_allGroups pushBack _group;
+		[_group, _marker, "SAFE", "SPAWNED","NOFOLLOW", "NOVEH2","NOSHARE","DoRelax"] execVM "scripts\UPSMON.sqf";
 	};
-	_observer = _group createUnit [selectRandom CIV_journalists, _spawnPos, [],0, "NONE"];
-	[_observer] spawn CIVinit;
-	_allGroups pushBack _group;
-	[_group, _marker, "SAFE", "SPAWNED","NOFOLLOW", "NOVEH2","NOSHARE","DoRelax"] execVM "scripts\UPSMON.sqf";
-};
 
 sleep 3;
 
-{
-	_group = _x;
-	if (_reduced) then {[_group] call AS_fnc_adjustGroupSize};
+//Initialise units
 	{
-		if (alive _x) then {
-			[_x] spawn genInitBASES;
-			_allSoldiers pushBackUnique _x;
+		_group = _x;
+		if (_reduced) then {[_group] call AS_fnc_adjustGroupSize};
+		{
+			if (alive _x) then {
+				[_x] spawn genInitBASES;
+				_allSoldiers pushBackUnique _x;
+			};
+		} forEach units _group;
+	} forEach _allGroups;
+
+	{
+		[_x] spawn genVEHinit
+	} forEach _allVehicles;
+
+	[_marker, _allSoldiers] spawn AS_fnc_garrisonMonitor;
+
+//Create workers
+	if !(_marker in destroyedCities) then {
+		if ((daytime > 8) AND (daytime < 18)) then {
+			_group = createGroup civilian;
+			_allGroups pushBack _group;
+			for "_i" from 1 to 8 do {
+				_unit = _group createUnit [selectRandom CIV_workers, _markerPos, [],0, "NONE"];
+				[_unit] spawn CIVinit;
+				_workers pushBack _unit;
+				sleep 0.5;
+			};
+			[_marker,_workers] spawn destroyCheck;
+			[_group, _marker, "SAFE", "SPAWNED","NOFOLLOW", "NOSHARE","DORELAX"] execVM "scripts\UPSMON.sqf";
 		};
-	} forEach units _group;
-} forEach _allGroups;
-
-{
-	[_x] spawn genVEHinit
-} forEach _allVehicles;
-
-[_marker, _allSoldiers] spawn AS_fnc_garrisonMonitor;
-
-if !(_marker in destroyedCities) then {
-	if ((daytime > 8) AND (daytime < 18)) then {
-		_group = createGroup civilian;
-		_allGroups pushBack _group;
-		for "_i" from 1 to 8 do {
-			_unit = _group createUnit [selectRandom CIV_workers, _markerPos, [],0, "NONE"];
-			[_unit] spawn CIVinit;
-			_workers pushBack _unit;
-			sleep 0.5;
-		};
-		[_marker,_workers] spawn destroyCheck;
-		[_group, _marker, "SAFE", "SPAWNED","NOFOLLOW", "NOSHARE","DORELAX"] execVM "scripts\UPSMON.sqf";
 	};
-};
 
 //Despawn conditions
 	waitUntil {sleep 1;

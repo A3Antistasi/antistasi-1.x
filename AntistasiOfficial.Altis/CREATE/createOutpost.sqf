@@ -1,6 +1,6 @@
 if (!isServer and hasInterface) exitWith {};
 params ["_marker"];
-private ["_allVehicles","_allGroups","_allSoldiers","_markerPos","_position","_size","_reduced","_buildings","_groupGunners","_building","_type","_vehicle","_unit","_flag","_crate","_isFrontline","_vehicleData","_vehCrew","_base","_roads","_data","_strength","_currentStrength","_groupType","_group","_patrolParams","_observer","_radioTower"];
+private ["_allVehicles","_allGroups","_allSoldiers","_markerPos","_position","_size","_reduced","_buildings","_groupGunners","_building","_type","_vehicle","_unit","_flag","_crate","_isFrontline","_vehicleData","_vehCrew","_base","_roads","_data","_strength","_currentStrength","_groupType","_group","_patrolParams","_observer","_radioTower","_spawnPos"];
 
 _allVehicles = [];
 _allGroups = [];
@@ -10,6 +10,7 @@ _markerPos = getMarkerPos (_marker);
 _size = [_marker] call sizeMarker;
 _isFrontline = [_marker] call AS_fnc_isFrontline;
 _reduced = [false, true] select (_marker in reducedGarrisons);
+_patrolMarker = [_marker] call AS_fnc_createPatrolMarker;
 
 _buildings = nearestObjects [_markerPos, listMilBld, _size*1.5];
 
@@ -162,6 +163,27 @@ if !(count _position == 0) then {
 	_vehicle setDir random 360;
 	_allVehicles pushBack _vehicle;
 };
+
+//Create patrols
+	_currentStrength = 0;
+
+	while {(spawner getVariable _marker < 2) AND (_currentStrength < 2)} do {
+		while {true} do {
+			_spawnPos = [_markerPos, 150 + (random 350) ,random 360] call BIS_fnc_relPos;
+			if !(surfaceIsWater _spawnPos) exitWith {};
+		};
+		_groupType = [infPatrol, side_green] call AS_fnc_pickGroup;
+		_group = [_spawnPos, side_green, _groupType] call BIS_Fnc_spawnGroup;
+		if (_reduced) then {[_group] call AS_fnc_adjustGroupSize};
+		sleep 1;
+		if (random 10 < 2.5) then {
+			_dog = _group createUnit ["Fin_random_F",_spawnPos,[],0,"FORM"];
+			[_dog] spawn guardDog;
+		};
+		[_group, _patrolMarker, "SAFE","SPAWNED", "NOVEH2"] execVM "scripts\UPSMON.sqf";
+		_allGroups pushBack _group;
+		_currentStrength = _currentStrength +1;
+	};
 
 //Spawn Infantry
 	_strength = 1 + (1 max (round (_size/50)));

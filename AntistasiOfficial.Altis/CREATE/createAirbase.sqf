@@ -3,18 +3,19 @@ if (!isServer and hasInterface) exitWith {};
 params ["_marker"];
 private ["_markerPos","_size","_isFrontline","_reduced","_allVehicles","_allGroups","_allSoldiers","_patrolMarker","_currentStrength","_spawnPos","_groupType","_group","_dog","_flag","_currentCount","_patrolParams","_crate","_unit","_busy","_buildings","_positionOne","_positionTwo","_vehicle","_vehicleCount","_groupGunners","_roads","_data","_vehicleType","_spawnpool","_observer","_direction","_position"];
 
-_allVehicles = [];
-_allGroups = [];
-_allSoldiers = [];
+//Initialise place
+	_allVehicles = [];
+	_allGroups = [];
+	_allSoldiers = [];
 
-_markerPos = getMarkerPos (_marker);
-_size = [_marker] call sizeMarker;
-_isFrontline = [_marker] call AS_fnc_isFrontline;
-_reduced = [false, true] select (_marker in reducedGarrisons);
-_patrolMarker = [_marker] call AS_fnc_createPatrolMarker;
-_busy = if (dateToNumber date > server getVariable _marker) then {false} else {true};
-_groupGunners = createGroup side_green;
-_buildings = nearestObjects [_markerPos, listMilBld, _size*1.5];
+	_markerPos = getMarkerPos (_marker);
+	_size = [_marker] call sizeMarker;
+	_isFrontline = [_marker] call AS_fnc_isFrontline;
+	_reduced = [false, true] select (_marker in reducedGarrisons);
+	_patrolMarker = [_marker] call AS_fnc_createPatrolMarker;
+	_busy = if (dateToNumber date > server getVariable _marker) then {false} else {true};
+	_groupGunners = createGroup side_green;
+	_buildings = nearestObjects [_markerPos, listMilBld, _size*1.5];
 
 
 //Adding statics to garrison buildings
@@ -73,9 +74,6 @@ _buildings = nearestObjects [_markerPos, listMilBld, _size*1.5];
 						_vehicle = createVehicle [selectRandom heli_armed, position _building, [],0, "CAN_COLLIDE"];
 						_vehicle setDir (getDir _building);
 						_allVehicles pushBack _vehicle;
-						/*WiP: Engineers can consume their toolkit to unlock the vehicle.
-						_vehicle lock 3;
-						_vehicle addAction [localize "STR_ACT_TAKEFLAG", {if((_this select 1)(_this select 0) lock 0;},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (_this getUnitTrait 'engineer')"]; */
 						sleep 0.1;
 					};
 
@@ -159,13 +157,14 @@ _buildings = nearestObjects [_markerPos, listMilBld, _size*1.5];
 		_allGroups pushBack _group;
 	};*/
 
-_flag = createVehicle [cFlag, _markerPos, [],0, "CAN_COLLIDE"];
-_flag allowDamage false;
-[_flag,"take"] remoteExec ["AS_fnc_addActionMP"];
-_allVehicles pushBack _flag;
+//Create flag
+	_flag = createVehicle [cFlag, _markerPos, [],0, "CAN_COLLIDE"];
+	_flag allowDamage false;
+	[_flag,"take"] remoteExec ["AS_fnc_addActionMP"];
+	_allVehicles pushBack _flag;
 
-_crate = "I_supplyCrate_F" createVehicle _markerPos;
-_allVehicles pushBack _crate;
+	_crate = "I_supplyCrate_F" createVehicle _markerPos;
+	_allVehicles pushBack _crate;
 
 //Create vehicles based on marker _size
 	_arrayVeh = vehPatrol + vehSupply + enemyMotorpool - [heli_default];
@@ -195,18 +194,16 @@ _allVehicles pushBack _crate;
 	//if (_isFrontline) then {_vehicleCount = _vehicleCount * 2}; frontline in airport is draining too many possible slots, better add vehicles
 	//_vehicleCount = round(0.3*_vehicleCount); //Lower the amount of infantry squads
 	while {(spawner getVariable _marker < 2) AND (_currentCount < _vehicleCount)} do {
-		if (diag_fps > minimoFPS) then {
-			while {true} do {
-				_spawnPos = [_markerPos, 15 + (random _size),random 360] call BIS_fnc_relPos;
-				if (!surfaceIsWater _spawnPos) exitWith {};
-			};
-			_groupType = [infSquad, side_green] call AS_fnc_pickGroup;
-			_group = [_spawnPos, side_green, _groupType] call BIS_Fnc_spawnGroup;
-			//if (activeAFRF) then {_group = [_group, _markerPos] call AS_fnc_expandGroup}; no need to expand groups in airfield
-			sleep 1;
-			[_group, _marker, "SAFE","SPAWNED", "NOVEH", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
-			_allGroups pushBack _group;
+		while {true} do {
+			_spawnPos = [_markerPos, 15 + (random _size),random 360] call BIS_fnc_relPos;
+			if (!surfaceIsWater _spawnPos) exitWith {};
 		};
+		_groupType = [infSquad, side_green] call AS_fnc_pickGroup;
+		_group = [_spawnPos, side_green, _groupType] call BIS_Fnc_spawnGroup;
+		//if (activeAFRF) then {_group = [_group, _markerPos] call AS_fnc_expandGroup}; no need to expand groups in airfield
+		sleep 1;
+		[_group, _marker, "SAFE","SPAWNED", "NOVEH", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
+		_allGroups pushBack _group;
 		sleep 1;
 		_currentCount = _currentCount + 1;
 	};
@@ -282,9 +279,9 @@ if ((spawner getVariable _marker < 2) AND !(_marker in mrkFIA)) then {
 	if !(isNull _observer) then {deleteVehicle _observer};
 
 //Save destroyed buildings
-{
-	if ((!alive _x) AND !(_x in destroyedBuildings)) then {
-		destroyedBuildings = destroyedBuildings + [position _x];
-		publicVariableServer "destroyedBuildings";
-	};
-} forEach _buildings;
+	{
+		if ((!alive _x) AND !(_x in destroyedBuildings)) then {
+			destroyedBuildings = destroyedBuildings + [position _x];
+			publicVariableServer "destroyedBuildings";
+		};
+	} forEach _buildings;
