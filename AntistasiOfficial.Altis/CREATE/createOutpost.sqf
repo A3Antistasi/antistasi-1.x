@@ -17,6 +17,7 @@ _buildings = nearestObjects [_markerPos, listMilBld, _size*1.5];
 _groupGunners = createGroup side_green;
 _allGroups pushBack _groupGunners;
 
+//Adding staticweapons, not happening if place just been retaken by enemy.
 if!(_reduced) then {
 	for "_i" from 0 to (count _buildings) - 1 do {
 		_building = _buildings select _i;
@@ -25,6 +26,7 @@ if!(_reduced) then {
 		call {
 			if 	((_type == "Land_Cargo_HQ_V1_F") OR (_type == "Land_Cargo_HQ_V2_F") OR (_type == "Land_Cargo_HQ_V3_F")) exitWith {
 				_vehicle = createVehicle [statAA, (_building buildingPos 8), [],0, "CAN_COLLIDE"];
+				_vehicle setCenterOfMass [(getCenterOfMass _vehicle) vectorAdd [0, 0, -1], 0];
 				_vehicle setPosATL [(getPos _building select 0),(getPos _building select 1),(getPosATL _vehicle select 2)];
 				_vehicle setDir (getDir _building);
 				_vehicle disableTIEquipment true; //Stef disable thermal vision of static guns, AI won't use it and it's just unbalanced if player get it.
@@ -36,6 +38,7 @@ if!(_reduced) then {
 
 			if 	((_type == "Land_Cargo_Patrol_V1_F") OR (_type == "Land_Cargo_Patrol_V2_F") OR (_type == "Land_Cargo_Patrol_V3_F")) exitWith {
 				_vehicle = createVehicle [statMGtower, (_building buildingPos 1), [], 0, "CAN_COLLIDE"];
+				_vehicle setCenterOfMass [(getCenterOfMass _vehicle) vectorAdd [0, 0, -1], 0];
 				_ang = (getDir _building) - 180;
 				_position = [getPosATL _vehicle, 2.5, _ang] call BIS_Fnc_relPos;
 				_vehicle setPosATL _position;
@@ -49,6 +52,7 @@ if!(_reduced) then {
 
 			if 	(_type in listbld) exitWith {
 				_vehicle = createVehicle [statMGtower, (_building buildingPos 13), [], 0, "CAN_COLLIDE"];
+				_vehicle setCenterOfMass [(getCenterOfMass _vehicle) vectorAdd [0, 0, -1], 0];
 				_vehicle disableTIEquipment true;
 				_unit = ([_markerPos, 0, infGunner, _groupGunners] call bis_fnc_spawnvehicle) select 0;
 				_unit moveInGunner _vehicle;
@@ -56,6 +60,7 @@ if!(_reduced) then {
 				sleep 1;
 				_allVehicles = _allVehicles + [_vehicle];
 				_vehicle = createVehicle [statMGtower, (_building buildingPos 17), [], 0, "CAN_COLLIDE"];
+				_vehicle setCenterOfMass [(getCenterOfMass _vehicle) vectorAdd [0, 0, -1], 0];
 				_vehicle disableTIEquipment true; //Stef disable thermal vision of static guns, AI won't use it and it's just unbalanced if player get it.
 				_unit = ([_markerPos, 0, infGunner, _groupGunners] call bis_fnc_spawnvehicle) select 0;
 				_unit moveInGunner _vehicle;
@@ -66,16 +71,14 @@ if!(_reduced) then {
 	};
 };
 
-
+// Create flag
 _flag = createVehicle [cFlag, _markerPos, [],0, "CAN_COLLIDE"];
 _flag allowDamage false;
 [_flag,"take"] remoteExec ["AS_fnc_addActionMP"];
 _allVehicles pushBack _flag;
-sleep 0.5;
 
 _crate = "I_supplyCrate_F" createVehicle _markerPos;
 _allVehicles pushBack _crate;
-sleep 0.5;
 
 //Spawn seapatrol else watchman, mortar+rb
 if (_marker in puertos) then {
@@ -106,7 +109,6 @@ if (_marker in puertos) then {
         } forEach _vehCrew;
         _allGroups pushBack _groupVehicle;
         _allVehicles pushBack _vehicle;
-        sleep 1;
      };
 } else {
 	_buildings = nearestObjects [_markerPos,["Land_TTowerBig_1_F","Land_TTowerBig_2_F","Land_Communication_F"], _size];
@@ -141,7 +143,6 @@ if (_marker in puertos) then {
 			_unit = ([_markerPos, 0, infGunner, _groupGunners] call bis_fnc_spawnvehicle) select 0;
 			_unit moveInGunner _vehicle;
 			_allVehicles pushBack _vehicle;
-			sleep 1;
 		};
 
 		_roads = _markerPos nearRoads _size;
@@ -161,7 +162,6 @@ if !(count _position == 0) then {
 	_vehicle = createVehicle [selectRandom vehTrucks, _position, [], 0, "NONE"];
 	_vehicle setDir random 360;
 	_allVehicles pushBack _vehicle;
-	sleep 1;
 };
 
 //Spawn Infantry
@@ -169,21 +169,12 @@ if !(count _position == 0) then {
 	_currentStrength = 0;
 	if (_isFrontline) then {_strength = _strength + 1};
 
-if (_marker in puestosAA) then {
-	_groupType = [infAA, side_green] call AS_fnc_pickGroup;
-	_group = [_markerPos, side_green, _groupType] call BIS_Fnc_spawnGroup;
-	[_group, _marker, "SAFE","SPAWNED","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
-	_allGroups pushBack _group;
-	sleep 1;
-};
-
-while {(spawner getVariable _marker < 2) AND (_currentStrength < _strength)} do {
-	if ((_currentStrength == 0)) then {
-		_groupType = [infSquad, side_green] call AS_fnc_pickGroup;
+	if (_marker in puestosAA) then {
+		_groupType = [infAA, side_green] call AS_fnc_pickGroup;
 		_group = [_markerPos, side_green, _groupType] call BIS_Fnc_spawnGroup;
 		[_group, _marker, "SAFE","SPAWNED","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 		_allGroups pushBack _group;
-		sleep 1;
+		sleep 0.1;
 	};
 
 	while {(spawner getVariable _marker < 2) AND (_currentStrength < _strength)} do {
@@ -211,8 +202,9 @@ if (_marker in puertos) then {
 	_crate addItemCargo ["G_I_Diving",round random 5];
 };
 
-sleep 3;
+sleep 0.5;
 
+// Initialise groups and soldiers
 {
 	_group = _x;
 	if (_reduced) then {[_group] call AS_fnc_adjustGroupSize};
@@ -224,25 +216,28 @@ sleep 3;
 	} forEach units _group;
 } forEach _allGroups;
 
-_observer = objNull;
-if ((random 100 < (((server getVariable "prestigeNATO") + (server getVariable "prestigeCSAT"))/10)) AND (spawner getVariable _marker < 2)) then {
-	_position = [];
-	_group = createGroup civilian;
-	while {true} do {
-		_position = [_markerPos, round (random _size), random 360] call BIS_Fnc_relPos;
-		if !(surfaceIsWater _position) exitWith {};
-	};
-	_observer = _group createUnit [selectRandom CIV_journalists, _position, [],0, "NONE"];
-	[_observer] spawn CIVinit;
-	_allGroups pushBack _group;
-	[_group, _marker, "SAFE", "SPAWNED","NOFOLLOW", "NOVEH2","NOSHARE","DoRelax"] execVM "scripts\UPSMON.sqf";
-};
-
 {
 	[_x] spawn genVEHinit
 } forEach _allVehicles;
 
 [_marker, _allSoldiers] spawn AS_fnc_garrisonMonitor;
+
+//Create journalist
+	_observer = objNull;
+	if ((random 100 < (((server getVariable "prestigeNATO") + (server getVariable "prestigeCSAT"))/10)) AND (spawner getVariable _marker < 2)) then {
+		_position = [];
+		_group = createGroup civilian;
+		while {true} do {
+			_position = [_markerPos, round (random _size), random 360] call BIS_Fnc_relPos;
+			if !(surfaceIsWater _position) exitWith {};
+		};
+		_observer = _group createUnit [selectRandom CIV_journalists, _position, [],0, "NONE"];
+		[_observer] spawn CIVinit;
+		_allGroups pushBack _group;
+		[_group, _marker, "SAFE", "SPAWNED","NOFOLLOW", "NOVEH2","NOSHARE","DoRelax"] execVM "scripts\UPSMON.sqf";
+	};
+
+
 
 //Despawn Conditions
 	waitUntil {sleep 1;

@@ -26,6 +26,6 @@ while {(spawner getVariable _marker < 2)} do {
 sleep 2;
 
 if (!(_marker in mrkFIA) and (_marker in reducedGarrisons)) exitWith {
-	diag_log format ["Garrison monitor: garrison combat ineffective: %1 -- dispatching reinforcements", _marker];
+	diag_log format ["ANTISTASI Garrison monitor: garrison combat ineffective: %1 -- dispatching reinforcements", _marker];
 	[_marker] spawn AS_fnc_reinforcementTimer;
 };
