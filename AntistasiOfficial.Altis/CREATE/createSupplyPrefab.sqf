@@ -45,7 +45,7 @@ if(_create) then
 	// Create Marker and add it to the supply list
 	_marker = createMarker [format ["SUP%1", random 100], _spawnPosition];
 	_marker setMarkerShape "ICON";
-	_marker setMarkerAlpha 0;
+	_marker setMarkerAlpha 1;
 	//spawner setVariable [_marker, 4, true]; //Activate when merged with new spawn system
 	spawner setVariable [_marker, false, true];
 	mrkSupplyCrates = mrkSupplyCrates pushBackUnique _marker;
