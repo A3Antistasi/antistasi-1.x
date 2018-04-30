@@ -75,23 +75,7 @@ call {
 	_size = [_base] call sizeMarker;
 	if (player distance getMarkerPos _base < (_size*2)) exitWith {_reason = localize "STR_HINTS_UND_FAC_GRND"};
 
-	// Player is in a vehicle
-	if (vehicle player != player) exitWith {
-		// Vehicle doesn't qualify for undercover
-		if !(typeOf(vehicle player) in _civVehicles) exitWith {
-			_reason = localize "STR_HINTS_UND_NOTCIV";
-		};
-
-		// Vehicle has been reported
-		if (vehicle player in reportedVehs) exitWith {
-			_reason = localize "STR_HINTS_UND_REPORTED_CAR";
-		};
-
-
-	};
-
-
-
+	
 	// You are wearing compromising gear
 	call {
 		_break = false;
@@ -108,20 +92,32 @@ call {
 			};
 		};
 	};
+	
+	// Player is in a vehicle
+	if (vehicle player != player) exitWith {
+		// Vehicle doesn't qualify for undercover
+		if !(typeOf(vehicle player) in _civVehicles) exitWith {
+			_reason = localize "STR_HINTS_UND_NOTCIV";
+		};
+
+		// Vehicle has been reported
+		if (vehicle player in reportedVehs) exitWith {
+			_reason = localize "STR_HINTS_UND_REPORTED_CAR";
+		};
+
+		if (_break) exitWith {
+			//Player is sitting openly on a truck or else and the gears is compromising
+			if ((vehicle player in _civVehiclesWithOpenSeats) AND
+				( (vehicle player getCargoIndex player) in (_civVehicleOpenSeats select (_civVehiclesWithOpenSeats find (vehicle player)))  )
+			) exitWith {
+				_reason = "You are sitting openly (Need localize)";
+				[player] spawn _fnc_compromiseVehicle;
+			};
+		};
+	};
 
 	if (_break) exitWith {
 		_reason = [localize "STR_HINTS_UND_GEAR"] call _fnc_displayGear;
-	};
-
-	if ( (vehicle player != player) AND _break) exitWith {
-		//Player is sitting openly on a truck or else and the gears is compromising
-		if (
-		    (vehicle player in _civVehiclesWithOpenSeats) AND
-		    ( (vehicle player getCargoIndex player) in (_civVehicleOpenSeats select (_civVehiclesWithOpenSeats find (vehicle player)))  )
-		) exitWith {
-			_reason = "You are sitting openly (Need localize)";
-			[player] spawn _fnc_compromiseVehicle;
-		};
 	};
 };
 
