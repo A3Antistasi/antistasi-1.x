@@ -49,15 +49,15 @@ if(_create) then
 	_marker = createMarker [format ["SUP%1", random 100], _spawnPosition];
 	_marker setMarkerShape "ICON";
 	_marker setMarkerAlpha 1;
-	//spawner setVariable [_marker, 4, true]; //Activate when merged with new spawn system
-	spawner setVariable [_marker, false, true];
+	//spawner setVariable [_marker, 0, true]; //Activate when merged with new spawn system
+	spawner setVariable [_marker, true, true];
 	mrkSupplyCrates pushBackUnique _marker;
 	publicVariable "mrkSupplyCrates";
 
 	diag_log format ["ANTISTASI - SUP_CitySupply pos %1, type %2, marker %3",_spawnPosition, _crateType, _marker];
 	[_spawnPosition, _crateType, _marker] remoteExec ["createSupplyBox", call AS_fnc_getNextWorker];
 };
-if(!_create) then {_spawnPosition = getMarkerPos marker;};
+if(!_create) then {_spawnPosition = getMarkerPos _marker;};
 
 
 _allGroups = [];
