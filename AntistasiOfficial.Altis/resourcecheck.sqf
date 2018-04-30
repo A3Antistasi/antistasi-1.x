@@ -170,7 +170,7 @@ while {true} do {
 				
 			};
 		};
-		[_currentCity, selectRandom["FOOD", "WATER", "FUEL"], true] remoteExec ["createSupplyPrefab", call AS_fnc_getNextWorker];
+		[nil, selectRandom["FOOD", "WATER", "FUEL"], true] remoteExec ["createSupplyPrefab", call AS_fnc_getNextWorker];
 	};
 
 

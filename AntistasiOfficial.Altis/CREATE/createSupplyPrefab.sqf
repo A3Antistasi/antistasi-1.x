@@ -18,16 +18,22 @@ if(_create) then
 	{
 		_crateType = "CargoNet_01_barrels_F";
 	};
-	_allSheds = nearestObjects [_posHQ, [_houseType], 4000, true];
-	sleep 1;
-
-	if (count _allSheds == 0) exitWith
+	if(_marker == nil) then 
 	{
-		diag_log format ["Supply mission not created, could not find %1", _houseType];
+		_allSheds = nearestObjects [_posHQ, [_houseType], 4000, true];
+		sleep 1;
+		if (count _allSheds == 0) exitWith
+		{
+			diag_log format ["Supply mission not created, could not find %1", _houseType];
+		};	
+		_selectedShed = selectRandom _allSheds;
+		_spawnPosition = position _selectedShed;
+	}
+	else 
+	{
+		_spawnPosition = getMarkerPos _marker;
 	};
-
-	_selectedShed = selectRandom _allSheds;
-	_spawnPosition = position _selectedShed;
+	
 	//Marker will do the following much easier
 	while {
 		count (

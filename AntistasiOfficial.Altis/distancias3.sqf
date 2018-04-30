@@ -41,7 +41,7 @@ while {true} do {
 		private _marker = _x;
 		private _markerPos = getMarkerPos _marker;
 
-		if (_marker in mrkAAF) then {
+		if ((_marker in mrkAAF) OR (_marker in mrkSupplyCrates)) then {
 			if !(spawner getVariable _marker) then {
 				//check if a units is near the location or place needs to be forced to spawned in
 				if (({_x distance _markerPos < distanciaSPWN} count _allyUnits > 0) OR (_marker in forcedSpawn)) then {
