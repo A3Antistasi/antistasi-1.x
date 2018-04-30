@@ -1,5 +1,4 @@
 if (!isServer and hasInterface) exitWith {};
-systemchat "Create outpost init";
 params ["_marker"];
 private ["_allVehicles","_allGroups","_allSoldiers","_markerPos","_position","_size","_reduced","_buildings","_groupGunners","_building","_type","_vehicle","_unit","_flag","_crate","_isFrontline","_vehicleData","_vehCrew","_base","_roads","_data","_strength","_currentStrength","_groupType","_group","_patrolParams","_observer","_radioTower"];
 
