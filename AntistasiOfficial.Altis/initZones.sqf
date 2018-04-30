@@ -1,4 +1,4 @@
-private ["_allMarkers","_sizeX","_sizeY","_size","_name","_pos","_roads","_numCiv","_roadsProv","_roadcon", "_supplyLevelFood", "_supplyLevelWater", "_supplyLevelFuel", "_numVeh","_nroads","_nearRoadsFinalSorted","_mrk","_dmrk","_info","_antennaArray","_antenna","_bankArray","_bank","_blackList"];
+private ["_allMarkers","_sizeX","_sizeY","_size","_name","_pos","_roads","_numCiv","_roadsProv","_roadcon","_numVeh","_nroads","_nearRoadsFinalSorted","_mrk","_dmrk","_info","_antennaArray","_antenna","_bankArray","_bank","_blackList"];
 
 AS_destroyedZones = [];
 forcedSpawn = [];
@@ -135,12 +135,8 @@ markers = power + bases + aeropuertos + recursos + fabricas + puestos + puertos 
         _dmrk setMarkerType "loc_Cross";
         _dmrk setMarkerColor IND_marker_colour;
 
-		_supplyLevelFood = "GOOD";
-		_supplyLevelWater = "GOOD";
-		_supplyLevelFuel = "GOOD";
-		
         if (_nroads < _numVeh) then {_numVeh = _nroads};
-        _info = [_numCiv, _numVeh, prestigeOPFOR,prestigeBLUFOR, [_supplyLevelFood, _supplyLevelWater, _supplyLevelFuel]];
+        _info = [_numCiv, _numVeh, prestigeOPFOR,prestigeBLUFOR];
         server setVariable [_name,_info,true];
     };
 } foreach (nearestLocations [getArray (configFile >> "CfgWorlds" >> worldName >> "centerPosition"), ["NameCityCapital","NameCity","NameVillage","CityCenter"], worldSize/1.414]);
