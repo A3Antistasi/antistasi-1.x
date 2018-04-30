@@ -24,9 +24,9 @@ switch (_crateType) do {
 while {alive _crate AND (_marker in mrkSupplyCrates)} do {
 
 	// wait until the player loads the crate or have the loaded crate in a city
-	waitUntil {sleep 5; !(isNull attachedTo _crate) OR !({_crate distance (getmarkerpos _x) < 400} count ciudades == 0) OR !(_marker in mrkSupplyCrates)};
+	waitUntil {sleep 5; !(isNull attachedTo _crate) OR !({(_crate distance (getmarkerpos _x) < 400)} count ciudades == 0) OR !(_marker in mrkSupplyCrates)};
 	//wait until the player has the crate unloaded in a city
-	waitUntil {sleep 1; (isNull attachedTo _crate) AND !({_crate distance (getmarkerpos _x) < 400} count ciudades == 0) OR !(_marker in mrkSupplyCrates)};
+	waitUntil {sleep 1; (isNull attachedTo _crate) AND !({(_crate distance (getmarkerpos _x) < 400) AND (isOnRoad (position _crate))} count ciudades == 0) OR !(_marker in mrkSupplyCrates)};
 	if(!(_marker in mrkSupplyCrates)) exitWith {}; //Crate not longer active!
 	_currentCity = [ciudades, getPos _crate] call BIS_fnc_nearestPosition;
 	//Reveal all players in the surrounding of the crate to the enemies
