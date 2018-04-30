@@ -25,7 +25,7 @@ if(_create) then
 		};
 		_selectedShed = selectRandom _allSheds;
 		_spawnPosition = position _selectedShed;
-		_marker = createMarker [format ["SUP%1", random 100], _spawnPosition];
+
 
 		while {
 			(count (
@@ -38,6 +38,8 @@ if(_create) then
 			_spawnPosition = position _selectedShed;
 		};
 
+		if(isnil "_spawnPosition") then {diag_log "ANTISTASI - DynamicSupplies: No suitable position found around HQ for a supply crate";};
+
 		//spawner setVariable [_marker, 0, true]; //Activate when merged with new spawn system
 		spawner setVariable [_marker, true, true];
 		mrkSupplyCrates pushBackUnique _marker;
@@ -49,13 +51,13 @@ if(_create) then
 		_spawnPosition = getMarkerPos _marker;
 	};
 
-	_marker setMarkerShape "ICON";
-	_marker setMarkerType "mil_warning";
-	_marker setMarkerAlpha 1;
-	//Marker will do the following much easier
+	_mapMarker = createMarker [format ["SUP%1", random 100], _spawnPosition];
+	_mapMarker setMarkerShape "ICON";
+	_mapMarker setMarkerType "mil_warning";
+	_mapMarker setMarkerAlpha 1;
 
 
-	if(isnil "_spawnPosition") then {diag_log "ANTISTASI - DynamicSupplies: No suitable position found around HQ for a supply crate";};
+
 
 	// Create Marker and add it to the supply list
 
