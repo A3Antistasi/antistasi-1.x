@@ -117,7 +117,7 @@ call {
 		//Player is sitting openly on a truck or else and the gears is compromising
 		if (
 		    (vehicle player in _civVehiclesWithOpenSeats) AND
-		    (vehicle player getCargoIndex in _civVehicleOpenSeats select (_civVehiclesWithOpenSeats find (vehicle player)))
+		    ( (vehicle player getCargoIndex player) in (_civVehicleOpenSeats select (_civVehiclesWithOpenSeats find (vehicle player)))  )
 		) exitWith {
 			_reason = "You are sitting openly (Need localize)";
 			[player] spawn _fnc_compromiseVehicle;
