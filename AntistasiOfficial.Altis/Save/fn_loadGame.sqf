@@ -19,7 +19,7 @@ publicVariable "flag_playerList";
 ["mrkFIA"] call fn_loadData; mrkFIA = mrkFIA + puestosFIA; publicVariable "mrkFIA"; if (isMultiplayer) then {sleep 5};
 ["mrkAAF"] call fn_loadData;
 ["mrkSupplyCrates"] call fn_loadData;
-if(isnil "mrkSupplyCrates") then {mrkSupplyCrates = [];}; publicVariable mrkSupplyCrates;
+if((typeName mrkSupplyCrates != typeName []) AND (isnil "mrkSupplyCrates")) then {"mrkSupplyCrates" = [];}; publicVariable "mrkSupplyCrates";
 ["destroyedCities"] call fn_loadData; publicVariable "destroyedCities";
 ["mines"] call fn_loadData;
 ["cuentaCA"] call fn_loadData; publicVariable "cuentaCA";
