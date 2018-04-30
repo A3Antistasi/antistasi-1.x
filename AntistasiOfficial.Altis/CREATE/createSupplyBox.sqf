@@ -20,14 +20,14 @@ switch (_crateType) do {
 */
 
 [false,150,0] params ["_timerRunning","_deploymentTime","_counter"];
-
-while {alive _crate AND (_marker in mrkSupplyCrates)} do {
+//TODO rework marker
+while {alive _crate AND (_marker in countSupplyCrates)} do {
 
 	// wait until the player loads the crate or have the loaded crate in a city
-	waitUntil {sleep 5; !(isNull attachedTo _crate) OR !({(_crate distance (getmarkerpos _x) < 400)} count ciudades == 0) OR !(_marker in mrkSupplyCrates)};
+	waitUntil {sleep 5; !(isNull attachedTo _crate) OR !({(_crate distance (getmarkerpos _x) < 400)} count ciudades == 0) OR !(_marker in countSupplyCrates)};
 	//wait until the player has the crate unloaded in a city
-	waitUntil {sleep 1; (isNull attachedTo _crate) AND !({(_crate distance (getmarkerpos _x) < 400) AND (isOnRoad (position _crate))} count ciudades == 0) OR !(_marker in mrkSupplyCrates)};
-	if(!(_marker in mrkSupplyCrates)) exitWith {}; //Crate not longer active!
+	waitUntil {sleep 1; (isNull attachedTo _crate) AND !({(_crate distance (getmarkerpos _x) < 400) AND (isOnRoad (position _crate))} count ciudades == 0) OR !(_marker in countSupplyCrates)};
+	if(!(_marker in countSupplyCrates)) exitWith {}; //Crate not longer active!
 	_currentCity = [ciudades, getPos _crate] call BIS_fnc_nearestPosition;
 	//Reveal all players in the surrounding of the crate to the enemies
 	{
@@ -105,7 +105,7 @@ while {alive _crate AND (_marker in mrkSupplyCrates)} do {
 	sleep 1;
 };
 
-if ((alive _crate) AND (_marker in mrkSupplyCrates)) then {
+if ((alive _crate) AND (_marker in countSupplyCrates)) then {
 	[_type, 1, _currentCity] remoteExec ["AS_fnc_changeCitySupply", 2];
 	[5,0] remoteExec ["prestige",2];
 	{if (_x distance _crate < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));

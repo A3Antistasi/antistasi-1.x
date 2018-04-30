@@ -18,8 +18,8 @@ publicVariable "flag_playerList";
 ["emplacements"] call fn_loadData; publicVariable "puestosFIA"; publicVariable "FIA_RB_list"; publicVariable "FIA_WP_list";
 ["mrkFIA"] call fn_loadData; mrkFIA = mrkFIA + puestosFIA; publicVariable "mrkFIA"; if (isMultiplayer) then {sleep 5};
 ["mrkAAF"] call fn_loadData;
-["mrkSupplyCrates"] call fn_loadData;
-if(isnil "mrkSupplyCrates") then {mrkSupplyCrates = [];}; publicVariable "mrkSupplyCrates";
+["countSupplyCrates"] call fn_loadData;
+if(isnil "countSupplyCrates") then {countSupplyCrates = 0;}; publicVariable "countSupplyCrates";
 ["destroyedCities"] call fn_loadData; publicVariable "destroyedCities";
 ["mines"] call fn_loadData;
 ["cuentaCA"] call fn_loadData; publicVariable "cuentaCA";
@@ -66,10 +66,10 @@ unlockedRifles = unlockedweapons - gear_sidearms - gear_missileLaunchers - gear_
 //["ws_grid"] call fn_loadData;
 //===========================================================================
 
-
+for "_i" from 0 to countSupplyCrates do
 {
-	[_x, selectRandom ["FOOD", "WATER", "FUEL"], true] remoteExec ["createSupplyPrefab", call AS_fnc_getNextWorker];
-} forEach mrkSupplyCrates;
+	[nil, selectRandom ["FOOD", "WATER", "FUEL"], true] remoteExec ["createSupplyPrefab", call AS_fnc_getNextWorker];
+};
 
 _markers = mrkFIA + mrkAAF + campsFIA;
 

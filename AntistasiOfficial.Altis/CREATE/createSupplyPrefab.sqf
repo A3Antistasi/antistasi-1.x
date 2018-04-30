@@ -15,7 +15,7 @@ if(_create) then
 		case "FUEL": 	{_crateType = "CargoNet_01_barrels_F";				};
 		case "FOOD": 	{_crateType = "Land_PaperBox_01_open_boxes_F";		};
 	};
-	diag_log format ["Marker type = %1" , typeName _marker];
+
 	if(isnil "_marker") then
 	{
 		_allSheds = nearestObjects [_posHQ, [_houseType], 4000, true];
@@ -43,12 +43,13 @@ if(_create) then
 
 		//spawner setVariable [_marker, 0, true]; //Activate when merged with new spawn system
 		spawner setVariable [_marker, true, true];
-		mrkSupplyCrates pushBackUnique _marker;
-		//systemchat format ["mrkSupplyCrates = %1",mrkSupplyCrates];
-		publicVariable "mrkSupplyCrates";
+		countSupplyCrates ++;
+		//systemchat format ["countSupplyCrates = %1",countSupplyCrates];
+		publicVariable "countSupplyCrates";
 	}
 	else
 	{
+		diag_log format ["Marker type = %1" , typeName _marker];
 		_spawnPosition = getMarkerPos _marker;
 	};
 
@@ -86,14 +87,14 @@ _allGroups pushBack _group;
 } forEach _allGroups;
 
 //waitUntil {sleep 1; spawner getVariable _marker > 1}; //Activate when merged with new spawn system
-waitUntil {sleep 1; !(spawner getVariable _marker) OR !(_marker in mrkSupplyCrates)};
+waitUntil {sleep 1; !(spawner getVariable _marker)};
 
-if((_marker in mrkSupplyCrates) AND (count (nearestObjects [_spawnPosition, ["Land_PaperBox_01_open_boxes_F", "Land_PaperBox_01_open_water_F", "CargoNet_01_barrels_F"], 300, true])  != 0)) then
+if(count (nearestObjects [_spawnPosition, ["Land_PaperBox_01_open_boxes_F", "Land_PaperBox_01_open_water_F", "CargoNet_01_barrels_F"], 300, true])  == 0) then
 {
 	//FIA has taken the Supply Box, not in range any more
 	spawner setVariable [_marker, nil, true];
-	mrkSupplyCrates = mrkSupplyCrates - [_marker];
-	publicVariable "mrkSupplyCrates";
+	countSupplyCrates--;
+	publicVariable "countSupplyCrates";
 };
 
 {deleteVehicle _x} forEach _allSoldiers;
