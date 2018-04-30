@@ -130,17 +130,16 @@ while {true} do {
 						};
 						call {
 							//Optimization possible, but perhaps not really needed due to low calls
-							if (_marker in _hills) exitWith {[_marker] remoteExec ["createWatchpost", call AS_fnc_getNextWorker]};
-							if (_marker in colinasAA) exitWith {[_marker] remoteExec ["createAAsite", call AS_fnc_getNextWorker]};
-							if (_marker in ciudades) exitWith {[_marker] remoteExec ["createCIV", call AS_fnc_getNextWorker]; [_marker] remoteExec ["createCity", call AS_fnc_getNextWorker]};
-							if (_marker in power) exitWith {[_marker] remoteExec ["createPower", call AS_fnc_getNextWorker]};
-							if (_marker in bases) exitWith {[_marker] remoteExec ["createBase", call AS_fnc_getNextWorker]};
-							//if (_marker in controles) exitWith {[_marker] remoteExec ["createRoadblock", call AS_fnc_getNextWorker]};
-							if (_marker in controles) exitWith {[_marker] remoteExec ["createRoadblock2", call AS_fnc_getNextWorker]};
-							if (_marker in aeropuertos) exitWith {[_marker] remoteExec ["createAirbase", call AS_fnc_getNextWorker]};
-							if ((_marker in recursos) OR (_marker in fabricas)) exitWith {[_marker] remoteExec ["createResources", call AS_fnc_getNextWorker]};
-							if ((_marker in puestos) OR (_marker in puertos)) exitWith {[_marker] remoteExec ["createOutpost", call AS_fnc_getNextWorker]};
-							//if ((_marker in artyEmplacements) AND (_marker in forcedSpawn)) exitWith {[_marker] remoteExec ["createArtillery", call AS_fnc_getNextWorker]};
+							if (_marker in _hills) 									exitWith {[_marker] remoteExec ["createWatchpost", call AS_fnc_getNextWorker]};
+							if (_marker in colinasAA) 								exitWith {[_marker] remoteExec ["createAAsite", call AS_fnc_getNextWorker]};
+							if (_marker in ciudades) 								exitWith {[_marker] remoteExec ["createCIV", call AS_fnc_getNextWorker]; [_marker] remoteExec ["createCity", call AS_fnc_getNextWorker]};
+							if (_marker in power) 									exitWith {[_marker] remoteExec ["createPower", call AS_fnc_getNextWorker]};
+							if (_marker in bases) 									exitWith {[_marker] remoteExec ["createBase", call AS_fnc_getNextWorker]};
+							//if (_marker in controles) 							exitWith {[_marker] remoteExec ["createRoadblock", call AS_fnc_getNextWorker]}; //useful for porting where Sparker frontline won't work
+							if (_marker in controles) 								exitWith {[_marker] remoteExec ["createRoadblock2", call AS_fnc_getNextWorker]};
+							if (_marker in aeropuertos) 							exitWith {[_marker] remoteExec ["createAirbase", call AS_fnc_getNextWorker]};
+							if ((_marker in recursos) OR (_marker in fabricas)) 	exitWith {[_marker] remoteExec ["createResources", call AS_fnc_getNextWorker]};
+							if ((_marker in puestos) OR (_marker in puertos))		exitWith {[_marker] remoteExec ["createOutpost", call AS_fnc_getNextWorker]};
 						};
 						_markerGarrisonSpawned pushBackUnique _marker;
 					};
@@ -157,17 +156,16 @@ while {true} do {
 						spawner setVariable [_marker, _markerAlert, true];
 						call {
 							//Optimization possible, but perhaps not really needed due to low calls
-							if (_marker in _hills) exitWith {[_marker] remoteExec ["createWatchpost", call AS_fnc_getNextWorker]};
-							if (_marker in colinasAA) exitWith {[_marker] remoteExec ["createAAsite", call AS_fnc_getNextWorker]};
-							if (_marker in ciudades) exitWith {[_marker] remoteExec ["createCIV", call AS_fnc_getNextWorker]; [_marker] remoteExec ["createCity", call AS_fnc_getNextWorker]};
-							if (_marker in power) exitWith {[_marker] remoteExec ["createPower", call AS_fnc_getNextWorker]};
-							if (_marker in bases) exitWith {[_marker] remoteExec ["createBase", call AS_fnc_getNextWorker]};
-							//if (_marker in controles) exitWith {[_marker] remoteExec ["createRoadblock", call AS_fnc_getNextWorker]};
-							if (_marker in controles) exitWith {[_marker] remoteExec ["createRoadblock2", call AS_fnc_getNextWorker]};
-							if (_marker in aeropuertos) exitWith {[_marker] remoteExec ["createAirbase", call AS_fnc_getNextWorker]};
+							if (_marker in _hills) 								exitWith {[_marker] remoteExec ["createWatchpost", call AS_fnc_getNextWorker]};
+							if (_marker in colinasAA) 							exitWith {[_marker] remoteExec ["createAAsite", call AS_fnc_getNextWorker]};
+							if (_marker in ciudades) 							exitWith {[_marker] remoteExec ["createCIV", call AS_fnc_getNextWorker]; [_marker] remoteExec ["createCity", call AS_fnc_getNextWorker]};
+							if (_marker in power) 								exitWith {[_marker] remoteExec ["createPower", call AS_fnc_getNextWorker]};
+							if (_marker in bases) 								exitWith {[_marker] remoteExec ["createBase", call AS_fnc_getNextWorker]};
+							//if (_marker in controles) 						exitWith {[_marker] remoteExec ["createRoadblock", call AS_fnc_getNextWorker]}; //useful for porting where Sparker frontline won't work
+							if (_marker in controles) 							exitWith {[_marker] remoteExec ["createRoadblock2", call AS_fnc_getNextWorker]};
+							if (_marker in aeropuertos) 						exitWith {[_marker] remoteExec ["createAirbase", call AS_fnc_getNextWorker]};
 							if ((_marker in recursos) OR (_marker in fabricas)) exitWith {[_marker] remoteExec ["createResources", call AS_fnc_getNextWorker]};
-							if ((_marker in puestos) OR (_marker in puertos)) exitWith {[_marker] remoteExec ["createOutpost", call AS_fnc_getNextWorker]};
-							//if ((_marker in artyEmplacements) AND (_marker in forcedSpawn)) exitWith {[_marker] remoteExec ["createArtillery", call AS_fnc_getNextWorker]};
+							if ((_marker in puestos) OR (_marker in puertos)) 	exitWith {[_marker] remoteExec ["createOutpost", call AS_fnc_getNextWorker]};
 						};
 						_markerGarrisonSpawned pushBackUnique _marker;
 						spawner setVariable [_marker, _markerAlert, true];
@@ -218,13 +216,13 @@ while {true} do {
 					} else {
 						call {
 							if ((_marker in recursos) OR (_marker in fabricas)) exitWith {[_marker] remoteExec ["createFIAresources", call AS_fnc_getNextWorker]};
-							if ((_marker in power) OR (_marker == "FIA_HQ")) exitWith {[_marker] remoteExec ["createFIApower", call AS_fnc_getNextWorker]};
-							if (_marker in aeropuertos) exitWith {[_marker] remoteExec ["createNATOaerop", call AS_fnc_getNextWorker]};
-							if (_marker in bases) exitWith {[_marker] remoteExec ["createNATObases", call AS_fnc_getNextWorker]};
-							if (_marker in puestosFIA) exitWith {[_marker] remoteExec ["createFIAEmplacement", call AS_fnc_getNextWorker]};
-							if ((_marker in puestos) OR (_marker in puertos)) exitWith {[_marker] remoteExec ["createFIAOutpost", call AS_fnc_getNextWorker]};
-							if (_marker in campsFIA) exitWith {[_marker] remoteExec ["createCampFIA", call AS_fnc_getNextWorker]};
-							if (_marker in puestosNATO) exitWith {[_marker] remoteExec ["createNATOpuesto", call AS_fnc_getNextWorker]};
+							if ((_marker in power) OR (_marker == "FIA_HQ")) 	exitWith {[_marker] remoteExec ["createFIApower", call AS_fnc_getNextWorker]};
+							if (_marker in aeropuertos) 						exitWith {[_marker] remoteExec ["createNATOaerop", call AS_fnc_getNextWorker]};
+							if (_marker in bases) 								exitWith {[_marker] remoteExec ["createNATObases", call AS_fnc_getNextWorker]};
+							if (_marker in puestosFIA) 							exitWith {[_marker] remoteExec ["createFIAEmplacement", call AS_fnc_getNextWorker]};
+							if ((_marker in puestos) OR (_marker in puertos)) 	exitWith {[_marker] remoteExec ["createFIAOutpost", call AS_fnc_getNextWorker]};
+							if (_marker in campsFIA) 							exitWith {[_marker] remoteExec ["createCampFIA", call AS_fnc_getNextWorker]};
+							if (_marker in puestosNATO) 						exitWith {[_marker] remoteExec ["createNATOpuesto", call AS_fnc_getNextWorker]};
 						};
 					};
 				};
