@@ -160,14 +160,13 @@ while {true} do {
 			_currentCity = selectRandom _cityInRange;
 			_types = [_currentCity, "GOOD"] call AS_fnc_getHighSupplies;
 			if(random 100 < 10) then {_types = [_currentCity, "LOW"] call AS_fnc_getHighSupplies};
-			systemchat format ["_types = %1",_types]; //Stef count _types doesn't work
 			if (((count _types) != 0) AND _cityDecreased) then
 			{
 				_cityDecreased = true;
 				_type = selectRandom _types;
 				[_type, -1, _currentCity] spawn AS_fnc_changeCitySupply;
 				_type = selectRandom _types;
-				
+
 			};
 		};
 		[nil, selectRandom["FOOD", "WATER", "FUEL"], true] remoteExec ["createSupplyPrefab", call AS_fnc_getNextWorker];

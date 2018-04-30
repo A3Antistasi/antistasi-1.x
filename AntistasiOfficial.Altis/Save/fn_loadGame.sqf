@@ -68,7 +68,7 @@ unlockedRifles = unlockedweapons - gear_sidearms - gear_missileLaunchers - gear_
 
 {
 	[_x, selectRandom ["FOOD", "WATER", "FUEL"], true] remoteExec ["createSupplyPrefab", call AS_fnc_getNextWorker];
-}forEach mrkSupplyCrates
+} forEach mrkSupplyCrates;
 
 _markers = mrkFIA + mrkAAF + campsFIA;
 
