@@ -24,9 +24,9 @@ _civVehicles = CIV_vehicles + [civHeli] +
 		"C_Scooter_Transport_01_F",	// Jetski
 		"C_Boat_Transport_02_F"		// RHIB transport boat
 	];
-	
 
-//Define seats which are openly, so player cannot go incognito sitting on these	
+
+//Define seats which are openly, so player cannot go incognito sitting on these
 _civVehiclesWithOpenSeats = ["C_Offroad_01_F", "C_Van_01_transport_F", "C_Truck_02_transport_F"];
 _civVehicleOpenSeats = [[2,3,4,5], [3,4,5,6,7,8,9,10,11,12], [3,4,5,6,7,8,9,10,11,12,13,14,15,16]];
 
@@ -86,11 +86,11 @@ call {
 		if (vehicle player in reportedVehs) exitWith {
 			_reason = localize "STR_HINTS_UND_REPORTED_CAR";
 		};
-		
-		
+
+
 	};
-	
-	
+
+
 
 	// You are wearing compromising gear
 	call {
@@ -112,11 +112,13 @@ call {
 	if (_break) exitWith {
 		_reason = [localize "STR_HINTS_UND_GEAR"] call _fnc_displayGear;
 	};
-	
-	if (vehicle player != player AND _break) exitWith {
+
+	if ( (vehicle player != player) AND _break) exitWith {
 		//Player is sitting openly on a truck or else and the gears is compromising
-		if ((vehicle player in _civVehiclesWithOpenSeats) AND (vehicle player getCargoIndex in _civVehicleOpenSeats select (_civVehiclesWithOpenSeats find (vehicle player)))) exitWith 
-		{
+		if (
+		    (vehicle player in _civVehiclesWithOpenSeats) AND
+		    (vehicle player getCargoIndex in _civVehicleOpenSeats select (_civVehiclesWithOpenSeats find (vehicle player)))
+		) exitWith {
 			_reason = "You are sitting openly (Need localize)";
 			[player] spawn _fnc_compromiseVehicle;
 		};
