@@ -45,7 +45,7 @@ _prestigeBLUFOR = _prestigeBLUFOR max 1;
 
 if (_prestigeBLUFOR + _prestigeOPFOR < 5) then {_prestigeOPFOR = 1; _prestigeBLUFOR = 5};
 
-_data = [_numCiv, _numVeh,_prestigeOPFOR,_prestigeBLUFOR, _data select 4];
+_data = [_numCiv, _numVeh,_prestigeOPFOR,_prestigeBLUFOR];
 
 server setVariable [_city,_data,true];
 cityIsSupportChanging = false;
