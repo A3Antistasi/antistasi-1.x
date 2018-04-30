@@ -59,7 +59,7 @@ _bandera addAction [localize "str_act_mapInfo",
 // [[_bandera,"garage"],"AS_fnc_addActionMP"] call BIS_fnc_MP; Stef 27/10 disabled old garage
 
 _antenna = [antenas,_posicion] call BIS_fnc_nearestPosition;
-if (getPos _antenna distance _posicion < 100) then {
+if ((count antenas != 0) AND (getPos _antenna distance _posicion < 100)) then {
 	[_bandera,"jam"] remoteExec ["AS_fnc_addActionMP"];
 };
 
