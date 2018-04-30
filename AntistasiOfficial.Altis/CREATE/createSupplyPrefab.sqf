@@ -15,6 +15,7 @@ if(_create) then
 		case "FUEL": 	{_crateType = "CargoNet_01_barrels_F";				};
 		case "FOOD": 	{_crateType = "Land_PaperBox_01_open_boxes_F";		};
 	};
+	diag_log format ["Marker type = %1" , typeName _marker];
 	if(isnil "_marker") then
 	{
 		_allSheds = nearestObjects [_posHQ, [_houseType], 4000, true];
@@ -25,7 +26,7 @@ if(_create) then
 		};
 		_selectedShed = selectRandom _allSheds;
 		_spawnPosition = position _selectedShed;
-
+		_marker = createMarker [format ["SUP%1", random 100], _spawnPosition];
 
 		while {
 			(count (
