@@ -25,6 +25,14 @@ if(_create) then
 		};
 		_selectedShed = selectRandom _allSheds;
 		_spawnPosition = position _selectedShed;
+		_marker = createMarker [format ["SUP%1", random 100], _spawnPosition];
+		_marker setMarkerShape "ICON";
+		_marker setMarkerAlpha 1;
+		//spawner setVariable [_marker, 0, true]; //Activate when merged with new spawn system
+		spawner setVariable [_marker, true, true];
+		mrkSupplyCrates pushBackUnique _marker;
+		systemchat format ["mrkSupplyCrates = %1",mrkSupplyCrates];
+		publicVariable "mrkSupplyCrates";
 	}
 	else
 	{
@@ -46,14 +54,7 @@ if(_create) then
 	if(isnil "_spawnPosition") then {diag_log "ANTISTASI - DynamicSupplies: No suitable position found around HQ for a supply crate";};
 
 	// Create Marker and add it to the supply list
-	_marker = createMarker [format ["SUP%1", random 100], _spawnPosition];
-	_marker setMarkerShape "ICON";
-	_marker setMarkerAlpha 1;
-	//spawner setVariable [_marker, 0, true]; //Activate when merged with new spawn system
-	spawner setVariable [_marker, true, true];
-	mrkSupplyCrates pushBackUnique _marker;
-	systemchat format ["mrkSupplyCrates = %1",mrkSupplyCrates];
-	publicVariable "mrkSupplyCrates";
+	
 
 	diag_log format ["ANTISTASI - SUP_CitySupply pos %1, type %2, marker %3",_spawnPosition, _crateType, _marker];
 	[_spawnPosition, _crateType, _marker] remoteExec ["createSupplyBox", call AS_fnc_getNextWorker];
