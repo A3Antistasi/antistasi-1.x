@@ -53,7 +53,7 @@ waitUntil {sleep 3; (server getVariable ["campQRF", false]) OR {!(_targetMarker 
 
 if (_targetMarker in campsFIA) then {
 	_tsk = ["DEF_Camp",[side_blue,civilian],[[_tskDesc, _campName, _airportName],[_tskTitle, _campName],_targetMarker],_targetPosition,"SUCCEEDED",5,true,true,"Defend"] call BIS_fnc_setTask;
-	[0,0] remoteExec ["prestige",2];
+	//[0,0] remoteExec ["prestige",2];
 	[0,300] remoteExec ["resourcesFIA",2];
 	[5,Slowhand] call playerScoreAdd;
 	{if (isPlayer _x) then {[10,_x] call playerScoreAdd}} forEach ([500,0,_targetPosition,"BLUFORSpawn"] call distanceUnits);
