@@ -27,11 +27,12 @@ if(_create) then
 		_spawnPosition = position _selectedShed;
 		_marker = createMarker [format ["SUP%1", random 100], _spawnPosition];
 		_marker setMarkerShape "ICON";
+		_marker setMarkerType "mil_warning";
 		_marker setMarkerAlpha 1;
 		//spawner setVariable [_marker, 0, true]; //Activate when merged with new spawn system
 		spawner setVariable [_marker, true, true];
 		mrkSupplyCrates pushBackUnique _marker;
-		systemchat format ["mrkSupplyCrates = %1",mrkSupplyCrates];
+		//systemchat format ["mrkSupplyCrates = %1",mrkSupplyCrates];
 		publicVariable "mrkSupplyCrates";
 	}
 	else
