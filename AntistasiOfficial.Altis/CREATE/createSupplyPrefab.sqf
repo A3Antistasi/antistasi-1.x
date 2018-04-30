@@ -1,22 +1,19 @@
 if (!isServer and hasInterface) exitWith {};
 
 params [["_marker", nil], ["_type", ""], ["_create", false]];
-diag_log format ["SUP_CitySupply, _type = %1, now creating",_type];
-private ["_duration","_endTime", "_spawnPosition","_crate", "_house","_groupType","_group"];
+diag_log format ["ANTISTASI - SUP_CitySupply, _type = %1, now creating",_type];
+private ["_duration","_endTime", "_spawnPosition","_crate", "_house","_groupType","_group","_crateType"];
 
 if(_create) then
 {
 	_posHQ = getMarkerPos guer_respawn;
 
 	_houseType = "Land_i_Shed_Ind_F";
-	_crateType = "Land_PaperBox_01_open_boxes_F";
-	if(_type == "WATER") then
-	{
-		_crateType = "Land_PaperBox_01_open_water_F";
-	};
-	if(_type == "FUEL") then
-	{
-		_crateType = "CargoNet_01_barrels_F";
+
+	switch (_type) do {
+		case "WATER": 	{_crateType = "Land_PaperBox_01_open_boxes_F";		};
+		case "FUEL": 	{_crateType = "CargoNet_01_barrels_F";				};
+		case "FOOD": 	{_crateType = "Land_PaperBox_01_open_boxes_F";		};
 	};
 	if(isnil "_marker") then
 	{
@@ -57,6 +54,7 @@ if(_create) then
 	mrkSupplyCrates pushBackUnique _marker;
 	publicVariable "mrkSupplyCrates";
 
+	diag_log format ["ANTISTASI - SUP_CitySupply pos %1, type %2, marker %3",_spawnPosition, _crateType, _marker];
 	[_spawnPosition, _crateType, _marker] remoteExec ["createSupplyBox", call AS_fnc_getNextWorker];
 };
 if(!_create) then {_spawnPosition = getMarkerPos marker;};

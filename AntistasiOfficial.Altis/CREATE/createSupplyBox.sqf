@@ -1,11 +1,16 @@
 params ["_spawnPosition", "_crateType", "_marker"];
+private ["_crateType","_cratedisplay"]; //Stef, should i add other variables here?
 
-_spawnPosition = _spawnPosition findEmptyPosition [5,50, _crateType];
-sleep 1;
 _crate = _crateType createVehicle _spawnPosition;
 _crate allowDamage false;
 [_crate] spawn {sleep 1; (_this select 0) allowDamage true;};
 _crate call jn_fnc_logistics_addAction;
+switch (_crateType) do {
+	case "Land_PaperBox_01_open_water_F": 	{_cratedisplay = "Water Supplies"	};
+	case "CargoNet_01_barrels_F": 			{_cratedisplay = "Fuel Supplies"	};
+	case "Land_PaperBox_01_open_boxes_F": 	{_cratedisplay = "Food Supplies"	};
+};
+[_crate,_cratedisplay] spawn inmuneConvoy;
 
 
 /*
