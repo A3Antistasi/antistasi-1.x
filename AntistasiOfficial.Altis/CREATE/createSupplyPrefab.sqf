@@ -56,6 +56,7 @@ if(_create) then
 
 	diag_log format ["ANTISTASI - SUP_CitySupply pos %1, type %2, marker %3",_spawnPosition, _crateType, _marker];
 	[_spawnPosition, _crateType, _marker] remoteExec ["createSupplyBox", call AS_fnc_getNextWorker];
+	waitUntil {sleep 1; (count (nearestObjects [_spawnPosition, ["Land_PaperBox_01_open_boxes_F", "Land_PaperBox_01_open_water_F", "CargoNet_01_barrels_F"], 10, true])  != 0)};
 };
 if(!_create) then {_spawnPosition = getMarkerPos _marker;};
 
