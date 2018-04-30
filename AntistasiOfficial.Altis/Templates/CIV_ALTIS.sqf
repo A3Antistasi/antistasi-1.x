@@ -40,7 +40,8 @@ CIV_vehicles = [
 	"C_Van_01_fuel_F",
 	"C_Van_01_transport_F",
 	"C_Truck_02_transport_F",
-	"C_Truck_02_covered_F"
+	"C_Truck_02_covered_F",
+	"C_Quadbike_01_F"
 ];
 
 CIV_workers = [
