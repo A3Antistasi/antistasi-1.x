@@ -91,7 +91,7 @@ if ({(alive _x) and (_x distance _posicionTel < 10)} count units _grupo > 0) the
 	campList = campList + [[_mrk, _texto]]; publicVariable "campList";
 	markers = markers + [_mrk];
 	publicVariable "markers";
-	spawner setVariable [_mrk,false,true];
+	spawner setVariable [_mrk,4,true];
 	_tsk = ["campsFIA",[side_blue,civilian],["STR_TSK_DESC_CAMPSET","STR_TSK_CAMPSET",_mrk],_posicionTel,"SUCCEEDED",5,true,true,"Move"] call BIS_fnc_setTask;
 	_mrk setMarkerType "loc_bunker";
 	_mrk setMarkerColor "ColorOrange";

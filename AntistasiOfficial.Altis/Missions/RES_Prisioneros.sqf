@@ -65,7 +65,7 @@ sleep 5;
 waitUntil {sleep 1; ({alive _x} count _POWs == 0) OR ({(alive _x) AND (_x distance getMarkerPos guer_respawn < 50)} count _POWs > 0) OR (dateToNumber date > _endTime)};
 
 if (dateToNumber date > _endTime) then {
-	if !(spawner getVariable _marker) then {
+	if (spawner getVariable _marker == 4) then {
 		{
 			if (group _x == _groupPOW) then {
 				_x setDamage 1;

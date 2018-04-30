@@ -4,6 +4,7 @@ _veh = _this select 0;
 
 if ((_veh isKindOf "FlagCarrier") or (_veh isKindOf "Building")) exitWith {};
 
+_veh setVariable ["BLUFORSpawn",true,true];
 clearMagazineCargoGlobal _veh;
 clearWeaponCargoGlobal _veh;
 clearItemCargoGlobal _veh;

@@ -16,7 +16,7 @@ _patrolMarker = [_marker] call AS_fnc_createPatrolMarker;
 _workers = [];
 
 _currentStrength = 0;
-while {(spawner getVariable _marker) AND (_currentStrength < 2)} do {
+while {(spawner getVariable _marker != 4) AND (_currentStrength < 2)} do {
 	while {true} do {
 		_spawnPos = [_markerPos, 150 + (random 350) ,random 360] call BIS_fnc_relPos;
 		if !(surfaceIsWater _spawnPos) exitWith {};
@@ -50,7 +50,7 @@ _spawnPos = [];
 _groupType = "";
 _currentStrength = 0;
 if (_isFrontline) then {_maxStrength = _maxStrength * 2};
-while {(spawner getVariable _marker) AND (_currentStrength < _maxStrength)} do {
+while {(spawner getVariable _marker != 4) AND (_currentStrength < _maxStrength)} do {
 	if ((diag_fps > minimoFPS) OR (_currentStrength == 0)) then {
 		_groupType = [infTeam, side_green] call AS_fnc_pickGroup;
 		_group = [_markerPos, side_green, _groupType] call BIS_Fnc_spawnGroup;
@@ -64,7 +64,7 @@ while {(spawner getVariable _marker) AND (_currentStrength < _maxStrength)} do {
 };
 
 _observer = objNull;
-if ((random 100 < (((server getVariable "prestigeNATO") + (server getVariable "prestigeCSAT"))/10)) AND (spawner getVariable _marker)) then {
+if ((random 100 < (((server getVariable "prestigeNATO") + (server getVariable "prestigeCSAT"))/10)) AND (spawner getVariable _marker != 4)) then {
 	_spawnPos = [];
 	_group = createGroup civilian;
 	while {true} do {
@@ -113,7 +113,7 @@ if !(_marker in destroyedCities) then {
 
 //Despawn conditions
 	waitUntil {sleep 1;
-		!(spawner getVariable _marker) OR
+		(spawner getVariable _marker > 1) OR
 
 		(({!(vehicle _x isKindOf "Air")}
 			count ([_size,0,_markerPos,"BLUFORSpawn"] call distanceUnits))
@@ -126,11 +126,11 @@ if !(_marker in destroyedCities) then {
 		)
 	};
 
-if ((spawner getVariable _marker) AND !(_marker in mrkFIA)) then {
+if ((spawner getVariable _marker < 2) AND !(_marker in mrkFIA)) then {
 	[_flag] remoteExec ["mrkWIN",2];
 };
 
-waitUntil {sleep 1; !(spawner getVariable _marker)};
+waitUntil {sleep 1; (spawner getVariable _marker > 1)};
 
 deleteMarker _patrolMarker;
 [_allGroups, _allSoldiers + _workers, _allVehicles] spawn AS_fnc_despawnUnits;
