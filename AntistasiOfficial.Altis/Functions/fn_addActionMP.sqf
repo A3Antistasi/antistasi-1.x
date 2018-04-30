@@ -36,7 +36,6 @@ switch _type do {
 	case "jam": {_object addAction [localize "STR_ACT_JAMCSAT", "jamLRRAdio.sqf",nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"];};
 	case "toggle_device": {_object addAction [localize "STR_ACT_TOGGLEDEVICE", "Scripts\toggleDevice.sqf",nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"];};
 	case "unload_pamphlets": {_object addAction [localize "STR_ACT_PAMPHLETS", {server setVariable ["pr_unloading_pamphlets", true, true]; [[_this select 0,"remove"],"AS_fnc_addActionMP"] call BIS_fnc_MP;},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"];};
-	case "unload_supplies": {_object addAction ["Unload supplies", {server setVariable ["sup_unloading_supplies", true, true]; [[_this select 0,"remove"],"AS_fnc_addActionMP"] call BIS_fnc_MP;},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"];};
 	case "moveObject" : {_object addAction [localize "STR_ACT_MOVEASSET", {[_this select 0,_this select 1,_this select 2] spawn AS_fnc_moveObject},nil,0,false,true,"","(_this == Slowhand)"]};
 	case "deploy" : {_object addAction [localize "STR_ACT_BUILDPAD", {[_this select 0, _this select 1] remoteExec ["AS_fnc_deployPad", 2]},nil,0,false,true,"","(_this == Slowhand)"]};
 	case "heal": {if (player != _object) then {_object addAction ["Revive", "Revive\actionRevive.sqf",nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"]}};
