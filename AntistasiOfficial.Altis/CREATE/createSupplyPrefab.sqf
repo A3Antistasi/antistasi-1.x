@@ -26,18 +26,18 @@ if(_create) then
 		_selectedShed = selectRandom _allSheds;
 		_spawnPosition = position _selectedShed;
 		_marker = createMarker [format ["SUP%1", random 100], _spawnPosition];
-		
+
 		while {
 			(count (
 				nearestObjects [_spawnPosition, ["Land_PaperBox_01_open_boxes_F", "Land_PaperBox_01_open_water_F", "CargoNet_01_barrels_F"], 300, true]
-			) != 0) AND (_spawnPosition distance2D _posHQ > 1000) AND ([200, 0, _spawnPosition, "BLUFORSpawn"] call distanceUnits == 0)
+			) != 0) AND (_spawnPosition distance2D _posHQ > 1000) AND (count ([200, 0, _spawnPosition, "BLUFORSpawn"] call distanceUnits) == 0)
 		} do
 		{
 			_allSheds = _allSheds - [_selectedShed];
 			if((count _allSheds)  == 0) exitWith {_spawnPosition = nil};
 			_spawnPosition = position _selectedShed;
 		};
-		
+
 		//spawner setVariable [_marker, 0, true]; //Activate when merged with new spawn system
 		spawner setVariable [_marker, true, true];
 		mrkSupplyCrates pushBackUnique _marker;
@@ -53,12 +53,12 @@ if(_create) then
 	_marker setMarkerType "mil_warning";
 	_marker setMarkerAlpha 1;
 	//Marker will do the following much easier
-	
+
 
 	if(isnil "_spawnPosition") then {diag_log "ANTISTASI - DynamicSupplies: No suitable position found around HQ for a supply crate";};
 
 	// Create Marker and add it to the supply list
-	
+
 
 	diag_log format ["ANTISTASI - SUP_CitySupply pos %1, type %2, marker %3",_spawnPosition, _crateType, _marker];
 	[_spawnPosition, _crateType, _marker] remoteExec ["createSupplyBox", call AS_fnc_getNextWorker];
