@@ -1,5 +1,5 @@
 if (!isServer and hasInterface) exitWith {};
-
+systemchat "Create outpost init";
 params ["_marker"];
 private ["_allVehicles","_allGroups","_allSoldiers","_markerPos","_position","_size","_reduced","_buildings","_groupGunners","_building","_type","_vehicle","_unit","_flag","_crate","_isFrontline","_vehicleData","_vehCrew","_base","_roads","_data","_strength","_currentStrength","_groupType","_group","_patrolParams","_observer","_radioTower"];
 
@@ -167,7 +167,7 @@ if !(count _position == 0) then {
 //Spawn Infantry
 	_strength = 1 + (1 max (round (_size/50)));
 	_currentStrength = 0;
-	if (_isFrontline) then {_strength = _strength * 1}; //Stef 27/10 disabled the frontline unit increase untill AI caps is better handled
+	if (_isFrontline) then {_strength = _strength + 1};
 
 if (_marker in puestosAA) then {
 	_groupType = [infAA, side_green] call AS_fnc_pickGroup;
@@ -178,7 +178,7 @@ if (_marker in puestosAA) then {
 };
 
 while {(spawner getVariable _marker < 2) AND (_currentStrength < _strength)} do {
-	if ((_currentStrength == 0)) then {   //Stef removed FPS check, useless for MP, maybe add some extra checks if singleplayer
+	if ((_currentStrength == 0)) then {
 		_groupType = [infSquad, side_green] call AS_fnc_pickGroup;
 		_group = [_markerPos, side_green, _groupType] call BIS_Fnc_spawnGroup;
 		[_group, _marker, "SAFE","SPAWNED","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf";
