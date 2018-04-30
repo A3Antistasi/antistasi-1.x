@@ -66,7 +66,6 @@ unlockedRifles = unlockedweapons - gear_sidearms - gear_missileLaunchers - gear_
 //===========================================================================
 
 
-
 _markers = mrkFIA + mrkAAF + campsFIA;
 
 {

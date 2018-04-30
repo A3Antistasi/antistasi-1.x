@@ -426,7 +426,7 @@ fn_setData = {
 					_numVeh = _datos select 1;
 					_prestigeOPFOR = _varValue select _i;
 					_prestigeBLUFOR = _datos select 3;
-					_supplyLevels = _datos select 4;
+					_supplyLevels = ["LOW", "LOW", "LOW"];
 					_datos = [_numCiv,_numVeh,_prestigeOPFOR,_prestigeBLUFOR, _supplyLevels];
 					server setVariable [_ciudad,_datos,true];
 				};
