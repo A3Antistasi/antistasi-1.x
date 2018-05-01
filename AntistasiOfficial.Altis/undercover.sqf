@@ -15,14 +15,13 @@ _compromised = player getVariable ["compromised",dateToNumber date];
 	Ideal for hand-placed objects that you don't want spawning as traffic.
 	Vehicles you want added as traffic should be added to CIV_vehicles.
 */
-_civVehicles = CIV_vehicles + [civHeli] +
-	[
-		"C_Rubberboat",				// Civ. Zodiac
-		"C_Boat_Civil_01_F",		// Speedboat
-		"C_Boat_Civil_01_rescue_F",	// Rescue Speedboat
-		"C_Boat_Civil_01_police_F",	// Police Speedboat
-		"C_Scooter_Transport_01_F",	// Jetski
-		"C_Boat_Transport_02_F"		// RHIB transport boat
+_civVehicles = CIV_vehicles + [civHeli] + [
+		"C_Rubberboat",// Civ. Zodiac
+		"C_Boat_Civil_01_F",// Speedboat
+		"C_Boat_Civil_01_rescue_F",// Rescue Speedboat
+		"C_Boat_Civil_01_police_F",// Police Speedboat
+		"C_Scooter_Transport_01_F",// Jetski
+		"C_Boat_Transport_02_F"// RHIB transport boat
 	];
 
 
@@ -34,10 +33,10 @@ _civVehicles = CIV_vehicles + [civHeli] +
 		"C_Quadbike_01_F"
 	];
 	_civVehicleOpenSeats = [
-		[2,3,4,5], 								//Civi Offroad
-		[3,4,5,6,7,8,9,10,11,12], 				//Civi Truck
-		[3,4,5,6,7,8,9,10,11,12,13,14,15,16], 	//Civi Zamak
-		[-1,0] 									//Civi quadbike
+		[2,3,4,5],//Civi Offroad
+		[3,4,5,6,7,8,9,10,11,12],//Civi Truck
+		[3,4,5,6,7,8,9,10,11,12,13,14,15,16],//Civi Zamak
+		[-1,0] //Civi quadbike
 	];
 
 _fnc_compromiseVehicle = {
