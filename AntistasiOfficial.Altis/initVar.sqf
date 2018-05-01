@@ -193,6 +193,13 @@ if !(isnil "XLA_fnc_addVirtualItemCargo") then {
 };
 
 [] call AS_fnc_detectTFAR;
+hayACRE = false;
+if (isClass(configFile >> "cfgPatches" >> "acre_main")) then
+	{
+	hayACRE = true;
+	haveRadio = true;
+	};
+
 
 FIA_texturedVehicles = [];
 FIA_texturedVehicleConfigs = [];
