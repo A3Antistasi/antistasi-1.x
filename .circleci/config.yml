@@ -1,0 +1,25 @@
+version: 2
+
+test:
+  override:
+    - echo "test"
+
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.6.1
+
+    steps:
+      - checkout
+      - run: sudo chown -R circleci:circleci /usr/local/bin
+      - run: sudo chown -R circleci:circleci /usr/local/lib/python3.6/site-packages
+      - run:
+          name: Install linter-sqf from LordGolias/sqf, thx !
+          command: |
+            set -e
+            sudo pip3 install --upgrade pip
+            sudo pip3 install sqflint
+      - run:
+          name: Run sqflint on AntistasiOfficial.Altis folder
+          command: |
+            sudo sqflint -d ./AntistasiOfficial.Altis
