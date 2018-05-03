@@ -1,0 +1,5 @@
+Lintcheck version 1.xx by Mikero.
+
+LintcheckRap checks that a raPifiable file (such as description.ext,rvmat,bisurf or config) has no syntax errors
+
+LinCheckNoisy is same as above but produces errror list on screen

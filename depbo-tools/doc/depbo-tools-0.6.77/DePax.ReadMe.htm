@@ -1,0 +1,110 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-au">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>ExtractPbo Gui</title>
+<style>
+<!--
+table.MsoTableGrid
+	{border:1.0pt solid windowtext;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	}
+body.hmmessage
+{
+font-size: 10pt;
+font-family:Tahoma
+}
+-->
+</style>
+</head>
+
+<body>
+
+<p><font face="Arial">DePax Version 1.xx by Mikero<br>
+See ReadMe General </font></p>
+<p><font face="Arial">See fixes</font></p>
+<hr>
+<p><font face="Arial"><br>
+DePax is a powerful analyser of any pac/paa file<br>
+<br>
+Under all options, it lists the internal structure of the file:</font></p>
+<ul>
+  <li><font face="Arial">It's type</font></li>
+  <li><font face="Arial">It's Taggs</font></li>
+  <li><font face="Arial">The compression used (and whether ok)</font></li>
+  <li><font face="Arial">The the sizes of the mipmaps<br>
+  <br>
+&nbsp;</font></li>
+</ul>
+<p><font face="Arial">In addition, it will scan given folder(s) for all paa's or 
+all paa's of a given type.<br>
+<br>
+Thus, you can rapidly search for instance the p:/ca folder for DXT1 *paa<br>
+<br>
+output is produced on screen<br>
+<br>
+<br>
+Syntax:<br>
+<br>
+DePax [-options...] Anyfile[.pac | .paa]<br>
+DePax [-options] AnyFolder<br>
+DePax [-options] FileList[.txt | .lst]<br>
+DePax [-options] PboName[.pbo | .xbo | .ebo]<br>
+<br>
+-options (case insensitive) can be listed separately<br>
+<br>
+-N Noisy (default)<br>
+-B brief (dir listing). best used for folder and or T scan<br>
+-C=[&quot;]Comma,Separated,Typelist[&quot;]:&nbsp; only list pax of type n.&nbsp; <b>must</b> be last option<br>
+<br>
+<span dir="ltr"><u>TYPE LIST</u><br>
+<br>
+A typelist causes depax to only list specific types of paa.<br>
+<br>
+A typelist is obviously only useful in conjunction with folder or pbo scan<br>
+<br>
+The list consists of one or more comma separated values.<br>
+<br>
+These values can either be expressed as hexadecimal, or the type name as follows<br>
+<br>
+0xFF0n or &quot;DXTn&quot; (n==1..7)<br>
+0x1555 or &quot;RGB5&quot;<br>
+0x4444 or &quot;RGB4&quot;<br>
+0x8888 or &quot;RGB8&quot;<br>
+0x8080 or &quot;GREY&quot; or &quot;GRAY&quot; // alternate spelling<br>
+0x4747 or &quot;INDX&quot;<br>
+0x0000 or &quot;DEMO&quot; ofp demo (no number, since there is no 'type'<br>
+<br>
+</span>
+<br>
+FILE LIST<br>
+<br>
+A FileList is useful in your projects where you *should* be checking 
+quality-of-work before issuing to the public and you don't want<br>
+a folder scan because some pax are still under development<br>
+<br>
+example:<br>
+<br>
+DePax -B MyGreatListOfShould-Be-Good-Pax<br>
+<br>
+or, simply point DePax to the folder under review<br>
+<br>
+<br>
+Specifying a pbo, obviously, looks for given pax in a given pbo<br>
+<br>
+Examples:<br>
+<br>
+DePax thisfile<br>
+DePax -bc=DXT1,DXT2,DXT5 ThisFolder // list (briefly) only files of type DXT 
+which might be in ThisFolder<br>
+DePax -C=INDX ThisPbo.pbo // list only ofp pac-pallete types if they're in this 
+pbo<br>
+<br>
+<br>
+&nbsp;</font></p>
+
+</body></html>

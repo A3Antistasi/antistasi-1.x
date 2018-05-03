@@ -1,0 +1,14 @@
+
+Dekey Version 1.xx by Mikero
+min dll is 6.14
+1.53 made compat to dll
+fixed bug in nsis installer to prevent potential dos environ path being cleared
+
+
+1.52
+rewrite
+1.51
+added fileinfo and icon
+added installer
+added -P no pause option
+

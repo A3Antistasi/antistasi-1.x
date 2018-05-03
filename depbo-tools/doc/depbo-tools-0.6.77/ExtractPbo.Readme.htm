@@ -1,0 +1,512 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-au">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>ExtractPbo Gui</title>
+<style>
+<!--
+table.MsoTableGrid
+	{border:1.0pt solid windowtext;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	}
+body.hmmessage
+{
+font-size: 10pt;
+font-family:Tahoma
+}
+-->
+</style>
+</head>
+
+<body>
+
+<p><font face="Arial"><font color="#00FF00">ExtractPbo (Gui) </font>and
+<font color="#FF00FF">ExtractPboDos </font>version 2.xx by mikero.</font></p>
+
+<p><font face="Arial">WIN VISTA and beyond. <font color="#FF0000">This 
+exe is not compatible with winxp.</font></font></p>
+
+<p><font face="Arial">See readmeGeneral and fixes</font></p>
+
+<hr>
+
+<p><font color="#FF00FF" face="Arial">ExtractPboDos is a dos console only 
+application for spread freaks. </font></p>
+
+<p><font color="#00FF00" face="Arial">ExtractPbo is the gui version which 
+contains </font><font color="#FF00FF" face="Arial">ExtractPboDos </font>
+<font color="#00FF00" face="Arial">inside</font></p>
+
+<p><font color="#00FF00" face="Arial">ExtractPbo works in an identical manner to
+</font><font color="#FF00FF" face="Arial">ExtractPboDos </font>
+<font face="Arial">in console mode.</font></p>
+
+<p>&nbsp;</p>
+
+<p><font face="Arial">ExtractPbo does what it's name suggests.</font></p>
+
+<p><font face="Arial">ExtractPbo covers the nuances of all Bis 'pbo' files from 
+the very first cwc demo to Arma3. This includes (but is not limited to):</font></p>
+
+<ul>
+  <li><font face="Arial">Cold war crisis</font></li>
+  <li><font face="Arial">Resistance</font></li>
+  <li><font face="Arial">XBox Elite</font></li>
+  <li><font face="Arial">Arma1,2,3</font></li>
+  <li><font face="Arial">Arrowhead</font></li>
+  <li><font face="Arial">Ifa (ifa files)</font></li>
+  <li><font face="Arial">vbs2lite (xbo files)</font></li>
+</ul>
+
+<p><font face="Arial" color="#FF0000">Extractpbo will specifically <b>not</b> 
+extract vbs2 'ebo' files.</font></p>
+
+<p><font face="Arial">In the following documentation a 'pbo' is considered to 
+be: .pbo, .ifa, ,ebo, .xbo</font></p>
+
+<font FACE="Consolas" SIZE="2">
+</font>
+
+<font FACE="Arial">
+<p>This is a powerful dos console extractor that extracts ANY pbo from CWR thru 
+to VBS2 LITE (xbo files)</p>
+<p>ExtractPbo uses a heuristic approach to output the best possible results to 
+the best-possible output folder. While you can over-ride the default options the 
+general scenario is that the extractor will</p>
+<ul>
+  <li>Derapify binarised content (mission.sqm, config.bin. *rvmat ,etc)</li>
+  <li>Decompress a pbo (ofp only)</li>
+  <li>Decrypt Elite and VBS2 Lite pbo's</li>
+  <li>Autodetect the type of pbo / xbo / ebo</li>
+  <li>Verify valid compression for p3d and paa content (eg)</li>
+</ul>
+</font>
+
+<font FACE="Consolas" SIZE="2">
+</font>
+
+<font FACE="Arial">
+<p>In the specific case of non-ofp pbo's , the prefix is accounted for by 
+writing&nbsp; the file <span style="background-color: #FFFF00">pboPrext.txt
+</span>to the output.</p>
+<ul>
+  <li>An erroneous $pboPrefix$[.txt\ file if detected in the pbo itself, is <b>never</b> extracted.</li>
+  <li>Where a pbo has a config.bin AND a config.cpp, the the last listed is 
+  extracted. </li>
+</ul>
+</font>
+
+<font FACE="Consolas" SIZE="2">
+
+<font FACE="Arial">
+<p><b>usage</b></p>
+</font>
+
+<font FACE="Consolas">
+<p><b>&nbsp;&nbsp;&nbsp; extractpbo [-options...] NameOfPbo[.pbo|.xbo|.ebo]/aFolder/AnExtractionList [SomeFolder]</b></p>
+</font>
+
+<font FACE="Consolas" SIZE="2">
+<p>.extensions are not required. a 'pbo' is considered to be ANY *.xbo,*.ebo,*pbo</p>
+<p><b>options (optional, case insensitive)</b></p>
+<p>-L list only </p>
+<p>-LB brief dir style output</p>
+<p>-P do not pause&nbsp; (allow the controlling program to handle the 
+return status)</p>
+<p>-S silent (default)</p>
+<p>-N Noisy </p>
+<p>-J=\folder\to\temp&nbsp; create junction (see below)</p>
+<p>-D Derapify file(s) where relevant (default)</p>
+<p>-R Dont Derapify file(s)</p>
+<p>-Y Don't prompt if overwriting a folder</p>
+<p>-A deprecated</p>
+<p>-T used spaced (not tabbed) derap output</p>
+<p>-W Warnings are errors</p>
+<p>-V1 force extraction of vbs2 lite uk</p>
+<p>-V2 ditto us</p>
+<p>&nbsp;&nbsp;&nbsp; normally, the dll will detect which type it is. In extreme circumstances the 
+heuristic model might fail, and you can force it to one, or the other.</p>
+<p>&nbsp;&nbsp;&nbsp; Note missions (pbo) and addons (xbo) are equivalent.</p>
+<p>-F filelist[,...] name(s) of file(s) to extract</p>
+<p>&nbsp;&nbsp;&nbsp; extracted file(s) will appear in their 'correct' position in the relevent 
+output folder tree</p>
+<p>&nbsp;&nbsp;&nbsp; thus, multiple instances of config.cpp (eg) can be extracted.</p>
+<p>&nbsp;&nbsp;&nbsp; a minor form of wildcard the aster dot sequence can indicate 'all' extensions 
+of that type</p>
+<p>&nbsp;</p>
+</font>
+
+</font>
+
+<font FACE="Consolas" SIZE="2">
+<p>&nbsp;</p>
+
+<font FACE="Arial">
+<p>====OUTPUT FOLDER And Junctions====</p>
+<p>Distinctions exist between folder output for OFP vs non OFP (ARMA) </p>
+<ul>
+  <li>in OFP the NameOfPbo is sacrosanct. It must form part of the output to have 
+any meaning to the engine.</li>
+  <li>in ARMA the prefix inside the pbo is sacrosanct. It will form part of the 
+output.</li>
+</ul>
+<p>The dll detects the difference.</p>
+<p>Thus:</p>
+<p><b>For OFP:</b></p>
+<p>&nbsp;&nbsp;&nbsp; extractppo thing.pbo &gt;&gt; contents to thing\</p>
+<p>&nbsp;&nbsp;&nbsp; extractpbo thing.pbo anywhere &gt;&gt; contents to anywhere\thing\</p>
+<p><b>For ARMA:</b></p>
+<p>&nbsp;&nbsp;&nbsp; extractppo thing.pbo &gt;&gt; contents to thing\'prefix'\</p>
+<p>&nbsp;&nbsp;&nbsp; extractpbo thing.pbo drive:\anywhere &gt;&gt; contents to contents to 
+anywhere\'prefix'\</p>
+<p>the anywhere clause for arma allows creation of a p:\ca by specifying</p>
+<p>&nbsp;&nbsp;&nbsp; extractpbo thing P:\</p>
+<p>&nbsp;</p>
+<p>Mklink Junctions&nbsp; (windows only)</p>
+<p>the normal operation for an extracted pbo is to place it in the correct 
+location on a P drive</p>
+<p>in addition, bis binarise uses a temp folder on that p drive to mirror files 
+when making a map (eg)</p>
+<p>extractpbo will, additionally, create a mirror of the extracted data to 
+wherever specified. This is not a copy of those files, it is a junction to those 
+files.</p>
+<p>The benefits are disk space is considerably reduced since binarise does not 
+require copies of, and bins binarise preprocessing time can be singificantly 
+reduced since it has nothing to copy</p>
+<p>&nbsp;</p>
+<p>-J=P:\temp&nbsp; eg</p>
+<p>notes:</p>
+<p>_J is ignored for linux</p>
+<p>--J is ignored if the output folder is not a drive (p:\ eg)</p>
+<p>-j is ignored if drive:\folder specified by -J is not same as output drive</p>
+<p dir="ltr">extractpbo -J&nbsp; thingy p:\&nbsp;&nbsp; //
+
+<font FACE="Arial" SIZE="2">
+default
+</font>
+
+places in p:/temp </p>
+
+<font FACE="Arial" SIZE="2">
+<p dir="ltr">extractpbo -J=p:\some\where&nbsp; thingy p:\&nbsp;&nbsp; // default 
+places in <a href="file:///p:/some/where">p:\some\where</a></p>
+<p dir="ltr">extractpbo -J=\some\where&nbsp; thingy p:\&nbsp;&nbsp; // default 
+places in <a href="file:///p:/some/where">p:\some\where</a> </p>
+<p dir="ltr">extractpbo -J=some\where&nbsp; thingy p:\&nbsp;&nbsp; // default 
+places in <a href="file:///p:/some/where">p:\some\where</a> </p>
+</font>
+
+<p>&nbsp;</p>
+<hr>
+<p><span style="background-color: #FF0000">Be WARNED</span></p>
+<p>Normally, extractPBO does two important things</p>
+<p>1) it checks before over-writing a folder</p>
+<p>2) it erases all output folder content in an 'all bets are off' approach 
+before extracting the pbo</p>
+<p>using the anywhere option causes these 2 features to be disabled.</p>
+<p>if you have crap in the output folder(s). the crap will remain in the output 
+folder(s)</p>
+<p>if you specify an 'interesting' destination. you will get, 'interesting' 
+results. </p>
+<hr>
+<p><b>extraction behaviour</b></p>
+<p>** Fundamentally, a folder is created of the same name as the pbo in the same 
+folder as the pbo.</p>
+<p>&nbsp;</p>
+<p>** Arma pbo's will, in addition, create subfolders based on the detected 
+prefix. Thus:</p>
+<p>&nbsp;&nbsp;&nbsp; ExtractPbo Thing</p>
+<p>&nbsp;</p>
+<p><b>OFP: </b>pbo thing.pbo -&gt; thing\.....</p>
+<p><b>ARMA:</b> pbo thing.pbo -&gt; thing\Prefix\......</p>
+<p>**============================</p>
+<p>** Specifying a destination</p>
+<p>**============================</p>
+<p>**</p>
+<p>ExtractPbo thing P:\</p>
+<p>thing.pbo -&gt;P:\prefix\.... will create a perfect namespace based on the 
+prefix.</p>
+<p>thing.pbo -&gt;P:\thing\prefix\....</p>
+<p>ExtractPbo thing P:\SomeWhere</p>
+<p>thing.pbo -&gt;P:\Somewhere\prefix\...</p>
+<p>thing.pbo -&gt;P:\Somewhere\thing\.........</p>
+</font>
+
+<p></p>
+
+<font FACE="Arial">
+<p>=============================</p>
+<p>Specifying a relative destination address</p>
+<p>=============================</p>
+<p>you can't. drive: MUST be specified</p>
+</font>
+
+<font FACE="Arial">
+<p>====Other examples====</p>
+</font>
+
+<p></p>
+
+<font FACE="Arial">
+<p>extractpbo thing</p>
+<p>&nbsp;&nbsp;&nbsp; will extract thing.pbo to thing\ folder and derapify any content (such as 
+mission.sqm) that has been binarised</p>
+<p>extractpbo -f -r mission.sqm thing.pbo</p>
+<p>&nbsp;&nbsp;&nbsp; will extract a single file (and NOT derapify)</p>
+<p>extractpbo -L thing</p>
+<p>&nbsp;&nbsp;&nbsp; does a dir listing of pbo content along with added info</p>
+<p>extractpbo -f *.p3d nameofpbo</p>
+</font>
+
+<p></p>
+
+<font FACE="Arial">
+<p>&nbsp;&nbsp;&nbsp; will extract ONLY p3d files</p>
+<p>extractpbo ExtractionList.any [toSomewhere]</p>
+</font>
+
+<p></p>
+
+<font FACE="Arial">
+<p>&nbsp;&nbsp;&nbsp; will extract files contained in extraction list. Nameof extraction list can 
+be anything other than .pbo, or foldername</p>
+<p>&nbsp;&nbsp;&nbsp; line syntax for each line is identical to command line.</p>
+<p>&nbsp;&nbsp;&nbsp; global parameters FROM the command line operate as defaults if not 
+respecified in the list</p>
+<p>extractpbo Folder [toSomewhere]</p>
+<p>&nbsp;&nbsp;&nbsp; will recurse subfolders of above searching for pbo files.</p>
+</font>
+
+<p>&nbsp;</p>
+</font>
+
+<font FACE="Arial" SIZE="2">
+<p><b>==warning messages====</b></p>
+</font>
+
+<font FACE="Consolas">
+<p><font size="2">&quot;1st/last entry has non-zero real_size, reserved, or BlockLength field&quot;</font></p>
+<p><font size="2">&quot;reserved field non zero anywhere in entry bodies (except xbo)&quot;</font></p>
+<p><font size="2">&nbsp;&nbsp;&nbsp; Normally an attempt to prevent extraction and should present no issues. But, 
+users should suspect something wonky in the author's implementation</font></p>
+<p><font size="2">&quot;no shakey on arma&quot;;</font></p>
+<p><font size="2">&nbsp;&nbsp;&nbsp; early pbo makers did not create the appended 21 byte sha. This causes issues 
+only if attempting to sign the pbo for MP play</font></p>
+<p><font size="2">&quot;residual bytes in file&quot; // throws an error anyway</font></p>
+<p><font size="2">&nbsp;&nbsp;&nbsp; something has been either misinterpreted, or the pbo maker is at fault</font></p>
+<p><font size="2">&quot;arma pbo is missing a prefix (probably a mission)&quot;;</font></p>
+<p><font size="2">&nbsp;&nbsp;&nbsp; missions do not require prefix entries. But, as a matter of de-riguer, they 
+normally have them.</font></p>
+</font>
+
+<hr>
+
+<p><font face="Arial"><span style="background-color: #00FF00">ExtractPbo</span><font color="#00FF00">,exe
+</font>is <span style="background-color: #FFFF00">ExtractPboDos.exe </span>with 
+Window dressing (pun intended).</font></p>
+
+<p><font face="Arial">Major Features:</font></p>
+
+<ul>
+  <li><font face="Arial">Dual Dos-Console or Windows Mode.</font></li>
+  <li><font face="Arial">Drag n Drop Interface fully exploited.</font><ul>
+    <li><font face="Arial">Drop (and open) pbo's onto the dialog</font></li>
+    <li><font face="Arial">Drag or drop single files or entire folders 
+    INTO or OUT OF the pbo</font></li>
+    <li><font face="Arial">Double Click Automated viewing of (almost) 
+    any pbo file in it's relevant application (texview,visitor, rvmat, ogg)</font></li>
+    <li><font face="Arial">Renaming/Deleting/Adding/Moving any part of 
+    the pbo tree</font></li>
+  </ul>
+  </li>
+</ul>
+
+<p><font face="Arial">This application implements a consistent user interface. 
+To whit:</font></p>
+
+<ul>
+  <li><font face="Arial">All files extracted from a pbo are <b>unconditionally</b>:</font><ul>
+    <li><font face="Arial">DeCrypted if encrypted.</font></li>
+    <li><font face="Arial">DeCompressed if compressed.</font></li>
+    <li><font face="Arial">Unparsed to humanly readable text (config.bin, rvmat, 
+    bisurf eg)</font></li>
+  </ul>
+
+<p>&nbsp;</p>
+
+  </li>
+  <li><font face="Arial">All Saved As pbo's&nbsp; are&nbsp; <b>unconditionally:</b></font><ul>
+    <li><font face="Arial">Encrypted if vbs2lite</font></li>
+    <li><font face="Arial">Uncompressed</font></li>
+    <li><font face="Arial">Parsed (Rapified)</font></li>
+  </ul>
+  </li>
+</ul>
+
+<p><font face="Arial">To keep the interface noise free and simple to use, there 
+is no facility for selective Parsing/Compression/Encryption. All of these 
+'features' use tried and proven algorithms inside the dll including which types 
+of files require modification.</font></p>
+
+<p><b><font face="Arial">Dos Mode:</font></b></p>
+
+<p><font face="Arial">It will operate, just like before, in dos (console) mode, 
+allowing batch file processing, drag n drop, and dos console operations. It will 
+behave as nature intended, and as described, in the
+<span style="background-color: #FFFF00">ExtractPbo </span><font color="#00FF00">
+readme</font>.&nbsp; A more versatile and extensive range of -<font color="#00FF00">options</font> 
+exist in this&nbsp; mode for the connoisseur (or insane). The very popular 
+Arma2P extractor for instance uses Dos Mode.</font></p>
+
+<p><b><font face="Arial">Windows Mode:</font></b></p>
+
+<p><font face="Arial">Windows mode is how most (new) users will prefer to use 
+it.</font></p>
+
+<p><b><font face="Arial">Switching between Dos and Windows Mode:</font></b></p>
+
+<p><font face="Arial"><b>ANY</b> parameters supplied on the command line  invoke Dos Mode. This occurs as a natural result of simply using it in a 
+dos console to begin with and specifying a pbo to extract,&nbsp; or, dropping a 
+file onto the exe icon. On the other hand, simply invoking this exe from a dos 
+console with NO parameters, invokes the gui.</font></p>
+
+<p><font face="Arial">Windows mode uses previously recorded 'session' data of 
+which files, what targets, to start with (including window positioning and 
+size).</font></p>
+
+<hr>
+
+<p><font face="Arial">ExtractPboGui will extract the content of <b>any</b> 'pbo' 
+except&nbsp; encrypted <b>vbs2</b>. (yes, it does extract <b>vbs2lite</b>)</font></p>
+
+<p><font face="Arial">The over-riding philosophy of <b>all</b> MikeroTools (not 
+just this one) is to maintain backward compatibility. To this end, the same 
+'behaviour' can be expected from files emanating from the very first cwc demo, 
+Resistance, Xbox Elite, Arrowhead, TOH, Arma3, IFA extensions, Vbs2lite. There 
+are nuances to each type which the underlying dll takes care of. They are hidden 
+from the user (and hidden from developers using the dll who only want to 'see' a 
+uniform API). ExtractPboGui utilises over a decade of lessons learned in 
+the dll about things-pbo. Underneath the covers it is exceptionally powerful 
+and above all, robust.</font></p>
+
+<p><font face="Arial">Options available in this gui are intentionally bare 
+minimal. The intent being, 'just extract the damn thing'. </font></p>
+
+<p><b><font face="Arial">Installation:</font></b></p>
+
+<p><b><font face="Arial">Self installer: sit back and watch the pretty lights.</font></b></p>
+
+<p><b><font face="Arial">Manual Install:</font></b></p>
+
+<p><font face="Arial">Anywhere that gives you a thrill, but take note that 
+dePbodll is <b>also </b>required for this gui. (of course)</font></p>
+
+<p><b><font face="Arial">'pbo'</font></b></p>
+<blockquote>
+
+<p><font face="Arial">In this documentation 'pbo' is meant to infer SomeFile<b>.pbo</b> 
+: </font></p>
+
+<p><font face="Arial">To avoid the risk of tediousness everywhere else, a 'pbo' 
+can actually be an <b>.xbo</b> <b>.ebo</b>, <b>.ifa</b>, or, indeed, a <b>.pbo.
+</b>If a <b>.toh</b> ever gets introduced (or any other 'pbo' extension) you can 
+be sure the underlying dll will 'understand' it's a Packed Binary Object.</font></p>
+</blockquote>
+
+<p><font face="Arial">Gui options:</font></p>
+<p><b><u><font face="Arial">PboName</font></u></b></p>
+<p><font face="Arial">Use the browse button (...) to select any 'pbo' from 
+anywhere, including net drives. </font></p>
+<p><b><u><font face="Arial">Output Path</font></u></b></p>
+<p><font face="Arial">Use the browse button (...) to select the <b>beginning</b> 
+of the extraction point or simply type or paste it in. The Browse button allows 
+you to create new folder(s) for the <b>beginning</b> should you wish to.</font></p>
+<p><font face="Arial"><span style="background-color: #FFFF00">Note most 
+carefully.</span> This is the <b>beginning</b> path of all extracted content. 
+From this point on, the nature of the pbo determines how that path will be 
+filled (by prefix, by pboname)</font></p>
+<p><font face="Arial">If you wanted to re-create the bis engine's view of 
+'files', you would set the Output Path to <b>&quot;P:\&quot;</b></font></p>
+<p><b><u><font face="Arial">Destination Folder</font></u></b></p>
+<p><font face="Arial">ExtractPboGui autogenerates this path based on the 
+<b>OutputPath above</b>, catenated with the internal prefix of the selected pbo (if any), 
+or it's pboname (if none). There is no facility to change this catenated prefix.</font></p>
+<blockquote>
+  <p><b><font face="Arial">Allow Overwrite</font></b></p>
+  <blockquote>
+<p><font face="Arial">If the <b>Destination Folder </b>already exists, you will 
+normally be asked before extracting. <u>Allow Overwrite</u> removes this 
+sometimes annoying safety feature.</font></p>
+<p><font face="Arial">Be aware this is the <b>Destination Folder</b> being 
+over-written, not, the entire <b>Output</b> <b>Path</b>.</font></p>
+<p><b><font face="Arial">Remove Folder Before Extraction.</font></b></p>
+    <blockquote>
+<p><font face="Arial">In a fair and reasonable world, you wouldn't want 'stale' 
+paa's remaining via some previously extracted content. Or any other 'file' you 
+might have placed there. Unfortunately the nature of Arma prefixed pbo's is such 
+that nost of the pbo's live inside the file space of some other pbo. If you extracted Air3.pbo and 
+THEN extracted Air.pbo (it's root). Air3 content would be inadvertently removed.</font></p>
+    </blockquote>
+  </blockquote>
+</blockquote>
+<p><b><font face="Arial">BUTTONS</font></b></p>
+<p><font face="Arial"><b>EXTRACT</b></font></p>
+<p><font face="Arial">Should speak for itself. The main purpose of this application!
+</font> </p>
+<p><font face="Arial"><b>SAVEAS</b></font></p>
+<p><font face="Arial">For whatever reason wanted, the current contents of this pbo can be saved 
+anywhere, including a new name for the pbo, or indeed an existing pbo including 
+the original. (protection dialogs exist).</font></p>
+<p><font face="Arial">The 'current' contents may indeed be 'as is' or some/ all /none of the 
+contents may have been renamed/ added to, moved, or deleted. </font></p>
+<p><b><u><font face="Arial">Sneak Peak</font></u></b></p>
+<p><font face="Arial">The file and folder header entries of the 'pbo' 
+are listed in this panel as soon as any valid file is selected. While 
+exceptionally useful for advanced work, you can safely ignore them for simply 
+extracting your 'pbo'.</font></p>
+<p><b><u><font face="Arial">Output Screen</font></u></b></p>
+<p><font face="Arial">Is (almost) identical to the dos console screen output on the dos 
+mode of this exe</font></p>
+<p><font face="Arial">Initially it shows the basic pbo header type whenever a pbo is 
+selected. This, together with <u>Sneak Peak, </u>is 
+useful when you're  browsing multiple pbo's, not necessarily wanting to 
+extract them.</font></p>
+<p><font face="Arial">Ultimately, this screen lists the content as it is being 
+extracted: it's compression, it's encryption, it's (de)Rapification, and any errors encountered.</font></p>
+  <p><font face="Arial"><b>DRAG n DROP</b></font><p><font face="Arial">The list below of possibilities should 
+all be intuitive.</font><p><font face="Arial">You can:</font><ul>
+  <li><font face="Arial">Drop pbo's anywhere on the gui and they open automatically.</font></li>
+  <li><font face="Arial">Drag or drop any file or folder from, to, the currently open pbo</font></li>
+  </ul>
+  <blockquote>
+  <p><font face="Arial">Dropping files into the pbo are problematical in the sense of bi's 
+  braindead file referencing but opportunity's exist to drag out, fix a texture, 
+  drop it back in as but one, of many possibilities.</font><p>
+  <font face="Arial">Dragging out (or simply 
+    viewing) a single file such as the all important config.bin/cpp speaks for 
+    itself.</font></blockquote>
+  <ul>
+    <li><font face="Arial">Double Click (almost) any file in the pbo to 'view it' with it's 
+    relevant application </font> </li>
+    <li><font face="Arial">Rename&nbsp; files or folders in situ</font></li>
+    <li><font face="Arial">sanity checks prevail that you don't rename extensions from rvmat to paa 
+    (eg)</font></li>
+    <li><font face="Arial">delete files or folders in situ</font></li>
+    <li><font face="Arial">Move files or folders in situ</font><p>
+    <font face="Arial">Again, with BIS's braindead file 
+    referencing the usefulness is problematic, But, it can be done, for whatever 
+    purpose.<br>
+&nbsp;</font></li>
+    <li><font face="Arial">Direct drag of&nbsp; 'ofp/vbs/arma' files from one Gui to another 'vbs/arma/ofp' 
+    Gui (mix n match upgrades)</font></li>
+    <li><font face="Arial">Change the prefix</font></li>
+    </ul>
+  <p>&nbsp;<p><font face="Arial"><b>Expandable Dialog</b></font><p>
+<font face="Arial">As implemented, the Gui initialises in 'basic view'. Simply 
+extend the edges of it's borders (or open in full screen mode) to view 
+very-long-filenames eg, to suit your purpose.</font><p>&nbsp;<p>
+<font face="Arial">Enjoy</font><p>&nbsp;</body></html>

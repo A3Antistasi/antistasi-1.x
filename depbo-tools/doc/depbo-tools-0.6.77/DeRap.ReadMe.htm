@@ -1,0 +1,111 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-au">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>well here we are</title>
+</head>
+
+<body>
+
+<p><font face="Arial">DeRap Version 1.xx by Mikero. </font></p>
+<p><font face="Arial">See ReadMeGeneral and fixes</font></p>
+<hr>
+<ul>
+  <li><font face="Arial">DeRap&nbsp; is the dual dos/windows app.</font></li>
+  <li><font face="Arial">DeRapDos is supplied as a speed-freak dos only version.</font></li>
+</ul>
+<p><font face="Arial">DeRap is aware of all binarised text files (known 
+internally as raP) for all engine types and all extensions. Flashpoint , Xbox, 
+Arma, Arrowhead, rvmat, bisurf,. etc etc</font></p>
+<p><font face="Arial"><br>
+All binary types will be converted into standard text class statements. With a 
+#define to declare what engine-target *this* text must have been made for.<br>
+<br>
+<b>Usage:</b></font></p>
+<p><b><font face="Arial">Gui</font></b></p>
+<p><font face="Arial">Drag n drop any file onto the gui, or use it's browse 
+button</font></p>
+<p><font face="Arial">Plain Jane text is shown in the window. It can be saved 
+anywhere that gives you a thrill, or cut 'n pasted into whatever might give you 
+a thrill.</font></p>
+<p><font face="Arial" color="#FF0000">Be aware </font><font face="Arial">that to 
+protect you from real nasty surprises, the default output is renamed to .txt. 
+This to save you the embarrassment of overwriting the original file</font></p>
+<p><font face="Arial">Rename the output suit your circumstance.</font></p>
+<p>&nbsp;</p>
+<p><font face="Arial"><br>
+<b>Command line </b>
+<br>
+DeRap [-options] whateverFileOrFolder [whereverFileOrFolder]<br>
+<br>
+-n noisy <br>
+-s silent (default)<br>
+-t do NOT use tabbed output (use space)<br>
+-P do not pause </font></p>
+<p><font face="Arial">-Q&nbsp; test if file is in fact rapified.</font></p>
+<p><font face="Arial">&nbsp;&nbsp;&nbsp; syntax:&nbsp;&nbsp; derap -Q nameOfFile</font></p>
+<p>&nbsp;&nbsp;&nbsp; note a israp.bat is supplied to achieve same</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<p><u><b>Input file versus input folder</b></u></p>
+
+<p>DeRap will search the specified folder <b>and all subfolders </b>for rapified 
+files.</p>
+
+<p>The actual names of the files in the folders are immaterial. DeRap will 
+examine all of them for mime-type rap. Those that aren't rapped are ignored.</p>
+
+<p>Hopefully obvious: if&nbsp; a destination is specified, it clearly must be a 
+folder. DeRap will make that folder if not present (and all subsequent 
+subfolders if any)</p>
+
+<p>&nbsp;</p>
+
+<p><u><b>Output file or folder</b></u></p>
+
+<p>&nbsp;</p>
+
+<p><font face="Arial">GOLDEN RULE: *.bin is ALWAYS output as *.cpp irrespective of destination.</font></p>
+
+<p><font face="Arial"><br>
+<br>
+if no destination is specified:<br>
+<br>
+&nbsp;&nbsp;&nbsp; output is to same folder as source AND output name appended 
+with .txt<br>
+<br>
+<br>
+When a destination is specified:<br>
+<br>
+&nbsp;&nbsp;&nbsp; if a folder is specified (with or without trailing \)<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; output name == input name <br>
+<br>
+&nbsp;&nbsp;&nbsp; if a folder\file is specified<br>
+<br>
+&nbsp;&nbsp;&nbsp; output name == folder\file name<br>
+<br>
+<br>
+A check however is made that source and destination are not the same thru 
+inadvertence (eg specifying same destination folder), if so<br>
+output is appended with .txt</font></p>
+
+<p><font face="Arial"><br>
+<br>
+---------------<br>
+No Pause<br>
+---------------<br>
+<br>
+normally the exe will pause before exiting&nbsp; so that the user can 'see' the 
+result<br>
+in a dos bat application this is not always wanted or desired (the bat file can 
+or should do the pausing instead)<br>
+&nbsp;</font></p>
+
+</body>
+
+</html>

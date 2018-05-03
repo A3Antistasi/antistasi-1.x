@@ -1,0 +1,130 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-au">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>well here we are</title>
+</head>
+
+<body>
+
+<p><font face="Arial">Dertm Version 1.xx by Mikero<br>
+Dual Dos/Windows exe<br>
+see readmegeneral.txt and fixes</font></p>
+<hr>
+<p><font face="Arial">two exes are provided:<br>
+<br>
+DeRtm.exe is a dual, windows gui / dos tool.<br>
+<br>
+DeRtmDos.exe is a dos only speed freak.<br>
+<br>
+--------<br>
+DeRtm operates on individual rtms of any type, entire 
+folders, or, the contents of pbos</font></p>
+
+<p><font face="Arial">As such, it does the following:</font></p>
+
+<ul>
+  <li><font face="Arial">Simply analyses the contents of *any/all* rtm file(s) and does a few consistency checks.
+In This basic mode, it will show the bone names, frame times, an, (if applicable) 
+sounds inside the rtm. This is generally sufficient for simply identifying the content and typeof rtm 
+under the hammer. As such,&nbsp; it is a powerful tool to verify the integrity of ALL rtms in a 
+project.</font></li>
+  <li><font face="Arial">DeRtm will debinarise rtms back to plain jane. </font></li>
+  <li><font face="Arial">DeRtm will convert arma1 or arma2 rtms to arma3 by 
+  stripping the headbones</font></li>
+</ul>
+
+<p><font face="Arial">------------<br>
+<br>
+Syntax:<br>
+<br>
+DeRtm [-options]&nbsp; anyFolderOrFileIn&nbsp; [AnyFolderOrFileOut]&nbsp; <br>
+&nbsp;</font></p>
+
+<p><font face="Arial">AnyFolderOrFileOut is optional. If no alterations take 
+place it is ignored</font></p>
+
+<p><font face="Arial">if not specified and alterations take place, there is no 
+parachute. The inputfile(s) will be altered.</font></p>
+
+<p><font face="Arial">options: (case insensitive)</font></p>
+
+<blockquote>
+
+<p><font face="Arial">None: Show Basic header<br>
+-F: Show Frame times<br>
+-B: Show bone names <br>
+-S: Show Sounds (if any)<br>
+-P: don't pause on error<br>
+-C: Debinarise<br>
+-$: convert to arma3<br>
+-V: verify after write<br>
+-Y: don't prompt for overwrites</font></p>
+
+</blockquote>
+
+<p><font face="Arial">===========<br>
+debinarising<br>
+===========<br>
+<br>
+-c=&lt;skeleton&gt;.p3d | cfg<br>
+<br>
+<b>EITHER a 'model'.cfg, OR a p3d that contains the relevant skeleton MUST be 
+specified</b><br>
+&nbsp;</font></p>
+
+<p><u><b>Human Skeletons</b></u></p>
+
+<p><font face="Arial">
+The skeleton required for *this* rtm is <i>almost</i> inevitably ANY *binarised* 
+human p3d (of the relevant engine).<br>
+<br>
+As a convenience to the user, correctly cased&nbsp; 'model'.cfg's are 
+supplied for human skeletons in the rtm\docs folder for arma1,2 and 3.</font></p>
+
+<p><font face="Arial">For other skeletons you require an appropriate 'model'.cfg 
+or p3d of your own.</font></p>
+
+<p><font face="Arial">Hint: you can list the actual bones declared with DeRtm -B 
+and thereby determine the type of skeleton to apply.<br>
+<br>
+<b>Limitations:</b></font></p>
+
+<p>Unless a correctly cased 'model'.cfg is supplied to DeRtm, it can only 
+produce lower case bone names because both the rtm and a binary p3d only contain 
+lower case. Buldozer is case sensitive.</p>
+
+<p>The correctly cased human skeletons for all 3 arma engines are provided in 
+the documentation.</p>
+
+<p>For other skeletons you can first extract the skeleton from a relevant p3d 
+using either Eliteness, or, dep3d, then edit the case accordingly</p>
+
+<p>==============</p>
+
+<p>Strip head bones</p>
+
+<p>==============</p>
+
+<p><font face="Arial">
+option $ will convert any human rtm from arma1 or 2 for use in arma3 by removing 
+the unused head-bones from the animation.</font></p>
+
+<p>Prior to this option being provided,&nbsp; the normal method was to first use 
+dertm to convert to plain jane, then repack those anims using the arma3 
+ofp2_manskeleton. </p>
+
+<p>This methodology was successful simply because bis binarise would ignore 
+bones not in the skeleton, eg the arma2 head bones, and create a binary version 
+without them.</p>
+
+<p><font face="Arial">
+<br>
+&nbsp;</font></p>
+
+</body>
+
+</html>

@@ -1,4 +1,3 @@
-
 class HQ_menu
 {
 	idd=100;
@@ -6,48 +5,44 @@ class HQ_menu
 
 	class controls
 	{
+		AS_BOX_D(BOX_H_8);
+		AS_FRAME_D(FRAME_H_8, $STR_D_FIA_HQOCO);
+		BTN_BACK(A_CLOSE);
 
-	AS_BOX_D(BOX_H_8);
-	AS_FRAME_D(FRAME_H_8, $STR_D_FIA_HQOCO);
-	BTN_BACK(A_CLOSE);
+		#define STR_HQ_FIA "if (activeBE) then {[] remoteExec [""fnc_BE_buyUpgrade"", 2]} else {closeDialog 0; [] call FIAskillAdd};";
 
-	#define STR_HQ_FIA "if (activeBE) then {[] remoteExec [""fnc_BE_buyUpgrade"", 2]} else {closeDialog 0; [] call FIAskillAdd;}"
+		BTN_L1(-1, $STR_D_GRAB_FP, "", "if (isMultiPlayer) then {nul=call stavrosSteal} else {hint localize ""STR_DH_TFIMPO""};");
+		BTN_L2(-1, $STR_D_MANGE_GAR, "", "closeDialog 0; nul=CreateDialog ""garrison_menu"";");
+		BTN_L3(-1, $STR_D_MOVE_HQ_TAZ, "", "closeDialog 0; [] spawn moveHQ;");
 
-	BTN_L1(-1, $STR_D_GRAB_FP, "", "if (isMultiPlayer) then {nul=call stavrosSteal} else {hint localize ""STR_DH_TFIMPO""};");
-	BTN_L2(-1, $STR_D_MANGE_GAR, "", "closeDialog 0; nul=CreateDialog ""garrison_menu"";");
-	BTN_L3(-1, $STR_D_MOVE_HQ_TAZ, "", "closeDialog 0; [] spawn moveHQ;");
-
-	BTN_R1(-1, $STR_D_INGAME_ML, "", "if (isMultiplayer) then {[] execVM ""OrgPlayers\membersList.sqf""} else {hint localize ""STR_DH_TFIMPO""};");
-	BTN_R2(109, $STR_D_TRAIN_FIA, "", STR_HQ_FIA);
-	BTN_R3(-1, $STR_D_BEBUILD_ASSE, "Cost: 5.000 €", "closeDialog 0; [] execVM ""rebuildAssets.sqf"";");
+		BTN_R1(-1, $STR_D_INGAME_ML, "", "if (isMultiplayer) then {[] execVM ""OrgPlayers\membersList.sqf""} else {hint localize ""STR_DH_TFIMPO""};");
+		BTN_R2(109, $STR_D_TRAIN_FIA, "", $STR_HQ_FIA);
+		BTN_R3(-1, $STR_D_BEBUILD_ASSE, "Cost: 5.000 €", "closeDialog 0; [] execVM ""rebuildAssets.sqf"";");
 	};
 };
 
 class unit_recruit
 {
-	idd= 100;
+	idd=100;
 	movingenable=false;
-
 	class controls
 	{
+		AS_BOX_D(BOX_H_10);
+		AS_FRAME_D(FRAME_H_10, $STR_D_RECRU_OPT);
+		BTN_BACK(A_CLOSE);
 
-	AS_BOX_D(BOX_H_10);
-	AS_FRAME_D(FRAME_H_10, $STR_D_RECRU_OPT);
-	BTN_BACK(A_CLOSE);
+		BTN_L1(104, $STR_D_RECRU_MIL, "", "[guer_sol_RFL] spawn reinfPlayer");
+		BTN_L2(105, $STR_D_RECRU_AURI, "", "[guer_sol_AR] spawn reinfPlayer");
+		BTN_L3(106, $STR_D_RECRU_MEDIC, "", "[guer_sol_MED] spawn reinfPlayer");
+		BTN_L4(110, $STR_D_RECRU_MARSKMAN, "", "[guer_sol_MRK] spawn reinfPlayer");
 
-	BTN_L1(104, $STR_D_RECRU_MIL, "", "[guer_sol_RFL] spawn reinfPlayer");
-	BTN_L2(105, $STR_D_RECRU_AURI, "", "[guer_sol_AR] spawn reinfPlayer");
-	BTN_L3(106, $STR_D_RECRU_MEDIC, "", "[guer_sol_MED] spawn reinfPlayer");
-	BTN_L4(110, $STR_D_RECRU_MARSKMAN, "", "[guer_sol_MRK] spawn reinfPlayer");
+		BTN_R1(107, $STR_D_RECRU_ENGI, "", "[guer_sol_ENG] spawn reinfPlayer");
+		BTN_R2(109, $STR_D_RECRU_GREN, "", "[guer_sol_GL] spawn reinfPlayer");
+		BTN_R3(108, $STR_D_RECRU_BOOM_S, "", "[guer_sol_EXP] spawn reinfPlayer");
+		BTN_R4(111, $STR_D_RECRU_AT, "", "[guer_sol_LAT] spawn reinfPlayer");
 
-	BTN_R1(107, $STR_D_RECRU_ENGI, "", "[guer_sol_ENG] spawn reinfPlayer");
-	BTN_R2(109, $STR_D_RECRU_GREN, "", "[guer_sol_GL] spawn reinfPlayer");
-	BTN_R3(108, $STR_D_RECRU_BOOM_S, "", "[guer_sol_EXP] spawn reinfPlayer");
-	BTN_R4(111, $STR_D_RECRU_AT, "", "[guer_sol_LAT] spawn reinfPlayer");
-
-	BTN_M(BTN_Y_5, 112, $STR_D_RECRU_AA, "", "[""Soldier_AA""] spawn reinfPlayer");
-
-		};
+		BTN_M(BTN_Y_5, 112, $STR_D_RECRU_AA, "", "[""Soldier_AA""] spawn reinfPlayer");
+	};
 };
 
 class squad_recruit
@@ -157,7 +152,7 @@ class build_menu
 	BTN_L2(-1,$STR_D_BUI_MF, "", "closeDialog 0; createDialog ""minebuild_menu"";");
 
 	BTN_R1(-1,$STR_D_OPS_RB_DEL, "", "closeDialog 0; [""delete""] spawn puestoDialog");
-	BTN_R2(-1,$STR_D_MANA_CAMP, $STR_D_EAC, "closeDialog 0; createDialog ""camp_dialog"";"); 
+	BTN_R2(-1,$STR_D_MANA_CAMP, $STR_D_EAC, "closeDialog 0; createDialog ""camp_dialog"";");
 
 	BTN_M(BTN_Y_3, -1, $STR_D_HQ_FORT, "", "closeDialog 0; createDialog ""HQ_fort_dialog"";");
 	};
@@ -175,7 +170,7 @@ class mission_menu
 	AS_FRAME_D(FRAME_H_8, $STR_D_AV_MIS);
 	BTN_BACK(A_CLOSE);
 
-	#define STR_MIS_MIL "closeDialog 0; if ((player == Slowhand) or (not(isPlayer Slowhand))) then {[[""FND_M""],""missionrequest""] call BIS_fnc_MP} else {hint localize ""STR_DH_OPCHATTF""};" 
+	#define STR_MIS_MIL "closeDialog 0; if ((player == Slowhand) or (not(isPlayer Slowhand))) then {[[""FND_M""],""missionrequest""] call BIS_fnc_MP} else {hint localize ""STR_DH_OPCHATTF""};"
 	#define STR_MIS_CIV "closeDialog 0; if ((player == Slowhand) or (not(isPlayer Slowhand))) then {[[""FND_C""],""missionrequest""] call BIS_fnc_MP} else {hint localize ""STR_DH_OPCHATTF""};"
 	#define STR_MIS_EXP "closeDialog 0; if ((player == Slowhand) or (not(isPlayer Slowhand))) then {[[""FND_E""],""missionrequest""] call BIS_fnc_MP} else {hint localize ""STR_DH_OPCHATTF""};"
 	#define STR_MIS_LOG	"closeDialog 0; if ((player == Slowhand) or (not(isPlayer Slowhand))) then {[[""LOG""],""missionrequest""] call BIS_fnc_MP} else {hint localize ""STR_DH_OPCHATTF""};"
@@ -239,7 +234,7 @@ class garrison_menu
 	BTN_BACK("closeDialog 0; createDialog ""HQ_menu"";");
 
 	BTN_L1(-1,$STR_D_RECR_GAR, "", "closeDialog 0; [""add""] spawn garrisonDialog");
-	BTN_R1(-1,$STR_D_REMO_GAR, "", "closeDialog 0; [""rem""] spawn garrisonDialog");  
+	BTN_R1(-1,$STR_D_REMO_GAR, "", "closeDialog 0; [""rem""] spawn garrisonDialog");
 
 	};
 };
@@ -1109,7 +1104,7 @@ class ROLECHANGE {
 	movingenable=false;
     class controls {
 
-	//////////////////////STEF ROLECHANGE DIALOG /////////////////////////       
+	//////////////////////STEF ROLECHANGE DIALOG /////////////////////////
 	class ROLECHANGE_BOX: BOX
 	{
 		idc = 101;

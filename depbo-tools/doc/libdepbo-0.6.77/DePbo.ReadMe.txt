@@ -1,0 +1,78 @@
+from mikero@norfolk.nf
+
+headless servers: (windoze only)
+
+depbo polls for updates 1/day and will issue a message if an update is available.
+
+because this 'behaviour' is not appropriate for headless servers since the message box would pause processing waiting for a response,
+you are asked if this is a headless server install when installing.
+
+the message however is still output to stdio as a heads up
+
+---------------------------------------
+depbo.dll ALSO requires 
+
+1) Deogg.dll available on the same site. The chances of this 2nd dll being update are very low. it is a one off requirement
+
+
+
+DePbo.dll is the 'driver' behind Mikero's tools. It is intended to be a non-reinventing-the-wheel service so that any application can access one, well proven, decompression algorithm (eg), rather than re-writing or pasting the source code again and again and again into different exe's.
+
+While the name suggests a pbo only driver, in fact, depbo has expanded over the years to much greater functionality. Rapification, to name one.
+
+A far far far better name would now be 'BisDll', and in fact, internally, it is known by that name. Externally however, after a decade of usage, people are used to 'DePbo.dll' so it stays that way.
+
+
+Installation:
+
+Automatic:
+
+The dll comes with it's own self installer which will automatically put it in the same folder
+as the family of exe's that depend on this dll for their livelihood. 
+
+c:\program files (x86)\Mikero\DePboTools\bin
+
+There is no requirement for this dll to be global (eg system32), if all exe's use their auto installer.
+
+Manual
+
+
+A single Depbo.dll should be placed in your windows\system32 folder for each and any tool.exe to gain access to one, common driver.
+
+(For a win64 machine, syswow64)
+
+
+
+
+Alternatively, simply place the dll in the same folder as the exe.
+
+It is garanteed that THIS version of the dll will ALWAYS be compatible with previous versions. You need, one, and one only copy.
+
+
+**********************************************************************************************************************************************
+A depbo.lib if supplied, is NOT required for tool use. Dont even bother extracting it unless you intended programming via visual basic and using the api
+**********************************************************************************************************************************************
+
+---
+
+After 40 years in the industry, this author is dedicated to backward compatibility. 
+
+Any upgrade to dll (which is frequent) is garanteed to be compatible with existing exes and applications, OR, a new exe is provided. No matter how ancient the
+exe is, someone, somewhere, is using it every day and cannot live without it.
+
+
+
+------------
+
+
+ALL exes exhibit similar behaviour in command line usage.
+
+nameof.exe [-options] sourcefile/Folder[.ext]/orList[.lst] [[outfile/Folder[.ext]]
+
+Destination specs
+
+where (an often optional) destination can be specified, the name can be either a file or a path or both
+
+In general, the resulting filename follows the exe's specification extension such as p3d, cpp. rvmat. Obviously, dependent on context.
+
+

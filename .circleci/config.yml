@@ -1,0 +1,36 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.6.1
+
+    steps:
+      - checkout
+      - run: sudo apt-get install -y liblzo2-2 libvorbis0a libvorbisfile3 libvorbisenc2 libogg0
+      - run: sudo chown -R circleci:circleci /usr/local/bin
+      - run: sudo chown -R circleci:circleci /usr/local/lib/python3.6/site-packages
+      - run:
+          name: Install linter-sqf from LordGolias/sqf, thx !
+          command: |
+            set -e
+            sudo pip3 install --upgrade pip
+            sudo pip3 install sqflint
+
+      - run:
+          name: Install Pbo creator # Why dialogs.hpp fail ? see previous builds
+          command: |
+            mkdir pbo
+            export LD_LIBRARY_PATH=depbo-tools/lib
+            rm ./AntistasiOfficial.Altis/dialogs.hpp
+            ./depbo-tools/bin/makepbo ./AntistasiOfficial.Altis pbo/AntistasiOfficial
+
+      - store_artifacts:
+          path: pbo
+          destination: pbo
+
+      # Don't run it as it has a shit ton of false positive ... i think ...
+
+      # - run:
+      #     name: Run only error sqflint on AntistasiOfficial.Altis folder
+      #     command: sudo sqflint -d ./AntistasiOfficial.Altis | sed -n '/warning/!p'

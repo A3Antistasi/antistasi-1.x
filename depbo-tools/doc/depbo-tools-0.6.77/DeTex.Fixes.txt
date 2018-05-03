@@ -1,0 +1,32 @@
+DeTex Version 1.xx by Mikero
+see readmegeneral.txt
+----------------------
+min dll is 6.14
+
+1.55 rewrite
+
+1.53 proper release with tidied up help screen
+
+1.52a bungled release
+
+provided more output of what type of paa mimpaps are being recorded
+
+allowed for folder-only specifacation
+
+
+
+fixed bug in nsis installer to prevent potential dos environ path being cleared
+
+
+fixes:
+1.54
+made compat to dll
+1.52
+added fileinfo and icon
+added -p no pause option
+added self installer
+
+1.51
+made compatible to dll
+
+

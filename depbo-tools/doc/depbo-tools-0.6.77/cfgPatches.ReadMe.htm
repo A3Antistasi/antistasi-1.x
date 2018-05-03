@@ -1,0 +1,76 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-au">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>well here we are</title>
+</head>
+
+<body>
+
+<p><b><font face="Arial">The cfgPatches class</font></b></p>
+
+<p><b><font face="Arial">triggered by the -F switch on the command line, this 
+option is ignored if -N (wysiwig) specified.</font></b></p>
+<p><font face="Arial">cfgPatches is the most important class you can have in 
+your addon. It may well be the only class in your config.cpp, but it <b>must</b> 
+be there. </font></p>
+<p><font face="Arial">It outweighs the relative trivia of configuring your tank, machine 
+gun or car.</font></p>
+<p><font face="Arial"><b>All</b> config.cpp's <i>must</i> contain this class so 
+that your addon (pbo) can be identified by the game engine.</font></p>
+<p><font face="Arial">class cfgPatches<br>
+{<br>
+&nbsp;&nbsp;&nbsp; class MyGreatAddon // identifies <b>this</b> addon to the 
+engine. The name of your pbo has no meaning at all.<br>
+&nbsp;&nbsp;&nbsp; {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; units[]={...};&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+// identifies cfgVehicles classes that can be used in the editor. (scope=2)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; weapons[]={...};&nbsp;&nbsp;&nbsp; // 
+identifies cfgWeapons classes that can be used in the editor.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; requiredAddons[]={...};<br>
+&nbsp;&nbsp;&nbsp; };</font></p>
+<p><font face="Arial">//optional</font></p>
+<p><font face="Arial"><br>
+&nbsp;&nbsp;&nbsp; class OldAddonName // used when you change your mind what 
+your addon is called but need to maintain compatibility with what you've <br>
+&nbsp;&nbsp;&nbsp; {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+// already published and which existing mission.sqm's will look for.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...<br>
+&nbsp;&nbsp;&nbsp; };<br>
+};</font></p>
+<p><u><font face="Arial">the dll will automatically fill in units and weapons for 
+you.</font></u></p>
+<p><b><u><font face="Arial">requiredAddons</font></u></b></p>
+<p><font face="Arial">This array is possibly the least understood and overlooked 
+element of addon construction. It has two, equally important, but fundamentally 
+different uses.</font></p>
+<ol>
+  <li dir="ltr">
+  <p dir="ltr"><font face="Arial">The addons listed are checked for existence. 
+  Normally you will get either 'white' textures or crash to desktops if the 
+  addon(s) you rely on aren't actually there <b>in-game</b>. Stating them here 
+  prevents crashes because the engine wont even try an load <i>your</i> addon.</font></p>
+  <p dir="ltr"><font face="Arial">The dll automatically <b>adds</b> to this 
+  array addons you need (via checking on the p:drive)</font></p>
+  <p dir="ltr">&nbsp;</li>
+  <li>
+  <p dir="ltr"><font face="Arial">extern class statements must come from some 
+  other addon. It is a classic error to not mention them, The engine ensures 
+  that the addon they come from loads before yours, thus ensuring you have no 
+  conflicts with the class you wanted to inherit. The list of errors that occur 
+  when you don't do this is too many to mention</font></li>
+</ol>
+<blockquote>
+  <p dir="ltr">The dll will attempt to find these classes for you.</p>
+  <p dir="ltr">&nbsp;</p>
+  <p dir="ltr">&nbsp;</p>
+</blockquote>
+<p dir="ltr">&nbsp;</p>
+<p>&nbsp;</p>
+
+</body>
+
+</html>

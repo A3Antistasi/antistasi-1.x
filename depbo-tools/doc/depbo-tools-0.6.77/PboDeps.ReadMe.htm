@@ -1,0 +1,115 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-au">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>well here we are</title>
+</head>
+
+<body>
+
+<p><font face="Arial">pboDeps Version 1.xx by Mikero</font></p>
+<p><font face="Arial">see ReadMeGeneral and fixes</font></p>
+<hr>
+<p><font face="Arial">PboDeps is a dependency lister&nbsp; of required addons&nbsp; 
+in the config(s) of pbo(s).</font></p>
+<p><font face="Arial">The need for this program has come about due to the 
+arrival of Arma3.</font></p>
+<p><font face="Arial">Using your addons in the a3 engine is (of course) a multi 
+step process. But the beginnings of it all is to place your addon in the a3 
+environment (eg -mod= on the command line)</font></p>
+<p><font face="Arial">Your addon almost inevitably relies on <b>other</b> addons to do it's thing. eg common default textures (paa) and materials (rvmat).
+</font></p>
+<p><font face="Arial">The only clue you will get about which specific pbo's you 
+will need, is when the arma3 engine tells you it is missing CAAir_BAF_CH_47F 
+(eg).</font></p>
+<p><font face="Arial">Discovering which pbo,&nbsp; contains CAAir_BAF_CH_47F can 
+be a frustrating exercise.</font></p>
+<p>----</p>
+<p><font face="Arial">pboDeps is intended as a one off requirement to preserve a 
+historical record of the relationship between dependencies, class names and pbos</font></p>
+<p><font face="Arial">The output is written to file and is formatted for easy import to an excel 
+spreadsheet. From which, you can organise the data multiple ways, by classname, 
+by pbo, by dependency.</font></p>
+<p><font face="Arial">This then becomes a permanent fast reference for you in 
+looking up which collection of pbos you need to add to the arma3 environment..</font></p>
+<p><font face="Arial">While it would also be a one off exercise for this tool 
+to simply list (and publish to website) the official bis addons (common and 
+expansions), it's usefulness is also being able to list popular oem addons or 
+even full mods,&nbsp; and discovering the requirements.</font></p>
+<p><b><font face="Arial">samples:</font></b></p>
+<p><font face="Arial">the dependency lists for arma2, arrowhead and combined ops 
+are provided as a convenience and example of what-to-expect</font></p>
+<p><font face="Arial">Note very carefully, that combined ops over-rides the 
+pbo's in the common folder of arrowhead with those of the genuine a2 pbo's. The 
+dependencies are different.</font></p>
+<p>&nbsp;</p>
+<p><font face="Arial">----</font></p>
+<p><b><font face="Arial">Usage:</font></b></p>
+<p><font face="Arial">drag n drop the folder of interest onto this exe, or, 
+alternatively in a dos prompt</font></p>
+<p><font face="Arial"><b>&nbsp;&nbsp;&nbsp; pboDeps.exe [-options] NameOfFolderContainingPbos</b></font></p>
+<p><b><font face="Arial">-options </font></b></p>
+<p><b><font face="Arial">&nbsp;&nbsp;&nbsp; -P = no pause</font></b></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><b><font face="Arial">Output-&gt; </font></b><font face="Arial"><b>NameOfFolderContainingPbos.txt</b></font></p>
+<p>&nbsp;</p>
+<p><font face="Arial">example:</font></p>
+<p><font face="Arial"><b>&nbsp;&nbsp;&nbsp; pboDeps Steam\arrowhead\expansions\addons</b></font></p>
+<p><font face="Arial">&nbsp;&nbsp;&nbsp; pboDeps \your\mod\somewhere\addons</font></p>
+<p>&nbsp;</p>
+<p><font face="Arial">You can interrogate one or many pbo's at the same time. Their location is of no consequence. For the purpose of 
+this tool, you can create a collection of pbo's into a temp folder and 
+simply process that folder.</font></p>
+<p><font face="Arial">Output:</font></p>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="71%">
+  <tr>
+    <td width="25%"><font face="Arial">#pbo</font></td>
+    <td width="25%"><font face="Arial">#addon</font></td>
+    <td width="25%"><font face="Arial">requiredAddons</font></td>
+  </tr>
+  <tr>
+    <td width="25%"><font face="Arial">air3.pbo</font></td>
+    <td width="25%"><font face="Arial">CAAir3</font></td>
+    <td width="25%"><font face="Arial">CAAir</font></td>
+  </tr>
+  <tr>
+    <td width="25%">&nbsp;</td>
+    <td width="25%"><font face="Arial">CAAir3_Su34</font></td>
+    <td width="25%">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="25%">&nbsp;</td>
+    <td width="25%">&nbsp;</td>
+    <td width="25%">&nbsp;</td>
+  </tr>
+</table>
+<p><font face="Arial">this output shows the result of actually containing a child pbo within the 
+same pbo</font></p>
+<p><font face="Arial">Technical notes:</font></p>
+<ul>
+  <li><font face="Arial">both config.cpp's and / or conifg.bins are treated in 
+  the same manner.</font></li>
+  <li><font face="Arial">Although rarely seen, multiple child classes of 
+  cfgPatches are accommodated.</font></li>
+  <li><font face="Arial">Multiple config.cpp's in the same pbo (indicating 
+  addons with the addon) are accomodated</font></li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</body>
+
+</html>

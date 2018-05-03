@@ -1,0 +1,39 @@
+Rapify version 1.xx by Mikero.
+
+minimum version of dll is 5.xx
+
+-------------------------------------------------------
+1.78 re-release of 1.77 with correct version num in display
+	replaced hklm with hkcu for registry
+1.77
+	added fsm to list of lintable only files (ext was the other) check pboPro for others
+	added warnings are errors for:
+		access=
+		true false for desc.ext
+		;;
+		array[]={1,2,3,};
+		etc etc
+1.76
+made compatible to dll 1.56
+
+1.75
+added lintcheck bat packages
+
+internal: renamed api access functions
+1.74
+fixed bug in nsis installer to prevent potential dos environ path being cleared
+
+added icon to exe
+added installer
+added P no pause option
+
+1.73
+added mouseover versioning
+utilised far better inheritence checking within dll
+
+1.72
+
+fixed erroneous include filename message when error detected
+
+allowed -k option to NOT pause on error
+

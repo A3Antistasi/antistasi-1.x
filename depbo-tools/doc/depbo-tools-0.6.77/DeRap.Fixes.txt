@@ -1,0 +1,45 @@
+DeRap Version 1.xx by Mikero. See ReadMeGeneral and fixes
+
+Minimum DLL is 4.91
+1.77
+	fixed crash in gui version when decoding
+1.76 improved utf8 support
+1.75 made compatible to dll with probable improvement to making folders when necessary
+
+1.74
+fixed reversal of query option derap to work correctly
+
+1.73
+
+removed obsolete api calls
+enabled xbox with signature compiles
+merged israp to israp.bat rather than an exe
+
+fixed bug in nsis installer to prevent potential dos environ path being cleared
+1.72
+fixed erroneous crash due to (lack of) registry settings
+added dos command to derap entire folders (not gui)
+
+1.71
+renamed DeRapify to DeRapDos and made a dual dos/windows app
+
+1.70
+added icon
+added self installer
+added -P dont pause
+
+1.69 not released
+-K no pause on error option so that batch files can test instead
+
+added mouseover versioning
+
+
+1.68
+tabbed output now the default -t changed
+
+1.67
+tabbed output option
+
+1.66
+improved float output
+removed Q option

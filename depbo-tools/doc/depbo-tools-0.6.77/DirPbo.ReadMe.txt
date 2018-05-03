@@ -1,0 +1,6 @@
+DirPbo version 1.xx by Mikero.
+
+lists contents of a pbo in dir style
+
+for windows drag n drop, remove the -P option
+

@@ -1,0 +1,51 @@
+ Version 1.xx by Mikero
+
+CONVERT TO PEW
+
+pew conversion is instanced as
+
+ConvertWrp AnyArmaWrpFile[.wrp] 60 [PewConfigFile]
+.............
+
+the file will be converted to an 8wvr if binarised before it is converted to pew.
+
+produced file extensions are:
+
+
+AnyArmaWrpFile_8WVR.wrp
+
+AnyArmaWrpFile.pew
+
+in this version there is no attempt to rebuild road networks, backgrounds, or 'places of interest'
+
+
+Feedback via dev heaven is much appreciated
+
+
+-----------------------
+Pew Configuration file.
+-----------------------
+
+If detected, a Pew Configuration file is meant to set items like color and natural or artificial objects to a desirable outcome.
+Wrp files do not contain this information, and output to pew sets all objects to 'natural' by default (since plants are by far the largest 
+quantity of 'objects' on an island).
+
+By default, .cfg extension unless specified otherwise on command line;
+
+
+You can have a default configuration file or a special, or none at all.
+
+if a config file is specified on the command line. That file predominates.
+
+If none specified:
+
+The exe looks for a default configuration file in the same folder as the wrp.
+
+The default name is, EITHER, the NameOfWrp.cfg,,, OR, a more generalised 'Pew.cfg'
+If both exist, the NameOfWrp.cfg predominates.
+
+If neither exist, the exe looks for a default file in the 'current directory' which is not necessarily that of the wrp.
+
+If no config file is found, the exe sets it's own default values. Specifically, all objects are set to 'natural'.
+
+An example Pew.Cfg is contained in this package

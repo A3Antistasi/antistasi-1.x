@@ -1,0 +1,67 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-au">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>well here we are</title>
+</head>
+
+<body>
+
+<font face="Arial">
+<p>QueryAddons Version 1.xx by Mikero</p>
+<p>see readMeGeneral</p>
+<p>see fixes</p>
+<hr>
+<p>QueryAddons works on individual files, folder(s), or pbo's</p>
+<p>QueryAddons works on mission.sqms and/or config.cpp/bin's</p>
+<p>file types can be raPified or normal text.</p>
+<p>The default use of QueryAddons is to provide a list of addon dependencies for 
+that mission.sqm or config.cpp/bin</p>
+<p>it inspects addons[]= and AddonsAuto[]= in mission.sqm. and RequiredAddons[]= 
+in configs</p>
+</font><font FACE="Consolas" SIZE="2">
+<p>&nbsp;</p>
+</font><font face="Arial">
+<p>Folder usage is similar. It's intent is to reflect an exploded, or, 
+yet-to-be-made, pbo. Particularly useful for campaign inspection</p>
+<p>The files are hunted recursively thru all sub folders (if any)</p>
+<p>Pbo usage should be self explanatory, in that QueryAddons is looking inside, 
+as if it were a folder tree.</p>
+<p>useage</p>
+<p>QueryAddons [-options] File/Folder/OrPbo</p>
+<p>Name can be</p>
+<p>config.cpp or</p>
+<p>config.bin or</p>
+<p>mission.sqm or</p>
+<p>NameOf[.pbo] or</p>
+<p>NameOfFolder</p>
+<p>Options (Optional)</p>
+<p>-n csv Output);</p>
+<p>-a List Addons (default)</p>
+<p>for configs only</p>
+<p>-u Units</p>
+<p>-w Weapons</p>
+<p>-v RequiredVersion</p>
+<p>-c ClassName(s) of the addon</p>
+<p>config options are aggregated, you can, specify</p>
+<p>QueryAddons -aucwv .....</p>
+<p>Special considerations:</p>
+<p>Pbos are NOT checked or looked for in folder tree mode. It would be illogical 
+to list addons from more than one.</p>
+<p>In the unlikely event that both a mission.sqm, AND, a config.cpp is 
+encountered in a pbo or folder. BOTH will make up the list.</p>
+<p>Comma Separated Output</p>
+<p>csv output (if any) is intended to feed a database, either directly, or, via 
+pipe &gt; .csv</p>
+<p>if csv is specified, the type of query (units,weapons eg) is not listed</p>
+<p>Config options</p>
+<p>are only relevant when config.cpp/bins are encountered. The results of 
+specifying them for mission.sqm's is in-determinate.</p>
+</font>
+
+</body>
+
+</html>

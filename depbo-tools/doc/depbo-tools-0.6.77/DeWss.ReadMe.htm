@@ -1,0 +1,214 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-au">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>well here we are</title>
+</head>
+
+<body>
+
+<p><font face="Arial" size="5">DeWss. Dual Dos/Windows&nbsp; Version 1.xx by Mikero</font></p>
+<p><font face="Arial">see fixes.txt</font></p>
+<p><font face="Arial">ReadMeGeneral contains important information regarding 
+installation and usage that is not repeated, ad-nausea, for every application, 
+including this one. You are strongly advised to read it.</font></p>
+<p><font face="Arial"><b>All</b> Mikero tools 'behave', install, and operate in 
+an identical manner. Learn once, learn em all,</font></p>
+<p><u><b><font face="Arial">General</font></b></u></p>
+<p>A sound file is a wss, wav, or ogg. All are treated equally.</p>
+<p><font face="Arial">DeWss converts any sound file to 
+any one of the other types<b>.</b></font></p>
+<p><font face="Arial">If that's all you require then <b>Either</b>:</font></p>
+<ol>
+  <li><font face="Arial">Simply drop a soundfile onto the exe. <b>
+  OR</b></font></li>
+  <li><b><font face="Arial">via a dos console</font></b></li>
+</ol>
+<p><b><font face="Arial" color="#00FF00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;DeWss&nbsp; 
+Soundfile</font></b><font face="Arial">
+</font></p>
+<p><font face="Arial">Either method will produce <font color="#00FF00"><b>
+Soundfile</b></font><b><font color="#00FF00">.wav</font></b> or
+<font color="#00FF00"><b>Soundfile.wss </b></font>in the same folder and you can now stop reading. &lt;grin&gt;</font></p>
+<p><font face="Arial">Features:</font></p>
+<ul>
+  <li><font face="Arial">The dll treats wss or wav and ogg as mutually equivalent. What this means is (for 
+  example) you can create a 4bit nibble wss from either existing wss, wav or ogg.</font></li>
+  <li><font face="Arial">You can resample any file.</font></li>
+  <li><font face="Arial">You can play audio feedback of the original source, or the result.</font></li>
+  <li><font face="Arial">Dewss will tell you the amount of play time in seconds. 
+  An invaluable need for configs and scripting.</font></li>
+  <li><font face="Arial"><b>stereo wss compression</b>..</font></li>
+  <li><font face="Arial">AutoCorrection of mistakes in wss files. Not all were born equal.</font></li>
+</ul>
+<p><u><font face="Arial">File Dropping:</font></u></p>
+<p><font face="Arial">Dropping a sound file onto the exe will automatically produce a result. 
+Eg wss is automatically written back as wav, and vice versa.</font></p>
+<p><font face="Arial">Dropping a sound file onto an opened gui will allow you to 
+inspect or change it.</font></p>
+<p><b><font face="Arial">Playback</font></b></p>
+<p><font face="Arial">sound playback is accomplished by file association with an 
+external playback program such as Microsoft's Windows Media player.</font></p>
+<p><font face="Arial">For wav files: Microsoft's Windows Media player or Winamp 
+or ITunes.</font></p>
+<p><font face="Arial">For wss files: you need to install either Bis Arma2 Tools 
+or Bis Arma3 steam tools.</font></p>
+<p><font face="Arial">For ogg, a suitable plugin, or VLC</font></p>
+<p><b><font face="Arial" size="5">The nitty gritty</font></b></p>
+<p><font face="Arial">Some things you might like to know.</font></p>
+<ul>
+  <li><font face="Arial">WAV is not meant to be played. It is a only convenience 
+  that it can be. </font></li>
+  <li><font face="Arial">WSS is a good format for  reducing the 
+  footprint of your missions and addons.</font></li>
+  <li><font face="Arial">OGG is used for stereo files and voice (dubbing) and is 
+  the best in the game for compression. Where possible, simply use ogg in 
+  preference to wss.</font></li>
+</ul>
+<p><font face="Arial">The corner stone of all audio is pcm (pulse code 
+modulated) data. </font></p>
+<p><font face="Arial">WAV <b>files</b> are the industry standard sound recording, file 
+interchange, and file storage format for <b>raw</b> pcm data. </font></p>
+<p><font face="Arial">wav <b>files</b> <i>can also</i> contain huge chunks of 
+extraneous data used only by the maker of the audio creation tool. This 
+extraneous data has no meaning to audio playback and is quite useless outside of 
+the unique editor that created the wav file.</font></p>
+<ul>
+  <li><font face="Arial">Wss stores <b>only</b> pcm data.</font></li>
+</ul>
+<p><font face="Arial">There is an immediate benefit then converting wav to wss. 
+The amount of benefit varies from a few bytes to enormous.</font></p>
+<p><font face="Arial">In addition, wss can optionally be compressed reducing the 
+file size again, by as much as 75% of it's already stripped state.</font></p>
+<p><font face="Arial">If you understand above, you will understand that 
+uncompressed wss <b>might</b> dramatically reduce your file size. Compressed wss
+<b>will</b>, dramatically reduced your file size in addition to simply making it 
+wss in the first place.</font></p>
+<p><font face="Arial">Compressed wss comes in two flavors. Byte compressed and Nibble compressed. 
+Each, respectively, halve, or quarter the file size, with, some loss of quality.</font></p>
+<ul>
+  <li><font face="Arial">Nibble compression is very acceptable for the usual run of engine sounds, 
+  bullets and other such effects.</font></li>
+  <li><font face="Arial">compressed stereo files are not as good a quality as 
+  they should be due to a design oversight.</font></li>
+</ul>
+<p><font face="Arial"><u><b>Windoze mode.</b></u> </font></p>
+<p><font face="Arial">Windoze mode is accomplished simply by clicking on the 
+exe. OR, passing no parameters to the exe when in a dos console.</font></p>
+<p><font face="Arial">The gui should be self explanatory.</font></p>
+<p><font face="Arial">The various options allow you to resample, and/or convert 
+from one format to any other format.</font></p>
+<p><font face="Arial">More powerful use of this tool is restricted to the dos 
+console version where entire folders can be converted in one go.</font></p>
+<p><font face="Arial"><b>Selecting output type</b></font></p>
+<p>Any file type can be converted to another. In the case of wss, it can be 
+converted to another type of wss</p>
+<p><font face="Arial">Note that for wss compression, Input must be 16bit</font></p>
+<p>&nbsp;</p>
+<p><font face="Arial"><b>Resampling</b></font></p>
+<p><font face="Arial">Input must be 16bit.</font></p>
+<p><font face="Arial">Resampling can be done to any  file.
+<span style="background-color: #FF0000">Note Carefully</span>, there is no 
+parachute. The input file is affected if no destination is specified.</font></p>
+<p><font face="Arial">Resampling is another method of compressing the original file by reducing the 
+samples per second. It can be used in conjunction with wss or ogg compression.</font></p>
+<p><font face="Arial">Dropping from a 'standard' rate of say 24000 to 8k will reduce the size by 
+1/3d (and etc)</font></p>
+<p><font face="Arial">Obviously, ymmv. And again note carefully the lack of a parachute</font></p>
+<p><font face="Arial"><b>Create Lip</b></font></p>
+<p><font face="Arial">currently selected file produces lip sync (.lip) regardless of input type. 
+Must be 16bit mono.</font></p>
+<p><u><b><font face="Arial" size="4">Dos Mode: Alias the Penguin.</font></b></u></p>
+<p><font face="Arial">Dos mode occurs by being in a dos prompt to begin with OR, 
+via a batch command (.bat or .cmd&nbsp; processing).</font></p>
+<p><font face="Arial">Dos mode allows very fine grain control -options, and 
+speed, in what you want to achieve.</font></p>
+<p><b><font face="Arial">Specialised</font></b></p>
+<p><font face="Arial">Like all dos tools, DeWss can utilise the powerful 
+analytics available in the dll to achieve quite a bit more than simple output.</font></p>
+<p><font face="Arial">With that ability comes the responsibility to know your 
+stuff, and to that end, like all dos tools, DeWss uses&nbsp; standard syntax 
+common to all Mikero's tools 
+to process what it is you actually want to achieve.</font></p>
+<p><u><b><font face="Arial">Syntax:</font></b></u></p>
+<p>Type </p>
+<p>&nbsp;&nbsp;&nbsp; dewss -?</p>
+<p>This document is not constantly updated. Use above for the options available 
+that affect your version. Below has *probably* changed.</p>
+<p><font FACE="Arial" color="#00FF00">DeWss&nbsp;&nbsp; [+|-options...]&nbsp;&nbsp; 
+[SourceFolder] | [\*.ext]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [DestinationFolder]</font></p>
+<p><font FACE="Arial"><font color="#00FF00">DeWss&nbsp;&nbsp; [+|-options...]&nbsp;&nbsp; File.ext&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [DestinationFileOrFolder]<br>
+</font>
+<br>
+-<b>options</b></font><font FACE="Arial" COLOR="#a31515"> </font>
+<font FACE="Arial">caseINsEnsITIve</font><font FACE="Arial" COLOR="#a31515">, </font>
+<font face="Arial">multiple -option arguments, AND/OR concatenated options are 
+both are permissible</font></p>
+<ul>
+  <li><font FACE="Arial"><b>-P</b> : Do not pause on error</font></li>
+  <li><font face="Arial"><b>:Resample</b>:</font></li>
+  <li><font face="Arial">-V: do not verify output</font></li>
+  <li><b><font face="Arial">-</font></b><font face="Arial"><b>Y</b>: yes to all over-writes</font></li>
+</ul>
+<p>&nbsp;</p>
+<p><font face="Arial"><b>-L</b>: <b>LIST HEADERS</b></font></p>
+<p><b><font face="Arial">Single file</font></b></p>
+<p><font face="Arial"><span style="background-color: #FFFF00">DeWss -L<b>&nbsp;</b>some.wss<br>
+DeWss -L some.wav<br>
+DeWss -L some.ogg</span></font></p>
+<p><font face="Arial">Folder scans (Note that folder scans cause a summary 
+of all files encountered. A bonus for tracking down oddballs)</font></p>
+<p> <font face="Arial"><span style="background-color: #FFFF00">DeWss&nbsp; -L 
+some\folder&nbsp;&nbsp;&nbsp; // all sound files are scanned</span></font></p>
+<p> <font face="Arial"><span style="background-color: #FFFF00">DeWss&nbsp; -L 
+some\folder\*.wss<br>
+DeWss&nbsp; -L some\folder\*.wav<br>
+DeWss&nbsp; -L some\folder\*.ogg</span></font></p>
+<p>alternate syntax:</p>
+<p dir="ltr"><font face="Arial"><span style="background-color: #FFFF00">DeWss -L<b>wss/0&nbsp;</b> 
+some\folder <br>
+DeWss -L<b>wav/1&nbsp;</b> some\folder<br>
+DeWss -L<b>ogg/2&nbsp;</b> some\folder</span></font></p>
+<p><u><b><font face="Arial">CONVERSION</font></b></u></p>
+<p><font face="Arial">implicit (default) conversion no -option required</font></p>
+<p><font face="Arial"><span style="background-color: #FFFF00">Dewss&nbsp; file.wav &nbsp;&nbsp; 
+// output is to </span><span style="background-color: #FFFF00">file.wss<br>
+Dewss&nbsp; file.wss &nbsp;&nbsp; 
+// output is to file.wav<br>
+Dewss&nbsp; file.ogg &nbsp;&nbsp; 
+// output is to </span><span style="background-color: #FFFF00">file.wav</span></font></p>
+<p><b><font face="Arial">explicit conversion.</font></b></p>
+<blockquote>
+<p><font face="Arial"><span style="background-color: #FFFF00">DeWss -ogg/2&nbsp; 
+ 
+*.wss/wav // to ogg</span></font></p>
+</blockquote>
+<blockquote>
+<p><font face="Arial"><span style="background-color: #FFFF00">DeWss -wav/1&nbsp; *.wss/ogg 
+// to wav</span></font></p>
+</blockquote>
+<blockquote>
+<p><font face="Arial"><span style="background-color: #FFFF00">DeWss -wss/0&nbsp; *.wav/ogg 
+// to wss uncompressed</span></font></p>
+<p><font face="Arial"><span style="background-color: #FFFF00">DeWss -nibble/4&nbsp;&nbsp;*file&nbsp;&nbsp; 
+// any files(s) to nibble&nbsp;compressed<br>
+<br>
+DeWss -byte/8&nbsp;&nbsp;&nbsp;&nbsp; *file &nbsp; //&nbsp; any file(s) to byte 
+compressed<br>
+&nbsp;</span></font></p>
+</blockquote>
+<p><font face="Arial" size="4"><b>Resample</b></font></p>
+<p>dewss -R=samplerate,quality</p>
+<p>&nbsp;</p>
+<p>example:</p>
+<p><font face="Arial"><span style="background-color: #FFFF00">DeWss -R=2050,1&nbsp; *.wav/ogg/wss </span></font></p>
+<p>if the sample rate is the same, it reports a warning only (not an error), so 
+that all other files can carry on</p>
+<p>&nbsp;</p>
+
+</body>
+
+</html>

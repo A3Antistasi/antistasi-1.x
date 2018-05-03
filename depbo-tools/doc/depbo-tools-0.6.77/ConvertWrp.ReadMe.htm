@@ -1,0 +1,102 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-au">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>well here we are</title>
+</head>
+
+<body>
+
+<p><font face="Arial">ConvertWrp&nbsp; Version 1.xx by Mikero</font></p>
+<p><font face="Arial">see readmegeneral<br>
+see fixes</font></p>
+<hr>
+<p><font face="Arial">ConvertWrp converts wrp formats from one format to another 
+from ofp cwc thru to Elite and Arma2 type 24 chernarus<br>
+<br>
+Any wrp will convert to<br>
+&nbsp;</font></p>
+<ul>
+  <li><font face="Arial">4WVR (unbinarised ofp)</font></li>
+  <li><font face="Arial">8WVR (unbinarised arma)</font></li>
+  <li><font face="Arial">Binarised arma&nbsp; (oprw) to another arma binarised type (17,18,20,24)</font></li>
+  <li><font face="Arial"><b>a pew file will convert to 8wvr</b><br>
+&nbsp;</font></li>
+</ul>
+<p><font face="Arial">
+<br>
+<br>
+<b>restrictions:</b></font></p>
+<p><font face="Arial"><br>
+essentially, convert wrp converts binarised models of the same family to their 
+un binarised equivalent. <br>
+<br>
+It is not possible to cross the divide between arma and ofp because arma uses 
+material files(rvmat). ofp uses textures (pax)<br>
+<br>
+all other conversions are at your own risk and will probably fail.<br>
+<br>
+you CANNOT binarise files. Use BisTools </font></p>
+<p><font face="Arial">You CAN cut out visitor's depew export function,&nbsp; 
+which is tedious, and use ConvertWrp to convert pew to 8WVR<br>
+<br>
+<b>Syntax:</b><br>
+<br>
+***********PEW EXPORT CONVERSION************<br>
+<br>
+ConvertWrp AnyPew.Pew 8<br>
+<br>
+Currently only pew59 and 60 (arma) pews can be converted to 8WVR only<br>
+<br>
+This means you no longer have to have bulldozer or even arma installed on the 
+machine.<br>
+<br>
+There is no expectation at a later date for this tool to binarise the resulting 
+wrp to produce oprw.<br>
+<br>
+<br>
+***********WRP CONVERSION************<br>
+<br>
+ConvertWrp [-options...] AnyWrp[.wrp] [toType] [Pew.Cfg]<br>
+&nbsp;</font></p>
+
+<p><font FACE="Consolas" SIZE="2" COLOR="#a31515">Options(case insensitive)</font></p>
+<p><font FACE="Consolas" SIZE="2" COLOR="#a31515">-u. create ofp rvmats UNsafely</font></p>
+<p><font FACE="Consolas" SIZE="2" COLOR="#a31515">-s. create ofp rvmats 
+Safely(default)</font></p>
+<p><font FACE="Consolas" SIZE="2" COLOR="#a31515">-c. convert ofp p3d's to ca 
+equivalents</font></p>
+<p><font FACE="Consolas" SIZE="2" COLOR="#a31515">-O. convert ofp p3d's to ca 
+equivalents (scan p drive)</font></p>
+<p><font face="Arial">-P don't Pause</font></p>
+
+<p><font face="Arial">
+<br>
+toType<br>
+8:8WVR (default)<br>
+4:4WVR<br>
+2:OPRW_CWC<br>
+3:OPRW_RES<br>
+17:OPRW_ELITE<br>
+18:OPRW_ARMA normal<br>
+20:OPRW_ARMA sara<br>
+24:OPRW_ARMA2<br>
+58 pew POSE58 Format (arma/elite)<br>
+59:pew POSE59 Format (arma)<br>
+60:Pew POSE60 format (arma 1 &amp; 2)<br>
+<br>
+<br>
+Pew.Cfg is for direct pew conversion only (type 60). See special text document<br>
+<br>
+<b>restrictions</b><br>
+<br>
+arma2 uses a different style of compression( lzo), the old style compression lzss 
+is not supported (as a write function)<br>
+&nbsp;</font></p>
+
+</body>
+
+</html>

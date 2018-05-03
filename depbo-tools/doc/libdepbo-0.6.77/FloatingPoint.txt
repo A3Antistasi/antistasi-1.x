@@ -1,0 +1,24 @@
+Floating Point output.
+
+most languages limit the amount of precision when converting genuine IEEE floats to humanly readable decimal output.
+
+the default precision for most C-family compilers is 6 decimal places.
+
+This, is not sufficient for *some* values and the precision must be extended to greater detail to get an EXACT match when re-binarazing previously decoded output.
+
+The dll needs to iteratively check that the resulting text "0.00123" will, in fact, produce the same 4 byte IEEE float when and if re-compiled.
+
+This level of exactness is rarely necessary, yielding some rather ugly expressions like 0.00009888887 when 0.00001 would be more 'readable'.
+
+However, to get exact binary re-compiled equivalents, and, as a confidence check, this extension to the standard compiler implementation has been made.
+
+Some immediate side effects to this 'exactness' will be apparent.
+
+Firstly, the process can be slow when large amounts of float data is present in the to-be-decoded binary. Tools using this revision will be slower than before. Not by much, but slower.
+
+
+Secondly, comparison output of previously decoded config.bin's (eg) *might* no longer be the same. *SOME*, float values, for *SOME* configs will be longer than previously listed.
+
+
+Third, warning messages are sent to stderr if the value is a nan or infinity
+

@@ -1,0 +1,34 @@
+min dll is 6.14
+next
+
+1.80 made compat to dll
+fixed success msg to account for unicode filename
+
+1.79
+made compatible to dll
+fixed error status return mesg
+
+1.78 made pew compatible to dll
+1.77 froced compat to new dll because of memleak
+
+1.76
+fixed unicode crapout when making folders for rvmat file ofp replacements
+made compatible to dll
+1.75 made compatible to dll
+1.74
+made compatible
+emphasised in readme a pew converted to wrp 8wvr
+1.73
+added fileinfo and icon
+made self installer
+change -P option to -O
+added -P option no pause
+
+1.72 made compatible to dll
+OFP ONLY hard wired substitution of known arma p3d's for ofp p3d when converting to arma
+
+1.71
+accounts for 1wvr files (ofp demo release)
+1.70
+don't remember
+1.69a added a cfg example

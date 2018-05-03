@@ -1,0 +1,256 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-au">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>well here we are</title>
+</head>
+
+<body>
+
+<p><font face="Arial">MoveObject Version 1.xx by Mikero<br>
+&nbsp;</font></p>
+
+<p><font face="Arial">read  genreadme.txt<br>
+see <a href="ReadMe.MoveObject.fixes.htm">fixes.htm</a></font></p>
+
+<p>-R is deprecated, use dep3d.exe instead</p>
+
+<p><font face="Arial">&nbsp; [.p3d] is no longer a default. The extension must 
+be specified</font></p>
+
+<p><font face="Arial">see ListObjects.bat at end of document.</font></p>
+
+<p><font face="Arial">-------------------------------------------------------<br>
+<br>
+MoveObject will rename file paths inside *<span style="background-color: #00FF00">any</span>*
+</font></p>
+<ul>
+  <li><font face="Arial">wrp, </font></li>
+  <li><font face="Arial">rvmat, </font></li>
+  <li><font face="Arial">pew, </font></li>
+  <li><font face="Arial">p3d, </font></li>
+  <li><font face="Arial">All pbo types</font></li>
+  <li><font face="Arial">folder</font></li>
+</ul>
+<p><font face="Arial">whether binarised or plain.<br>
+&nbsp;</font></p>
+<ul>
+  <li><font face="Arial">In the case of a pbo or folder,&nbsp; the above&nbsp; file types are 
+worked on&nbsp; inside the pbo / folder.</font></li>
+  <li><font face="Arial">Pbo's are considered to be ifa,pbo,xbo,ebo</font></li>
+  <li><font face="Arial">In the case of a folder, an additional check is made to 
+  alter the contents of any of the accepted $PBOPREFIX$.txt's<br>
+&nbsp;</font></li>
+</ul>
+<p><font face="Arial">The intention of moveobject is that&nbsp; you should be able to extract ANY of 
+these file types from one addon, and place it in another addon without fuss. <br>
+<br>
+In addition moveObject will unconditionally remove a drive specifier (p:\&nbsp;&nbsp; 
+eg) whenever encountered.. This option is bests suited to folder scans where 
+the arguments for replacement are dummy</font></p>
+<p><font face="Arial">
+<br>
+For anyone who's been there and dun that, hand editing the path names inside 
+individual p3d's, let alone 30 or so p3d's, well, frankly, just throw money
+</font></p>
+<p><font face="Arial">There are two classes of usage using moveobject. Listing 
+content, and separately, renaming content.<br>
+--------<br>
+<br>
+<span style="background-color: #00FF00">usage</span></font></p>
+<p><font face="Arial"><br>
+<b>MoveObject [-options...] FileOrFolder</b>&nbsp; // list only<br>
+<b>MoveObject [-options...] FileOrFolder [from to]<br>
+MoveObject [-options...] FileOrFolder replacement.list<br>
+</b><br>
+<br>
+Files examined are</font></p>
+<ul>
+  <li><font face="Arial">rvmat</font></li>
+  <li><font face="Arial">p3d</font></li>
+  <li><font face="Arial">wrp</font></li>
+  <li><font face="Arial">pew</font></li>
+  <li><font face="Arial">pbo</font></li>
+</ul>
+<p><font face="Arial">
+<br>
+&nbsp;</font></p>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="80%" height="94">
+  <tr>
+    <td width="27%" height="19"><font face="Arial"><span style="background-color: #00FF00">
+    options (case insensitive)</span></font></td>
+    <td width="73%" height="19">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="27%" height="19">-P</td>
+    <td width="73%" height="19">don't pause</td>
+  </tr>
+  <tr>
+    <td width="27%" height="19">-V</td>
+    <td width="73%" height="19">verify after changes </td>
+  </tr>
+  <tr>
+    <td width="27%" height="19">-X</td>
+    <td width="73%" height="19">convert all references to lowercase</td>
+  </tr>
+</table>
+<hr>
+<p><font face="Arial">=====================================================<br>
+&nbsp;</font></p>
+<p><span style="background-color: #00FFFF">Automatic removal of drive:\ 
+specifiers or \hard\path</span></p>
+<p>This occurs automatically for all files whether other changes are made or not.</p>
+<p>to simply remove all drive specifiers without further fuss</p>
+<p>moveobjext&nbsp;[-P] nameOfFileOrFolder dummy dummy</p>
+<p><font face="Arial">normal replacements can also be specified</font></p>
+<p><span style="background-color: #00FFFF">lowercase removal</span></p>
+<p><font face="Arial">similar to above all file references are forced to 
+lowercase.</font></p>
+<p>moveobjext&nbsp;[-P]X nameOfFileOrFolder dummy dummy</p>
+<p>&nbsp;</p>
+<p>'from' references are case insensitive when matching. the to reference is, as 
+stated, on the command line (or replacement list)</p>
+<p><font face="Arial">
+<br>
+<br>
+<span style="background-color: #00FF00">-List examples</span><br>
+<br>
+&nbsp;&nbsp;&nbsp; <b>MoveObject NameOfRVmat.rvmat </b></font></p>
+<p><font face="Arial">&nbsp;&nbsp;&nbsp; <b>Moveobject folder &gt;pipe.txt 2&gt;&amp;1 // 
+full folder tree</b><br>
+<br>
+the list option is used to<br>
+<br>
+a) check what paths are in the model to change<br>
+b) check the change took place<br>
+<br>
+<span style="background-color: #00FF00">Rename Example</span><br>
+<br>
+<br>
+&nbsp;&nbsp;&nbsp; <b>MoveObject MyOldP3d MyGreatAddon\somewhere\data MyNewAddon\Henry\Marbles\wherever\you\want</b><br>
+<br>
+the original file(s) are not preserved. It is your 
+responsibility to tuck them away safely somewhere.</font></p>
+<p><font face="Arial">The file file is NOT altered if an error is encountered.</font></p>
+<p>&nbsp;</p>
+<p><span style="background-color: #00FFFF">Wildcard </span>
+<span style="background-color: #00FFFF">repalcement</span></p>
+<p>A severely limited wildcard astersk is use to alter ONLY speficic file.ext 
+references</p>
+<p>moveobject -options fileorfolder aaa\bbb*.paa&nbsp;&nbsp; ccc\ddd\eee</p>
+<p>will only affect references to paa files (in this example)</p>
+<p>-------</p>
+<p><font face="Arial">
+<br>
+The two tandem batch files in the package are examples of how to make a global 
+change to all files in a given folder<br>
+&nbsp;</font></p>
+<p><font face="Arial">There usage may not be necessary with the folder option 
+introduced at a revision i don't now recall. They are preserved for your 
+interest.</font></p>
+<hr>
+<p><font face="Arial"><br>
+<br>
+<span style="background-color: #00FF00">Notes:</span><br>
+<br>
+<font color="#FF0000">All</font> renaming must be from start\of\folder.<br>
+&nbsp;</font></p>
+<ul>
+  <li><font face="Arial">renaming marbles will not work.</font></li>
+  <li><font face="Arial">renaming some\folder\marbles will work</font></li>
+</ul>
+<p><font face="Arial">if you specify a leading slash, it will be ignored. It is 
+neither correct, nor incorrect to do so. It is however, extremely convenient to 
+use dos tabbing to fill out the full pathway. Similarly (because of dos tabbing) 
+a drive: specifier is also ignored.<br>
+<br>
+Bis have made their usual cock up of hard versus relative 
+addressing in their file structures. They are unlikely to ever fix what is 
+beyond their abilities. The bottom line is, no matter what, no if's and no maybe's. ALL 
+bis addressing is \hard\path. So this makes ooops object modelling a frustrating 
+and pointless waste of effort.  </font></p>
+<p><font face="Arial">However, because of their own internal mess, *some* 
+path specifications must have a preceding slash, some must *not* have, and other 
+types don't care. Move object takes care of which is what without you worrying 
+about it.</font></p>
+<p><font face="Arial">Where you have differing child paths, (and most models have lots 
+of differing child paths) you need to successively invoke MoveObject until 
+you are complete: Starting with children then parents. MoveObject eases this by 
+accepting a replacement.lst file of iterative lists.<br>
+<br>
+<b>Restrictions:</b><br>
+<br>
+ofp unbinarised p3d's (odol-sp3x) cannot have</font></p>
+<ul>
+  <li><font face="Arial">more than 32 character default path<br>
+  more than 32 character texture names<br>
+  more than 58 character proxy names<br>
+&nbsp;</font></li>
+</ul>
+<p><font face="Arial">Wrp unbinarised ofp files (4WVR) cannot have</font></p>
+<ul>
+  <li><font face="Arial">more than 32 character texture names<br>
+  p3d model names &gt; 76<br>
+  p3d model names &lt;3<br>
+&nbsp;</font></li>
+</ul>
+<p><font face="Arial">wrp unbinarised arma files (8WVR) cannot have</font></p>
+<ul>
+  <li><font face="Arial">less that 3 characters for p3d model names<br>
+&nbsp;</font></li>
+</ul>
+<p><font face="Arial">Be prepared to wait a very long time on 1gig wrp files<br>
+<br>
+<span style="background-color: #00FF00">Replacement.list</span><br>
+<br>
+the text file must contain the following format (as if each line were passed on 
+the command line)</font></p>
+
+<p><font face="Arial">The name of the text file is irrelevant. replacement.lst 
+is what move<b>folder</b> uses when firing up move<b>object</b><br>
+<br>
+OldName1 space NewName1<br>
+OldName2 space NewName2<br>
+<br>
+the parser for this is very primitive and very unforgiving<br>
+&nbsp;</font></p>
+
+<hr>
+<p><b><font face="Arial">ListObjects.bat</font></b></p>
+
+<p><font face="Arial">This batch file  produces a sorted list of all files found 
+in any p3d, rvmat, wrp, pew <b>or folder</b>.&nbsp; (binarised or otherwise).</font></p>
+
+<p><font face="Arial">It is particularly used when upgrading your island to a 
+new engine and evaluation which other addons will be needed</font></p>
+
+<p><b><font face="Arial">syntax:</font></b></p>
+
+<p><font face="Arial">ListIslandObjects&nbsp; Name\of\Folder</font></p>
+
+<p><font face="Arial">ListIslandObjects&nbsp; Name\of\wrp:p3d.rvmat.pew</font></p>
+
+<p><font face="Arial">The item (or folder) can simply be dropped onto this bat 
+file.</font></p>
+
+<p><font face="Arial">Sorted and output is to NameOf.objects.txt</font></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><font face="Arial">
+<br>
+Enjoy<br>
+&nbsp;</font></p>
+
+</body>
+
+</html>

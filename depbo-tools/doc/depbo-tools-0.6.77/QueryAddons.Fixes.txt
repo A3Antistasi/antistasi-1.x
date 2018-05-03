@@ -1,0 +1,29 @@
+QueryAddons Version 1.xx by Mikero
+-----------------------
+see readmegeneral.txt
+-----------------------
+min dll level is 6.72
+1.74
+1.73
+1.72
+1.71
+1.70 made compatible to dll
+1.69 made compatible to dll
+1.68 made compatible to dll
+1.67 made compatible to dll
+1.66 made compatible to dll
+1.65 made compatible to dll
+1.64 made compatible to dll
+1.63a
+fixed bug in nsis installer to prevent potential dos environ path being cleared
+1.63
+added icon and fileinfo
+added -P dont' pause
+added self installer
+1.62
+now only lists a single version where multiples of same type are encountered
+
+eg 'v1.0000' vs 'v1.0'
+
+1.61 cleaned up syntax list
+

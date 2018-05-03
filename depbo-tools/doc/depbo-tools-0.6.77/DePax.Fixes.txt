@@ -1,0 +1,45 @@
+DePax Version 1.xx by Mikero
+Min Dll is 6.14
+
+fixes
+1.70 made compat to dll
+applied internal confidence tests to folder\ specs
+
+1.69
+restored -t comma separated list
+renamed exe as dePax not, DePac, to better reflect the paa pac duality
+1.68
+	made utf8 compatible
+1.67
+minor unicode str fix
+mad.compat to dll
+revised api interface (of the dll)
+
+1.66
+made compatible to dll
+
+1.65a
+fixed bug in nsis installer to prevent potential dos environ path being cleared
+
+removed api mem variable sensitivy to divorce as much as possible from the internal structures of the dll
+1.64
+added filieinfo and icon
+added self installer
+added -P dont pause
+
+extracted paa data correctly, it might be encrypted or compressed
+fixed 2xmem leak
+added ofp demo search parm
+incorporated killswitch fixes as 1.62
+
+1.63
+made sure paX files are de-lzss compressed
+precompressed pbo's and releases it's memory
+1.62
+added ofp demo search capability
+incorporated killswitch linux fixes
+fixed potential memleak if using a listfile search
+
+<1.62
+loop error on DXT1,DXT5 searching
+

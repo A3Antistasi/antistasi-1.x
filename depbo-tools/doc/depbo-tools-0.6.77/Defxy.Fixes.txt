@@ -1,0 +1,18 @@
+DeFxy Version 1.xx by Mikero
+min dll is 6.72
+1.65 credit killswitch
+	rewrote file ouput to only be utf8
+	corrected file structures to be uint16_t's not wchar_t for the penguin
+1.63 re-written to accomodate fxy versions.102
+1.62 made compat to dll
+fixed bug in nsis installer to prevent potential dos environ path being cleared
+1.61
+updated to self installer
+added -P don't pause
+1.60
+created much smaller exe footprint
+1.59
+corrected memleak when error detected (getcwd)
+1.58
+provided proper error output status
+

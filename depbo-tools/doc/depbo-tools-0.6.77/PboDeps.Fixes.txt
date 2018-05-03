@@ -1,0 +1,19 @@
+Minimum DePbo.dll is 6.72
+1.19
+1.18 made compat to dll
+ensured that cyrillic/european umlats are listed correctly
+1.17
+1.16
+1.15
+1.14 made compat to dll
+1.13 removed output as unicode option
+1.12
+sent output to folder of pbos rather than parent'
+added -Pause
+added -Unicode
+1.11
+provided standard dependency lists for a2,co, and arrowhead
+
+fixed bug in nsis installer to prevent potential dos environ path being cleared
+1.10
+first release
