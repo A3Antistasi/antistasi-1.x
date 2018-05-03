@@ -3,8 +3,6 @@ This script should send a jet to chase the FIA aircraft which is annoying AAF.
 0 = blufor aircraft
 */
 
-
-_this select 0
 _FIAaricraft = _this select 0
 _targetpos = position (_FIAaricraft);
 
@@ -17,10 +15,12 @@ _pilot reveal _FIAaricraft;
 _pilot dotarget _FIAaricraft;
 
 waitUntil {
-	!alive (_FIAaricraft);
+    !alive (_FIAaricraft);
 };
-	if (!alive _FIAaricraft) then {
-		_wp0 = _pilot addWaypoint [_airportpos, 0];
-		[_pilot,0] setWaypointBehaviour "CARELESS";
-		_wp0 setWaypointSpeed "FULL";
-		_wp0 setWaypointStatements ["true", "deletevehicle _this"];
+
+if (!alive _FIAaricraft) then {
+    _wp0 = _pilot addWaypoint [_airportpos, 0];
+    [_pilot,0] setWaypointBehaviour "CARELESS";
+    _wp0 setWaypointSpeed "FULL";
+    _wp0 setWaypointStatements ["true", "deletevehicle _this"];
+}
