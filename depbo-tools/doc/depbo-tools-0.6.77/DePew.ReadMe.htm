@@ -1,0 +1,1076 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-au">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>well here we are</title>
+</head>
+
+<body>
+
+<p><font face="Arial">DePew Version 3.xx by Mikero</font></p>
+<p><font face="Arial">Installation: see ReadMeGeneral.txt</font></p>
+<p><font face="Arial">Fixes: see fixes.txt</font></p>
+<hr>
+<p><font face="Arial">Dual Dos / Windows Application</font></p>
+<p><font face="Arial"><span style="background-color: #FFFF00">DePew.exe</span> is the dual dos 
+/windows exe</font></p>
+<p><font face="Arial">clicking on it in windows, (or simply invoking it in a dos console with no 
+parameters), invokes the gui.</font></p>
+<p><font face="Arial">passing DePew.exe&nbsp; in a dos prompt WITH parameters (eg in a batch file) 
+invokes dos mode.</font></p>
+<p><font face="Arial">DePewDos.exe Is separate utility without the gui overhead. This for lean and 
+mean, fast executable, dos prompt only. It is provided for the rare occasions 
+(such as piping stderr) cannot be handled by the gui version.</font></p>
+<p><b><font size="5" face="Arial">General</font></b></p>
+<p><font face="Arial">The essence of DePew is to extract object,  template, 
+and 
+elevation information and present in a text form that is usable by external tools 
+such as L3dt, 'worldtools', Excel, and of course feedback into DePew, with altered 
+heights or etc. Formats that Depew supports range from Pose57(Xbox Elite) thru to 
+Pose60 (a2/Arrowhead). There is currently limited support for ofp. While much of what DePew does can also be done by 
+02Script, DePew is blindingly fast. DePew.exe also consolidates various other deprecated exes (such 
+as CreatePewObjects) into one umbrella.</font></p>
+<p><font face="Arial">The types of items DePew works with are</font></p>
+<ul>
+  <li><font face="Arial">Object positions: The placement of p3d models on the 
+  terrain, not, details of the object itself.</font></li>
+  <li><font face="Arial">Object Templates: A library of p3d models to use. No 
+  matter how many 100's of Cherry Blossom Trees are used on the island there is only one 
+  reference to THE model.</font></li>
+  <li><font face="Arial">Elevations: The terrain surface, which, ultimately 
+  derives such things as contour maps.</font></li>
+</ul>
+<font face="Arial">Exported files of all types use comma separation (optional 
+default), with newline and/or whitespace between 'records',&nbsp; 
+  to enable easy import into Excel (eg). Additional, optional, exported 
+parameters, when present, are always at end of each written record.</font><p>
+<font face="Arial">Note that an 'exported file' can mean to the display screen 
+where the user might simply view the output, or &gt;pipe it somewhere else.</font></p>
+<p><b><font face="Arial">XYZ specifications:</font></b></p>
+<blockquote>
+<p><b><font face="Arial">The 'Z' position.</font></b></p>
+  <ul>
+    <li><b><font face="Arial">Object (Model) Height:</font></b></li>
+  </ul>
+<p><font face="Arial">Internally, pew files follow the unusual 'model' 
+convention of specifying height as the Y component of xyz. This document, and 
+most exported/imported files, follows the intuitive 'Cartesian' convention of xy 
+and height. <b>Any reference to Z in this document means height unless stated 
+otherwise.</b></font></p>
+<p><font face="Arial">Height is expressed in meters, accurate to 10cm, and is 
+the distance between the object's geometric center and the terrain elevation at 
+that object's position. It is almost always zero. The model's geometric centre 
+is rarely the centre of the object. Objects will generally rotate from one of it's corners because that's 
+where it's geometric centre is. This is especially true of roads.</font></p>
+<p><font face="Arial">All objects 'sit' on the terrain at their geometric 
+center, as designed by, and as intended by, the model's author. Thus identical 
+objects will follow the terrain contour.&nbsp; Relative height above or below 
+the current terrain height can be tweaked by island authors. It is that value 
+that is present in the Z component of an xyz. It is a hidden value and almost 
+always zero. Other than 
+by script, there is no facility in Visitor to 'see' it. It is mostly and only 
+used for bridges (or any object not designed to follow the terrain) and is set 
+by the island author when hand tweaking relative heights of specific objects..</font></p>
+<p><font face="Arial">At the time of wrp creation, the height component 
+of the object is set in concrete to this relative value + terrain height to 
+produce a height above sea level (ASL) . The relative height used to cause this 
+offset is not retained and not needed by the engine, and the objects are 
+effectively divorced from terrain elevations. Except to say, the terrain 
+elevations are also set to values ASL. Manipulating terrain elevations in a wrp, 
+will not, therefore, produce corresponding (and desirable) effects in that 
+island's object's. They will be buried in the ground or floating in the sky 
+unless similarly treated by external tools.</font></p>
+<p><font face="Arial">Similarly, when producing pew data from wrp data, the relative adjustment of 
+bridges (eg) cannot be known. They can only follow the current contour.</font></p>
+  <ul>
+    <li><b><font face="Arial">Terrain elevation:</font></b></li>
+  </ul>
+<p><font face="Arial">The only other use of Z in a pew file is for terrain elevation.&nbsp; It is 
+expressed as meters above (or below) absolute sea level and is accurate to 10cm.</font></p>
+</blockquote>
+<blockquote>
+  <p><font face="Arial"><b>The X position</b></font></p>
+  <ul>
+    <li><font face="Arial"><b>Always</b> Left to Right. (Cartesian)</font></li>
+  </ul>
+  <p><font face="Arial"><b>The Y position.</b></font></p>
+  <p><font face="Arial">Of all the spatial coordinate systems out there, only two word definitions 
+  are universally reliable:</font></p>
+  <ul>
+    <li><font face="Arial"><b>Cartesian</b>: South to North</font></li>
+    <li><font face="Arial"><b>Screen</b>: Top to Bottom</font></li>
+  </ul>
+  <p><font face="Arial">Cartesian is also popularly known as map co-ordinates. Unfortunately Bis 
+  call coordinates on their map, map coordinates. They are however<b>, screen</b> 
+  coordinates.</font></p>
+</blockquote>
+<hr>
+<p><b><font face="Arial" size="4">General Syntax : Freestyle statement format.</font></b></p>
+<p><font face="Arial">Depew[.exe] [-Options] [import.txt] NameOf[.pew] [export.txt] [-MoreOptions]</font></p>
+<p><font face="Arial">DePew is the first, of a new family of exe's, that use 
+relaxed syntax rules: intended to allow a user to state the command line to best 
+suit them. Internally, the exe uses safe-heuristics to 'discover' the meaning. 
+That said, beware the -Strict option which negates all below. For all example 
+statements in this document, one of each alternative is stated as the -Strict 
+syntax.</font></p>
+<ul>
+  <li><font face="Arial">Actual import/output file.extension is immaterial. 'txt' is 
+  suggested.</font></li>
+  <li><font face="Arial">Options are caseInsEnsiTive.</font></li>
+</ul>
+<blockquote>
+<p><font face="Arial">(Minor options are listed here in lower case for 
+legibility)</font></p>
+</blockquote>
+<ul>
+  <li><font face="Arial">Options can be grouped together, or separated into various fragments anywhere 
+on the command line. <font color="#FF0000">Strict: </font>All options must occur 
+  first and be in a single group.</font><p><u><b><font face="Arial">example:</font></b></u></p>
+<p><font face="Arial">depew -EoC* NameOfPew&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // 
+list objects using * as separation character. <font color="#FF0000">Strict</font><br>
+depew -EO NameOfPew&nbsp; -C*&nbsp; // identical meaning<br>
+depew NameOfPew&nbsp; -EOC*&nbsp;&nbsp;&nbsp; // identical meaning<br>
+depew -Cc*&nbsp; NameOfPew&nbsp; -eo // identical meaning</font></p>
+  </li>
+</ul>
+<ul>
+  <li><font face="Arial">the .pew extension need not be specified. Depew will 
+  find it.</font></li>
+</ul>
+<ul>
+  <li><font face="Arial">Only an import.txt or only an export.txt<b> </b>are are 
+  contextually relevant. One can occur anywhere on command line. It is the 
+  user's choice to state a 'txt' file before or after the pew file. Whichever is 
+  more intuitive for them.</font></li>
+</ul>
+<blockquote>
+<p><u><b><font face="Arial">examples:</font></b></u></p>
+<p><font face="Arial">depew -EO NameOfPew export.xyz <font color="#FF0000">
+Strict</font></font></p>
+<p><font face="Arial">depew export.xyz NameOfPew -EO </font></p>
+<p><font face="Arial">depew&nbsp; -IO import.txt NameOfPew&nbsp;
+<font color="#FF0000">Strict</font></font></p>
+<p><font face="Arial">depew NameOfPew&nbsp; -IO import.txt</font></p>
+<p><font face="Arial">In other words it is a user's conceptual preference how to 
+phrase the command.</font></p>
+</blockquote>
+<p><u><b><font face="Arial" size="4">Options: </font></b></u></p>
+<font SIZE="2">
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="72%" height="484">
+  <tr>
+    <td width="13%" height="18"><font face="Arial">none:</font></td>
+    <td width="87%" height="18"><font face="Arial">simply analyse the pew to 
+    verify it's integrity and print usage statistics.</font></td>
+  </tr>
+  <tr>
+    <td width="13%" height="19"><font face="Arial">-U: </font></td>
+    <td width="87%" height="19"><font face="Arial"><b>U</b>sage. As above</font></td>
+  </tr>
+  <tr>
+    <td width="13%" height="19">&nbsp;</td>
+    <td width="87%" height="19">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="13%" height="19"><font face="Arial">-X</font></td>
+    <td width="87%" height="19"><font face="Arial">Export pew to wrp</font></td>
+  </tr>
+  <tr>
+    <td width="13%" height="19">&nbsp;</td>
+    <td width="87%" height="19">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="13%" height="19">-LZ</td>
+    <td width="87%" height="19">List Duplicated Objects</td>
+  </tr>
+  <tr>
+    <td width="13%" height="19">-RZ</td>
+    <td width="87%" height="19">Remove Duplicated Objects</td>
+  </tr>
+  <tr>
+    <td width="13%" height="19">&nbsp;</td>
+    <td width="87%" height="19">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="13%" height="19"><font face="Arial">-EOn[Cc]: </font></td>
+    <td width="87%" height="19"><font face="Arial"><b> E</b>xport&nbsp;
+    <b>O</b>bjects n= Output format desired. Worldtools, row transform, etc. (see 
+    below)</font></td>
+  </tr>
+  <tr>
+    <td width="13%" height="18"><font face="Arial">-IO[v][y]:</font></td>
+    <td width="87%" height="18"><font face="Arial"><b>I</b>mport <b>O</b>bjects 
+    (and build templates where necessary)</font></td>
+  </tr>
+  <tr>
+    <td width="13%" height="16"><font face="Arial">-DO[v][y]: </font></td>
+    <td width="87%" height="16"><font face="Arial"><b>D</b>elete all <b>O</b>bject 
+    (positions) </font><font face="Arial" SIZE="2">.</font></td>
+  </tr>
+  <tr>
+    <td width="13%" height="18"><font face="Arial">-RO[v][y]: </font></td>
+    <td width="87%" height="18"><font face="Arial"><b>R</b>educe <b>O</b>bjects 
+    (by deleting unused)</font></td>
+  </tr>
+  <tr>
+    <td width="13%" height="18"></td>
+    <td width="87%" height="18"></td>
+  </tr>
+  <tr>
+    <td width="13%" height="19">
+<font face="Arial">
+    -LT[Cc]:
+</font>
+    </td>
+    <td width="87%" height="19"><font face="Arial"><b>L</b>ist&nbsp;<b>T</b>emplates</font></td>
+  </tr>
+  <tr>
+    <td width="13%" height="19">
+<font face="Arial">
+    -ET[Cc]:
+</font>
+    </td>
+    <td width="87%" height="19"><font face="Arial"><b> E</b>xport&nbsp;<b>T</b>emplates</font></td>
+  </tr>
+  <tr>
+    <td width="13%" height="18"><font face="Arial">-RT[v][y]: </font></td>
+    <td width="87%" height="18"><font face="Arial"><b>R</b>educe <b> T</b>emplate 
+    objects (by deleting unused)</font></td>
+  </tr>
+  <tr>
+    <td width="13%" height="18"><font face="Arial">-AT[v][y]:</font></td>
+    <td width="87%" height="18"><font face="Arial">A<b>dd T</b>emplate</font></td>
+  </tr>
+  <tr>
+    <td width="13%" height="18"><font face="Arial">-IT[v][y]:</font></td>
+    <td width="87%" height="18"><font face="Arial"><b>I</b>mport <b>T</b>emplate</font></td>
+  </tr>
+  <tr>
+    <td width="13%" height="16"><font face="Arial">-DT[v][y]: </font></td>
+    <td width="87%" height="16"><font face="Arial"><b>D</b>elete <b>T</b>emplates (and 
+    objects).</font><font face="Arial" SIZE="2"> Note 
+    deleting templates causes all objects to be deleted too.</font></td>
+  </tr>
+  <tr>
+    <td width="13%" height="19">&nbsp;</td>
+    <td width="87%" height="19">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="13%" height="1">
+<font face="Arial">
+    -IEn[v][y]</font></td>
+    <td width="87%" height="1"><font face="Arial"><b>I</b>mport <b>
+    E</b>levations</font></td>
+  </tr>
+  <tr>
+    <td width="13%" height="1">
+<font face="Arial">
+    -EEn[v][y]</font></td>
+    <td width="87%" height="1"><font face="Arial"><b>E</b>xport <b>
+    E</b>levations , asc (default) or xyz format</font></td>
+  </tr>
+  <tr>
+    <td width="13%" height="19">&nbsp;</td>
+    <td width="87%" height="19">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="13%" height="19"><font face="Arial">-Cc: </font></td>
+    <td width="87%" height="19"><font face="Arial">Separation <b>c</b>har 
+    (default is ,)</font></td>
+  </tr>
+  <tr>
+    <td width="13%" height="18"><font face="Arial">-Y:</font></td>
+    <td width="87%" height="18"><font face="Arial"><b>Y</b>es. Don't prompt for 
+    ask.</font></td>
+  </tr>
+  <tr>
+    <td width="13%" height="18"><font face="Arial">-V: </font></td>
+    <td width="87%" height="18"><font face="Arial"><b>V</b>erify integrity after 
+    any new pew create.</font></td>
+  </tr>
+  <tr>
+    <td width="13%" height="18"><font face="Arial">-Hn: </font></td>
+    <td width="87%" height="18"><font face="Arial">Output Header Information.</font></td>
+  </tr>
+  <tr>
+    <td width="13%" height="18"><font face="Arial">-Fn: </font></td>
+    <td width="87%" height="18"><font face="Arial"><b>F</b>ormatted (Columnated) 
+    output.</font></td>
+  </tr>
+  <tr>
+    <td width="13%" height="18"><font face="Arial">-P: </font></td>
+    <td width="87%" height="18"><font face="Arial"><b>do NOT P</b>ause on completion.</font></td>
+  </tr>
+  <tr>
+    <td width="13%" height="18"><font face="Arial">-K: </font></td>
+    <td width="87%" height="18"><font face="Arial">no pause on error (useful for bat commands which 
+    generally test the return value anyway)</font></td>
+  </tr>
+  <tr>
+    <td width="13%" height="18"></td>
+    <td width="87%" height="18"></td>
+  </tr>
+  <tr>
+    <td width="13%" height="18"></td>
+    <td width="87%" height="18"></td>
+  </tr>
+  <tr>
+    <td width="13%" height="18">-Zn:</td>
+    <td width="87%" height="18">Export as Ascii, utf8, or unicode (import has 
+    auto detection)</td>
+  </tr>
+  <tr>
+    <td width="13%" height="1">
+<font face="Arial">
+    -T:</font></td>
+    <td width="87%" height="1"><font face="Arial"><b>T</b>est<b>: </b>will<b>
+    </b>create a copy of the pewfile, using the dll's 
+internals, and then checks it for errors. <br>
+    This is a confidence test of the dll, 
+not, the pew.</font></td>
+  </tr>
+  <tr>
+    <td width="13%" height="18"><font face="Arial">-S:</font></td>
+    <td width="87%" height="18"><font face="Arial"><b>S</b>trict rules. Any 
+    option or syntax that looks wrong, is wrong.</font></td>
+  </tr>
+  </table>
+</font>
+<ul>
+  <li><font face="Arial">All options are permissible but, clearly, -Y (yes) only 
+  has relevance when altering a pew file or deleting it. If an option is 
+  irrelevant, it is ignored.<font color="#FF0000"> But note -S</font></font></li>
+</ul>
+<p><u><b><font face="Arial" size="4">EXPORT TO WRP</font></b></u></p>
+<p>&nbsp;</p>
+<p><font face="Arial">syntax:</font></p>
+<p><font face="Arial">depew -X[V]&nbsp; NameOfPew[.pew]</font></p>
+<p><font face="Arial">an <b>unbinarised</b> wrp of the same name is produced in 
+the same folder. This is identical in function to visitor's export script only 
+1,000 times faster</font></p>
+<p>&nbsp;</p>
+<hr>
+<p><b><font face="Arial">Export 'text' file format</font></b></p>
+<ul>
+  <li><b><font face="Arial">-ZA: Ascii (default)</font></b></li>
+  <li><b><font face="Arial">-Z8: UTF8</font></b></li>
+  <li><b><font face="Arial">-ZU: Unicode</font></b></li>
+</ul>
+<p><font face="Arial">Standard Ascii/Ansi output is the default option. This is 
+ordinarily windows CodePage 1252 which covers most European languages and is the 
+default install for windows OS.</font></p>
+<p><font face="Arial">UTF8 is the better alternative for guaranteed portability 
+between your French keyboard (eg) which implies a *potentially* NON cp1252 
+install, and someone else.</font></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="background-color: #FFFF00"><b><font face="Arial" size="7">THE 
+NITTY</font><font face="Arial" size="5"> </font><font face="Arial" size="7">
+GRITTY</font></b></span></p>
+<p>&nbsp;</p>
+<hr>
+<p><b><font face="Arial" size="4" color="#00FF00">USAGE</font></b></p>
+<blockquote>
+<p><font face="Arial">[-U] NameOfPew</font></p>
+  <blockquote>
+<p><font face="Arial">-U is optional. DePew will also show usage statistics when no options are 
+specified.</font></p>
+  </blockquote>
+</blockquote>
+<p><font face="Arial">-Usage shows&nbsp; the amount of redundant objects which can never be accessed again, 
+and unused templates which can. (It is up to the user to -Reduce unusable 
+objects.)</font></p>
+<hr>
+<p>&nbsp;</p>
+<p><span style="background-color: #FFFF00"><b><font face="Arial" size="6">OBJECT 
+POSITIONS</font></b></span></p>
+<blockquote>
+<p>&nbsp;</p>
+</blockquote>
+<p>Preamble:</p>
+<p>There are <b>only</b> four elements that make it from a pew into the final binarised wrp file.</p>
+<ol>
+  <li>Island surface textures described in a mixture of rvmats and their paX 
+  files.</li>
+  <li>The elevation of this surface at any given point expressed in meters above 
+  (or below) sea level..</li>
+  <li>The position of all objects</li>
+  <li>Details of the object itself, the library 'template'.</li>
+</ol>
+<p><b>Nothing</b> else in a pew is relevant to the final island. <b>Everything</b> 
+else in a pew file is <b>only</b> relevant to easing the editing burden. An 
+example of which are road-networks. They play no part and are of no consequence 
+to a wrp, nor in the process of building a wrp, nor do they have any relevance 
+to the engine.</p>
+<p>Visitor stores positional information of objects separately to details of the 
+object itself. This is common sense. The details of a pinetree.p3d need only be 
+recorded once. This pine tree can be placed in thousands of positions on the 
+island.&nbsp; It is the position of these objects on the map which are of 
+critical interest to island authors and the majority-use of external tools. 
+DePew.exe also, however, facilitates changing <b>a</b> tree.p3d to 
+anotherTree.p3d simply and efficiently.</p>
+<p>Be aware that Depew can export or import this information in a variety of ways: 
+The intention of depew is <b>not</b> to manipulate data itself but to facilitate 
+external tools to do so in ways yet to be imagined.</p>
+<hr>
+<blockquote>
+<p><b><font face="Arial" size="4"><span style="background-color: #FFFF00">-E[O] </span></font></b>
+<span style="background-color: #FFFF00"><b><font face="Arial" size="4">Export 
+Object (positions)</font></b></span></p>
+</blockquote>
+<p><font face="Arial">Object positions can be listed to screen, or, exported to 
+a file.&nbsp; A quick visual 
+listing on the screen (which could be &gt;piped if wanted), or, genuine hard 
+copy for immediate use by other tools, or permanent reference. File exports 
+contain only or mostly valid data (see -Header option). Screen 'data' on the other hand also contains 
+informational messages. Some care is taken by depew to visually arrange the text 
+to be humanly readable.</font></p>
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="44%">
+  <tr>
+    <td width="49%"><b><font face="Arial">-EO[n][Cc][F0][H0]&nbsp; NameOf.Pew&nbsp;  </font></b></td>
+    <td width="52%">Export to screen</td>
+  </tr>
+  <tr>
+    <td width="49%"><b><font face="Arial">-EO[n][Cc][F0][H0]&nbsp; NameOf.Pew&nbsp; Export.txt</font></b></td>
+    <td width="52%">Export to file</td>
+  </tr>
+</table>
+  <p><font face="Arial">Additional options:</font></p>
+  <p><font face="Arial">Note that the 0 digit for any option is NOT required.</font></p>
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="64%">
+  <tr>
+    <td width="8%"><b><font face="Arial">-Cc</font></b></td>
+    <td width="25%"><font face="Arial">Separation Character:</font></td>
+    <td width="140%"><font face="Arial">Unless stated otherwise via option -Cc, the separation 
+    char is a comma (,)</font></td>
+  </tr>
+  <tr>
+    <td width="8%">-F0</td>
+    <td width="25%">Raw Output</td>
+    <td width="140%">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="8%">-F1</td>
+    <td width="25%">Formatted Output</td>
+    <td width="140%">Default. Columnated text for easier reading</td>
+  </tr>
+  <tr>
+    <td width="8%">-H0</td>
+    <td width="25%">No Header</td>
+    <td width="140%">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="8%">-H1</td>
+    <td width="25%">Header</td>
+    <td width="140%">Default. Use Header as first line of output.</td>
+  </tr>
+  <tr>
+    <td width="8%">-On</td>
+    <td width="25%">output format:</td>
+    <td width="140%">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="8%">&nbsp;</td>
+    <td width="25%">0</td>
+    <td width="140%">&nbsp;(default) world tools format </td>
+  </tr>
+  <tr>
+    <td width="8%">&nbsp;</td>
+    <td width="25%">1</td>
+    <td width="140%">extended world tools format</td>
+  </tr>
+  <tr>
+    <td width="8%">&nbsp;</td>
+    <td width="25%">2</td>
+    <td width="140%">row transform format</td>
+  </tr>
+  <tr>
+    <td width="8%">&nbsp;</td>
+    <td width="25%"><font face="Arial">3</font></td>
+    <td width="140%">column transform format</td>
+  </tr>
+  </table>
+  <p align="left">&nbsp;</p>
+  <p align="left"><u><span style="background-color: #FFFF00">n==0 or not specified, (word tools format) Default.</span></u></p>
+  <p align="left"><b><font face="Arial">&quot;path\and\model&quot;, X, Y, 
+  Z, Orientation</font></b></p>
+  <p align="left"><b><font face="Arial">this is a plain vanilla export, 
+  compatible with visitor vis files. There are many deficiencies in this format, 
+  notably, the lack of relative height, and instance name.</font></b></p>
+  <p align="left"><font face="Arial">Output Example:</font></p>
+  <p align="left"><font face="Arial">// no header -H0 </font></p>
+<blockquote>
+<p align="left">&quot;ca\structures\wreck\wreck_ship_1&quot;, 1514.15, 9864.49, 4.76, 325<br>
+&quot;ca\structures\wreck\wreck_ship_2&quot;, 1469.50, 9919.33, 6.46, 322<br>
+&quot;ca\water2\lhd\lhd_1&quot;, 1368.00, 1120.00, -2.69, 0<br>
+&quot;ca\water2\lhd\helper_snaper&quot;, 1368.00, 1142.00, 0.24, 0</p>
+</blockquote>
+<p><u><span style="background-color: #FFFF00">n==1 (extended format)</span></u></p>
+<p><u><span style="background-color: #FFFF00">// with header (-H1 default)</span></u></p>
+  <p align="left"><b><font face="Arial">&quot;path\and\model[:InstanceName]&quot;, X, Y, Z, 
+  Orientation, RelativeHeight, Scale</font></b></p>
+  <p align="left"><font face="Arial">Output Example:&nbsp;&nbsp;&nbsp; </font></p>
+  <blockquote>
+  <p align="left"><font face="Arial">&quot;ca\structures\wreck\wreck_ship_1&quot;, 
+  1514.15, 9864.49, 4.76, 325, 4.91, 1.00<br>
+  &quot;ca\structures\wreck\wreck_ship_2<span style="background-color: #00FF00">:arthur</span>&quot;, 1469.50, 9919.33, 6.46, 322, 2.74, 1.00<br>
+  &quot;ca\water2\lhd\lhd_1&quot;, 1368.00, 1120.00, -2.69, 0, 55.07, 1.00<br>
+  &quot;ca\water2\lhd\helper_snaper&quot;, 1368.00, 1142.00, 0.24, 0, 55.07, 1.00<br>
+  &quot;ca\water2\lhd\lhd_4&quot;, 1366.56, 990.52, -1.06, 0, 55.07, 1.00</font></p>
+  <p align="left"><span style="background-color: #00FF00">note the 2nd objecthas 
+  an object 'name' of </span><span style="background-color: #00FF00">arthur</span><span style="background-color: #00FF00">'. 
+  This will be present on the same, imported object.</span></p>
+  <p align="left">&nbsp;</p>
+  </blockquote>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="63%">
+  <tr>
+    <td width="19%"><font face="Arial">&quot;ModelAndPath&quot;</font></td>
+    <td width="81%"><font face="Arial">Actual file location.  Quotes 
+    are always present.</font></td>
+  </tr>
+  <tr>
+    <td width="19%"><b><font face="Arial">:&quot;Instance name&quot;</font></b></td>
+    <td width="81%"><b><font face="Arial">if present AND different to the 
+    model's name, it is listed</font></b></td>
+  </tr>
+  <tr>
+    <td width="19%"><b><font face="Arial">X,Y,Z</font></b></td>
+    <td width="81%"><font face="Arial">float values are limited to 2 decimal 
+    places (10cm)</font></td>
+  </tr>
+  <tr>
+    <td width="19%">&nbsp;</td>
+    <td width="81%"><font face="Arial">Values read as West, North, Height</font></td>
+  </tr>
+  <tr>
+    <td width="19%"><b><font face="Arial">Orientation</font></b></td>
+    <td width="81%"><font face="Arial">Float degrees limited to 2 decimal places</font></td>
+  </tr>
+  <tr>
+    <td width="19%"><b><font face="Arial">RelativeHeight</font></b></td>
+    <td width="81%"><font face="Arial">Float limited to 2 decimal places (10cm)</font></td>
+  </tr>
+  <tr>
+    <td width="19%"><b><font face="Arial">Scale</font></b></td>
+    <td width="81%"><font face="Arial">Float limited to 2 decimal places</font></td>
+  </tr>
+  <tr>
+    <td width="19%">&nbsp;</td>
+    <td width="81%">&nbsp;</td>
+  </tr>
+</table>
+<p><font face="Arial"><b>Notes:</b></font></p>
+<ul>
+  <li><font face="Arial"><b>Newlines separate records</b></font></li>
+  <li>-Formatted output makes it far easier to read textually since all 
+  variables are in columns. This should present no problem with import 
+  applications (such as Excel) but -F0 is provided to defeat this feature.</li>
+  <li>-H1 allows header information describing each column of data as the first 
+  line. Most spreadsheet applications expect or accept this. -H0 
+  prevents this.</li>
+</ul>
+<p>&nbsp;</p>
+<p><font size="4" face="Arial"><span style="background-color: #FFFF00">Object 
+transforms</span></font></p>
+<p><font face="Arial"><b>n==2 transform Row format<br>
+n==3  transform&nbsp;Column format </b></font></p>
+<p><font face="Arial">This by far, is the most flexible output format. It supplies all possible 
+information about an object's position, for manipulation by some other tool. 
+(Orientation, pitch, slant, skew, position and scale are derived from this 
+matrix).  </font></p>
+<p><font face="Arial">The internal transform matrix, held by a pew, and used by visitor, 
+is in 'row' format. All other transforms used by bis, including wrps, are in 
+column format. One  wrinkle with pew transforms is that the 
+<font color="#FF0000">height information of the 
+object is stored in the 'Y' position</font>. Most external tools expect an XYZ of&nbsp; LeftMost, UpperMost, and Height.</font></p>
+<p><u><font face="Arial">The output is a faithful copy of the pew, not, what externals tools might 
+expect of it.</font></u></p>
+<p><font face="Arial"><span style="background-color: #00FF00">Row (pew) Output format:</span></font></p>
+<p><font face="Arial"><span style="background-color: #00FF00">&quot;ca\some\where[:InstanceName]&quot;, RelativeHeight,<br>
+&nbsp;&nbsp;&nbsp; R11,R12,R13,<br>
+&nbsp;&nbsp;&nbsp;  </span><span style="background-color: #FFFF00">R21</span><span style="background-color: #00FF00">,R22,R23,<br>
+&nbsp;&nbsp;&nbsp; R31,</span><span style="background-color: #FFFF00">R32</span><span style="background-color: #00FF00">,R33,<br>
+&nbsp;&nbsp;&nbsp; R41,R42,</span><span style="background-color: #FFFF00">R43</span></font></p>
+<p><font face="Arial"><span style="background-color: #00FF00">&quot;ca\some\other[:InstanceName]&quot;,&nbsp;&nbsp; Relative 
+Height,<br>
+&nbsp;&nbsp; etc</span></font></p>
+<p><b><font face="Arial" color="#FF0000">example</font></b></p>
+<blockquote>
+<p><font color="#FF0000">&quot;ca\structures\wreck\wreck_ship_1&quot;,4.91,<br>
+0.817631, 0.000000, -0.575742,<br>
+<span style="background-color: #FFFF00">1514.147583</span>, 0.000000, 1.000000,<br>
+0.000000, <span style="background-color: #FFFF00">4.760678</span>, 0.575742,<br>
+0.000000, 0.817631, <span style="background-color: #FFFF00">9864.490234</span><br>
+<br>
+&quot;ca\structures\wreck\wreck_ship_2&quot;,2.74,<br>
+0.787751, 0.000000, -0.615991,</font></p>
+</blockquote>
+<p><font face="Arial"><b><span style="background-color: #FF00FF">Column (wrp) Output 
+format</span></b></font></p>
+<p><font face="Arial"><span style="background-color: #FF00FF">&quot;ca\some\where&quot;, RelativeHeight,<br>
+&nbsp;&nbsp;&nbsp; C11,C12,C13,<br>
+&nbsp;&nbsp;&nbsp; C21,C22,C23,<br>
+&nbsp;&nbsp;&nbsp; C31,C32,C33,<br>
+&nbsp;&nbsp;&nbsp; </span>
+<span style="background-color: #FFFF00">C41,C42,C43</span></font></p>
+<p><font face="Arial">Note that column format produces the normally convenient XYZ triplet as the 
+4th array. </font><font color="#FF0000" face="Arial"><b>Note most carefully, C42/R32 (Y) is the height.</b></font></p>
+<p><b><font face="Arial" color="#FF0000">example</font></b></p>
+<blockquote>
+<p><b><font face="Arial" color="#FF0000">
+&quot;ca\structures\wreck\wreck_ship_1&quot;,4.91,<br>
+0.817631, 0.000000, 0.575742,<br>
+0.000000, 1.000000, 0.000000,<br>
+-0.575742, 0.000000, 0.817631,<br>
+<span style="background-color: #FFFF00">1514.147583, 4.760678, 9864.490234</span><br>
+<br>
+&quot;ca\structures\wreck\wreck_ship_2&quot;,2.74,<br>
+0.787751, 0.000000, 0.615991,</font></b></p>
+</blockquote>
+<p><u><font face="Arial">Notes:</font></u></p>
+<ul>
+  <li><font face="Arial">Whitespace should be ignored</font></li>
+  <li><font face="Arial">floating output is accurate to 6 decimal places</font></li>
+  <li><font face="Arial">each 'record' of information is comma separated 
+  (subject to -Cc option)</font></li>
+</ul>
+<hr>
+<blockquote>
+<p><b><font face="Arial" size="4"><span style="background-color: #FFFF00">-IO </span></font></b>
+<span style="background-color: #FFFF00"><b><font face="Arial" size="4">Import 
+Object (positions)</font></b></span></p>
+</blockquote>
+<p><font face="Arial">DePew auto detects the format of the imported text file 
+and it's separation character (be it world tools, extended, or transform).
+</font></p>
+<p><font face="Arial">Depew is 'aware' that the import.txt may, or may not have 
+a 1st line header.</font></p>
+<p><font face="Arial">Quoted filenames are optional (except of course if the 
+file name contains spaces)</font></p>
+<p><font face="Arial">.p3d extension to the filename is optional.</font></p>
+<p><font face="Arial">a preceding slash on the filename (if present) is ignored</font></p>
+<p><font color="#FF3300">If the object itself does not exist in the template</font>, 
+DePew creates it. However:</p>
+<ol>
+  <li>DePew cannot know in advance if this object is
+  <span style="background-color: #00FF00">natural</span>,
+  <span style="background-color: #FF0000">artificial</span>, or
+  <span style="background-color: #C0C0C0">road</span>. DePew sets it as
+  <span style="background-color: #00FF00">Natural</span> as a majority case and 
+  warns the user.</li>
+  <li><font color="#FF0000">If the model subsequently does not exist on the p: 
+  drive,</font> DePew fills it with best guess estimates and also warns the user 
+  that this is the case.</li>
+</ol>
+<blockquote>
+  <p>These are warnings to the island maker. It is up to the island maker to do 
+  something about it, or, accept depew's best guesses.</p>
+</blockquote>
+<p><b>-IO[v][y] NameOf[.pew] import.txt</b></p>
+<p>Additional options:</p>
+<p>-verify after creation of new pew file.<br>
+-yes, don't ask to write filet</p>
+<p>Notes:</p>
+<ul>
+  <li>Be aware that importing the same data multiple times, replicates the same 
+  object. You will end up with multiple, identical, objects at the same 
+  position. Depew cannot ascertain that you are replicating because the vagaries 
+  of IEEE floats prevent exact detection of same position. Your only way out of 
+  this is to delete all objects and start again.</li>
+  <li><font face="Arial">Although verification of a 'good' pew is desirable, pew 
+  files can be enormous and can take staggering amounts of time to process. The 
+  -v option is therefore not the default because of this (but should be).</font></li>
+  <li><font face="Arial">Although noisy, DePew lists each imported record as a 
+  'progress bar'. This in preference to listing nothing and the user assuming 
+  DePew has stalled, when it is simply a huge pew being processed.</font></li>
+  <li>
+<p><font face="Arial">Import works with all known forms of world tool export 
+syntax. Specifically one object per line</font></p>
+<font SIZE="2">
+<blockquote>
+<p><font face="Arial">FileName&lt;separator&gt;X&lt;separator&gt;Y&lt;separator&gt;Z[&lt;Separator&gt;Degrees]&lt;optional 
+separator&gt;</font></p>
+</blockquote>
+<p><font face="Arial">&lt;separator&gt; can be ; , | or space. Spaces if used in a 
+file name must (obviously) be enclosed in quotes</font></p>
+</font>
+
+  </li>
+</ul>
+<hr>
+<p><b><font face="Arial" color="#00FF00" size="4">DELETE OBJECTS/Templates</font></b></p>
+<blockquote>
+<p><font face="Arial">-DO/T[v][y] NameOf.pew</font></p>
+</blockquote>
+<p><font face="Arial">All objects or all templates (and consequently all objects) will be removed 
+from the pew</font></p>
+<p><font face="Arial">-Verify reads the resulting output pew to verify it's integrity</font></p>
+<p><font face="Arial">-Y is a silent yes, rather than being asked</font></p>
+<p><b><font face="Arial" color="#00FF00">REDUCE Template/Objects</font></b></p>
+<blockquote>
+<p><font face="Arial">-RO/T[v][y] NameOf.pew</font></p>
+</blockquote>
+<p><font face="Arial">Both options involve the removal of unused items.</font></p>
+<p><font face="Arial"><b>In the case of objects:</b> As a natural course of events when editing islands, 
+objects which have been added and subsequently deleted remain in the pew file. 
+<b>Forever</b>. They play no part in subsequent editing, nor any part of the wrp binarisation 
+process. They are simply large chunks of forests and roads (eg) that cannot be 
+subsequently accessed. The -Usage option will tell you how large this redundant space is. (DePew 
+will make an informed guess whether removing them is beneficial, but it is left 
+to the user to specifically command it)</font></p>
+<p><font face="Arial"><b>Removing unused <i>templates</i></b>, while not harmful, is not generally beneficial. 
+Most Island authors create a library template library of all their most commonly 
+used trees, roads, plants and buildings. When creating AN island, they will only 
+use a certain percentage of this library, but, it saves effort creating a new 
+template for every island they make.</font></p>
+<p><font face="Arial">note that the command line accepts -Rot or -Rto to reduce 
+both at same time.</font></p>
+<hr>
+<p><u><b><font face="Arial" size="5"><span style="background-color: #FFFF00">
+Template Object Library</span></font></b></u></p>
+<p align="left">Template objects are a library of p3d's. <u>Not all of which may be 
+present on the island</u>. Irrespective of the number of pinetree.p3d's that are 
+placed on the island, Visitor generally has a single, unique entry, existing in the 
+template library describing ALL of those identical pinetrees. It is possible for 
+a pew template to contain more than one identical template 'object.p3d', but unusual. 
+Some 'objects will refer to the one template id, others, to other id's and cause 
+no harm.</p>
+<p align="left">While it is essential of course to have specifically placed 
+objects in this template, it is also quite common for this library to have 
+considerably more entries than those actually used. This is a 'selection' 
+library. One that you build for yourself for commonly used roads, trees and 
+buildings. Whether you actually use <b>all</b> of the buildings or <b>all</b> of 
+the roads on <b>this</b> island, is your choice, but you would normally have a 
+common library, built from your experience, for <b>all</b> islands you make.</p>
+<p align="left">Naturally and of course, specific island templates are unlikely 
+to be identical to other ones. Simply because, for a given island, you have also 
+added a few odd items unique to this pew. It does not negate the need for a 
+common template library when you first start.</p>
+<p align="left">DePew facilitates Template creation for two reasons.</p>
+<ol>
+  <li>
+<p align="left">To save you <b>hours</b> of your time re-creating a template for 
+every island you make. Obviously, it <b>will</b> take hours. <b>Once</b>. But then you can use DePew to export it, and then import it for every new creation.</p>
+  </li>
+  <li>
+<p align="left">To facilitate island upgrades. It is quite common for a popular 
+island to be retextured. Depew allows you to export your templates and objects 
+from the 'old' island, to the re-textured one.</p>
+  </li>
+</ol>
+<p align="left"><u><b><font face="Arial" size="5"><span style="background-color: #FFFF00">
+List Templates</span></font></b></u></p>
+<p align="left">Listing is meant to be a quick 
+visual check of what is, in fact, in the pew.</p>
+<p align="left"><font face="Arial"><b>-LT[Cc] NameOf[.pew] </b></font></p>
+<p><font face="Arial">Output examples:</font></p>
+<blockquote>
+<p><b><font face="Arial">[*]ca\some\where.p3d , MyStandardHouse,&nbsp;  Artificial, Rectangle, 
+[Road]</font></b></p>
+<p><b><font face="Arial">[*]NameOf.p3d,NameOfP3d,Natural,Ellipse</font></b></p>
+</blockquote>
+<p><font face="Arial">* says at least one object uses this template</font></p>
+<p><font face="Arial">End of listing produces a summary of used/unused templates</font></p>
+<p><u><font face="Arial">Notes</font></u></p>
+<p><font face="Arial">Template objects are normally of 3 types</font></p>
+<ul>
+  <li><font face="Arial">Natural objects such as trees: Normally green  ellipses.</font></li>
+  <li><font face="Arial">Artificial objects: Normally red rectangular.</font></li>
+  <li><font face="Arial">Roads: Normally grey rectangles</font></li>
+</ul>
+<p><font face="Arial">NameOfP3d is auto generated by visitor when first added as a template. It is 
+exact same as the filename, without the p3d extension, and is normally altered 
+by the island author to suit.</font></p>
+<font SIZE="2">
+</font>
+<hr>
+
+<p><b><font face="Arial" color="#00FF00" size="4">IMPORT/EXPORT TEMPLATES</font></b></p>
+
+<p><u><b><font face="Arial" size="5"><span style="background-color: #FFFF00">
+Export Templates</span></font></b></u></p>
+<p><font face="Arial"><b>-ET NameOf[.pew] output.file</b></font></p>
+<font SIZE="2">
+<p><font face="Arial">Exporting or listing of templates is intended as a 
+facility to create a library of common 
+p3d's that are used over and over again in different pew projects. eg a 
+standard set of trees/bushes/houses and roads. Not all will necessarily be used 
+in AN island. This facility should save a bazillion hours in creating new 
+artificial and 'natural' objects for every island you do. Island authors are 
+free to add to, or remove items from this textual reference to suit.</font></p>
+</font>
+<p><font face="Arial">Most island authors use a collection of standard objects such as trees, 
+plants, buildings and roads, regardless of the island they are creating. In order to avoid persistent re-creation of a collection of objects for every 
+island worked on, a 'generic' template library can be imported into any pew. This library can be added to what's already there, or, it can replace 
+whatever's there, if anything.</font></p>
+<p><font face="Arial">The import file is in standard Bis class syntax. An import library should be created by EXPORTING a template from a working 
+pew. Eg something already done, once. This file can be hand edited by the user to add more objects, or remove the 
+more obscure ones, before general use. Allowance is made to distinguish between artificial, natural, and roads.</font></p>
+<p><font face="Arial">Output example:</font></p>
+
+<p>This output file is structured in the classic, powerful, bis class syntax. 
+For importing, you are free to add definitions, conditional assembly, macros, 
+classes and inheritances and #includes. DePew utilises the equally powerful 
+internal rapification of DePbo.dll to achieve whatever style-preference you 
+prefer, with of course it's attendant error checking abilities.</p>
+
+<blockquote>
+<p><font face="Arial">#define NATURAL&nbsp;&nbsp; 1<br>
+#define ARTIFICIAL 2<br>
+#define ROADS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3<br>
+<br>
+#define RECTANGLE 0<br>
+#define ELLIPSE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1<br>
+<br>
+#define RGB_DEFAULT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -1<br>
+#define RGB_BLACK&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0x000000<br>
+#define RGB_BLUE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0xFF0000<br>
+#define RGB_GREEN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0x00FF00<br>
+#define RGB_RED&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0x0000FF<br>
+#define RGB_GREY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0x7F7F7F<br>
+#define RGB_DARK_GREEN 0x007F00<br>
+<br>
+class ObjectTemplates<br>
+{<br>
+&nbsp;
+&nbsp;class Object_wreck_ship_1<br>
+&nbsp;&nbsp; {<br>
+&nbsp; ulObjectType=ARTIFICIAL;<br>
+&nbsp; ulMarkerType=RECTANGLE;<br>
+&nbsp; strModelFilename=&quot;ca\structures\wreck\wreck_ship_1.p3d&quot;;<br>
+&nbsp; strModelName=&quot;ca\structures\wreck\wreck_ship_1&quot;;<br>
+&nbsp; GeometryAutoCenterPos[]={0.5771198,3.2087746,4.3739014};<br>
+&nbsp; ResolutionAutoCenterPos[]={0.5771198,3.2087746,4.3739014};<br>
+&nbsp; dblxyGeometryBounds[]={28.249469757080078,80.78480529785156};<br>
+&nbsp; dblxyResolutionBounds[]={28.249469757080078,80.78480529785156};<br>
+&nbsp;&nbsp; };<br>
+&nbsp;&nbsp; class AnotherObject<br>
+&nbsp;
+&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ........<br>
+&nbsp;
+&nbsp;};<br>
+&nbsp;&nbsp; .........<br>
+};</font></p>
+</blockquote>
+<p><font face="Arial">each class has the following parameters</font></p>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="64%">
+  <tr>
+    <td width="41%">&nbsp;</td>
+    <td width="91%">&nbsp;</td>
+    <td width="58%"><font face="Arial">Value</font></td>
+  </tr>
+  <tr>
+    <td width="41%"><font face="Arial">ulObjectType</font></td>
+    <td width="91%"><font face="Arial">Type of library object.</font><p>&nbsp;</td>
+    <td width="58%"><font face="Arial">ARTIFICIAL<br>
+    NATURAL<br>
+    ROADS <br>
+    or number range 0..5</font></td>
+  </tr>
+  <tr>
+    <td width="41%"><font face="Arial">ulMarkerType</font></td>
+    <td width="91%"><font face="Arial">The shape of the object on the map</font></td>
+    <td width="58%"><font face="Arial">RECTANGLE<br>
+    ELLIPSE <br>
+    or number range 0..2</font></td>
+  </tr>
+  <tr>
+    <td width="41%"><font face="Arial">strModelFilename</font></td>
+    <td width="91%">&nbsp;</td>
+    <td width="58%"><font face="Arial">ca\somewwhere.p3d</font></td>
+  </tr>
+  <tr>
+    <td width="41%"><font face="Arial">strModelName</font></td>
+    <td width="91%">&nbsp;</td>
+    <td width="58%"><font face="Arial">somehwere</font></td>
+  </tr>
+  <tr>
+    <td width="41%"><font face="Arial">ulOutlineColour</font></td>
+    <td width="91%">&nbsp;</td>
+    <td width="58%"><font face="Arial">RGB value, else default</font></td>
+  </tr>
+  <tr>
+    <td width="41%"><font face="Arial">ulObjectColour</font></td>
+    <td width="91%">&nbsp;</td>
+    <td width="58%"><font face="Arial">RGB value, else default</font></td>
+  </tr>
+  <tr>
+    <td width="41%"><font face="Arial">GeometryAutoCenterPos</font></td>
+    <td width="91%"><font face="Arial">Visitor generates these values when 
+    initially loading the p3d.</font></td>
+    <td width="58%"><font face="Arial">{0.5771198,3.2087746,4.3739014};</font></td>
+  </tr>
+  <tr>
+    <td width="41%"><font face="Arial">ResolutionAutoCenterPos</font></td>
+    <td width="91%">&nbsp;</td>
+    <td width="58%"><font face="Arial">same as above</font></td>
+  </tr>
+  <tr>
+    <td width="41%"><font face="Arial">dblxyGeometryBounds</font></td>
+    <td width="91%"><font face="Arial">As above</font></td>
+    <td width="58%"><font face="Arial">{28.249469757080078,80.78480529785156};</font></td>
+  </tr>
+  <tr>
+    <td width="41%"><font face="Arial">dblxyResolutionBounds</font></td>
+    <td width="91%">&nbsp;</td>
+    <td width="58%"><font face="Arial">same as above</font></td>
+  </tr>
+  <tr>
+    <td width="41%"><font face="Arial">dblxyRandomScale</font></td>
+    <td width="91%">&nbsp;</td>
+    <td width="58%"><font face="Arial">Default 50</font></td>
+  </tr>
+  <tr>
+    <td width="41%"><font face="Arial">dblxyRandomRotate</font></td>
+    <td width="91%">&nbsp;</td>
+    <td width="58%"><font face="Arial">Default 20</font></td>
+  </tr>
+  <tr>
+    <td width="41%"><font face="Arial">dblxyRandomOrientation</font></td>
+    <td width="91%">&nbsp;</td>
+    <td width="58%"><font face="Arial">Default180</font></td>
+  </tr>
+  <tr>
+    <td width="41%">&nbsp;</td>
+    <td width="91%">&nbsp;</td>
+    <td width="58%">&nbsp;</td>
+  </tr>
+</table>
+<p><font face="Arial">Default values are supplied or assumed by DePew if not specified.</font></p>
+
+<p><font face="Arial" size="4"><span style="background-color: #FFFF00">Import 
+Templates</span></font></p>
+
+<p><font face="Arial"><b>DePew -IT[v][y] import.txt NameOfPew</b></font></p>
+<p><font face="Arial">Depew will create a new template library from a file 
+generated from above export (and potentially modified by the user).</font></p>
+<p><font face="Arial" color="#FF0000"><b>Be Warned: </b></font>
+<font face="Arial"><b>All</b> existing template objects (and&nbsp; consequently
+<b>all</b> objects themselves) will be automatically removed from the pew. This 
+may not be what you want.</font></p>
+<p><font face="Arial" size="4"><span style="background-color: #FFFF00">Add 
+Templates</span></font></p>
+<p><font face="Arial"><b>DePew -AT[v][y] import.txt NameOfPew</b></font></p>
+<p><font face="Arial"><b>Unlike</b> the above drastic procedure, adding extra 
+template entries to a pew does not affect anything there in the first instance.</font></p>
+<p><font face="Arial">Depew.exe will ignore each template class from the 
+import.txt that already exists in the pew by examining the file.p3d </font></p>
+<p><font face="Arial">Note if no template has been added, the pew is left 
+untouched.</font></p>
+<p>&nbsp;</p>
+<hr>
+<p><b><font face="Arial" color="#00FF00" size="5">ELEVATIONS</font></b></p>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="34%">
+  <tr>
+    <td width="15%"><font face="Arial">Export:</font></td>
+    <td width="85%"><font face="Arial">-EE[1][Cc] NameOf.pew to screen</font></td>
+  </tr>
+  <tr>
+    <td width="15%"><font face="Arial">Export:</font></td>
+    <td width="85%"><font face="Arial">-EE[1][Cc] NameOf.pew export.txt</font></td>
+  </tr>
+  <tr>
+    <td width="15%"><font face="Arial">Import:</font></td>
+    <td width="85%"><font face="Arial">-IE[v][y] import.txt NameOf.pew</font></td>
+  </tr>
+</table>
+<p>Note that when listing to screen, hitting the escape key will quit the output</p>
+<p><span style="background-color: #FFFF00">Default n=0 </span>
+<span style="background-color: #FFFF00">ASC</span><span style="background-color: #FFFF00"> 
+format</span></p>
+<p><font face="Arial">Elevations are listed in ASC format. Specifically:</font></p>
+<p><font face="Arial">ncols 256<br>
+nrows 256<br>
+xllcorner 0.0<br>
+yllcorner 0.0<br>
+cellsize 20.0<br>
+NODATA_value -9999<br>
+-74.9&nbsp; -75.9........ data until end of file..............</font></p>
+<p><font face="Arial">note that the data is contiguous, separated by spaces (including newlines). row of data is separated by a newline</font></p>
+
+<p>The origin of the grid is the upper left and terminus at the lower right. 
+(screen coords)</p>
+
+<p>As a matter of convenience each 'line' of data is a 'row' of heights.</p>
+
+<p>&nbsp;</p>
+
+<p><font face="Arial"><b><span style="background-color: #FFFF00">n==1 xyz format</span></b></font></p>
+
+<p><font face="Arial">This is the deprecated 'ExportXYZ.exe' which has been subsumed into this 
+package.</font></p>
+
+<p><font face="Arial">X== column, row==Y, Z == height</font></p>
+
+<p><font face="Arial">data IS in meters</font></p>
+
+<p><font face="Arial">X&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Y&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Z</font></p>
+
+<p><font face="Arial">&nbsp;0.00 0.00 -54.83<br>
+12.50 0.00 -54.83<br>
+25.00 0.00 -54.83<br>
+37.50 0.00 -54.83<br>
+50.00 0.00 -54.83<br>
+62.50 0.00 -54.83</font></p>
+
+<p><font face="Arial">..............</font></p>
+
+<p><font face="Arial">&nbsp;12675.00 12787.50 -54.83<br>
+12687.50 12787.50 -54.83<br>
+12700.00 12787.50 -54.83<br>
+12712.50 12787.50 -54.83<br>
+12725.00 12787.50 -54.83<br>
+12737.50 12787.50 -54.83<br>
+12750.00 12787.50 -54.83<br>
+12762.50 12787.50 -54.83<br>
+12775.00 12787.50 -54.83<br>
+12787.50 12787.50 -54.83</font></p>
+
+<p><font face="Arial"><span style="background-color: #FFFF00">Importing Elevations</span></font></p>
+
+<p><font face="Arial">Depew automatically detects the difference between ASC and XYZ formats</font></p>
+
+<p><font face="Arial">Height data to be imported must be at the same dimensions as the original xy 
+and gridsize.</font></p>
+
+<hr>
+
+<p><b><font face="Arial" size="4">Duplicated Objects</font></b></p>
+
+<p>It is difficult to impossible to check in visitor that identical objects have 
+not been placed at the same position on a map. This can occur all too easily as 
+a repeated copy and paste, or more subtly, as a multiple mouse click. The 
+duplicated object(s) is hidden under the one in view (the z Order), and short of 
+removing, or moving that top object and checking underneath, you are none the 
+wiser.</p>
+
+<p>Listing duplicated objects provides an xyz position and an object name of the 
+offending item. You can then check manually with visitor at that location and do 
+something about it, or, you can leave it to depew, to remove ALL duplicated 
+objects itself.</p>
+
+<p>the criteria for a duplicated object is that</p>
+<ul>
+  <li>it uses the same template id</li>
+  <li>the xy height and rotation are identical</li>
+</ul>
+
+<p>this should overcome a series of objects in exact same place, but oriented 
+differently.</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</body>
+
+</html>

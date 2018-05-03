@@ -1,0 +1,568 @@
+#pbo	#Addon	#RequiredAddons
+a10.pbo
+	CAA10
+		CAAir
+		CACharacters2
+		CAWeapons
+ah64.pbo
+	CA_AH64D
+		CAAir
+air.pbo
+	CAAir
+		CACharacters
+		CACharacters2
+		CAWeapons
+		CA_Anims_Char
+air2.pbo
+	CAAir2_C130J
+		CAAir2
+	CAAir2_ChukarTarget
+		CAAir2
+	CAAir2
+		CAAir
+		CAWeapons
+		CACharacters2
+		CA_Anims_Char
+	CAAir2_F35B
+		CAAir2
+	HALO_Test
+	Arma2_Ka52
+		CAAir2
+		CAWeapons
+	CAAir2_MQ9PredatorB
+		CAAir2
+		CAUI
+	CAAir2_MV22
+		CAAir2
+		CACharacters2
+	CA_AIR2_Su25
+		CACharacters
+		CAWeapons
+		CA_Anims_Char
+		CAAir
+	CAAir2_UH1Y
+		CAAir2
+		CAWeapons
+		CACharacters2
+air3.pbo
+	CAAir3
+		CAAir
+	CAAir3_Su34
+		CAAir3
+air_d_baf.pbo
+	CAAir_BAF_CH_47F
+		CAAir_BAF
+	CAAir_BAF
+		CACharacters_E
+		CAWeapons_E
+		CA_Anims_Char
+		CAAir
+		CAAir2
+		CA_BAF
+		CACharacters_BAF
+		CAWeapons_BAF
+		CAAir_E
+		CAAir_E_CH_47F
+		CAAir_E_AH64D
+AIR_PMC.PBO
+	CAAir_PMC
+		CA_PMC
+		CAAir_E
+		CAAir
+		CAWeapons_E
+	CAAir_PMC_KA137
+		CAAir_PMC
+	CAAir_PMC_KA60
+		CAAir_PMC
+animals.pbo
+	CAAnimals
+animals2.pbo
+	CA_Animals2_Anim_Config
+		CA_Animals2
+	CA_Animals2_Chicken
+		CA_Animals2
+		CA_Animals2_Anim_Config
+	CA_Animals2
+		CAAnimals
+	CA_Animals2_Cow
+		CA_Animals2
+		CA_Animals2_Anim_Config
+	CA_Animals2_Dogs
+		CA_Animals2
+	CA_Animals2_Dogs_Fin
+		CA_Animals2_Dogs
+		CA_Animals2_Anim_Config
+	CA_Animals2_Dogs_Pastor
+		CA_Animals2_Dogs
+		CA_Animals2_Anim_Config
+	CA_Animals2_Goat
+		CA_Animals2
+		CA_Animals2_Anim_Config
+	CA_Animals2_Rabbit
+		CA_Animals2
+		CA_Animals2_Anim_Config
+	CA_Animals2_Sheep
+		CA_Animals2
+		CA_Animals2_Anim_Config
+	CA_Animals2_WildBoar
+		CA_Animals2
+		CA_Animals2_Anim_Config
+anims.pbo
+	CA_Anims_Char
+		CA_Anims
+		CA_Anims_Sdr
+		CA_Anims_Wmn
+	CA_Anims_Sdr
+		CA_Anims
+	CA_Anims_Wmn
+		CA_Anims
+		CA_Anims_Sdr
+	CA_Anims
+buildings.pbo
+	CABuildings
+		CAData
+buildings2.pbo
+	CABuildings2
+		CABuildings
+	CAStructures_IndPipe1_todo_delete
+		CAStructures
+	IndPipe2
+		CABuildings2
+	Ind_Tank
+		CAData
+		CABuildings
+		CABuildings2
+	Shed_wooden
+		CABuildings2
+buildings2_ind_cementworks.pbo
+	Ind_MalyKomin
+		CAData
+		CABuildings
+		CABuildings2
+Ca.pbo
+	CAData
+	CAData_ParticleEffects
+		CAData
+ca_pmc.pbo
+	CA_PMC
+		CAData
+		CA_E
+characters.pbo
+	CACharacters
+		CAData
+		CAWeapons
+		CAWeapons_AK
+	CA_Heads
+characters2.pbo
+	CACharacters2
+		CACharacters
+		CAWeapons
+		CAWeapons_Colt1911
+		CAWeapons_AK
+		CAweapons_ksvk
+		CAweapons_m107
+characters_d_baf.pbo
+	CACharacters_BAF
+		CACharacters
+		CACharacters_E
+		CA_E
+		CACharacters_E_Head
+		CA_BAF
+		CAWeapons_BAF
+		CACharacters_E_Head
+	CACharacters_BAF_Head
+		CA_Heads
+		CACharacters
+		CACharacters_E_Head
+		CACharacters_BAF
+CHARACTERS_PMC.PBO
+	CACharacters_PMC
+		CA_PMC
+		CAWeapons_PMC_XM8
+	CACharacters_PMC_Head
+		CA_Heads
+		CACharacters
+		CACharacters_E_Head
+characters_w_baf.pbo
+	CACharacters_W_BAF
+		CACharacters_BAF
+data_baf.pbo
+	CA_BAF
+		CAMisc3
+		CA_E
+dubbing.pbo
+	CA_Dubbing
+DUBBINGRADIO_PMC.PBO
+	CA_DubbingRadio_PMC
+		CA_Dubbing_Baf
+		CA_DubbingRadio_E
+dubbing_baf.pbo
+	CA_Dubbing_Baf
+		CA_DubbingRadio_E
+DUBBING_PMC.PBO
+	CA_Dubbing_PMC
+editor.pbo
+	CA_Editor
+		CAData
+languagemissions_baf.pbo
+	CALanguageMissions_baf
+		CA_BAF
+LANGUAGEMISSIONS_PMC.PBO
+	CALanguage_missions_PMC
+		CA_E
+		CA_PMC
+language_baf.pbo
+	CALanguage_Baf
+		CA_BAF
+LANGUAGE_PMC.PBO
+	CALanguage_PMC
+		CA_E
+		CA_PMC
+misc.pbo
+	CAMisc
+		CAData
+		CAUI
+misc2.pbo
+	CAMisc2
+		CAData
+		CABuildings2
+		CABuildings
+		CAUI
+		CAWeapons
+misc3.pbo
+	CAMisc3
+		CAData
+		CAWeapons_Warfare_weapons
+		CAWeapons_Warfare_weapons
+	WarfareBuildings
+		CAmisc3
+		CAbuildings
+		CATracked
+		CAWheeled
+		CAWheeled2
+		CAWeapons
+missions.pbo
+	CA_Missions
+		CA_Modules
+		CAData
+		CALanguage_missions
+		CALanguage
+	CA_Missions_SecOps
+		CAWeapons
+	CA_Missions_Armory2
+		CAUI
+missions2_pmc.pbo
+	CA_Missions2_PMC
+		CA_Missions_PMC
+		CAMisc3
+		CAAir_E
+missions_2_baf.pbo
+	CA_Missions_BAF_2
+		CA_Missions_BAF
+missions_baf.pbo
+	CA_Missions_BAF
+		CA_Missions_E
+	CA_Missions_BAF_Templates_SecOps
+		CA_Missions_SecOps
+		CA_Missions_AmbientCombat
+MISSIONS_PMC.PBO
+	CA_Missions_PMC
+		CA_PMC
+		CAUI
+MISSIONS_PMC_DATA.PBO
+modules.pbo
+	CA_Missions_AlternativeInjurySimulation
+	CA_Modules_Alice
+	CA_Missions_AmbientCombat
+	CA_Modules_Animals
+	CA_Modules_ARTY
+		CAData
+		CAWeapons
+		CAData_ParticleEffects
+		CAWheeled
+		CAWeapons_M252_81mm_Mortar
+		CAWeapons_2b14_82mm_Mortar
+		CATracked2_us_m270mlrs
+	CA_Missions_BattlefieldClearance
+	CA_Modules_clouds
+	CA_Modules_Coin
+	CA_Modules
+		CAData
+	CA_Modules_DynO
+	CA_Missions_FirstAidSystem
+	CA_Modules_Functions
+	CA_Missions_GarbageCollector
+	CA_HighCommand
+	CA_Modules_Marta
+	CA_Modules_Silvie
+	BI_SRRS
+		CAData
+	CA_Modules_StratLayer
+		CAUI
+	CA_Modules_UAV
+	CA_Modules_ZoRA
+MODULES_PMC.PBO
+	CA_Modules_PMC
+		CA_PMC
+	CA_Modules_PMC_Functions
+	CA_Modules_PMC_SimpleFIrstAid
+MUSIC_PMC.PBO
+	CAMusic_PMC
+		CASounds
+		CA_PMC
+PLANTS_PMC.PBO
+PROVINGGROUNDS_PMC.PBO
+	ProvingGrounds_PMC
+		CA_E
+		CARoads_E
+		CARocks_E
+		CAStructures_E
+		CAMisc_E
+		CAStructures_PMC
+roads2.pbo
+	CARoads2
+	CARoads2Dam
+		CARoads2
+	CARoads2Bridge
+		CARoads2
+ROADS_PMC.PBO
+	CARoads_PMC_Bridge
+shapur_baf.pbo
+	Shapur_BAF
+		CA_E
+		CARoads_E
+		CARocks_E
+		CAStructures_E
+		CAMisc_E
+sounds.pbo
+	CASounds
+sounds_baf.pbo
+	CA_Sounds_Baf
+SOUNDS_PMC.PBO
+structures.pbo
+	CAStructures_A_CraneCon
+		CAStructures
+	CAStructures
+		CABuildings
+	CAStructuresLand_Nav_Boathouse
+		CAStructures
+	CAStructures_Nav_pier
+		CAData
+		CAStructures
+		CABuildings
+		CABuildings2
+	CAStructuresHouse_Shed_Ind
+		CAStructures
+	CAStructures_Wall
+		CAStructures
+STRUCTURES_PMC.PBO
+	CAStructures_PMC_Buildings_Bunker
+		CAStructures_PMC_Buildings
+	CAStructures_PMC_Buildings
+		CAStructures_PMC
+	CAStructures_PMC_Buildings_GeneralStore_PMC
+		CAStructures_PMC_Buildings
+	CAStructures_PMC_Buildings_Ruin_Cowshed
+		CAStructures_PMC_Buildings
+	CAStructures_PMC
+		CA_PMC
+		CABuildings
+		CABuildings2
+		CAStructures
+		CAStructures_E
+	CAStructures_PMC_Ind
+		CAStructures_PMC
+	CAStructures_PMC_FuelStation
+		CAStructures_PMC
+	CAStructures_PMC_Misc
+		CAStructures_PMC
+	CAStructures_PMC_Misc_Shed
+		CAStructures_PMC_Misc
+	CAStructures_PMC_Ruins
+		CAStructures_PMC
+	CAStructures_PMC_Walls
+		CAStructures_PMC
+tracked.pbo
+	CATracked
+		CAData
+		CACharacters
+		CACharacters2
+		CAWeapons
+		CASounds
+tracked2.pbo
+	CATracked2_BMP3
+		CATracked2
+		CAWeapons
+		CACharacters2
+	CATracked2
+		CATracked
+	CATracked2_T34
+		CATracked2
+		CAWeapons
+		CACharacters2
+	CATracked2_T90
+		CATracked2
+		CAWeapons
+		CACharacters2
+	CATracked2_us_m270mlrs
+		CATracked2
+		CACharacters2
+	CATracked2_2S6M_Tunguska
+		CATracked2
+		CAWeapons
+		CACharacters2
+tracked_d_baf.pbo
+	CATracked_BAF
+		CATracked_E
+		CACharacters_BAF
+		CA_BAF
+		CAWeapons_BAF
+tracked_w_baf.pbo
+	CATracked_W_BAF
+		CATracked_BAF
+		CACharacters_W_BAF
+UIFonts.pbo
+	CAFonts
+video2_pmc.pbo
+	CAVideo2_PMC
+		CA_PMC
+VIDEO_PMC.PBO
+water2.pbo
+	CAWater2
+		CAData
+		CACharacters
+		CAWeapons
+		CA_Anims_Char
+	CAWater2_seafox
+		CAWater2
+weapons.pbo
+	CAWeapons_AK
+		CAWeapons
+	CAWeapons_Colt1911
+		CAweapons
+	CAWeapons
+		CAData
+		CA_Anims_Char
+	CAWeapons_DMR
+		CAweapons
+	CAWeapons_Kord
+		CAData
+		CA_Anims_Char
+		CAWeapons
+		CACharacters
+	CAweapons_ksvk
+		CAweapons
+	CAweapons_m107
+		CAweapons
+	CAWeapons_M252_81mm_Mortar
+		CAWeapons
+	CAWeapons_Metis_AT_13
+		CAWeapons
+	CAWeapons_2b14_82mm_Mortar
+		CAWeapons
+	CAWeapons_SPG9
+		CAweapons
+	CAWeapons_Warfare_weapons
+		CAData
+		CA_Anims_Char
+		CAWeapons
+		CACharacters2
+	CAWeapons_ZU23
+		CAWeapons
+weapons2.pbo
+	CAWeapons2
+		CAweapons
+	CAWeapons2_RPG18
+		CAWeapons2
+		CAWeapons
+weapons_baf.pbo
+	CAWeapons_BAF
+		CA_E
+		CAWeapons
+		CA_BAF
+		CAWeapons_E_AmmoBoxes
+WEAPONS_PMC.PBO
+	CAWeapons_PMC_AA_12
+		CAWeapons_PMC
+	CAWeapons_PMC_AS50
+		CAWeapons_PMC
+		CAWeapons_BAF
+	CAWeapons_PMC
+		CA_PMC
+		CAWeapons_E
+		CAWeapons
+		CAWeapons2
+	CAWeapons_PMC_XM8
+		CAWeapons_PMC
+wheeled.pbo
+	CAWheeled
+		CAData
+		CACharacters2
+		CAWeapons
+		CAWeapons2
+		CASounds
+		CA_Anims_Char
+	CAWheeled_Pickup
+		CAWheeled
+		CAWeapons
+	CAWheeled_Offroad
+		CAWheeled
+		CAWeapons
+wheeled2.pbo
+	CAWheeled2
+		CAWheeled
+		CA_Anims_Char
+	CAWheeled2_HMMWV_BASE
+		CAWheeled
+		CAWheeled2
+		CAWeapons
+	CAWheeled2_M1114_Armored
+		CAWheeled2_HMMWV_BASE
+	CAWheeled2_HMMWV_Ambulance
+		CAWheeled2_HMMWV_BASE
+	CAWheeled2_M998A2_Avenger
+		CAWheeled2_HMMWV_BASE
+	CAWheeled2_Ikarus
+		CAWheeled2
+	CAWheeled2_LADA
+		CAWheeled2
+		CACharacters2
+		CAWeapons
+	CAWheeled2_MMT
+		CAWheeled2
+	CAWheeled2_MTVR
+		CAWheeled2
+		CACharacters2
+		CAWeapons
+	CAWheeled2_V3S
+		CAWheeled2
+		CACharacters2
+		CAWeapons
+wheeled3.pbo
+	CAWheeled3_TT650
+		CAWheeled3
+	CAWheeled3
+		CAWheeled
+	CAWheeled3_M1030
+		CAWheeled3
+wheeled_d_baf.pbo
+	CAWheeled_D_BAF
+		CA_E
+		CAWeapons
+		CAWheeled_E
+		CACharacters_E
+		CAWheeled_E_ATV
+		CAWheeled_E_LandRover
+		CA_BAF
+		CACharacters_BAF
+		CAWeapons_BAF
+WHEELED_PMC.PBO
+	CAWheeled_PMC_ArmoredSUV
+		CAWheeled_PMC
+	CAWheeled_PMC
+		CA_PMC
+		CAWheeled_E
+wheeled_w_baf.pbo
+	CAWheeled_W_BAF
+		CAWheeled_D_BAF
+		CACharacters_W_BAF

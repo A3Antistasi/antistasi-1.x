@@ -1,0 +1,72 @@
+DeWss Version 1.xx by Mikero
+min dll is 5.xx
+1.71
+	fixes to sourcefolder\*.ext to allow p:\*.ext
+	corrections to block aligned data when resamping to allow padding
+1.70
+	extensive rewording of syntax and readme to try and make the damn options clearer
+1.69
+	implemented killswitch fixes to discover output fname and ext
+	fixed wrong syntax display options
+	allowed optional quality 10 for resampling
+	allowed output folder or name for resampling
+	provided a warning message if resampling will overwrote original
+1.68:
+	added -R to command line option (Resample)
+	
+	removed a hidden recurse -option
+	wrote better readme
+	displayed better syntax
+
+1.67 improved utf8 encoding
+1.66
+gui: fixed problem if saving same conversion multiple times by re-reading original data
+
+1.65
+complete re-write of cmdline versions. see the readme. 
+
+1.64 
+added ogg to drag n drop
+remote possibility of wav files missing a data chunk in oem data and me missing it
+fixed ctd if only -options specified on cmd line
+
+
+1.63
+significant improvements to the conversion to<>from ogg files
+
+1.62
+next release fixed genstring crash on byte compression (made compat to dll)
+1.61
+fixed registry on initial start
+made compatible to dll
+
+1.60 not released
+gui drag n drop
+fixed unrecognised wav file drops
+
+1.59 
+
+made a single dewss for dual dos/gui operation
+
+added -B make backup option, no backup is now default
+added -P don't pause on error
+
+1.58
+renamed exe file to DeWss rather than wss2wav
+
+implemented mouseover versioning
+corrected wav interpretations to accept (but ignore) files with more that a simple 'data' chunk
+
+fixes
+1.57
+typographical corrections only. No changes to behaviour or perfomance
+
+corrected min dll above, since there was no 3.87
+small typo in wav analysis incorrectly stating wav is (sometimes) compressed when it never is
+
+1.56
+returned good status to a batch file even when it failed DUH!
+
+1.55
+rewrote to allow for nibbles, listing, and multi folder
+

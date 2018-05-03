@@ -1,0 +1,144 @@
+(De)Warp Version 1.xx by Mikero
+read genreamde.txt
+min dll is 6.xx
+1.80 not released yet
+	added warnings are errors option -W. affects mapinfo decoding
+1.79
+	credit killswitch
+	printf format statements fixed
+1.78
+	1.77 re-released
+1.77 (credit bludclot)
+
+	_S option added to split an UNbinarised wrp into layer sections less than 1gig each 
+	
+1.76 made compat to dll
+1.75
+	now allows folder of wrps scan which is useful more for ofp than anywhere else
+
+1.74
+made compatible to dll
+
+	fixed minor listing error in landclass output when there are no land classes!
+
+1.73
+made compatible to dll
+
+internal. -t no longer verifies file contents as same because very last object is a dummy entry
+
+1.72
+fixed wrp layers to read all 512 ofp layers
+1.71
+fixed syntax help screen
+made compat to dll
+1.70
+made compatible to dll
+
+1.68
+removed api mem variable sensitivy to divorce as much as possible from the internal structures of the dll
+
+1.67
+added icon
+added self installer
+changed option P to option D
+added option P dont pause
+
+1.66
+made compatible to dll
+
+
+1.65
+added -P option (see below)
+
+1.64 public release of 1.63 with
+fixes to option -o
+	ensured lowercase output
+	removed trailing commas from arrays
+
+1.63 private release
+added rc version info for exe mouseover
+added -c (class) option see below
+
+1.62
+
+new option -I
+
+see below
+1.61
+displayed no error when no error
+
+-------------------------------------------------------
+
+De Warp is a simple application that analyses the content of any warp file (binarised or otherwise) from the very first cwc demo thru to Vbs2lite and does a few consistency checks.
+
+The wrp itself can be exposed in a folder 'somewhere', or, it can be within a pbo. Dewrp will find it.
+
+Syntax:
+
+Warp [-options] Anyfile[.wrp/.pbo]
+
+The default is no options and an assumed .wrp or .pbo extension. In this circumstance, dewrp will simply analyze *the* wrp or a wrp in a pbo and display any errors or inconsistencies it discovers (if any).
+
+If no specific extension is supplied, DeWrp will first look for a wrp of that name, otherwise it assumes content of a pbo of that name
+
+the *actual* name of wrp in a pbo does not have to be same as pbo name. 
+
+------------------------------------------
+Options (case inSeNsiTIVe) (default none)
+------------------------------------------
+
+standard behaviour (no options)
+
+intention of code is to do multipasses thru a range of wrps to check the dll can analyze it and that the wrp itself (be it binarised or exported from pew) has integrity
+
+------option -I ------------
+
+will list all ID's used on island, including their AaNN map coordinate and literal pos[X,Y] along with *the* model for that ID
+
+especially useful when converting missions that use OFP's SQx  object ID command, you can rapidly locate it on the map
+
+
+output is produced on screen
+
+general useage would be
+
+dewrp -I someWrpPbo >SomeText.txt
+
+------- option -L list land classes -------
+
+DeWrp will list all land_xxx classes encountered in the wrp.
+
+(note all output is forced to lower case because of sqX case sensitivity)
+
+DeWrp -L NameOfWrp/Pbo
+
+will provide a SQF compatible array of all land_xxx classes with their (series of) locations on the map in xyz format
+sample:
+	["land_barn_w_01", [ [3269,4325,27],[4285,3170,32] ] ],
+	
+the land_xxx string can be used to directly access the config>>cfgVehicles->Land_xx class
+
+------ option -O list objects -------
+
+DeWrp will list all p3d's encountered with their objectID and position on the map
+
+sample:
+
+	["ca\structures\barn_w\barn_w_02.p3d",
+		[
+			[3958,[3536,4270]],
+			[2483,[3463,4432]]
+		]
+	],
+	
+------ option -P list objects -------
+
+same as -O but ID's are removed. useful for cba hash function
+sample:
+
+	["ca\structures\barn_w\barn_w_02.p3d",
+		[
+			[3536,4270],
+			[3463,4432]
+		]
+	],

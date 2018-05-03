@@ -1,0 +1,107 @@
+/* Fixes.txt */
+1.98 removed HLKM registry
+added note about damage rvmats not compressible
+
+
+1.97  removed deprecated and unused option -Gp was for proxies
+	changed wording of -F option 'rebuild cfgPatches' to 'rebuild requiredAddons'
+1.96 god damnit. made syntax specs even clearer! no actual change to operations
+	cleaned up the html readme's from historical ofp obtuseness
+1.95 wrongly named -D as -H in syntax
+1.94:
+removed the -Q option (lint only)
+removed the -L option
+
+made -D datestamps
+made -W warnings are errors (formerly datestamps)
+
+revised documentation, and syntax error display
+
+1.93: edited readme
+changed syntax: reworded
+-J ignored. no sqm/cpp not permitted
+-H new. warnings are errors
+		this _currently_ affects p3ds which have trailing spaces in their namedSelections and missing land classes when building wrps
+		the list is likely to grow
+
+mindll 5.xx
+changed documentation for cfgPatches
+1.92
+added ifa to syntax error display.
+corrected readme as !obfuscate, not &obfuscate
+added -M don't binarise mission.sqm
+1.91
+added documentation for obfuscate and rebuild required addons
+changed Z (compression) to allow only z blah, or z= blah (z space is no longer supported)
+fixed bug in ignore compression list where .txt implied (wasn't found)
+1.90
+added rebuild query addons
+1.89
+added obfuscation
+1.88
+fixed exclude file list to work properly
+
+1.87
+fixed bug in nsis installer to prevent potential dos environ path being cleared
+the dll now autodetects man p3d's and ignores proxies when external file checking
+the -Gp option is deprecated
+
+allowed options that have thier own paramters (Xclude @prefix and Zcompress) to be stated either as
+-@ prefix or
+-@prefix
+the latter allows the dos scanner to not list the prefix argument as a file reference eg
+makepbo 'default'
+
+1.86a
+added default exclusions to the html of .dep and .log
+1.86
+added icon
+added self-installer
+cleaned up documentation a bit
+changed -p option (prefix=) to @
+added -p option. don't pause
+1.85
+
+now allows pboprefix.txt to add extra, multiple,  var=thing 
+
+thus
+product=whatever
+version=whatever
+
+
+1.84// Q release
+
+1.83 //sb & Q release
+added -W (no datestamps)
+ensured -U -N and other options did not disturb other settings such as the typeof pbo
+
+1.82
+added exclude file list
+
+1.81
+added rc control
+added -Gp option to prevent external file checking of proxies in some p3d's. this is relevent to arma humans which have incorrect proxies
+ca\weapons\ak_47, beretta and rpg7_proxy don't exist but the model references them
+
+1.80
+added -Q lint only option for wrps and p3'ds
+
+1.79
+added -$ option to *potentially* not insert a pboprefix in the header
+
+1.78
+-U option to allow unbinarised p3d
+   (unbinarised wrp will fail)
+
+1.77
+-D (reDuce) option added
+the dll is now sensitive to campaign/mission pbo's versus true addons
+
+1.75
+better pboname.h versioning
+
+1.74
+added -k dont pause on error option
+
+fixes @ 1.72
+extra rap show option

@@ -1,5 +1,5 @@
 #include "defines.hpp"
-#include "dialogs.hpp"
+// #include "dialogs.hpp"
 
 author="Barbolani";
 OnLoadName = $STR_MISSION_NAME_EXT;

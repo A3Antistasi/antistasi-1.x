@@ -1,0 +1,75 @@
+ExtractPbo Version 1.xx by Mikero
+see genreadme.txt
+
+min dll level is 6.14
+next
+aded file.txt as well as file.lst for acceptance
+2.16 made compatible to dll
+	dropped support for -K (ignore prefix)
+2.15
+fixes for vipermaul+
+fixes for gui version registry
+
+2.13
+fixed embarrassing inability to enter gui mode
+
+2.12 made compat to dll
+2.11
+fixed bug in nsis installer to prevent potential dos environ path being cleared
+----------------------
+
+fixed first time registry settings
+removed deprecated api functions
+2.10a
+added dirpbo.bat for usefulness
+removed some redundant bat files from package
+moved bat and cmd files to the bin, not the docs dir on install
+
+2.10
+made extractpbo the gui version with an alternate extractpbodos.exe in standard manner
+added and icon for extractpbodos
+made both revisions 2.10
+changed -p option to simply not pause period
+
+2.01 (gui only)
+
+added 'no datestamp' option when saving pbo's
+
+this allows you to create identical pbo 'signatures' to the previous build
+
+this happens innocently and more often than not, when you're dealing with large projects (cwr2 eg). it's 'easier' to simply repack everthing 
+and let a differential browser discover the 'updates'
+
+1.87 
+changed -p to simply, don't pause
+
+1.86
+cosmetic fix to 1st display line when error encountered so that the dll version is not printed twice
+
+1.85
+enabled ifa (pbo) extraction files
+fixed no pause on error with ask
+
+1.83
+fixed small irritation when asking to allow an overwrite of an existing folder, a response key (y/n) had to be pressed twice
+1.82
+fixed 1.81
+1.81
+default is now tabbed output for derapped files
+use -T for spaced output
+1.80
+accepts drive:\ and drive:/ as where clause (fix for six updater)
+1.79
+added syntax for folder or lst 
+fixed folder test
+lists all files scanned if noisy foldertest
+
+1.78
+now allows either folder or an extraction.lst in addition to pboname.pbo
+
+1.77
+prevented any attempt to extract to a relative destination
+
+-p to not pause on error
+
+

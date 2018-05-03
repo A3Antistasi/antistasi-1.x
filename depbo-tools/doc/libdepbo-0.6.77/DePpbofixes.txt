@@ -1,0 +1,2405 @@
+6.77  new api for detex
+6.76: credit ud9-1
+		fixed crash introducd in 6.75
+6.75: (credit El Tyranos)
+	fixed nasty rapify bug when searching for inheritence
+6.74: (credit killswitch)
+		hopefully final release of defxy for some time.
+6.73: (credit winshetove)
+	bug in dll caused movefolder to crash
+6.72
+	further improvements to rapify
+	(almost) complete re-write of deFxy for version 1.02
+6.71
+	consolidated mapinfo structures to make them common to both p3d and wrp. There is supposed to be a 1:1 correspondence between map= in a geolod, and the mapinfo type in a wrp.
+	the code is now common and uses less exe space as a result
+	added range check for vailid mapinfo type numbers rather than hardwired in two separate modules
+	made a single instance of the typestring rather than two (which could differ thru ommission)
+	added warnings are errors when decoding binarised wrps (especially for the mapinfo struct)
+
+6.70 
+
+made significant changes to rap/derap module to streamline code and prepare the headers for public release (sdk)
+
+fixed bug in dissappearing error messages for stderr dos console output
+fixed really rare instance of xbox eltie encoing with @str vars. binary files could not be converted to internal dll language when checking for items like reqaddons in a prebuilt config.bin (eg)
+fixed required addons rebuilds where it was always rebuilt with sometimes repeated names
+p3d: made detection of an unknown map= type as a warnings are errors, not a throw (credit snakeman)
+	added two new mapinfo items (map= in the geolod)
+
+extratpbo:
+	fixed bug when attempting to makedir with Q:\  +  pbo prefix 
+	this was sometimes seen on PC's as 'invalid folder' by the os
+
+6.69
+	interim fix for missing files (credit Cokkie)
+6.68
+	fixed range checking scope= and access=, they would never fail
+	rewrote rap/derap classes for better API and faster
+		almost all exes affected
+
+6.67 imroved rap/derap code some more, with some small bug fixes
+		fixed an mlod mem crash (killswitch)
+6.65 credit dahlgren and Cokkie
+	rapify:
+		reverted element deletes which were causing crashes. this reversion will cause memleaks which i will fix later
+		fixed noisy option
+		fixed  (whitespace /*comments*/)
+
+6.64: credit h-
+	rapify:
+			fixed #define SOMECOLOR "t color='#99000000'"//(quoted #)
+			general speed improvement to the rap code
+			general improvement to #define decoding
+			fixed a rap bug introduced in 6.62
+6.63
+	6.62 re-released
+6.62
+	currently currently unused error in getfileand path filestring
+	supplied more api for dewrp
+	
+6.61 kju
+	clutter
+6.60:
+	pew
+		added a common PEW filename handler for moveobject
+6.59:
+	p3d: 	fixed memlak when oopening successive p3d's
+6.58 (credit  Torndeco)
+	re-wrote moveobject
+		15% faster
+		now automatically rempves drive:\ specifiers from files such as p3d, wrp and rvmat
+
+6.57 :(for RKSL rock)
+		added better description when generating a tempfile name if it fails. seems to predominate on wrp
+
+6.56 (credit torndeco)
+	p3d:	added get_skeleton_name() to api
+6.55
+	mlod p3d's (credit Q)
+	fixed nBytes in tagg count to be unsigned
+
+6.54 
+	internal: fixed potential crash with token sorting if there aren't any to sort
+	p3d: credit kju
+			added pixelshader id 'watersimple'
+			added vertex shaders water and watersimple
+	wrp: (credit winsheletov)
+		fixed silly error not looking for inherited clutter
+		lack of clutter, cfgSurfaces or cfgSurfaceChars in the config is now warnings are errors
+
+6.53
+	rapify:  fixed potential 'bad status return' (credit sonarc)
+	moved wrp config checking from pboProject to the dll.
+
+6.51
+	extractpbo: 
+		//credit kju
+		pboproptrties now written out irrespective of a prefix= property or not
+		//credit dahlgren
+		fixed nasty crash with drag n drop opearations when filename has % characters
+	
+	rapify:
+6.50
+	dep3d: (credit Q)
+		fixed missing listing of named selections for dep3d.exe
+6.49
+		credit armatec
+		dep3d module:
+			ignores new #water38 'file reference' procedural as a material inside a p3d
+			ordinarily, a bad file reference is just that
+
+6.48	credit killswitch
+		more DOS vs Unix path slash issues fixed
+		fixed rare crash on null ptr in one of the filestringEx functions
+
+6.47	linux only (credit pboGreek)
+		ensured file addresses in the pbo header are dos slashes. else, the pbo can't be used in windows
+
+6.46
+	requiredAddons
+		fixed bug where "" was accepted as a valid addon name
+	obfuscate: (credit DragonKeeper)
+		new level of obfuscation with changes to scrambled filenames
+6.45
+	back to subscriber releases
+	added fix of 6.44
+	cfgpatches
+		fixed minor issue where, if the root class did not exist, the array was not emptied.
+		rewrote documentation for cfgPatches
+		reworded missing requiredAddons
+		removed the units= check as a message. too noisy
+
+-----------------------------------------
+6.44
+-----------------------------------------
+	freetools release
+		obfuscation disabled
+
+	rapify (credit winsheletov)
+		gives error only if all of the cfgPatches classes have requiredAddons[]={} when externs are detected.
+		formerly it was only the first patch class which was inspected.
+-------------------------------------------------
+6.43
+	depew (credit kju)
+		depew export now accepts 16 x larger tile sizes
+
+
+	rapify
+		auto decodes 'spaced' rap files
+		fixed minor listing error when rebuilding addons: 'discovered addons'
+		fixed 'warnings are errors' to always mirror current invocation of rapify
+		the flag was 'preserved' from previous sessions and was not altered on next pass if text vs bin meta conversion.
+
+	makepbo (and friends)
+
+		fixed spaced file arguments which _also_ divert stdio >>pipe.
+
+6.41 credit Hatchett
+	rapify:	#include ../  fixed
+
+6.40
+ credit QuikSilver
+	dll.makepbo mission.sqm
+		fixed reversal of meaning of -M to operate correctly, -M now will NOT binarise a mission.sqm
+
+6.39
+	rapify
+
+		changed following from only performed when writing to a file to always performed
+		for all analysed config.bin/cpp (eg ones within a pbo or precompiled)
+
+			rebuilds cfgPatches.units=
+			checks requireddons is not empty when extern classes are declared
+			checks wrp configs for presense of cutscenes (warnings are errors)
+			checks wrp config worldname == NameOf.wrp
+			adds to cfgWorldslist if not already there.
+			adds worlds[]= to cfgpatches
+
+6.38	credit Quicksilver
+		rapify
+			now supports 		EXEC/EVAL ( selectRandom...) >>>in a description.ext only<<<
+
+		removed true/false detection for desc.ext. I can no longer be bothered pointing out this bis error
+		i silently fix it for every other file type anyway
+
+6.37	credit Cheesus Crust
+		rapify:		fixed #include "../"
+
+6.36	credit iComrade
+		reduced stack requirements for class bodies exceeding 16k entries, otherwise crashed
+		small correction to still unused coded integer for arma3
+
+6.35
+	installer: removed the 1024 char path environ limitation
+	dll: improvements to day polling
+	dep3d:  cfgskeletons: potential axes in odol skeletons now listed alphabetically
+	makepbo: changed versioning from HHDDMMYY to YYMMDDHH
+6.34
+	makepbo: ignored -M (do not binarise missions)
+	dll:
+		now polls for updates 1/day
+		added headless server install (which prevents the update message being shown in a messagebox)
+6.34	credit kju
+		exports pew to wrp where terrain size is 16 x layer size  (32 vs 512 eg)
+6.33
+	version=00000000 (HHMMDDYY)
+		number not set if  -D (no datestamps)
+6.32	credit kju
+	makepbo version number in properties altered to HHDDMMYY
+6.31
+	made further improvements to rapify
+
+	rtm: better throw error messages (credit kju)
+		fixed write lzo compression when stripping bones (credit kju)
+	makepbo:  (credit kju)
+		c:>
+			makepbo d:\some\where placed pbo in some\where, not some\
+	makepbo: now automatically places a version= in header of pbo (if not over-ridden by pboprefix.txt)
+6.30 credit kju
+	pax files. listed mipmap sizes correctly
+	makepbo: fails if sourcefolder doesn't have a mission.sqm, desc.ext or config.cpp/bin
+6.29 credit various
+	fixed rapify to return correct model.cfg entries
+
+6.28 credit spooky/summerfield
+	errror when inserting a cfgVehicles class in a wrp config
+6.27 credit kju
+	cfgfworlds rapify check mis-detected worldname=""
+6.26
+	rapify (credit pke)
+		added access=3 as valid, but i scream about the keywoard anyway
+
+		cleaned up api for rap callers
+
+6.25 credit stack/oflow
+	rapify: fixed missing line number when error
+	credit Josh Reeds
+		fixed nasty ommission where i didn't check for illegal drive: specifiers in items like
+			model=p:\some\where
+		some authors like to use _FILE_ statements or
+		this_file_is=P:\something. too bad
+
+	makepbo
+		pboPrefix
+			silently ignores placing the cfgWorlds=property in the pbo
+		rebuild required addons now shows list of changes
+
+		when cfgWorlds exists in config, rebuild cfgPatches:
+			adds new or rewrites worlds[]
+			adds new or rewrites cfgWorldList
+			checks classname is worldname which implcitly checks the nameof.wrp is same too because of file\reference checking
+			checks for cutscenes (warnings are errors)
+
+6.24
+	dertm: (credit lemonier)
+		fixed binary to plain jane conversion
+6.23: credit lappihuan
+
+	text messages
+	ensured gui messages have crlf and dos messages have lf only
+
+	makepbo:
+		missing files from rapification are now added to the summary
+		fixed wrong error message for non existent 'missing files' when adding addons to readdons of a config. it was a different kind of error
+6.22:
+	rapify
+		removed noisy acces= warnings when only looking for a cfgpatches class, a3 and ca are never checked
+		extra semicolons and trailing comma in array are now warnings are errors;
+
+6.21: credit to dedmen and kiory
+	6.20 plus:
+	pboProject:		added some extra api for pboProject (cutscenes at al)
+	derap:			some small improvements to banner and filename descrptions
+
+6.20 armatec only
+	p3d: made all unknown p3d shaderids warnings are errors
+	derap: cleared text banner it was retaining previous content on multiple cpp's
+
+6.19
+	rvmat
+		accounted for new pixedlshaderID "NormalMapMacroAS" (0x10)
+	rapify
+		fixed a #include when including from a pbo
+
+	makepbo
+		changed <adding entries> to show error messages before </end entries> so it's clear where the fault is
+		changed wording of generalised lint error to simply "rapify error".
+6.18
+	fixed makepbo rapify errors
+	fixed required addons when binary input
+6.17 credit armatec
+	removed 6.15's addition of a very strange proxy header as a file reference.
+	removed checking of config.bin's for rebuidl reqaddons
+6.16
+	rapify
+		checks range of scope=
+		prepocesses enums
+		issued warning if attempting to write access= this is normally the preserve of bin\config.bin
+		very fast prebinarised rap conversion when attempting to inspect a binary such as config.bin
+		improvements to the api interfaces for rap/derap make/extractpbo
+		removed support for hard drive: include's
+		removed tolerance for spurious semi colons or colons in arrays
+		better error reporting
+	derap:
+		better error reporting
+	makepbo: crashed if an irrelevant pboprefix.txt was used
+
+
+removed ebo and zbo phantom support
+6.15	applied killswitch fixes
+		rapify: removed potential ctd if #include "SomeDrive:\\"
+6.14	Eliteness get properties table restored (for odol geolods)
+6.13
+	fixed bug where by default, i ignore txt files for pboprefix affected
+6.12
+	$pboprefix$
+		fixed search pattern so that it explicitly looks for
+		$pboprefix$
+		$pboprefix$.txt
+		pboprefix.txt
+
+		it would previously accept $pboprefix$.*
+
+		fixed small issue with ignoring *.backup files
+
+6.11
+	rapify:
+		fixed #define POINT_END() {}  // no arguments
+6.10:
+	versioning system hates octal 08 and 09 (linux)
+6.09:
+dep3d:
+	added 0x87 'refract' PixelShaderID
+	fixed obsolete flags to now remove from old arma1 binary p3ds's
+	greatly improved speed of dep3d processing. now allows the api to fully write anything rather than rely on a previously read p3d
+6.08 rapify:
+	fixed crash where thingy="one""twp"   ..ie erroneous dbl quote where probably a comma was wanted
+6.07
+	allowed material index in odols to have a value of 3 (or less)
+	screwed up douggem's rePbo
+6.06
+	p3d:mlods   fixed error when altering a property tagg
+6.05
+	dep3d:model.cfgModel: minmax phase is now different to minmax value when decoding on release 1.63 of dev game
+	when different it is shown in the model.cfg decode
+6.04
+	added extra property searches for land class checking when map making (tower, streelamp,etc)
+6.03
+	+killswitch fixes
+dep3d: reworded warning message to TRAILING spaces
+	more shaderids for toh
+6.02
+	killswitich compiler fixes
+	internal: fixed string concatenation issue
+
+6.01
+dep3d:
+	fixed for odolexplorer's mistake in mlod version number
+	.. and set correctly if +fx is used
+rapify:
+	gave better info message when scanning units[]= when changing them
+
+6.00
+	killswitich compiler fixes
+removed potential multisession collision with temp file names in rapify. prolly never happened but...
+better decode of pixelshaderID's
+warnings are errors for unknown pixel shaderid vertex shaderid and render bits for lod materials
+improved decode for baked in rvmats in p3ds
+
+5.99
+	p3d:extractrvmat:
+		fixed renderflags[]={thing  // no ending brace
+	p3d: odol ->mlod: generated masstag of 0 when no mass
+	makepbo
+		-N option means no file exclusions of any kind
+
+5.98
+dep3d:	fixed erroneous empty skeleton decode
+		fixed crash for eliteness
+makepbo: reversed order of prefix calculation
+		previously command line took prcendence, now, $prefix$.txt takes precedence
+
+5.97	MakePbo:
+			fixed embarrasing error where the $prefix$.txt file was ignored
+5.96
+rapify:	detects missing comma { {between},{arrays}};
+dewrp:	added new (old) ofp forest square to mapinfo
+5.95
+	fixed mlod proxies to account for .001 naming
+5.94
+	fixed moveobject named selection proxies
+
+5.93 fixed error with roadslib.cfg
+
+5.92
+	p3d proxies. fixed bug where they were not being retrieved for dep3d and moveobject
+
+5.91
+	+ linux fixes
+	renamed some api functions which affected pboProject only and it was being revised anyway
+5.90
+	updates mostly for pboProject
+5.89
+dep3d: fixed error in correcting trailing spaces for named selections (+fx)
+		fixed bad filename parser for mlods introduced at 5.87
+5.88
+	internal: enabled more api function calls for exes to access in the dll
+	filetree searches. accounted for obsolete filters stating p3d not .p3d or *.p3d
+	fixed building units= in the cfgpatches class
+	fixed requiredAddons= in the cfgPatches class
+5.87 todo
+	makepbo: compression must be specified (-Z) if obfuscating
+
+5.86
+	makepbo:
+		corrected strange message when rebuild reqaddons couldn't find the config.cpp (due to missing files)
+5.85
+derap module:
+	corrected derap output which has \n in strings to match bi's equiv
+rap module:
+	corrected for unquotaed procedural textures. as in
+		 texture = #(rgb,1,1,1)color(0.5,0.5,0.5,1,cdt);
+makepbo module:
+	accidentally release code that allowed bankrev to extract some of my pbo's
+
+5.84
+rapify module
+	fixed \n syntax embedded in init strings . found in altis life
+	\n now produces exact same as bis for fsm content
+makepbo module
+	fixed pboname.h and auto added it to exclude list
+	allowed an outputFILE OR folder to exlusion list. previously just a folder
+	folders also accepted for exclusions. not just ~source
+	ALL ~source\ folders if present are excluded by default. the default  can be modified
+5.83
+	Linux: fixed internal temp name generation issue
+
+5.82 public release
+	fixed small but possible error in file ext formation (..p3d eg)
+	fixed small but possible timing issue with rapifying temporary files where a collision might occur
+	with multiple instances of an exe or dll. eg mutltiple threading accounted for.
+
+5.81
+	removed rvmats from obfuscation.
+5.80
+	support for type73 p3ds
+
+5.79
+	added t_d discoveries of what 3 floats are in the modelinfo header
+	previously listed as unknown, they are now detailed in eliteness
+	removed the always 1.0 check on these floats because post introduction of version 72's they aren't
+
+5.78
+p3d's
+	type72 p3ds now supported
+	trailing space warnings now have filename attached as summary
+
+5.77
+	issues warnings or errors if a p3d has trailing spaces in named selections or properties
+	fixed stupid error in not outputting noisy for rapify
+5.76
+reverted makepbo to a progress display and only shows rap output if -S
+if i don't want any info, i'll nullify the callback in the exe
+
+changed compression for obfuscation to honor the compression list if specified
+or uses default if not specified
+
+added rvmat to obfuscated
+
+5.75
+	obfuscation update (cyrillic) Credit: StokesMacGee
+	WIN64 macro got rid of
+	WIN32 got rid of
+	WIN_VER  got rid of
+	everthing now is / isn't IS_UNIX for *our* code. sha libraries  ogg and foreign source is their problem.
+
+574
+convertwrp fixes (and depew)
+linux: fixed broken UTF16 BOM removal/conversion
+linux: numbers written in scientific notation now have three-digit
+       exponents just like in Windows.
+5.73
+
+linux compatibility fixes
+replaced last of _WIN32 switches with IS_UNIX  note. _WIN32, not WIN32
+makepbo
+	updated obfuscation (xml)
+5.72
+internal
+	general
+		made filestringA available to exes even when unicode
+		changed all compile switches to IS_LINUX when linux (or not) rahter than _WIN32, IS_DOS and a host of other sillies
+
+5.71 public release of 5.70
+5.70 released only to developers
+rapify
+	corrected error with #define thing(OTHER_DEFINE) and other define contains array[with,commas,};
+	corrected __FILE__ built in macro
+	evals: added \ to string detection (part of a file naem)
+		now interprets array elements
+	fixed detection of a continuation char (\) on a #define at eof
+	fxied  array[]={cos 60, sin etc};
+	provided #uninclude // filename rather than just #uninclude
+makepbo:
+	-J deprecated. pbo must contain a cpp and or sqm
+	-N deprecated. all files are binarised and checked for errors
+//	-G deprecated. all file references are validated (except missions) not yet
+rapify:
+	EVAL/EXEC added 'str' and 'localize' verbs
+	auto reduction of all paramfiles which have to stay as text (desc.ext)
+	unbinarised paramfile left 'as is' if eval has volatile constants.
+	//auto removal of #included files if binarised or reduced (not yet)
+pew:
+
+	fixed pew file filename only labelling. (could be null in error)
+
+dll
+	changed pbo header to reflect killswitch/mikero and version number of the lib.so/dll
+
+5.69
+dewss corrections for block alignment
+5.68
+fixed corrupted release 5.67
+5.67
+str_atoi and str_isInteger() fixed for hex values
+(affects some comparisons of #defines)
+
+5.66:
+freebie release: returns an error if obfuscation is selected
+previously, it silently ignored it and produced a standard pbo
+5.65:
+
+replaced all references to str(n)cpy and memcpy with memmove
+merged killswitch filestringEx changes for linux
+improved memory management for genstring
+removed redundant api calls from dll and adjusted some exes as a result
+5.64:
+moveobject: replacement pairs
+
+5.63 fsm obfuscation new levels
+internal:
+	improved sorting algorithms for token pairs generally. moveobject and dped specifically
+	implemented linux changes for chains (mem move vs mem cpy)
+
+5.62 more of the same for sqf and headers ofuscation
+compression. produced more accurate overall statisic
+5.61
+obfuscte .less aggressive hidden names
+5.60
+	arkensor fixes
+	improved toke= reading for moveobject
+5.59
+	improved dep3d search strings (BisTokens)
+5.58
+	aded killswitch fixes
+	makepbo:
+		enhanced ignore and compression lists to include proper dos wild*.cards*
+5.57
+
+dep3d:  added type71 header info in listing and future proofed against further types
+rapwrite:
+	specifed actual filename and folder that failed to write (for pbo's it's a tempfile)
+general:
+	added more specific error msgs for some error checks generally
+
+5.56  Killswitch fixes to str cpy for Linux
+      major change to file reference checks where they are listed as a summary rather than stopping on first one found
+
+5.55  released to Q for filechecks
+5.54  internal: fixed minor gotcha with filestringEX extensions
+5.53  subscriber release
+5.52  free tools release
+5.51:
+	corrected obfuscation for multiple addon pbos
+5.50
+makepbo
+	fixed stuff up where all pbo's were partially obfuscated.
+
+5.49
+
+makepbo
+	changed xxxx.pbo.pbo message on completion of making one
+	new level of obfuscation to crash bankrev and stop the thieves
+dep3d
+	savage value checking to ensure binarise built the p3d correctly
+5.48
+support for typ70 p3d's
+added //type (vbs or arma) to baked in rvmat extraction
+now decodes type69 p3d's
+5.47 linux release
+5.46 interim dos release
+5.45
+rapify:
+unbinarisable sqx is listed as a warning in desc.ext
+but produces an immediate error for a config.cpp
+
+dewrp: fixed dewrp AGAIN!!!
+
+5.44	interim release
+rapify:
+	corrected _EVAL to accept hard-wired array 'productVersion'
+	corrected #defines to also check that MACRO(var...) expansions also result in same output
+			a beter display of the changed macro
+makepbo:
+	config.bin:	rap_volatile_eval() now detected if 'productVersion' is used and a config.bin is being created for a pbo
+	wrps:	reworded missing land classes to confuse less
+			fixed error with no objects in a wrp
+
+extractpbo: config.cpp takes precedence over config.bin when in same pbo folder
+
+5.43
+dewrp:
+	isolated some mem vars from direct acces to outside world
+	made chernarus+ convertible to standard type24
+rapify:
+	allowed sqx bools to be integers for select [this,that] (sth>99)
+	deprecated the option to keep text (the origianl source b4 rap)
+	now allows mission.sqm's to remain unbinarised (but it will be reduced)
+
+5.42
+
+rapify: file checks no longer performed on fsm files
+wrp:
+	missing land class is now checked only against arma3 type25 (or later) wrps
+	checked roadsize structure is size of that stated in wrp
+	now decodes dayz wrp files
+
+internal:
+	bis/dos registry scans now unicode
+5.41:
+	p3d: extract skeleton. fixed null bug
+	added dll version to prefix.txt output
+	rewrote depew
+5.40
+	crippled amalfi's unpbo for obfuscated mission.pbo's
+
+5.39
+	changed $prefix$.txt to state nameOf.pbo in title
+	modified calls for moveobject
+5.38
+	improved obfuscation to defeat amalfi
+	further cleanups and improvements to utf8 support
+5.37
+Makepbo compression
+	now ignores init*.sqs/sqf
+5.36
+only released for killswitch to evaluate7
+
+filenames
+	all are converted to utf8 internally. 'asciiz' api calls if used are assumed to be utf8
+		filenames are converted back to unicode 16LE only for windows system calls
+filestringEX:
+	no longer throws an error if filename is empty when formatting folder and file
+filetreeEX:
+	full utf8 support so that cyrillic filenames are interpreted correctly
+pbo's
+	garanteed removal of pbo ebo xbo or ifa on any attmept to create a pbo before any further processing
+	this to ensure no stale copy of the pbo exists to confuse the user.
+
+:rapify
+no longer checks accuracy of file references in dubbing type pbos where
+a relative file directory is involved
+5.35
+dep3d: account for type70 compressed edges which are now longs, not shorts
+		changed api so that all relevent structures are passed as type70 longs
+		the dll converts back and forth internally as required
+5.34:
+dep3d:
+	fixed erroneous statement string that type70's are type68's
+	this error only introduced at 5.33
+
+	degrades type 70's to type68
+
+filedates:
+	checked the filedate is valid
+	added pbo entry name in error messages encountered while derapping
+5.33
+
+p3d:
+	v70 accepted
+	baked rvmats
+		renderflahs 'norecieveshadow and  nolodblend accepted
+5.31
+DeP3d
+Internal housekeeping of the api/sdk. depew, dep3d and eliteness require updating.
+
+5.31
+wrp:
+	vbslite
+			ignored land class error if p3d has spaces in it's filename (ces 12.p3d)
+makepbo:
+		enhanced obfuscation
+5.30
+
+extractpbo
+	altered code to confuse other extractors
+wrp:
+	checked that land class is same as modelname.p3d
+5.29
+dep3d: now alters geolod properties
+5.28
+rapify:
+	detects missing commas in {array},{array}
+
+dewrp:
+	changed algorithms for read/write unbinarised ofp and arma wrp
+internal use only:
+	filestringEx
+		added fs_RemoveFileName()
+		added more simpler to use io_dos commands
+5.27
+rap:
+	corrected hunt for illegal trailing spaces in a file reference
+	stopped (some) crashes using makepbo, perhaps not all yet.
+	fixed #ifdef/ndef recircular problem
+	"cannot include file" now states which file
+	rebuild units[]= protected units no longer added
+	double semi colon detection. it's not illegal but bis binarise errors out with no msg
+	required addons= fixed erroneous config.bin 0 len file message
+	now responds and reports rapify errors
+	#if(n)def must have  label (bis complains)
+
+makepbo:wrp:
+	now provides a list of missing files, not just the 1st file
+	checks for land_xx for every 'house' p3d
+
+5.26
+dep3d:
+	now checks proxy:\blah and
+			   proxy:blah
+     as mutually eqivalent (even tho it shouldn't)
+
+5.25
+rapifY:
+	responds now line continue (\) properly
+	removed string "true" and "false" from being converted to 1 and 0
+5.24
+Maintenence release. mostly corrections to requiredAddon builds
+5.23
+fixed an embarrasing error with config.bin
+5.22
+rapify:
+removed 'not array' detection because some sqx calls _appear_ as [arrays]
+fixed minor error in nameOf the file's rap class. all cpp files were marked as 'config.bin'. prolly irrelevant
+5.21
+makepbo: requiredaddons. fixed a forever loop
+
+file refences with added space inside a quoted field  are now flagged in error
+This comes about because a f open will ignore the extra stuff and say it exists, when it doesn't
+
+5.20
+makepbo:
+	improved building required addons. now checks for circular dependencies and also ignores bis configs that have no cfgpatches class
+	exposed ingore compression list for manipulation
+5.19:
+wrp: creation: fixed wrong number of roadnets for type25's
+
+5.18
+dep3d fixed degrading of type68's to lower
+
+pboPro: fixed jpg detection
+5.17
+dep3d: newly introduced vbstype 11 stageinfos in type68 p3ds
+
+5.16
+rapify:fixed arrays containing sqX statements
+makepbo: better display output of reqaddon generation + immediate stop on error
+		 fixed autolint to NOT ignore exclude files
+5.15
+
+makepbo:
+	recompressed a cpp after modification by reqaddons (if compressed to begin with)
+	made rebuilding reqiuredaddons optional
+
+rapifY: removed true/false check from model.cfgs
+rapify: checked for delete keyword in cfgs which is illegal
+Rapify: allowed for array={...}  or array[]={...} as synonomous
+5.14
+model.cfg  checked for memory=true eg
+re enabled required addon support. this can cause circular depencies for the unwary, and a slowdown in crunch for large files
+5.13
+disabled requiredaddons[]= support (for now)
+5.12
+rtm: wrote rtm5's correctly
+p3d: removed masstag requirement for p3d's
+pbo: removed russian zzz protection as part of obfuscation
+fsm: correct crash when using %formatted syntax
+
+5.11
+config.cpp. requiredaddons[]= must now have non-blank ("") entries, or nothing at all (when appropriate)
+improved make/extract pbo error messages
+dertm: new format accounted for
+
+5.10
+added jpg to file type list
+
+5.09
+2nd fix to new bis binarise p3d's
+5.08
+fixed failing p3d on some new bis binarise generated type 68's
+
+5.07:
+proper support for arma3 binarised rtms. could not convert them to unbinarised, verify failed
+dropped support for setversion
+
+5.06
+p3d:  now decodes type 67 & 68 p3d's
+derap: now specifies file creation date properly in the banner
+makepbo:		(with -W option) special provision made to NOT supply dates for desc.ext reduction to allow same file each time every time in pbo 
+
+5.05:
+makepbo: fixed default ignore pew files which *potentially* aren't in a source\ folder
+by default, hpp and cfg files not included in a pbo
+corrected derap for fsm \n chars
+improved exec/eval
+	exec += operator and family
+
+	multiline accepted (makes better readablity)
+
+
+5.04
+derap:  removed spaces between inner array arguments {{one,two}} rather than {{ one,two }}
+		added more error check against define(ar,u,ments)
+rap:	allowed any peculiar #define QT "
+									 QT " //comment
+									 QT " /*comment*/ etc
+		allowed semicolon to be first char on next line (after any comments and whitespace)
+		faster #if(n)def recursion
+		much stronger eval/exec processing
+		better fsm lintchecks no accepts \n chars
+
+5.03 fixed crash on fsm files (and crazy \n syntax)
+5.02
+added obfusate to pbo's
+5.01
+removed embedded double quotes from final output variable
+
+4.99
+improved rapify module to detect ""string" "string" and 'string' issues plus, very very fussy about missing semi-colons
+
+4.98
+subscriber only
+fixes to read/write type64 p3ds
+4.97
+wrp: mapinfo type 12
+last of the free updates
+4.96
+extractpo: tab space set as default. Something in the move to 64bit broke it.
+makepbo:  ignores binarised odol p3d's that it cannot decode (format version unknown)
+4.95
+more corrections to external file checks. most sqX is now checked too
+
+4.94
+
+made external file checks nastier
+ignores filechecking for mission.sqm bikb and desc.ext
+
+4.93
+64bit release for everyting, with cleaned up api
+
+4.92
+extractpbo:
+	now accounts for unicode bom text files embedded in a pbo, such as unbinarised mission.sqm so that extraction preserves the bom
+
+dep3d:
+	type60's are now degraded 'correctly' to type 58's by removing physx trailer
+	changed msg from debug trap to invalid file when mlod taggs are corrupt
+
+misc:
+	x64 dll and deogg
+
+4.91
+api upgrades
+4.90
+dep3d fixed callback crash
+
+4,89
+improved api dor dep3d mostly. Opportunitity to introdice paypla
+4.88
+dewss nibble
+4.87
+improved detection for pal2pace
+removed some more obsolete api calls
+4.86:
+DeP3d: better error reporting of bad mass tags in mlods
+improved moveobject/folder code
+4.85
+dewss: fixed 'pop' sounds at end of wss conversions
+		accounted for new bis wss stereo compression
+4.84: makepbo: allowed ../sourcfolder (for mission sqms mostly)
+4.83: rapify, removed missing semicolon test for some error type
+
+4.82 reverted ' ' (single quotes) so that macro expansions are honored
+4.81 general release
+	Extractpob(gui) updated to stop crash
+	general cleanout of extractpbogui and dos to use newer api calls
+	new dertm code to allow for pbo scans
+	new release of depac
+	mew release of queryaddons
+4.80 released to kiory
+	binary p3d's alphatest128
+4.79:
+	fixes at 4.78 +
+	rapify:	fixed ' ' (single quote) syntax so that the contents are ignored for file checking and macro expansion
+
+4.78 Kju only
+
+dep3d:	fixed erroneous printout of "A3Prefix" for arma2
+rapify:	removed auto deletion of requiredaddons
+	fixed ' ' (single quote) syntax so that the contents are ignored for file checking and macro expansion
+filestrings:	continuing internal cleanup of of filestring and filestringEx for eliteness
+4.77
+improved makepbo error messages
+rapify: allowed "..\" in included configs
+	    special check for illegal access= or scope='string'
+		now only adds ammo or magazine arrays to cfgpatches if they actually exist (rather than empty entries)
+		removes requiredAddons list if no externs are declared (this to prevent potential race conditions)
+registry
+		now looks for paths in hklm (preferred) as well as hkcu
+filestrings:
+		small internal changes to api
+4.76
+p3d: odolv60 support
+4.75
+dewrp: WRPERR_NORVMATS if an pew has bad layer(s)
+depew: fixed bad writing of altnamed zones. reduction of templates and objects should now work
+p3d:   rvmat extraction missing semi colon on specular=
+4.74
+makepbo: prevented inadvertent scanning of source\ folders
+rapify:  fixed double quote error in " blah ""door"" strings (introduced with speed increase via memalloc)
+
+4.73
+rapify:	new filecheck method specifically looking for known file extensions. previously rvmat and bisurf were not checked
+	  : new error msg for  anything={array}; should be anything[]
+	  : checks that at least one reqaddon is listed if externs are declared
+	  : localised a global string to the class so that no possibility of a clash with multiple instances of the dll
+4.72
+rapify: speed increase by removing memory mallocs
+4.71  removed acceptance of ebo files for extraction. AGAIN!
+(it snuck back in)
+
+4.70 fixed 44.69 rapify which would crash on some implementations of cfgPatches
+4.69
+internal, and minor, enhancements for pboProject
+fixed potential crash on cfgPatches modification
+4.68
+fixed error messages that had %03d characters in path statements
+crippled external file checking for  file spec paths that have % characters
+
+4.67
+rapify: cfgPatches rebuild
+
+fixed bug where an addon containing only a config.cpp (or one that didn't require bis binarise eg no p3d or wrp) did not 
+rebuild the cfgpatches class.
+
+added error message if a config.cpp does not have a cfgpatches and no addon name can be created. it will generally fail
+regardless because of lack of a requiredAddons, which the dll would be unable to determine.
+
+
+auto deletion of classes stated in an array but doesn't actually exist.
+
+
+changed rebuild to only build if there is one (not multiple), cfgpatches
+
+
+4.66
+removed ebo as a 'pbo' file when doing folder scans because i can't process them for arma3p
+
+4.65
+
+array+= in configs is now accepted as a binarised value in the engine. 
+previously the dll would encode it (for lint checking purposes) then supply a config.cpp in a pbo because the engine could not.
+
+4.64
+
+p3d's
+
+revised extractmodelcfg to account for moved goalposts in Arma3
+
+4.63
+detex: revised debug traps to be less strict
+
+4.62
+wrp scans
+added scan p3d only to speed up pboproject
+
+4.61
+wrp:
+re-enabled new mapinfo types for arma3. no idea why they were crippled
+
+4.60
+fixed memleak/ erronenous sha sig for huge mem model
+4.59
+fixed huge mem pbo extraction AGAIN!
+
+4.58
+steam tools:
+ fixed by avoiding bis anything so far as humanly possible.
+
+makepbo: changed wording from merged to igoored or merged when dealing with .dep,.h and other excluded from the pbo, files
+
+4.57
+wrp: fixed wrp decoding to identify added mapinfo types for arma3 type25's
+makepbo: displayed better output of what's being built
+
+4.56
+added inconsequential io_rmdir() for subsequent use by movefolder exe and pboproject, when, i get round to them
+
+4.55
+dewss: added deOgg vorbis sound module
+this requires a secondary download of deogg.dll
+upgraded moveobject to prevent preceding slashes
+rapid/derap: significant speed improvements to both
+
+4.54
+modified dewss code
+
+4.53
+rap
+allowed trailing commas in fsm files
+rap/derap
+accounts for long longs and doubles
+
+
+4.52
+makepbo:
+accepts ogv files for packing
+
+general. large internal update of api interface preparing for full unicode/64 bit support
+
+4.51
+re-release of broken 4.50
+4.50
+dertm: final fix (via t_d) for xyz translation
+penguin:
+some compatibility patches
+4.49
+installer now removes stale copies of dll if present in syswow or system32
+rtm:
+now detects sound embedded structures
+4.48
+rtm: changed api
+added functionality to continue processing. even with bad skeleton.cfg
+
+4.47
+bisfileio:
+a little bit of workaround with rename commands catering for dos/linux and windoze Uac
+pboProject:
+added api functionality for drive changes
+
+4.46
+rapify: eof early truncation means lack of }; even for ofp
+extractpbo: huge memory: fixed
+
+4.45
+rapify: now errors when array[]{what,ever,}; (the trailing comma)
+makepbo:
+	added detection of a prefix file, with, a prefix= for pboProject
+	source\* is now totally excluded
+
+4.44
+makepbo:extractpbo:
+$pboprefix$.txt no longer produces the kegetys first line. prefix= is produced instead
+altering the prefix is not recommended as this conflicts with external file checking
+
+4.43
+rapify:
+1) added detection for 'true' and 'false' which do not exist and mistakenly produce strings. the user was supposed to #define these values
+but bis altis also has this issue because bis themselves forgot to define them and the resulting value is wrongly, a string. On decode, everyone is copying this 'wrong' value.
+2) put back missing semi-colon detection.
+
+dep3d: minor alteration to better detect if there is, in fact, any changes in type59 from type58's
+
+4.42
+dep3d type59 to 58 conversion
+4.41m,
+rapify: now handles array[]+= in config.cpp's
+
+
+4.40
+dscreatekey: registry test for mikero's dscreatekey for arma2
+extractrvmats:
+	now shows renderflags such as noAlphWrite
+	fixed bug in output for single stage with renderflags
+	made clear distinction in output for SEPARATE FILES when more that one rvmat is being produced
+rapify: now creates, or ammends, cfgpatches class. see htm readme
+
+4.39
+xbox elite: enabled special xbox sig compile of rap files
+Extractpbo (Gui) fixed mem crash introduced around 4.36 time
+
+
+4.38
+dep3d: added type59 odols
+dewrp: added type19 (x13) mapinfo types for early arma1 wrps(type 18's)
+	   now provides only a warning message if it can't be decoded
+
+4.37
+enabled some unicode api calls
+dewrp: now decodes arma3 type 25's
+defxy: corrected to read arma3 type korean/katakana fonts
+dertm: minor changes to output information
+lzss: fixed error in compression algo introduced around 4.34 time
+
+4.36
+added type13 mapinfo decode
+4.35
+prepatory work for 64 bit
+moveobject: added functions to strip hard path and drive
+depew: more verbose diagnostic of when it fails
+check3d externals, provided more verbose reason that 'no file found' when p3d being analyzed has been corrupted
+'missing files' now stop immediately for easier at-a-glance, fixing
+incorporated eliteness rap sha's into read and write encoding in the dll, not, eliteness
+removed all eliteness sha generation and moved to common dll routines
+corrected p3d filename returns to ignore #default in bisurf
+4.34
+rap: returns error on attempt to open a non-text file
+derap: and generally
+now treats p:\ as a folder destination
+
+4.33 to release
+FileStringEX:
+added FILEIS_ arma3 shp files and etc for a3 island wrps
+protected file_exists from being null
+
+dep3d:
+extractskeleton
+set axis= to probable axis rather than blank
+
+4.32
+pboProject:
+added registry settings for makepbo and rapify
+
+removed extraneous extra " at eol of some registry settings (nsis installer 0.9)
+
+4.31
+produced first self installer
+dewrp: improved decoding of mapinfo type 35's for arma3 and vbs
+depew: allowed curved roads to have default settings of -1 rather than fixed lengths 10,25,50, 100
+
+4.30
+extractpbo
+removed deprecated api function calls
+4.29
+filetreeEX: (internal)
+movefolder:
+	minor fix to comparing null filestrings.
+4.28
+released in error as 4.27 but 4.27 was never released so no harm done
+DeRap:
+reverted real bad decision to use single line output for arrays
+added more linux specific, clang compiler sensitive changes
+
+4.27
+single line rap arrays
+bistools update
+detex, accept x0101 or x0001 flags
+4.26
+applied linux compatibility patches
+added rapclass writes to empty class
+4.25
+pboProject fixed QuoteFIle to fs_QuoteFile
+which fixed mod folder specification
+makepbo:
+fixed huge memory model writing sha keys for makepbo
+rapify:
+now allows a file to be written devoid of any tokens (an empty rapclass) ca\data\mainrotor_blur.rvmat eg
+
+4.24 enhanced io_ classes for movefolder application
+
+4.23
+rapify:
+corrected for sqx """"" argument in some missions
+
+4.22
+dewrp: fixed memleak
+revised BisTools module and consequently pboProject.exe
+
+4.21 more internal improvements. affects depew,dewrp convertwrp movobject and elite
+4.20
+internal improvements to dll api (affects moveobject and dep3d)
+4.19
+internal
+// improvements to bisfileio api calls (affects eliteness and mat14)
+4.18
+progressive removal of raw memory access into the dll to divorce the api from sensitivity to changes of dll structure
+added more code to dep3d to handle a3 lods/mlods
+fixed multiple listings of same strings in a lod (eg) (dep3d)
+
+4.17
+texheader
+removed a few debug analysis traps which threw erroneous errors
+added callback progress text to texheader analaysis
+
+4.16
+wrp:
+added type12 mapinfo construct for ifa islands
+
+4.15
+rapify:
+fixed error in detecting sound files for missions
+removed file checking of anything with spaces as being more likely to be a text string
+fixed array[]={blah missingComma blah};
+makepbo:
+removed the need for noproxy flag
+the dll now checks if class=man exists and if so doesn't fuss over non existent proxy.p3d's
+class man should be in the geolod but sometimes isn't
+4.14
+changed prefix file name from pboprefix.txt to $PBOPREFIX$.txt
+
+added functions to filestringEx
+makepbo:
+	changed exlude list to
+	#define EXCLUDE_LIST			"thumbs.db\0*.h\0*.dep\0*.cpp\0*.bak\0*.png\0*.log\0pew\0"
+extractpbo gui
+	fixed a potential error when creating prefix files for PreOpened pbo's
+
+4.13
+eliteness:
+fixed non removal of pbo entries built during a previous makepbo
+entries for one pbo were merged into the next pbo in error
+makepbo:
+made more descriptive 'what's happening' text to stdio
+4.12
+dertm:
+
+Debinarising:
+O2 must have the exact name to work. The lowercase bones in the skeleton in both the p3d and the binarised rtm is useless.
+Replaced lower case only binarised rtm bone names with the 'correct' mixed case model.cfg (when supplied)
+Supplying a binarised p3d is useful but wont work for above.
+2) improved decoding of skeleton model.cfg's (or any other name including a .h)
+there can be a range of skeletons in this cfg, the dll will match the correct one against the rtm
+
+
+
+
+
+4.11
+added debinarising code for rtm files
+
+4.10 general release
+
+general:
+
+removed windows Unicode as unacceptable and replaced with utf8.
+provided more consistent acceptance of folder path specifications
+specifically, unc\\: and <drive>: (current dir)
+fixed linux errors
+
+extract/makepbo:
+now accepts and embeds any tokens provided by pboprefix.txt
+from now on, user can specify
+
+      whatever=something in the header of pbo's
+
+
+rapify:
+
+added case sensitive 'class' and 'delete' keywords
+
+makepbo:
+
+wrp /p3d
+now produces complete list of missing files, only reporting one occurence of each, for all 'file' occurences.
+in otherwords, a full list, one invocation instead of exe fix exe fix exe fix
+
+
+4.09d: released to milkman/bad benson
+
+provided code for mat14.exe (and arma3 alpha island maker)
+
+makepbo:
+
+crippled deleting of files and folders when extracting a pbo. it is now up to the user to ensure it's empty
+
+Q:
+
+fixed sha generation for huge files >1meg
+
+
+4.09e beta released to bb-generation
+
+convertwrp:/depew:
+
+allowed non-existent rvmat entries in layers for decoding back to pew
+
+
+4.09d beta
+makepbo:
+fixed resistance header
+
+convertwrp:
+allowed non referenced rvmats in island textures
+
+changed behaviour to not make backup copies in the various exes inless a -B option is used
+
+fixed win vista intermittent error when removing dirs
+
+depew:
+release to snakeman fixed depew import elevations
+
+added generic code to detect a <drive>: no slash indicating drive:\currentfolder request (squelch)
+4.09 beta  squelch / sman
+4.09 alpha snakeman depew
+4.08 beta  3rd party issue for api use to compile the dll themselves
+4.08 alpha issued to Q  no time signatures on pbo extraction
+4.07
+
+unicode:
+inadvertently skipped unicode text check when extracting files. (these are rare files are converted to utf8 for handling/exporting)
+
+4.06 final
+new api functions for gui apps needing the dll
+
+4.06b
+CreatePbo
+vbs:
+fixed sometimes erroneous file.pbo.xbo to file.xbo
+fixed error on decrypting 0 len files. (bis mark them as encrypted, they can't be)
+4.06a
+fixed a potential buffer size error with lzss compressed unicode utf16 text files
+(if they ever exist)
+ditto comment for vbs lite encryptions
+
+4.05
+whoops fixed write error when converting a3 odols
+4.04
+
+fixed small problem with cwc pbo's (bug introduced at 4.01)
+
+preliminary release of a3 type 56 decoding
+
+improved type58 p3d decoding
+
+	now, convertp3d, extractmodelcfg, and eliteness work for all seen p3d's so far
+
+
+4.03
+preliminary release of arma3 p3d type58 odol decoding.
+4.02
+
+depbo:
+1. changed wording from 'trying' to 'using' io instead when huge amounts of free mem aren't available.
+2. removed 'missing sha' bug on arma pbo's
+3. small inconsequential memleak removed
+
+vista vs xp:
+
+re-enabled xp compatibility in registry calls
+
+
+4.01
+
+DeWrp. fixed error in returning the correct XYZ of object transforms. Affected listing of objects.
+
+4.00
+fixed missing 1st letter of a proxy filepath for p3d's in dayZ objects
+
+changed silly error message (out of memory) when rapify cannot opena file, to no file found (duh)
+
+fixed bad status value when deleting last item in a chain causing (rapify especially) to error out on last #include or last #undef
+
+3.99 final
+public release
+3.99e
+internal:
+
+fixed rather nasty error in chain deletion where nchains retained old size
+very few exe's made use of this feature
+
+merged whisperofp's linux 64bit platform
+
+3.99d released to wolle and sep to snakeman for createpewobjects
+
+extractpbo:
+more work on ofp headers saying they are compressed and they aren't
+
+rapify:
+improved eval parser (again) for kju
+
+3.99c
+rapify:
+fixed evals to ignore math + string expressions (eg 10+ cos 31) and pass as is because they often contain undecodable sqX
+but, any attempt to output the binary produces error. this is a lint checker
+
+allowed implied rap extensions of .cpp/hpp/h
+
+3.99b
+released to Q
+fixed eval decoding
+added implied directory searches for external file references
+allowed all raw form files as equivalent to binarised form. wss or ogg output == wav, paa output =tga or png
+
+3.99b released to wolle
+extractpbo:
+fixed early cwc compressed pbo detection (has no 1st hdr)
+
+rapify:
+allowed tga/png files in external reference checks.
+extractpbo:
+pboPrefix.txt now produces full header of pbo. First line of which happens to be the prefix making it compatible with
+existing format (not compatible with old kegs tools (cPbo probably) )
+
+makepbo:
+changed pbo creation to addon type if -J enabled and no mission.sqm or config.cpp detected
+fixed a small possibility of mis-detection if unbinarised p3d discovered
+
+3.99a released to kju
+3.98 included for public use
+internal:
+Str dup: fixed potential error collision of duping same string (was fixed, then broke at some point)
+stderr messages now ensure lf endings for dos console and crlf for windows gui outputs
+Rapify:
+changed erroneous 'unicode error' to a warning that the filesize of a text file is not the same as the amount
+of characters in that file. This can occur from badly coded block f writes to disk by the application that wrote the file. 
+It is an indication of file corruption.
+
+makepbo:
+rapid scan for unbin p3d. this to stop a multiple pass batch file where it first attempts to makepbo, then finds it needs binarise but does another makepbo to lintcheck
+the need to do so is skipped since the dll will lintcheck everything and then ultimately, return bad (p3d) status if it finds nothing else to report
+
+small esoteric fix to creating true vbslite mission.pbo's which *might* be mis-detected if the missions are in fact an addon
+added png to default exclude list.
+added .xxx folders to default exclude lst
+prevented scans of .xxx folders (even from command line) MakePbo .git eg
+prevented scans of excluded folders (and files)
+added optional command line exclude list
+
+fixed missing newline on detected rapify errors
+
+
+
+3.98 released only to cwr2/wolle
+makepbo:
+	added ignore file list to makepbo
+	fixed incorrect -Gexternal test of unbinned p3d's.
+	will now do following
+	won't accept a tga/png reference if making pbo
+	will accept the following for the -Q (lint only) option
+	p3d wants tga
+		tga/pac/paa found
+	p3d wants png
+		png/pac/paa found
+	p3d wants paa
+		paa/tga/png found
+	p3d wants pac
+		pac/tga/png found
+
+	the assumption being that the pax will be built or is already built and the p3d name will change accordingly
+
+internal improvements
+removed strDup/StrCat collisions with similar windows name in SHLWPI
+now checks for tga references in p3d's
+
+3.97
+internal improvements
+ added a bit more functionality to bis strings with math equations
+ added a 'better' verb for pew GetNextValidObject() which only returns the next beast
+3.96
+	//wrong pew orientation calcs (hopefully only affected depew)
+3.95
+modified rapclass: new better method of inherited class checking
+
+3.94 // fixed unicode (utf16) text stream allocation for arma3
+3.93
+added enhanced DePew funcionality
+
+3.92:
+makepbo:
+	added no proxy checking (-Gp).
+	this because arma2 humans have illegal file references for ak_47_v58, beretta, and rpg7_ proxies
+
+3.91
+makepbo:
+ sensitised for ifa files (prolly not complete)
+ fixed erroneous prefix creation (ones without path\names on command line)
+ added proxy checking to p3d makepbo with the existing -G option
+
+dll:
+added rc version numbers for mouseover of dll in windows
+
+3.90
+small corrections for linux setdrive and timestamps
+allowed 4wvr (ofp) files to contain 0xFFFF default texture indicators
+enabled ifa pbo extraction
+
+3.89
+fixed huge derap autosave files (compressed integers)
+
+3.88
+fixed current working directory string msg that could be overscribbled by multiple instances of the dll
+
+allowed input file i/o (rather than memory) for huge files >1gig eg that _sometimes_ failed on 32 bit systems
+this is an extractpbo fix only. all other instances will probably crash or give erroneous results
+
+added considerably more descriptive info when errors are thrown (calling function of failed memory, or file etc)
+
+3.87
+Kju testing only
+3.86
+rewrote dewss to allow for nibble compression
+3.85
+fixed some string memleaks (weren't released on exit)
+changed internal API for file compare strings
+changed any new exe revision to "press the any key" if a pause is caused due to an error, or forced pause at end of processing
+
+
+3.84
+altered odol7 lod resolution of zero to 0.1 (for conversion purposes)
+added visitor4 9wvr support
+minor correction to convertwrp if there are no materials (rvmat layers) to create
+
+3.83
+odolv7:
+fixed decoding error where a lod can have 0 resolution
+internal: corrected bad api call to FileString:Compare to FileString:CompareExtOnly (some exe's affected)
+
+3.82
+rapify: fixed double quote text to only produce single quote output
+3.81
+fixed 3.80
+3.80
+changed Derapped output to default tabs (not spaces)
+-t option in extractpbo / derap.exe to use spaces if needed
+
+3.79
+major cleanup of file listings indside p3d's and wrps
+moveobject: now handles all p3d types and all wrp types
+	fixed error in not renaming binary wrp land_xx name if p3d name changed
+makepbo: now checks external file references for all p3d types and all wrp types *unbin wrp still not allowed tho
+
+3.78
+forced tabbed output for any extracted data from pbo
+
+3.77
+crapped release of 3.76 fixed
+
+3.76
+make/extractpbo:
+	now uses pboprefix.txt rather than $pboprefix$ because it's impossible to simply edit it in notepad
+	$pboprefix$ is deprecated but still valid for MAKING pbo's
+	pboprefix.txt is created for EXTRACT pbo
+
+linux:  minor fixup-garantee for readtextfiles() to ensure linux compatibility
+
+
+3.75
+wrp: unused layer references cause errors in arma wrps and warnings-only for ofp.
+this, because, the user can fix arma issues, but ofp faults are legacy.
+
+3.74
+p3d: re-arranged type52 stageinfo
+p3d: tab spacing for skeleton output
+3.73
+type 52 odol p3d's for TOH support
+
+3.72
+rapify: arma: detect lack of mission.sqm/config.cpp
+	ofp:  added semi colon to eol for macro expanded lines using \ operator
+	fixed macro expansion to accept "quotes,with,commas"
+
+3.71
+rapify: allowed camera.sqs as a default extern reference for arma too
+makepbo: better diagnostic error for unknown p3d/wrp type
+	now checks arma builds correctly to ensure a cpp/mission exists
+
+3.70
+makepbo: returned separate error status for unbinarised wrp vs p3d
+3.69
+compression. added fsm files to the exclude list
+rapify: fixed array[]={1,2,}; to mean array[]={1,2,""};
+convertwrp: changed from a forced P:\ lookup of p3d models to same drive as the source folder (affects linux too)
+DeWss/Wss2Wav: corrected stereo and 8bit sampling conversions
+
+3.68
+rapify: fixed #define duplicate comparison error where THING same as tHinG (error in 3.67)
+rapify:ofp: allowed for completely missing trailing braces} before eof
+
+3.67
+removed some internal trigger debugs of no consequence to users
+rapify:tightened external file checks + fsm files
+rapify: allowed unicode characters in classname
+makepbo: **optionally*** allowed a no prefix addon (see makepbo readme)
+rapify: fixed #includes to accept files from anywhere including vnc and other drives
+rapify: improved ofp external file checks
+3.66
+p3d. fixed minor issue with very rare instance of erroneous bis stageinfo with arrowhead p3d's
+Linux: incorporated Killswitch fixes
+rapify: improved external (mission) file checks a little more
+
+3.65 public release of 3.64
+rapify: fixed minor issue with enums
+accepted noprefix arma addons
+vbs2 lite: improved extraction and packing
+
+3.64
+reverted makepbo prefix behaviour. issued only to Q and cwr2
+by default makebpo will create a prefix based on the \source\path\to\folder
+
+3.63
+makepbo:allowed unbinarised p3d's by option
+	sped look up at wrp and p3d types rather than opening full memory
+specifically ignores .svn folders and .bak files whether hidden or not
+wss files no longer compressed. time taken is too long for 1% improvement
+fixed compression crash when file to compress is empty
+fixed compresssion for missions vs configs
+fixed wrong compression size
+ fixed outputfile FILE specification (not just folder)
+ returned unbinarised wrp and p3d as errors
+ fixed relative prefixes (not sure what i mean by this)
+rapify:
+ improved savagery for mission external file checks
+
+
+3.62
+improvements to rapify external file checks when called from makepbo
+revisions to makepbo to accommodate campaigns and missions (-GS)
+summary of compression uptake (-Z)
+3.61
+rapify:
+corrected sometimes erroneous quadqoutes {"""",""thing""}; // eg
+
+
+3.60
+convertwrp:
+corrected roller clacualtions for relative height. potential crash
+
+3.59
+fixed __EVAL
+note that any variants of __EVAL or __EXEC that are using (or calling) sqX are only Lintable for general syntax. They *cannot* be processed by the dll and therefore should only be in description.ext. They will be processed out of existence if binararised into a mission.sqm or config.cpp, and whatever they were intended to do, will be lost. 
+
+3.58
+extractpbo: minor decryption patch for xbo files
+rapify: fixes to external reference checks for missions and campaigns
+	improved __EXEC functionality to account for sqf calls
+makepbo: heueristic builds for arma mission vs arma addon pbos
+	proper binarisation for mission.sqm,
+	optional lzss compression for most files
+3.57
+general:
+improved internal bulletproofing of file access and memory (ensuring api calls are legal)
+
+extractpbo:
+fixed erroneous newline char on dir listing (-L)
+vastly improved detection/extraction of arma mission.pbo's
+
+rapify: and all text files
+accounted for unicode utf16LE. (converted for internal use to utf8)
+
+dep3d:
+corrected erroneous vbs2 message for V40 (arma1) headers
+
+3.56
+rapify:
+corrected syntax for quoted brackets in an __EVAL statement
+    action = __EVAL(QUOTE(__EVAL(ktidc)) + " call (uiNamespace getVariable 'ace_settings_fnc_linkbuttonclicked')");
+
+3.55
+fixed rapify stack overflow with huge #define lists
+checks for all token duplicates val=something; val=something;
+3.54
+fixed Rapify enums
+3.53
+paa greys (type 8080) don't necessarily have mipmapoffsets
+texheader decode improvements
+ofp derapify: corrected enum decoding
+
+3.52
+versioning control added to makepbo. uses pboname.h/hpp (see makepbo documentation)
+3.51
+extract rvmats from p3d
+3.50
+all internal improvements
+
+better linux compatibility
+better wrp relative conversions
+now decodes mlods for correct object placement wrp->pew
+better odol conversions
+better pew consistency
+new dekey signature checks
+improved access to / for eliteness gui
+
+
+3.45..9 cwr2 wolle release only
+
+3.44
+added additional function to genstring. memdup (internal housekeeping only)
+cleaned up dep3d analysis (resolutions), set order correctly for odol->mlod
+fixed wvr1 (ofp demo) wrp file extraction
+
+3.43
+substantial changes to odol p3d internal structures, especially uvsets. work in progress, should not affect external exes
+removed any attempt to modify utf8 encoded files (except to strip the bom) mission.sqms in particular should now be ok
+extracting ut8 files and NOT embedding a bom does not appear to upset windoze. it must be using hueristics to detect...
+
+3.42
+fixed erroneous missing prefix= lbel for some pbo's. this can happen with binpbo 'automatic' not set
+3.41
+corrected ReplaceExt to return full string (affects extractpbo only)
+-silent options now respect keyboard escape key. you should be able to exit on long dos batch scripts
+
+3.40
+minor correction message when user hits esc (cancel) key
+minor fix to -Fileslist parameter in extractpbo (no external effect)
+utf8 corrected when extracting pbo's to, extract the correct utf for things other than us ascii
+
+3.39
+1) corrected extractpbo (in dll) to recognise dos \absolute path on cmd line with no drive designator. previously recognised linux only
+2) corrected broken at 3.38 auto assumption of ebo/pbo file extensions
+
+3.38
+1)
+extractpbo now respects datestamp of individual file entries, or, modification date of pbo, if no FileEntryDate found
+-Listing option now shows internal file date of each entry
+2)
+makepbo
+revised entry datestamp to file modification time, not create time, which is almost always incorrect since a copy of, alters it
+3)
+added TexHeader binary (see DeTex.exe)
+
+3.3.7
+addextnew() to force adding same extension to file. eg .old.old (see convertp3d)
+
+3.3.6
+corrected pew decoding to correctly count erased Keypoints
+3.3.5
+corrected multi-folder MakePbo where subfolders have (mistakenly) a $pboprefix$ file so that only the first, the parent folder, is acknowledged as THE prefix for the file
+
+3.34
+corrected depew for vb2 1043 type 11's
+altered rollerpos triangulation for depew
+corrected makepbo ignore compression option 'default'
+makepbo: added pac and paa to default ignore compression for arma only
+
+3.33
+fixed error in utf8 conversion
+3.32
+corrected rapify _FILE_ macro
+
+3.31
+err warning msg "context extracted regardless" changed to CONTENT, duh!!!
+fixed convertwrp to correctly analyze 'heights' without crashing
+
+3.30 public release
+3.29 displayed sha error keys (if error) and good sha for extractpbo if in full list mode
+improved exception handling in depbo routines to catch unexpected system throws
+increased speed of lzss compression
+improved all exe's that use this revision (patchpbo eg) to improve system throws
+
+3,28
+convertwrp fixed for arma2 oprw24 files
+ binarised wrp -> pew
+ pew -> unbinarised wrp (large files)
+
+3.27
+slight change to formatted string radian calculation for skeleton configs (p3d). visual only, affects nothing
+fixed relative heights for convertwpr -> pew
+changed command line for patchpbo
+
+3.26
+incorporated patchpbo
+no other changes
+3.25
+substantially altered dll ap interface to try and, finally, stop incompatibility issues on each realease of the dll
+this is a structural change to prevent crashes. in theory, altering the rapify module should not affect a completlely unrelated sound module. it has, in the past, due to the way that microsoft build their dll;s
+
+2) fixed erroneous rapify include msg when error encounterd
+3) reintroduced patchpbo
+4) altered extractpbo to rigidly refuse relative target paths. 
+
+3.24
+fixed blank #define to ignore where appropriate
+3.23
+not omplemetented
+rapify
+class thing:thing
+class thing;
+class thing; at same level
+
+3.22
+added a linux compatible getcwd()
+added _FILE_ and _LINE__ to rapify
+
+3.21
+now extracts a pbo regardless of sha key errors
+the dll uncoditionally reports them as errors regardless (as before)
+but at least extracts the contents for you to examine
+
+using option warnings-are-errors will refuse to extract
+
+3.20
+badly named v 3.19
+
+3.19
+fixed dll crash if not enough parms in a macro expansion
+
+3.18
+modified rap output to show missing files as warnings are errors
+these will now display with the -e option alone
+specifying -en (noisy) behaves as before
+
+small corrections to odolv7 output
+
+3.17
+lzss voyager (amalfi) decompression
+3.16
+another (small) wrinkle in odolv50
+extractpbo -w  warnings are errors. will stop if no file found with -f (extract single) option
+
+3.15
+odolv50 (baf pbo's) or oa patch 1.54
+
+3.14
+corrected -w option warnings-are-errors to allow 1) missing-sha key and 2)no sha key to extract
+previously both were considered errors, not warnings
+
+
+detected arma resistance mission pbo
+
+allowed creation (psuedo extraction) of $pboprefix$
+
+returned warning on single extraction if no file found
+
+to extract single file config.bin, must be specified not cpp as such
+
+
+3.13
+fixed erroneous blank p3d references in 4wvr (ofp) files when converting to pew
+3.12
+fixed wss->wav output
+3.11
+fixed floating point output to stop 1e+001 !!!!
+
+3.10
+accounted for arma3 p3d modifications to vbs2 dummy structure in materials
+fixed lod translations
+fixed sp3x write output to account for default path
+3.09
+MORE improved float expressions
+3.08
+improved rapify enum{} expressions and distingusihed btwn ofp and arma
+improved float point textual output for all tools
+detected #DEN's
+fixed Convertwrp for the_f (a new 16 layer island)
+
+3.07 
+fixed erroneous 4 line derap header (non-critical)
+fixed isnan for linux
+
+3.06
+final resolution of making exact bis float match
+corrrected rapify output to have config.bin (not config.cpp) in it's header
+
+3.05
+removed q option for derap (reverted)
+improved floating point string output to it's (hopefully) final form for derap
+
+3.04
+fixed derap float ouput to 4 significant digits, zero suppressed
+changed derap to not optionally not show dll version for Q
+
+3.03
+modified derap to strop excess zeroes (up to 3)
+exztractpbo now properly accounts for arma3
+3.02
+changed enum iteration for OFP to , instead of =
+changed ofp rap string indexing to be case sensitive
+rap general removed 1e float expressions
+altered enum processing
+odolv49 (arma3)
+3.01
+3.00 corrections to rap external file checking
+now auto replaces png or tga with paa if rapifying
+2.99
+first release of convertp3d
+fixed minor problem with convertwrp ofp intro -> pew
+
+2.98
+This is a benchmark release to be sure that all the quite substantial changes todecoding of p3d havn't broken others
+
+improved dep3d decode speed and conseqeuntly dewrp convertwrp moveobject
+improved extractbpbo
+
+2.97
+fixed binarised rtm
+fixed odol40 erroneous user flags
+fixed kegsfile output for linux (killswitch)
+
+2.96
+corrected compressed rpt file expansion for some a40 p3d's (no ill effect anyway)
+fixed rapify
+#ifdef
+#ifdef
+added ignore prefix option to extractpbo
+fixed minor destfolder error for ofp extraction
+changed makepbo behaviour so to ignore existence of a pre-existing config.bin if rapifying anyway
+
+2.95
+reversed mlod points table struture. it was wrong but had no ill effect until now
+2.94
+added rap decodign show option to makepbo
+2.93
+added compression AND rap to makepbo
+deprecated extractpbo -arma option it's now default
+2.92
+removed hpp restriction when making a pbo
+2.91
+improvements to makepbo lzss
+2.90
+added compression to makepbo
+2.89
+fixed write compressed errors for p3d's
+2.88
+fixed makepbo destpath error
+2.87
+automated xbo ebo pbo extract detection
+added folder output OR file option to makepbo instead of just file
+fixed mis-detection of an existing bin file with a request to binarise same in makepbo
+
+2.86
+tidied a few rapify options
+2.85
+improved pax analyzer
+2.84
+extract modelcfg changes from t_d
+changed behaviour of extractpbo $prefix$ to not supply crlf as this breaks kegs createpbo
+added proc tagg to paa decodes
+imroved derapped data to //show full path name of file (or pbo)
+fixed -1 error in enum lists for rapify
+added optional destination to pbo creation, path and name or path only
+added type 21 & 35 mapinfo to wrps
+improved dewrp wvr hash index to have only one exact copy rather than splattered null splat
+added wvr1 support
+rewrote paa decoder
+moved all files into structural coherence on svn
+changedd various internals to make it fully linux compat
+
+2.83
+DeWrp: corrected illegal rvmat index msg if there is no rvmat to check
+Convertwrp now sets relative height
+ConvertWrp now requires a correctly set up P: drive to examine each p3d needed by the wrp/pew
+warnming message(S) supplied for each missing file (could be multitudes)
+2.82
+correct error in make xbos plus
+
+option -M in makepbo (make xlite missions) is now reduntant. the dll detects a mission.sqm and encodes as appropriate
+creating a pbo (not xbo) if mission detected
+
+2.81a
+wrong dll in 2.81 package
+make/extract now handles xlite mission pbo's
+general improvement in pbo extraction messages
+
+2.80
+
+corrected makepbo/extractpbo to handle xbo files
+
+gave proper error warning for traditionally bad bis enum list on derap as well as rap
+now informs user of excluded files when making pbo
+
+2.78
+corrected encrypted zero content extractbo
+changed makepbo to include funny.cpp/hpp files etc if NOT rapifying output
+previously inclusion only occurred for autolint
+fixed rapify duplication check.
+prevented a no-content pbo being created
+similar message for extractpbo
+
+2.77
+changed rapify to detect duplicate classes
+improved pbo extraction
+2.76
+removed all ulong.long/short/ushort references and made them compiler specific
+2.75
+added DeWss decoder
+2.74
+improved p3d model.cfg extraction
+2.73
+removed erroneous missing file warnings from rapify
+fixed EXEC(_group=_group+1); rapify
+
+2.72
+fixed skeleton.cfg axisPos[]= in p3d files
+
+2.71
+
+VISUAL BASIC API library is now included. this is NOT required for general operation. Programmers only.
+
+improved defxy
+improved dertm
+a few changes to stdmain
+further improvements to linux sensitivity
+
+2.70
+unreferenced rvmat error fixed in dewrp
+2.69
+now allows non existent (arma) shakey. this would have been produced by early tools
+
+considerable changes to file structures to account for linux comaptibility
+
+
+2.68
+improved wrp and pew
+fixed bug in dertm binary type
+
+2.66
+improved pew features, fixed 4wvr elevations
+2.65
+improved pew features
+fixed memleak on some chain deletions
+2.64
+fixed color conversion default in pew.cfg for pewconversion
+
+2.63
+left derap content text for user, even on basic errors
+fixed rap delete class to correct string
+
+2.62
+improved rapify entries to make compatible to setversion.exe
+2.61
+fixed exe's to not abort on any key pressed other than esc
+improved catch throw mechanism of general exes
+detected roads in wrp for pew conversion
+
+2.60
+fixed rapify / lintcheck error on #include empty file
+2.59
+improved pewfile conversion
+2.58
+improved pewfile conversion
+2.57
+improved pewfile conversion
+2.56
+improved pewfile conversion
+
+2.55
+enabled pew creation via ConvertWrp
+
+2.54a
+fixed dewarp creation of oprw24 (arma) files
+fixed another typo or three in p3d create.cfg files
+
+2.53
+modifed wrps CreateCfg to produce better textual output
+2.52
+corrected p3d model.cfg output
+2.51
+added rapify rubbish characters message
+internal:
+added a few more api capabilites to rap/derap for setversion.exe
+added more functionality to strings
+ignored trailing space on __EXEC()
+allowed optional ; on __EXEC()
+fixed __EVAL error when converting float to int
+fixed erroneous error on delete class for rapify
+special rap code to account for BI's QT " symbol
+
+2.49
+fixed 'out of mem' error when enum has no label (a bis fault)
+ditto now producve a warning in the cpp output for this enum
+proper linecount for unused extern (rapify)
+
+2.48
+altered lastslash check in filestring.cpp. this improves ability to detect strange file conventions (such as %20)
+
+2.47
+lintcheck cfg files during makepbo
+2.46
+fixed eof error on rapify on some truncated text files
+2.45
+fixed error linecount for rapify
+stipped utf encoding off begimning of text files when encountered
+allowed #(args) for rapify
+checks bikb and fsm files during makepbo
+
+2.44
+extract pbo bad sha key status (not unknown exception)
+
+2.43
+corrected error with enums in rapify
+2.42
+major release of a new api for almost all apps
+speed and meory improvements
+2.41
+rapify now accepts cr crlf or lf line endings
+rapify now accepts
+/*//////////////*// as valid
+2.40
+fixed potential crash on utf chars in rapify
+added extern class checking to rapify
+improved stdarg settings for any exe so that extreme char length strings wont crash it
+fixed double quoted strings on rapify
+
+2.39
+rapify: corrected Null error message when opening from a pbo
+corrected pbo internal includes
+
+2.38
+quick, dirty, and temporary fix to warp packed grid arrays
+
+2.37
+fixed erroneous write shakey signature display (data correct, display not)
+removed asciiz strlen check on pbo entries
+fixed locked folder on delete all for extractpbo
+
+2.36
+improved depbo extraction
+fixed utf8 read of ascii pbo entries
+pbo extraction now fails if md5 (sha) Signature at end of file is missing or corrupt for arma pbo's
+text entries will now fail if strlen not= reported size of it's data block
+
+2.35
+fixed nasty over-run error when rapifiable files have line lenghts exceeding 2000 chars
+
+2.34
+generalised resync release with internal improvements do extract and make pbo
+
+2.33
+added GetLen method to BisAsciiz struct
+added getRawResolution method to CommonOdol struct
+
+2.32
+removed all reference to desqs
+add a little more api functionality to rapify
+
+2.31
+
+fixed rapify to error if length of text file is not same as it's filesize
+fixed rapify initial classname to only be the name of file, not (sometimes) folder
+2.30
+more on vista symlinks
+2.29
+added features to the pew api
+changed makepbo behaviour to stat() if zero len file (potential Vista symlink)
+2.28
+accounted for Vista's symlinks for makepbo etc
+2.27
+fixed small grammatical display errors re sha keys for pbo extract/make (inconsequential)
+ditto when renaming config.bin -> cpp, a line gramattical error (no consequence to output)
+
+2.26
+internal release for Q
+2.25
+fixed corruption on preraPPed files (makepbo)
+ditto stopped double copies of prerapped if lint check only
+
+2.24
+improved rapify to handle single # (make quote) in #defines
+
+2.23
+fixed moveobject p3d
+2.22
+stopped producing erroneous 'line 0' error listing on rapify
+replaced 'system' command with an internal equivalent to stop errors on unc connections and (some) read only folders
+2.21
+improved rapify to allow spacing on #define arguments
+improved rapify error messages
+allowed duplicate, but identical, defines
+2.20
+fixed more #ifndefs
+
+2.19
+made paths UNC compatible
+fixed a rapify array error status to decode properly
+fixed #include error to reflect correct line of calling file
+fixed pbo routines to report unknown exception status
+fixed rapify crash on
+value=; (no spaces etc)
+altered a few derap error message texts
+
+make and extract now report correct error strings for exceptions
+2.18
+fixed makepbo autoxxx to work correctly on pre-rapped files with / \ folder paths
+added features for moveobject (pbo)
+fixed small inconsistencies with movervmat
+changed rap and pbo dll interface calls
+
+2.17
+improved derap to allow armasave files decode
+fixed a poor error message on cann't include in rapify
+2.16
+improved depew
+various rap #ifdef fixes
+2.15
+fixed xbox write sha key signature on some rapifies
+improved rapification
+  allowed notAnumber="123"; to be text
+  fixes some array discrepencies
+  other...
+
+
+2.14
+fixes to rapify arrays
+2.13
+rapify
+excercised trim function to remove leading trailing blanks in array names
+
+2.12
+a resyncing version to ensure all exe's work
+
+2.11
+rapify, correct parsing error for some array lines
+corrected general #include #define style syntax to be avalailable anywhere
+
+fixed #includes embedded in text
+2.10
+decodes arma2 binarised rtm's
+2.09
+fixed createp3d arma2 types
+2.08
+makepbo autorap now  binarises bisurf files
+accounnts for encrypion  headers in pbo files (but wont decode them)
+fixed incorrect macro expansion matching (ARRAY,A)
+modified behaviour of autorap in makepbo to accept pre-binarised entries
+
+2.07
+modified makepbo and rapify behaviour to only ignore \hard includes
+added bisurf lintchecking to makepbo
+
+2.06
+addded more support for wrp24 (arma2)
+2.05
+coorected minor rapify errror with /***/
+2.04
+fixed error in writing wrp 8wvr textures for moveobject
+2.03
+fixed problem passing arma makepbo to autolint/ autorap
+2.02
+correct p3d keyframes for arma2
+fixed rapify of arrays
+2.01
+provided better information when #include (rapify) fails
+cleaned up a little of the rapify interals to make it faster
+added p3d type47 support
+
+2.00
+fixed text=""; misinterpreatin on rapify
+
+1.99
+fixed remaining issue with #includes potentially accessing the 'wrong' drive
+fixed rapification of most macros
+fixed issue with some variations of quotes
+
+1.98
+added proper support for rapify / lintcheck #includes
+1.97
+
+added vbs2 p3d support
+added odol types 43 support (arma2) in addition  to type 48
+
+
+1.96
+added error msg to writing tags >64 for ofp mlods
+corrected some wrp writing errors
+fixed arma2 p3d
+re-wrote the p3d and wrp api interface
+
+1.95
+fixed any remaining issues with cracking open arma2 wrps
+added arma2 p3d decoding (50%) ok
+1.94
+added arma2 wrp capabolity to convertwrp and dewrp
+1.93
+added // to rapify msg
+added __EVAL to rapiyf
+partially allowed # insted of ##
+1.92
+changed nature of 'somewhere' destination when extracting a pbo
+fixed minor issues with rapify error messages
+added ignore #includes for rapify
+
+1.91
+removed null character from $prefix$
+190
+changed version number from str to float
+fixed extractpbo to totally remove folder tree
+fixed derap to account for arma2 empty files
+
+189
+removed erroneus (test) mypbostr from dll
+corrected derapper to fail and report error message
+improved errror listing when makepbo lint error
+188
+corrected a potential error in matching file list of extractpbo
+added optional somefolder to extracpbo
+quick release for T_d with depac
+
+187
+fixed major error in rapify introduced at 1.83
+
+186
+enabled vbs2 p3d's
+185
+fixed stuffed makepbo
+184
+removed 'somewhere' option from extractpbo
+disabled delete query ditto
+added correct hard path prefixing to above
+
+183
+improved conversion from \ paths to / paths
+allowed overwtire folders option if arma and using a prefix for extractpbo
+otherwise always destroyed
+allowed arma prefix for extract (default)
+fixed erroneous extra character on derap extraction
+
+182
+added more error reporting to makepbo
+
+181
+fixed modelcfg output for non skeleton stuff
+released MoveP3d.exe as a beta release to dev heaven testers
+
+180 fixed decompression for cain excess bits
+
+179
+caught macros with illegal terminating \ at eof, causing dll to crash
+fixed rapify delete command
+178
+removed references to destWrp in DeWrp class
+allowed 0 byte files for rapify include
+converted very poor microsoft folder \\ style syntax to / for extract pbo
+
+177
+stopped eof error on some wrp files
+limited decompression on wrp structures <=512
+added wrp conversion
+
+176
+fixed rapify to look for semicolons as default
+forced config.bin to config.cpp if auto derap is active for extract pbo
+allowed brief (no header) for extractpbo
+174
+added list option to extractpbo
+173
+improved rapify module for lintchecking
+172
+added rtm write capability
+added internal rtm verification of valid file
+removed extraneuos "hello" from rap message
+allowed pac or paa default extensions
+fixed various dos tools to allow [.default] extensions
+fixed pew error message
+fixed GetBin Data to not erroneously set bad status
+fixed potential malloc loss
+added derap capability to extractpbo
+171
+fixed makepbo section to erase config.bin if the dll created it
+170
+allowed desc.ext to have strange lintcheck values on titles[]=
+cleaned up mission bin and etc
+167
+INTERIM RELEASE FOR CWR CREW
+nothing docmented, but basically wrp, and p3d gui examination
+
+163
+excluded $pboprefix$ from pbo
+excluded rvmat file if binarising
+
+162
+a resyncing revision to ensure no beta 161's given as works in progress
+are confused with the final corrections
+
+161
+fixed $prefix$ to truncate on name
+added rvmat files as autorapify objects and lintchecks
+improved include
+improved error line and file numbering
+fixed undetected single ending quote
+fixed macro single hash crash
+160
+fixed #undef
+159
+
+158
+added #ifdef /#ifndef #else undef to rapify
+fixed derapify default to NOT arma
+fixed crash on #define arma anything
+created sha1key for arma
+
+
+157 allowed trailing comma on emums
+fixed #includes to correct pbo path on arma
+156 improving beta release of sqf/sqs
+155 typo on derapify of delete class
+was delete thing();
+now delete thing;
+
+154
+incorporated delete class
+153
+worked on odol format p3d files (not complete yet)
+fixed 'wrongness' to __EXTERNCLASS
+
+152
+
+rapify.cpp
+PRIVATE int Classes::raptext_ProcessDefine(RapFileTypes *raptype)
+
+checked raptype is in fact declated as ptr
+
+-----
+
+forced string conversion if space found for resistance type config.cpp's
+generally improved string conversion

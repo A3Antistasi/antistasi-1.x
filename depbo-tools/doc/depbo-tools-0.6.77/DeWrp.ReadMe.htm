@@ -1,0 +1,174 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-au">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>well here we are</title>
+</head>
+
+<body>
+
+<p><font face="Arial">(De)Warp Version 1.xx by Mikero<br>
+read genreamde.txt<br>
+<br>
+see fixes</font></p>
+<hr>
+<p><font face="Arial">DeWrp is a simple application that analyses the content 
+of any wrp file (binarised or otherwise) from the very first cwc demo thru to 
+Vbs2lite and does a few consistency checks.<br>
+<br>
+The wrp itself can be exposed in a folder 'some\where', or, it can be within a 
+pbo.  DeWrp will find it.<br>
+<br>
+Syntax:<br>
+<br>
+DeWrp [-options] AnyfileOrFolder[.wrp/.pbo]</font></p>
+
+<p>If a folder is specified then all wrps in the folder and it's children are 
+operated on.<font face="Arial"><br>
+<br>
+The default is no options and an assumed .wrp or .pbo extension. With no options&nbsp;  DeWrp will simply analyze *the* wrp 
+(or a wrp in a pbo) and display any errors or inconsistencies it discovers.<br>
+<br>
+If no specific extension is supplied, DeWrp will first look for a wrp of that 
+name, otherwise it assumes content of a pbo of that name<br>
+<br>
+the *actual* name of wrp in a pbo does not have to be same as pbo name. <br>
+<br>
+<br>
+<b>Options (case inSeNsiTIVe) (default none)</b><br>
+<br>
+<br>
+standard behaviour (no options)<br>
+intention of code is to do multi-passes thru a range of wrps to check the dll can 
+analyze it and that the wrp itself (be it binarised or exported from pew) has 
+integrity<br>
+&nbsp;</font></p>
+
+<p><font face="Arial">-P don't pause</font></p>
+
+<p><font face="Arial">
+-S Split wrp layers&nbsp;&nbsp; : <span style="background-color: #00FF00">see end of document</span><br>
+<br>
+<b>-I&nbsp;&nbsp; Islands</b><br>
+<br>
+will list all ID's used on island, including their AaNN map coordinate and 
+literal pos[X,Y] along with *the* model for that ID<br>
+<br>
+especially useful when converting missions that use OFP's SQx object ID command, 
+you can rapidly locate it on the map<br>
+<br>
+<br>
+output is produced on screen<br>
+<br>
+general usage would be<br>
+<br>
+dewrp -I someWrpPbo &gt;SomeText.txt</font></p>
+
+<hr>
+
+<p><font face="Arial">
+<br>
+<br>
+<b>-L list land classes -------</b><br>
+<br>
+DeWrp will list all land_xxx classes encountered in the wrp.<br>
+<br>
+(note all output is forced to lower case because of sqX case sensitivity)<br>
+<br>
+DeWrp -L NameOfWrp/Pbo<br>
+<br>
+will provide a SQF compatible array of all land_xxx classes with their (series 
+of) locations on the map in xyz format<br>
+sample:<br>
+[&quot;land_barn_w_01&quot;, [ [3269,4325,27],[4285,3170,32] ] ],<br>
+<br>
+the land_xxx string can be used to directly access the config&gt;&gt;cfgVehicles-&gt;Land_xx 
+class<br>
+<br>
+<b>-O list objects -------</b><br>
+<br>
+DeWrp will list all p3d's encountered with their objectID and position on the 
+map<br>
+<br>
+sample:<br>
+<br>
+[&quot;ca\structures\barn_w\barn_w_02.p3d&quot;,<br>
+[<br>
+[3958,[3536,4270]],//id, x,y<br>
+[2483,[3463,4432]]<br>
+]<br>
+],<br>
+<br>
+<b>-D list objects -------</b><br>
+<br>
+same as -O but ID's are removed. useful for cba hash function<br>
+sample:<br>
+<br>
+[&quot;ca\structures\barn_w\barn_w_02.p3d&quot;,<br>
+[<br>
+[3536,4270], // x,y<br>
+[3463,4432]<br>
+]<br>
+],<br>
+&nbsp;</font></p>
+
+<hr>
+<p><font face="Arial"><span style="background-color: #00FF00">Splitting the wrp layer folder.</span></font></p>
+<p><font face="Arial">this option is BETA. there is no parachute.</font></p>
+<p><font face="Arial">this option is used for two separate reasons</font></p>
+<ol>
+  <li><font face="Arial">to move the layers folder out of the single wrp + 
+  layers pbo <b>OR</b></font></li>
+  <li><font face="Arial">to split the layer into smaller chunks!</font></li>
+</ol>
+<p><font face="Arial">extremely large maps can exceed the 2gig limit of a pbo</font></p>
+<p><font face="Arial">this option splits the layers into smaller chunks &lt; 1gig 
+each, thus enabling game play</font></p>
+<p><font face="Arial"><span style="background-color: #00FF00">splitting can ONLY 
+happen to exported (unbinarised) wrps</span></font></p>
+<p><font face="Arial">binarised wrps cannot be split for the simple reason that 
+the packing process has already tried to create the one, single, pbo</font></p>
+<p>&nbsp;</p>
+<p><font face="Arial">syntax</font></p>
+<p>&nbsp;</p>
+<p><font face="Arial">dewrp -S[=meg] NameOf[.wrp]</font></p>
+<p>&nbsp;</p>
+<p><font face="Arial">dewrp will create successive folders in</font></p>
+<p>&nbsp;</p>
+<p><font face="Arial">NameOfWrp<b>_layers\section1</b></font></p>
+<p><font face="Arial">....</font></p>
+<p><font face="Arial">NameOfWrp<b>_layers\section909</b></font></p>
+<p><font face="Arial">each one of which will be &lt; 1gig by default <b>OR </b>
+the value specified on the command line. Ie</font></p>
+<p><font face="Arial">dewrp -S=200 SomeWrp</font></p>
+<p>&nbsp;</p>
+<p><font face="Arial">will split into layer pbos of approx 200Meg each</font></p>
+<p><b><u><font face="Arial">Internals</font></u></b></p>
+<p><font face="Arial">the incoming layers folder MUST be in the data\ folder or 
+beyond. Traditionally, it's in nameofWrp\<b>data</b>\layers</font></p>
+<p><font face="Arial">this layers folder is deleted on successful splitting. Not 
+any other folder or contents in that potentially still used pbo, just the layers</font></p>
+<p><font face="Arial">the outputs are to</font></p>
+<p><font face="Arial">NameOfWrp_split\NameOfWrp_split1<br>
+.........</font></p>
+<p><font face="Arial">NameOfWrp_split\NameOfWrp_split99</font></p>
+<p><font face="Arial">You simply point pboProject to NameOfWrp_<b>split</b></font></p>
+<p><font face="Arial">and it will make successive pbos for you. Automatically</font></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</body>
+
+</html>

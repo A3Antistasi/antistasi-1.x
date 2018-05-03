@@ -17,6 +17,17 @@ jobs:
             sudo pip3 install --upgrade pip
             sudo pip3 install sqflint
 
+      - run:
+          name: Install Pbo creator # Why dialogs.hpp fail ? see previous builds
+          command: |
+            mkdir pbo
+            export LD_LIBRARY_PATH=depbo-tools/lib
+            rm ./AntistasiOfficial.Altis/dialogs.hpp
+            ./depbo-tools/bin/makepbo ./AntistasiOfficial.Altis pbo/AntistasiOfficial
+
+      - store_artifacts:
+          path: pbo
+          destination: pbo
 
       # Don't run it as it has a shit ton of false positive ... i think ...
 

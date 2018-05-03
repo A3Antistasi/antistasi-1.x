@@ -1,0 +1,83 @@
+Minimum DePbo.dll is 6.70
+
+fixes
+1.85 made compat to dll
+1.84 made compat to dll
+1.83 made compat to dll
+1.82 made compat to dll
+	corrected small error in documentation (-Xn)
+1.81 made compat to dll
+1.80 made compatible to dll
+1.79 made compatible to dll
+1.78 faulty release of 1.77
+1.77 improved utf8 support. exported cfg files are now utf8 not unicode
+1.76 made compat to dll.
+1.75 made compat and i'm losing interest in mainting this app
+
+1.73 made compat to dll. some old api calls could not be justified
+
+1.72
+fixed embarrasing crash in gui mode
+
+
+1.71 made compat to dll
+1.70
+created standard elevation output table in asciiz, not unicode.
+
+added message box for any error status from dos screen
+
+1.69
+
+1.68
+fixed bug in nsis installer to prevent potential dos environ path being cleared
+security leak (ptr) vs ("%s",ptr)
+fixed bad formatting when listing objects to screen
+1.67
+made compatible to dll
+
+1.66
+implemented a check, and a removal, of object duplicates
+added -X export to wrp
+added dual -RTO/-ROT reduce both templates and objects at same time
+
+fixed erroneous bad pausing on some variations of dos prompt before a pew file closes.
+fixed getsting() option issues when call dos prompt
+
+fixed reduce objects which had a nasty bug 
+intitialised gui registry properly on first startup
+cleaned up minor typos and presentation in html readme
+rewrote syntax description for command line
+
+
+
+1.65
+fixed registry so that dlg doesn't expand to total width of screen on 1st load
+added -P: don't pause
+1.64
+usage now lists cellsizes
+
+fixed asc format elevation imports and significant speed ups
+
+degrees are now specified to 2 decimal places rather than decimal digits
+a few minor cosmetic tweaks to general output texts
+fixed a few inconsistencies in behaviour (Ee0 did not respond to the esc key, Ee1 did)
+made EE0 format exactly coincedent with visior scripts
+'bak' files are no longer automatically created
+
+1.63
+fixed mem leak introduced in template exports @1.62
+now provides 'duplicates ignored' information when adding templates
+changed export objects to provide "p3dfilename:instancename" in any of the extended formats (non world tools format)
+eg if there's a name associated with this file (and not same name as the file), it's embedded in the :quotes.
+1.62
+fixed error in importing objects (embarrasment)
+1.61
+fixed 'invalid file' when verifying
+fixed sometimes doubled up ulMarker in -ETemplates
+
+1.59
+fixed renameFile 'out of memory'
+1.58
+Merged functionality of 'CreatePewObjects.exe' into here with -ET/IT option
+Merged functionality of 'ExportXYZ.exe' into here with -EE/IE option
+changed enhanced object export to now supply the entire 12x matrix rather than world tools thingy

@@ -1,0 +1,480 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-au">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>well here we are</title>
+</head>
+
+<body>
+
+<font face="Arial">
+<p>MakePbo version 1.xx by mikero.</p>
+<p>see readmegeneral.txt and fixes</p>
+<p>for obfuscation see end of document</p>
+<p><span style="background-color: #FFFF00"><font color="#00FF00">also read 
+cfgPatches.ReadMe.htm</font></span></p>
+<p><i>ExtractPbo GUI is the gui alternative to makepbo when you simply want to 
+modify an existing file in an existing pbo.</i></p>
+<hr>
+<p>MakePbo is a venerable program that dates back to the origins of OFP's cwc. 
+It maintains full compatibility with those products while creating pbo's for 
+Arma3 (and beyond)</p>
+<p>As such, be a little kind when reading the documentation (and some of the 
+idiosyncratic -options). Some of it will not make sense to the context you are 
+trying to achieve, eg making an arma mission or addon.</p>
+<p>Makepbo is by no means difficult to use, often simply requiring nothing more 
+than</p>
+<p><b>&nbsp;&nbsp;&nbsp; MakePbo NameOfFolder</b></p>
+<p><u>Intelligent heuristics </u></p>
+<p>Makepbo uses heuristics in examining the folder 
+contents to 'understand' what you're trying to achieve. This makes it easy 
+for&nbsp;both mission makers and addon makers to use Makepbo without having to 
+remember&nbsp; -options. It&nbsp; figures most of it out dependent on context of the 
+folder and what it contains.</p>
+<p><b>But</b>, you can fine tune this simplicity with a wealth of -option 
+over-rides dependent on what you are trying to 
+achieve (compressed files, altered prefix, un-included files, date-stamps, auto 
+conversion of wav), the list goes on... There's chemistry involved, and <b>you</b> 
+are in control.</p>
+<p><b>ALL </b>pbo types are supported by MakePbo: Ranging from ofp-cwc thru to 
+arma3 &amp; vbs lite. Genuine vbs product is only available to vbs employees.</p>
+<p>Be aware, immediately that a 'pbo' can have several different extensions. 
+Specifically</p>
+<ul>
+  <li>pbo</li>
+  <li>ebo</li>
+  <li>xbo</li>
+  <li>ifa</li>
+</ul>
+<p>The general case is that MakePbo will decide what extension to use. </p>
+<hr>
+<p><b>Syntax: MakePbo [-options] Full\Path\To\Foldername [destpath 
+and/or pboname[.pbo|ebo|xbo|ifa]]</b></p>
+<p>Despite the wealth of options available, the most common and generally 
+accurate syntax is</p>
+<p><b>&nbsp;&nbsp;&nbsp; makepbo Full\Path\To\Foldername</b></p>
+<p>Foldername.pbo will be produced in the parent folder of foldername</p>
+<p><b>Options:</b> (case INsensitive)</p>
+<ul>
+  <li>@=prefixname</li>
+  <li>-$ potentially&nbsp; unprefixed addons </li>
+  <li>-! obfuscate</li>
+  <li>-A make an ArmA or ifa, toh, or dayz&nbsp; pbo&nbsp; (default)</li>
+  <li>-B Binarise (default) Binarises all rapifiable files.</li>
+  <li>-C make a CWC pbo</li>
+  <li>-D No DateStamps for files in pbo. (formerly the -W option)</li>
+  <li>-E Elite make an elite Xbox pbo</li>
+  <li>-F rebuild cfgPatches</li>
+  <li>-G  all files are checked for errors in external references. (ignored for 
+  missions)</li>
+  <li>&nbsp;</li>
+  <li>&nbsp;</li>
+  <li>-J deprecated</li>
+  <li>&nbsp;</li>
+  <li>-L deprecated</li>
+  <li>-M do not binarise mission.sqm</li>
+  <li>-N  do Nothing special. Make a pbo wysiwig</li>
+  <li>&nbsp;</li>
+  <li>-P dont pause&nbsp; (bad status still reported and up to the controlling 
+program to do something about it)</li>
+  <li>-Q removed</li>
+  <li>-R make a Resistance&nbsp; pbo</li>
+  <li>-S Show rap text while crunching (very noisy)</li>
+  <li>-T deprecated</li>
+  <li>-U allow unbinarised p3d</li>
+  <li>-V make a vbs pbo</li>
+</ul>
+<blockquote>
+  <ul>
+    <li>&nbsp;VBS2 EBO (vbs employees only)</li>
+    <li>-Vm1 Vbslite pbo UK Mission</li>
+    <li>-Vm2 Vbslite pbo US Mission</li>
+    <li>-Vx1 xbo file UK</li>
+    <li>-Vx2 xbo file US</li>
+  </ul>
+</blockquote>
+<ul>
+  <li>-W warnings are errors</li>
+  <li>-X= exclude files</li>
+  <li>&nbsp;</li>
+  <li>-Z= exclude from compression</li>
+</ul>
+<p><b><font size="4">Caveat. Bis unbinarised</font></b></p>
+<p>MakePbo is <b>not</b> a drop in replacement for bis binarise.. Makepbo does <b>not</b> binarise p3d's and wrp files.</p>
+<p>What it can do however is detect faults that binbpo does not. </p>
+<p><b>WrpFiles:</b>&nbsp;&nbsp;&nbsp; Makepbo will fail&nbsp; if you attempt to 
+add an unbinarised wrp.</p>
+<p><b>P3DFiles:</b>&nbsp;&nbsp;&nbsp; Makepbo will fail  if you attempt to 
+add an unbinarised p3d <font color="#FF0000">and do not use the -U option</font></p>
+<p><font color="#FF0000">no files will be compressed if an unbinarised p3d is 
+present</font></p>
+<p><b>options with arguments</b></p>
+<p>can be stated as</p>
+<p>-option space argument OR</p>
+<p>-option=argument</p>
+<p>the latter allows proper detection of the first genuine non-option file 
+reference</p>
+<ul>
+  <li>-@[=]PrefixName this will over-ride auto prefix calculation. It is useful 
+  when packing bis binarise's temp files.</li>
+</ul>
+<p>Compress files (see below)</p>
+<ul>
+  <li>-Z[=]default. Use internally decided files to compress which depend on 
+  context of pbo type</li>
+  <li>-Z[=]&quot;Comma,Separated,List</li>
+  <li>-Z[=]file[.lst|.txt|&lt;.ext&gt;]<p>[.lst|.txt|&lt;.ext&gt;]&nbsp; can be either of 
+  the defaults, or an explicit extension</p>
+  </li>
+</ul>
+<p>Exclude files (see below)</p>
+<ul>
+  <li>-X[=]none exclude nothing</li>
+  <li>-X[=]Comma,Separated,Exclude,List</li>
+  <li>-X[=]ExcludeList[.lst|.txt|&lt;.ext&gt;] </li>
+  <li>&nbsp;</li>
+</ul>
+<p><b>EXTERNAL REFERENCES</b></p>
+<p>-G Check external references </p>
+<p>This&nbsp; checks that file\references in <b>any</b> file of the pbo that 
+could contain them are present on the p: drive. Any file means p3d's, wrps', 
+rvmats, mission.sqm, sqf, configs....</p>
+<p>This is a 
+confidence check that you haven't created typos. For map making it is almost 
+essential that you use this option.</p>
+<p><b>SHA/CRC SIGNATURES</b></p>
+<p>sha key signatures (Arma) or crc checks (elite) are automatically appended to 
+end of file. <b>when appropriate</b></p>
+<hr>
+<p>&nbsp;</p>
+<hr>
+<font FACE="Consolas" SIZE="2">
+<p><b>PBO PREFIX: <u>This section does not apply to ofp.</u></b></p>
+<p><b>Prefixes apply to addons, not mission or campaign pbo's. if 
+mission/campaign pbos have prefixes, they are ignored by the engine. Be careful 
+with this terminology. An addon, can contain missions.</b></p>
+<p>Either a genuine prefix or a presumed prefix is embedded in the header of all 
+addons.</p>
+<p>A prefix will be embedded in a pbo by makepbo under the following cascading rules:</p>
+<ul>
+  <li>Irrespective, no matter what, neither an ofp pbo or ANY 'mission' pbo will  
+  have a prefix.<p>A 'mission' pbo is defined as one without a config.cpp AND has a mission.sqm 
+  (mission ADDONS have config.cpp's)</p>
+  <p>&nbsp;</li>
+  <li>The -$ option will prevent a prefix under special conditions. See 
+  below.</li>
+  <li>The prefix is preset by prefix= in the
+<font FACE="Consolas" SIZE="2">
+  <b>$PBOPREFIX$.txt </b>adjacent to the config.cpp</font></li>
+  <li>The -@= option determines the prefix.</li>
+  <li>The dll determines the prefix based on the input\folder\name. </li>
+</ul>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; makepbo any\where\fred -&gt;prefix = any\where\fred</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; makepbo fred -&gt;prefix=fred</p>
+<ul>
+  <li>-$ option (not recommended)</li>
+</ul>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bis arma engines allow for a pbo without a prefix to assume a prefix of the 
+name of the pbo.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If and only if </p>
+<blockquote>
+  <ol>
+    <li>the pbo is an arma family addon (mission pbo's do not have prefixes)</li>
+    <li>the resulting prefix name is a unitary file Ie p:\fred (not a 
+p:\somewhere\fred),</li>
+    <li>the resulting unitary file name IS the output filename</li>
+    <li>the -$ option is specified, </li>
+  </ol>
+</blockquote>
+<p></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; THEN no prefix will be written. (Otherwise the option is ignored).</p>
+<p><b>CAUTION: '$PBOPREFIX$' and 'PboPrefix.txt'&nbsp;'$PBOPREFIX$.txt'</b></p>
+<p>These are the unfortunate historical names for adjusting the header of a pbo. </p>
+<p>The dll adds additional lines to the pbo header using one of the above files. 
+The file itself is <b>never</b> included in a pbo.</p>
+<p>&nbsp;&nbsp;&nbsp; variable=value;</p>
+<p>The most notable use of above is to specifically state THIS pbo's intended 
+engine</p>
+<p>&nbsp;&nbsp;&nbsp; Product=Arma3;</p>
+<p>&nbsp;&nbsp;&nbsp; author=I am Famous;</p>
+</font><hr>
+</font><font FACE="Consolas" SIZE="2">
+<p>
+
+<font face="Arial">
+<b>Compression</b></font></p>
+<p>compression (and obfuscation) is disabled if you pack unbinarised p3d's.</p>
+<p>Any pbo can be compressed for ANY engine. Since many low grade pbo extractors 
+'out there' don't understand compression, this can be used as a mild form of 
+obfuscation.</p>
+<p>The results of compressing <b>mission</b> pbos can achieve better than 75% reduction 
+in payload.</p>
+<p>For addons, the results are less spectacular (between 5..10%) because pax's 
+(which form the majority of files in an addon) are generally the largest in size 
+and are (mostly) pre-compressed anyway.</p>
+<ul>
+  <li>under no circumstances will the dll compress init*.sqs or sqf</li>
+  <li>the dll will not compress a file who's result would be larger</li>
+</ul>
+<p>Obfuscation automatically implies compression. If no specific compression is 
+specified, it will use the defaults.</p>
+<p><b>syntax: </b> </p>
+</font><font FACE="Arial" SIZE="2">
+<p>Default is no compression. (no -z option)</p>
+</font><font FACE="Consolas" SIZE="2"><font FACE="Arial" SIZE="2">
+<p></p>
+<p></p>
+</font>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<font FACE="Arial" SIZE="2">
+<p>MakePbo -Z=&quot;Comma,Separated,<b>Ignore</b>,List&quot; [ otheroptions...] folder....</p>
+<p>MakePbo -Z=<b>Ignore</b>List[&lt;.ext&gt;|.lst|.txt] [ otheroptions...] folder....</p>
+</font>
+<p><font FACE="Arial" SIZE="2">Makpbo -Z=default&nbsp;&nbsp;&nbsp; // use the 
+dll's internal context-algorithm</font></p>
+<p>The 1st method uses parameters directly from the command line. This list MUST 
+be enclosed in quotes. (if ,,, or spaced args)</p>
+<p>The 2nd method utilises (an often common) ignore list. The content of which 
+should be same as a command line entry (obviously), except quotes in this case 
+are optional.</p>
+<p>.lst or .txt extension is optional for the 2nd method. You can alternatively 
+specify a different .extension</p>
+<p>compression will only occur to each 'file' if resulting output is smaller 
+that original.</p>
+<p>YOU MUST SPECIFY A LIST if using the Z option</p>
+<p>If you want DEFAULT files to be compressed use  &quot;default&quot;</p>
+<p>If you want no files to be compressed, don't specify Z !!!</p>
+<p>&nbsp;</p>
+<p>At time of writing the doc, the dll defaults to ignore are</p>
+<p><font FACE="Consolas" SIZE="2" COLOR="#a31515">&quot;thumbs.db,*.txt,*.h,*.dep,*.cpp,*.bak,*.png,*.log,*.pew, 
+*.hpp, init*.*&quot;</font></p>
+<p>to get the ignore list actually used, look in setup-&gt; of pboProject</p>
+<p>if you want ALL files compressed use &quot;all&quot; (the dll will not 'see' .all 
+extensions, and hence compress all files)</p>
+<p>However, note that, under no circumstances will the dll compress a file to 
+make it LARGER.</p>
+<p>This frequently occurs for pax files. The result is, that pax will be stored 
+untouched.</p>
+<p>&quot;Comma, Separated, .Ignore, *.List&quot;</p>
+<p>The format is pretty much free form. Spacing between args is permitted any of 
+the following forms are mutually equivalent.</p>
+<p>Dos wildcard extensions are used. Allowing you to set explicit files, explict 
+extensions and part named files or extensions</p>
+<p>*.ogg</p>
+<p>.ogg</p>
+<p>ogg</p>
+<p>*.sq*&nbsp; any sqf or sqs file</p>
+<p>Note that compression can take considerable time to achieve. It is 'safe' 
+however to simply allow the dll to attempt to compress it's internal, default, 
+file list.</p>
+<p><b>NOTE for vbs2</b></p>
+<p>encrypted AND compressed files *cannot* co-exist. If compression is 
+specified, the pbo is encrypted along with any uncompressed files. The 
+compressed files (if any) remain unencrypted.</p>
+<hr>
+<p>&nbsp;</p>
+<font face="Arial">
+<p><b>===Optional destination===</b></p>
+<p>can take several forms</p>
+<blockquote>
+<p>*MakePbo [MyPath\]MyAddon&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+// -&gt;output to [MyPath\]MyAddon.pbo</p>
+<p>MakePbo [MyPath\]MyAddon ThisAddon
+<font face="Arial" SIZE="2">
+&nbsp;&nbsp;&nbsp; //
+</font>
+-&gt;output to CurrentDir\ThisAddon.pbo</p>
+<p>*MakePbo [MyPath\]MyAddon ThisAddon\&nbsp;&nbsp;&nbsp;
+<font face="Arial" SIZE="2">
+//
+</font>
+&nbsp;-&gt;output to CurrentDir\ThisAddon\MyAddon.pbo</p>
+<p>MakePbo [MyPath\]MyAddon ThisAddon\ThisPbo
+<font face="Arial" SIZE="2">
+//
+</font>
+-&gt;output to CurrentDir\ThisAddon\ThisPbo.pbo</p>
+<p>MakePbo [MyPath\]MyAddon \ThisAddon
+<font face="Arial" SIZE="2">
+//
+</font>
+-&gt;output to \ThisAddon.pbo</p>
+<p>*MakePbo [MyPath\]MyAddon \ThisAddon\ 
+<font face="Arial" SIZE="2">
+//
+</font>
+-&gt;output to \ThisAddon\MyAddon.pbo</p>
+<p>MakePbo [MyPath\]MyAddon \ThisAddon\ThisPbo
+<font face="Arial" SIZE="2">
+//
+</font>
+-&gt;output to \ThisAddon\ThisPbo.pbo</p>
+</blockquote>
+<p>Note that, under ALL circumstances, if 'ThisAddon' happens to be the name of 
+a folder, it is equivalent to stating 'ThisAddon\'</p>
+<p>Note: extension type is not required and has consequence for users specifying 
+an XBO target but, in fact, the dll discovers it's a vbs2 lite mission.</p>
+<p>under that, special, unique circumstance, the intended.xbo is renamed to .pbo 
+(a vbs 2 lite quirk)</p>
+<p>*MyAddon is subject to pboname.h. see versioning readme</p>
+<hr>
+<p><b>
+<font face="Arial" SIZE="2">
+PBO OUTPUT NAME
+</font>
+</b></p>
+<p>be aware that the name of the pbo is irrelevant to the engine. it can be 
+called 'spaghetti' for all that it matters.</p>
+<p>the rules are as follows</p>
+<p>'standard' behaviour is to place an NameOf.pbo in the parent folder of 
+where\ever\NameOf Folder.</p>
+<p>example:</p>
+<p>makepbo any\where\<b><font face="Arial" SIZE="2">elephants</font></b>//-&gt; any\where\<b><font face="Arial" SIZE="2">elephants</font></b>.pbo</p>
+<p>makepbo <b>
+<font face="Arial" SIZE="2">
+elephants</font></b>//-&gt; <b>
+<font face="Arial" SIZE="2">
+elephants</font></b>.pbo</p>
+<p>==specifying output==</p>
+<p>makepbo some\<font face="Arial" SIZE="2"><b>elephants</b>
+</font>
+any\where -&gt;any\where\<b><font face="Arial" SIZE="2">elephants</font></b>.pbo</p>
+<p>makepbo some\<b>oranges</b><font face="Arial" SIZE="2">
+</font>
+any\where\<b>elephants</b>.pbo -&gt; any\where\<b><font face="Arial" SIZE="2">elephants</font></b>.pbo</p>
+<p>NOTE THAT</p>
+<p>drives: and or \root\path specifications are as equally valid as relative 
+addressing</p>
+</font>
+<p>&nbsp;</p>
+</font><hr>
+<p><b>-X PBO EXCLUSIONS ignored if&nbsp; -N wyswig</b><br>
+<br>
+Rules:<br>
+<br>
+In order of precedence:<br>
+<br>
+1) under no circumstances are (dot)xxx folders examined or included. They are what 
+their intention is :- Hidden<br>
+<br>
+2) Option -N (No rapify, no binarise, no nada) is the wyswig option. No files 
+are ignored, no files are examined, no files are checked. What you see is truly 
+what you get.<br>
+<br>
+3) config.cpp<br>
+<br>
+It is very normal to exclude *.cpp *.h and *.hpp. After binarisation, they have 
+done their job. The best way of including them in a pbo, is to simply not Rapify, 
+(option -wysywig)<br>
+<br>
+EVEN IF *.cpp is specified to be excluded, a config.cpp file (and any of it's 
+#includes) are special in that they will binarised to .bin and thus not actually 
+ignored. Not included, but not ignored.<br>
+<br>
+4) If nothing is specified on the command line, the default exclusions are:<br>
+&nbsp;</p>
+<ul>
+  <li>(dot)folder +</li>
+  <li>thumbs.db,*.txt,*.h,*.dep,*.cpp,*.bak,*.png,*.log,*.pew, *.hpp<br>
+&nbsp;</li>
+</ul>
+<p>
+This default list is likely to change in the future as bis keep moving 
+goalposts.</p>
+<p>
+<br>
+There is an unfortunate but popular use of hpp files as included sqf files. Bis 
+in their wisdom call files not intended to be in the pbo, (dot)hpp. To 
+accommodate users of popular and well respected addons such as cba use the 
+following syntax</p>
+<p>
+-X=thumbs.db,*.txt,*.h,*.dep,*.cpp,*.bak,*.png,*.log,*.pew<br>
+<br>
+Command line options<br>
+<br>
+-X= none<br>
+<br>
+&nbsp;&nbsp;&nbsp;
+NOTHING will be excluded<br>
+<br>
+-X=&quot;comma,separated,list&quot;<br>
+&nbsp;&nbsp;&nbsp;
+When more than one file type is excluded, eg, commas, the list must be specified 
+between quotes. Spacing is permitted.<br>
+<br>
+-X= An\Exclude\File\Somewhere[.lst|.txt]<br>
+<br>
+&nbsp;</p>
+<hr>
+<p><br>
+<b><font size="5">Obfuscation. the -! option</font></b></p>
+
+<p><u>Obfuscation is <b>not</b> encryption.</u></p>
+
+<p>Obfuscation has been introduced to protect people from thievery with arma3 
+life servers (among others). The weak spot in encryption is once you crack the 
+key, the door is open. Obfuscation uses a different cipher (key) each time the 
+pbo is made. So, unlike encryption, the purpose is <b>not</b> to prevent 
+extraction but make it a frustrating experience to the thief.&nbsp; One of the 
+ciphers is to leave the door half open to let the thief think he's figured it 
+out (and embarrass himself by publishing a how to). That said, obfuscation <b>
+also</b> attempts to prevent extraction but only as it's first line of defence. </p>
+
+<p>The results range from very difficult to impossible to extract meaningful 
+files. The consequent data is either intentionally misleading,. deliberate 
+garbage, corrupted, 'apparently' corrupted, or simply missing (depends on the 
+cipher sequence employed at the time).</p>
+
+<p>ALL major players writing extractors (<u>including</u> bis) detect an 
+obfuscated pbo and refuse to continue.&nbsp; The intent behind this is to 
+protect the innocent who would otherwise have no indication that they are about 
+to flood their file system with hundreds x hundreds of garbage files. That's a 
+fair enough warning, and won't stop a thief from (hopefully) damaging his file 
+system if he persists.</p>
+
+<p>The dll uses a one time cipher each time a pbo is obfuscated. The same pbo 
+folder obfuscated again will produce a different result making any knowledge 
+gained extracting one pbo can't be applied to another one, even the same one, 
+republished.&nbsp; Obfuscated pbos are approximately 15% larger.</p>
+
+<p>In addition, obfuscated pbos automatically use compression so that plain text 
+data is not immediately visible in a hex editor. If you don't like the defaults, 
+change them with the -Z= option. The defaults for the current dll are visible in 
+the setup page of pboProject (as are files to be excluded).</p>
+<p>sqf files:</p>
+<p>Control of this process is in your hands. Be particularly wary of compressed 
+sqf files. Most can be. Some can't. </p>
+<ul>
+  <li><b>any </b>&nbsp;file invoked from init.sqf/sqs should not be compressed. 
+  This includes specific named hpp or h files.</li>
+  <li>nor any in a config.cpp EventHandler. </li>
+</ul>
+<p>Any easy, but not always practical method is to call any invoked file&nbsp; 
+initxxxxx.xxx. The dll will <b>not</b> compress init*.*</p>
+<p>Avoid the temptation to disallow compression for *.sqf. You are exposing your 
+text to the thieves when you do, Take the time and trouble to protect yourself.</p>
+<p>rvmat files</p>
+<p>all rvmats can be compressed (whether binarised or plain text) <b>except</b>&nbsp; 
+damage.rvmats used in a config.cpp. Not the cpp itself, that can be compressed, 
+the rvmat cannot. If you wonder why this stupidity, ask bis.</p>
+<p>What also enhances your protection is calling your files by very strange 
+names. Using Cyrillic rather than English is an excellent choice, so too are any 
+of the European characters, as are simply writing a089s3454.sqf (gibberish)</p>
+<p>The dll will mimic your gibberish. If you encode in Cyrillic, it will 
+obfuscate in Cyrillic, if you use numbers, it will use numbers. This makes 
+distinguishing garbage files from real ones an interesting exercise, let alone 
+hiding myGreatElephant.sqf so no one knows it's an elephant.</p>
+<p>&nbsp;</p>
+
+</body>
+
+</html>

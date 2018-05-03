@@ -1,0 +1,122 @@
+minimum dll is 6.xx
+1.93 credit torndeco
+	added -Ex option to only list the skelname (if any) to screen
+			useful when scanning entire folders
+1.92	(credit Q)
+	corrected faulty -P syntax if no file specified.
+
+1.91 
+	minor change for +fx to look for \ or / when dealing with P:\drives and \wrong\files
+	unknown reason for the -g option listing model.info badly. works now (credit kju)
+
+1.90
+fixed -G to list no geolod correctly (roads eg)
+1.89
+fixed crash on (some) mlod decoding
+1.88 
+geo properties:
+	fixed error with -Gname (didn't delete)
+	fixed error with -Gname= should not have deleted
+	dll internal: var=anything are now case sensitive 'Class' eg is changed to 'claSS' if thats what the customer wanted
+	'class', 'dammage' and 'dammage' all result in changes to p3d's header info as well
+	listing geo propertes ALSO lists damage and class in the p3dinfo header
+	'dammage' is now changed to 'damage' (part of +Fx)
+	
+1.87
+internal:
+	small correction to test output
+	added 8 byte header count to correct for wrong offset when compare fails
+	ensured multi session capability for testfiles
+
+1.86
+stated nObsolete flags in stderr not stdio
+some small tidy ups in code for converting p3ds to another type
+conversion is ignored for types <= to that wanted. particularly useful for folderscans
+
+
+1.85
+-W warnings are errors
+-R deprecated (remove obsolete flags) and merged with +FX
++FX enhanced to remove obsolete arma1 flags 
+	removes preceding \ or drive in filenames (as before)
+	removes trailing spaces in named selections and/or properties (new)
+
+1.84 made compat to dll
+1,83 made compat to dll wil improives sort algorithm
+1.82
+fixed sorting for -S
+added missing -LP[nn] to syntax message
+1.81
+improved file and section listings
+
+1.80made compat to dll
+improved output of listing named selections
+1.79
+
+internal:
+	'test' function fixed when .bin.p3d specfied
+
+general:
+
+	made more legible -G option syntax
+	added -F (list files or fix files)
+	corrected -pause if nothing but options specified on cmd line
+	now sorts named selections list
+
+1.78
+improved utf8 support
+now extracts skeletons as ascii/utf8 files rather than unicode
+1.76
+updated api in dll and made this exe compatible
+1.75
++Gname=thing allows geolod property changes (any p3d type)
+
+1.74:
+allowed folder scan for extracting skeletons. non odol, non skeleton, p3ds are ignored
+1.73 dll update
+allowed conversion of type68's
+
+1.72
+convert type to 58's
+added folderscan option so that folders and their children are scanned for p3d's >type58 and converted. all others are ignored
+
+1.71
+made compatible to dll
+1.70
+update to allow type 58 only p3d's to be converted back to type58
+1.69
+fixed bug in nsis installer to prevent potential dos environ path being cleared
+
+fixed a security leak printf(ptr) vs printf("%s",ptr);
+1.68
+made compat to dll
+1.67
+made compat to dll
+changed syntax blurb
+fixed -nn to accept only valid numbers
+removed extractmodelcfg.exe and extract rvmats from tools. dep3d is it's successor
+added free form argument list to accept files, folders or lists
+fixed error in listing named selections
+
+1.66
+displayed hidden option -S list sections (named selections)
+
+1.65
+added icon and filinfo
+addded self installer
+added -P dont pause
+1.64
+added -Backup option
+initially released to Q but i forget the reason
+
+1.63
+fixed -chain option to exit on error
+fixed -chain-tTest option
+
+1.61
+improved -t option a little more to improve error display
+
+enhanced -t option
+
+1.59 
+added chain and test option switches

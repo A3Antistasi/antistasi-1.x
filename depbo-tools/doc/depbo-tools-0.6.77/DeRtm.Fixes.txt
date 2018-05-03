@@ -1,0 +1,78 @@
+-----------------
+min dll is 6.69
+-----------------
+fixes
+1.79
+	credit cokkie
+	removed pivotsmodel for ofp3_manskeleton, it was rubbish
+	
+1.78 made compat to dll (rapify)
+removed HKLM from registry settings
+added dertm fileassociation and icon to rtm files
+1.77 
+1.76
+made compat to dll
+now removes residual temp rtm files for pbos
+fixed minor possibility of a fault causing the source file to be deleted
+this can happen when source == output
+
+1.75 improved utf8 encoding
+1.74
+made output file same as input. user responsibility to change it.
+
+only allowed headbone strip if debinarised. sth wrong with my bin code that causes a problem. too busy to fix it
+
+refreshed input file if sameAs out after debin
+
+
+
+
+1.73
+added new version2 binarised rtm
+1.72
+gui:
+fixed allow overwrites to prevent writing to input file...
+fixed drag n drop
+added rtm type to display
+dos:
+distinguished a2 versus a3 binary in header output
+
+1.71
+added more verbose information when verifying
+added oddball 'leftInHandRIng and RightInHandRing to strip bones
+
+1.70
+made compat to dll
+fixed temp file location for pbo strip headbones
+1.69
+	added pbos to scan
+	added conversion of a1 a2 bones to a3
+	complete change to -C option. the skeleton is specified as -c=
+	small possibility of bone search being succsesful when it wasn't (found not initialised)
+	allowed folder and standard over-writes
+	added -y (over-write) option
+	ignores attempted conversion of plain jane to plain jane
+	
+
+1.68
+improved folder scans
+enabled escape key for dos fodler scans
+now shows times
+
+1.67
+corrected bug where no skel was detected
+disabled debin if the selected file is not binarised to begin with.
+added correctly cased human model.cfg's for arma1,2 and 3 in documentation\* for this product
+
+1.66
+corrected spaced file arguments
+fixed 'memory ' of previous settings : show bones always showed bones aferwards
+
+1.65
+added un-implemented folder scan
+1.64
+fixed bug in nsis installer to prevent potential dos environ path being cleared
+next fixed registry
+1.63
+added -p nopause option
+fixed shrunk screen on first start

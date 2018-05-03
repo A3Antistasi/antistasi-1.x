@@ -1,0 +1,143 @@
+enum detection
+
+============================================
+The following applies to both OFP and ARMA
+============================================
+
+This document explains the restrictions and limitations when converting binary enums back to cpp.
+
+Essentialy, a binary contains a single 'assigned values' enum. An unbinarised cpp contains multiple, ordinal only, enums.
+
+
+----
+
+
+some very few config.bin's contain enums. Notably bin\config.bin and some resource config,bin's. Enums are necessary in BI wherever equivalent #defines will not be detected by the bis compiler, OR, case sensitivity is an issue, or used as a global runtime 'define'.
+
+#define SomeValue 99
+
+	SomeThing="SomeValue";
+
+Because "SomeValue" is enclosed in quotes, the compiler treats this as a literal string and macro substitution (the #define) is ignored.
+
+	SomeThing=SoMeVaLUE; // mixed case, no quotes
+
+Again, compilers do not detect this as a macro replacement.
+
+enum
+{
+	somevalue=99
+};
+
+
+the engine will replace "SomeValue" or SoMeVaLUE, with integer 99
+
+
+similarly, rather than have #include "MyCommonDefines" in every cpp that needs it, a global runtime define alias enum, can be used.  This ensures even if you enclose your label in quotes, or MisCasetyPeIT, it will still be found. It is a very effective method if you have inadvertently surrounded SomeValue "WithQuoutes"
+
+==========
+
+
+HOWEVER for bis, there are wrinkles <grin>
+
+standard c enumerations are
+
+enum
+{
+	one=1,
+	two=44,
+	three=18,
+        seven=44 // different name, same 'value' (44)
+};
+
+a binarised config (config.bin) contains the above syntax.
+
+the UNBINARISED (config.cpp)  can ONLY use ordinal enum declaration
+
+enum
+{
+	zero,one,two,three
+};
+
+where one =1, two=2, three =3, and so on
+
+for BI, if SomeValue needs to = 7 the enum declaration MUST be the following
+
+enum
+{
+	val0,val1,val2,val3,val4,val5,val6,SomeValue
+};
+
+It is assumed here that val0...val6 are also labels of some kind, getin,getout,disembark,pull_over.... etc. 
+
+In rare instances, there is no 'val2' eg. the correct syntax is
+
+enum
+{
+	val0,val1, ,val3,val4,val5,val6,SomeValue
+};
+
+Note this latter case confused both Kegetys and myself in early attempts to decode ofp *binary* enums. We misunderstood, that nonexistent label 'val2' still had to be assigned a value, to remain ordinal. Simple in hindsight, a bugger to decode.
+
+
+*because* only ordinal values can be declared in the enum, multiple enums are required when 'manactpos' eg needs to be the same value as 'getin' eg. In otherwords an enum for 'manactpos', and, a separate ordinal enum for 'getin'.
+
+thus
+
+enum
+{
+   A,B,C
+};
+enum
+{
+   D,E,F
+};
+
+in otherwords A=D==0, B=E==1 and C=F==2 because there is no other way in a cpp file to declare this
+
+(The binary file has no such restriction, it literally contains one single enum)
+
+enum
+{
+ A=0,C=2,E=1,F=2,B=1,D=0
+};
+
+
+NOTE that there is no certainty in a binarised enum where the various labels are. 'B' is simply in there somewhere. Where, exactly, isn't important because it has, an assigned value.
+
+when decoding binary to cpp, it is not possible to 'know' that A and B belong in the same cpp enum, the dll simply ensures that each enum it produces contains ordinal values.
+
+the nett result of that is that some of the manactpos enums will be scattered thru multiple enums rather than a single one.
+
+this has no ill effect if you subsequently use that cpp 'raw' in game, nor, if rebinarising, will it cause problems.
+
+if you find the output a litle strange (who wouldn't) simply create an ordered  manactpos enum by hand.
+
+
+===NOTE FOR ARMA===
+
+Armed assault *seems* to cope with assigned enums. Not verified.
+
+===="OrdinalEnums" for arma====
+
+as stated: binary enums can contain missing labels with only an ordinal value attached.
+
+when re-rapifying this enum structure from decoded text, the dll must know where, the missing, un-assigned label should go.
+
+for this reason, DeRap produces the label
+
+OrdinalEnum=6 // eg
+
+Rapify will simply create a blank entry in the binary (in this case at the 7th slot) wherever OrdinalEnum is encountered.
+
+
+,6
+
+
+
+
+Enjoy
+---------
+
+
+
