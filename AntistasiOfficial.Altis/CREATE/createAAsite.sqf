@@ -26,7 +26,7 @@ _objs = [_posCmp, 0, _cmp] call BIS_fnc_ObjectsMapper;
 	call {
 		if (typeOf _x == opSPAA) exitWith {_SPAA = _x; _allVehicles pushBack _x; _hasSPAA = true};
 		if (typeOf _x == opTruck) exitWith {_truck = _x; _allVehicles pushBack _truck};
-		if (typeOf _x in [statMG, statAT, statAA, statAA2, statMGlow, statMGtower]) exitWith {_statics pushBack _x};
+		if (typeOf _x in [statMG, statAT, statAA, statAA2, statMGlow, statMGtower]) exitWith {_statics pushBack _x; _allvehicles pushback _x};
 		//if (typeOf _x == statMortar) exitWith {_statics pushBack _x; [_x] execVM "scripts\UPSMON\MON_artillery_add.sqf"}; Stef removed mortar from Hilltop
 		if (typeOf _x == opCrate) exitWith {_crate = _x; _allVehicles pushBack _x};
 		if (typeOf _x == opFlag) exitWith {_allVehicles pushBack _x};
@@ -34,7 +34,7 @@ _objs = [_posCmp, 0, _cmp] call BIS_fnc_ObjectsMapper;
 } forEach _objs;
 
 _objs = _objs - [_truck];
-
+_objs = _objs - _statics;
 
 
 if (_hasSPAA) then {
@@ -83,7 +83,7 @@ _spawnGroup = {
 	_groupType = [_type, side_green] call AS_fnc_pickGroup;
 	_groupPatrol = [_posMarker, side_green, _groupType] call BIS_Fnc_spawnGroup;
 	sleep 1;
-	[_groupPatrol, _marker, "SAFE","SPAWNED","NOFOLLOW","NOVEH2"] execVM "scripts\UPSMON.sqf";
+	[_groupPatrol, _marker, "SAFE","SPAWNED","RANDOM","NOFOLLOW","NOVEH2"] execVM "scripts\UPSMON.sqf";
 	{[_x] spawn genInitBASES; _allSoldiers pushBack _x} forEach units _groupPatrol;
 	_allGroups pushBack _groupPatrol;
 };
@@ -102,8 +102,20 @@ _garrisonSize = count _allSoldiers;
 
 if (_hasSPAA) then {
 
-	waitUntil {sleep 1; (spawner getVariable _marker > 1) OR ((({alive _x} count _allSoldiers < (_garrisonSize / 3)) OR ({fleeing _x} count _allSoldiers == {alive _x} count _allSoldiers)) AND !(alive _SPAA) AND ({alive _x} count units _groupGunners == 0))};
-	if ((({alive _x} count _allSoldiers < (_garrisonSize / 3)) OR ({fleeing _x} count _allSoldiers == {alive _x} count _allSoldiers)) AND !(alive _SPAA) AND ({alive _x} count units _groupGunners == 0)) then {
+//Despawn conditions: Stef - theese need to be tweaked
+	waitUntil {sleep 1;
+	(spawner getVariable _marker > 1) OR
+		((
+			({alive _x} count _allSoldiers < (_garrisonSize / 3)) OR
+			({fleeing _x} count _allSoldiers == {alive _x} count _allSoldiers)) AND     //Not sure about theese
+			!(alive _SPAA) AND ({alive _x} count units _groupGunners == 0)
+			)
+		};
+
+	if (
+		(({alive _x} count _allSoldiers < (_garrisonSize / 3)) OR
+		({fleeing _x} count _allSoldiers == {alive _x} count _allSoldiers)) AND !(alive _SPAA) AND ({alive _x} count units _groupGunners == 0)
+	) then {
 		[-5,0,_posMarker] remoteExec ["AS_fnc_changeCitySupport",2];
 		[0,5] remoteExec ["prestige",2];
 		{["TaskSucceeded", ["", format [localize "STR_TSK_TD_AAWP_DESTROYED", A3_Str_RED]]] call BIS_fnc_showNotification} remoteExec ["call", 0];
@@ -117,7 +129,14 @@ if (_hasSPAA) then {
 		if (activeBE) then {["cl_loc"] remoteExec ["fnc_BE_XP", 2]};
 	};
 } else {
-	waitUntil {sleep 1; (spawner getVariable _marker > 1) OR ((count (allUnits select {((side _x == side_green) OR (side _x == side_red)) AND (_x distance _posMarker <= (_size max 100)) AND !(captive _x)}) == 0) AND ({alive _x} count units _groupGunners == 0))};
+	waitUntil {sleep 1; (spawner getVariable _marker > 1) OR
+		((count (allUnits select {
+			((side _x == side_green) OR
+			(side _x == side_red)) AND (_x distance _posMarker <= (_size max 100)) AND !(captive _x)
+		}) < 5) AND
+		({alive _x} count units _groupGunners == 0))
+	};
+
 	if (({alive _x} count _allSoldiers < (_garrisonSize / 3)) OR ({fleeing _x} count _allSoldiers == {alive _x} count _allSoldiers)) then {
 		[-5,0,_posMarker] remoteExec ["AS_fnc_changeCitySupport",2];
 		[0,5] remoteExec ["prestige",2];
