@@ -1,9 +1,5 @@
 version: 2
 
-test:
-  override:
-    - echo "test"
-
 jobs:
   build:
     docker:
@@ -11,15 +7,23 @@ jobs:
 
     steps:
       - checkout
-      - run: sudo chown -R circleci:circleci /usr/local/bin
-      - run: sudo chown -R circleci:circleci /usr/local/lib/python3.6/site-packages
       - run:
-          name: Install linter-sqf from LordGolias/sqf, thx !
+          name: Config for linter-sqf
           command: |
             set -e
-            sudo pip3 install --upgrade pip
-            sudo pip3 install sqflint
+            rm AntistasiOfficial.Altis/shitstef.sqf
+            ln -s ~/project/AntistasiOfficial.Altis/ addons
+
       - run:
-          name: Run sqflint on AntistasiOfficial.Altis folder
+          name: Run acemod config_validator, thx !
           command: |
-            sudo sqflint -d ./AntistasiOfficial.Altis
+            set -e
+            python bin/config_validator.py
+
+      - run:
+          name: Run acemod sqf_validator, thx !
+          command: |
+            set -e
+            python bin/sqf_validator.py
+
+      # check tools folder for more scripts from ace
