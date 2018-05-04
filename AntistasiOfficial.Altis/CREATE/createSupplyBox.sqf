@@ -132,9 +132,19 @@ else
 while {alive _crate AND (_marker in markerSupplyCrates)} do {
 
 	// wait until the player loads the crate or have the loaded crate in a city
-	waitUntil {sleep 5; !(isNull attachedTo _crate) OR !({(_crate distance (getmarkerpos _x) < 200)} count ciudades == 0) OR !(_marker in markerSupplyCrates)};
+	waitUntil {sleep 5;
+		!(isNull attachedTo _crate) OR
+		!({(_crate distance (getmarkerpos _x) < 200)} count ciudades == 0) OR
+		!(_marker in markerSupplyCrates)
+	};
+	markerSupplyCrate = markerSupplyCrates - [_marker];
+	publicVariable "markerSupplyCrates";
 	//wait until the player has the crate unloaded in a city
-	waitUntil {sleep 1; (isNull attachedTo _crate) AND !({(_crate distance (getmarkerpos _x) < 200) AND (isOnRoad (position _crate))} count ciudades == 0) OR !(_marker in markerSupplyCrates)};
+	waitUntil {sleep 1;
+		(isNull attachedTo _crate) AND
+		!({(_crate distance (getmarkerpos _x) < 200) AND (isOnRoad (position _crate))} count ciudades == 0) OR
+		!(_marker in markerSupplyCrates)
+	};
 	if(!(_marker in markerSupplyCrates)) exitWith {}; //Crate not longer active!
 	_currentCity = [ciudades, getPos _crate] call BIS_fnc_nearestPosition;
 	//Reveal all players in the surrounding of the crate to the enemies
