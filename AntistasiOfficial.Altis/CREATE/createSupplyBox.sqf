@@ -1,16 +1,17 @@
 if (!isServer and hasInterface) exitWith {};
 
 params ["_spawnPosition", "_crateType"];
-private ["_marker", "_crateType","_crateTypeBox","_cratedisplay", "_abort", "_allSheds","_selectedShed", "_posHQ", "_houseType"];
+private ["_marker", "_crateType","_crateTypeBox","_cratedisplay", "_abort", "_allSheds","_selectedShed", "_posHQ", "_houseType", "_currentCity"];
 
 //TODO Get away from hard coding the number of maximum crates!
-if(countSupplyCrates > 6) exitWith {diag_log format ["Could not create supply crate, max (%1) are already active", 6] ;};
+// why ?
+if (countSupplyCrates > 6) exitWith {
+    diag_log format ["Could not create supply crate, max (%1) are already active", 6] ;
+};
 
-countSupplyCrates;
-publicVariable "countSupplyCrates";
-systemchat format ["countSupplyCrates = %1",countSupplyCrates];
+countSupplyCrates = countSupplyCrates + 1;
 
-diag_log format ["ANTISTASI - Supplycrate, _type = %1, now creating",_crateType];
+diag_log format ["ANTISTASI - Supplycrate, _type = %1, now creating", _crateType];
 
 //Create abort condition if init is wrong
 _abort = false;
@@ -22,21 +23,21 @@ _posHQ = getMarkerPos guer_respawn;
 _houseType = "Land_i_Shed_Ind_F"; //<-- perhaps define this somewhere else
 switch (_crateType) do {
 	case "WATER": {_crateTypeBox = "Land_PaperBox_01_open_boxes_F";};
-	case "FUEL": 	{_crateTypeBox = "CargoNet_01_barrels_F";};
-	case "FOOD": 	{_crateTypeBox = "Land_PaperBox_01_open_boxes_F";};
+	case "FUEL": {_crateTypeBox = "CargoNet_01_barrels_F";};
+	case "FOOD": {_crateTypeBox = "Land_PaperBox_01_open_boxes_F";};
 	default {
 		diag_log format ["BAD REFERENCE AT SUPPLYBOX, passed %1, expected WATER, FUEL or FOOD", _crateType];
 		_abort = true;
 	};
 };
-if(_abort) exitWith
-{
-	countSupplyCrates;
+
+if (_abort) exitWith {
+    countSupplyCrates = countSupplyCrates - 1;
 	publicVariable "countSupplyCrates";
 };
 
 //Checking if given position is [], if yes search for new position
-if(count _spawnPosition == 0) then {
+if (count _spawnPosition == 0) then {
 	//Searching for all available warehouses in AO
 	_allSheds = nearestObjects [_posHQ, [_houseType], 4000, true];
 	sleep 1;
@@ -51,8 +52,7 @@ if(count _spawnPosition == 0) then {
 	diag_log format ["Createsupplybox _allSheds = %1,",_allSheds];
 	_selectedShed = selectRandom _allSheds;
 	_spawnPosition = position _selectedShed;
-
-//Search for a suitable postition
+	//Search for a suitable postition
 	while {
 		(count (
 			nearestObjects [_spawnPosition, ["Land_PaperBox_01_open_boxes_F", "Land_PaperBox_01_open_water_F", "CargoNet_01_barrels_F"], 300, true]
@@ -66,10 +66,10 @@ if(count _spawnPosition == 0) then {
 };
 
 //Abort if no position found
-if(_abort) exitWith
+if (_abort) exitWith
 {
 	diag_log "ANTISTASI - DynamicSupplies: No suitable position found around HQ for a supply crate";
-	countSupplyCrates;
+    countSupplyCrates = countSupplyCrates - 1;
 	publicVariable "countSupplyCrates";
 };
 
@@ -100,9 +100,9 @@ supplySaveArray pushBackUnique [_spawnPosition, _crateType];
 publicVariable "supplySaveArray";
 
 //Add spawning mechanics to the position
-spawner setVariable [_marker, 0, true]; //Activate when merged with new spawn system
+//Activate when merged with new spawn system (supply system refacto from wurzel)
+spawner setVariable [_marker, 0, true];
 //spawner setVariable [_marker, false, true];
-
 
 
 /*
@@ -111,14 +111,13 @@ spawner setVariable [_marker, 0, true]; //Activate when merged with new spawn sy
 	_counter: running timer
 */
 
-//waitUntil{sleep 1; ([300,1 ,_crate,"BLUFORSpawn"] call distanceUnits) OR ({_x distance2D _crate < 1000} count puestosFIA != 0)};
 //Reveal marker
 _marker setMarkerAlpha 1;
 if([300,1,_crate, "BLUFORSpawn"] call distanceUnits) then
 {
 	//Crate detected by player
 	{
-			["You detected an AAF supply crate near you!"] remoteExec ["hint",_x];
+		["You detected an AAF supply crate near you!"] remoteExec ["hint",_x];
 	} forEach ([300,0,_crate,"BLUFORSpawn"] call distanceUnits);
 }
 else
@@ -127,26 +126,31 @@ else
 	[[petros,"globalChat","Our watchposts have detected an AAF supply crate. Check your maps!"],"commsMP"] call BIS_fnc_MP;
 };
 
-[false,150,0] params ["_timerRunning","_deploymentTime","_counter"];
-//TODO rework marker
-while {alive _crate AND (_marker in markerSupplyCrates)} do {
+// DEBUG
+[false, 10, 0] params ["_timerRunning", "_deploymentTime", "_counter"];
 
-	// wait until the player loads the crate or have the loaded crate in a city
-	waitUntil {sleep 5;
-		!(isNull attachedTo _crate) OR
-		!({(_crate distance (getmarkerpos _x) < 200)} count ciudades == 0) OR
-		!(_marker in markerSupplyCrates)
+_isCrateUnloaded = false;
+while {alive _crate OR (_marker in markerSupplyCrates)} do {
+    sleep 1;
+
+	// wait until the player loads the crate
+	waitUntil {
+        sleep 1;
+		!(isNull attachedTo _crate)
 	};
-	markerSupplyCrate = markerSupplyCrates - [_marker];
-	publicVariable "markerSupplyCrates";
-	//wait until the player has the crate unloaded in a city
-	waitUntil {sleep 1;
+
+	// wait until the player have the unloaded crate in a city
+	waitUntil {
+        sleep 1;
 		(isNull attachedTo _crate) AND
-		!({(_crate distance (getmarkerpos _x) < 200) AND (isOnRoad (position _crate))} count ciudades == 0) OR
+		!({(_crate distance (getmarkerpos _x) < 200) AND
+		(isOnRoad (position _crate))} count ciudades == 0) OR
 		!(_marker in markerSupplyCrates)
 	};
-	if(!(_marker in markerSupplyCrates)) exitWith {}; //Crate not longer active!
-	_currentCity = [ciudades, getPos _crate] call BIS_fnc_nearestPosition;
+
+    // I don't understand how this can happend has we waitUntil just before and no other script manipulate markerSupplyCrates
+    // if(!(_marker in markerSupplyCrates)) exitWith {}; //Crate not longer active!
+
 	//Reveal all players in the surrounding of the crate to the enemies
 	{
 		_player = _x;
@@ -166,30 +170,37 @@ while {alive _crate AND (_marker in markerSupplyCrates)} do {
 
 	[position _crate] spawn AS_fnc_SpawnCiviGetSupplies;
 
-	{
 	//Send nearby civis to the crate
-    if ((side _x == civilian) and (_x distance _crate < 700)) then {_x doMove position _crate};
-	} forEach allUnits;
-
+	{ if ((side _x == civilian) and (_x distance _crate < 700)) then { _x doMove position _crate }; } forEach allUnits;
 
 	while {(alive _crate) AND (isNull attachedTo _crate)} do {
-
+        sleep 1;
 		// stop supplying when enemies get too close (100m)
-		while {(_counter < _deploymentTime) AND (alive _crate) AND (isNull attachedTo _crate) AND !({[_x] call AS_fnc_isUnconscious} count ([80,0,_crate,"BLUFORSpawn"] call distanceUnits) == count ([80,0,_crate,"BLUFORSpawn"] call distanceUnits)) AND !([100, 1,_crate, "OPFORspawn"] call distanceUnits)} do {
-
-			// start a progress bar
+		while {
+            sleep 1;
+			(_counter < _deploymentTime) AND
+			(alive _crate) AND
+			(isNull attachedTo _crate) AND
+			!({[_x] call AS_fnc_isUnconscious} count
+                ([80,0,_crate,"BLUFORSpawn"] call distanceUnits) == count
+                ([80,0,_crate,"BLUFORSpawn"] call distanceUnits)) AND
+			!([100, 1,_crate, "OPFORspawn"] call distanceUnits)
+        }
+        do
+		{
+			// start progress bar
 			if !(_timerRunning) then {
 				{
 					if (isPlayer _x) then
 					{
 						[(_deploymentTime - _counter),false] remoteExec ["pBarMP",_x];
 						}
-				}forEach ([80,0,_crate,"BLUFORSpawn"] call distanceUnits);
+				} forEach ([80,0,_crate,"BLUFORSpawn"] call distanceUnits);
 				_timerRunning = true;
 				[petros,"globalChat","Guard the crate!"] remoteExec ["commsMP"];
 			};
 			_counter = _counter + 1;
-  			sleep 1;
+
 		};
 
 		// if unloading wasnt finished, reset
@@ -197,16 +208,14 @@ while {alive _crate AND (_marker in markerSupplyCrates)} do {
 			_counter = 0;
 			_timerRunning = false;
 			{
-				if (isPlayer _x) then
-				{
+				if (isPlayer _x) then {
 					[0,true] remoteExec ["pBarMP",_x]
 				}
 			} forEach ([100,0,_crate,"BLUFORSpawn"] call distanceUnits);
 
 			if ((!([80,1,_crate,"BLUFORSpawn"] call distanceUnits) OR ([100, 1, _crate, "OPFORspawn"] call distanceUnits)) AND (alive _crate)) then {
 				{
-					if (isPlayer _x) then
-					{
+					if (isPlayer _x) then {
 						[petros,"hint","Stay near the crate, keep the perimeter clear of hostiles."] remoteExec ["commsMP",_x]
 					}
 				} forEach ([150,0,_crate,"BLUFORSpawn"] call distanceUnits);
@@ -215,18 +224,20 @@ while {alive _crate AND (_marker in markerSupplyCrates)} do {
 			waitUntil {sleep 1; (!alive _crate) OR (([80,1,_crate,"BLUFORSpawn"] call distanceUnits) AND !([100, 1, _crate, "OPFORspawn"] call distanceUnits))};
 		};
 
-		// if unloading was finished,  escape to the outer loop
+		// if unloading was finished
 		if (!(_counter < _deploymentTime)) exitWith {
-			//You won this mission
+			// delete the map marker
+			deleteMarker _marker;
+			_currentCity = [ciudades, getPos _crate] call BIS_fnc_nearestPosition;
+			_isCrateUnloaded = true;
 		};
-		sleep 1;
 	};
-	sleep 1;
+	if (_isCrateUnloaded) exitWith {};
 };
 
-if ((alive _crate) AND (_marker in markerSupplyCrates)) then {
-	diag_log format ["createsupplybox _type = %1",_type];
-	systemchat format ["createsupplybox _type = %1",_type];
+
+if ((alive _crate) AND (_marker in markerSupplyCrates) AND _isCrateUnloaded) then {
+	systemchat format ["_currentCity = %1",_currentCity];
 	[_crateType, 1, _currentCity] remoteExec ["AS_fnc_changeCitySupply", 2];
 	[5,0] remoteExec ["prestige",2];
 	{if (_x distance _crate < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
@@ -235,7 +246,6 @@ if ((alive _crate) AND (_marker in markerSupplyCrates)) then {
 	if (activeBE) then {
 		["mis"] remoteExec ["fnc_BE_XP", 2];
 	};
-	// BE module
 };
 //Disable respawn mechanics
 spawner setVariable [_marker, nil, true];
@@ -244,7 +254,10 @@ markerSupplyCrates = markerSupplyCrates - [_marker];
 publicVariable "markerSupplyCrates";
 supplySaveArray = supplySaveArray - [[_spawnPosition, _crateType]];
 publicVariable "supplySaveArray";
+countSupplyCrates = countSupplyCrates - 1;
+publicVariable "countSupplyCrates";
 
-
+systemchat format ["markerSupplyCrates END %1", markerSupplyCrates];
+systemchat format ["countSupplyCrates END = %1", countSupplyCrates];
 waitUntil {sleep 5; !([distanciaSPWN,1,_crate,"BLUFORSpawn"] call distanceUnits) OR (_crate distance (getMarkerPos guer_respawn) < 60)};
 deleteVehicle _crate;

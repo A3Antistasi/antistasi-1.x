@@ -17,7 +17,6 @@ _cmpInfo = [_marker] call AS_fnc_selectCMPData;
 _posCmp = _cmpInfo select 0;
 _cmp = _cmpInfo select 1;
 
-
 if(spawner getVariable _marker == 0) then {sleep 2;}; //This should give the AA defense enough time to despawn their SPAA if active
 
 //Create composition
@@ -111,9 +110,22 @@ _garrisonSize = count _allSoldiers;
 	_OneThirdGarrison = {alive _x} count _allSoldiers < (_garrisonSize / 3);
 	_AssetDestroyed = !(alive _SPAA) AND ({alive _x} count units _groupGunners == 0);
 	_MarkerNotFullSpawned = (spawner getVariable _marker > 1);
-	_RemainingEnemies = (count (allUnits select {((side _x == side_green) OR (side _x == side_red)) AND (_x distance _posMarker <= (_size max 100)) AND !(captive _x);
+	_RemainingEnemies = (
+        count (
+            allUnits select {
+                ( (side _x == side_green) OR (side _x == side_red) ) AND
+                ( _x distance _posMarker <= (_size max 100) ) AND
+                !(captive _x)
+            }
+        )
+    );
 
-	if (_hasSPAA) then { waitUntil {sleep 1; _MarkerNotFullSpawned OR (_OneThirdGarrison OR _AssetDestroyed)};
+	if (_hasSPAA) then {
+        waitUntil {
+            sleep 1;
+            _MarkerNotFullSpawned OR
+            (_OneThirdGarrison OR _AssetDestroyed)
+        };
 
 	if (_OneThirdGarrison OR _AssetDestroyed) then {
 		[-5,0,_posMarker] remoteExec ["AS_fnc_changeCitySupport",2];

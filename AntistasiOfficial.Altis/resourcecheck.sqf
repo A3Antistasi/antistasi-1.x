@@ -270,5 +270,6 @@ while {true} do {
 	diag_log "resourcecheck.sqf: calling FIAradio";
 	[] call AS_fnc_FIAradio;
 
+	systemchat format ["markerSupplyCrates %1", markerSupplyCrates];
 	if (_oneIteration) exitWith {};
 };
