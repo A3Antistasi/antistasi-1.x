@@ -16,7 +16,7 @@ for "_i" from 0 to 2 do
 {
 	_level = _supplyLevels select _i;
 	_indexLevel = _tiers find _level;
-	if(_indexLevel >= _indexThreshold) then {_result pushBackUnique _level};
+	if(_indexLevel >= _indexThreshold) then {_result pushBackUnique (["FOOD", "WATER", "FUEL"] select _i)};
 };
 
 diag_log format ["_result = %1",_result];
