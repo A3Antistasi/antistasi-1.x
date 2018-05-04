@@ -154,8 +154,9 @@ while {alive _crate AND (_marker in markerSupplyCrates)} do {
 		} forEach allUnits;
 	} forEach ([300,0,_crate,"BLUFORSpawn"] call distanceUnits);
 
-	{
+	[position _crate] spawn AS_fnc_SpawnCiviGetSupplies;
 
+	{
 	//Send nearby civis to the crate
     if ((side _x == civilian) and (_x distance _crate < 700)) then {_x doMove position _crate};
 	} forEach allUnits;
