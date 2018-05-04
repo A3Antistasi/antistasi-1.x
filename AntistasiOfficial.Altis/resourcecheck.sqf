@@ -164,12 +164,14 @@ while {true} do {
 			{
 				_cityDecreased = true;
 				_type = selectRandom _types;
+				diag_log format ["resourcecheck _type = %1",_type];
+				systemchat format ["resourcecheck _type = %1",_type];
 				[_type, -1, _currentCity] spawn AS_fnc_changeCitySupply;
 				_type = selectRandom _types;
 
 			};
 		};
-		[[], selectRandom["FOOD", "WATER", "FUEL"]] remoteExec ["createSupplyBox", call AS_fnc_getNextWorker];
+		[[], [selectRandom["FOOD", "WATER", "FUEL"]]] remoteExec ["createSupplyBox", call AS_fnc_getNextWorker];
 	};
 
 
