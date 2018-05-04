@@ -1,62 +1,77 @@
-//Blu NATO vehicles
-	bluHeliTrans = 		["B_Heli_Transport_03_F"];
-	bluHeliTS = 		["B_Heli_Light_01_F"];
-	bluHeliDis = 		["B_Heli_Transport_01_camo_F"];
-	bluHeliRope = 		["B_Heli_Transport_03_F"];
-	bluHeliArmed = 		["B_Heli_Light_01_armed_F"];
-	bluHeliGunship = 	["B_Heli_Attack_01_F"];
-	bluCASFW = 			["B_Plane_CAS_01_F"];
+//Aircrafts				//Class id									//.sqf presence and selection
 
-	bluAS = 			[""];
-	bluC130 = 			[""];
+	bluHeliTrans = 		["B_Heli_Transport_03_F"];					// None
+	bluHeliTS = 		["B_Heli_Light_01_F"];						// \Create\NATOCA.sqf landing helo. - \AI\puertasLand.sqf
+	bluHeliDis = 		["B_Heli_Transport_01_camo_F"];				// \Create\NATOCA.sqf land or fastrope or paradrop -  \AI\puertasLand.sqf -  \Missions\NATOAmmo.sqf drop the resupply
+	bluHeliRope = 		["B_Heli_Transport_03_F"];					// \Create\NATOCA.sqf land or fastrope - \AI\puertasLand.sqf
+	bluHeliArmed = 		["B_Heli_Light_01_armed_F"];				// \CREATE\NATOQRF.sqf - \REINF\NATOCAS.sqf
+	bluHeliGunship = 	["B_Heli_Attack_01_F"];						// \REINF\NATOCAS.sqf selectrandom
+	bluCASFW = 			["B_Plane_CAS_01_F"];						// \AI\airstrike.sqf selectrandom
 
-	bluUAV = 			["B_UAV_02_F"];
+	bluUAV = 			["B_UAV_02_F"];								// \REINF\NATOUAV.sqf
 
-	planesNATO = bluHeliTrans + bluHeliArmed + bluHeliGunship + bluCASFW;
-	planesNATOTrans = bluHeliTrans;
+	//Categories
+	planesNATOTrans = bluHeliTrans;									// \Create\NATOCA.sqf selectrandom
+	planesNATO = bluHeliTrans + bluHeliArmed + bluHeliGunship + bluCASFW + bluHeliTS + bluHeliDis, bluHeliRope;	//All Air Assets
 
+//Groundvehicles		//Class id									//.sqf presence
+	bluMBT = 			["B_MBT_01_cannon_F","B_MBT_01_TUSK_F"];	// \CREATE\NATOArmor.sqf selectrandom
+	bluAPC = 			["B_APC_Wheeled_01_cannon_F"];				// \REINF\NATORoadblock.sqf select 0 (APC to move to RB point) - \Compositions\cmpNATO_RB.sqf select 0 (APC stationary at RB)
+	bluIFV = 			["B_APC_Tracked_01_rcws_F"];				//	None
+	bluIFVAA = 			["B_APC_Tracked_01_AA_F"];					//	None
 
-	bluMBT = 		["B_MBT_01_cannon_F","B_MBT_01_TUSK_F"];
-	bluAPC = 		["B_APC_Wheeled_01_cannon_F"];
-	bluIFV = 		["B_APC_Tracked_01_rcws_F"];
-	bluIFVAA = 		["B_APC_Tracked_01_AA_F"];
-	bluArty = 		["B_MBT_01_arty_F"]; bluArtyAmmoHE = "32Rnd_155mm_Mo_shells"; bluArtyAmmoLaser = "2Rnd_155mm_Mo_LG"; bluArtyAmmoSmoke = "2Rnd_155mm_Mo_LG";
-	bluMLRS = 		["B_MBT_01_mlrs_F"];
-	bluMRAP =		["B_MRAP_01_F"];
-	bluMRAPHMG =	["B_MRAP_01_hmg_F"];
-	bluTruckTP = 	["B_Truck_01_covered_F"];
-	bluTruckMed = 	["B_Truck_01_medical_F"];
-	bluTruckFuel = 	["B_Truck_01_fuel_F"];
+	bluArty = 			["B_MBT_01_arty_F"]; 						// \REINF\NATOArty.sqf selectrandom
+	bluMLRS = 			["B_MBT_01_mlrs_F"];						// \REINF\NATOArty.sqf selectrandom
+		bluArtyAmmoHE = "32Rnd_155mm_Mo_shells";
+		bluArtyAmmoLaser = "2Rnd_155mm_Mo_LG";
+		bluArtyAmmoSmoke = "2Rnd_155mm_Mo_LG";
 
+	bluMRAP =			["B_MRAP_01_F"];							// \CREATE\NATOQRF.sqf one is select 0, two is selectrandom
+	bluMRAPHMG =		["B_MRAP_01_hmg_F"];						// \CREATE\NATOQRF.sqf select 0
+	bluTruckTP = 		["B_Truck_01_covered_F"];					// none
+	bluTruckMed = 		["B_Truck_01_medical_F"];					// none
+	bluTruckFuel = 		["B_Truck_01_fuel_F"];						// none
+
+	//Category
 	vehNATO = bluMBT + bluAPC + bluIFV + bluIFVAA + bluArty + bluMLRS + bluMRAP + bluMRAPHMG + bluTruckTP + bluTruckMed + bluTruckFuel;
 
+	bluStatAA = 	["B_static_AA_F"];								// \CREATE\createNATOpuesto.sqf selectrandom
+	bluStatAT = 	["B_static_AT_F"];								// none
+	bluStatHMG = 	["B_HMG_01_high_F"];							// \CREATE\createNATOpuesto.sqf selectrandom
+	bluStatMortar = ["B_G_Mortar_01_F"];							// \REINF\NATOArty.sqf selectrandom
 
-	bluStatAA = 	["B_static_AA_F"];
-	bluStatAT = 	["B_static_AT_F"];
-	bluStatHMG = 	["B_HMG_01_high_F"];
-	bluStatMortar = ["B_G_Mortar_01_F"];
-
-//Blu NATO units
+//Units					//Class id											//.sqf presence
 	bluCfgInf = (configfile >> "CfgGroups" >> "West" >> "BLU_F" >> "Infantry");
 
-	bluPilot = 	"B_Pilot_F";
-	bluCrew = 	"B_crew_F";
-	bluGunner = "B_support_MG_F";
+	bluPilot = 			"B_Pilot_F";										//
+	bluCrew = 			"B_crew_F";											// \CREATE\createNATOpuesto.sqf
+	bluGunner = 		"B_support_MG_F";									// \REINF\NATOArty.sqf
 
-	bluMRAPHMGgroup = 	["B_recon_LAT_F","B_Recon_Sharpshooter_F"];
-	bluMRAPgroup = 		["B_recon_medic_F","B_recon_F","B_recon_JTAC_F"];
+	bluMRAPHMGgroup = 	["B_recon_LAT_F","B_Recon_Sharpshooter_F"];			// \CREATE\NATOQRF.sqf foreach
+	bluMRAPgroup = 		["B_recon_medic_F","B_recon_F","B_recon_JTAC_F"];	// \CREATE\NATOQRF.sqf foreach
+	//Category
+	bluAirCav = 		["B_recon_TL_F","B_recon_LAT_F","B_Recon_Sharpshooter_F","B_recon_medic_F","B_recon_F","B_recon_JTAC_F"]; // \CREATE\NATOQRF.sqf foreach
 
-	bluAirCav = 	["B_recon_TL_F","B_recon_LAT_F","B_Recon_Sharpshooter_F","B_recon_medic_F","B_recon_F","B_recon_JTAC_F"];
 
+	bluSquad = 			["BUS_InfSquad"]; 				// 8 men			\CREATE\NATOCA.sqf call AS_fnc_pickGroup
+	bluSquadWeapons = 	["BUS_InfSquad_Weapons"];		// 8 men			\CREATE\NATOCA.sqf call AS_fnc_pickGroup
+	bluTeam = 			["BUS_InfTeam"];				// 4 men			\CREATE\NATOCA.sqf call AS_fnc_pickGroup
+	bluATTeam = 		["BUS_InfTeam_AT"]; 			// 4 men			\CREATE\createNATOpuesto.sqf call AS_fnc_pickGroup
 
-	bluSquad = 			["BUS_InfSquad"]; 				// 8 men
-	bluSquadWeapons = 	["BUS_InfSquad_Weapons"];		// 8 men
-	bluTeam = 			["BUS_InfTeam"];				// 4 men
-	bluATTeam = 		["BUS_InfTeam_AT"]; 			// 4 men
+	bluIR = 			"acc_pointer_IR";
 
-	bluIR = 	"acc_pointer_IR";
+//Vehicles to buy
+	blubuyTruck =			"B_Truck_01_covered_F";
+	blubuyAPC = 			"B_APC_Tracked_01_rcws_F";
+	blubuyMRAP = 			"B_MRAP_01_hmg_F";
 
-	bluFlag = 	"Flag_NATO_F";
+//Airfield vehicle (max1)
+	blubuyHeli = 			"B_Heli_Light_01_F";
+//Seaport vehicle
+	blubuyBoat = 			"B_Boat_Armed_01_minigun_F";
+//Special vehicle to buy (max 1)
+
+	blubuylist = [blubuyBoat,blubuyHeli,blubuyMRAP,blubuyAPC,blubuyTruck];
 
 //bluEquipment
 	bluSmallWpn = 	[					// select reference
@@ -83,7 +98,7 @@
 		"arifle_MX_GL_Black_F"
 	];
 
-	bluGLsmoke = [							// theese should be selected all, i don't know how to
+	bluGLsmoke = [								// foreach
 		"UGL_FlareGreen_F",
 		"UGL_FlareRed_F",
 		"1Rnd_SmokeRed_Grenade_shell",
@@ -174,6 +189,9 @@
 genGL = genGL + bluGL;
 genATLaunchers = genATLaunchers + bluAT;
 genAALaunchers = genAALaunchers + bluAA;
+
+// Flag
+bluFlag = 	"Flag_NATO_F";
 
 // Colour of this faction's markers
 BLUFOR_marker_colour = "ColorWEST";

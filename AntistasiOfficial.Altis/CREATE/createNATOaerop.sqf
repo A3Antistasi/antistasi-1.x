@@ -148,7 +148,7 @@ _statics = staticsToSave select {_x distance _markerPos < (_size max 50)};
 	_counter = 0;
 
 //FIA Garrison
-	while {(spawner getVariable _marker) AND (_counter < _strength)} do {
+	while {(spawner getVariable _marker < 2 ) AND (_counter < _strength)} do {
 		_unitType = _garrison select _counter;
 		call {
 			//Mortar
@@ -222,7 +222,7 @@ _statics = staticsToSave select {_x distance _markerPos < (_size max 50)};
 
 //Press Reporter
 	_observer = objNull;
-	if ((random 100 < (((server getVariable "prestigeNATO") + (server getVariable "prestigeCSAT"))/10)) AND (spawner getVariable _marker)) then {
+	if ((random 100 < (((server getVariable "prestigeNATO") + (server getVariable "prestigeCSAT"))/10)) AND (spawner getVariable _marker < 2)) then {
 		_spawnPos = [];
 		_group = createGroup civilian;
 		while {true} do {
@@ -240,23 +240,13 @@ _statics = staticsToSave select {_x distance _markerPos < (_size max 50)};
 	_flag = createVehicle [bluFlag, _spawnPos, [],0, "CAN_COLLIDE"];
 	_flag allowDamage false;
 	_allVehicles pushBack _flag;
-	[_flag,"unit"] remoteExec ["AS_fnc_addActionMP"];
-	[_flag,"vehicle"] remoteExec ["AS_fnc_addActionMP"];
-	_flag addAction [localize "str_act_mapInfo",
-		{
-			nul = [] execVM "cityinfo.sqf";
-		},
-		nil,
-		0,
-		false,
-		true,
-		"",
-		"(isPlayer _this) and (_this == _this getVariable ['owner',objNull])"
-	];
+	[_flag,"unit"] 	remoteExec ["AS_fnc_addActionMP"];
+	//[_flag,"buyNATO"] remoteExec ["AS_fnc_addActionMP"];
+	[_flag,"MapInfo"] remoteExec ["AS_fnc_addActionMP"];
 
 //Despawn conditions FIA
 	waitUntil {sleep 1;
-		!(spawner getVariable _marker) OR
+		(spawner getVariable _marker == 4) OR
 		(
 		 	( ({!(vehicle _x isKindOf "Air") OR (lifeState _x != "INCAPACITATED")} count (([_size,0,_markerPos,"OPFORSpawn"] call distanceUnits)))-1
 		 	) > 3*(
@@ -265,11 +255,11 @@ _statics = staticsToSave select {_x distance _markerPos < (_size max 50)};
 	};
 
 	//Loose condition
-		if (spawner getVariable _marker) then {
+		if (spawner getVariable _marker != 4) then {
 			if (_marker != "FIA_HQ") then {[_marker] remoteExec ["mrkLOOSE",2]};
 		};
 	//Despawn
-		waitUntil {sleep 1; !(spawner getVariable _marker)};
+		waitUntil {sleep 1; (spawner getVariable _marker == 4)};
 
 		{if ((!alive _x) AND !(_x in destroyedBuildings)) then {destroyedBuildings = destroyedBuildings + [position _x]; publicVariableServer "destroyedBuildings"}} forEach _buildings;
 

@@ -16,7 +16,7 @@ if (_vehicle isKindOf "Air") then {
 
 _vehicle addEventHandler ["killed", {
 	if (side (_this select 1) == side_blue) then {
-		[0,0] remoteExec ["prestige",2];
+		//[0,0] remoteExec ["prestige",2];
 		[-5,5,position (_this select 0)] remoteExec ["AS_fnc_changeCitySupport",2];
 		if (activeBE) then {["des_veh"] remoteExec ["fnc_BE_XP", 2]};
 	};

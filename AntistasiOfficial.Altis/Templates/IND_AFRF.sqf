@@ -116,6 +116,7 @@ infTeam = 			["rhs_group_rus_vdv_infantry_section_mg","rhs_group_rus_vdv_infantr
 infSquad = 			["rhs_group_rus_vdv_infantry_squad","rhs_group_rus_vdv_infantry_squad_2mg","rhs_group_rus_vdv_infantry_squad_sniper","rhs_group_rus_vdv_infantry_squad_mg_sniper"]; // squads, 8+ guys, for outposts, etc
 infAA =				["rhs_group_rus_vdv_infantry_section_AA"];
 infAT =				["rhs_group_rus_vdv_infantry_section_AT"];
+infAAdef =			["rhs_vdv_aa","rhs_vdv_aa"];
 
 // Statics to be used
 statMG = 			"rhs_DSHKM_ins";

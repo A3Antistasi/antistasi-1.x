@@ -45,7 +45,7 @@ _posBase = [];
 {
 	_base = _x;
 	_posBase = getMarkerPos _base;
-	if ((_targetLocation distance _posBase < 7500) and (_targetLocation distance _posBase > 1500) and (not (spawner getVariable _base))) then {_bases = _bases + [_base]}
+	if ( (_targetLocation distance _posBase < 7500) and (_targetLocation distance _posBase > 1500) and (spawner getVariable _base < 2) ) then {_bases = _bases + [_base]}
 } forEach _basesAAF;
 if (count _bases > 0) then {_base = [_bases, _targetLocation] call BIS_fnc_nearestPosition; _posBase = getMarkerPos _base;} else {_base = ""};
 
@@ -58,7 +58,7 @@ _posAirport = [];
 {
 	_airport = _x;
 	_posAirport = getMarkerPos _airport;
-	if ((_targetLocation distance _posAirport < 7500) and (_targetLocation distance _posAirport > 1500) and (not (spawner getVariable _airport))) then {_airports = _airports + [_airport]}
+	if ((_targetLocation distance _posAirport < 7500) and (_targetLocation distance _posAirport > 1500) and (spawner getVariable _airport < 2)) then {_airports = _airports + [_airport]}
 } forEach _airportsAAF;
 if (count _airports > 0) then {_airport = [_airports, _targetLocation] call BIS_fnc_nearestPosition; _posAirport = getMarkerPos _airport;} else {_airport = ""};
 
@@ -79,26 +79,23 @@ _triggerWave = {
 
     	// QRF, air, small
     	case "QRF_air_mixed_small": {
-   			if !(_airport == "") then {
+   		 if !(_airport == "") then {
    				[_airport, _targetLocation, _targetMarker, _duration, "mixed", "small"] remoteExec ["enemyQRF", call AS_fnc_getNextWorker];
-   			}
-   			else {
+   			} else {
    				["spawnCSAT", _targetLocation, _targetMarker, _duration, "transport", "small"] remoteExec ["enemyQRF", call AS_fnc_getNextWorker];
    			};
     	};
     	case "QRF_air_transport_small": {
    			if !(_airport == "") then {
    				[_airport, _targetLocation, _targetMarker, _duration, "transport", "small"] remoteExec ["enemyQRF", call AS_fnc_getNextWorker];
-   			}
-   			else {
+   			} else {
    				["spawnCSAT", _targetLocation, _targetMarker, _duration, "transport", "small"] remoteExec ["enemyQRF", call AS_fnc_getNextWorker];
    			};
     	};
     	case "QRF_air_destroy_small": {
    			if !(_airport == "") then {
    				[_airport, _targetLocation, _targetMarker, _duration, "destroy", "small"] remoteExec ["enemyQRF", call AS_fnc_getNextWorker];
-   			}
-   			else {
+   			} else {
    				["spawnCSAT", _targetLocation, _targetMarker, _duration, "transport", "small"] remoteExec ["enemyQRF", call AS_fnc_getNextWorker];
    			};
     	};
@@ -107,24 +104,21 @@ _triggerWave = {
       case "QRF_air_mixed_large": {
         if !(_airport == "") then {
           [_airport, _targetLocation, _targetMarker, _duration, "mixed", "large"] remoteExec ["enemyQRF", call AS_fnc_getNextWorker];
-        }
-        else {
+        } else {
           ["spawnCSAT", _targetLocation, _targetMarker, _duration, "transport", "large"] remoteExec ["enemyQRF", call AS_fnc_getNextWorker];
         };
       };
       case "QRF_air_transport_large": {
         if !(_airport == "") then {
           [_airport, _targetLocation, _targetMarker, _duration, "transport", "large"] remoteExec ["enemyQRF", call AS_fnc_getNextWorker];
-        }
-        else {
+        } else {
           ["spawnCSAT", _targetLocation, _targetMarker, _duration, "transport", "large"] remoteExec ["enemyQRF", call AS_fnc_getNextWorker];
         };
       };
       case "QRF_air_destroy_large": {
         if !(_airport == "") then {
           [_airport, _targetLocation, _targetMarker, _duration, "destroy", "large"] remoteExec ["enemyQRF", call AS_fnc_getNextWorker];
-        }
-        else {
+        } else {
           ["spawnCSAT", _targetLocation, _targetMarker, _duration, "transport", "large"] remoteExec ["enemyQRF", call AS_fnc_getNextWorker];
         };
       };
@@ -133,24 +127,21 @@ _triggerWave = {
     	case "QRF_land_mixed_small": {
    			if !(_base == "") then {
    				[_base, _targetLocation, _targetMarker, _duration, "mixed", "small"] remoteExec ["enemyQRF", call AS_fnc_getNextWorker];
-   			}
-   			else {
+   			} else {
    				["spawnCSAT", _targetLocation, _targetMarker, _duration, "transport", "small"] remoteExec ["enemyQRF", call AS_fnc_getNextWorker];
    			};
     	};
     	case "QRF_land_transport_small": {
    			if !(_base == "") then {
    				[_base, _targetLocation, _targetMarker, _duration, "transport", "small"] remoteExec ["enemyQRF", call AS_fnc_getNextWorker];
-   			}
-   			else {
+   			}else {
    				["spawnCSAT", _targetLocation, _targetMarker, _duration, "transport", "small"] remoteExec ["enemyQRF", call AS_fnc_getNextWorker];
    			};
     	};
     	case "QRF_land_destroy_small": {
    			if !(_base == "") then {
    				[_base, _targetLocation, _targetMarker, _duration, "destroy", "small"] remoteExec ["enemyQRF", call AS_fnc_getNextWorker];
-   			}
-   			else {
+   			} else {
    				["spawnCSAT", _targetLocation, _targetMarker, _duration, "transport", "small"] remoteExec ["enemyQRF", call AS_fnc_getNextWorker];
    			};
     	};
@@ -159,24 +150,21 @@ _triggerWave = {
       case "QRF_land_mixed_large": {
         if !(_base == "") then {
           [_base, _targetLocation, _targetMarker, _duration, "mixed", "large"] remoteExec ["enemyQRF", call AS_fnc_getNextWorker];
-        }
-        else {
+        } else {
           ["spawnCSAT", _targetLocation, _targetMarker, _duration, "transport", "large"] remoteExec ["enemyQRF", call AS_fnc_getNextWorker];
         };
       };
       case "QRF_land_transport_large": {
         if !(_base == "") then {
           [_base, _targetLocation, _targetMarker, _duration, "transport", "large"] remoteExec ["enemyQRF", call AS_fnc_getNextWorker];
-        }
-        else {
+        } else {
           ["spawnCSAT", _targetLocation, _targetMarker, _duration, "transport", "large"] remoteExec ["enemyQRF", call AS_fnc_getNextWorker];
         };
       };
       case "QRF_land_destroy_large": {
         if !(_base == "") then {
           [_base, _targetLocation, _targetMarker, _duration, "destroy", "large"] remoteExec ["enemyQRF", call AS_fnc_getNextWorker];
-        }
-        else {
+        } else {
           ["spawnCSAT", _targetLocation, _targetMarker, _duration, "transport", "large"] remoteExec ["enemyQRF", call AS_fnc_getNextWorker];
         };
       };

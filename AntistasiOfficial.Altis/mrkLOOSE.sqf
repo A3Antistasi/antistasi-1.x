@@ -47,7 +47,7 @@ _mrk setMarkerColor IND_marker_colour;
 		};
 	};
 	if (_marcador in power) then {
-		[0,0] remoteExec ["prestige",2];
+		//[0,0] remoteExec ["prestige",2];
 		_mrk setMarkerText localize "STR_GL_MAP_PP";
 		{["TaskFailed", ["", localize "STR_NTS_POWLOST"]] call BIS_fnc_showNotification} remoteExec ["call", 0];
 		[_marcador] spawn AS_fnc_powerReorg;
@@ -55,7 +55,7 @@ _mrk setMarkerColor IND_marker_colour;
 
 	if ((_marcador in recursos) or (_marcador in fabricas)) then {
 		[0,-8,_posicion] remoteExec ["AS_fnc_changeCitySupport",2];
-		[0,0] remoteExec ["prestige",2];
+		//[0,0] remoteExec ["prestige",2];
 		if (_marcador in recursos) then {
 			_mrk setMarkerText localize "STR_GL_MAP_RS";
 			{["TaskFailed", ["", localize "STR_NTS_RESLOST"]] call BIS_fnc_showNotification} remoteExec ["call", 0];
@@ -103,7 +103,7 @@ _size = [_marcador] call sizeMarker;
 
 //Reverting the owership in case of player manage to capture back.
 	waitUntil {sleep 1;
-		(not (spawner getVariable _marcador)) or
+		(spawner getVariable _marcador == 4) or
 		(({	(not(vehicle _x isKindOf "Air")) and
 		 	(alive _x) and
 		 	(lifeState _x != "INCAPACITATED")}
@@ -115,4 +115,4 @@ _size = [_marcador] call sizeMarker;
 		)
 	};
 
-	if (spawner getVariable _marcador) then{[_bandera] spawn mrkWIN;};
+	if (spawner getVariable _marcador != 4) then{[_bandera] spawn mrkWIN;};

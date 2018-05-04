@@ -1,14 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?><Project name="Antistasi">
+<?xml version="1.0" encoding="UTF-8"?>
+<Project name="Antistasi">
 	<Package name="MissionNames">
 		<Container name="MissionNames_0">
 			<Key ID="STR_MISSION_NAME_SQM">
-				<Original>[SP/CO]- Antistasi 1.8.0 Altis Blufor</Original>
+				<Original>[SP/CO]- Antistasi 1.8.0.1 Altis Blufor</Original>
 			</Key>
 			<Key ID="STR_MISSION_NAME_INITVAR_SQF">
-				<Original>v 1.8.0</Original>
+				<Original>v 1.8.0.1</Original>
 			</Key>
 			<Key ID="STR_MISSION_NAME_EXT">
-				<Original>Antistasi 1.8.0</Original>
+				<Original>Antistasi 1.8.0.1</Original>
 			</Key>
 		</Container>
 	</Package>
@@ -247,6 +248,11 @@
 				<Original>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\Hints\Map_ca.paa' /&gt; Map Info</Original>
 				<Russian>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\Hints\Map_ca.paa' /&gt; Информация на карте</Russian>
 				<Spanish>&lt;img size='1.75' image='\A3\ui_f\data\GUI\cfg\Hints\Map_ca.paa' /&gt; Info Mapa</Spanish>
+			</Key>
+			<Key ID="STR_ACT_BUYNATO">
+				<Original>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\MPTable\soft_ca.paa' /&gt; Buy NATO vehicles</Original>
+				<Russian>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\MPTable\soft_ca.paa' /&gt; Missing</Russian>
+				<Spanish>&lt;img size='1.75' image='\A3\ui_f\data\IGUI\Cfg\MPTable\soft_ca.paa' /&gt; Missing</Spanish>
 			</Key>
 			<Key ID="STR_ACT_BUILDPAD">
 				<Original>&lt;img size='1.75' image='\A3\ui_f\data\Map\markers\military\objective_ca.paa' /&gt; Build Vehicle Zone</Original>
@@ -1230,22 +1236,22 @@
 			<Key ID="STR_UI_INFO_MRESTR_TEXT">
 				<Original>Arsenal Membership</Original>
 				<Russian>Arsenal Membership</Russian>
-				<Spanish>Arsenal Membership</Spanish>
+				<Spanish>Arsenal de Membresía</Spanish>
 			</Key>
 			<Key ID="STR_UI_INFO_MRESTR_TT">
 				<Original>When enabled, non members can't pick items below a threshold</Original>
 				<Russian>When enabled, non members can't pick items below a threshold</Russian>
-				<Spanish>When enabled, non members can't pick items below a threshold</Spanish>
+				<Spanish>Cuando está habilitado, los que no sean miembros no pueden coger elementos por debajo del umbral</Spanish>
 			</Key>
 			<Key ID="STR_UI_INFO_ACEMEDIC_TEXT">
 				<Original>Arsenal ACE Medical</Original>
 				<Russian>Arsenal ACE Medical</Russian>
-				<Spanish>Arsenal ACE Medicall</Spanish>
+				<Spanish>Arsenal Médico ACE</Spanish>
 			</Key>
 			<Key ID="STR_UI_INFO_ACEMEDIC_TT">
 				<Original>Reset ACE items according to basic or advanced</Original>
 				<Russian>Reset ACE items according to basic or advanced</Russian>
-				<Spanish>Reset ACE items according to basic or advanced</Spanish>
+				<Spanish>Reinicia los objetos de ACE de básico o avanzado</Spanish>
 			</Key>
 			<Key ID="STR_UI_INFO_AXPREST_TEXT">
 				<Original>Current Restrictions</Original>
@@ -1877,18 +1883,22 @@
 			<Key ID="STR_TSK_OPDEPLOY">
 				<Original>Post \ Roadblock Deploy</Original>
 				<Russian>Развернуть БП/НП</Russian>
+				<Spanish>Puesto/Control Desplegado</Spanish>
 			</Key>
 			<Key ID="STR_TSK_DESC_OPDEPLOY">
 				<Original>We are sending a team to establish an Observation Post or Roadblock. Send and cover the team until reaches it's destination.</Original>
 				<Russian>Мы посылаем группу, чтобы развернуть блокпост или наблюдательный пост. Сопровождайте группу, пока она не достигнет места назначения.</Russian>
+				<Spanish>Hemos enviado un equipo para establecer un puesto de observación o un control. Envía y cubre al equipo hasta que llegue al destino.</Spanish>
 			</Key>
 			<Key ID="STR_TSK_CAMPSET">
 				<Original>Camp Setup</Original>
 				<Russian>Развернуть лагерь</Russian>
+				<Spanish>Montar Campamento</Spanish>
 			</Key>
 			<Key ID="STR_TSK_DESC_CAMPSET">
 				<Original>We are sending a team to establish a camp. Send and cover the team until reaches it's destination.</Original>
 				<Russian>Мы посылаем группу, чтобы развернуть лагерь. Сопровождайте группу, пока она не достигнет места назначения.</Russian>
+				<Spanish>Hemos enviado un equipo para montar un campamento. Envía y cubre al equipo hasta que llegue al destino.</Spanish>
 			</Key>
 			<Key ID="STR_TSK_TD_RADIO_DESTROYED">
 				<Original>Radio Tower Destroyed</Original>
@@ -3254,49 +3264,59 @@
 				<Spanish>Comprar Vehículo Militar</Spanish>
 			</Key>
 			<Key ID="STR_D_BUY_QUA">
-				<Original>Buy Quadbike</Original>
+				<Original>Quadbike</Original>
 				<Russian>Квадроцикл</Russian>
 				<Spanish>Quad</Spanish>
 			</Key>
 			<Key ID="STR_D_BUY_OR_UAZ">
-				<Original>Buy Offroad/UAZ</Original>
-				<Russian>Внедорожник/Уаз</Russian>
-				<Spanish>Offroad/UAZ</Spanish>
+				<Original>Offroad</Original>
+				<Russian>Внедорожник</Russian>
+				<Spanish>Offroad</Spanish>
 			</Key>
-			<Key ID="STR_D_BUY_TRU">
-				<Original>Buy Truck</Original>
+			<Key ID="STR_D_BUY_TRUCK">
+				<Original>Truck</Original>
 				<Russian>Грузовик</Russian>
 				<Spanish>Camión</Spanish>
 			</Key>
-			<Key ID="STR_D_BUY_TRUC">
-				<Original>Buy Static AT</Original>
+			<Key ID="STR_D_BUY_LVEH">
+				<Original>Light Transport</Original>
+				<Russian>Light Transport</Russian>
+				<Spanish>Light Transport</Spanish>
+			</Key>
+			<Key ID="STR_D_BUY_ST_AT">
+				<Original>Static AT</Original>
 				<Russian>Станк. ПТУР</Russian>
 				<Spanish>AT Estático</Spanish>
 			</Key>
 			<Key ID="STR_D_BUY_ARM_OR">
-				<Original>Buy Armed Offroad</Original>
+				<Original>Armed Offroad</Original>
 				<Russian>Внедорожник с пулемётом</Russian>
 				<Spanish>Offroad Armado</Spanish>
 			</Key>
 			<Key ID="STR_D_BUY_MOR">
-				<Original>Buy Mortar</Original>
+				<Original>Mortar</Original>
 				<Russian>Миномёт</Russian>
 				<Spanish>Mortero</Spanish>
 			</Key>
 			<Key ID="STR_D_BUY_MG">
-				<Original>Buy MG</Original>
+				<Original>Static MG</Original>
 				<Russian>Станк. пулемет</Russian>
 				<Spanish>MG</Spanish>
 			</Key>
 			<Key ID="STR_D_BUY_ST_AA">
-				<Original>Buy Static AA</Original>
+				<Original>Static AA</Original>
 				<Russian>Станк. ЗУ</Russian>
 				<Spanish>AA Estático</Spanish>
 			</Key>
 			<Key ID="STR_D_BUY_APC">
-				<Original>Buy APC</Original>
+				<Original>APC</Original>
 				<Russian>БМД</Russian>
 				<Spanish>APC</Spanish>
+			</Key>
+			<Key ID="STR_D_BUY_MRAP">
+				<Original>MRAP</Original>
+				<Russian>MRAP</Russian>
+				<Spanish>MRAP</Spanish>
 			</Key>
 			<Key ID="STR_D_LOAD_PS">
 				<Original>Load previous session?</Original>
@@ -3361,7 +3381,7 @@
 			<Key ID="STR_D_LOG_MI">
 				<Original>Logistics Mission</Original>
 				<Russian>Снабжение</Russian>
-				<Spanish>Misión Logísitca</Spanish>
+				<Spanish>Misión Logística</Spanish>
 			</Key>
 			<Key ID="STR_D_DES_MI">
 				<Original>Destroy Mission</Original>
@@ -3687,11 +3707,6 @@
 				<Original>Offroad</Original>
 				<Russian>Внедорожник</Russian>
 				<Spanish>Offroad</Spanish>
-			</Key>
-			<Key ID="STR_D_TRUCK">
-				<Original>Truck</Original>
-				<Russian>Грузовик</Russian>
-				<Spanish>Camión</Spanish>
 			</Key>
 			<Key ID="STR_D_HELI">
 				<Original>Helicopter</Original>
