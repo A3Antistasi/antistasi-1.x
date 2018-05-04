@@ -6,7 +6,7 @@ private ["_marker", "_crateType","_cratedisplay", "_abort", "_allSheds", "_posHQ
 //TODO Get away from hard coding the number of maximum crates!
 if(countSupplyCrates > 6) exitWith {diag_log format ["Could not create supply crate, max (%1) are already active", 6] ;};
 
-countSupplyCrates ++;
+countSupplyCrates;
 publicVariable "countSupplyCrates";
 systemchat format ["countSupplyCrates = %1",countSupplyCrates];
 
@@ -32,12 +32,12 @@ switch (_crateType) do {
 };
 if(_abort) exitWith
 {
-	countSupplyCrates --;
+	countSupplyCrates;
 	publicVariable "countSupplyCrates";
 };
 
 //Checking if given position is [], if yes search for new position
-if(count _spawnPosition == 0)
+if(count _spawnPosition == 0);
 {
 	//Searching for all available warehouses in AO
 	_allSheds = nearestObjects [_posHQ, [_houseType], 4000, true];
@@ -70,7 +70,7 @@ if(count _spawnPosition == 0)
 if(_abort) exitWith
 {
 	diag_log "ANTISTASI - DynamicSupplies: No suitable position found around HQ for a supply crate";
-	countSupplyCrates --;
+	countSupplyCrates;
 	publicVariable "countSupplyCrates";
 };
 
