@@ -14,6 +14,8 @@ _allVehicles = [];
 _spawnPosition = getmarkerpos _marker;
 _groupType = [infSquad, side_green] call AS_fnc_pickGroup;
 _group = [_spawnPosition, side_green, _groupType] call BIS_Fnc_spawnGroup;
+_dog = _group createUnit ["Fin_random_F",_spawnPosition,[],0,"FORM"];
+[_dog] spawn guardDog;
 
 _allGroups pushBack _group;
 
