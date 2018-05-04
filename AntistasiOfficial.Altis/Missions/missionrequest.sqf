@@ -94,7 +94,7 @@ call {
 
 			call {
 				if (_currentZone in ciudades) exitWith {
-					[_currentZone] remoteExec [([["LOG_Suministros","LOG_Medical"],[0.5,0.5]] call BIS_fnc_selectRandomWeighted), call AS_fnc_getNextWorker]
+					[_currentZone] remoteExec ["LOG_Medical", call AS_fnc_getNextWorker]
 				};
 				if (_currentZone in puestos) exitWith {
 					[_currentZone] remoteExec ["LOG_Ammo", call AS_fnc_getNextWorker];

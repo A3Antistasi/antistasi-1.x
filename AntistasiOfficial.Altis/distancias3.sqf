@@ -84,6 +84,7 @@ while {true} do {
 		private _markerPos = getMarkerPos _marker;
 		private _markerAlert = spawner getVariable _marker;
 
+
 		if (_marker in mrkAAF) then {
 			if (_markerAlert == 4) then {
 				//check if a units is near the location or place needs to be forced to spawned in
@@ -233,6 +234,6 @@ while {true} do {
 			};
 		};
 
-	} forEach markers;
+	} forEach (markers + markerSupplyCrates);
 
 };

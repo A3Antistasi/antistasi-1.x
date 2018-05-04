@@ -177,7 +177,7 @@ fn_saveProfile = {
 
 //ADD VARIABLES TO THIS ARRAY THAT NEED SPECIAL SCRIPTING TO LOAD
 specialVarLoads =
-["campaign_playerList","cuentaCA","membersPool","antenas","posHQ","prestigeNATO","prestigeCSAT","APCAAFcurrent","tanksAAFcurrent","planesAAFcurrent","helisAAFcurrent","time","resourcesAAF","skillFIA","skillAAF","destroyedBuildings","flag_chopForest","BE_data","enableOldFT","enableMemAcc","hr","resourcesFIA","vehicles","weapons","magazines","items","backpacks","objectsHQ","addObjectsHQ","supportOPFOR","supportBLUFOR","garrison","mines","emplacements","campList","tasks","idleBases","unlockedWeapons","unlockedItems","unlockedMagazines","unlockedBackpacks"];
+["campaign_playerList","cuentaCA","membersPool","antenas","posHQ","prestigeNATO","prestigeCSAT","APCAAFcurrent","tanksAAFcurrent","planesAAFcurrent","helisAAFcurrent","time","resourcesAAF","skillFIA","skillAAF","destroyedBuildings","flag_chopForest","BE_data","enableOldFT","enableMemAcc","hr","resourcesFIA","vehicles","weapons","magazines","items","backpacks","objectsHQ","addObjectsHQ","supportOPFOR","supportBLUFOR", "supplyLevels","garrison","mines","emplacements","campList","tasks","idleBases","unlockedWeapons","unlockedItems","unlockedMagazines","unlockedBackpacks"];
 
 /*
 	Variables that are loaded, but do not require special procedures
@@ -414,6 +414,10 @@ fn_setData = {
 				clearBackpackCargoGlobal caja;
 				{caja addBackpackCargoGlobal [_x,1]} forEach _varValue;
 			};
+			//Redundant, same code done for all options, propably add some bool to avoid double execution??
+			//Most likely getting even worse with supply levels ...
+			//I would recommend to redo this part, if I got some time, I will do this - wurzel
+			
 			if(_varname == 'supportOPFOR') exitWith {
 				for "_i" from 0 to (count ciudades) - 1 do {
 					_ciudad = ciudades select _i;
@@ -422,7 +426,8 @@ fn_setData = {
 					_numVeh = _datos select 1;
 					_prestigeOPFOR = _varValue select _i;
 					_prestigeBLUFOR = _datos select 3;
-					_datos = [_numCiv,_numVeh,_prestigeOPFOR,_prestigeBLUFOR];
+					_supplyLevels = ["LOW", "LOW", "LOW"];
+					_datos = [_numCiv,_numVeh,_prestigeOPFOR,_prestigeBLUFOR, _supplyLevels];
 					server setVariable [_ciudad,_datos,true];
 				};
 			};
@@ -434,10 +439,27 @@ fn_setData = {
 					_numVeh = _datos select 1;
 					_prestigeOPFOR = _datos select 2;
 					_prestigeBLUFOR = _varValue select _i;
-					_datos = [_numCiv,_numVeh,_prestigeOPFOR,_prestigeBLUFOR];
+					_supplyLevels = _datos select 4;
+					_datos = [_numCiv,_numVeh,_prestigeOPFOR,_prestigeBLUFOR, _supplyLevels];
 					server setVariable [_ciudad,_datos,true];
 				};
 			};
+			
+			if(_varName == 'supplyLevels') exitWith
+			{
+				for "_i" from 0 to (count ciudades) - 1 do {
+					_ciudad = ciudades select _i;
+					_datos = server getVariable _ciudad;
+					_numCiv = _datos select 0;
+					_numVeh = _datos select 1;
+					_prestigeOPFOR = _datos select 2;
+					_prestigeBLUFOR = _datos select 3;
+					_supplyLevels = _varValue select _i;
+					_datos = [_numCiv,_numVeh,_prestigeOPFOR,_prestigeBLUFOR, _supplyLevels];
+					server setVariable [_ciudad,_datos,true];
+				};
+			};
+			
 			if(_varname == 'idleBases') exitWith {
 				{
 					server setVariable [(_x select 0),(_x select 1),true];
