@@ -31,7 +31,7 @@ if ((not alive _antena) or (not(_marcador in mrkAAF))) then
 	{
 	sleep 15;
 	_tsk = ["DES",[side_blue,civilian],[[_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4, A3_Str_INDEP],_tskTitle,_mrkfin],_posicion,"SUCCEEDED",5,true,true,"Destroy"] call BIS_fnc_setTask;
-	[0,0] remoteExec ["prestige",2];
+	//[0,0] remoteExec ["prestige",2];
 	[600] remoteExec ["AS_fnc_increaseAttackTimer",2];
 	{if (_x distance _posicion < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
 	[5,Slowhand] call playerScoreAdd;

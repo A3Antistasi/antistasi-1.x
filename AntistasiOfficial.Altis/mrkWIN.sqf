@@ -59,7 +59,7 @@ _bandera addAction [localize "str_act_mapInfo",
 // [[_bandera,"garage"],"AS_fnc_addActionMP"] call BIS_fnc_MP; Stef 27/10 disabled old garage
 
 _antenna = [antenas,_posicion] call BIS_fnc_nearestPosition;
-if (getPos _antenna distance _posicion < 100) then {
+if ((count antenas != 0) AND (getPos _antenna distance _posicion < 100)) then {
 	[_bandera,"jam"] remoteExec ["AS_fnc_addActionMP"];
 };
 
@@ -99,7 +99,7 @@ publicVariable "reducedGarrisons";
 
 	if (_marcador in power) then {
 		{["TaskSucceeded", ["", localize "STR_NTS_POWER_TKN"]] call BIS_fnc_showNotification} remoteExec ["call", 0];
-		[0,0] remoteExec ["prestige",2];
+		//[0,0] remoteExec ["prestige",2];
 		if (activeBE) then {["con_ter"] remoteExec ["fnc_BE_XP", 2]};
 		[_marcador] call AS_fnc_powerReorg;
 	};
@@ -109,7 +109,7 @@ publicVariable "reducedGarrisons";
 	};
 	if (_marcador in puertos) then {
 		{["TaskSucceeded", ["", localize "STR_NTS_SEA_TKN"]] call BIS_fnc_showNotification} remoteExec ["call", 0];
-		[0,0] remoteExec ["prestige",2];
+		//[0,0] remoteExec ["prestige",2];
 		if (activeBE) then {["con_ter"] remoteExec ["fnc_BE_XP", 2]};
 		[[_bandera,"seaport"],"AS_fnc_addActionMP"] call BIS_fnc_MP;
 	};
@@ -117,7 +117,7 @@ publicVariable "reducedGarrisons";
 		if (_marcador in fabricas) then {{["TaskSucceeded", ["", localize "STR_NTS_FACT_TKN"]] call BIS_fnc_showNotification} remoteExec ["call", 0];};
 		if (_marcador in recursos) then {{["TaskSucceeded", ["", localize "STR_NTS_RES_TKN"]] call BIS_fnc_showNotification} remoteExec ["call", 0];};
 		if (activeBE) then {["con_ter"] remoteExec ["fnc_BE_XP", 2]};
-		[0,0] remoteExec ["prestige",2];
+		//[0,0] remoteExec ["prestige",2];
 		_powerpl = [power, _posicion] call BIS_fnc_nearestPosition;
 		if (_powerpl in mrkAAF) then {
 			sleep 5;
@@ -134,7 +134,7 @@ publicVariable "reducedGarrisons";
 [_marcador] remoteExec ["autoGarrison", call AS_fnc_getNextWorker];
 
 waitUntil {sleep 1;
-	(not (spawner getVariable _marcador)) or
+	(spawner getVariable _marcador == 4) or
 	(
 	({(not(vehicle _x isKindOf "Air")) and (alive _x) and (lifeState _x != "INCAPACITATED") and (!fleeing _x)}
 	count ([_size,0,_posicion,"OPFORSpawn"] call distanceUnits)) > 3* ({(alive _x) and (lifeState _x != "INCAPACITATED")}
@@ -142,6 +142,6 @@ waitUntil {sleep 1;
 	)
 }; //need to add check for unconscious
 
-if (spawner getVariable _marcador) then {
+if (spawner getVariable _marcador != 4) then {
 	[_marcador] spawn mrkLOOSE;
 };

@@ -150,7 +150,7 @@ if (not alive _heli) then
 	{
 	_tsk = ["DES",[side_blue,civilian],[[_tskDesc,_nombrebase],_tskTitle,_mrkfin],_posCrashMrk,"SUCCEEDED",5,true,true,"Destroy"] call BIS_fnc_setTask;
 	[0,300] remoteExec ["resourcesFIA",2];
-	[0,0] remoteExec ["prestige",2];
+	//[0,0] remoteExec ["prestige",2];
 	//[-3,3,_posicion] remoteExec ["AS_fnc_changeCitySupport",2];
 	[1200] remoteExec ["AS_fnc_increaseAttackTimer",2];
 	{if (_x distance _heli < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));

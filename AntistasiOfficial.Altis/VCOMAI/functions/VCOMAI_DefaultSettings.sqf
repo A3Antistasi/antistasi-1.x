@@ -498,5 +498,5 @@ VCOM_AISKILL_RESISTANCE =
 	_this setSkill ["endurance",_commandingSet + _commanding];
 	_this setSkill ["reloadSpeed",_generalSet + _general];
 
-};
+
 };

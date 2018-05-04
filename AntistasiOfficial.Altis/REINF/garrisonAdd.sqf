@@ -34,7 +34,7 @@ garrison setVariable [_marcador,_garrison,true];
 [_marcador] call AS_fnc_markerUpdate;
 hint format ["Soldier recruited.%1",[_marcador] call AS_fnc_getGarrisonInfo];
 
-if (spawner getVariable _marcador) then
+if (spawner getVariable _marcador < 2) then
 	{
 	closeMarkersUpdating = 10;
 	_forzado = false;

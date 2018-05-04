@@ -27,7 +27,7 @@ _airportsAAF = aeropuertos - mrkFIA;
 {
 	_airport = _x;
 	_posAirport = getMarkerPos _airport;
-	if ((_targetPosition distance _posAirport < 10000) and (_targetPosition distance _posAirport > 1500) and (not (spawner getVariable _airport))) then {_airports = _airports + [_airport]}
+	if ((_targetPosition distance _posAirport < 10000) and (_targetPosition distance _posAirport > 1500) and (spawner getVariable _airport == 4)) then {_airports = _airports + [_airport]}
 } forEach _airportsAAF;
 if (count _airports > 0) then {
 	_airport = [_airports, _targetPosition] call BIS_fnc_nearestPosition;
@@ -53,7 +53,7 @@ waitUntil {sleep 3; (server getVariable ["campQRF", false]) OR {!(_targetMarker 
 
 if (_targetMarker in campsFIA) then {
 	_tsk = ["DEF_Camp",[side_blue,civilian],[[_tskDesc, _campName, _airportName],[_tskTitle, _campName],_targetMarker],_targetPosition,"SUCCEEDED",5,true,true,"Defend"] call BIS_fnc_setTask;
-	[0,0] remoteExec ["prestige",2];
+	//[0,0] remoteExec ["prestige",2];
 	[0,300] remoteExec ["resourcesFIA",2];
 	[5,Slowhand] call playerScoreAdd;
 	{if (isPlayer _x) then {[10,_x] call playerScoreAdd}} forEach ([500,0,_targetPosition,"BLUFORSpawn"] call distanceUnits);
