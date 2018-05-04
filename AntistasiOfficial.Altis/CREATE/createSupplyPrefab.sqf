@@ -1,51 +1,15 @@
 if (!isServer and hasInterface) exitWith {};
 
 params [["_marker", nil], ["_type", ""], ["_create", false]];
-diag_log format ["ANTISTASI - SUP_CitySupply, _type = %1, now creating",_type];
-private ["_duration","_endTime", "_spawnPosition","_crate", "_house","_groupType","_group","_crateType"];
+
+private ["_mapMarker", "_duration","_endTime", "_spawnPosition","_crate", "_house","_groupType","_group","_crateType"];
 
 if(_create) then
 {
-	_posHQ = getMarkerPos guer_respawn;
-
-	_houseType = "Land_i_Shed_Ind_F";
-
-	switch (_type) do {
-		case "WATER": 	{_crateType = "Land_PaperBox_01_open_boxes_F";		};
-		case "FUEL": 	{_crateType = "CargoNet_01_barrels_F";				};
-		case "FOOD": 	{_crateType = "Land_PaperBox_01_open_boxes_F";		};
-	};
-
+	
 	if(isnil "_marker") then
 	{
-		_allSheds = nearestObjects [_posHQ, [_houseType], 4000, true];
-		sleep 1;
-		if (count _allSheds == 0) exitWith
-		{
-			diag_log format ["Supply mission not created, could not find %1", _houseType];
-		};
-		_selectedShed = selectRandom _allSheds;
-		_spawnPosition = position _selectedShed;
-		_marker = createMarker [format ["SUP%1", random 100], _spawnPosition];
 
-		while {
-			(count (
-				nearestObjects [_spawnPosition, ["Land_PaperBox_01_open_boxes_F", "Land_PaperBox_01_open_water_F", "CargoNet_01_barrels_F"], 300, true]
-			) != 0) AND (_spawnPosition distance2D _posHQ > 1000) AND (count ([200, 0, _spawnPosition, "BLUFORSpawn"] call distanceUnits) == 0)
-		} do
-		{
-			_allSheds = _allSheds - [_selectedShed];
-			if((count _allSheds)  == 0) exitWith {_spawnPosition = nil};
-			_spawnPosition = position _selectedShed;
-		};
-
-		if(isnil "_spawnPosition") then {diag_log "ANTISTASI - DynamicSupplies: No suitable position found around HQ for a supply crate";};
-
-		//spawner setVariable [_marker, 0, true]; //Activate when merged with new spawn system
-		spawner setVariable [_marker, true, true];
-		countSupplyCrates ++;
-		//systemchat format ["countSupplyCrates = %1",countSupplyCrates];
-		publicVariable "countSupplyCrates";
 	}
 	else
 	{
@@ -68,7 +32,12 @@ if(_create) then
 	[_spawnPosition, _crateType, _marker] remoteExec ["createSupplyBox", call AS_fnc_getNextWorker];
 	waitUntil {sleep 1; (count (nearestObjects [_spawnPosition, ["Land_PaperBox_01_open_boxes_F", "Land_PaperBox_01_open_water_F", "CargoNet_01_barrels_F"], 10, true])  == 0)};
 };
+
+
+
 if(!_create) then {_spawnPosition = getMarkerPos _marker;};
+
+diag_log format ["Supply crate at %1 spawning in troups", _marker];
 
 
 _allGroups = [];
@@ -89,7 +58,7 @@ _allGroups pushBack _group;
 //waitUntil {sleep 1; spawner getVariable _marker > 1}; //Activate when merged with new spawn system
 waitUntil {sleep 1; !(spawner getVariable _marker)};
 
-if(count (nearestObjects [_spawnPosition, ["Land_PaperBox_01_open_boxes_F", "Land_PaperBox_01_open_water_F", "CargoNet_01_barrels_F"], 300, true])  == 0) then
+if(count (nearestObjects [_spawnPosition, ["Land_PaperBox_01_open_boxes_F", "Land_PaperBox_01_open_water_F", "CargoNet_01_barrels_F"], 200, true])  == 0) then
 {
 	//FIA has taken the Supply Box, not in range any more
 	spawner setVariable [_marker, nil, true];
@@ -97,5 +66,6 @@ if(count (nearestObjects [_spawnPosition, ["Land_PaperBox_01_open_boxes_F", "Lan
 	publicVariable "countSupplyCrates";
 };
 
+deleteMarker _mapMarker;
 {deleteVehicle _x} forEach _allSoldiers;
 {deleteGroup _x} forEach _allGroups;
