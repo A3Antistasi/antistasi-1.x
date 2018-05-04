@@ -1752,8 +1752,8 @@ switch _mode do {
 		};
 
 		//Load fuel and fuelcargo by Stef
-		_center	setfuel (_fuel select 0);
-		if(activeACE) then {[_center, (_fuelcargo select 0)] call ace_refuel_fnc_setFuel;} else {_center setfuelcargo (_fuelcargo select 0)};
+		_center	setfuel _fuel;
+		if(activeACE) then {[_center, _fuelcargo] call ace_refuel_fnc_setFuel;} else {_center setfuelcargo _fuelcargo};
 
 
 		_center//return
