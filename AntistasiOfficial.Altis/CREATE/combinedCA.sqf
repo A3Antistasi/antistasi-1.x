@@ -376,7 +376,7 @@ if (cuentaCA < 0) then {
 
 sleep 30;
 [0,_task] spawn borrarTask;
-waitUntil {sleep 1; !(spawner getVariable _marker)};
+waitUntil {sleep 1; (spawner getVariable _marker == 4)};
 
 [_allGroups + _redGroups, _allSoldiers + _redSoldiers, _allVehicles + _redVehicles] spawn AS_fnc_despawnUnits;
 

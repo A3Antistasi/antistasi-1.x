@@ -182,7 +182,7 @@ for [{private _i = 0}, {_i < ws_gridSizeX}, {_i = _i + 1}] do //_i is x-pos
 							{
 								_rbname setMarkerColor "ColorRed";
 								mrkAAF pushBackUnique _rbname;
-								spawner setVariable [_rbname, false, true];
+								spawner setVariable [_rbname, 4, true];
 								markers pushBackUnique _rbname;
 								publicVariable "markers";
 								publicVariable "mrkAAF";
@@ -205,7 +205,7 @@ for [{private _i = 0}, {_i < ws_gridSizeX}, {_i = _i + 1}] do //_i is x-pos
 							};
 							if(_a == 2) then
 							{
-								waitUntil {sleep _sleepInterval; !(spawner getVariable _rbname)};
+								waitUntil {sleep _sleepInterval; (spawner getVariable _rbname == 4)};
 								//Now delete the marker
 								mrkAAF = mrkAAF - [_rbname];
 								markers = markers - [_rbname];

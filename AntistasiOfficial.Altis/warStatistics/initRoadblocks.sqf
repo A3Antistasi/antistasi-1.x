@@ -47,7 +47,7 @@ _allMarkers = allMapMarkers;
 		controles pushBackUnique _rbmrk;
 		mrkAAF = mrkAAF + [_rbmrk];
 		_counter = _counter + 1;
-		spawner setVariable [_rbmrk, false, true];
+		spawner setVariable [_rbmrk, 4, true];
 	};
 } forEach _allMarkers;
 

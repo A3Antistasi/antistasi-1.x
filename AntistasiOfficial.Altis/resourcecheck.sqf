@@ -116,7 +116,7 @@ while {true} do {
 			if (activeBE) then {["con_cit"] remoteExec ["fnc_BE_XP", 2]};
 			publicVariable "mrkAAF";
 			publicVariable "mrkFIA";
-			[0,0] remoteExec ["prestige",2];
+			//[0,0] remoteExec ["prestige",2];
 			_mrkD = format ["Dum%1",_city];
 			_mrkD setMarkerColor guer_marker_colour;
 			if (_power) then {_power = false} else {_power = true};
@@ -137,7 +137,7 @@ while {true} do {
 			mrkFIA = mrkFIA - [_city];
 			publicVariable "mrkAAF";
 			publicVariable "mrkFIA";
-			[0,0] remoteExec ["prestige",2];
+			//[0,0] remoteExec ["prestige",2];
 			_mrkD = format ["Dum%1",_city];
 			_mrkD setMarkerColor IND_marker_colour;
 			sleep 5;

@@ -32,9 +32,9 @@ _tsk = ["DES",[side_blue,civilian],[[_tskDesc,_nombredest,numberToDate [2035,_fe
 misiones pushBack _tsk; publicVariable "misiones";
 _camionCreado = false;
 
-waitUntil {sleep 1;(dateToNumber date > _fechalimnum) or (spawner getVariable _marcador)};
+waitUntil {sleep 1;(dateToNumber date > _fechalimnum) or (spawner getVariable _marcador != 4)};
 
-if (spawner getVariable _marcador) then
+if (spawner getVariable _marcador != 4) then
 	{
 	_camionCreado = true;
 	_size = [_marcador] call sizeMarker;
@@ -68,7 +68,12 @@ if (spawner getVariable _marcador) then
 		_tsk = ["DES",[side_blue,civilian],[[_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4,_texto],_tskTitle,_marcador],_posicion,"SUCCEEDED",5,true,true,"Destroy"] call BIS_fnc_setTask;
 		[0,300] remoteExec ["resourcesFIA",2];
 		[2,0] remoteExec ["prestige",2];
-		if (_tipoVeh == opSPAA) then {[0,0] remoteExec ["prestige",2]; [0,10,_posicion] remoteExec ["AS_fnc_changeCitySupport",2]} else {[0,5,_posicion] remoteExec ["AS_fnc_changeCitySupport",2]};
+		if (_tipoVeh == opSPAA) then {
+			//[0,0] remoteExec ["prestige",2];
+			[0,10,_posicion] remoteExec ["AS_fnc_changeCitySupport",2]
+		} else {
+			[0,5,_posicion] remoteExec ["AS_fnc_changeCitySupport",2]
+		};
 		[1200] remoteExec ["AS_fnc_increaseAttackTimer",2];
 		{if (_x distance _veh < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
 		[5,Slowhand] call playerScoreAdd;
@@ -84,7 +89,7 @@ if (dateToNumber date > _fechalimnum) then
 	_tsk = ["DES",[side_blue,civilian],[[_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4,_texto],_tskTitle,_marcador],_posicion,"FAILED",5,true,true,"Destroy"] call BIS_fnc_setTask;
 	[-5,-100] remoteExec ["resourcesFIA",2];
 	[5,0,_posicion] remoteExec ["AS_fnc_changeCitySupport",2];
-	if (_tipoVeh == opSPAA) then {[0,0] remoteExec ["prestige",2]};
+	//if (_tipoVeh == opSPAA) then {[0,0] remoteExec ["prestige",2]};
 	[-600] remoteExec ["AS_fnc_increaseAttackTimer",2];
 	[-10,Slowhand] call playerScoreAdd;
 	};
@@ -96,7 +101,7 @@ if (_source == "mil") then {
 	server setVariable ["milActive", _val - 1, true];
 };
 
-waitUntil {sleep 1; not (spawner getVariable _marcador)};
+waitUntil {sleep 1; (spawner getVariable _marcador == 4)};
 
 if (_camionCreado) then
 	{

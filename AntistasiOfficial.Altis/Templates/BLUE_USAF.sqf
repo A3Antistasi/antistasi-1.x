@@ -59,6 +59,20 @@
 
 	bluFlag = 	"Flag_NATO_F";
 
+//Vehicles to buy
+	blubuyTruck =			"rhsusf_M1078A1P2_B_M2_D_fmtv_usarmy";
+	blubuyAPC = 			"rhsusf_m113d_usarmy";
+	blubuyMRAP = 			"rhsusf_rg33_m2_usmc_d";
+
+//Airfield vehicle (max1)
+	blubuyHeli = 			"RHS_MELB_MH6M";
+//Seaport vehicle
+	blubuyBoat = 			"rhsusf_mkvsoc";
+//Special vehicle to buy (max 1)
+	blubuyHumvee = 			"rhsusf_m1025_d_m2";
+
+	blubuylist = [blubuyBoat,blubuyHeli,blubuyMRAP,blubuyAPC,blubuyTruck,blubuyHumvee];
+
 //bluEquipment
 	bluSmallWpn = 	[					// select reference
 		"rhsusf_weap_MP7A2",      		// 0 SMG

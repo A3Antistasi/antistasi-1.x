@@ -2,7 +2,7 @@ params ["_marker","_workers"];
 
 private ["_marker","_workers","_name"];
 
-while {spawner getVariable _marker} do {
+while {spawner getVariable _marker != 4} do {
 	if ({(alive _x) AND !(isNull _x)} count _workers == 0) exitWith {
 		_name = [_marker] call AS_fnc_localizar;
 		destroyedCities pushBack _marker;

@@ -58,10 +58,14 @@ call {
 			}];
 		} else {
 			if (_vehicle isKindOf "Helicopter") then {
-					_vehicle addEventHandler ["killed",{[_this select 0] call AS_fnc_AAFassets;[0,0] remoteExec ["prestige",2]; [-2,2,position (_this select 0)] remoteExec ["AS_fnc_changeCitySupport",2]}]
+					_vehicle addEventHandler ["killed",{[_this select 0] call AS_fnc_AAFassets;
+					//[0,0] remoteExec ["prestige",2];
+					[-2,2,position (_this select 0)] remoteExec ["AS_fnc_changeCitySupport",2]}]
 			};
 			if (_vehicle isKindOf "Plane") then {
-				_vehicle addEventHandler ["killed",{[_this select 0] call AS_fnc_AAFassets; [0,0] remoteExec ["prestige",2]; [-5,5,position (_this select 0)] remoteExec ["AS_fnc_changeCitySupport",2]}]
+				_vehicle addEventHandler ["killed",{[_this select 0] call AS_fnc_AAFassets;
+					//[0,0] remoteExec ["prestige",2];
+					[-5,5,position (_this select 0)] remoteExec ["AS_fnc_changeCitySupport",2]}]
 			};
 		};
 	};
