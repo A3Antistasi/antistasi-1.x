@@ -100,8 +100,8 @@ supplySaveArray pushBackUnique [_spawnPosition, _crateType];
 publicVariable "supplySaveArray";
 
 //Add spawning mechanics to the position
-//spawner setVariable [_marker, 0, true]; //Activate when merged with new spawn system
-spawner setVariable [_marker, false, true];
+spawner setVariable [_marker, 0, true]; //Activate when merged with new spawn system
+//spawner setVariable [_marker, false, true];
 
 
 
