@@ -1,5 +1,4 @@
 params ["_object"];
-diag_log ["addactionload"];
 private _loadActionID = _object getVariable ["jnl_loadActionID",nil];
 
 //Check if action exists already
@@ -76,4 +75,3 @@ _object setUserActionText [
 ];
 
 _object setVariable ["jnl_loadActionID", _loadActionID, false];
-
