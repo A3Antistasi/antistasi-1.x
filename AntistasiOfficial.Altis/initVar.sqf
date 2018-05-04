@@ -181,6 +181,8 @@ resourcesIsChanging = false;
 flag_savingServer = false;
 flag_chopForest = false;
 misiones = [];
+markerSupplyCrates = [];
+countSupplyCrates = 0;
 revelar = false;
 
 vehInGarage = ["C_Van_01_transport_F","C_Offroad_01_F","C_Offroad_01_F",guer_veh_quad,guer_veh_quad,guer_veh_quad]; // initial motorpool
@@ -238,6 +240,8 @@ publicVariable "FIA_RB_list";
 publicVariable "reducedGarrisons";
 publicVariable "replaceFIA";
 publicVariable "static_playerSide";
+publicVariable "markerSupplyCrates";
+publicVariable "countSupplyCrates";
 
 if (isMultiplayer) then {[[petros,"locHint","STR_HINTS_INITVAR"],"commsMP"] call BIS_fnc_MP;};
 
