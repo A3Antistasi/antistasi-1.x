@@ -26,7 +26,7 @@ antenas = [];
 mrkAntenas = [];
 bancos = [];
 posbancos = [];
-countSupplyCrates = [];
+supplySaveArray = [];
 safeDistance_undercover = 350;
 safeDistance_garage = 500;
 safeDistance_recruit = 500;
@@ -139,7 +139,7 @@ markers = power + bases + aeropuertos + recursos + fabricas + puestos + puertos 
 		_supplyLevelFood = 'LOW';
 		_supplyLevelWater = 'LOW';
 		_supplyLevelFuel = 'LOW';
-		
+
         if (_nroads < _numVeh) then {_numVeh = _nroads};
         _info = [_numCiv, _numVeh, prestigeOPFOR,prestigeBLUFOR, [_supplyLevelFood, _supplyLevelWater, _supplyLevelFuel]];
         server setVariable [_name,_info,true];
@@ -261,7 +261,7 @@ publicVariable "puestosFIA";
 publicVariable "seaMarkers";
 publicVariable "campsFIA";
 publicVariable "puestosNATO";
-publicVariable "countSupplyCrates";
+publicVariable "supplySaveArray";
 publicVariable "safeDistance_undercover";
 publicVariable "safeDistance_garage";
 publicVariable "safeDistance_recruit";
