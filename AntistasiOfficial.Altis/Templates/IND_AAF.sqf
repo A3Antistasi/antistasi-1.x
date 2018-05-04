@@ -1,52 +1,54 @@
-/*
+												/*
 List of infantry classes. These will have individual skills and equipment mapped to them.
 If you wish to add more soldiers beyond the available variables, you also need to add any new variables to the class lists below as well as to genInit.sqf and genInitBASES.sqf
-*/
-sol_A_AA = 	"I_Soldier_AAA_F"; // Assistant AA
-sol_A_AR = 	"I_Soldier_AAR_F"; // Assistant autorifle
-sol_A_AT = 	"I_Soldier_AAT_F"; // Assistant AT
-sol_AA = 	"I_Soldier_AA_F"; // AA
-sol_AR = 	"I_Soldier_AR_F"; // Autorifle
-sol_AT = 	"I_Soldier_AT_F"; // AT
-sol_AMMO = 	"I_Soldier_A_F"; // Ammo bearer
-sol_GL = 	"I_Soldier_GL_F"; // Grenade launcher
-sol_GL2 = 	"I_Soldier_GL_F"; // Grenade launcher (extra)
-sol_LAT = 	"I_Soldier_LAT_F"; // Light AT
-sol_LAT2 = 	"I_Soldier_LAT_F"; // Light AT (extra)
-sol_MG = 	"I_Soldier_AR_F"; // Machinegunner (extra)
-sol_MK = 	"I_Soldier_M_F"; // Marksman
-sol_SL = 	"I_Soldier_SL_F"; // Squad leader
-sol_TL = 	"I_Soldier_TL_F"; // Team leader
-sol_TL2 = 	"I_Soldier_TL_F"; // Team leader (extra)
-sol_EXP = 	"I_Soldier_exp_F"; // Explosives
-sol_R_L = 	"I_Soldier_lite_F"; // Rifleman, light
-sol_REP = 	"I_Soldier_repair_F"; // Repair
-sol_UN = 	"I_Soldier_unarmed_F"; // Unarmed
-sol_RFL = 	"I_soldier_F"; // Rifleman
-sol_SN = 	"I_Sniper_F"; // Sniper
-sol_SP = 	"I_Spotter_F"; // Spotter
-sol_MED = 	"I_medic_F"; // Medic
-sol_ENG = 	"I_engineer_F"; // Engineer
-sol_OFF = 	"I_officer_F"; // Officer
-sol_OFF2 = 	"I_officer_F"; // Officer (extra)
+												*/
 
-sol_CREW = 	"I_crew_F"; // Crew
-sol_CREW2 = "I_crew_F"; // Crew (extra)
-sol_CREW3 = "I_crew_F"; // Crew (extra)
-sol_CREW4 = "I_crew_F"; // Crew (extra)
-sol_DRV = 	"I_crew_F"; // Driver (extra)
-sol_DRV2 = 	"I_crew_F"; // Driver (extra)
-sol_HCREW = "I_helicrew_F"; // Helicopter crew
-sol_HPIL = 	"I_helipilot_F"; // Helicopter pilot
-sol_HPIL2 = "I_helipilot_F"; // Helicopter pilot (extra)
-sol_PIL = 	"I_pilot_F"; // Pilot
-sol_UAV = 	"I_soldier_UAV_F"; // UAV controller
+//Units
+sol_A_AA = 	"I_Soldier_AAA_F"; 			// Assistant AA
+sol_A_AR = 	"I_Soldier_AAR_F"; 			// Assistant autorifle
+sol_A_AT = 	"I_Soldier_AAT_F"; 			// Assistant AT
+sol_AA = 	"I_Soldier_AA_F"; 			// AA
+sol_AR = 	"I_Soldier_AR_F"; 			// Autorifle
+sol_AT = 	"I_Soldier_AT_F"; 			// AT
+sol_AMMO = 	"I_Soldier_A_F"; 			// Ammo bearer
+sol_GL = 	"I_Soldier_GL_F"; 			// Grenade launcher
+sol_GL2 = 	"I_Soldier_GL_F"; 				// Grenade launcher (extra)
+sol_LAT = 	"I_Soldier_LAT_F"; 			// Light AT
+sol_LAT2 = 	"I_Soldier_LAT_F"; 			// Light AT (extra)
+sol_MG = 	"I_Soldier_AR_F"; 				// Machinegunner (extra)
+sol_MK = 	"I_Soldier_M_F"; 			// Marksman
+sol_SL = 	"I_Soldier_SL_F"; 			// Squad leader
+sol_TL = 	"I_Soldier_TL_F"; 			// Team leader
+sol_TL2 = 	"I_Soldier_TL_F"; 				// Team leader (extra)
+sol_EXP = 	"I_Soldier_exp_F"; 			// Explosives
+sol_R_L = 	"I_Soldier_lite_F"; 		// Rifleman, light
+sol_REP = 	"I_Soldier_repair_F"; 		// Repair
+sol_UN = 	"I_Soldier_unarmed_F";		// Unarmed
+sol_RFL = 	"I_soldier_F"; 				// Rifleman
+sol_SN = 	"I_Sniper_F"; 				// Sniper
+sol_SP = 	"I_Spotter_F"; 				// Spotter
+sol_MED = 	"I_medic_F"; 				// Medic
+sol_ENG = 	"I_engineer_F"; 			// Engineer
+sol_OFF = 	"I_officer_F"; 				// Officer
+sol_OFF2 = 	"I_officer_F"; 					// Officer (extra)
 
-sol_SUP_AMG = 	"I_support_AMG_F"; // Assistant HMG gunner
-sol_SUP_AMTR = 	"I_support_AMort_F"; // Assistant mortar gunner
-sol_SUP_GMG = 	"I_support_GMG_F"; // GMG gunner
-sol_SUP_MG = 	"I_support_MG_F"; // HMG gunner
-sol_SUP_MTR = 	"I_support_Mort_F"; // mortar gunner
+sol_CREW = 	"I_crew_F"; 				// Crew
+sol_CREW2 = "I_crew_F"; 					// Crew (extra)
+sol_CREW3 = "I_crew_F"; 					// Crew (extra)
+sol_CREW4 = "I_crew_F"; 					// Crew (extra)
+sol_DRV = 	"I_crew_F"; 				// Driver (extra)
+sol_DRV2 = 	"I_crew_F"; 					// Driver (extra)
+sol_HCREW = "I_helicrew_F"; 			// Helicopter crew
+sol_HPIL = 	"I_helipilot_F"; 			// Helicopter pilot
+sol_HPIL2 = "I_helipilot_F"; 				// Helicopter pilot (extra)
+sol_PIL = 	"I_pilot_F"; 				// Pilot
+sol_UAV = 	"I_soldier_UAV_F"; 			// UAV controller
+
+sol_SUP_AMG = 	"I_support_AMG_F"; 		// Assistant HMG gunner
+sol_SUP_AMTR = 	"I_support_AMort_F"; 	// Assistant mortar gunner
+sol_SUP_GMG = 	"I_support_GMG_F";		// GMG gunner
+sol_SUP_MG = 	"I_support_MG_F"; 		// HMG gunner
+sol_SUP_MTR = 	"I_support_Mort_F"; 	// mortar gunner
 
 // Standard roles for static gunner, crew, and unarmed helicopter pilot
 infGunner =	sol_SUP_MG;
@@ -64,26 +66,21 @@ infList_crew = 		[sol_UN, sol_CREW, sol_CREW2, sol_CREW3, sol_CREW4, sol_DRV, so
 infList_pilots = 	[sol_HPIL, sol_HPIL2, sol_PIL];
 
 // Vehicles
-vehTrucks = 		["I_Truck_02_covered_F","I_Truck_02_transport_F"]; // trucks that spawn at outposts, etc
-vehPatrol =			["I_MRAP_03_F","I_MRAP_03_hmg_F","I_MRAP_03_gmg_F","I_Heli_light_03_unarmed_F"]; // vehicles used for road patrols;
-vehAPC = 			["I_APC_Wheeled_03_cannon_F"]; // APCs
-vehIFV = 			["I_APC_tracked_03_cannon_F"]; // IFVs
-vehTank = 			["I_MBT_03_cannon_F"]; // MBTs
-vehSupply = 		["I_Truck_02_fuel_F","I_Truck_02_medical_F","I_Truck_02_ammo_F"]; // supply vehicles (ammo, fuel, med)
-vehAmmo = 			"I_Truck_02_ammo_F"; // ammo truck, for special missions
-vehFuel = 			["I_Truck_02_fuel_F"]; // fuel truck for missions
-vehLead = 			["I_MRAP_03_hmg_F","I_MRAP_03_gmg_F"]; // lead vehicle for convoys, preferably armed MRAP/car
-standardMRAP = 		["I_MRAP_03_F"]; // default transport MRAP/car
-vehTruckBox = 		["I_Truck_02_box_F"]; // repair truck or at least a prop
-vehPatrolBoat = 	["I_Boat_Armed_01_minigun_F"];
-vehDef= 			["I_APC_Wheeled_03_cannon_F"];
+vehTrucks = 		["I_Truck_02_covered_F","I_Truck_02_transport_F"]; 											// selectrandom
+vehPatrol =			["I_MRAP_03_F","I_MRAP_03_hmg_F","I_MRAP_03_gmg_F","I_Heli_light_03_unarmed_F"]; 			// selectrandom
+vehAPC = 			["I_APC_Wheeled_03_cannon_F"]; 																// selectrandom
+vehIFV = 			["I_APC_tracked_03_cannon_F"]; 																// selectrandom
+vehTank = 			["I_MBT_03_cannon_F"]; 																		// selectrandom
+vehSupply = 		["I_Truck_02_fuel_F","I_Truck_02_medical_F","I_Truck_02_ammo_F"]; 							// selectrandom \CREATE\createAirbase.sqf
+vehAmmo = 			"I_Truck_02_ammo_F"; 																		// ammo truck, for special missions \Missions\CONVOY.sqf - \Missions\LOG_Ammo.sqf
+vehFuel = 			["I_Truck_02_fuel_F"]; 																		// selectrandom \Missions\DES_Fuel.sqf
+vehLead = 			["I_MRAP_03_hmg_F","I_MRAP_03_gmg_F"]; 														// selectrandom \Missions\CONVOY.sqf
+standardMRAP = 		["I_MRAP_03_F"]; 																			// selectrandom \Missions\CONVOY.sqf - \Missions\DES_EnemySuppression.sqf
+vehTruckBox = 		["I_Truck_02_box_F"]; 																		// repair truck or at least a prop
+vehPatrolBoat = 	["I_Boat_Armed_01_minigun_F"];																// selectrandom \CREATE\genRoadPatrol.sqf - \CREATE\createOutpost.sqf
+vehDef = 			["I_APC_Wheeled_03_cannon_F"];																// selectrandom \CREATE\createAirbase.sqf - \CREATE\createBase.sqf  This will be stationary with a gunner,
 
-/*
-Not in use with AAF
-vehTruckAA = 		"";
-guer_vehicleArray pushBackUnique vehTruckAA;
-*/
-
+//Vehicle Categories
 var_AAF_groundForces = vehTrucks + vehPatrol + vehAPC + vehIFV + vehTank + vehLead + standardMRAP;
 var_AAF_groundForces = var_AAF_groundForces arrayIntersect var_AAF_groundForces;
 
@@ -112,6 +109,7 @@ infTeam = 			["HAF_InfTeam_AA","HAF_InfTeam_AT","HAF_InfTeam","HAF_InfTeam","HAF
 infSquad = 			["HAF_InfSquad","HAF_InfSquad_Weapons"];
 infAA =				["HAF_InfTeam_AA"];
 infAT =				["HAF_InfTeam_AT"];
+infAAdef =			["I_Soldier_AA_F"];
 
 // Statics to be used
 statMG = 			"I_HMG_01_high_F";
@@ -445,6 +443,22 @@ unlockedItems = [
 	"H_ShemagOpen_tan"
 ];
 
+if (worldname == "Tanoa") then {
+    unlockedItems = unlockedItems + [
+    "U_I_C_Soldier_Para_5_F",
+    "U_I_C_Soldier_Para_4_F",
+    "U_I_C_Soldier_Para_3_F",
+    "U_I_C_Soldier_Para_2_F",
+    "U_I_C_Soldier_Para_1_F",
+    "U_I_C_Soldier_Para_1_F",
+    "U_I_C_Soldier_Bandit_1_F",
+    "U_I_C_Soldier_Bandit_2_F",
+    "U_I_C_Soldier_Bandit_3_F",
+    "U_I_C_Soldier_Bandit_4_F",
+    "U_I_C_Soldier_Bandit_5_F"
+    ];
+};
+
 unlockedBackpacks = [
 	"B_TacticalPack_blk",
 	"B_TacticalPack_rgr",
@@ -517,18 +531,4 @@ IND_marker_colour = "ColorGUER";
 // Type of this faction's markers
 IND_marker_type = "flag_AAF";
 
-if (worldname == "Tanoa") then {
-    unlockedItems = unlockedItems + [
-    "U_I_C_Soldier_Para_5_F",
-    "U_I_C_Soldier_Para_4_F",
-    "U_I_C_Soldier_Para_3_F",
-    "U_I_C_Soldier_Para_2_F",
-    "U_I_C_Soldier_Para_1_F",
-    "U_I_C_Soldier_Para_1_F",
-    "U_I_C_Soldier_Bandit_1_F",
-    "U_I_C_Soldier_Bandit_2_F",
-    "U_I_C_Soldier_Bandit_3_F",
-    "U_I_C_Soldier_Bandit_4_F",
-    "U_I_C_Soldier_Bandit_5_F"
-    ];
-};
+

@@ -36,7 +36,7 @@ if (_countCiv < 1) then {_countCiv = 1};
 _group = createGroup civilian;
 _allGroups pushBack _group;
 
-while {(spawner getVariable _marker) AND (_counter < _countCiv)} do {
+while {(spawner getVariable _marker < 2) AND (_counter < _countCiv)} do {
 	if (diag_fps > minimoFPS) then {
 		_spawnPos = [];
 		while {true} do {
@@ -72,7 +72,7 @@ while {(spawner getVariable _marker) AND (_counter < _countCiv)} do {
 	_counter = _counter + 1;
 };
 
-if ((random 100 < ((server getVariable ["prestigeNATO",0]) + (server getVariable ["prestigeCSAT",0]))) AND (spawner getVariable _marker)) then {
+if ((random 100 < ((server getVariable ["prestigeNATO",0]) + (server getVariable ["prestigeCSAT",0]))) AND (spawner getVariable _marker < 2)) then {
 	while {true} do {
 		_spawnPos = [_markerPos, round (random _size), random 360] call BIS_Fnc_relPos;
 		if !(surfaceIsWater _spawnPos) exitWith {};
@@ -89,7 +89,7 @@ _patrolCities = [_marker] call AS_fnc_getNearbyCities;
 _counter = 0;
 _patrolCounter = (round (_countCiv / 30)) max 1;
 for "_i" from 1 to _patrolCounter do {
-	while {(spawner getVariable _marker) AND (_counter < (count _patrolCities - 1))} do {
+	while {(spawner getVariable _marker < 2) AND (_counter < (count _patrolCities - 1))} do {
 		_p1 = selectRandom _roads;
 		_road = (_p1 nearRoads 5) select 0;
 		if !(isNil "_road") then {
@@ -146,6 +146,6 @@ for "_i" from 1 to _patrolCounter do {
 	};
 };
 
-waitUntil {sleep 1; !(spawner getVariable _marker)};
+waitUntil {sleep 1; (spawner getVariable _marker > 1)};
 [_allGroups, _allCivilians] call AS_fnc_despawnUnitsNow;
 [[],[],_allVehicles] call AS_fnc_despawnUnits;

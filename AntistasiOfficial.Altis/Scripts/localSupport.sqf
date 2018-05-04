@@ -22,7 +22,7 @@ private ["_cities" ,"_location", "_data", "_prestigeOPFOR", "_prestigeBLUFOR", "
 #define CGREEN "#1DA81D"
 
 while {true} do {
-	_cities = ciudades select {spawner getVariable [_x,false]};
+	_cities = ciudades select {spawner getVariable [_x,4] != 4};
 
 	if (count _cities > 0) then {
 		_location = [_cities, position _player] call BIS_Fnc_nearestPosition;

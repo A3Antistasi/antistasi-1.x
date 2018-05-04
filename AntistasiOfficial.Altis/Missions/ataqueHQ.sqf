@@ -65,7 +65,7 @@ call {
 	};
 
 	_tsk = ["DEF_HQ",[side_blue,civilian],[_tskDesc,_tskTitle,guer_respawn],_posicion,"SUCCEEDED",5,true,true,"Defend"] call BIS_fnc_setTask;
-	[0,0] remoteExec ["prestige",2];
+	//[0,0] remoteExec ["prestige",2];
 	[0,300] remoteExec ["resourcesFIA",2];
 	{if (isPlayer _x) then {[10,_x] call playerScoreAdd}} forEach ([500,0,_posicion,"BLUFORSpawn"] call distanceUnits);
 };
