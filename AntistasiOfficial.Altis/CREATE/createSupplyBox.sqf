@@ -1,7 +1,7 @@
 if (!isServer and hasInterface) exitWith {};
 
 params ["_spawnPosition", "_crateType"];
-private ["_marker", "_crateType","_crateTypeBox","_cratedisplay", "_abort", "_allSheds", "_posHQ", "_houseType"]; //Stef, should i add other variables here?
+private ["_marker", "_crateType","_crateTypeBox","_cratedisplay", "_abort", "_allSheds","_selectedShed", "_posHQ", "_houseType"];
 
 //TODO Get away from hard coding the number of maximum crates!
 if(countSupplyCrates > 6) exitWith {diag_log format ["Could not create supply crate, max (%1) are already active", 6] ;};
@@ -36,8 +36,7 @@ if(_abort) exitWith
 };
 
 //Checking if given position is [], if yes search for new position
-if(count _spawnPosition == 0);
-{
+if(count _spawnPosition == 0) then {
 	//Searching for all available warehouses in AO
 	_allSheds = nearestObjects [_posHQ, [_houseType], 4000, true];
 	sleep 1;
@@ -49,6 +48,7 @@ if(count _spawnPosition == 0);
 	};
 
 	//Select random to start with
+	diag_log format ["Createsupplybox _allSheds = %1,",_allSheds];
 	_selectedShed = selectRandom _allSheds;
 	_spawnPosition = position _selectedShed;
 
