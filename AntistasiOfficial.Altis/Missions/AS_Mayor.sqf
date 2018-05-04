@@ -130,7 +130,7 @@ waitUntil  {sleep 1; (dateToNumber date > _fechalimnum) or (not alive _mayor) or
 if (not alive _mayor) then
 	{
 	_tsk = ["ASS",[side_blue,civilian],[[_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_initialMarker],_mayor,"FAILED",5,true,true,"Kill"] call BIS_fnc_setTask;
-	[0,0] remoteExec ["prestige",2];
+	//[0,0] remoteExec ["prestige",2];
 	[10,-20,_initialPosition] remoteExec ["AS_fnc_changeCitySupport",2];
 	{
 	if (!isPlayer _x) then
@@ -155,7 +155,7 @@ if (not alive _mayor) then
 if (_mayor distance getMarkerPos guer_respawn < 50) then
 	{
 	_tsk = ["ASS",[side_blue,civilian],[[_tskDesc,_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4],_tskTitle,_initialMarker],_mayor,"SUCCEEDED",5,true,true,"Kill"] call BIS_fnc_setTask;
-	[0,0] remoteExec ["prestige",2];
+	//[0,0] remoteExec ["prestige",2];
 	[0,300] remoteExec ["resourcesFIA",2];
 	[-10,20,_initialPosition] remoteExec ["AS_fnc_changeCitySupport",2];
 	{

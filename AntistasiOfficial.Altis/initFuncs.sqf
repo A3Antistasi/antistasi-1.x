@@ -143,6 +143,7 @@ createRoadblock = compile preProcessFileLineNumbers "CREATE\createRoadblock.sqf"
 createRoadblock2 = compile preProcessFileLineNumbers "CREATE\createRoadblock2.sqf";
 createWatchpost = compile preProcessFileLineNumbers "CREATE\createWatchpost.sqf";
 createAAsite = compile preProcessFileLineNumbers "CREATE\createAAsite.sqf";
+createAAdefense = compile preProcessFileLineNumbers "CREATE\createAAdefense.sqf";
 genInit = compile preProcessFileLineNumbers "CREATE\genInit.sqf";
 genInitBASES = compile preProcessFileLineNumbers "CREATE\genInitBASES.sqf";
 genRoadPatrol = compile preProcessFileLineNumbers "CREATE\genRoadPatrol.sqf";

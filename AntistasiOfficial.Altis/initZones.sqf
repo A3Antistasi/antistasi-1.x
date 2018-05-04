@@ -85,7 +85,7 @@ markers = power + bases + aeropuertos + recursos + fabricas + puestos + puertos 
 
 // Make sure all markers are invisible and not currently marked as having been spawned in.
 {_x setMarkerAlpha 0;
-    spawner setVariable [_x,false,true];
+    spawner setVariable [_x,4,true];
 } forEach (markers + artyEmplacements);
 {_x setMarkerAlpha 0} forEach seaMarkers;
 
@@ -130,7 +130,7 @@ markers = power + bases + aeropuertos + recursos + fabricas + puestos + puertos 
         _mrk setMarkerText _name;
         _mrk setMarkerAlpha 0;
         ciudades pushBack _name;
-        spawner setVariable [_name,false,true];
+        spawner setVariable [_name,4,true];
         _dmrk = createMarker [format ["Dum%1",_name], _pos];
         _dmrk setMarkerShape "ICON";
         _dmrk setMarkerType "loc_Cross";
@@ -163,7 +163,7 @@ markers = power + bases + aeropuertos + recursos + fabricas + puestos + puertos 
         _mrk setMarkerColor "ColorRed";
         _mrk setMarkerText _name;
         colinas pushBack _name;
-        spawner setVariable [_name,false,true];
+        spawner setVariable [_name,4,true];
         _mrk setMarkerAlpha 0;
     };
 } foreach (nearestLocations [getArray (configFile >> "CfgWorlds" >> worldName >> "centerPosition"), ["Hill"], worldSize/1.414]);
