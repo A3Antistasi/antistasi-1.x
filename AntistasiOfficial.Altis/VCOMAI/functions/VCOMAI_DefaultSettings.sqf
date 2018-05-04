@@ -55,7 +55,7 @@ VCOM_CurrentlySuppressingLimit = 12;
 //The distance a unit needs to be away for Vcom AI to temporary disable itself upon the unit? The AI unit will also need to be out of combat.
 VCOM_DisableDistance = 700;
 //How many AI can be checking roles/equipment/additional commands at once? This will impact FPS of AI in and out of battle. The goal is to limit how many benign commands are being run at once and bogging down a server with over a couple HUNDRED AI.
-VCOM_BasicCheckLimit = 7;
+VCOM_BasicCheckLimit = 2;
 //How many squad leaders can be executing advanced code at once.
 VCOM_LeaderExecuteLimit = 15;
 //How low should the FPS be, before Vcom pauses simulation. This will not disable simulation on AI - they will run default Bohemia AI.
@@ -74,7 +74,7 @@ VCOM_SideBasedMovement = [WEST,EAST,RESISTANCE];
 //VCOM_SideBasedExecution- Remove sides from the array below to remove that specific AI side from executing any of the VCOMAI scripts at all. DEFAULT = [WEST,EAST,CIVILIAN,RESISTANCE];
 VCOM_SideBasedExecution = [WEST,EAST,RESISTANCE];
 //Distance AI will respond to call of help from each other
-VCOM_Unit_AIWarnDistance = 600;
+VCOM_Unit_AIWarnDistance = 300;
 //Distance the AI will attempt to flank around the enemy. I.E. How far off a waypoint, or around the enemy squad, the AI are willing to go in combat.
 VCOM_WaypointDistance = 300;
 //Switching this to true will enable side specific skill settings. Side specific skills get added IN ADDITION TO the normal ranked skill.
@@ -498,5 +498,5 @@ VCOM_AISKILL_RESISTANCE =
 	_this setSkill ["endurance",_commandingSet + _commanding];
 	_this setSkill ["reloadSpeed",_generalSet + _general];
 
-};
+
 };
