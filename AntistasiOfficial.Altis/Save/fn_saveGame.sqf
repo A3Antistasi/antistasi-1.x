@@ -16,6 +16,7 @@ flag_savingServer = true;
 ["antenas", antenasmuertas] call fn_saveData;
 ["mrkAAF", mrkAAF - controles] call fn_saveData;
 ["mrkFIA", mrkFIA - puestosFIA - controles] call fn_saveData;
+["supplySaveArray", supplySaveArray] call fn_saveData;
 ["posHQ", server getVariable ["posHQ", getMarkerPos guer_respawn]] call fn_saveData;
 ["prestigeNATO", server getVariable ["prestigeNATO",0]] call fn_saveData;
 ["prestigeCSAT", server getVariable ["prestigeCSAT",0]] call fn_saveData;
@@ -48,7 +49,7 @@ flag_savingServer = true;
 //Sparker's War Statistics data
 //["ws_grid", ws_grid] call fn_saveData;
 
-private ["_hr","_funds","_vehicle","_weapons","_magazines","_items","_backpacks","_containers","_backpack","_vehiclesToSave","_vehicleType","_supportOPFOR","_supportBLUFOR","_data","_garrison","_mines","_emplacements","_camps","_missionTypes","_objectsHQ","_addObjectsHQ"];
+private ["_hr","_funds","_vehicle","_weapons","_magazines","_items","_backpacks","_containers","_backpack","_vehiclesToSave","_vehicleType","_supportOPFOR","_supportBLUFOR", "_supplyLevels","_data","_garrison","_mines","_emplacements","_camps","_missionTypes","_objectsHQ","_addObjectsHQ"];
 
 _hr = (server getVariable ["hr",0]) + ({(alive _x) AND (!isPlayer _x) AND (_x getVariable ["BLUFORSpawn",false]) AND (_x getVariable ["generated",false])} count allUnits);
 _funds = server getVariable ["resourcesFIA",0];
@@ -245,14 +246,17 @@ if (count (server getVariable ["obj_vehiclePad",[]]) > 0) then {
 
 _supportOPFOR = [];
 _supportBLUFOR = [];
+_supplyLevels= [];
 {
 	_data = server getVariable _x;
 	_supportOPFOR = _supportOPFOR + [_data select 2];
 	_supportBLUFOR = _supportBLUFOR + [_data select 3];
+	_supplyLevels = _supplyLevels + [_data select 4];
 } forEach ciudades;
 
 ["supportOPFOR",_supportOPFOR] call fn_saveData;
 ["supportBLUFOR",_supportBLUFOR] call fn_saveData;
+["supplyLevels",_supplyLevels] call fn_saveData;
 
 _garrison = [];
 {

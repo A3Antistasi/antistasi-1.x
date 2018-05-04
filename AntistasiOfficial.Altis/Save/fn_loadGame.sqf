@@ -18,6 +18,8 @@ publicVariable "flag_playerList";
 ["emplacements"] call fn_loadData; publicVariable "puestosFIA"; publicVariable "FIA_RB_list"; publicVariable "FIA_WP_list";
 ["mrkFIA"] call fn_loadData; mrkFIA = mrkFIA + puestosFIA; publicVariable "mrkFIA"; if (isMultiplayer) then {sleep 5};
 ["mrkAAF"] call fn_loadData;
+["supplySaveArray"] call fn_loadData;
+if(isnil "supplySaveArray") then {supplySaveArray = [];}; publicVariable "supplySaveArray";
 ["destroyedCities"] call fn_loadData; publicVariable "destroyedCities";
 ["mines"] call fn_loadData;
 ["cuentaCA"] call fn_loadData; publicVariable "cuentaCA";
@@ -36,6 +38,7 @@ publicVariable "flag_playerList";
 ["time"] call fn_loadData;
 ["supportOPFOR"] call fn_loadData;
 ["supportBLUFOR"] call fn_loadData;
+["supplyLevels"] call fn_loadData;
 ["resourcesAAF"] call fn_loadData;
 ["resourcesFIA"] call fn_loadData;
 ["garrison"] call fn_loadData;
@@ -64,6 +67,12 @@ unlockedRifles = unlockedweapons - gear_sidearms - gear_missileLaunchers - gear_
 //===========================================================================
 
 
+{
+	[(_x select 0), (_x select 1)] remoteExec ["createSupplyBox", call AS_fnc_getNextWorker];
+} forEach supplySaveArray;
+
+countSupplyCrates = count supplySaveArray;
+publicVariable "countSupplyCrates";
 
 _markers = mrkFIA + mrkAAF + campsFIA;
 

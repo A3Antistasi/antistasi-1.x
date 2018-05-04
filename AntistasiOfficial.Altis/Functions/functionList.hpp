@@ -122,6 +122,9 @@ class AS {
 		class getNearbyCities {};
 		class destroyCity {};
 		class changeCitySupport {};
+		class changeCitySupply {};
+		class SpawnCiviGetSupplies {};
+		class getHighSupplies {};
 		class deleteRoadblock {};
 		class createRoadblocks {};
 		class enemyArtillerySupport {};
