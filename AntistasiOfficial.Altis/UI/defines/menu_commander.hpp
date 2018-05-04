@@ -82,7 +82,7 @@
 // INFO MENU
 #define INFO_FIA "['status'] remoteExecCall ['AS_fnc_infoScreen', 2];"
 
-#define INFO_MRESTR "if(server getVariable [""jna_mrestricted"",false]) then {server setvariable [""jna_mrestricted"",flase,true]; jna_minItemMember = [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1];  (_this select 0) ctrlSetTextColor [0.18,0.545,0.341,1];systemchat 'Arsenal items are free for all'} \
+#define INFO_MRESTR "if(server getVariable [""jna_mrestricted"",false]) then {server setvariable [""jna_mrestricted"",false,true]; jna_minItemMember = [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1];  (_this select 0) ctrlSetTextColor [0.18,0.545,0.341,1];systemchat 'Arsenal items are free for all'} \
 	else {server setvariable [""jna_mrestricted"",true,true]; jna_minItemMember = [10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,500,20,20,20,10,500]; (_this select 0) ctrlSetTextColor [1,0,0,1]; systemchat 'Arsenal items below a threshold are restricted to non members'};"
 
 
