@@ -1,6 +1,7 @@
 private ["_tipo","_coste","_grupo","_unit","_tam","_roads","_road","_pos","_camion","_texto","_mrk","_hr","_exists","_posicionTel","_tipogrupo","_resourcesFIA","_hrFIA"];
 
 if (!([player] call hasRadio)) exitWith {hint localize "STR_HINTS_FD_YNARIYITBA"};
+if ("campsFIA" in misiones) exitWith {hint localize "STR_TSK_TD_BEMP_RESTR"};
 
 _tipo = _this select 0;
 _markers = mrkAAF;
@@ -103,4 +104,3 @@ if (_tipo == "create") then {
 if (_tipo != "rename") then {
 	[[_tipo,_posicionTel],"establishCamp"] call BIS_fnc_MP;
 };
-
