@@ -9,9 +9,12 @@ diag_log format ["Supply crate at %1 spawning in troups", _marker];
 
 _allGroups = [];
 _allSoldiers = [];
+_allVehicles = [];
 
+_spawnPosition = getmarkerpos _marker;
 _groupType = [infSquad, side_green] call AS_fnc_pickGroup;
 _group = [_spawnPosition, side_green, _groupType] call BIS_Fnc_spawnGroup;
+
 _allGroups pushBack _group;
 
 {
@@ -25,5 +28,4 @@ _allGroups pushBack _group;
 //waitUntil {sleep 1; spawner getVariable _marker > 1}; //Activate when merged with new spawn system
 waitUntil {sleep 1; !(spawner getVariable _marker)};
 
-{deleteVehicle _x} forEach _allSoldiers;
-{deleteGroup _x} forEach _allGroups;
+[_allGroups, _allSoldiers, _allVehicles] spawn AS_fnc_despawnUnits;
