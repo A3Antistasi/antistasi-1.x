@@ -9,13 +9,15 @@ _supplyLevels = _data select 4;
 _tiers = ["CRITICAL", "LOW", "GOOD"];
 
 _indexThreshold = _tiers find _threshold;
+diag_log format ["_indexThreshold = %1",_indexThreshold];
 if(_indexThreshold == -1) exitWith {diag_log format ["Error in getHighSupplies. Could not find threshold %1.", _threshold]};
 
 for "_i" from 0 to 2 do
 {
 	_level = _supplyLevels select _i;
 	_indexLevel = _tiers find _level;
-	if(_indexLevel >= _indexThreshold) then {_result pushBackUnique (_tiers select _i)};
+	if(_indexLevel >= _indexThreshold) then {_result pushBackUnique _level};
 };
 
+diag_log format ["_result = %1",_result];
 _result
