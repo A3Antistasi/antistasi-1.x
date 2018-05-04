@@ -224,6 +224,8 @@ if ((alive _crate) AND (_marker in markerSupplyCrates)) then {
 	};
 	// BE module
 };
+//Disable respawn mechanics
+spawner setVariable [_marker, nil, true];
 //Delete position from arrays
 markerSupplyCrates = markerSupplyCrates - [_marker];
 publicVariable "markerSupplyCrates";
