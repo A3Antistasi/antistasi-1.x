@@ -111,7 +111,7 @@ spawner setVariable [_marker, false, true];
 	_counter: running timer
 */
 
-waitUntil{sleep 1; ([300,1 ,_crate,"BLUFORSpawn"] call distanceUnits) OR ({_x distance2D _crate < 1000} count puestosFIA != 0)};
+//waitUntil{sleep 1; ([300,1 ,_crate,"BLUFORSpawn"] call distanceUnits) OR ({_x distance2D _crate < 1000} count puestosFIA != 0)};
 //Reveal marker
 _marker setMarkerAlpha 1;
 if([300,1,_crate, "BLUFORSpawn"] call distanceUnits) then
