@@ -169,7 +169,7 @@ while {true} do {
 
 			};
 		};
-		[nil, selectRandom["FOOD", "WATER", "FUEL"], true] remoteExec ["createSupplyPrefab", call AS_fnc_getNextWorker];
+		[[], selectRandom["FOOD", "WATER", "FUEL"]] remoteExec ["createSupplyBox", call AS_fnc_getNextWorker];
 	};
 
 
