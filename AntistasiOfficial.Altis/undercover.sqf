@@ -15,14 +15,28 @@ _compromised = player getVariable ["compromised",dateToNumber date];
 	Ideal for hand-placed objects that you don't want spawning as traffic.
 	Vehicles you want added as traffic should be added to CIV_vehicles.
 */
-_civVehicles = CIV_vehicles + [civHeli] +
-	[
-		"C_Rubberboat",				// Civ. Zodiac
-		"C_Boat_Civil_01_F",		// Speedboat
-		"C_Boat_Civil_01_rescue_F",	// Rescue Speedboat
-		"C_Boat_Civil_01_police_F",	// Police Speedboat
-		"C_Scooter_Transport_01_F",	// Jetski
-		"C_Boat_Transport_02_F"		// RHIB transport boat
+_civVehicles = CIV_vehicles + [civHeli] + [
+		"C_Rubberboat",// Civ. Zodiac
+		"C_Boat_Civil_01_F",// Speedboat
+		"C_Boat_Civil_01_rescue_F",// Rescue Speedboat
+		"C_Boat_Civil_01_police_F",// Police Speedboat
+		"C_Scooter_Transport_01_F",// Jetski
+		"C_Boat_Transport_02_F"// RHIB transport boat
+	];
+
+
+//Define seats which are openly, so player cannot go incognito sitting on these
+	_civVehiclesWithOpenSeats = [
+		"C_Offroad_01_F",
+		"C_Van_01_transport_F",
+		"C_Truck_02_transport_F",
+		"C_Quadbike_01_F"
+	];
+	_civVehicleOpenSeats = [
+		[2,3,4,5],//Civi Offroad
+		[3,4,5,6,7,8,9,10,11,12],//Civi Truck
+		[3,4,5,6,7,8,9,10,11,12,13,14,15,16],//Civi Zamak
+		[-1,0] //Civi quadbike
 	];
 
 _fnc_compromiseVehicle = {
@@ -77,11 +91,10 @@ call {
 			_reason = localize "STR_HINTS_UND_NOTCIV";
 		};
 
-		// Vehicle has been reported
-		if (vehicle player in reportedVehs) exitWith {
-			_reason = localize "STR_HINTS_UND_REPORTED_CAR";
-		};
-	};
+    	_revealdist = 100;
+    	if (_base in puestos) then {_revealdist = 60} else {_revealdist = 300};
+    	if (player distance getMarkerPos _base < _revealdist) exitWith {_reason = localize "STR_HINTS_UND_FAC_GRND"};
+    }
 
 	// You are wearing compromising gear
 	call {
@@ -96,6 +109,29 @@ call {
 		if (_break) then {
 			if ({((side _x== side_red) or (side _x== side_green)) and ((_x knowsAbout player > 1.4) or (_x distance player < safeDistance_undercover))} count allUnits > 0) then {
 				_spotted = true;
+			};
+		};
+	};
+
+	// Player is in a vehicle
+	if (vehicle player != player) exitWith {
+		// Vehicle doesn't qualify for undercover
+		if !(typeOf(vehicle player) in _civVehicles) exitWith {
+			_reason = localize "STR_HINTS_UND_NOTCIV";
+		};
+
+		// Vehicle has been reported
+		if (vehicle player in reportedVehs) exitWith {
+			_reason = localize "STR_HINTS_UND_REPORTED_CAR";
+		};
+
+		if (_break) exitWith {
+			//Player is sitting openly on a truck or else and the gears is compromising
+			if (((typeof (vehicle player)) in _civVehiclesWithOpenSeats) AND
+				( (vehicle player getCargoIndex player) in (_civVehicleOpenSeats select (_civVehiclesWithOpenSeats find (typeof vehicle player)))  )
+			) exitWith {
+				_reason = "You are sitting openly (Need localize)";
+				[player] spawn _fnc_compromiseVehicle;
 			};
 		};
 	};
