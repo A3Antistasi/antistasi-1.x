@@ -8,7 +8,7 @@ markerSupplyCrates = [];
 publicVariable "markerSupplyCrates";
 supplySaveArray = [];
 publicVariable "supplySaveArray";
-countSupplyCrates = [];
+countSupplyCrates = 0;
 publicVariable "countSupplyCrates";
 
 petros enableAI "MOVE";

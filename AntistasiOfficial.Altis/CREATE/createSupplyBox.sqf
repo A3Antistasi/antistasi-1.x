@@ -1,7 +1,7 @@
 if (!isServer and hasInterface) exitWith {};
 
 params ["_spawnPosition", "_crateType"];
-private ["_marker", "_crateType","_cratedisplay", "_abort", "_allSheds", "_posHQ", "_houseType"]; //Stef, should i add other variables here?
+private ["_marker", "_crateType","_crateTypeBox","_cratedisplay", "_abort", "_allSheds", "_posHQ", "_houseType"]; //Stef, should i add other variables here?
 
 //TODO Get away from hard coding the number of maximum crates!
 if(countSupplyCrates > 6) exitWith {diag_log format ["Could not create supply crate, max (%1) are already active", 6] ;};
@@ -21,11 +21,10 @@ _posHQ = getMarkerPos guer_respawn;
 //Deciding which type of crate is used
 _houseType = "Land_i_Shed_Ind_F"; //<-- perhaps define this somewhere else
 switch (_crateType) do {
-	case "WATER": 	{_crateTypeBox = "Land_PaperBox_01_open_boxes_F";		};
-	case "FUEL": 	{_crateTypeBox = "CargoNet_01_barrels_F";				};
-	case "FOOD": 	{_crateTypeBox = "Land_PaperBox_01_open_boxes_F";		};
-	default
-	{
+	case "WATER": {_crateTypeBox = "Land_PaperBox_01_open_boxes_F";};
+	case "FUEL": 	{_crateTypeBox = "CargoNet_01_barrels_F";};
+	case "FOOD": 	{_crateTypeBox = "Land_PaperBox_01_open_boxes_F";};
+	default {
 		diag_log format ["BAD REFERENCE AT SUPPLYBOX, passed %1, expected WATER, FUEL or FOOD", _crateType];
 		_abort = true;
 	};
@@ -75,6 +74,7 @@ if(_abort) exitWith
 };
 
 //Creating the crate with the needed data
+diag_log format ["Createsupplybox _crateTypeBox = %1,  _spawnposition = %2",_crateTypeBox,_spawnPosition];
 _crate = _crateTypeBox createVehicle _spawnPosition;
 _crate allowDamage false;
 [_crate] spawn {sleep 1; (_this select 0) allowDamage true;};
@@ -214,6 +214,8 @@ while {alive _crate AND (_marker in markerSupplyCrates)} do {
 };
 
 if ((alive _crate) AND (_marker in markerSupplyCrates)) then {
+	diag_log format ["createsupplybox _type = %1",_type];
+	systemchat format ["createsupplybox _type = %1",_type];
 	[_crateType, 1, _currentCity] remoteExec ["AS_fnc_changeCitySupply", 2];
 	[5,0] remoteExec ["prestige",2];
 	{if (_x distance _crate < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));

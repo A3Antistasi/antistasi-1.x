@@ -171,7 +171,9 @@ while {true} do {
 
 			};
 		};
-		[[], [selectRandom["FOOD", "WATER", "FUEL"]]] remoteExec ["createSupplyBox", call AS_fnc_getNextWorker];
+		_passedtype = selectRandom["FOOD", "WATER", "FUEL"];
+		diag_log format ["_passedtype = %1",_passedtype];
+		[[], _passedtype] remoteExec ["createSupplyBox", call AS_fnc_getNextWorker];
 	};
 
 
