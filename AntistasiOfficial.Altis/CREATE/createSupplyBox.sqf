@@ -1,7 +1,23 @@
 if (!isServer and hasInterface) exitWith {};
 
 params ["_spawnPosition", "_crateType"];
-private ["_marker", "_crateType","_crateTypeBox","_cratedisplay", "_abort", "_allSheds","_selectedShed", "_posHQ", "_houseType", "_currentCity"];
+private ["_marker", "_crateType","_crateTypeBox","_cratedisplay", "_abort", "_allSheds","_selectedShed", "_posHQ", "_houseType", "_currentCity", "_fnDeleteMissionIn"];
+
+_fnDeleteMissionIn = {
+    // params ["_marker", "_crateType", "_spawnPosition", "_timer"];
+    if (_timer > 0) then {
+        sleep _timer;
+    };
+    deleteMarker _marker;
+    spawner setVariable [_marker, nil, true];
+    countSupplyCrates = countSupplyCrates - 1;
+    publicVariable "countSupplyCrates";
+    supplySaveArray = supplySaveArray - [[_spawnPosition, _crateType]];
+    publicVariable "supplySaveArray";
+    markerSupplyCrates = markerSupplyCrates - [_marker];
+    publicVariable "markerSupplyCrates";
+    systemChat format ["fndeletemission"] ;
+};
 
 //TODO Get away from hard coding the number of maximum crates!
 // why ?
@@ -103,6 +119,8 @@ publicVariable "supplySaveArray";
 //Activate when merged with new spawn system (supply system refacto from wurzel)
 spawner setVariable [_marker, 0, true];
 //spawner setVariable [_marker, false, true];
+
+[_marker,_crateType,_spawnPosition, 10] call _fnDeleteMissionIn;
 
 
 /*
@@ -248,14 +266,17 @@ if ((alive _crate) AND (_marker in markerSupplyCrates) AND _isCrateUnloaded) the
 	};
 };
 //Disable respawn mechanics
-spawner setVariable [_marker, nil, true];
+// spawner setVariable [_marker, nil, true];
+
+_myTempVariable = [_marker,_crateType,_spawnPosition, 0] call _fnDeleteMissionIn;
+
 //Delete position from arrays
-markerSupplyCrates = markerSupplyCrates - [_marker];
-publicVariable "markerSupplyCrates";
-supplySaveArray = supplySaveArray - [[_spawnPosition, _crateType]];
-publicVariable "supplySaveArray";
-countSupplyCrates = countSupplyCrates - 1;
-publicVariable "countSupplyCrates";
+// markerSupplyCrates = markerSupplyCrates - [_marker];
+// publicVariable "markerSupplyCrates";
+// supplySaveArray = supplySaveArray - [[_spawnPosition, _crateType]];
+// publicVariable "supplySaveArray";
+// countSupplyCrates = countSupplyCrates - 1;
+// publicVariable "countSupplyCrates";
 
 systemchat format ["markerSupplyCrates END %1", markerSupplyCrates];
 systemchat format ["countSupplyCrates END = %1", countSupplyCrates];

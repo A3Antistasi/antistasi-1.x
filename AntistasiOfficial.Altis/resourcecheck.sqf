@@ -1,4 +1,4 @@
-﻿params [["_oneIteration", false]];
+params [["_oneIteration", false]];
 [getMarkerPos guer_respawn,[],[],false] params ["_positionHQ","_options","_zones"];
 if (!isServer) exitWith{};
 
@@ -270,6 +270,5 @@ while {true} do {
 	diag_log "resourcecheck.sqf: calling FIAradio";
 	[] call AS_fnc_FIAradio;
 
-	systemchat format ["markerSupplyCrates %1", markerSupplyCrates];
 	if (_oneIteration) exitWith {};
 };
