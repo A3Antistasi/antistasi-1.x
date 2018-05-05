@@ -460,26 +460,32 @@
 			<Key ID="STR_GL_AAFOP">
 				<Original>AAF Outpost</Original>
 				<Russian>ОП AAF</Russian>
+                <Spanish>Puesto AAF</Spanish>
 			</Key>
 			<Key ID="STR_GL_AAFBS">
 				<Original>AAF Base</Original>
 				<Russian>В/база AAF</Russian>
+                <Spanish>Base AAF</Spanish>
 			</Key>
 			<Key ID="STR_GL_AAFAB">
 				<Original>AAF Airport</Original>
 				<Russian>А/база AAF</Russian>
+                <Spanish>Aeródromo AAF</Spanish>
 			</Key>
 			<Key ID="STR_GL_FIARB">
 				<Original>FIA Roadblock</Original>
 				<Russian>БП FIA</Russian>
+                <Spanish>Control FIA</Spanish>
 			</Key>
 			<Key ID="STR_GL_FIAWP">
 				<Original>FIA Watchpost</Original>
 				<Russian>НП FIA</Russian>
+                <Spanish>Observación FIA</Spanish>
 			</Key>
 			<Key ID="STR_GL_NATORB">
 				<Original>NATO Roadblock</Original>
 				<Russian>БП НАТО</Russian>
+                <Spanish>Control OTAN</Spanish>
 			</Key>
 		</Container>
 	</Package>
