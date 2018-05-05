@@ -79,6 +79,7 @@ while {true} do {
 		_planeTargets pushBackUnique _target;
 	} forEach _enemyPlanes;
 
+//Loop every marker
 	{
 		private _marker = _x;
 		private _markerPos = getMarkerPos _marker;
