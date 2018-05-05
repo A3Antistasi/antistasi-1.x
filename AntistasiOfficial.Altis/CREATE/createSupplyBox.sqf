@@ -18,7 +18,6 @@ _fnDeleteMissionIn = {
     markerSupplyCrates = markerSupplyCrates - [_marker];
     publicVariable "markerSupplyCrates";
     waitUntil {sleep 5; !([distanciaSPWN,1,_crate,"BLUFORSpawn"] call distanceUnits) OR (_crate distance (getMarkerPos guer_respawn) < 60)};
-    deleteVehicle _crate;
     if (alive _crate OR (_marker in markerSupplyCrates)) exitWith{};
 };
 
@@ -99,6 +98,9 @@ if (_abort) exitWith
 diag_log format ["Createsupplybox _crateTypeBox = %1,  _spawnposition = %2",_crateTypeBox,_spawnPosition];
 _crate = _crateTypeBox createVehicle _spawnPosition;
 _crate allowDamage false;
+if(activeACE && {["ace_cargo"] call ace_common_fnc_isModLoaded}) then { // check if ace cargo module is active
+    [_crate, -1] call ace_cargo_fnc_setSize; // disable loading as cargo with ace
+};
 [_crate] spawn {sleep 1; (_this select 0) allowDamage true;};
 _crate call jn_fnc_logistics_addAction;
 _cratedisplay = "";
@@ -249,7 +251,6 @@ while {alive _crate OR (_marker in markerSupplyCrates)} do {
 			// delete the map marker
 			deleteMarker _marker;
 			_currentCity = [ciudades, getPos _crate] call BIS_fnc_nearestPosition;
-            diag_log ["_currentCity", _currentCity];
 			_isCrateUnloaded = true;
 		};
 	};
@@ -257,10 +258,10 @@ while {alive _crate OR (_marker in markerSupplyCrates)} do {
 };
 
 if ((alive _crate) AND (_marker in markerSupplyCrates) AND _isCrateUnloaded) then {
-	[_crateType, 1, _currentCity] remoteExec ["AS_fnc_changeCitySupply", 2];
 	[5,0] remoteExec ["prestige",2];
-	// {if (_x distance _crate < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
+	{if (_x distance _crate < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - entities "HeadlessClient_F");
 	[5,Slowhand] call playerScoreAdd;
+    [_crateType, 1, _currentCity] remoteExec ["AS_fnc_changeCitySupply", 2];
 	// BE module
 	if (activeBE) then {
 		["mis"] remoteExec ["fnc_BE_XP", 2];

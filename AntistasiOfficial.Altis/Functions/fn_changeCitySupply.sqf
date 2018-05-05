@@ -2,8 +2,7 @@ params["_type", "_delta", "_location"];
 private["_city", "_data", "_supplyLevels", "_index", "_currentLevel", "_newLevels"];
 
 //Gather the needed data
-_city = [[ciudades, _location] call BIS_fnc_nearestPosition, _location];
-// _city = [[ciudades, _location] call BIS_fnc_nearestPosition, _location] select (typeName _location == typeName "");
+_city = [[ciudades, _location] call BIS_fnc_nearestPosition, _location] select (typeName _location == typeName "");
 _data = server getVariable _city;
 if !(_data isEqualType []) exitWith {diag_log format ["Error in changeCitySupply. Passed %1 as reference.", _location]};
 
@@ -14,6 +13,8 @@ if(_type == "FOOD") then {_index = 0;};
 if(_type == "WATER") then {_index = 1;};
 if(_type == "FUEL") then {_index = 2;};
 
+systemChat format ["type = %1 _supplyLevels = %2 city = %3", _type,_supplyLevels, _city];
+diag_log format ["type = %1 _supplyLevels = %2 city = %3", _type,_supplyLevels, _city];
 _currentLevel = _supplyLevels select _index;
 
 if(_delta > 0 && _currentLevel != 'GOOD') then
@@ -29,8 +30,7 @@ if(_delta > 0 && _currentLevel != 'GOOD') then
             systemChat format ["location x = %1", _location];
             diag_log format ["1private x = %1", _x];
             diag_log format ["location x = %1", _location];
-            systemChat format ["distance x = %1", _x distance _location];
-            if (_x distance _location < 500) then {[5,_x] call playerScoreAdd};
+            // if (_x distance _location < 500) then {[5,_x] call playerScoreAdd};
         } forEach (allPlayers - entities "HeadlessClient_F");
         [5,Slowhand] call playerScoreAdd;
 	};
@@ -45,7 +45,7 @@ if(_delta > 0 && _currentLevel != 'GOOD') then
             diag_log format ["2private x = %1", _x];
             systemChat format ["location x = %1", _location];
             diag_log format ["location x = %1", _location];
-            if (_x distance _location < 500) then {[10,_x] call playerScoreAdd};
+            // if (_x distance _location < 500) then {[10,_x] call playerScoreAdd};
         } forEach (allPlayers - entities "HeadlessClient_F");
         [10,Slowhand] call playerScoreAdd;
 	};
@@ -62,6 +62,8 @@ if(_delta < 0 && _currentLevel != 'CRITICAL') then
 	};
 };
 
+systemChat format ["type_currentLevel = %1_%2", _type, _currentLevel];
+diag_log format ["type_currentLevel = %1_%2", _type, _currentLevel];
 //Create new Array containing the new data
 _newLevels = [];
 for "_i" from 0 to 2 do

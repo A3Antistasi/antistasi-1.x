@@ -164,9 +164,10 @@ while {true} do {
 			{
 				_cityDecreased = true;
 				_type = selectRandom _types;
-				diag_log format ["resourcecheck _type = %1",_type];
-				systemchat format ["resourcecheck _type = %1",_type];
-				[_type, -1, _currentCity] spawn AS_fnc_changeCitySupply;
+				diag_log format ["DEBUG resourcecheck _type = %1",_type];
+				systemchat format ["DEBUG resourcecheck _type = %1",_type];
+
+				[_type, -1, _currentCity] remoteExec ["AS_fnc_changeCitySupply", 2];
 				_type = selectRandom _types;
 
 			};
