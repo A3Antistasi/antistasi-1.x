@@ -152,8 +152,8 @@ else
 	//Crate detected by watchpost
 	[[petros,"globalChat","Our watchposts have detected an AAF supply crate. Check your maps!"],"commsMP"] call BIS_fnc_MP;
 };
-// 150
-[false, false, 5, 0] params ["_isCrateUnloaded", "_timerRunning", "_deploymentTime", "_counter"];
+
+[false, false, 150, 0] params ["_isCrateUnloaded", "_timerRunning", "_deploymentTime", "_counter"];
 
 while {alive _crate OR (_marker in markerSupplyCrates)} do {
     sleep 1;
@@ -173,6 +173,7 @@ while {alive _crate OR (_marker in markerSupplyCrates)} do {
 		!(_marker in markerSupplyCrates)
 	};
 
+    _crate call jn_fnc_logistics_removeAction;
 	//Reveal all players in the surrounding of the crate to the enemies
 	{
 		_player = _x;
