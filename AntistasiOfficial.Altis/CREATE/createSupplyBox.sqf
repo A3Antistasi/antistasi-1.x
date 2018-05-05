@@ -4,11 +4,12 @@ params ["_spawnPosition", "_crateType"];
 private ["_marker", "_crateType","_crateTypeBox","_cratedisplay", "_abort", "_allSheds","_selectedShed", "_posHQ", "_houseType", "_currentCity", "_fnDeleteMissionIn"];
 
 _fnDeleteMissionIn = {
-    // params ["_marker", "_crateType", "_spawnPosition", "_timer"];
-    if (_timer > 0) then {
-        sleep _timer;
-    };
+    params ["_marker", "_spawnPosition", "_crateType", "_crate", "_timer"];
+    if (_timer > 0) then {sleep _timer;};
+
+    // this all we need to revert mission creation
     deleteMarker _marker;
+    //Disable respawn mechanics
     spawner setVariable [_marker, nil, true];
     countSupplyCrates = countSupplyCrates - 1;
     publicVariable "countSupplyCrates";
@@ -16,17 +17,18 @@ _fnDeleteMissionIn = {
     publicVariable "supplySaveArray";
     markerSupplyCrates = markerSupplyCrates - [_marker];
     publicVariable "markerSupplyCrates";
-    systemChat format ["fndeletemission"] ;
+    waitUntil {sleep 5; !([distanciaSPWN,1,_crate,"BLUFORSpawn"] call distanceUnits) OR (_crate distance (getMarkerPos guer_respawn) < 60)};
+    deleteVehicle _crate;
+    if (alive _crate OR (_marker in markerSupplyCrates)) exitWith{};
 };
 
 //TODO Get away from hard coding the number of maximum crates!
-// why ?
+//zalexki: yes use the Factory Design Pattern and this will be a parameter of createSupplyBoxMissionFactory
 if (countSupplyCrates > 6) exitWith {
-    diag_log format ["Could not create supply crate, max (%1) are already active", 6] ;
+    diag_log format ["Could not create supply crate, max (%1) are already active", 6];
 };
 
 countSupplyCrates = countSupplyCrates + 1;
-
 diag_log format ["ANTISTASI - Supplycrate, _type = %1, now creating", _crateType];
 
 //Create abort condition if init is wrong
@@ -36,7 +38,9 @@ _abort = false;
 _posHQ = getMarkerPos guer_respawn;
 
 //Deciding which type of crate is used
-_houseType = "Land_i_Shed_Ind_F"; //<-- perhaps define this somewhere else
+//wurzel: perhaps define this somewhere else
+//zalexki: yes same as countSupplyCrates
+_houseType = "Land_i_Shed_Ind_F";
 switch (_crateType) do {
 	case "WATER": {_crateTypeBox = "Land_PaperBox_01_open_boxes_F";};
 	case "FUEL": {_crateTypeBox = "CargoNet_01_barrels_F";};
@@ -84,7 +88,9 @@ if (count _spawnPosition == 0) then {
 //Abort if no position found
 if (_abort) exitWith
 {
-	diag_log "ANTISTASI - DynamicSupplies: No suitable position found around HQ for a supply crate";
+    // this need to be translatable with stringtable
+    diag_log format ["ANTISTASI - Mission DynamicSupplies: No suitable position found around HQ for a supply crate"];
+	systemChat format ["ANTISTASI - Mission DynamicSupplies: No suitable position found around HQ for a supply crate"];
     countSupplyCrates = countSupplyCrates - 1;
 	publicVariable "countSupplyCrates";
 };
@@ -116,11 +122,12 @@ supplySaveArray pushBackUnique [_spawnPosition, _crateType];
 publicVariable "supplySaveArray";
 
 //Add spawning mechanics to the position
-//Activate when merged with new spawn system (supply system refacto from wurzel)
+//Activate when merged with new spawn system (tight to supply system or air control PRs)
 spawner setVariable [_marker, 0, true];
 //spawner setVariable [_marker, false, true];
 
-[_marker,_crateType,_spawnPosition, 10] call _fnDeleteMissionIn;
+// delete mission in 30min=1800s
+[_marker, _spawnPosition, _crateType, _crate, 1800] spawn _fnDeleteMissionIn;
 
 
 /*
@@ -143,11 +150,9 @@ else
 	//Crate detected by watchpost
 	[[petros,"globalChat","Our watchposts have detected an AAF supply crate. Check your maps!"],"commsMP"] call BIS_fnc_MP;
 };
+// 150
+[false, false, 5, 0] params ["_isCrateUnloaded", "_timerRunning", "_deploymentTime", "_counter"];
 
-// DEBUG
-[false, 10, 0] params ["_timerRunning", "_deploymentTime", "_counter"];
-
-_isCrateUnloaded = false;
 while {alive _crate OR (_marker in markerSupplyCrates)} do {
     sleep 1;
 
@@ -165,9 +170,6 @@ while {alive _crate OR (_marker in markerSupplyCrates)} do {
 		(isOnRoad (position _crate))} count ciudades == 0) OR
 		!(_marker in markerSupplyCrates)
 	};
-
-    // I don't understand how this can happend has we waitUntil just before and no other script manipulate markerSupplyCrates
-    // if(!(_marker in markerSupplyCrates)) exitWith {}; //Crate not longer active!
 
 	//Reveal all players in the surrounding of the crate to the enemies
 	{
@@ -247,38 +249,23 @@ while {alive _crate OR (_marker in markerSupplyCrates)} do {
 			// delete the map marker
 			deleteMarker _marker;
 			_currentCity = [ciudades, getPos _crate] call BIS_fnc_nearestPosition;
+            diag_log ["_currentCity", _currentCity];
 			_isCrateUnloaded = true;
 		};
 	};
 	if (_isCrateUnloaded) exitWith {};
 };
 
-
 if ((alive _crate) AND (_marker in markerSupplyCrates) AND _isCrateUnloaded) then {
-	systemchat format ["_currentCity = %1",_currentCity];
 	[_crateType, 1, _currentCity] remoteExec ["AS_fnc_changeCitySupply", 2];
 	[5,0] remoteExec ["prestige",2];
-	{if (_x distance _crate < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
+	// {if (_x distance _crate < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
 	[5,Slowhand] call playerScoreAdd;
 	// BE module
 	if (activeBE) then {
 		["mis"] remoteExec ["fnc_BE_XP", 2];
 	};
+    systemChat format ["%1 received %2", _currentCity, _crateType];
 };
-//Disable respawn mechanics
-// spawner setVariable [_marker, nil, true];
 
-_myTempVariable = [_marker,_crateType,_spawnPosition, 0] call _fnDeleteMissionIn;
-
-//Delete position from arrays
-// markerSupplyCrates = markerSupplyCrates - [_marker];
-// publicVariable "markerSupplyCrates";
-// supplySaveArray = supplySaveArray - [[_spawnPosition, _crateType]];
-// publicVariable "supplySaveArray";
-// countSupplyCrates = countSupplyCrates - 1;
-// publicVariable "countSupplyCrates";
-
-systemchat format ["markerSupplyCrates END %1", markerSupplyCrates];
-systemchat format ["countSupplyCrates END = %1", countSupplyCrates];
-waitUntil {sleep 5; !([distanciaSPWN,1,_crate,"BLUFORSpawn"] call distanceUnits) OR (_crate distance (getMarkerPos guer_respawn) < 60)};
-deleteVehicle _crate;
+[_marker, _spawnPosition, _crateType, _crate, 0] call _fnDeleteMissionIn;
