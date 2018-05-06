@@ -31,6 +31,7 @@ if (!isMultiPlayer) then {
     [] execVM "modBlacklist.sqf";
 };
 
+
 waitUntil {(!isNil "saveFuncsLoaded") and (!isNil "serverInitDone")};
 
 call jn_fnc_logistics_init;
@@ -91,3 +92,5 @@ if(isServer) then {
 
 //Check worldname on dedicated server: is it altis or Altis? Sparker.
 diag_log format ["Antistasi worldName: %1",worldName];
+
+// will display 'cron' every 5 seconds

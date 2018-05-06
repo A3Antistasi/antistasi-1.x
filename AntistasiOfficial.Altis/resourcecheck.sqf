@@ -16,9 +16,13 @@ private _ws_frontlineDir = call ws_fnc_newGridArray;	//Array for the edge direct
 private _ws_radius = 500;						//Value needed to calculate fields around markers. At distance equal to _ws_radius the field value will drop to 0.5.
 ////////////////////////////////////
 
+[{systemChat format ["i cry no cron"]},[],0,5,0] call cron_addjob;
+
+
 while {true} do {
-
-
+	diag_log format ["RWT_var_cronSchedule %1", RWT_var_cronSchedule];
+	// call cron_fnc_cronJobRun;
+	// [] call cron_fnc_cronJobRun;
 	//Roadblock placement based on the frontline, made by Sparker
 	//Just remove this if you need. Also check it in init and serverInit.
 	diag_log "resourcecheck.sqf: calculating grids...";

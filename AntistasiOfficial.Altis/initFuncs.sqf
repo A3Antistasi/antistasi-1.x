@@ -208,4 +208,22 @@ call compile preprocessFileLineNumbers "Compositions\cmpMTN.sqf";
 call compile preprocessFileLineNumbers "Compositions\cmpOP.sqf";
 call compile preprocessFileLineNumbers "Compositions\artillery.sqf";
 
+// Add cron support
+// call compile preProcessFileLineNumbers "Functions\cron\functions\fn_cronInit.sqf";
+// cronJobInit = compile preProcessFileLineNumbers "Functions\cron\functions\fn_cronInit.sqf";
+// cronJobAdd = compile preProcessFileLineNumbers "Functions\cron\functions\fn_cronJobAdd.sqf";
+// cronJobRemove = compile preProcessFileLineNumbers "Functions\cron\functions\fn_cronJobRemove.sqf";
+// cronJobRun = compile preProcessFileLineNumbers "Functions\cron\functions\fn_cronJobRun.sqf";
+
+// RWT_fnc_cronJobAdd = compile preprocessFileLineNumbers "Functions\cron\functions.hpp"
+// call compile preprocessFileLineNumbers "Functions\cron\functions.hpp";
+
+
+
+
+call compile preProcessFileLineNumbers "Functions\cron\functions\fn_cronJobLib.sqf";
+
+
+
+
 if ((isMultiplayer) and (isServer)) then {[[petros,"locHint","STR_HINTS_INITCUNCS"],"commsMP"] call BIS_fnc_MP};

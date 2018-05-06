@@ -1,6 +1,7 @@
 #include "defines.hpp"
 #include "dialogs.hpp"
 
+
 author="Barbolani";
 OnLoadName = $STR_MISSION_NAME_EXT;
 OnLoadMission = "Be a Resistance Leader - Be a Hero";
@@ -385,6 +386,6 @@ class Params {
 };
 
 class CfgFunctions {
-	#include "Functions\functionList.hpp"
+    #include "Functions\functionList.hpp"
 	#include "JeroenArsenal\functions.hpp"
 };
