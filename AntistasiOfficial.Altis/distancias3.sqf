@@ -141,6 +141,7 @@ while {true} do {
 							if (_marker in aeropuertos) 							exitWith {[_marker] remoteExec ["createAirbase", call AS_fnc_getNextWorker]};
 							if ((_marker in recursos) OR (_marker in fabricas)) 	exitWith {[_marker] remoteExec ["createResources", call AS_fnc_getNextWorker]};
 							if ((_marker in puestos) OR (_marker in puertos))		exitWith {[_marker] remoteExec ["createOutpost", call AS_fnc_getNextWorker]};
+							if (_marker in markerSupplyCrates)						exitWith {[_marker] remoteExec ["createSupplyGroup", call AS_fnc_getNextWorker]};
 						};
 						_markerGarrisonSpawned pushBackUnique _marker;
 					};
@@ -167,6 +168,7 @@ while {true} do {
 							if (_marker in aeropuertos) 						exitWith {[_marker] remoteExec ["createAirbase", call AS_fnc_getNextWorker]};
 							if ((_marker in recursos) OR (_marker in fabricas)) exitWith {[_marker] remoteExec ["createResources", call AS_fnc_getNextWorker]};
 							if ((_marker in puestos) OR (_marker in puertos)) 	exitWith {[_marker] remoteExec ["createOutpost", call AS_fnc_getNextWorker]};
+							if (_marker in markerSupplyCrates)						exitWith {[_marker] remoteExec ["createSupplyGroup", call AS_fnc_getNextWorker]};
 						};
 						_markerGarrisonSpawned pushBackUnique _marker;
 						spawner setVariable [_marker, _markerAlert, true];

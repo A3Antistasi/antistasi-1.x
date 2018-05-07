@@ -125,7 +125,7 @@ _marker setMarkerText _cratedisplay;
 _marker setMarkerShape "ICON";
 _marker setMarkerType "mil_warning";
 //Hide the marker until found by units
-_marker setMarkerAlpha 0;
+//_marker setMarkerAlpha 0;
 //Add to needed global variables
 markerSupplyCrates pushBackUnique _marker;
 publicVariable "markerSupplyCrates";
@@ -154,6 +154,7 @@ diag_log format ["spawn _fnDeleteMissionIn in 240"];
 
 //Reveal marker when detected
 // TO DO : this do not work
+//wurzel will only work if line below is uncommented
 // waitUntil{sleep 1; ([300,1 ,_crate,"BLUFORSpawn"] call distanceUnits) OR ({_x distance2D _crate < 1000} count puestosFIA != 0)};
 _marker setMarkerAlpha 1;
 if([300,1,_crate, "BLUFORSpawn"] call distanceUnits) then {
@@ -176,7 +177,9 @@ while {alive _crate AND (_marker in markerSupplyCrates)} do {
         sleep 1;
 		!(isNull attachedTo _crate)
 	};
-
+    //Hide marker, so player wont search for it
+    _marker setMarkerAlpha 0;
+    //add inmuneConvoy to crate??
 	// wait until the player have the unloaded crate in a city
 	waitUntil {
         sleep 1;
@@ -185,6 +188,8 @@ while {alive _crate AND (_marker in markerSupplyCrates)} do {
 		(isOnRoad (position _crate))} count ciudades == 0) OR
 		!(_marker in markerSupplyCrates)
 	};
+    //Disable respawn mechanic
+    spawner setVariable [_marker, nil, true];
 
     _crate call jn_fnc_logistics_removeAction;
 	//Reveal all players in the surrounding of the crate to the enemies
