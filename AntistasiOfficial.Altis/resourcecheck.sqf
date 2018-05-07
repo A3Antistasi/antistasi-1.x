@@ -18,7 +18,6 @@ private _ws_radius = 500;						//Value needed to calculate fields around markers
 
 while {true} do {
 
-
 	//Roadblock placement based on the frontline, made by Sparker
 	//Just remove this if you need. Also check it in init and serverInit.
 	diag_log "resourcecheck.sqf: calculating grids...";
@@ -44,6 +43,7 @@ while {true} do {
 	if(!_oneIteration) then //Don't sleep if we execute it only one time
 	{
 		diag_log "resourcecheck.sqf: waiting for 600 seconds.";
+        // sleep 600;
 		sleep 600;
 	};
 	diag_log "resourcecheck.sqf: calculating resources.";
@@ -159,21 +159,17 @@ while {true} do {
 		{
 			_currentCity = selectRandom _cityInRange;
 			_types = [_currentCity, "GOOD"] call AS_fnc_getHighSupplies;
-			if(random 100 < 10) then {_types = [_currentCity, "LOW"] call AS_fnc_getHighSupplies};
-			if (((count _types) != 0) AND !_cityDecreased) then
-			{
+			if (random 100 < 10) then {_types = [_currentCity, "LOW"] call AS_fnc_getHighSupplies};
+			if ( ((count _types) != 0) AND !_cityDecreased ) then {
 				_cityDecreased = true;
 				_type = selectRandom _types;
-				diag_log format ["DEBUG resourcecheck _type = %1 in %2", _type, _currentCity];
-				systemchat format ["%1 decreased %2", _currentCity, _type];
 
-				[_type, -1, _currentCity] remoteExec ["AS_fnc_changeCitySupply", 2];
+                [_type, -1, _currentCity] remoteExec ["AS_fnc_changeCitySupply", 2];
+				// TODO : diff between spawn is only who compute this ? [_type, -1, _currentCity] spawn AS_fnc_changeCitySupply;
 				_type = selectRandom _types;
-
 			};
 		};
 		_passedtype = selectRandom["FOOD", "WATER", "FUEL"];
-		diag_log format ["_passedtype = %1",_passedtype];
 		[[], _passedtype] remoteExec ["createSupplyBox", call AS_fnc_getNextWorker];
 	};
 
@@ -264,12 +260,12 @@ while {true} do {
 		};
 	};
 
-	sleep 3;
+    sleep 3;
 	diag_log "resourcecheck.sqf: calling AAFEconomics";
 	call AAFeconomics;
 	sleep 4;
-	diag_log "resourcecheck.sqf: calling FIAradio";
 	[] call AS_fnc_FIAradio;
+    diag_log "resourcecheck.sqf: calling FIAradio";
 
 	if (_oneIteration) exitWith {};
 };

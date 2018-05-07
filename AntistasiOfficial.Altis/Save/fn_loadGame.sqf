@@ -66,13 +66,9 @@ unlockedRifles = unlockedweapons - gear_sidearms - gear_missileLaunchers - gear_
 //["ws_grid"] call fn_loadData;
 //===========================================================================
 
-
 {
 	[(_x select 0), (_x select 1)] remoteExec ["createSupplyBox", call AS_fnc_getNextWorker];
 } forEach supplySaveArray;
-
-countSupplyCrates = count supplySaveArray;
-publicVariable "countSupplyCrates";
 
 _markers = mrkFIA + mrkAAF + campsFIA;
 
