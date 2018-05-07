@@ -20,22 +20,19 @@ _fnDeleteMissionIn = {
     markerSupplyCrates = markerSupplyCrates - [_marker];
     publicVariable "markerSupplyCrates";
 
-    // force deletion when time is up prevent fucking with checks on alive _crate
+    // force deletion when time is up prevent fucking with checks on (alive _crate)
     if (_timer > 0) exitWith {
         deleteVehicle _crate;
         deleteMarker _marker;
-        diag_log format ["ANTISTASI - Supply Force _fnDeleteMission type=%1 spawnPosition=%2", _crateType, _spawnPosition];
-        systemChat format ["ANTISTASI - Supply Force _fnDeleteMissionIn type=%1 _spawnPosition=%2", _crateType, _spawnPosition];
+        diag_log format ["ANTISTASI - Supply ForceDelete type=%1 spawnPosition=%2", _crateType, _spawnPosition];
     };
 
     // Delete objects if no one is near something like that
-    // TODO : uncommant
-    // waitUntil {sleep 5; !([distanciaSPWN,1,_crate,"BLUFORSpawn"] call distanceUnits) OR (_crate distance (getMarkerPos guer_respawn) < 60)};
+    waitUntil {sleep 5; !([distanciaSPWN,1,_crate,"BLUFORSpawn"] call distanceUnits) OR (_crate distance (getMarkerPos guer_respawn) < 60)};
     if (alive _crate AND (_marker in markerSupplyCrates)) exitWith{};
     deleteVehicle _crate;
     deleteMarker _marker;
-    diag_log format ["ANTISTASI - Supply _fnDeleteMission type=%1 spawnPosition=%2", _crateType, _spawnPosition];
-    systemChat format ["ANTISTASI - Supply _fnDeleteMissionIn type=%1 _spawnPosition=%2", _crateType, _spawnPosition];
+    diag_log format ["ANTISTASI - Supply SoftDelete type=%1 spawnPosition=%2", _crateType, _spawnPosition];
 };
 
 //TODO Get away from hard coding the number of maximum crates!
@@ -87,8 +84,7 @@ if (count _spawnPosition == 0) then {
 		(count (
 			nearestObjects [_spawnPosition, ["Land_PaperBox_01_open_boxes_F", "Land_PaperBox_01_open_water_F", "CargoNet_01_barrels_F"], 300, true]
 		) != 0) OR (_spawnPosition distance2D _posHQ < 1000) OR (count ([200, 0, _spawnPosition, "BLUFORSpawn"] call distanceUnits) != 0)
-	} do
-	{
+	} do {
 		_allSheds = _allSheds - [_selectedShed];
 		if((count _allSheds)  == 0) exitWith {_abort = true};
 		_spawnPosition = position _selectedShed;
@@ -98,7 +94,6 @@ if (count _spawnPosition == 0) then {
 //Abort if no position found
 if (_abort) exitWith
 {
-    // this need to be translatable with stringtable
     diag_log format ["ANTISTASI - Mission DynamicSupplies: No suitable position found around HQ for a supply crate"];
 	systemChat format ["ANTISTASI - Mission DynamicSupplies: No suitable position found around HQ for a supply crate"];
 };
@@ -113,19 +108,16 @@ if(activeACE && {["ace_cargo"] call ace_common_fnc_isModLoaded}) then { // check
 _crate call jn_fnc_logistics_addAction;
 _cratedisplay = "";
 switch (_crateTypeBox) do {
-	case "Land_PaperBox_01_open_water_F": 	{_cratedisplay = format ["%1 Water Supplies", (countSupplyCrates +1)];	};
-	case "CargoNet_01_barrels_F": 			{_cratedisplay = format ["%1 Fuel Supplies", (countSupplyCrates +1)]; };
-	case "Land_PaperBox_01_open_boxes_F": 	{_cratedisplay = format ["%1 Food Supplies", (countSupplyCrates +1)]; };
+	case "Land_PaperBox_01_open_water_F":  {_cratedisplay = "Water Supplies"; };
+	case "CargoNet_01_barrels_F":          {_cratedisplay = "Fuel Supplies"; };
+	case "Land_PaperBox_01_open_boxes_F":  {_cratedisplay = "Food Supplies"; };
 };
-
-
 
 _marker = createMarker [format ["SUP%1", random 100], _spawnPosition];
 _marker setMarkerText _cratedisplay;
 _marker setMarkerShape "ICON";
 _marker setMarkerType "mil_warning";
-//Hide the marker until found by units
-//_marker setMarkerAlpha 0;
+
 //Add to needed global variables
 markerSupplyCrates pushBackUnique _marker;
 publicVariable "markerSupplyCrates";
@@ -133,7 +125,7 @@ supplySaveArray pushBackUnique [_spawnPosition, _crateType];
 publicVariable "supplySaveArray";
 countSupplyCrates = count supplySaveArray;
 publicVariable "countSupplyCrates";
-diag_log format ["ANTISTASI - Supplycrate, _type = %1, now creating", _crateType];
+diag_log format ["ANTISTASI - Supply Create, _type = %1, now creating", _crateType];
 diag_log format ["_crateTypeBox = %1,  _marker = %2, _spawnposition = %3", _crateTypeBox, _marker, _spawnPosition];
 
 //Add spawning mechanics to the position
@@ -141,9 +133,8 @@ diag_log format ["_crateTypeBox = %1,  _marker = %2, _spawnposition = %3", _crat
 spawner setVariable [_marker, 0, true];
 //spawner setVariable [_marker, false, true];
 
-// delete mission in 30min=1800s
-diag_log format ["spawn _fnDeleteMissionIn in 240"];
-[_marker, _spawnPosition, _crateType, _crate, 240] spawn _fnDeleteMissionIn;
+// Delete in 30mins
+[_marker, _spawnPosition, _crateType, _crate, 1800] spawn _fnDeleteMissionIn;
 
 
 /*
@@ -153,21 +144,18 @@ diag_log format ["spawn _fnDeleteMissionIn in 240"];
 */
 
 //Reveal marker when detected
-// TO DO : this do not work
-//wurzel will only work if line below is uncommented
-// waitUntil{sleep 1; ([300,1 ,_crate,"BLUFORSpawn"] call distanceUnits) OR ({_x distance2D _crate < 1000} count puestosFIA != 0)};
+diag_log format ["Antistasi - log waiting detection"];
+waitUntil{sleep 1; ([300,1 ,_crate,"BLUFORSpawn"] call distanceUnits) OR ({_x distance2D _crate < 1000} count puestosFIA != 0)};
 _marker setMarkerAlpha 1;
-if([300,1,_crate, "BLUFORSpawn"] call distanceUnits) then {
-	//Crate detected by player
+if ([300,1,_crate, "BLUFORSpawn"] call distanceUnits) then {
 	{
 		["You detected an AAF supply crate near you!"] remoteExec ["hint",_x];
 	} forEach ([300,0,_crate,"BLUFORSpawn"] call distanceUnits);
 } else {
-	//Crate detected by watchpost
 	[[petros,"globalChat","Our watchposts have detected an AAF supply crate. Check your maps!"],"commsMP"] call BIS_fnc_MP;
 };
-// 150
-[false, false, 10, 0] params ["_isCrateUnloaded", "_timerRunning", "_deploymentTime", "_counter"];
+
+[false, false, 150, 0] params ["_isCrateUnloaded", "_timerRunning", "_deploymentTime", "_counter"];
 
 while {alive _crate AND (_marker in markerSupplyCrates)} do {
     sleep 1;
@@ -278,9 +266,9 @@ while {alive _crate AND (_marker in markerSupplyCrates)} do {
 };
 
 if ((alive _crate) AND (_marker in markerSupplyCrates) AND _isCrateUnloaded) then {
-	[5,0] remoteExec ["prestige",2];
+	[5,0] remoteExec ["prestige", 2];
 	{if (_x distance _crate < 500) then {[10,_x] call playerScoreAdd}} forEach (allPlayers - entities "HeadlessClient_F");
-	[5,Slowhand] call playerScoreAdd;
+	[5, Slowhand] call playerScoreAdd;
     [_crateType, 1, _currentCity] remoteExec ["AS_fnc_changeCitySupply", 2];
 	// BE module
 	if (activeBE) then {

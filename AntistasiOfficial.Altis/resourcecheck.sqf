@@ -43,7 +43,6 @@ while {true} do {
 	if(!_oneIteration) then //Don't sleep if we execute it only one time
 	{
 		diag_log "resourcecheck.sqf: waiting for 600 seconds.";
-        // sleep 600;
 		sleep 600;
 	};
 	diag_log "resourcecheck.sqf: calculating resources.";
@@ -152,7 +151,7 @@ while {true} do {
 		};
 	} forEach ciudades;
 
-	if(countSupplyCrates < 6) then
+	if (countSupplyCrates < 6) then
 	{
 		_cityDecreased = false;
 		for "_i" from 0 to 4 do
@@ -160,13 +159,11 @@ while {true} do {
 			_currentCity = selectRandom _cityInRange;
 			_types = [_currentCity, "GOOD"] call AS_fnc_getHighSupplies;
 			if (random 100 < 10) then {_types = [_currentCity, "LOW"] call AS_fnc_getHighSupplies};
-			if ( ((count _types) != 0) AND !_cityDecreased ) then {
+			if ( count _types != 0 AND !_cityDecreased ) then {
 				_cityDecreased = true;
 				_type = selectRandom _types;
 
                 [_type, -1, _currentCity] remoteExec ["AS_fnc_changeCitySupply", 2];
-				// TODO : diff between spawn is only who compute this ? [_type, -1, _currentCity] spawn AS_fnc_changeCitySupply;
-				_type = selectRandom _types;
 			};
 		};
 		_passedtype = selectRandom["FOOD", "WATER", "FUEL"];
