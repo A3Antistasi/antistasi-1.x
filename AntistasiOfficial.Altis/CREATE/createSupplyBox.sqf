@@ -132,8 +132,8 @@ diag_log format ["_crateTypeBox = %1,  _marker = %2, _spawnposition = %3", _crat
 //spawner setVariable [_marker, 0, true]; //Activate when merged with new spawn system
 spawner setVariable [_marker, false, true];
 
-// Delete in 30mins
-[_marker, _spawnPosition, _crateType, _crate, 1800] spawn _fnDeleteMissionIn;
+// Delete in 45mins
+[_marker, _spawnPosition, _crateType, _crate, 2700] spawn _fnDeleteMissionIn;
 
 /*
 	_timerRunning: timer running
