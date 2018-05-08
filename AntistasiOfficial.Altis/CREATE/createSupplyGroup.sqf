@@ -27,7 +27,7 @@ _allGroups pushBack _group;
 	} forEach units _group;
 } forEach _allGroups;
 
-waitUntil {sleep 1; spawner getVariable _marker > 1}; //Activate when merged with new spawn system
+waitUntil {sleep 1; (spawner getVariable _marker == nil) OR (spawner getVariable _marker > 1)}; //Activate when merged with new spawn system
 //waitUntil {sleep 1; !(spawner getVariable _marker)};
 
 [_allGroups, _allSoldiers, _allVehicles] spawn AS_fnc_despawnUnits;

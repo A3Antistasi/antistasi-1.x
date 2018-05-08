@@ -1,6 +1,4 @@
 params ["_pos"];
-diag_log format ["position of crate1 = %1",_pos];
-systemchat format ["position of crate1 = %1",_pos];
 private ["_pos"];
 
 _civcount = {side _x == civilian} count allunits;

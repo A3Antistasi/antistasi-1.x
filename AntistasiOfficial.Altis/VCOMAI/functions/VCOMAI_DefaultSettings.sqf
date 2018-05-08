@@ -1,113 +1,109 @@
 VCOMAI_Func =
 {
-//Enable or disable the INGAME setting menu. This is off by default due to compatability issues with multiple mods and scripts. And I am tired of hearing people complain all the time :D
-VCOM_AIINGAMEMENU = false;
-//Variable for enabling/disabling skill changes for AI. True is on, False is off.
-VCOM_AISkillEnabled = false;
-//Variable for finding out which config was loaded.
-VCOM_AIConfig = "Mission Folder";
-//Turn this on to see certain debug messages. 1 is on
-VCOM_AIDEBUG = 0;
-//Turn on map markers that track AI movement
-VCOM_UseMarkers = false;
-//Turns off VCOMAI for AI units in a players squad
-NOAI_FOR_PLAYERLEADERS = 1;
-//Will AI garrison static weapons nearby?
-VCOM_STATICGARRISON = 1;
-//How far can the AI hear gunshots from?
-VCOM_HEARINGDISTANCE = 500;
-//Should AI be able to call for artillery. 1 = YES 0 = NO
-VCOM_Artillery = 1;
-//What should the dispersion be for AI artillery rounds? In meters.
-VCOM_ArtillerySpread = 600;
-//What is the delay between firing artillery rounds? In seconds.
-VCOM_ArtilleryCooldown = 300;
-//Should we let AI use flanking manuevers? false means they can flank
-VCOM_NOPATHING = false;
-//Should AI use smoke grenades? Besides default A3 behavior?
-VCOM_USESMOKE = true;
-//Chance of AI using grenades
-VCOM_GRENADECHANCE = 20;
-//Should the AI lay mines?
-VCOM_MineLaying = true;
-//Chance of AI to lay a mine.
-VCOM_MineLayChance = 40;
-//AI will automatically disembark from vehicles when in combat.
-VCOM_AIDisembark = false;
-//How low should an AI's mag count be for them to consider finding more ammo? This DOES NOT include the mag loaded in the gun already.
-VCOM_AIMagLimit = 2;
-//Should the rain impact accuracy of AI? DEFAULT = true;
-VCOM_RainImpact = true;
-//How much should rain impact the accuracy of AI? Default = 3. Default formula is -> _WeatherCheck = (rain)/3; "rain" is on a scale from 0 to 1. 1 Being very intense rain.
-VCOM_RainPercent = 3;
-//Should AI and players have an additional layer of suppression that decreases aiming when suppressed? Default = true;
-VCOM_Suppression = false;
-//How much should suppression impact both AI and player aiming? Default is 5. Normal ArmA is 1.
-VCOM_SuppressionVar = 5;
-//Should AI/players be impacted by adrenaline? This provides players and AI with a small speed boost to animations to assist with cover seeking and positioning for a short time. Default = true;
-VCOM_Adrenaline = false;
-//How much of a speed boost should players/AI recieve? Default = 1.35; (1 is ArmA's normal speed).
-VCOM_AdrenalineVar = 1.35;
-//How many AI UNITS can be calculating cover positions at once?
-VCOM_CurrentlyMovingLimit = 6;
-//How many AI UNITS can be suppressing others at once?
-VCOM_CurrentlySuppressingLimit = 12;
-//The distance a unit needs to be away for Vcom AI to temporary disable itself upon the unit? The AI unit will also need to be out of combat.
-VCOM_DisableDistance = 700;
-//How many AI can be checking roles/equipment/additional commands at once? This will impact FPS of AI in and out of battle. The goal is to limit how many benign commands are being run at once and bogging down a server with over a couple HUNDRED AI.
-VCOM_BasicCheckLimit = 2;
-//How many squad leaders can be executing advanced code at once.
-VCOM_LeaderExecuteLimit = 15;
-//How low should the FPS be, before Vcom pauses simulation. This will not disable simulation on AI - they will run default Bohemia AI.
-VCOM_FPSFreeze = 10;
-//Should the AI consider stealing/using empty ground vehicles?
-VCOM_VehicleUse = false;
-//Should the AI notice IR lasers?
-VCOM_IRLaser = true;
-//The distance, in meters, of how far AI will look for empty unlocked vehicles to steal.
-VCOM_AIDISTANCEVEHPATH = 150;
+    //Enable or disable the INGAME setting menu. This is off by default due to compatability issues with multiple mods and scripts. And I am tired of hearing people complain all the time :D
+    VCOM_AIINGAMEMENU = false;
+    //Variable for enabling/disabling skill changes for AI. True is on, False is off.
+    VCOM_AISkillEnabled = false;
+    //Variable for finding out which config was loaded.
+    VCOM_AIConfig = "Mission Folder";
+    //Turn this on to see certain debug messages. 1 is on
+    VCOM_AIDEBUG = 0;
+    //Turn on map markers that track AI movement
+    VCOM_UseMarkers = false;
+    //Turns off VCOMAI for AI units in a players squad
+    NOAI_FOR_PLAYERLEADERS = 1;
+    //Will AI garrison static weapons nearby?
+    VCOM_STATICGARRISON = 1;
+    //How far can the AI hear gunshots from?
+    VCOM_HEARINGDISTANCE = 500;
+    //Should AI be able to call for artillery. 1 = YES 0 = NO
+    VCOM_Artillery = 1;
+    //What should the dispersion be for AI artillery rounds? In meters.
+    VCOM_ArtillerySpread = 600;
+    //What is the delay between firing artillery rounds? In seconds.
+    VCOM_ArtilleryCooldown = 300;
+    //Should we let AI use flanking manuevers? false means they can flank
+    VCOM_NOPATHING = false;
+    //Should AI use smoke grenades? Besides default A3 behavior?
+    VCOM_USESMOKE = true;
+    //Chance of AI using grenades
+    VCOM_GRENADECHANCE = 20;
+    //Should the AI lay mines?
+    VCOM_MineLaying = true;
+    //Chance of AI to lay a mine.
+    VCOM_MineLayChance = 40;
+    //AI will automatically disembark from vehicles when in combat.
+    VCOM_AIDisembark = false;
+    //How low should an AI's mag count be for them to consider finding more ammo? This DOES NOT include the mag loaded in the gun already.
+    VCOM_AIMagLimit = 2;
+    //Should the rain impact accuracy of AI? DEFAULT = true;
+    VCOM_RainImpact = true;
+    //How much should rain impact the accuracy of AI? Default = 3. Default formula is -> _WeatherCheck = (rain)/3; "rain" is on a scale from 0 to 1. 1 Being very intense rain.
+    VCOM_RainPercent = 3;
+    //Should AI and players have an additional layer of suppression that decreases aiming when suppressed? Default = true;
+    VCOM_Suppression = false;
+    //How much should suppression impact both AI and player aiming? Default is 5. Normal ArmA is 1.
+    VCOM_SuppressionVar = 5;
+    //Should AI/players be impacted by adrenaline? This provides players and AI with a small speed boost to animations to assist with cover seeking and positioning for a short time. Default = true;
+    VCOM_Adrenaline = false;
+    //How much of a speed boost should players/AI recieve? Default = 1.35; (1 is ArmA's normal speed).
+    VCOM_AdrenalineVar = 1.35;
+    //How many AI UNITS can be calculating cover positions at once?
+    VCOM_CurrentlyMovingLimit = 6;
+    //How many AI UNITS can be suppressing others at once?
+    VCOM_CurrentlySuppressingLimit = 12;
+    //The distance a unit needs to be away for Vcom AI to temporary disable itself upon the unit? The AI unit will also need to be out of combat.
+    VCOM_DisableDistance = 700;
+    //How many AI can be checking roles/equipment/additional commands at once? This will impact FPS of AI in and out of battle. The goal is to limit how many benign commands are being run at once and bogging down a server with over a couple HUNDRED AI.
+    VCOM_BasicCheckLimit = 2;
+    //How many squad leaders can be executing advanced code at once.
+    VCOM_LeaderExecuteLimit = 15;
+    //How low should the FPS be, before Vcom pauses simulation. This will not disable simulation on AI - they will run default Bohemia AI.
+    VCOM_FPSFreeze = 10;
+    //Should the AI consider stealing/using empty ground vehicles?
+    VCOM_VehicleUse = false;
+    //Should the AI notice IR lasers?
+    VCOM_IRLaser = true;
+    //The distance, in meters, of how far AI will look for empty unlocked vehicles to steal.
+    VCOM_AIDISTANCEVEHPATH = 150;
 
-//The longer an AI's target stays in 1 location, the more accurate and aware of the target the AI becomes.DEFAULT = [WEST,EAST,CIVILIAN,RESISTANCE];
-VCOM_IncreasingAccuracy = false;
-//VCOM_SideBasedMovement- Remove sides from the array below to force that specific AI side to not execute any advance movement code. (I.E. Moving to reinforce allies, being alerted by distant gunshots and etc). AI with this will still react normally in combat. DEFAULT = [WEST,EAST,CIVILIAN,RESISTANCE];
-VCOM_SideBasedMovement = [WEST,EAST,RESISTANCE];
-//VCOM_SideBasedExecution- Remove sides from the array below to remove that specific AI side from executing any of the VCOMAI scripts at all. DEFAULT = [WEST,EAST,CIVILIAN,RESISTANCE];
-VCOM_SideBasedExecution = [WEST,EAST,RESISTANCE];
-//Distance AI will respond to call of help from each other
-VCOM_Unit_AIWarnDistance = 300;
-//Distance the AI will attempt to flank around the enemy. I.E. How far off a waypoint, or around the enemy squad, the AI are willing to go in combat.
-VCOM_WaypointDistance = 300;
-//Switching this to true will enable side specific skill settings. Side specific skills get added IN ADDITION TO the normal ranked skill.
-VCOM_SIDESPECIFIC = false;
-//Switching this to true will enable classname specific skill settings. VCOM_SIDESPECIFIC and VCOM_CLASSNAMESPECIFIC can both be true, however any units in the VCOM_CLASSNAMESPECIFIC array are given priority over everything else.
-VCOM_CLASSNAMESPECIFIC = false;
-//Here you can assign certain unit classnames to specific skill levels. This will override the AI skill level above.
-VCOM_SKILL_CLASSNAMES = [];
-
-
-/*
-EXAMPLE FOR VCOM_SKILL_CLASSNAMES
-
-VCOM_SKILL_CLASSNAMES = [["Classname1",[aimingaccuracy,aimingshake,spotdistance,spottime,courage,commanding,aimingspeed,general,endurance,reloadspeed]],["Classname2",[aimingaccuracy,aimingshake,spotdistance,spottime,courage,commanding,aimingspeed,general,endurance,reloadspeed]]];
-VCOM_SKILL_CLASSNAMES = [["B_Crew_F",[0.01,0.02,0.03,0.04,0.05,0.06,0.07,0.08,0.09,0.1]],["B_soldier_AAT_F",[0.01,0.02,0.03,0.04,0.05,0.06,0.07,0.08,0.09,0.1]]];
-VCOM_SKILL_CLASSNAMES = [["B_GEN_Soldier_F",[0.01,0.02,0.03,0.04,0.05,0.06,0.07,0.08,0.09,0.1]],["B_G_Soldier_AR_F",[0.01,0.02,0.03,0.04,0.05,0.06,0.07,0.08,0.09,0.1]]];
-
-*/
+    //The longer an AI's target stays in 1 location, the more accurate and aware of the target the AI becomes.DEFAULT = [WEST,EAST,CIVILIAN,RESISTANCE];
+    VCOM_IncreasingAccuracy = false;
+    //VCOM_SideBasedMovement- Remove sides from the array below to force that specific AI side to not execute any advance movement code. (I.E. Moving to reinforce allies, being alerted by distant gunshots and etc). AI with this will still react normally in combat. DEFAULT = [WEST,EAST,CIVILIAN,RESISTANCE];
+    VCOM_SideBasedMovement = [WEST,EAST,RESISTANCE];
+    //VCOM_SideBasedExecution- Remove sides from the array below to remove that specific AI side from executing any of the VCOMAI scripts at all. DEFAULT = [WEST,EAST,CIVILIAN,RESISTANCE];
+    VCOM_SideBasedExecution = [WEST,EAST,RESISTANCE];
+    //Distance AI will respond to call of help from each other
+    VCOM_Unit_AIWarnDistance = 300;
+    //Distance the AI will attempt to flank around the enemy. I.E. How far off a waypoint, or around the enemy squad, the AI are willing to go in combat.
+    VCOM_WaypointDistance = 300;
+    //Switching this to true will enable side specific skill settings. Side specific skills get added IN ADDITION TO the normal ranked skill.
+    VCOM_SIDESPECIFIC = false;
+    //Switching this to true will enable classname specific skill settings. VCOM_SIDESPECIFIC and VCOM_CLASSNAMESPECIFIC can both be true, however any units in the VCOM_CLASSNAMESPECIFIC array are given priority over everything else.
+    VCOM_CLASSNAMESPECIFIC = false;
+    //Here you can assign certain unit classnames to specific skill levels. This will override the AI skill level above.
+    VCOM_SKILL_CLASSNAMES = [];
 
 
+    /*
+    EXAMPLE FOR VCOM_SKILL_CLASSNAMES
 
+    VCOM_SKILL_CLASSNAMES = [["Classname1",[aimingaccuracy,aimingshake,spotdistance,spottime,courage,commanding,aimingspeed,general,endurance,reloadspeed]],["Classname2",[aimingaccuracy,aimingshake,spotdistance,spottime,courage,commanding,aimingspeed,general,endurance,reloadspeed]]];
+    VCOM_SKILL_CLASSNAMES = [["B_Crew_F",[0.01,0.02,0.03,0.04,0.05,0.06,0.07,0.08,0.09,0.1]],["B_soldier_AAT_F",[0.01,0.02,0.03,0.04,0.05,0.06,0.07,0.08,0.09,0.1]]];
+    VCOM_SKILL_CLASSNAMES = [["B_GEN_Soldier_F",[0.01,0.02,0.03,0.04,0.05,0.06,0.07,0.08,0.09,0.1]],["B_G_Soldier_AR_F",[0.01,0.02,0.03,0.04,0.05,0.06,0.07,0.08,0.09,0.1]]];
 
-//The following commands are to be left alone, except under rare circumstances.
-MarkerArray = [];
-VcomAI_UnitQueue = [];
-VcomAI_ActiveList = [];
-ArtilleryArray = [];
-Vcom_EastArtCooldown = true;
-Vcom_WestArtCooldown = true;
-Vcom_ResistanceArtCooldown = true;
-//End
+    */
 
-
+    //The following commands are to be left alone, except under rare circumstances.
+    MarkerArray = [];
+    VcomAI_UnitQueue = [];
+    VcomAI_ActiveList = [];
+    ArtilleryArray = [];
+    Vcom_EastArtCooldown = true;
+    Vcom_WestArtCooldown = true;
+    Vcom_ResistanceArtCooldown = true;
+    //End
+};
 
 //AI ACCURACY SETTINGS - You can change these numbers below
 //Colonel Level AI
@@ -486,7 +482,6 @@ VCOM_AISKILL_RESISTANCE =
 	_commandingSet = 0.05;
 	_generalSet = 0.05;
 
-
 	_this setSkill ["aimingAccuracy",_EnduranceSet + _Endurance];
 	_this setSkill ["aimingShake",_aimingAccuracySet + _aimingAccuracy];
 	_this setSkill ["spotDistance",_aimingShakeSet + _aimingShake];
@@ -497,6 +492,4 @@ VCOM_AISKILL_RESISTANCE =
 	_this setSkill ["general",_reloadSpeedSet + _reloadSpeed];
 	_this setSkill ["endurance",_commandingSet + _commanding];
 	_this setSkill ["reloadSpeed",_generalSet + _general];
-
-
 };
