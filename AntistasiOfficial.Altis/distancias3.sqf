@@ -89,7 +89,7 @@ while {true} do {
 			if (_markerAlert == 4) then {
 				//check if a units is near the location or place needs to be forced to spawned in
 				_numberOfUnits = {_x distance2D _markerPos < distanciaSPWN} count _allyUnits;
-				_numberOfPlanes = {_x distance2D _markerPos < distanciaSPWN * 4} count _allyPlanes;
+				_numberOfPlanes = {_x distance2D _markerPos < distanciaSPWN * 2} count _allyPlanes;
 				if ((_numberOfUnits > 0) OR (_numberOfPlanes > 0) OR (_marker in forcedSpawn)) then {
 
 					if(_numberOfPlanes > 0) then{
@@ -100,6 +100,7 @@ while {true} do {
 							_markerAASpawned pushBackUnique _marker;
 
 						};
+						/* Not used currently (most likely never will)
 						if({!(_x in _planeTargets)} count _allyPlanes > 0) then { //Enemy plane currently not under attack
 							_availableAirports = aeropuertos - mrkFIA;
 							_startAirport = nil;
@@ -118,6 +119,7 @@ while {true} do {
 							};
 
 						};
+						*/
 					};
 
 					if(_numberOfUnits > 0) then{
@@ -151,26 +153,32 @@ while {true} do {
 				if (({((((_x distance2D _markerPos) - 300) max 1) * (((speed _x) - 100) max 1)) < 100} count _allyPlanes != 0)
 						OR ({_x distance2D _markerPos < (distanciaSPWN)} count _allyUnits != 0) OR (_marker in forcedSpawn)) then
 				{
-					if(_markerAlert == 2) then {_markerAlert = 0;};
-					if(!(_marker in _markerGarrisonSpawned)) then
+					if(_markerAlert == 2) then 
 					{
-						spawner setVariable [_marker, _markerAlert, true];
-						call {
-							//Optimization possible, but perhaps not really needed due to low calls
-							if (_marker in _hills) 								exitWith {[_marker] remoteExec ["createWatchpost", call AS_fnc_getNextWorker]};
-							if (_marker in colinasAA) 							exitWith {[_marker] remoteExec ["createAAsite", call AS_fnc_getNextWorker]};
-							if (_marker in ciudades) 							exitWith {[_marker] remoteExec ["createCIV", call AS_fnc_getNextWorker]; [_marker] remoteExec ["createCity", call AS_fnc_getNextWorker]};
-							if (_marker in power) 								exitWith {[_marker] remoteExec ["createPower", call AS_fnc_getNextWorker]};
-							if (_marker in bases) 								exitWith {[_marker] remoteExec ["createBase", call AS_fnc_getNextWorker]};
-							//if (_marker in controles) 						exitWith {[_marker] remoteExec ["createRoadblock", call AS_fnc_getNextWorker]}; //useful for porting where Sparker frontline won't work
-							if (_marker in controles) 							exitWith {[_marker] remoteExec ["createRoadblock2", call AS_fnc_getNextWorker]};
-							if (_marker in aeropuertos) 						exitWith {[_marker] remoteExec ["createAirbase", call AS_fnc_getNextWorker]};
-							if ((_marker in recursos) OR (_marker in fabricas)) exitWith {[_marker] remoteExec ["createResources", call AS_fnc_getNextWorker]};
-							if ((_marker in puestos) OR (_marker in puertos)) 	exitWith {[_marker] remoteExec ["createOutpost", call AS_fnc_getNextWorker]};
+						_markerAlert = 0;
+						if(!(_marker in _markerGarrisonSpawned)) then
+						{
+							spawner setVariable [_marker, _markerAlert, true];
+							call 
+							{
+								//Optimization possible, but perhaps not really needed due to low calls
+								if (_marker in _hills) 								exitWith {[_marker] remoteExec ["createWatchpost", call AS_fnc_getNextWorker]};
+								if (_marker in colinasAA) 							exitWith {[_marker] remoteExec ["createAAsite", call AS_fnc_getNextWorker]};
+								if (_marker in ciudades) 							exitWith {[_marker] remoteExec ["createCIV", call AS_fnc_getNextWorker]; [_marker] remoteExec ["createCity", call AS_fnc_getNextWorker]};
+								if (_marker in power) 								exitWith {[_marker] remoteExec ["createPower", call AS_fnc_getNextWorker]};
+								if (_marker in bases) 								exitWith {[_marker] remoteExec ["createBase", call AS_fnc_getNextWorker]};
+								//if (_marker in controles) 						exitWith {[_marker] remoteExec ["createRoadblock", call AS_fnc_getNextWorker]}; //useful for porting where Sparker frontline won't work
+								if (_marker in controles) 							exitWith {[_marker] remoteExec ["createRoadblock2", call AS_fnc_getNextWorker]};
+								if (_marker in aeropuertos) 						exitWith {[_marker] remoteExec ["createAirbase", call AS_fnc_getNextWorker]};
+								if ((_marker in recursos) OR (_marker in fabricas)) exitWith {[_marker] remoteExec ["createResources", call AS_fnc_getNextWorker]};
+								if ((_marker in puestos) OR (_marker in puertos)) 	exitWith {[_marker] remoteExec ["createOutpost", call AS_fnc_getNextWorker]};
+								//TODO add supply crate spawn
+							};
+							_markerGarrisonSpawned pushBackUnique _marker;
+							spawner setVariable [_marker, _markerAlert, true];
 						};
-						_markerGarrisonSpawned pushBackUnique _marker;
-						spawner setVariable [_marker, _markerAlert, true];
 					};
+					
 				}
 				else
 				{
@@ -184,7 +192,7 @@ while {true} do {
 				};
 				};
 
-				if (({_x distance2D _markerPos < (distanciaSPWN * 4 + 50)} count _allyPlanes == 0)) then {
+				if (({_x distance2D _markerPos < (distanciaSPWN * 2 + 50)} count _allyPlanes == 0)) then {
 					//No enemy planes active
 					if(_markerAlert == 2) then {_markerAlert = 4;}; //Despawn if only AA was active
 					if(_markerAlert == 0) then {_markerAlert = 1;}; //Despawn only AA groups

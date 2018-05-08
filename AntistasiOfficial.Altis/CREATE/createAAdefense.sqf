@@ -1,6 +1,6 @@
 if (!isServer and hasInterface) exitWith {};
 
-params ["_marker"];
+params ["_marker", "_planes"];
 private ["_posMarker","_size","_cmpInfo","_posCmp","_cmp","_objs","_allGroups","_allSoldiers","_allVehicles","_statics","_SPAA","_hasSPAA","_truck","_crate","_unit","_groupCrew","_groupGunners","_markerPatrol","_UAV","_groupUAV","_groupType","_groupPatrol","_garrisonSize","_mrk"];
 
 _posMarker = getMarkerPos (_marker);
@@ -47,6 +47,13 @@ if(_spawnSPAA) then
 };
 
 _garrisonSize = count _allSoldiers;
+
+{
+	_soldier = _x;
+	{
+		_soldier reveal [_x, 3];
+	} forEach _planes;
+} forEach _allSoldiers;
 
 while{spawner getVariable _marker != 4} do
 {
