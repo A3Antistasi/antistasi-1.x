@@ -136,7 +136,6 @@ spawner setVariable [_marker, 0, true];
 // Delete in 30mins
 [_marker, _spawnPosition, _crateType, _crate, 1800] spawn _fnDeleteMissionIn;
 
-
 /*
 	_timerRunning: timer running
 	_deploymentTime: time it takes to unload the gear (seconds)
@@ -144,8 +143,10 @@ spawner setVariable [_marker, 0, true];
 */
 
 //Reveal marker when detected
-diag_log format ["Antistasi - log waiting detection"];
-waitUntil{sleep 1; ([300,1 ,_crate,"BLUFORSpawn"] call distanceUnits) OR ({_x distance2D _crate < 1000} count puestosFIA != 0)};
+diag_log format ["Antistasi - waiting detection"];
+// Does not trigger on Official Server but works on EDEN SP/MP
+// waitUntil{sleep 1; ([300,1 ,_crate,"BLUFORSpawn"] call distanceUnits) OR ({_x distance2D _crate < 1000} count puestosFIA != 0)};
+
 _marker setMarkerAlpha 1;
 if ([300,1,_crate, "BLUFORSpawn"] call distanceUnits) then {
 	{
@@ -162,20 +163,23 @@ while {alive _crate AND (_marker in markerSupplyCrates)} do {
 
 	// wait until the player loads the crate
 	waitUntil {
-        sleep 1;
+        sleep 10;
 		!(isNull attachedTo _crate)
 	};
     //Hide marker, so player wont search for it
     _marker setMarkerAlpha 0;
+
     //add inmuneConvoy to crate??
 	// wait until the player have the unloaded crate in a city
 	waitUntil {
-        sleep 1;
+        sleep 5;
 		(isNull attachedTo _crate) AND
 		!({(_crate distance (getmarkerpos _x) < 200) AND
 		(isOnRoad (position _crate))} count ciudades == 0) OR
 		!(_marker in markerSupplyCrates)
 	};
+    diag_log format ["ANTISTASI - Unloaded _crate %1", _crate];
+
     //Disable respawn mechanic
     spawner setVariable [_marker, nil, true];
 
@@ -203,28 +207,25 @@ while {alive _crate AND (_marker in markerSupplyCrates)} do {
 	{ if ((side _x == civilian) and (_x distance _crate < 700)) then { _x doMove position _crate }; } forEach allUnits;
 
 	while {(alive _crate) AND (isNull attachedTo _crate)} do {
-        sleep 1;
-
+        sleep 5;
         // start progress bar if no ennemies
 		while {
-            sleep 1;
 			(_counter < _deploymentTime) AND
 			(alive _crate) AND
 			(isNull attachedTo _crate) AND
             // stop supplying when enemies get too close (100m)
-            // TO DO : i think its working
-			!({[_x] call AS_fnc_isUnconscious} count
-                ([80,0,_crate,"BLUFORSpawn"] call distanceUnits) == count
-                ([80,0,_crate,"BLUFORSpawn"] call distanceUnits)) AND
-			!([100, 1,_crate, "OPFORspawn"] call distanceUnits)
+			!(
+                {[_x] call AS_fnc_isUnconscious} count ([80,0,_crate,"BLUFORSpawn"] call distanceUnits) ==
+                count ([80, 0, _crate,"BLUFORSpawn"] call distanceUnits)
+            ) AND !([100, 1, _crate, "OPFORspawn"] call distanceUnits)
         } do {
+            sleep 1;
 			// start progress bar
 			if !(_timerRunning) then {
 				{
-					if (isPlayer _x) then
-					{
+					if (isPlayer _x) then {
 						[(_deploymentTime - _counter),false] remoteExec ["pBarMP",_x];
-						}
+					}
 				} forEach ([80,0,_crate,"BLUFORSpawn"] call distanceUnits);
 				_timerRunning = true;
 				[petros,"globalChat","Guard the crate!"] remoteExec ["commsMP"];
@@ -239,7 +240,7 @@ while {alive _crate AND (_marker in markerSupplyCrates)} do {
 			_timerRunning = false;
 			{
 				if (isPlayer _x) then {
-					[0,true] remoteExec ["pBarMP",_x]
+					[0,true] remoteExec ["pBarMP",_x];
 				}
 			} forEach ([100,0,_crate,"BLUFORSpawn"] call distanceUnits);
 
