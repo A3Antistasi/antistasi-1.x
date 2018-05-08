@@ -1,6 +1,7 @@
 params ["_pos"];
-private ["_pos"];
 
+// This does not properly work on official server
+// they come and gtfo as soon as they get to the crate
 _civcount = {side _x == civilian} count allunits;
 if (_civcount < 50) then {
   _group = createGroup civilian;
@@ -10,9 +11,12 @@ if (_civcount < 50) then {
       _civhouse =  position (selectrandom _buildings);
       _civType = selectRandom CIV_units;
       _civ = _group createunit [_civType, _civhouse, [],0, "NONE"];
+      sleep 2;
+      _civ domove _pos;
     };
 
-  {_x  domove _pos} foreach (units _group);
+  // {_x  domove _pos;} foreach (units _group);
+  _group move _pos;
   sleep 120;
 
   _buildings = nearestObjects [_pos, ["House", "Building"], 50];

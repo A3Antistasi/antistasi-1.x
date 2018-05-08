@@ -36,7 +36,7 @@ if(spawner getVariable _marker == 0) then {sleep 2;}; //This should give the AA 
 	_objs = _objs - [_truck];
 	_objs = _objs - _statics;
 
-//
+{
 	if (_hasSPAA) then {
 		_groupCrew = createGroup side_red;
 		_unit = ([_posMarker, 0, opI_CREW, _groupCrew] call bis_fnc_spawnvehicle) select 0;

@@ -144,9 +144,10 @@ spawner setVariable [_marker, false, true];
 //Reveal marker when detected
 diag_log format ["Antistasi - waiting detection"];
 // Does not trigger on Official Server but works on EDEN SP/MP
-waitUntil{sleep 1; ([300,1 ,_crate,"BLUFORSpawn"] call distanceUnits) OR ({_x distance2D _crate < 1000} count puestosFIA != 0)};
-
+// So timer is never launched :/
+// waitUntil{sleep 1; ([300,1 ,_crate,"BLUFORSpawn"] call distanceUnits) OR ({_x distance _crate < 1000} count puestosFIA != 0)};
 _marker setMarkerAlpha 1;
+
 if ([300,1,_crate, "BLUFORSpawn"] call distanceUnits) then {
 	{
 		["You detected an AAF supply crate near you!"] remoteExec ["hint",_x];
@@ -162,7 +163,7 @@ while {alive _crate AND (_marker in markerSupplyCrates)} do {
 
 	// wait until the player loads the crate
 	waitUntil {
-        sleep 10;
+        sleep 1;
 		!(isNull attachedTo _crate)
 	};
     //Hide marker, so player wont search for it
@@ -171,7 +172,7 @@ while {alive _crate AND (_marker in markerSupplyCrates)} do {
     //add inmuneConvoy to crate??
 	// wait until the player have the unloaded crate in a city
 	waitUntil {
-        sleep 5;
+        sleep 2;
 		(isNull attachedTo _crate) AND
 		!({(_crate distance (getmarkerpos _x) < 200) AND
 		(isOnRoad (position _crate))} count ciudades == 0) OR
@@ -202,9 +203,6 @@ while {alive _crate AND (_marker in markerSupplyCrates)} do {
 
 	[position _crate] spawn AS_fnc_SpawnCiviGetSupplies;
 
-	//Send nearby civis to the crate
-	{ if ((side _x == civilian) and (_x distance _crate < 700)) then { _x doMove position _crate }; } forEach allUnits;
-
 	while {(alive _crate) AND (isNull attachedTo _crate)} do {
         sleep 5;
         // start progress bar if no ennemies
@@ -212,7 +210,7 @@ while {alive _crate AND (_marker in markerSupplyCrates)} do {
 			(_counter < _deploymentTime) AND
 			(alive _crate) AND
 			(isNull attachedTo _crate) AND
-            // TODO: do not work stop supplying when enemies get too close (100m)
+            // stop supplying when enemies get too close (100m)
 			!(
                 {[_x] call AS_fnc_isUnconscious} count ([80,0,_crate,"BLUFORSpawn"] call distanceUnits) ==
                 count ([80, 0, _crate,"BLUFORSpawn"] call distanceUnits)
