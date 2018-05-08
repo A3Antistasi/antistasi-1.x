@@ -144,7 +144,7 @@ spawner setVariable [_marker, false, true];
 //Reveal marker when detected
 diag_log format ["Antistasi - waiting detection"];
 // Does not trigger on Official Server but works on EDEN SP/MP
-// waitUntil{sleep 1; ([300,1 ,_crate,"BLUFORSpawn"] call distanceUnits) OR ({_x distance2D _crate < 1000} count puestosFIA != 0)};
+waitUntil{sleep 1; ([300,1 ,_crate,"BLUFORSpawn"] call distanceUnits) OR ({_x distance2D _crate < 1000} count puestosFIA != 0)};
 
 _marker setMarkerAlpha 1;
 if ([300,1,_crate, "BLUFORSpawn"] call distanceUnits) then {
@@ -212,7 +212,7 @@ while {alive _crate AND (_marker in markerSupplyCrates)} do {
 			(_counter < _deploymentTime) AND
 			(alive _crate) AND
 			(isNull attachedTo _crate) AND
-            // stop supplying when enemies get too close (100m)
+            // TODO: do not work stop supplying when enemies get too close (100m)
 			!(
                 {[_x] call AS_fnc_isUnconscious} count ([80,0,_crate,"BLUFORSpawn"] call distanceUnits) ==
                 count ([80, 0, _crate,"BLUFORSpawn"] call distanceUnits)
