@@ -1,4 +1,4 @@
-private ["_unit","_coste","_armas","_municion","_caja","_items"];
+private ["_unit","_coste","_armas","_municion","_caja","_items","_loaded"];
 
 _unit = _this select 0;
 
@@ -39,7 +39,10 @@ clearItemCargoGlobal _caja;
 clearBackpackCargoGlobal _caja;
 _armas = weapons _unit;
 {_caja addWeaponCargoGlobal [[_x] call BIS_fnc_baseWeapon,1]} forEach _armas;
-_municion = magazines _unit;
+for "_x" from 0 to (count _armas -1) do {
+	_loaded pushBack (weaponsItems _unit select _x select 4 select 0);
+};
+_municion = magazines _unit + _loaded;
 {_caja addMagazineCargoGlobal [_x,1]} forEach _municion;
 _items = assignedItems _unit + items _unit + primaryWeaponItems _unit;
 {_caja addItemCargoGlobal [_x,1]} forEach _items;
