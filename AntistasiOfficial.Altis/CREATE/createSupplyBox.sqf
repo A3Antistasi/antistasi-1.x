@@ -6,7 +6,14 @@ private ["_marker", "_crateType","_crateTypeBox","_cratedisplay", "_abort", "_al
 // _fnDeleteMissionIn X seconds
 _fnDeleteMissionIn = {
     params ["_marker", "_spawnPosition", "_crateType", "_crate", "_timer"];
-    if (_timer > 0) then {sleep _timer;};
+
+    // need test, show you have ~10min left before deletion
+    if (_timer > 0) then {
+        _third = _timer/3;
+        sleep (_third*2);
+        _marker setMarkerColor "ColorOrange";
+        sleep _third;
+    };
 
     // this all we need to revert mission creation
     //Disable respawn mechanics
@@ -117,6 +124,7 @@ _marker = createMarker [format ["SUP%1", random 100], _spawnPosition];
 _marker setMarkerText _cratedisplay;
 _marker setMarkerShape "ICON";
 _marker setMarkerType "mil_warning";
+_marker setMarkerAlpha 1;
 
 //Add to needed global variables
 markerSupplyCrates pushBackUnique _marker;
@@ -142,9 +150,8 @@ spawner setVariable [_marker, false, true];
 */
 
 //Reveal marker when detected
-diag_log format ["Antistasi - waiting detection"];
 // Does not trigger on Official Server but works on EDEN SP/MP
-// So timer is never launched :/
+// So unloading is never launched :/
 // waitUntil{sleep 1; ([300,1 ,_crate,"BLUFORSpawn"] call distanceUnits) OR ({_x distance _crate < 1000} count puestosFIA != 0)};
 _marker setMarkerAlpha 1;
 
@@ -164,7 +171,8 @@ while {alive _crate AND (_marker in markerSupplyCrates)} do {
 	// wait until the player loads the crate
 	waitUntil {
         sleep 1;
-		!(isNull attachedTo _crate)
+		!(isNull attachedTo _crate) OR
+		!(_marker in markerSupplyCrates)
 	};
     //Hide marker, so player wont search for it
     _marker setMarkerAlpha 0;

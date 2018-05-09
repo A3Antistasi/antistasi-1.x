@@ -27,6 +27,8 @@ _allGroups pushBack _group;
 	} forEach units _group;
 } forEach _allGroups;
 
+// TODO : guards of crate does not spawn
+sleep 5;
 //waitUntil {sleep 1; spawner getVariable _marker > 1}; //Activate when merged with new spawn system
 waitUntil {sleep 1; !(spawner getVariable _marker)};
 

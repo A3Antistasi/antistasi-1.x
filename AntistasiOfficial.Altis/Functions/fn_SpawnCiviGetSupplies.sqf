@@ -15,7 +15,8 @@ if (_civcount < 50) then {
       _civ domove _pos;
     };
 
-  // {_x  domove _pos;} foreach (units _group);
+// try Double everything 
+  {_x  domove _pos;} foreach (units _group);
   _group move _pos;
   sleep 120;
 

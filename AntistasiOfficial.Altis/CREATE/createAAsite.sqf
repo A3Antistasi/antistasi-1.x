@@ -17,35 +17,16 @@ _cmpInfo = [_marker] call AS_fnc_selectCMPData;
 _posCmp = _cmpInfo select 0;
 _cmp = _cmpInfo select 1;
 
-if(spawner getVariable _marker == 0) then {sleep 2;}; //This should give the AA defense enough time to despawn their SPAA if active
-
-//Create composition
-	_objs = [_posCmp, 0, _cmp] call BIS_fnc_ObjectsMapper;
-
-	{
-		call {
-			if (typeOf _x == opSPAA) exitWith {_SPAA = _x; _allVehicles pushBack _x; _hasSPAA = true};
-			if (typeOf _x == opTruck) exitWith {_truck = _x; _allVehicles pushBack _truck};
-			if (typeOf _x in [statMG, statAT, statAA, statAA2, statMGlow, statMGtower]) exitWith {_statics pushBack _x; _allvehicles pushback _x};
-			//if (typeOf _x == statMortar) exitWith {_statics pushBack _x; [_x] execVM "scripts\UPSMON\MON_artillery_add.sqf"}; Stef removed mortar from Hilltop
-			if (typeOf _x == opCrate) exitWith {_crate = _x; _allVehicles pushBack _x};
-			if (typeOf _x == opFlag) exitWith {_allVehicles pushBack _x};
-		};
-	} forEach _objs;
-
-	_objs = _objs - [_truck];
-	_objs = _objs - _statics;
+_objs = [_posCmp, 0, _cmp] call BIS_fnc_ObjectsMapper;
 
 {
-	if (_hasSPAA) then {
-		_groupCrew = createGroup side_red;
-		_unit = ([_posMarker, 0, opI_CREW, _groupCrew] call bis_fnc_spawnvehicle) select 0;
-		_unit moveInGunner _SPAA;
-		_unit = ([_posMarker, 0, opI_CREW, _groupCrew] call bis_fnc_spawnvehicle) select 0;
-		_unit moveInCommander _SPAA;
-		_SPAA lock 2;
-		_allGroups pushBack _groupCrew;
-		{[_x] spawn CSATinit; _allSoldiers pushBack _x} forEach units _groupCrew;
+	call {
+		if (typeOf _x == opSPAA) exitWith {_SPAA = _x; _allVehicles pushBack _x; _hasSPAA = true};
+		if (typeOf _x == opTruck) exitWith {_truck = _x; _allVehicles pushBack _truck};
+		if (typeOf _x in [statMG, statAT, statAA, statAA2, statMGlow, statMGtower]) exitWith {_statics pushBack _x};
+		//if (typeOf _x == statMortar) exitWith {_statics pushBack _x; [_x] execVM "scripts\UPSMON\MON_artillery_add.sqf"}; Stef removed mortar from Hilltop
+		if (typeOf _x == opCrate) exitWith {_crate = _x; _allVehicles pushBack _x};
+		if (typeOf _x == opFlag) exitWith {_allVehicles pushBack _x};
 	};
 } forEach _objs;
 
@@ -110,26 +91,8 @@ _spawnGroup = {
 
 _garrisonSize = count _allSoldiers;
 
-//Despawn conditions: Stef - theese need to be tweaked
-	_OneThirdGarrison = {alive _x} count _allSoldiers < (_garrisonSize / 3);
-	_AssetDestroyed = !(alive _SPAA) AND ({alive _x} count units _groupGunners == 0);
-	_MarkerNotFullSpawned = (spawner getVariable _marker > 1);
-	_RemainingEnemies = (
-        count (
-            allUnits select {
-                ( (side _x == side_green) OR (side _x == side_red) ) AND
-                ( _x distance _posMarker <= (_size max 100) ) AND
-                !(captive _x)
-            }
-        )
-    );
-
-	if (_hasSPAA) then {
-        waitUntil {
-            sleep 1;
-            _MarkerNotFullSpawned OR
-            (_OneThirdGarrison OR _AssetDestroyed)
-        };
+if (_hasSPAA) then {
+	waitUntil {sleep 1; !(spawner getVariable _marker) OR ((({alive _x} count _allSoldiers < (_garrisonSize / 3)) OR ({fleeing _x} count _allSoldiers == {alive _x} count _allSoldiers)) AND !(alive _SPAA) AND ({alive _x} count units _groupGunners == 0))};
 
 	if ((({alive _x} count _allSoldiers < (_garrisonSize / 3)) OR ({fleeing _x} count _allSoldiers == {alive _x} count _allSoldiers)) AND !(alive _SPAA) AND ({alive _x} count units _groupGunners == 0)) then {
 		[-5,0,_posMarker] remoteExec ["AS_fnc_changeCitySupport",2];

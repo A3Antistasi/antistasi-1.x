@@ -23,13 +23,11 @@ _oldLevel = _currentLevel;
 if (_delta > 0 AND _currentLevel != "GOOD") then {
     diag_log format ["delta %1", _delta];
     diag_log format ["_currentLevel %1", _currentLevel];
-    diag_log format ["(_delta > 0 AND _currentLevel != 'GOOD')"];
 
 	if (_currentLevel == "LOW") then {
-        diag_log format ["_currentLevel %1", _currentLevel];
 		_currentLevel = "GOOD";
         // TODO : need testing
-		[0,5,_city] remoteExec ["AS_fnc_changeCitySupport", 2];
+		[0, 5, _city] remoteExec ["AS_fnc_changeCitySupport", 2];
 
         // TO DO : not working
         // {
@@ -40,16 +38,15 @@ if (_delta > 0 AND _currentLevel != "GOOD") then {
 
 	if (_currentLevel == "CRITICAL") then
 	{
-        diag_log format ["_currentLevel %1", _currentLevel];
 		_currentLevel = "LOW";
         // TODO : need testing
-        [0,10,_city] remoteExec ["AS_fnc_changeCitySupport", 2];
+        [0, 10, _city] remoteExec ["AS_fnc_changeCitySupport", 2];
 
         // TO DO : not working
         // {
             // if (_x distance _location < 500) then {[10,_x] call playerScoreAdd};
         // } forEach (allPlayers - entities "HeadlessClient_F");
-        [10,Slowhand] call playerScoreAdd;
+        [10, Slowhand] call playerScoreAdd;
 	};
     diag_log format ["log changeCitySupply %1 increased to %2", _city, _currentLevel];
 };
@@ -60,11 +57,9 @@ if (_delta < 0 AND _currentLevel != "CRITICAL") then {
 
     // TODO : missing changeCitySupport call
     if (_currentLevel == "LOW") then {
-        diag_log format ["_currentLevel %1", _currentLevel];
 		_currentLevel = "CRITICAL";
 	};
 	if (_currentLevel == "GOOD") then {
-        diag_log format ["_currentLevel %1", _currentLevel];
 		_currentLevel = "LOW";
 	};
 
