@@ -90,7 +90,8 @@ if (count _spawnPosition == 0) then {
 	while {
 		(count (
 			nearestObjects [_spawnPosition, ["Land_PaperBox_01_open_boxes_F", "Land_PaperBox_01_open_water_F", "CargoNet_01_barrels_F"], 300, true]
-		) != 0) OR (_spawnPosition distance2D _posHQ < 1000) OR (count ([200, 0, _spawnPosition, "BLUFORSpawn"] call distanceUnits) != 0)
+		) != 0) OR (_spawnPosition distance2D _posHQ < 1000) OR (count ([200, 0, _spawnPosition, "BLUFORSpawn"] call distanceUnits) != 0 OR
+         ([markers, _spawnPosition] call BIS_fnc_nearestPosition) distance2D _spawnPosition < 300)
 	} do {
 		_allSheds = _allSheds - [_selectedShed];
 		if((count _allSheds)  == 0) exitWith {_abort = true};
