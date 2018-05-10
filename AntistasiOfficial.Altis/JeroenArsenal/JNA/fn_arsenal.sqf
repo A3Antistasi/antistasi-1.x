@@ -821,8 +821,8 @@ switch _mode do {
                 if!(_radioName isEqualTo "")then{_return1 = _radioName;};
 
                 // ACRE get base class
-                if ([_item] call acre_api_fnc_isRadio) then {
-                    _item = [_item] call acre_api_fnc_getBaseRadio;
+                if ([_return1] call acre_api_fnc_isRadio) then {
+                    _return1 = [_return1] call acre_api_fnc_getBaseRadio;
                 };
 
                 _return1;
