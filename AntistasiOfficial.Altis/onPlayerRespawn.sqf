@@ -52,7 +52,7 @@ removeAllItemsWithMagazines _newUnit;
 removeBackpackGlobal _newUnit;
 removeVest _newUnit;
 //if (!("ItemGPS" in unlockedItems) AND ("ItemGPS" in (assignedItems _newUnit))) then {_newUnit unlinkItem "ItemGPS"};  Stef disabled because no unlock and giving an annoying error message clientside sometime
-if ((!activeTFAR) AND (!activeACRE) AND ("ItemRadio" in (assignedItems player)) AND !("ItemRadio" in unlockedItems)) then {player unlinkItem "ItemRadio"};
+if (((!activeTFAR) OR (!activeACRE)) AND ("ItemRadio" in (assignedItems player)) AND !("ItemRadio" in unlockedItems)) then {player unlinkItem "ItemRadio"};
 if (!isPlayer (leader group player)) then {(group player) selectLeader player};
 
 call AS_fnc_initPlayerEH;
