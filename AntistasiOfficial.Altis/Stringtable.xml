@@ -1997,8 +1997,7 @@
 	    	<Key ID="STR_TSK_UAV_TITLE">
 	    		<Original>%1 UAV</Original>
 	    		<Russian>Ударный БПЛА %1</Russian>
-				<Spanish>Dron %1</Spanish>
-
+			<Spanish>Dron %1</Spanish>
 	    	</Key>
 			<Key ID="STR_TSK_UAV_DESC">
 				<Original>%4 is providing Air support from %1. They will be under our command until %2:%3.</Original>
