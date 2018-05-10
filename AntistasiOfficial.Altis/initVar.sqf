@@ -193,6 +193,7 @@ if !(isnil "XLA_fnc_addVirtualItemCargo") then {
 };
 
 [] call AS_fnc_detectTFAR;
+[] call AS_fnc_detectACRE;
 
 FIA_texturedVehicles = [];
 FIA_texturedVehicleConfigs = [];
