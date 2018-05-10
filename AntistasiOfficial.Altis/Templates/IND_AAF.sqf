@@ -445,6 +445,8 @@ unlockedItems = [
 	"H_ShemagOpen_tan"
 ];
 
+if (hayACRE) then {unlockedItems = unlockedItems + ["ACRE_PRC343","ACRE_PRC148","ACRE_PRC152","ACRE_PRC77","ACRE_PRC117F"]};
+
 unlockedBackpacks = [
 	"B_TacticalPack_blk",
 	"B_TacticalPack_rgr",
