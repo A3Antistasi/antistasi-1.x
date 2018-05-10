@@ -54,6 +54,7 @@ _return = -1;
 private ["_weaponType","_weaponTypeCategory"];
 _weaponType = (_item call bis_fnc_itemType);
 _weaponTypeCategory = _weaponType select 0;
+private _configCfgWeapons = configFile >> "CfgWeapons";
 
 private ["_weaponTypeSpecific"];
 _weaponTypeSpecific = _weaponType select 1;
@@ -70,7 +71,7 @@ if (activeACE) then {
 };
 
 if (activeACRE) then {
-	if (_item call acre_api_fnc_isBaseRadio) then {
+	if (_item isKindOf ["CBA_MiscItem", (_configCfgWeapons)]) then {
 		_weaponTypeSpecific = "FirstAidKit";
 	};
 };
