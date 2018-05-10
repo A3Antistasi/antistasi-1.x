@@ -68,6 +68,12 @@ if (activeACE) then {
 		if (_item in aceItems) then {_weaponTypeSpecific = "FirstAidKit"};
 	};
 };
+
+if (activeACRE) then {
+	if (_item isKindOf "CBA_MiscItem") then {
+		_weaponTypeSpecific = "FirstAidKit";
+	};
+};
 INITTYPES
 
 {

@@ -176,6 +176,11 @@ _assignedItems = ((_inventory select 9) + [_inventory select 3] + [_inventory se
 			_item =_radioName;
 		};
 
+		// ACRE get base class
+		if ([_item] call acre_api_fnc_isRadio) then {
+			_item = [_item] call acre_api_fnc_getBaseRadio;
+		};
+
 		call {
 			if ([_itemCounts select _index, _item] call jn_fnc_arsenal_itemCount == -1) exitWith {
 				player linkItem _item;
