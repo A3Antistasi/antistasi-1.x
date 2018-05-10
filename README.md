@@ -40,7 +40,7 @@ We're looking for more coders, every contribution is appreciated!
 # Mods
 
 The mission has no dependencies, however it can detect the following mods.
-* **CBA**, **TFAR**, RHS-**AFRF**+**GREF**(replace AAF, CSAT), RHS-**USAF**(replace NATO), **ACE**, **inidibi2**(multiple saves).
+* **CBA**, **ACRE**, **TFAR**, RHS-**AFRF**+**GREF**(replace AAF, CSAT), RHS-**USAF**(replace NATO), **ACE**, **inidibi2**(multiple saves).
 
 Client side mods, as long they don't affect AI, are generally ok. Here's some suggestions
 * Dusty retexture project, JSRS, Enhanced Movement, Blastcore
