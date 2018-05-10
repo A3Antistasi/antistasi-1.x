@@ -70,7 +70,7 @@ if (activeACE) then {
 };
 
 if (activeACRE) then {
-	if (_item isKindOf "CBA_MiscItem") then {
+	if (_item call acre_api_fnc_isBaseRadio) then {
 		_weaponTypeSpecific = "FirstAidKit";
 	};
 };
