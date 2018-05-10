@@ -53,8 +53,7 @@ while {true} do {
 						if (_marker in ciudades) exitWith {[_marker] remoteExec ["createCIV", call AS_fnc_getNextWorker]; [_marker] remoteExec ["createCity", call AS_fnc_getNextWorker]};
 						if (_marker in power) exitWith {[_marker] remoteExec ["createPower", call AS_fnc_getNextWorker]};
 						if (_marker in bases) exitWith {[_marker] remoteExec ["createBase", call AS_fnc_getNextWorker]};
-						//if (_marker in controles) exitWith {[_marker] remoteExec ["createRoadblock", call AS_fnc_getNextWorker]};
-						if (_marker in controles) exitWith {[_marker] remoteExec ["createRoadblock2", call AS_fnc_getNextWorker]};
+						if (_marker in controles) exitWith {[_marker, roadblocksEnemy getVariable [_marker, nil]] remoteExec ["createRoadblock2", call AS_fnc_getNextWorker]}; // Server must take the composition of the roadblock from its roadblockEnemy logic object and sends it to the worker
 						if (_marker in aeropuertos) exitWith {[_marker] remoteExec ["createAirbase", call AS_fnc_getNextWorker]};
 						if ((_marker in recursos) OR (_marker in fabricas)) exitWith {[_marker] remoteExec ["createResources", call AS_fnc_getNextWorker]};
 						if ((_marker in puestos) OR (_marker in puertos)) exitWith {[_marker] remoteExec ["createOutpost", call AS_fnc_getNextWorker]};
