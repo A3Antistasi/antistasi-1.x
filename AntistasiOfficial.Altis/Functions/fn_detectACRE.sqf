@@ -1,12 +1,10 @@
 
 if (isClass (configFile >> "CfgPatches" >> "acre_main")) then {
-    activeAcre = true;
-    unlockedItems pushBackUnique "ItemRadio";
-	unlockedItems pushBackUnique guer_radio_TFAR;
-    tf_no_auto_long_range_radio = true; publicVariable "tf_no_auto_long_range_radio";
-	tf_west_radio_code = ""; publicVariable "tf_west_radio_code";
-	tf_east_radio_code = tf_west_radio_code; publicVariable "tf_east_radio_code";
-	tf_guer_radio_code = tf_west_radio_code; publicVariable "tf_guer_radio_code";
-	tf_same_sw_frequencies_for_side = true; publicVariable "tf_same_sw_frequencies_for_side";
-	tf_same_lr_frequencies_for_side = true; publicVariable "tf_same_lr_frequencies_for_side";
+    activeACRE = true;
+	unlockedItems pushBackUnique "ItemRadio";
+	unlockedItems pushBackUnique "ACRE_PRC343";
+	unlockedItems pushBackUnique "ACRE_PRC148";
+	unlockedItems pushBackUnique "ACRE_PRC152";
+	unlockedItems pushBackUnique "ACRE_PRC77";
+	unlockedItems pushBackUnique "ACRE_PRC117F";
 };
