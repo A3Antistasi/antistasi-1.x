@@ -223,6 +223,7 @@ publicVariable "membersPool";
 publicVariable "vehInGarage";
 publicVariable "reportedVehs";
 publicVariable "activeACE";
+publicVariable "activeACRE";
 publicVariable "activeTFAR";
 publicVariable "activeXLA";
 publicVariable "activeACEhearing";
