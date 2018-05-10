@@ -41,6 +41,7 @@ while {true} do {
 		private _marker = _x;
 		private _markerPos = getMarkerPos _marker;
 
+
 		if (_marker in mrkAAF) then {
 			if !(spawner getVariable _marker) then {
 				//check if a units is near the location or place needs to be forced to spawned in
@@ -58,6 +59,7 @@ while {true} do {
 						if ((_marker in recursos) OR (_marker in fabricas)) exitWith {[_marker] remoteExec ["createResources", call AS_fnc_getNextWorker]};
 						if ((_marker in puestos) OR (_marker in puertos)) exitWith {[_marker] remoteExec ["createOutpost", call AS_fnc_getNextWorker]};
 						//if ((_marker in artyEmplacements) AND (_marker in forcedSpawn)) exitWith {[_marker] remoteExec ["createArtillery", call AS_fnc_getNextWorker]};
+                        if (_marker in markerSupplyCrates) exitWith {[_marker] remoteExec ["createSupplyGroup", call AS_fnc_getNextWorker]};
 					};
 				};
 
@@ -84,6 +86,7 @@ while {true} do {
 							if ((_marker in puestos) OR (_marker in puertos)) exitWith {[_marker] remoteExec ["createFIAOutpost", call AS_fnc_getNextWorker]};
 							if (_marker in campsFIA) exitWith {[_marker] remoteExec ["createCampFIA", call AS_fnc_getNextWorker]};
 							if (_marker in puestosNATO) exitWith {[_marker] remoteExec ["createNATOpuesto", call AS_fnc_getNextWorker]};
+                            if (_marker in markerSupplyCrates) exitWith {[_marker] remoteExec ["createSupplyGroup", call AS_fnc_getNextWorker]};
 						};
 					};
 				};
@@ -94,6 +97,6 @@ while {true} do {
 			};
 		};
 
-	} forEach markers;
+	} forEach (markers + markerSupplyCrates);
 
 };

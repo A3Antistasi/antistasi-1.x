@@ -1,0 +1,29 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.6.1
+
+    steps:
+      - checkout
+      - run:
+          name: Config for linter-sqf
+          command: |
+            set -e
+            rm AntistasiOfficial.Altis/shitstef.sqf
+            ln -s ~/project/AntistasiOfficial.Altis/ addons
+
+      - run:
+          name: Run acemod config_validator, thx !
+          command: |
+            set -e
+            python bin/config_validator.py
+
+      - run:
+          name: Run acemod sqf_validator, thx !
+          command: |
+            set -e
+            python bin/sqf_validator.py
+
+      # check tools folder for more scripts from ace

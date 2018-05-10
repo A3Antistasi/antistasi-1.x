@@ -1,11 +1,17 @@
 # Antistasi: An Arma III Guerilla simulator
 
-It's a persistent mission designed for semi-randomized asymmetric warfare.
-This is the developing version, many progress have been done since 1.7 however we aren't ready for a release.
+It's a persistent mission designed for semi-randomized asymmetric warfare designed by The Author **Barbolani**. Fight dirty, ambush or deliver supplies to convince Altis civilians to join your cause. Get support from NATO depending on your behaviour and beware of CSAT that will support AAF or eventually napalm cities if you gain too much control over AAF military emplacements.
+Operate Undercover or raid along your fellows by recruiting AI and garrisons or simply join your friends in multiplayer with the possibility to load the best mods of Arma3 community.
 
+Website: http://a3antistasi.enjin.com/
 
+Server: Antistasi Official Altis
 
-The Author is **Barbolani**
+Teamspeak: **antistasi.enjinvoice.com**
+
+Guide: https://docs.google.com/document/d/1_XamnTWgVgy0jDinYSDhAWG_vKDa49ngl6fGi5XdPLQ/edit
+
+# Credits
 
 After 1.2 *Chris* coded many changes under the supervision of *RickyTan* and *Kendo* with the contribution of *Toshi* and *Tucks* for porting and templates.
 
@@ -15,18 +21,9 @@ After 1.7.6 *Sparker* and *Jeroen* continued because the 1.7 bugs weren't possib
 
 *Triada* adapted the mission for multi-language translation updating Stringtable.xml and harmonizing hints and task display. He translated, with support of Russian community, the mission to Russian. Also, *Nemesti* added the Spanish translation.
 
-Currently: *Stef* is finishing stuff with precious *Sparker'* support getting ready for steam release. 
+*Stef* is continuing, with precious *Sparker'* help. 
 
 We're looking for more coders, every contribution is appreciated!
-
-
-Website: http://a3antistasi.enjin.com/
-
-Server: steam://connect/85.190.158.136:29001
-
-Teamspeak: **antistasi.enjinvoice.com**
-
-Guide: https://docs.google.com/document/d/1_XamnTWgVgy0jDinYSDhAWG_vKDa49ngl6fGi5XdPLQ/edit
 
 ---
 
@@ -36,6 +33,7 @@ Guide: https://docs.google.com/document/d/1_XamnTWgVgy0jDinYSDhAWG_vKDa49ngl6fGi
 * Download the .pbo
 * For singleplayer: drop it in \steamapps\common\Arma 3\Missions
 * For multiplayer: Arma 3\MPMissions
+* To setup a dedicated server you can find more info here: https://github.com/A3Antistasi/antistasiofficial/wiki/Dedicated-server-setup
 
 ---
 

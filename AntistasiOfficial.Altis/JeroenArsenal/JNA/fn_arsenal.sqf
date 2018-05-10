@@ -28,7 +28,7 @@
             };\
         };\
         _dlc\
-    }
+    };
 
 #define ADDMODICON\
     {\

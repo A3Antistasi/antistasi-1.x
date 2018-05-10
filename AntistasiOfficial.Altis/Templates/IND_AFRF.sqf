@@ -464,7 +464,20 @@ unlockedItems = [
 	"rhsgref_uniform_woodland_olive",
 	"rhsgref_uniform_altis_lizard_olive",
 	"rhsgref_uniform_flecktarn",
-	"G_Bandanna_khk"
+	"G_Bandanna_khk",
+	"rhsgref_uniform_ERDL",
+	"V_BandollierB_cbr",
+	"V_BandollierB_rgr",
+	"V_BandollierB_khk",
+	"rhs_vest_pistol_holster",
+	"rhs_vest_commander",
+	"rhs_6sh46",
+	"rhsgref_uniform_dpm_olive",
+	"U_C_HunterBody_grn",
+	"H_Watchcap_blk",
+	"H_Watchcap_cbr",
+	"H_Cap_headphones",
+	"H_ShemagOpen_tan"
 ];
 
 unlockedBackpacks = [
