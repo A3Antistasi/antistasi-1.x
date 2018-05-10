@@ -1,10 +1,14 @@
 /*
-Testing advanced roadblock spawning script. Sparker.
+Testing advanced roadblock spawning script.
+By Sparker
 */
 if (!isServer and hasInterface) exitWith {};
 
-params ["_marker"];
+params ["_marker", "_rbData"];
 private ["_allVehicles","_allGroups","_allSoldiers","_markerPos","_size","_distance","_roads","_connectedRoads","_bunker","_static","_group","_unit","_groupType","_tempGroup","_dog","_normalPos"];
+
+//Check the composition data
+if(isNil "_rbData") exitWith {diag_log format ["createRoadblock2.sqf: Error: no _rbData found for %1", _marker];};
 
 _allVehicles = [];
 _allGroups = [];
@@ -16,10 +20,6 @@ _size = [_marker] call sizeMarker;
 //Delete trees
 private _no = nearestTerrainObjects [_markerPos, ["TREE", "SMALL TREE", "BUSH"], 20, false, true];
 {hideObjectGlobal _x;} forEach _no;
-
-//Get the composition data
-private _rbData = roadblocksEnemy getVariable [_marker, nil];
-if(isNil "_rbData") exitWith {diag_log format ["createRoadblock2.sqf: Error: no _rbData found for %1", _marker];};
 
 private _objects = [_markerPos, _rbData select 1, _rbData select 0] call BIS_fnc_ObjectsMapper;
 
