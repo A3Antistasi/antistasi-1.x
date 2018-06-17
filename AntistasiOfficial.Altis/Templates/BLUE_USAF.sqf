@@ -85,9 +85,9 @@
 	];
 
 	bluRifle = 	[ 						// select random
-		"rhs_weap_hk416d10_m320",
-		"rhs_weap_m4_m320",
-		"rhs_weap_mk18_m320"
+		"rhs_weap_hk416d145",			// All changed to non-GL 
+		"rhs_weap_m4",
+		"rhs_weap_mk18"
 	];
 
 	bluRifleAmmo = [					// select random (this might require a tweak if blurifle have rifle with different ammo, try to keep the same)
@@ -101,6 +101,11 @@
 		"rhs_weap_mk18_m320"
 	];
 
+	blueGLAmmo = [ // Two kinds of 40mm ammo
+		"rhs_mag_M441_HE",
+		"rhs_mag_M433_HEDP"
+	];
+	
 	bluGLsmoke = [
 		"rhs_mag_m662_red",
 		"rhs_mag_m661_green",
@@ -157,22 +162,28 @@
 	bluScopes = [					// Preferibly only PIP compatible = more realisitc
 		"rhsusf_acc_SpecterDR_3d",	//Rifle scope
 		"rhsusf_acc_ACOG_MDO",		//LMG scope
-		"rhsusf_acc_LEUPOLDMK4_2_d"	//Snipe scope
+		"rhsusf_acc_LEUPOLDMK4_2_d",//Snipe scope
+		"rhs_acc_at4_handler"		// M136 sight
 	];
 
 	bluAttachments = [
 		"rhsusf_acc_anpeq15_light", //anpeq with laser + flashlight
-		"rhsusf_acc_nt4_black"		//Higer tier only
+		"rhsusf_acc_nt4_black"		//Higher tier only (suppressor category?)
 	];
 
+	bluSuppressor = [
+		"rhsusf_acc_nt4_black"		// To complain template with resupply
+	];
+
+
 	blunvg = [
-	"rhsusf_ANPVS_15"
+		"rhsusf_ANPVS_15"
 	];
 
 	bluHelmet = [
-	"rhsusf_opscore_bk_pelt",					// Tier 1
-	"rhsusf_ach_bare_des_headset",				// Tier 2
-	"rhsusf_mich_bare_norotos_semi_headset"		// Tier 3
+		"rhsusf_opscore_bk_pelt",					// Tier 1
+		"rhsusf_ach_bare_des_headset",				// Tier 2
+		"rhsusf_mich_bare_norotos_semi_headset"		// Tier 3
 	];
 
 
