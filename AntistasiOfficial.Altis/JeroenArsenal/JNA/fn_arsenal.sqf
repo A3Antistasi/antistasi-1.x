@@ -820,6 +820,11 @@ switch _mode do {
                 _radioName = getText(configfile >> "CfgWeapons" >> _return1 >> "tf_parent");
                 if!(_radioName isEqualTo "")then{_return1 = _radioName;};
 
+                // ACRE get base class
+                if ([_return1] call acre_api_fnc_isRadio) then {
+                    _return1 = [_return1] call acre_api_fnc_getBaseRadio;
+                };
+
                 _return1;
             };
             case IDC_RSCDISPLAYARSENAL_TAB_MAP;
@@ -1682,12 +1687,17 @@ switch _mode do {
                     };
                 }foreach assignedItems player;
 
-                //TFAR FIX
                 _OldItemUnequal = _oldItem;
                 if(_index == IDC_RSCDISPLAYARSENAL_TAB_COMPASS)then{
+                    //TFAR FIX
                     _radioName = getText(configfile >> "CfgWeapons" >> _oldItem >> "tf_parent");
                     if!(_radioName isEqualTo "")exitWith{
                         _OldItemUnequal = _radioName;
+                    };
+
+                    // ACRE get base class
+                    if ([_oldItem] call acre_api_fnc_isRadio) then {
+                        _OldItemUnequal = [_oldItem] call acre_api_fnc_getBaseRadio;
                     };
                 };
 

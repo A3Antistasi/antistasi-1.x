@@ -206,6 +206,7 @@ if !(isnil "XLA_fnc_addVirtualItemCargo") then {
 };
 
 [] call AS_fnc_detectTFAR;
+[] call AS_fnc_detectACRE;
 
 FIA_texturedVehicles = [];
 FIA_texturedVehicleConfigs = [];
@@ -236,6 +237,7 @@ publicVariable "membersPool";
 publicVariable "vehInGarage";
 publicVariable "reportedVehs";
 publicVariable "activeACE";
+publicVariable "activeACRE";
 publicVariable "activeTFAR";
 publicVariable "activeXLA";
 publicVariable "activeACEhearing";

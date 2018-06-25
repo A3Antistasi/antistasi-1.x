@@ -54,6 +54,7 @@ _return = -1;
 private ["_weaponType","_weaponTypeCategory"];
 _weaponType = (_item call bis_fnc_itemType);
 _weaponTypeCategory = _weaponType select 0;
+private _configCfgWeapons = configFile >> "CfgWeapons";
 
 private ["_weaponTypeSpecific"];
 _weaponTypeSpecific = _weaponType select 1;
@@ -66,6 +67,12 @@ if (activeACEMedical) then {
 if (activeACE) then {
 	if (_weaponTypeSpecific == "AccessoryBipod") then {
 		if (_item in aceItems) then {_weaponTypeSpecific = "FirstAidKit"};
+	};
+};
+
+if (activeACRE) then {
+	if (_item isKindOf ["CBA_MiscItem", (_configCfgWeapons)]) then {
+		_weaponTypeSpecific = "FirstAidKit";
 	};
 };
 INITTYPES

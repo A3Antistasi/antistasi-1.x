@@ -138,6 +138,7 @@ class AS {
 		class initialiseFIAUnit {};
 		class initialiseFIAGarrisonUnit {};
 		class detectTFAR {};
+		class detectACRE {};
 		class spawnBunker {};
 		class respawnRoadblock {};
 		class createPatrolMarker {};

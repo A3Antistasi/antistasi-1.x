@@ -45,12 +45,22 @@ if (activeTFAR) then {
 	} forEach ((items _unit) + (assignedItems _unit) - (weapons _unit));
 }
 else {
-	{
-	if (!(_x in unlockedItems)) then {
-		_items pushBack _x;
+	if (activeACRE) then {
+		if (!(_x in unlockedItems)) then {
+		if !([_x] call acre_api_fnc_isRadio) then {
+			_items pushBack _x;
+			};
 		};
-	} forEach ((items _unit) + (assignedItems _unit) - (weapons _unit));
+	}
+	else
+	{
+		{
+		if (!(_x in unlockedItems)) then {
+			_items pushBack _x;
+			};
+		} forEach ((items _unit) + (assignedItems _unit) - (weapons _unit));
 	};
+};
 
 {
 _ameter = false;
